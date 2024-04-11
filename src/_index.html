@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+	<title>Offline - Stardew Valley Wiki</title>
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+
+	<style>
+		/* Add your custom CSS styles here */
+		html
+		{
+			height: 100%;
+		}
+		body {
+			background: #0A0523 url(./stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/stardewbackground.png) no-repeat fixed center center / cover;
+			height: 100%;
+			overflow: hidden;
+			color: #C6DBFF!important;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		#iFrameDiv
+		{			
+			height: calc(100% - 50px);
+		}
+		iframe {
+			height: 100%;
+			width: 100%;
+		}
+		#search {
+			min-width: 300px;
+		}
+		.navbar-brand
+		{
+			color: #C6DBFF!important;
+		}
+		.nav-link
+		{
+			color: #C6DBFF!important;
+		}
+	</style>
+</head>
+<body class="dark-theme">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="max-height: 50px;background-color: transparent!important;">
+		<div class="container-fluid">
+			<a id="navMainPage" class="navbar-brand" href="#">
+				Go to Main Wiki page
+			</a>
+			<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button> -->
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a id="navBack" title="Go back" class="nav-link" href="#"><i class="bi bi-arrow-left"></i></a>
+					</li>
+					<li class="nav-item">
+						<a id="navForward" title="Go next" class="nav-link" href="#"><i class="bi bi-arrow-right"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="d-flex justify-content-end"> <!-- Modified code -->
+				<input id="txtSearch" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				<button id="btnSearch" class="btn btn-outline-success" type="button">Search</button>
+			</div>
+		</div>
+	</nav>
+
+	<div id="iFrameDiv" style="position: absolute; top: 50px; left: 0; right: 0; bottom: 0;">
+		<iframe id="iFrame" src="stardewvalleywiki.com/Stardew_Valley_Wiki.html" title="Stardew Valley Wiki">
+			<p>Your browser does not support iframe.</p>
+		</iframe>
+	</div>
+
+	<script>
+		document.getElementById("iFrame").addEventListener("load", function() {
+			hackIFrame();
+		});
+		document.addEventListener("DOMContentLoaded", function() {
+
+			var navMain = document.getElementById("navMainPage");
+			navMain.addEventListener("click", function(event) {
+				event.preventDefault();
+				changeIFrameSrc('stardewvalleywiki.com/Stardew_Valley_Wiki.html');
+			});
+
+			var navBack = document.getElementById("navBack");
+			navBack.addEventListener("click", function(event) {
+				event.preventDefault();
+				goBack();
+			});
+
+			var navForward = document.getElementById("navForward");
+			navForward.addEventListener("click", function(event) {
+				event.preventDefault();
+				goForward();
+			});
+
+			var btnSearch = document.getElementById("btnSearch");
+			btnSearch.addEventListener("click", function(event) {
+				event.preventDefault();
+				var searchText = document.getElementById("txtSearch").value;
+				search(searchText);
+			});
+
+			var txtSearch = document.getElementById("txtSearch");
+			txtSearch.addEventListener("keypress", function(event) {
+				if (event.key === "Enter") {
+					event.preventDefault();
+					var searchText = txtSearch.value;
+					search(searchText);
+				}
+			});
+		});
+
+		function search(search) {
+			var iFrame = document.getElementById("iFrame");
+			iFrame.src = 'searchResult.html?search=' + search;
+		}
+
+		// Add your JavaScript code here
+		function changeIFrameSrc(newUrl) {
+			var iFrame = document.getElementById("iFrame");
+			iFrame.src = newUrl;
+		}
+
+		function goBack() {
+			var iFrame = document.getElementById("iFrame");
+			iFrame.contentWindow.history.back();
+		}
+
+		function goForward() {
+			var iFrame = document.getElementById("iFrame");
+			iFrame.contentWindow.history.forward();
+		}
+
+		function hackIFrame() {
+			console.log("Hacking iframe");
+			var iFrame = document.getElementById("iFrame");
+			var iFrameDocument = iFrame.contentDocument || iFrame.contentWindow.document;
+			var css = `
+				/* Add your custom CSS styles for the iframe content here */
+				.search-box {
+					display: none!important;
+				}
+				#searchform {
+					display: none!important;
+				}
+			`;
+			var style = iFrameDocument.createElement("style");
+			style.appendChild(iFrameDocument.createTextNode(css));
+			if (iFrameDocument.head) {
+				iFrameDocument.head.appendChild(style);
+			}
+			// inject javascript code into the iframe
+			var script = iFrameDocument.createElement("script");
+			script.innerHTML = `
+				// Add your custom JavaScript code for the iframe content here
+				var images = document.getElementsByTagName("img");
+				for (var i = 0; i < images.length; i++) {
+					images[i].removeAttribute("srcset");
+				}
+
+				// data-src="/mediawiki/images/2/25/Coffee_Stage_2.png"
+				var spans = document.querySelectorAll("span[data-src^='/mediawiki/']");
+				for (var i = 0; i < spans.length; i++) {
+					var span = spans[i];
+					var img = document.createElement("img");
+					img.src = span.getAttribute("data-src").substring(1);
+					img.alt = span.getAttribute("data-alt");
+					img.height = span.getAttribute("data-height");
+					img.width = span.getAttribute("data-width");
+					span.parentNode.replaceChild(img, span);
+				}
+
+				//mw-collapsible
+				var collapsibleElements = document.getElementsByClassName("mw-collapsible");
+				for (var i = 0; i < collapsibleElements.length; i++) {
+					var currentElement = collapsibleElements[i];
+					var firstTr = currentElement.querySelector("tr");
+
+					firstTr.addEventListener("click", function() {
+						// Add your code here for the click event on the first tr
+						var parentTable = this.closest("table");
+						// Add your code here to manipulate the parent table element
+						parentTable.classList.toggle("mw-collapsed");
+					});
+				}
+			`;
+			iFrameDocument.body.appendChild(script);
+
+		}
+	</script>
+</body>
+</html>
