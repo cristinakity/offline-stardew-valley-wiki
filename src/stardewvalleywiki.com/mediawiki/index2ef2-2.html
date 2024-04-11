@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_3.0&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>View source for Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"fae47123bc652a787732b8c9","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Migrate_to_SMAPI_3.0","wgTitle":"Migrate to SMAPI 3.0","wgCurRevisionId":136201,"wgRevisionId":0,"wgArticleId":8106,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Migrate_to_SMAPI_3.0","wgRelevantArticleId":8106,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,
+"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},
+"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.ui.input":"ready","mediawiki.ui.checkbox":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","mobile.messageBox.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="load85db.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="You do not have permission to edit this page, for the following reason:"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="View source for Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_3.0"/>
+<meta property="og:description" content="←Index"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2022-03-26T05:53:02Z"/>
+<meta property="article:published_time" content="2022-03-26T05:53:02Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="View source for Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←Index"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"View source for Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki","headline":"View source for Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki","mainEntityOfPage":"View source for Modding:Migrate to SMAPI 3.0","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_3.0","url":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_3.0","description":"\u2190Index","dateModified":"2022-03-26T05:53:02Z","datePublished":"2022-03-26T05:53:02Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Migrate_to_SMAPI_3_0 rootpage-Modding_Migrate_to_SMAPI_3_0 stable skin-minerva action-edit skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Special:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Modding%3AMigrate+to+SMAPI+3.0&amp;returntoquery=action%3Dedit" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:MobileOptions&amp;returnto=Modding%3AMigrate+to+SMAPI+3.0" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">View source for Modding:Migrate to SMAPI 3.0</h1>
+					<div class="tagline"></div>
+				</div>
+				
+				
+				
+				<div class="minerva__subtitle">← <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_3.0" title="Modding:Migrate to SMAPI 3.0">Modding:Migrate to SMAPI 3.0</a></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Stardew_Valley_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Stardew Valley Wiki:Users (page does not exist)">Users</a>.
+</p>
+</div><hr />
+<p>You can view and copy the source of this page.
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-monospace mw-ui-input" lang="en" dir="ltr" name="wpTextbox1">←[[Modding:Index|Index]]
+
+{{Modder compatibility header}}
+This page explains how to update your mod code for compatibility with SMAPI 3.0. See also [[Modding:Migrate to Stardew Valley 1.4]].
+
+==Overview==
+===What's changing?===
+[[File:SMAPI compatibility.png|thumb|SMAPI compatibility over time. The SMAPI 2.0 release in October 2017 appears as a small bump. The Stardew Valley 1.3 release in May 2018 appears as a sudden cliff.]]
+
+Events are arguably the most important and most visible part of SMAPI, but they've stayed essentially unchanged since SMAPI 0.40. New events have been added organically since then, but the event system has always been separate from the rest of SMAPI — they're inconsistent, have some weird behaviours (like &lt;samp>MenuEvents.MenuChanged&lt;/samp> not being raised when a menu is closed), aren't available through the same helper as every other API, and there are some glaring omissions in the available events.
+
+SMAPI 3.0 is the release that fixes all that. This release...
+* Completely rewrites the event engine to make events more efficient and enable events that weren't possible before.
+* Makes events much more consistent: they're now fully compliant with the [https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/event .NET design guidelines], have predictable and descriptive names, have consistent event handler signatures, and have clear documentation.
+* All events are now accessible through &lt;code>helper.Events&lt;/code>, so they're discoverable like any other SMAPI API.
+* Weird behaviours and overlapping events have been eliminated.
+* Many new events have been added.
+* Events now have relevant event arguments.
+* Each mod now has its own event instances, to support features like mod message targeting.
+
+SMAPI 3.0 also adds compatibility with Stardew Valley 1.4, drops all deprecated APIs, and makes a number of other changes listed below.
+
+===Is this the modapocalypse?===
+Nope. Although this is a major change, significant efforts were undertaken to minimize the impact:
+* the old events were supported for a long time with increasingly prominent warnings in the SMAPI console about their deprecation and removal;
+* pull requests were submitted to update affected open-source mods;
+* unofficial updates were created for mods which haven't updated officially by the time SMAPI 3.0 is released;
+* the changes were actively communicated and documented to modders.
+
+In addition, the current target is ''at least'' 95% compatibility for open-source mods before SMAPI 3.0 is released. All of this means that the 3.0 release should have minimal impact on mod compatibility, despite the scope of the changes.
+
+===How to update your mod===
+You don't need to comb through your code manually. SMAPI can tell you if you're using a deprecated interface:
+
+# Use the latest [https://smapi.io/ SMAPI for developers] download. This will show deprecation messages in the console:&lt;br />[[File:Modding - updating deprecated SMAPI code - deprecation warnings.png]]
+# When you look at the code, you'll see a deprecation warning with a hint of how to fix it:&lt;br />[[File:Modding - updating deprecated SMAPI code - deprecation intellisense.png]]
+# You can refer to the following sections on how to replace specific interfaces.
+
+==Changes==
+===Mod build package updated===
+Update the [https://www.nuget.org/packages/Pathoschild.Stardew.ModBuildConfig mod build package] for compatibility with SMAPI 3.0.
+
+===Mods are loaded earlier===
+Mods were previously loaded right before the first &lt;samp>UpdateTicking&lt;/samp> event, which is too late for some changes like intercepting core assets. SMAPI 3.0 loads them much earlier, before the game is fully initialised. '''Do not depend on game fields like &lt;samp>Game1.objectInformation&lt;/samp> having a valid value in your &lt;samp>Entry&lt;/samp> method!''' You can use the &lt;samp>GameLaunched&lt;/samp> event for that instead. See [[Modding:Modder Guide/APIs/Mod structure#Mod entry]] for more info.
+
+For example, let's say you have code like this:
+&lt;syntaxhighlight lang="c#">
+public override void Entry(IModHelper helper)
+{
+   this.Config = helper.ReadConfig&lt;ModConfig>();
+
+   CommunityCenter communityCenter = (CommunityCenter)Game1.getLocationFromName("CommunityCenter");
+   this.VaultRoomID = communityCenter.getAreaNumberFromName("Vault");
+}
+&lt;/syntaxhighlight>
+
+That code fails in SMAPI 3.0, because no locations are loaded yet. This code could be rewritten like this:
+&lt;syntaxhighlight lang="c#">
+public override void Entry(IModHelper helper)
+{
+   this.Config = helper.ReadConfig&lt;ModConfig>();
+
+   helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
+}
+
+private void OnGameLaunched(object sender, GameLaunchedEventArgs args)
+{
+   CommunityCenter communityCenter = (CommunityCenter)Game1.getLocationFromName("CommunityCenter");
+   this.VaultRoomID = communityCenter.getAreaNumberFromName("Vault");
+}
+&lt;/syntaxhighlight>
+
+===API changes===
+{| class="wikitable"
+|-
+! old API
+! →
+! new API
+! conversion notes
+|-
+| &lt;samp>helper.GetContentPacks&lt;/samp>
+| →
+| &lt;samp>helper.ContentPacks.GetOwned&lt;/samp>
+| Identical usage.
+|-
+| &lt;samp>helper.CreateTransitionalContentPack&lt;/samp>
+| →
+| &lt;samp>helper.ContentPacks.CreateTemporary&lt;/samp>
+| Identical usage. (This was a temporary method for the transition to [[Modding:Content packs|SMAPI content packs]], but a few mods have permanent use cases for it.)
+|-
+| &lt;samp>assetData.AsDictionary&amp;lt;T, T&amp;gt;().Set&lt;/samp>
+| →
+| &lt;samp>assetData.AsDictionary&amp;lt;T, T&amp;gt;().Data&lt;/samp>
+| The &lt;samp>Set&lt;/samp> methods caused a lot of confusion and were of limited usefulness. You can access the dictionary directly using the &lt;samp>Data&lt;/samp> field instead.
+|-
+| &lt;samp>SemanticVersion.Build&lt;/samp>
+| →
+| &lt;samp>SemanticVersion.PrereleaseTag&lt;/samp>
+| Identical usage.
+|}
+
+===Event changes===
+The former events are removed in SMAPI 3.0. Here's how to convert them to the new events under &lt;samp>this.Helper.Events&lt;/samp>. This list only shows equivalent events in SMAPI 3.0; see [[Modding:Modder Guide/APIs/Events|''events'' in the modder guide]] for a full list.
+
+{| class="wikitable"
+|-
+! old event
+! →
+! new event
+! conversion notes
+{{/event
+ |old events = ContentEvents.AfterLocaleChanged
+ |new events = none
+ |summary    = Mods very rarely need to handle this, since SMAPI's translation and content APIs do. Since the locale can only change on the title screen, mods that used this can check once the save is loaded instead.
+}}
+{{/event
+ |old events = ControlEvents.ControllerButtonPressed, ControlEvents.ControllerButtonReleased, ControlEvents.ControllerTriggerPressed, ControlEvents.ControllerTriggerReleased
+ |new events = Input.ButtonPressed, Input.ButtonReleased
+ |summary    = Mostly equivalent.
+* Remove &lt;samp>e.PlayerIndex&lt;/samp> (this was always &lt;samp>PlayerIndex.One&lt;/samp>).
+* Change &lt;samp>e.ButtonPressed&lt;/samp> to &lt;samp>e.Button&lt;/samp>, which is now an [[Modding:Modder Guide/APIs/Utilities#Input|&lt;samp>SButton&lt;/samp>]] value.
+* Remove &lt;samp>e.Value&lt;/samp> for trigger events.
+}}
+{{/event
+ |old events = ControlEvents.KeyboardChanged
+ |new events = Input.ButtonPressed, Input.ButtonReleased
+ |summary    = Not directly equivalent; may need to rewrite affected code.
+}}
+{{/event
+ |old events = ControlEvents.KeyPressed, ControlEvents.KeyReleased
+ |new events = Input.ButtonPressed, Input.ButtonReleased
+ |summary    = Mostly equivalent.
+* Change &lt;samp>e.KeyPressed&lt;/samp> to &lt;samp>e.Button&lt;/samp>, which is now an [[Modding:Modder Guide/APIs/Utilities#Input|&lt;samp>SButton&lt;/samp>]] value.
+}}
+{{/event
+ |old events = ControlEvents.MouseChanged
+ |new events = Input.ButtonPressed, Input.ButtonReleased, Input.CursorMoved, Input.MouseWheelScrolled
+ |summary    = Not directly equivalent; may need to rewrite affected code.
+}}
+{{/event
+ |old events = GameEvents.EighthUpdateTick, GameEvents.FourthUpdateTick, GameEvents.HalfSecondTick, GameEvents.QuarterSecondTick, GameEvents.SecondUpdateTick
+ |new events = GameLoop.UpdateTicked
+ |summary    = Mostly equivalent. You can use &lt;code>e.IsMultipleOf&lt;/code> to choose an update rate (&lt;samp>SecondUpdateTick&lt;/samp> = 2, &lt;samp>FourthUpdateTick&lt;/samp> = 4, &lt;samp>EighthUpdateTick&lt;/samp> = 8, &lt;samp>QuarterSecondTick&lt;/samp> = 15, and &lt;samp>HalfSecondTick&lt;/samp> = 30).
+}}
+{{/event
+ |old events = GameEvents.FirstUpdateTick
+ |new events = GameLoop.GameLaunched
+ |summary    = The new event is raised before the first update tick (the old one happened after it). To do something ''after'' the first update tick, use &lt;samp>GameEvents.UpdateTicked&lt;/samp> with &lt;samp>if (e.Ticks == 1)&lt;/samp>.
+}}
+{{/event
+ |old events = GameEvents.UpdateTick
+ |new events = GameLoop.UpdateTicked
+ |summary    = equivalent
+}}
+{{/event
+ |old events = GameEvents.OneSecondTick
+ |new events = GameLoop.OneSecondUpdateTicked
+ |summary    = equivalent
+}}
+{{/event
+ |old events = GraphicsEvents.OnPostRenderEvent
+ |new events = Display.Rendered
+ |summary    = Equivalent, except the new event isn't triggered during certain special cutscenes and minigames (''e.g.,'' the [[Sebastian#Six Hearts|board game scene]]).
+}}
+{{/event
+ |old events = GraphicsEvents.OnPostRenderGuiEvent
+ |new events = Display.RenderedActiveMenu
+ |summary    = equivalent
+}}
+{{/event
+ |old events = GraphicsEvents.OnPostRenderHudEvent
+ |new events = Display.RenderedHud
+ |summary    = equivalent
+}}
+{{/event
+ |old events = GraphicsEvents.OnPreRenderEvent
+ |new events = Display.RenderingWorld
+ |summary    = equivalent
+}}
+{{/event
+ |old events = GraphicsEvents.OnPreRenderGuiEvent
+ |new events = Display.RenderingActiveMenu
+ |summary    = equivalent
+}}
+{{/event
+ |old events = GraphicsEvents.OnPreRenderHudEvent
+ |new events = Display.RenderingHud
+ |summary    = equivalent
+}}
+{{/event
+ |old events = GraphicsEvents.Resize
+ |new events = Display.WindowResized
+ |summary    = equivalent
+}}
+{{/event
+ |old events = InputEvents.ButtonPressed, InputEvents.ButtonReleased
+ |new events = Input.ButtonPressed, Input.ButtonReleased
+ |summary    = Mostly equivalent.
+* Change &lt;samp>e.IsActionButton&lt;/samp> to &lt;samp>e.Button.IsActionButton()&lt;/samp>.
+* Change &lt;samp>e.IsUseToolButton&lt;/samp> to &lt;samp>e.Button.IsUseToolButton()&lt;/samp>.
+* Change &lt;samp>e.SuppressButton&lt;/samp> to &lt;samp>this.Helper.Input.Suppress(button)&lt;/samp>.
+}}
+{{/event
+ |old events = LocationEvents.BuildingsChanged
+ |new events = World.BuildingListChanged
+ |summary    = equivalent
+}}
+{{/event
+ |old events = LocationEvents.LocationsChanged
+ |new events = World.LocationListChanged
+ |summary    = equivalent
+}}
+{{/event
+ |old events = LocationEvents.ObjectsChanged
+ |new events = World.ObjectListChanged
+ |summary    = equivalent
+}}
+{{/event
+ |old events = MenuEvents.MenuChanged, MenuEvents.MenuClosed
+ |new events = Display.MenuChanged
+ |summary    = These caused a lot of confusion (''e.g.,'' &lt;samp>MenuEvents.MenuClosed&lt;/samp> wasn't called when a menu was closed and immediately replaced), so they've been combined into one event which is called when a menu is opened, closed, or replaced. You can check the &lt;samp>e.OldMenu&lt;/samp> and &lt;samp>e.NewMenu&lt;/samp> event args to know what the change is (''e.g.,'' to match the old &lt;samp>MenuEvents.MenuClosed&lt;/samp>, check &lt;code>if (e.NewMenu == null)&lt;/code>).
+}}
+{{/event
+ |old events = MineEvents.MineLevelChanged
+ |new events = Player.Warped
+ |summary    = Check &lt;code>if (e.NewLocation is MineShaft mine)&lt;/code> to detect a mine level change (the new mine level will be &lt;code>mine.mineLevel&lt;/code>). Although the new event is still only called for the current player, that may change in a future version; '''make sure to check &lt;samp>e.IsLocalPlayer&lt;/samp> if you only want to handle the current player'''.
+}}
+{{/event
+ |old events = MultiplayerEvents.AfterMainBroadcast, MultiplayerEvents.AfterMainSync, MultiplayerEvents.BeforeMainBroadcast, MultiplayerEvents.BeforeMainSync
+ |new events = none
+ |summary    = No known mods use these. If you need them, consider replacing &lt;samp>Game1.multiplayer&lt;/samp> with a delegating subclass.
+}}
+{{/event
+ |old events = PlayerEvents.InventoryChanged
+ |new events = Player.InventoryChanged
+ |summary    = Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; '''make sure to check &lt;samp>e.IsLocalPlayer&lt;/samp> if you only want to handle the current player'''.
+}}
+{{/event
+ |old events = PlayerEvents.LeveledUp
+ |new events = Player.LevelChanged
+ |summary    = Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; '''make sure to check &lt;samp>e.IsLocalPlayer&lt;/samp> if you only want to handle the current player'''.
+}}
+{{/event
+ |old events = PlayerEvents.Warped
+ |new events = Player.Warped
+ |summary    = Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; '''make sure to check &lt;samp>e.IsLocalPlayer&lt;/samp> if you only want to handle the current player'''.
+}}
+{{/event
+ |old events = SaveEvents.AfterCreate
+ |new events = GameLoop.SaveCreated
+ |summary    = equivalent
+}}
+{{/event
+ |old events = SaveEvents.AfterLoad
+ |new events = GameLoop.SaveLoaded
+ |summary    = equivalent
+}}
+{{/event
+ |old events = SaveEvents.AfterReturnToTitle
+ |new events = GameLoop.ReturnedToTitle
+ |summary    = equivalent
+}}
+{{/event
+ |old events = SaveEvents.AfterSave
+ |new events = GameLoop.Saved
+ |summary    = equivalent
+}}
+{{/event
+ |old events = SaveEvents.BeforeCreate
+ |new events = GameLoop.SaveCreating
+ |summary    = equivalent
+}}
+{{/event
+ |old events = SaveEvents.BeforeSave
+ |new events = GameLoop.Saving
+ |summary    = equivalent
+}}
+{{/event
+ |old events = SpecialisedEvents.UnvalidatedUpdateTick
+ |new events = Specialised.UnvalidatedUpdateTicked
+ |summary    = equivalent
+}}
+{{/event
+ |old events = TimeEvents.AfterDayStarted
+ |new events = GameLoop.DayStarted
+ |summary    = equivalent
+}}
+{{/event
+ |old events = TimeEvents.TimeOfDayChanged
+ |new events = GameLoop.TimeChanged
+ |summary    = Mostly equivalent. Change &lt;samp>e.OldInt&lt;/samp> and &lt;samp>e.NewInt&lt;/samp> to &lt;samp>e.OldTime&lt;/samp> and &lt;samp>e.NewTime&lt;/samp> respectively.
+}}
+|}
+
+===Manifest version format===
+The [[Modding:Modder Guide/APIs/Manifest|&lt;samp>manifest.json&lt;/samp>]] no longer allows versions in this form:
+&lt;syntaxhighlight lang="js">
+"Version": {
+   "MajorVersion": 1,
+   "MinorVersion": 0,
+   "PatchVersion": 0,
+   "Build": "beta"
+}
+&lt;/syntaxhighlight>
+
+Versions should be written in the standard string form instead:
+&lt;syntaxhighlight lang="js">
+"Version": "1.0.0-beta"
+&lt;/syntaxhighlight>
+
+===Version format===
+SMAPI no longer omits &lt;code>.0&lt;/code> patch numbers when formatting versions. For example, the console now shows SMAPI 3.0.0 instead of 3.0. That's more [https://semver.org/ standard], improves compatibility with external tools, and reduces player confusion.
+
+This doesn't affect most mod code. You may need to update your code if you use &lt;samp>ISemanticVersion.ToString()&lt;/samp> and compare the output to a hardcoded two-part version string.
+
+[[Category:Modding]]
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Template:Modder_compatibility_header" title="Template:Modder compatibility header">Template:Modder compatibility header</a> (<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Template:Modder_compatibility_header&amp;action=edit" title="Template:Modder compatibility header">view source</a>) </li><li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_3.0/event" title="Modding:Migrate to SMAPI 3.0/event">Modding:Migrate to SMAPI 3.0/event</a> (<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_3.0/event&amp;action=edit" title="Modding:Migrate to SMAPI 3.0/event">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_3.0" title="Modding:Migrate to SMAPI 3.0">Modding:Migrate to SMAPI 3.0</a>.</p>
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_3.0">https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_3.0</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_3.0&amp;action=edit&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":130});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_3.0&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:54 GMT -->
+</html>
+		

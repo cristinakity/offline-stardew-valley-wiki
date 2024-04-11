@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Input&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:49:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>View source for Modding:Modder Guide/APIs/Input - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ba7b24485d34f59cd61069f9","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Modder_Guide/APIs/Input","wgTitle":"Modder Guide/APIs/Input","wgCurRevisionId":149175,"wgRevisionId":0,"wgArticleId":8109,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Modder_Guide/APIs/Input","wgRelevantArticleId":8109,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,
+"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},
+"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.ui.input":"ready","mediawiki.ui.checkbox":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","mobile.messageBox.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="load85db.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="You do not have permission to edit this page, for the following reason:"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="View source for Modding:Modder Guide/APIs/Input - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input"/>
+<meta property="og:description" content="Creating SMAPI mods"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2023-07-10T18:19:00Z"/>
+<meta property="article:published_time" content="2023-07-10T18:19:00Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="View source for Modding:Modder Guide/APIs/Input - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="Creating SMAPI mods"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"View source for Modding:Modder Guide\/APIs\/Input - Stardew Valley Wiki","headline":"View source for Modding:Modder Guide\/APIs\/Input - Stardew Valley Wiki","mainEntityOfPage":"View source for Modding:Modder Guide\/APIs\/Input","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Input","url":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Input","description":"Creating SMAPI mods","dateModified":"2023-07-10T18:19:00Z","datePublished":"2023-07-10T18:19:00Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Modder_Guide_APIs_Input rootpage-Modding_Modder_Guide stable skin-minerva action-edit skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Special:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FInput&amp;returntoquery=action%3Dedit" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:MobileOptions&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FInput" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">View source for Modding:Modder Guide/APIs/Input</h1>
+					<div class="tagline"></div>
+				</div>
+				
+				
+				
+				<div class="minerva__subtitle">← <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input" title="Modding:Modder Guide/APIs/Input">Modding:Modder Guide/APIs/Input</a></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Stardew_Valley_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Stardew Valley Wiki:Users (page does not exist)">Users</a>.
+</p>
+</div><hr />
+<p>You can view and copy the source of this page.
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-monospace mw-ui-input" lang="en" dir="ltr" name="wpTextbox1">{{../../header}}
+
+The input API lets you check and suppress controller/keyboard/mouse state.
+
+==APIs==
+===Check button state===
+&lt;dl>
+&lt;dt>&lt;samp>IsDown&lt;/samp>&lt;/dt>
+&lt;dd>
+You can check if any [[#SButton|controller/keyboard/mouse button]] is currently pressed by calling the &lt;samp>IsDown(button)&lt;/samp> method. For example:
+&lt;syntaxhighlight lang="c#">
+bool isShiftPressed = this.Helper.Input.IsDown(SButton.LeftShift) || this.Helper.Input.IsDown(SButton.RightShift);
+&lt;/syntaxhighlight>
+&lt;/dd>
+
+&lt;dt>&lt;samp>GetState&lt;/samp>&lt;/dt>
+&lt;dd>
+For more finetuned control, you can check the [[#SButton|button]] state relative to the previous game tick:
+&lt;syntaxhighlight lang="c#">
+SButtonState state = this.Helper.Input.GetState(SButton.LeftShift);
+bool isDown = (state == SButtonState.Pressed || state == SButtonState.Held);
+&lt;/syntaxhighlight>
+Available button states:
+{| class="wikitable"
+|-
+! previous tick
+! current tick
+! resulting state
+|-
+| up
+| up
+| &lt;samp>None&lt;/samp>
+|-
+| up
+| down
+| &lt;samp>Pressed&lt;/samp>
+|-
+| down
+| down
+| &lt;samp>Held&lt;/samp>
+|-
+| down
+| up
+| &lt;samp>Released&lt;/samp>
+|}
+&lt;/dd>
+&lt;/dl>
+
+===Check cursor position===
+The &lt;samp>GetCursorPosition()&lt;/samp> method provides the [[#ICursorPosition|cursor position in three coordinate systems]].
+
+For example:
+&lt;syntaxhighlight lang="c#">
+// draw text at the cursor position
+ICursorPosition cursorPos = this.Helper.Input.GetCursorPosition();
+Game1.spriteBatch.DrawString(Game1.smallFont, "some text", cursorPos.ScreenPixels, Color.Black);
+&lt;/syntaxhighlight>
+
+===Suppress input===
+You can prevent the game from handling any [[#SButton|controller/keyboard/mouse button press]] (including clicks) by ''suppressing'' it. This suppression will remain in effect until the player releases the button. This won't prevent other mods from handling it.
+
+{| class="wikitable"
+|-
+! method
+! effect
+|-
+| &lt;code>Suppress&lt;/code>
+| Suppress the specified [[#SButton|&lt;samp>SButton&lt;/samp>]] value.
+|-
+| &lt;code>SuppressActiveKeybinds&lt;/code>
+| For the given [[#KeybindList|&lt;samp>KeybindList&lt;/samp>]], suppress every button that's part of an activated keybind.
+|-
+| &lt;code>IsSuppressed&lt;/code>
+| Get whether the specified [[#SButton|&lt;samp>SButton&lt;/samp>]] value is currently suppressed.
+|}
+
+For example:
+&lt;syntaxhighlight lang="c#">
+// prevent game from seeing that LeftShift is pressed
+this.Helper.Input.Suppress(SButton.LeftShift);
+
+// that works for clicks too:
+this.Helper.Input.Suppress(SButton.MouseLeft);
+
+// check if a button is being suppressed:
+bool suppressed = this.Helper.Input.IsSuppressed(SButton.LeftShift);
+&lt;/syntaxhighlight>
+
+Side-effects:
+&lt;ul>
+&lt;li>The [[Modding:Modder Guide/APIs/Events#Input.ButtonReleased|&lt;samp>ButtonReleased&lt;/samp> event]] will be raised on the next tick for the suppressed input.&lt;/li>
+&lt;li>Methods like &lt;samp>helper.Input.IsDown(button)&lt;/samp> and &lt;samp>helper.Input.GetState(button)&lt;/samp> will show the button as released for the duration of the suppression, even if it's physically still pressed. You can use &lt;samp>helper.Input.IsSuppressed(button)&lt;/samp> to check if that's the case (it will only be true until the button is physically released):
+&lt;syntaxhighlight lang="c#">
+bool isPhysicallyDown = helper.Input.IsDown(button) || helper.Input.IsSuppressed(button);
+&lt;/syntaxhighlight>&lt;/li>
+&lt;/ul>
+
+==Data structures==
+===SButton===
+SMAPI's &lt;samp>SButton&lt;/samp> is a constant which includes every [https://docs.microsoft.com/en-us/previous-versions/windows/xna/bb975202(v%3dxnagamestudio.40) controller], [https://docs.microsoft.com/en-us/previous-versions/windows/xna/bb197781(v%3dxnagamestudio.40) keyboard], and [https://docs.microsoft.com/en-us/previous-versions/windows/xna/bb198097(v%3dxnagamestudio.40) mouse] button. SMAPI events use this to let you handle button presses without needing separate code for each. See [[Modding:Player Guide/Key Bindings]] for a list of values.
+
+SMAPI provides extensions to convert any of the other constants to &lt;samp>SButton&lt;/samp>:
+&lt;syntaxhighlight lang="c#">
+SButton key = Keys.A.ToSButton(); // SButton.A
+SButton button = Buttons.A.ToSButton(); // SButton.ControllerA
+SButton input = new InputButton(true).ToSButton(); // SButton.MouseLeft
+&lt;/syntaxhighlight>
+
+You can also convert &lt;samp>SButton&lt;/samp> to the other constants. This uses a &lt;samp>TryGet&lt;/samp> approach since &lt;samp>SButton&lt;/samp> is a superset of the others (''e.g.,'' you can't convert &lt;samp>SButton.ControllerA&lt;/samp> to a keyboard value):
+&lt;syntaxhighlight lang="c#">
+SButton value = SButton.A;
+if (value.TryGetKeyboard(out Keys key))
+   ...;
+if (value.TryGetController(out Buttons button))
+   ...;
+if (value.TryGetStardewInput(out InputButton input))
+   ...;
+&lt;/syntaxhighlight>
+
+Two last extensions let you check how the button is mapped in the game:
+&lt;syntaxhighlight lang="c#">
+SButton button = SButton.MouseLeft;
+if (button.IsUseToolButton())
+   // use tool
+else if (button.IsActionButton())
+   // perform action
+&lt;/syntaxhighlight>
+
+You can use &lt;samp>SButton&lt;/samp> values directly in your [[../Config|config model]], but &lt;samp>[[#KeybindList|KeybindList]]&lt;/samp> is recommended instead in most cases.
+
+===KeybindList===
+SMAPI's &lt;samp>KeybindList&lt;/samp> utility lets you manage an arbitrary set of keybindings. A ''keybind list'' has any number of ''keybinds'', each of which has any number of [[#SButton|button codes]]. For example, the keybind list &lt;code>"F2, LeftShift + S"&lt;/code> would be pressed if (a) &lt;samp>F2&lt;/samp> is pressed, ''or'' (b) both &lt;samp>LeftShift&lt;/samp> and &lt;samp>S&lt;/samp> are pressed.
+
+You can use a &lt;samp>KeybindList&lt;/samp> directly in [[../Config|your &lt;samp>config.json&lt;/samp> model]]:
+
+{| class="wikitable"
+|-
+! C# model
+! &amp;nbsp;
+! JSON file
+|-
+| &lt;syntaxhighlight lang="c#">
+class ModConfig
+{
+   public KeybindList ToggleKey { get; set; } = KeybindList.Parse("LeftShift + F2");
+}
+&lt;/syntaxhighlight>
+| &amp;rarr;
+| &lt;syntaxhighlight lang="json">
+{
+   "ToggleKey": "LeftShift + F2"
+}
+&lt;/syntaxhighlight>
+|}
+
+And you can then check whether it's pressed directly in your code. For example, in a [[../Events|&lt;samp>ButtonsChanged&lt;/samp> event handler]]:
+
+&lt;syntaxhighlight lang="c#">
+private void OnButtonsChanged(object sender, ButtonsChangedEventArgs e)
+{
+   if (this.Config.ToggleKey.JustPressed())
+   {
+      // perform desired action
+   }
+}
+&lt;/syntaxhighlight>
+
+The &lt;samp>KeybindList&lt;/samp> provides a number of methods depending on your use case:
+
+{| class="wikitable"
+|-
+! member
+! description
+|-
+| &lt;code>KeybindList.Parse(…)&lt;/code>&lt;br />&lt;code>KeybindList.TryParse(…)&lt;/code>
+| Parse a keybind string like &lt;code>"F2, LeftShift + S"&lt;/code> into a keybind list.
+|-
+| &lt;code>IsBound&lt;/code>
+| Whether the keybind list has any keys bound. For example, this would be false for the strings &lt;code>"None"&lt;/code> or &lt;code>""&lt;/code>.
+|-
+| &lt;code>Keybinds&lt;/code>
+| The individual keybinds. In most cases you shouldn't use these directly.
+|-
+| &lt;code>GetState()&lt;/code>
+| Get the overall [[#Check button state|keybind state relative to the previous tick]]. This state is transitive across keybinds; ''e.g.,'' if the player releases one keybind and immediately presses another within the list, the overall state is &lt;samp>Held&lt;/samp>.
+|-
+| &lt;code>IsDown()&lt;/code>
+| Get whether any keybind in the list is currently down (''i.e.,'' the player pressed or is holding down the keys).
+|-
+| &lt;code>JustPressed()&lt;/code>
+| Get whether the player just activated the keybind during the current tick (''i.e.,'' &lt;code>GetState()&lt;/code> returns &lt;samp>Pressed&lt;/samp> instead of &lt;samp>Held&lt;/samp>).
+|-
+| &lt;code>GetKeybindCurrentlyDown()&lt;/code>
+| Get the individual &lt;samp>Keybind&lt;/samp> in the list which is currently down, if any. If there are multiple keybinds down, the first one is returned.
+|-
+| &lt;code>ToString()&lt;/code>
+| Get a string representation of the input binding (''e.g.,'' &lt;code>"F2, LeftShift + S"&lt;/code>).
+|}
+
+Caveats:
+* '''Don't use the &lt;samp>ButtonPressed&lt;/samp> [[../Events|event]] to check keybinds''', since it's raised once for each button pressed. If the player presses two keys at once, your keybind would be activated twice. Use &lt;samp>ButtonsChanged&lt;/samp> instead.
+
+===ICursorPosition===
+SMAPI's &lt;samp>ICursorPosition&lt;/samp> provides the cursor position in four coordinate systems:
+* &lt;samp>AbsolutePixels&lt;/samp> is the pixel position relative to the top-left corner of the in-game map, adjusted for [[Modding:Modder Guide/Game Fundamentals#Zoom level|zoom]] but not [[Modding:Modder Guide/Game Fundamentals#UI scaling|UI scaling]].
+* &lt;samp>ScreenPixels&lt;/samp> is the pixel position relative to the top-left corner of the visible screen, adjusted for [[Modding:Modder Guide/Game Fundamentals#Zoom level|zoom]] but not [[Modding:Modder Guide/Game Fundamentals#UI scaling|UI scaling]].
+* &lt;samp>Tile&lt;/samp> is the [[Modding:Modder Guide/Game Fundamentals#Tiles|tile position]] under the cursor.
+* &lt;samp>GrabTile&lt;/samp> is the tile position that the game considers under the cursor for the purposes of clicking actions. This automatically accounts for controller mode. This may be different than &lt;samp>Tile&lt;/samp> if that's too far from the player.
+
+This is returned by the &lt;samp>this.Helper.Input.GetCursorPosition()&lt;/samp> method and in the event args for some input events.
+
+'''The pixel positions are ''not'' adjusted for [[Modding:Modder Guide/Game Fundamentals#UI scaling|UI scaling]]''' (''i.e.,'' they're non-UI mode). Whether you need UI or non-UI positions depends how you're using them, so you can use &lt;samp>cursorPos.GetScaledAbsolutePixels()&lt;/samp> or &lt;samp>cursorPos.GetScaledScreenPixels()&lt;/samp> to adjust them automatically for the current mode or &lt;samp>Utility.ModifyCoordinatesForUIScale&lt;/samp> to always get UI mode coordinates.
+
+==See also==
+* [[../Events#Input|Input events]]
+* [[Modding:Player Guide/Key Bindings]] for a list of valid &lt;samp>SButton&lt;/samp> values
+
+[[zh:模组:制作指南/APIs/Input]]
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Template used on this page:
+</p></div><ul>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/header" title="Modding:Modder Guide/header">Modding:Modder Guide/header</a> (<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/header&amp;action=edit" title="Modding:Modder Guide/header">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input" title="Modding:Modder Guide/APIs/Input">Modding:Modder Guide/APIs/Input</a>.</p>
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input">https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Input&amp;action=edit&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":525});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Input&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:49:49 GMT -->
+</html>
+		

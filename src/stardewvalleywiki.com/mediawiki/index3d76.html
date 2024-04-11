@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Utilities&mobileaction=toggle_view_mobile by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:34:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Modding:Modder Guide/APIs/Utilities - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"191f8cab3bf5edad0b5b5649","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Modder_Guide/APIs/Utilities","wgTitle":"Modder Guide/APIs/Utilities","wgCurRevisionId":130199,"wgRevisionId":130199,"wgArticleId":8089,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Modder_Guide/APIs/Utilities","wgRelevantArticleId":8089,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable",
+"wgMFAmc":!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},
+"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="loadc65b.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cext.pygments%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="description" content="Creating SMAPI mods"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="api-resultc989.json?action=webapp-manifest"/>
+<link rel="shortcut icon" href="extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api-result251f.xml?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Modding:Modder Guide/APIs/Utilities - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Utilities"/>
+<meta property="og:description" content="Creating SMAPI mods"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2021-11-08T01:06:28Z"/>
+<meta property="article:published_time" content="2021-11-08T01:06:28Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modding:Modder Guide/APIs/Utilities - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="Creating SMAPI mods"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Modder Guide\/APIs\/Utilities - Stardew Valley Wiki","headline":"Modding:Modder Guide\/APIs\/Utilities - Stardew Valley Wiki","mainEntityOfPage":"Modding:Modder Guide\/APIs\/Utilities","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Utilities","url":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Utilities","description":"Creating SMAPI mods","dateModified":"2021-11-08T01:06:28Z","datePublished":"2021-11-08T01:06:28Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Modder_Guide_APIs_Utilities rootpage-Modding_Modder_Guide stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki.html" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../Pepper_Seeds.html#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="indexa177.html?title=Special:UserLogin&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FUtilities&amp;returntoquery=mobileaction%3Dtoggle_view_mobile" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="index3dc7-2.html?title=Special:MobileOptions&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FUtilities" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki_About.html" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki_General_disclaimer.html" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../Stardew_Valley_Wiki.html">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Modding:Modder Guide/APIs/Utilities</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="#" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector disabled"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="Language">Language</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="index8457.html?title=Special:UserLogin&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FUtilities" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="Watch">Watch</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="index44ae.html?title=Modding:Modder_Guide/APIs/Utilities&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="Edit the lead section of this page">Edit</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"><span class="subpages">&lt; <a href="../Modding_Modder_Guide.html" class="mw-redirect" title="Modding:Modder Guide">Modding:Modder Guide</a>&lrm; | <a href="../Modding_Modder_Guide/APIs.html" title="Modding:Modder Guide/APIs">APIs</a></span></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><div style="float: right; border: 2px solid rgb(0, 116, 72); background: #A1DEE2; padding: 0.75em; padding-top: 0.5em; margin: 0 0 2em 2em;">
+<p><span style="font-size: larger;"><b>Creating SMAPI mods</b> <a href="../File_SMAPI_mascot.html" class="image"><img alt="SMAPI mascot.png" src="images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25"></a></span>
+</p>
+<hr>
+<ul><li><a href="../Modding_Modder_Guide/Get_Started.html" title="Modding:Modder Guide/Get Started">Get started</a></li>
+<li><a href="../Modding_Modder_Guide/Game_Fundamentals.html" title="Modding:Modder Guide/Game Fundamentals">Game fundamentals</a></li>
+<li><a href="../Modding_Modder_Guide/Test_and_Troubleshoot.html" title="Modding:Modder Guide/Test and Troubleshoot">Test &amp; troubleshoot</a></li>
+<li><a href="../Modding_Modder_Guide/Release.html" title="Modding:Modder Guide/Release">Release</a></li>
+<li><a href="../Modding_Modder_Guide/APIs.html" title="Modding:Modder Guide/APIs">API reference</a>
+<dl><dd>Basic SMAPI APIs:
+<ul><li><a href="../Modding_Modder_Guide/APIs/Mod_structure.html" title="Modding:Modder Guide/APIs/Mod structure">Mod structure</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Manifest.html" title="Modding:Modder Guide/APIs/Manifest">Manifest</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Events.html" title="Modding:Modder Guide/APIs/Events">Events</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Config.html" title="Modding:Modder Guide/APIs/Config">Configuration</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Content.html" title="Modding:Modder Guide/APIs/Content">Load &amp; edit content</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Data.html" title="Modding:Modder Guide/APIs/Data">Data</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Input.html" title="Modding:Modder Guide/APIs/Input">Input</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Logging.html" title="Modding:Modder Guide/APIs/Logging">Logging</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Reflection.html" title="Modding:Modder Guide/APIs/Reflection">Reflection</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Multiplayer.html" title="Modding:Modder Guide/APIs/Multiplayer">Multiplayer</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Translation.html" title="Modding:Modder Guide/APIs/Translation">Translation</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Update_checks.html" title="Modding:Modder Guide/APIs/Update checks">Update checks</a></li>
+<li><a class="mw-selflink selflink">Utilities</a></li></ul></dd>
+<dd>Advanced SMAPI APIs:
+<ul><li><a href="../Modding_Modder_Guide/APIs/Content_Packs.html" title="Modding:Modder Guide/APIs/Content Packs">Content packs</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Console.html" title="Modding:Modder Guide/APIs/Console">Mod console commands</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Integrations.html" title="Modding:Modder Guide/APIs/Integrations">Mod integrations</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Harmony.html" title="Modding:Modder Guide/APIs/Harmony">Harmony patching</a></li></ul></dd></dl></li>
+<li><a href="../Modding_Index.html#Advanced_topics" title="Modding:Index">Specific guides</a></li></ul>
+</div><p>← <span style="font-size: smaller;"><a href="../Modding_Index.html" title="Modding:Index">Modding:Index</a></span>
+</p><p>SMAPI provides some C# objects you can use to simplify your code.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Metadata"><span class="tocnumber">1</span> <span class="toctext">Metadata</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Mod_path"><span class="tocnumber">1.1</span> <span class="toctext">Mod path</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Constants"><span class="tocnumber">1.2</span> <span class="toctext">Constants</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Context"><span class="tocnumber">1.3</span> <span class="toctext">Context</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Helpers"><span class="tocnumber">2</span> <span class="toctext">Helpers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Dates"><span class="tocnumber">2.1</span> <span class="toctext">Dates</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#File_paths"><span class="tocnumber">2.2</span> <span class="toctext">File paths</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Per-screen_data"><span class="tocnumber">2.3</span> <span class="toctext">Per-screen data</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Semantic_versions"><span class="tocnumber">2.4</span> <span class="toctext">Semantic versions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Input"><span class="tocnumber">3</span> <span class="toctext">Input</span></a></li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Metadata">Metadata</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<h3 class="in-block"><span class="mw-headline" id="Mod_path">Mod path</span></h3>
+<p>Before handling mod folder paths, be aware that:
+</p>
+<ul><li>The <b>mod's folder path is not consistent</b>. The game is installed to different folders, Nexus mods are often unzipped into a folder like <samp>Mods/Your Mod Name 1.27.5-541-1-27-5-1598664794/YourModFolder</samp> by default, and players can organize their mod folders like <samp>Mods/For single-player/YourModFolder</samp>.</li>
+<li>Paths are formatted differently on Linux/Mac/Android vs Windows.</li></ul>
+<p>You don't need to worry about that when using SMAPI APIs, which take relative paths and automatically fix the format if needed:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="n">ReadJsonFile</span><span class="p">&lt;</span><span class="n">SomeDataModel</span><span class="p">&gt;(</span><span class="s">"assets/data.json"</span><span class="p">);</span>
+</pre></div>
+<p>If you really need a full path, you should use <samp>this.Helper.DirectoryPath</samp> and <samp>Path.Combine</samp> to get it:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">DirectoryPath</span><span class="p">,</span> <span class="s">"assets"</span><span class="p">,</span> <span class="s">"data.json"</span><span class="p">);</span> <span class="c1">// "assets/data.json" in the current mod's folder</span>
+<span class="kt">var</span> <span class="n">file</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FileInfo</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+</pre></div>
+<p>See <i><a href="#Constants">Constants</a></i> for other paths like the game folder.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Constants">Constants</span></h3>
+<p>The <samp>Constants</samp> class provides metadata about SMAPI and the game.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>value
+</th>
+<th>meaning
+</th></tr>
+<tr>
+<td><samp>Constants.ApiVersion</samp>
+</td>
+<td>The version of the running SMAPI instance.
+</td></tr>
+<tr>
+<td><samp>Constants.MinimumGameVersion</samp><br><samp>Constants.MaximumGameVersion</samp>
+</td>
+<td>The game versions supported by the running SMAPI instance.
+</td></tr>
+<tr>
+<td><samp>Constants.TargetPlatform</samp>
+</td>
+<td>The current operating system (one of <samp>Android</samp>, <samp>Linux</samp>, <samp>Mac</samp>, or <samp>Windows</samp>).
+</td></tr>
+<tr>
+<td><samp>Constants.GameFramework</samp>
+</td>
+<td>The game framework running the game (one of <samp>Xna</samp> or <samp>MonoGame</samp>).
+</td></tr>
+<tr>
+<td><samp>Constants.ExecutionPath</samp>
+</td>
+<td>The absolute path to the <samp>Stardew Valley</samp> folder.
+</td></tr>
+<tr>
+<td><samp>Constants.DataPath</samp>
+</td>
+<td>The absolute path to the game's data folder (which contains the <a href="../Saves.html" title="Saves">save folder</a>).
+</td></tr>
+<tr>
+<td><samp>Constants.LogDir</samp>
+</td>
+<td>The absolute path to the folder containing the game and SMAPI logs.
+</td></tr>
+<tr>
+<td><samp>Constants.SavesPath</samp>
+</td>
+<td>The absolute path to the <a href="../Saves.html" title="Saves">save folder</a>.
+</td></tr>
+<tr>
+<td><samp>Constants.CurrentSavePath</samp>
+</td>
+<td>The absolute path to the current save folder, if a save is loaded.
+</td></tr>
+<tr>
+<td><samp>Constants.SaveFolderName</samp>
+</td>
+<td>The name of the current save folder (like <samp>Name_012345789</samp>), if a save is loaded.
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Context">Context</span></h3>
+<p>The <samp>Context</samp> class provides information about the game state and player control.
+</p>
+<dl><dt>Game/player state:</dt></dl>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<th>value
+</th>
+<th>meaning
+</th></tr>
+<tr>
+<td><samp>Context.IsGameLaunched</samp>
+</td>
+<td>Whether the game has been launched and initialised. This becomes true immediately before the first update tick.
+</td></tr>
+<tr>
+<td><samp>Context.IsWorldReady</samp>
+</td>
+<td>Whether the player has loaded a save and the world has finished initialising. Useful for ignoring events before the save is loaded.
+</td></tr>
+<tr>
+<td><samp>Context.IsPlayerFree</samp>
+</td>
+<td>Whether <samp>Context.IsWorldReady</samp> and the player is free to act on the world (no menu is displayed, no cutscene is in progress, etc).
+</td></tr>
+<tr>
+<td><samp>Context.CanPlayerMove</samp>
+</td>
+<td>Whether <samp>Context.IsPlayerFree</samp> and the player is free to move (<i>e.g.,</i> not using a tool).
+</td></tr>
+<tr>
+<td><samp>Context.IsInDrawLoop</samp>
+</td>
+<td>Whether the game is currently running the draw loop. This isn't relevant to most mods, since you should use <a href="../Modding_Modder_Guide/APIs/Events.html" title="Modding:Modder Guide/APIs/Events">display events</a> to draw to the screen.
+</td></tr></tbody></table></dd></dl>
+<dl><dt><a href="../Multiplayer.html" title="Multiplayer">Multiplayer</a>:</dt></dl>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<th>value
+</th>
+<th>meaning
+</th></tr>
+<tr>
+<td><samp>Context.IsMultiplayer</samp>
+</td>
+<td>Whether <samp>Context.IsWorldReady</samp>, and the world was loaded in multiplayer mode (regardless of whether any other players are connected) or is currently in split-screen mode.
+</td></tr>
+<tr>
+<td><samp>Context.IsSplitScreen</samp>
+</td>
+<td>Whether <samp>Context.IsMultiplayer</samp> and the <i>current player</i> is in split-screen mode. This doesn't apply for remote players.
+</td></tr>
+<tr>
+<td><samp>Context.HasRemotePlayers</samp>
+</td>
+<td>Whether <samp>Context.IsMultiplayer</samp> and any players are connected over the network.
+</td></tr>
+<tr>
+<td><samp>Context.IsMainPlayer</samp>
+</td>
+<td>Whether <samp>Context.IsWorldReady</samp>, and the player is the main player. This is always true in single-player, and true when hosting in multiplayer.
+</td></tr>
+<tr>
+<td><samp>Context.IsOnHostComputer</samp>
+</td>
+<td>Whether the current player is on the host computer. This is true when <samp>Context.IsMainPlayer</samp>, or for farmhands in split-screen mode.
+</td></tr>
+<tr>
+<td><samp>Context.ScreenId</samp>
+</td>
+<td>The unique ID of the current screen in split-screen mode. The main player always has ID 0. A screen is always assigned a new ID when it's opened (so a player who quits and rejoins will get a new screen ID).
+</td></tr></tbody></table></dd></dl>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Helpers">Helpers</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<h3 class="in-block"><span class="mw-headline" id="Dates">Dates</span></h3>
+<p>Use <samp>SDate</samp> for calculating in-game dates. You start by creating a date:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">date</span> <span class="p">=</span> <span class="n">SDate</span><span class="p">.</span><span class="n">Now</span><span class="p">();</span> <span class="c1">// current date</span>
+<span class="kt">var</span> <span class="n">date</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SDate</span><span class="p">(</span><span class="m">28</span><span class="p">,</span> <span class="s">"spring"</span><span class="p">);</span> <span class="c1">// date in the current year</span>
+<span class="kt">var</span> <span class="n">date</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SDate</span><span class="p">(</span><span class="m">28</span><span class="p">,</span> <span class="s">"spring"</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span> <span class="c1">// date in the given year</span>
+<span class="kt">var</span> <span class="n">date</span> <span class="p">=</span> <span class="n">SDate</span><span class="p">.</span><span class="n">From</span><span class="p">(</span><span class="n">Game1</span><span class="p">.</span><span class="n">Date</span><span class="p">);</span> <span class="c1">// from a game date</span>
+</pre></div>
+<p>Then you can calculate offsets from any date:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// add days</span>
+<span class="k">new</span> <span class="nf">SDate</span><span class="p">(</span><span class="m">28</span><span class="p">,</span> <span class="s">"spring"</span><span class="p">,</span> <span class="m">1</span><span class="p">).</span><span class="n">AddDays</span><span class="p">(</span><span class="m">370</span><span class="p">);</span> <span class="c1">// 06 fall in year 4</span>
+
+<span class="c1">// subtract days</span>
+<span class="k">new</span> <span class="nf">SDate</span><span class="p">(</span><span class="m">01</span><span class="p">,</span> <span class="s">"spring"</span><span class="p">,</span> <span class="m">2</span><span class="p">).</span><span class="n">AddDays</span><span class="p">(-</span><span class="m">1</span><span class="p">);</span> <span class="c1">// 28 winter in year 1</span>
+</pre></div>
+<p>...and compare dates:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">a</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SDate</span><span class="p">(</span><span class="m">01</span><span class="p">,</span> <span class="s">"spring"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">b</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SDate</span><span class="p">(</span><span class="m">02</span><span class="p">,</span> <span class="s">"spring"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="p">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="c1">// true</span>
+  <span class="p">...</span>
+</pre></div>
+<p>...and get a translated date string:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">date</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SDate</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="s">"summer"</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">message</span> <span class="p">=</span> <span class="err">$</span><span class="s">"See you on {date.ToLocaleString(withYear: false)}!"</span><span class="p">;</span> <span class="c1">// See you on Summer 15!</span>
+</pre></div>
+<p>Note that <samp>SDate</samp> won't let you create invalid dates:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// ArgumentException: Invalid day '30', must be a value from 1 to 28.</span>
+<span class="k">new</span> <span class="nf">SDate</span><span class="p">(</span><span class="m">30</span><span class="p">,</span> <span class="s">"spring"</span><span class="p">);</span>
+
+<span class="c1">// ArithmeticException: Adding -1 days to 01 spring Y1 would result in invalid date 28 winter Y0.</span>
+<span class="k">new</span> <span class="nf">SDate</span><span class="p">(</span><span class="m">01</span><span class="p">,</span> <span class="s">"spring"</span><span class="p">,</span> <span class="m">1</span><span class="p">).</span><span class="n">AddDays</span><span class="p">(-</span><span class="m">1</span><span class="p">);</span>
+</pre></div>
+<p>Once created, dates have a few properties you can use:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>property
+</th>
+<th>meaning
+</th></tr>
+<tr>
+<td><samp>Day</samp>
+</td>
+<td>The day of month.
+</td></tr>
+<tr>
+<td><samp>Season</samp>
+</td>
+<td>The normalised season name.
+</td></tr>
+<tr>
+<td><samp>SeasonIndex</samp>
+</td>
+<td>The zero-based season index recognised by game methods like <samp>Utility.getSeasonNameFromNumber</samp>.
+</td></tr>
+<tr>
+<td><samp>Year</samp>
+</td>
+<td>The year number.
+</td></tr>
+<tr>
+<td><samp>DayOfWeek</samp>
+</td>
+<td>The day of week (like <samp>Monday</samp>).
+</td></tr>
+<tr>
+<td><samp>DaysSinceStart</samp>
+</td>
+<td>The number of days since the first day, inclusively (<i>i.e.,</i> 01 spring Y1 = 1).
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="File_paths">File paths</span></h3>
+<p><samp>PathUtilities</samp> provides utility methods for working with file paths and <a href="../Modding_Modder_Guide/APIs/Content.html" title="Modding:Modder Guide/APIs/Content">asset names</a>, complementing the <samp>Path</samp> class provided by .NET:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>method
+</th>
+<th>usage
+</th></tr>
+<tr>
+<td><code>GetSegments</code>
+</td>
+<td>Split a path into its delimited segments, like <code>/usr/bin/example</code> → <code>usr</code>, <code>bin</code>, and <code>example</code>. For example:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">string</span><span class="p">[]</span> <span class="n">segments</span> <span class="p">=</span> <span class="n">PathUtilities</span><span class="p">.</span><span class="n">GetSegments</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">ExecutionPath</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><code>IsSafeRelativePath</code>
+</td>
+<td>Get whether a path is relative and doesn't contain directory climbing (<code>../</code>), so it's guaranteed to be within the parent folder.
+</td></tr>
+<tr>
+<td><code>IsSlug</code>
+</td>
+<td>Get whether a string can be used as a 'slug', containing only basic characters that are safe in all contexts (<i>e.g.,</i> filenames, URLs, SMAPI IDs, etc).
+</td></tr>
+<tr>
+<td><code>NormalizePath</code>
+</td>
+<td>Normalize file paths or asset names to match the format used by the current OS. For example:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="n">PathUtilities</span><span class="p">.</span><span class="n">NormalizePathSeparators</span><span class="p">(</span><span class="s">@"Characters\Dialogue//Abigail"</span><span class="p">);</span>
+<span class="c1">// Linux/Mac: "Characters/Dialogue/Abigail"</span>
+<span class="c1">// Windows: "Characters\Dialogue\Abigail"</span>
+</pre></div>
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Per-screen_data">Per-screen data</span></h3>
+<p>SMAPI's <code>PerScreen&lt;T&gt;</code> utility manages a separate value for each local screen in split-screen mode. See <a href="../Modding_Modder_Guide/APIs/Multiplayer.html#Per-screen_data" title="Modding:Modder Guide/APIs/Multiplayer"><samp>PerScreen&lt;T&gt;</samp> in the multiplayer API</a> for details.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Semantic_versions">Semantic versions</span></h3>
+<p>Use <samp>SemanticVersion</samp> to manipulate and compare versions per the <a rel="nofollow" class="external text" href="../../external.html?link=http://semver.org/">Semantic Versioning 2.0 standard</a>. Example usage:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// build version from parts</span>
+<span class="n">ISemanticVersion</span> <span class="n">version</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SemanticVersion</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="s">"beta"</span><span class="p">);</span>
+
+<span class="c1">// build version from string</span>
+<span class="n">ISemanticVersion</span> <span class="n">version</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SemanticVersion</span><span class="p">(</span><span class="s">"5.1.0-beta"</span><span class="p">);</span>
+
+<span class="c1">// compare versions (also works with SemanticVersion instances instead of strings)</span>
+<span class="k">new</span> <span class="nf">SemanticVersion</span><span class="p">(</span><span class="s">"5.2"</span><span class="p">).</span><span class="n">IsOlderThan</span><span class="p">(</span><span class="s">"5.10"</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="k">new</span> <span class="nf">SemanticVersion</span><span class="p">(</span><span class="s">"5.10"</span><span class="p">).</span><span class="n">IsNewerThan</span><span class="p">(</span><span class="s">"5.10-beta"</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="k">new</span> <span class="nf">SemanticVersion</span><span class="p">(</span><span class="s">"5.1"</span><span class="p">).</span><span class="n">IsBetween</span><span class="p">(</span><span class="s">"5.0"</span><span class="p">,</span> <span class="s">"5.2"</span><span class="p">);</span> <span class="c1">// true</span>
+</pre></div>
+<p>Note that game versions before 1.2.0 and some mod versions are non-standard (<i>e.g.,</i> Stardew Valley 1.11 comes <i>before</i> 1.2). All SMAPI versions are standard.
+</p>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Input">Input</span></h2><section class="mf-section-3 collapsible-block" id="mf-section-3">
+<p>SMAPI's <samp>SButton</samp> constants uniquely represent controller, keyboard, and mouse button presses or clicks. See the <a href="../Modding_Modder_Guide/APIs/Input.html" title="Modding:Modder Guide/APIs/Input">Input</a> page for more info.
+</p>
+
+
+
+
+</section></div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index1447.html?title=Modding:Modder_Guide/APIs/Utilities&amp;oldid=130199">https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Utilities&amp;oldid=130199</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="../Special_History/Modding_Modder_Guide/APIs/Utilities.html"
+				data-user-name="Margotbean"
+				data-user-gender="female"
+				data-timestamp="1636333588">
+				<span>Last edited on 8 November 2021, at 01:06</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> This page was last edited on 8 November 2021, at 01:06.</li><li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../Stardew_Valley_Wiki_Privacy_policy.html" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../Stardew_Valley_Wiki_About.html" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../Stardew_Valley_Wiki_General_disclaimer.html" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="indexf56f.html?title=Modding:Modder_Guide/APIs/Utilities&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.046","walltime":"8.866","ppvisitednodes":{"value":94,"limit":1000000},"postexpandincludesize":{"value":1656,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":9614,"limit":5000000},"timingprofile":["100.00%   19.284      1 Modding:Modder_Guide/header","100.00%   19.284      1 -total"]},"cachereport":{"timestamp":"20240411001327","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":124});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Utilities&mobileaction=toggle_view_mobile by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:34:16 GMT -->
+</html>
+		
