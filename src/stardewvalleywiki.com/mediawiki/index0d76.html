@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&mobileaction=toggle_view_desktop by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 03:37:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"33e848a29d72405f318a61ca","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Migrate_to_SMAPI_4.0","wgTitle":"Migrate to SMAPI 4.0","wgCurRevisionId":149792,"wgRevisionId":149792,"wgArticleId":13688,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Modding"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Migrate_to_SMAPI_4.0","wgRelevantArticleId":13688,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],
+"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.html","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="loaddde3.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cext.pygments%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="load52c0.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load2f5e.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="description" content="←Index"/>
+<link rel="shortcut icon" href="extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api-result251f.xml?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki Atom feed" href="feeda295.xml?title=Special:RecentChanges&amp;feed=atom"/>
+<meta property="og:title" content="Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0"/>
+<meta property="og:description" content="←Index"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2023-08-23T09:53:11Z"/>
+<meta property="article:published_time" content="2023-08-23T09:53:11Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←Index"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki","headline":"Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki","mainEntityOfPage":"Modding:Migrate to SMAPI 4.0","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_4.0","url":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_4.0","description":"\u2190Index","dateModified":"2023-08-23T09:53:11Z","datePublished":"2023-08-23T09:53:11Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Migrate_to_SMAPI_4_0 rootpage-Modding_Migrate_to_SMAPI_4_0 skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"><div id="mw-dismissablenotice-anonplace"></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv class=\"mw-dismissable-notice\"\u003E\u003Cdiv class=\"mw-dismissable-notice-close\"\u003E[\u003Ca tabindex=\"0\" role=\"button\"\u003Edismiss\u003C/a\u003E]\u003C/div\u003E\u003Cdiv class=\"mw-dismissable-notice-body\"\u003E\u003Cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cp\u003E\u003Cb\u003ENew editors: Please read \u003Ca href=\"/Help:Editing\" title=\"Help:Editing\"\u003EHelp:Editing\u003C/a\u003E before diving in!\u003C/b\u003E\n\u003Cbr /\u003E\u003Cb\u003EChanges made without adding a \"History\" section will be removed. Thank you for your understanding.\u003C/b\u003E\n\u003C/p\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="en">Modding:Migrate to SMAPI 4.0</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From Stardew Valley Wiki</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>←<a href="../Modding_Index.html" title="Modding:Index">Index</a>
+</p>
+<div style="border: 1px solid orange; border-left: 1em solid orange; padding: 0.5em 1em; border-radius: 5px;">
+<p><b>This page is for mod authors. Players: see <a href="../Modding_Mod_compatibility.html" title="Modding:Mod compatibility">Modding:Mod compatibility</a> instead.</b>
+</p>
+</div>
+<p><br />
+This page explains how to update your C# mod code for compatibility with SMAPI 4.0.0. (Content packs aren't affected.) You can update mods now, there's no need to wait for the 4.0 release itself.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What.27s_changing.3F"><span class="tocnumber">1.1</span> <span class="toctext">What's changing?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Is_this_the_modapocalypse.3F"><span class="tocnumber">1.2</span> <span class="toctext">Is this the modapocalypse?</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#How_to_update_your_mod"><span class="tocnumber">1.3</span> <span class="toctext">How to update your mod</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Breaking_changes"><span class="tocnumber">2</span> <span class="toctext">Breaking changes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Content_interception_API"><span class="tocnumber">2.1</span> <span class="toctext">Content interception API</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Content_loading_API"><span class="tocnumber">2.2</span> <span class="toctext">Content loading API</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Other_API_changes"><span class="tocnumber">2.3</span> <span class="toctext">Other API changes</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Nullable_reference_type_annotations"><span class="tocnumber">2.4</span> <span class="toctext">Nullable reference type annotations</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Removed_dependencies"><span class="tocnumber">2.5</span> <span class="toctext">Removed dependencies</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Other_changes"><span class="tocnumber">3</span> <span class="toctext">Other changes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Raw_texture_data"><span class="tocnumber">3.1</span> <span class="toctext">Raw texture data</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<h3><span id="What's_changing?"></span><span class="mw-headline" id="What.27s_changing.3F">What's changing?</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="../File_SMAPI_compatibility.html" class="image"><img alt="" src="images/thumb/d/db/SMAPI_compatibility.png/300px-SMAPI_compatibility.png" decoding="async" width="300" height="186" class="thumbimage" srcset="/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/450px-SMAPI_compatibility.png 1.5x, /mediawiki/images/thumb/d/db/SMAPI_compatibility.png/600px-SMAPI_compatibility.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="../File_SMAPI_compatibility.html" class="internal" title="Enlarge"></a></div>SMAPI compatibility over time. The SMAPI 2.0 release appears as a small bump in October 2017, and SMAPI 3.0 was released alongside Stardew Valley 1.4.</div></div></div>
+<p>The <a href="../Modding_Modder_Guide/APIs/Content.html" title="Modding:Modder Guide/APIs/Content">content interception API</a> (<i>i.e.</i> <samp>IAssetLoader</samp> and <samp>IAssetEditor</samp>) was introduced five years ago in <a rel="nofollow" class="external text" href="../../external.html?link=https://github.com/Pathoschild/SMAPI/blob/develop/docs/release-notes-archived.md#20">SMAPI 2.0.0</a>. Since then it's become one of the most important parts of SMAPI; for example, it's the basis for Content Patcher which is now the backbone for 41.1% of all mods. However, the API has remained essentially unchanged since its introduction and it doesn't account for all the use cases that apply today.
+</p><p>SMAPI 4.0.0 is the release that fixes that. This completely redesigns the content API:
+</p>
+<ul><li>The API is now fully discoverable through <samp>helper</samp>, just like any other API. That makes it much more intuitive for mod authors.</li>
+<li>Load operations are no longer always exclusive, since that led to frequent mod conflicts. Instead you can now specify the priority for each load operation.</li>
+<li>The API no longer hides locale handling — <samp>Data/Bundles</samp> and <samp>Data/Bundles.fr-FR</samp> are <i>not</i> equivalent (though you can still apply locale-agnostic changes if needed).</li>
+<li>Added content pack labels, which let you indicate that your mod is loading/editing an asset on behalf of a content pack. This is reflected in logged messages to simplify troubleshooting, and avoid every error being reported to the framework mod author.</li>
+<li>Added edit priority, which lets you finetune compatibility with other mods or edits.</li></ul>
+<p>SMAPI 4.0.0 also adds compatibility with Stardew Valley 1.6 and drops all deprecated APIs.
+</p>
+<h3><span id="Is_this_the_modapocalypse?"></span><span class="mw-headline" id="Is_this_the_modapocalypse.3F">Is this the modapocalypse?</span></h3>
+<p>Nope. Although this is a major change, significant efforts will be undertaken to minimize the impact:
+</p>
+<ul><li>the old content API will be supported for a long time with increasingly prominent warnings in the SMAPI console about its deprecation and removal;</li>
+<li>pull requests will be submitted to update affected open-source mods;</li>
+<li>unofficial updates will be created for mods which haven't updated officially by the time SMAPI 4.0.0 was released;</li>
+<li>the changes will be actively communicated and documented to modders.</li></ul>
+<p>All of this means that the 4.0.0 release should have minimal impact on mod compatibility, despite the scope of the changes.
+</p>
+<h3><span class="mw-headline" id="How_to_update_your_mod">How to update your mod</span></h3>
+<p>You don't need to comb through your code manually. SMAPI can tell you if you're using a deprecated API:
+</p>
+<ol><li>SMAPI will show deprecation messages in the console window (the exact format changes depending on the deprecation level, but you can just search for your mod name):<br /><a href="../File_Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.html" class="image"><img alt="Modding - updating deprecated SMAPI code - deprecation warnings.png" src="images/8/8a/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.png" decoding="async" width="1121" height="17" /></a></li>
+<li>When you look at the code in Visual Studio, you'll see build warnings with hints on how to fix them:<br /><a href="../File_Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.html" class="image"><img alt="Modding - updating deprecated SMAPI code - deprecation intellisense.png" src="images/2/20/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.png" decoding="async" width="709" height="114" /></a></li>
+<li>You can refer to the following sections on how to replace specific APIs.</li></ol>
+<h2><span class="mw-headline" id="Breaking_changes">Breaking changes</span></h2>
+<h3><span class="mw-headline" id="Content_interception_API">Content interception API</span></h3>
+<p>The <samp>IAssetLoader</samp> and <samp>IAssetEditor</samp> interfaces no longer exist. Both have been replaced by the <a href="../Modding_Modder_Guide/APIs/Events.html#Content.AssetRequested" title="Modding:Modder Guide/APIs/Events"><samp>AssetRequested</samp> event</a>, which is used like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;inheritdoc /&gt;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="c1">/// &lt;inheritdoc cref=&quot;IContentEvents.AssetRequested&quot; /&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;sender&quot;&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;e&quot;&gt;The event arguments.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">&quot;Portraits/Abigail&quot;</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">LoadFromModFile</span><span class="p">&lt;</span><span class="n">Texture2D</span><span class="p">&gt;(</span><span class="s">&quot;assets/portrait.png&quot;</span><span class="p">,</span> <span class="n">AssetLoadPriority</span><span class="p">.</span><span class="n">Medium</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Migration tips:
+</p>
+<ul><li><b>Asset names are no longer locale-agnostic.</b> For example, <samp>Data/Bundles</samp> and <samp>Data/Bundles.fr-FR</samp> are <i>not</i> equivalent. If you want to apply changes regardless of the locale, check <samp>e.NameWithoutLocale</samp> instead of <samp>e.Name</samp>.</li>
+<li>The old <samp>CanLoad</samp>/<samp>Load</samp> and <samp>CanEdit</samp>/<samp>Edit</samp> methods have been combined, so you only need to check any conditional logic once.</li>
+<li>When loading an asset, you must now specify an <samp>AssetLoadPriority</samp> which decides what happens if two loads apply to the same asset. <samp>AssetLoadPriority.Exclusive</samp> matches the previous behavior, but may reduce mod compatibility. See the IntelliSense documentation for more info.</li></ul>
+<p>See the <a href="../Modding_Modder_Guide/APIs/Events.html#Content" title="Modding:Modder Guide/APIs/Events">content events</a> and <a href="../Modding_Modder_Guide/APIs/Content.html" title="Modding:Modder Guide/APIs/Content">content API</a> docs for more info on how to use them.
+</p>
+<h3><span class="mw-headline" id="Content_loading_API">Content loading API</span></h3>
+<p>The <samp>helper.Content</samp> API was confusing, since game content assets and mod files are handled differently. Some methods had an optional <samp>ContentSource</samp> parameter (which was easy to forget to specify), some only made sense for one or the other (like <samp>GetActualAssetKey</samp>), and the documentation tried to handle both by being more abstract. All assets it loaded were also non-cached, which could affect performance and prevented features like the <a href="#Content_interception_API">new content events</a>.
+</p><p>It's been split into two APIs to fix those issues:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>field
+</th>
+<th>notes
+</th></tr>
+<tr>
+<td><samp>helper.ModContent</samp>
+</td>
+<td>Loads assets from your mod's files. These aren't cached (similar to <samp>helper.Content</samp>), so they'll be re-read from the file each time you load them.
+</td></tr>
+<tr>
+<td><samp>helper.GameContent</samp>
+</td>
+<td>Loads assets from the game's <samp>Content</samp> folder or <a href="#Content_interception_API">content interception</a>. Assets loaded through this <i>are</i> cached (which is needed for the <a href="#Content_interception_API">new content events</a> to work).
+</td></tr></tbody></table>
+<p>Here's how to migrate existing methods &amp; properties:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>old code
+</th>
+<th>migration
+</th></tr>
+<tr>
+<td><samp>helper.Content.AssetEditors</samp><br /><samp>helper.Content.AssetLoaders</samp>
+</td>
+<td>Use <a href="../Modding_Modder_Guide/APIs/Events.html#Content" title="Modding:Modder Guide/APIs/Events">content events</a>.
+</td></tr>
+<tr>
+<td><samp>helper.Content.CurrentLocale</samp><br /><samp>helper.Content.CurrentLocaleConstant</samp><br /><samp>helper.Content.InvalidateCache</samp>
+</td>
+<td>Use <samp>helper.GameContent</samp>.
+</td></tr>
+<tr>
+<td><samp>helper.Content.GetActualAssetKey</samp>
+</td>
+<td>Use <samp>helper.ModContent.GetInternalAssetName</samp>, and remove the <samp>ContentSource</samp> parameter. This returns an <samp>IAssetName</samp> value; you can update your code to use that, or get the string value using its <samp>Name</samp> property.
+</td></tr>
+<tr>
+<td><samp>helper.Content.GetPatchHelper</samp>
+</td>
+<td>Use <samp>helper.GameContent</samp> or <samp>helper.ModContent</samp>.
+</td></tr>
+<tr>
+<td><samp>helper.Content.Load</samp>
+</td>
+<td>Use <samp>helper.GameContent</samp> or <samp>helper.ModContent</samp>, and remove the <samp>ContentSource</samp> parameter.
+<p>Migration notes:
+</p>
+<ul><li>When loading assets from <samp>helper.GameContent</samp>, don't add a <samp>.xnb</samp> file extension (<i>e.g.</i> use <code>"Portraits/Abigail"</code> instead of <code>"Portraits/Abigail.xnb"</code>). You're requesting an <a href="../Modding_Modder_Guide/APIs/Content.html#What.27s_an_.27asset_name.27.3F" title="Modding:Modder Guide/APIs/Content">asset name</a>, not a file path.</li>
+<li>When loading XNB files from <samp>helper.ModContent</samp>, <i>do</i> add the <samp>.xnb</samp> file extension. It's no longer added automatically if needed.</li></ul>
+</td></tr>
+<tr>
+<td><samp>helper.Content.NormalizeAssetName</samp>
+</td>
+<td>Use <samp>helper.GameContent.ParseAssetName</samp> instead. This returns an <samp>IAssetName</samp> value; you can update your code to use that, or get the string value using its <samp>Name</samp> property.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Other_API_changes">Other API changes</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>old code
+</th>
+<th>migration
+</th></tr>
+<tr>
+<td><samp>Constants.ExecutionPath</samp>
+</td>
+<td>Use <samp>Constants.GamePath</samp> instead.
+</td></tr>
+<tr>
+<td><samp>GameFramework.Xna</samp>
+</td>
+<td>XNA is no longer used on any platform; you can safely remove any XNA-specific logic.
+</td></tr>
+<tr>
+<td><samp>helper.ConsoleCommands.Trigger</samp>
+</td>
+<td>No longer supported. You can use <a href="../Modding_Modder_Guide/APIs/Integrations.html#Mod-provided_APIs" title="Modding:Modder Guide/APIs/Integrations">mod-provided APIs</a> to integrate with other mods.
+</td></tr>
+<tr>
+<td><samp>IAssetInfo.AssetName</samp>
+</td>
+<td>Use <samp>Name</samp> instead, which includes built-in utility methods to work with asset names.
+</td></tr>
+<tr>
+<td><samp>IAssetInfo.AssetNameEquals(name)</samp>
+</td>
+<td>Use <samp>Name.IsEquivalentTo(name)</samp> instead.
+</td></tr>
+<tr>
+<td><samp>IContentPack.LoadAsset</samp>
+</td>
+<td>Use <samp>ModContent.Load</samp> instead.
+</td></tr>
+<tr>
+<td><samp>IContentPack.GetActualAssetKey</samp>
+</td>
+<td>Use <samp>ModContent.GetInternalAssetName</samp>, and remove the <samp>ContentSource</samp> parameter. This returns an <samp>IAssetName</samp> value; you can update your code to use that, or get the string value using its <samp>Name</samp> property.
+</td></tr>
+<tr>
+<td><samp>PerScreen&lt;T&gt;(null)</samp>
+</td>
+<td>Passing null into the constructor is deprecated. You should call <code>PerScreen&lt;T&gt;()</code> to use the default value.
+</td></tr>
+<tr>
+<td><samp>SDate.Season</samp>
+</td>
+<td><samp>SDate.Season</samp> is now the <samp>Season</samp> enum, to match the game. Use <samp>SDate.SeasonKey</samp> if you absolutely need the string form.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Nullable_reference_type_annotations">Nullable reference type annotations</span></h3>
+<p>SMAPI is now fully annotated for <a rel="nofollow" class="external text" href="../../external.html?link=https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references">C# nullable reference types</a>. This has no effect unless you enable them in your mod code too. If your mod does use them, you'll get helpful code analysis warnings from Visual Studio to avoid errors when null values are possible or prohibited. For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// warning: dereference of a possibly null reference</span>
+<span class="kt">var</span> <span class="n">api</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModRegistry</span><span class="p">.</span><span class="n">GetApi</span><span class="p">&lt;</span><span class="n">IExampleApi</span><span class="p">&gt;(</span><span class="s">&quot;SomeExample.ModId&quot;</span><span class="p">);</span>
+<span class="n">api</span><span class="p">.</span><span class="n">DoSomething</span><span class="p">();</span>
+
+<span class="c1">// warning: possible null reference argument for parameter &#39;message&#39;</span>
+<span class="kt">string?</span> <span class="n">message</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="n">Monitor</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</pre></div>
+<p>Due to limitations in C# nullable reference annotations, three edge cases aren't fully covered. These are documented in the code IntelliSense too.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>API
+</th>
+<th>edge cases
+</th></tr>
+<tr>
+<td><samp>helper.Reflection</samp>
+</td>
+<td>The <samp>GetField</samp>, <samp>GetMethod</samp>, and <samp>GetProperty</samp> methods are marked as returning non-nullable values, since they throw an error if the target isn't found. That doesn't change if you explicitly set <code>required: false</code>; in that case make sure to null-check the result anyway.
+</td></tr>
+<tr>
+<td><samp>helper.Translation</samp>
+</td>
+<td>Translations are marked non-nullable, since they fallback to the "<i>missing translation: key</i>" message. That doesn't change if you explicitly call <code>translation.UsePlaceholder(false)</code>; in that case make sure to null-check the text anyway if needed.
+</td></tr>
+<tr>
+<td><samp>PerScreen&lt;T&gt;</samp>
+</td>
+<td>This uses the nullability you set, like <code>PerScreen&lt;string&gt;</code> for a non-nullable string or <code>PerScreen&lt;string?&gt;</code> for a nullable one. However, calling the empty constructor with a non-nullable reference type will still create null values since that's the type default. For example:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">perScreen</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PerScreen</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<span class="kt">string</span> <span class="k">value</span> <span class="p">=</span> <span class="n">perScreen</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span> <span class="c1">// returns null despite being marked non-nullable</span>
+</pre></div>
+<p>To avoid that, you can specify the default non-nullable value to use:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">perScreen</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PerScreen</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(()</span> <span class="p">=&gt;</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+<span class="kt">string</span> <span class="k">value</span> <span class="p">=</span> <span class="n">perScreen</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span> <span class="c1">// returns empty string by default</span>
+</pre></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Removed_dependencies">Removed dependencies</span></h3>
+<p>SMAPI 4.0.0 no longer uses these dependencies, so they won't be loaded automatically anymore. If you manually referenced one of them, either copy it into your mod's release folder or see the suggested migration below.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>dependency
+</th>
+<th>suggested migration
+</th></tr>
+<tr>
+<td><samp>System.Configuration.ConfigurationManager.dll</samp>
+</td>
+<td>Use the <a href="../Modding_Modder_Guide/APIs/Config.html" title="Modding:Modder Guide/APIs/Config">standard config API</a> instead.
+</td></tr>
+<tr>
+<td><samp>System.Runtime.Caching.dll</samp>
+</td>
+<td>Avoid <samp>MemoryCache</samp> or <samp>ObjectCache</samp> from this DLL, which can negatively impact performance for players. If you need cache expiry, consider the faster (but still heavy) <a rel="nofollow" class="external text" href="../../external.html?link=https://docs.microsoft.com/en-us/dotnet/core/extensions/caching"><samp>Microsoft.Extensions.Caching.Memory</samp></a> package instead. Otherwise consider using a plain <samp>Dictionary&lt;TKey, TValue&gt;</samp> field instead.
+</td></tr>
+<tr>
+<td><samp>System.Security.Permissions.dll</samp>
+</td>
+<td>This is usually only needed for <samp>System.Configuration.ConfigurationManager.dll</samp> or <samp>System.Runtime.Caching.dll</samp>, and can probably be removed.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Other_changes">Other changes</span></h2>
+<h3><span class="mw-headline" id="Raw_texture_data">Raw texture data</span></h3>
+<p>Creating <samp>Texture2D</samp> instances is expensive and involves calls to the graphics card. When you don't need a full texture, you can now load it as <samp>IRawTextureData</samp> instead, and then pass that into SMAPI APIs that accept textures.
+</p><p>For example, you no longer need to create a <samp>Texture2D</samp> instance to apply an image overlay:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object?</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">&quot;Portraits/Abigail&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+        <span class="p">{</span>
+            <span class="n">IRawTextureData</span> <span class="n">ribbon</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">IRawTextureData</span><span class="p">&gt;(</span><span class="s">&quot;assets/ribbon.png&quot;</span><span class="p">);</span>
+            <span class="n">asset</span><span class="p">.</span><span class="n">AsImage</span><span class="p">().</span><span class="n">PatchImage</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">ribbon</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<!-- 
+NewPP limit report
+Cached time: 20240410222413
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.052 seconds
+Real time usage: 1.667 seconds
+Preprocessor visited node count: 84/1000000
+Post‐expand include size: 206/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 6993/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.694      1 Template:Modder_compatibility_header
+100.00%    1.694      1 -total
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:13688-0!canonical and timestamp 20240410222411 and revision id 149792
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="index9991-3.html?title=Modding:Migrate_to_SMAPI_4.0&amp;oldid=149792">https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;oldid=149792</a>"</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../Category_Modding.html" title="Category:Modding">Modding</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Personal tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="index20e8-2.html?title=Special:CreateAccount&amp;returnto=Modding%3AMigrate+to+SMAPI+4.0&amp;returntoquery=mobileaction%3Dtoggle_view_desktop" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="index9ed0.html?title=Special:UserLogin&amp;returnto=Modding%3AMigrate+to+SMAPI+4.0&amp;returntoquery=mobileaction%3Dtoggle_view_desktop" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Namespaces</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-modding" class="selected"><a href="../Modding_Migrate_to_SMAPI_4.html">Modding</a></li><li id="ca-talk" class="new"><a href="../Modding_talk_Migrate_to_SMAPI_4.html?title=Modding_talk:Migrate_to_SMAPI_4.0&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variants</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Views</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="../Modding_Migrate_to_SMAPI_4.html">Read</a></li><li id="ca-viewsource" class="collapsible"><a href="indexaf34-2.html?title=Modding:Migrate_to_SMAPI_4.0&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="collapsible"><a href="../Special_History/Modding_Migrate_to_SMAPI_4.html?title=Modding:Migrate_to_SMAPI_4.0&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>More</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Search</label>
+	</h3>
+	<form action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Search Stardew Valley Wiki" title="Search Stardew Valley Wiki [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:Search">
+			<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Visit the main page" class="mw-wiki-logo" href="../Stardew_Valley_Wiki.html"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Navigation</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="../Stardew_Valley_Wiki.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-Admin-noticeboard"><a href="../Stardew_Valley_Wiki_Admin_noticeboard.html">Admin noticeboard</a></li><li id="n-Help-Editing"><a href="../Help_Editing.html">Help Editing</a></li><li id="n-randompage"><a href="../Pepper_Seeds.html" title="Load a random page [x]" accesskey="x">Random page</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Official Links" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Official Links-label" role="navigation" 
+	 >
+	<h3 id="p-Official Links-label">
+		<span>Official Links</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Official-Site"><a href="../../external.html?link=https://stardewvalley.net/" rel="nofollow">Official Site</a></li><li id="n-Official-Forums"><a href="../../external.html?link=https://forums.stardewvalley.net/" rel="nofollow">Official Forums</a></li><li id="n-Official-Merchandise"><a href="../../external.html?link=https://www.stardewvalley.net/shop/" rel="nofollow">Official Merchandise</a></li><li id="n-Discord"><a href="../../external.html?link=https://discord.com/invite/stardewvalley" rel="nofollow">Discord</a></li><li id="n-Reddit"><a href="../../external.html?link=https://www.reddit.com/r/StardewValley" rel="nofollow">Reddit</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/Modding_Migrate_to_SMAPI_4.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/Modding_Migrate_to_SMAPI_4.html" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="../Special_Upload.html" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="index9991-3.html?title=Modding:Migrate_to_SMAPI_4.0&amp;oldid=149792" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="indexb4fb.html?title=Modding:Migrate_to_SMAPI_4.0&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cargopagevalueslink"><a href="indexfded-2.html?title=Modding:Migrate_to_SMAPI_4.0&amp;action=pagevalues" rel="cargo-pagevalues">Page values</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> This page was last edited on 23 August 2023, at 09:53.</li>
+		<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="../Stardew_Valley_Wiki_Privacy_policy.html" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="footer-places-about"><a href="../Stardew_Valley_Wiki_About.html" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="../Stardew_Valley_Wiki_General_disclaimer.html" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li>
+		<li id="footer-places-mobileview"><a href="index1e55-2.html?title=Modding:Migrate_to_SMAPI_4.0&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="../../external.html?link=https://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.052","walltime":"1.667","ppvisitednodes":{"value":84,"limit":1000000},"postexpandincludesize":{"value":206,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":6993,"limit":5000000},"timingprofile":["100.00%    1.694      1 Template:Modder_compatibility_header","100.00%    1.694      1 -total"]},"cachereport":{"timestamp":"20240410222413","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":181});});</script></body>
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&mobileaction=toggle_view_desktop by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 03:37:12 GMT -->
+</html>
