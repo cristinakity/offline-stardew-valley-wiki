@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>View source for Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"e913c682dd0f720a35989b5c","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Migrate_to_SMAPI_4.0","wgTitle":"Migrate to SMAPI 4.0","wgCurRevisionId":149792,"wgRevisionId":0,"wgArticleId":13688,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Migrate_to_SMAPI_4.0","wgRelevantArticleId":13688,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,
+"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},
+"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.ui.input":"ready","mediawiki.ui.checkbox":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","mobile.messageBox.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="load85db.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="You do not have permission to edit this page, for the following reason:"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="View source for Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0"/>
+<meta property="og:description" content="←Index"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2023-08-23T09:53:11Z"/>
+<meta property="article:published_time" content="2023-08-23T09:53:11Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="View source for Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←Index"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"View source for Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki","headline":"View source for Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki","mainEntityOfPage":"View source for Modding:Migrate to SMAPI 4.0","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_4.0","url":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_4.0","description":"\u2190Index","dateModified":"2023-08-23T09:53:11Z","datePublished":"2023-08-23T09:53:11Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Migrate_to_SMAPI_4_0 rootpage-Modding_Migrate_to_SMAPI_4_0 stable skin-minerva action-edit skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Special:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Modding%3AMigrate+to+SMAPI+4.0&amp;returntoquery=action%3Dedit" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:MobileOptions&amp;returnto=Modding%3AMigrate+to+SMAPI+4.0" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">View source for Modding:Migrate to SMAPI 4.0</h1>
+					<div class="tagline"></div>
+				</div>
+				
+				
+				
+				<div class="minerva__subtitle">← <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0" title="Modding:Migrate to SMAPI 4.0">Modding:Migrate to SMAPI 4.0</a></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Stardew_Valley_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Stardew Valley Wiki:Users (page does not exist)">Users</a>.
+</p>
+</div><hr />
+<p>You can view and copy the source of this page.
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-monospace mw-ui-input" lang="en" dir="ltr" name="wpTextbox1">←[[Modding:Index|Index]]
+
+{{Modder compatibility header}}
+
+This page explains how to update your C# mod code for compatibility with SMAPI 4.0.0. (Content packs aren't affected.) You can update mods now, there's no need to wait for the 4.0 release itself.
+
+==Overview==
+===What's changing?===
+[[File:SMAPI compatibility.png|thumb|SMAPI compatibility over time. The SMAPI 2.0 release appears as a small bump in October 2017, and SMAPI 3.0 was released alongside Stardew Valley 1.4.]]
+
+The [[Modding:Modder Guide/APIs/Content|content interception API]] (''i.e.'' &lt;samp>IAssetLoader&lt;/samp> and &lt;samp>IAssetEditor&lt;/samp>) was introduced five years ago in [https://github.com/Pathoschild/SMAPI/blob/develop/docs/release-notes-archived.md#20 SMAPI 2.0.0]. Since then it's become one of the most important parts of SMAPI; for example, it's the basis for Content Patcher which is now the backbone for 41.1% of all mods. However, the API has remained essentially unchanged since its introduction and it doesn't account for all the use cases that apply today.
+
+SMAPI 4.0.0 is the release that fixes that. This completely redesigns the content API:
+* The API is now fully discoverable through &lt;samp>helper&lt;/samp>, just like any other API. That makes it much more intuitive for mod authors.
+* Load operations are no longer always exclusive, since that led to frequent mod conflicts. Instead you can now specify the priority for each load operation.
+* The API no longer hides locale handling — &lt;samp>Data/Bundles&lt;/samp> and &lt;samp>Data/Bundles.fr-FR&lt;/samp> are ''not'' equivalent (though you can still apply locale-agnostic changes if needed).
+* Added content pack labels, which let you indicate that your mod is loading/editing an asset on behalf of a content pack. This is reflected in logged messages to simplify troubleshooting, and avoid every error being reported to the framework mod author.
+* Added edit priority, which lets you finetune compatibility with other mods or edits.
+
+SMAPI 4.0.0 also adds compatibility with Stardew Valley 1.6 and drops all deprecated APIs.
+
+===Is this the modapocalypse?===
+Nope. Although this is a major change, significant efforts will be undertaken to minimize the impact:
+* the old content API will be supported for a long time with increasingly prominent warnings in the SMAPI console about its deprecation and removal;
+* pull requests will be submitted to update affected open-source mods;
+* unofficial updates will be created for mods which haven't updated officially by the time SMAPI 4.0.0 was released;
+* the changes will be actively communicated and documented to modders.
+
+All of this means that the 4.0.0 release should have minimal impact on mod compatibility, despite the scope of the changes.
+
+===How to update your mod===
+You don't need to comb through your code manually. SMAPI can tell you if you're using a deprecated API:
+
+# SMAPI will show deprecation messages in the console window (the exact format changes depending on the deprecation level, but you can just search for your mod name):&lt;br />[[File:Modding - updating deprecated SMAPI code - deprecation warnings.png]]
+# When you look at the code in Visual Studio, you'll see build warnings with hints on how to fix them:&lt;br />[[File:Modding - updating deprecated SMAPI code - deprecation intellisense.png]]
+# You can refer to the following sections on how to replace specific APIs.
+
+==Breaking changes==
+===Content interception API===
+The &lt;samp>IAssetLoader&lt;/samp> and &lt;samp>IAssetEditor&lt;/samp> interfaces no longer exist. Both have been replaced by the [[Modding:Modder Guide/APIs/Events#Content.AssetRequested|&lt;samp>AssetRequested&lt;/samp> event]], which is used like this:
+
+&lt;syntaxhighlight lang="c#">
+public class ModEntry : Mod
+{
+    /// &lt;inheritdoc />
+    public override void Entry(IModHelper helper)
+    {
+        this.Helper.Events.Content.AssetRequested += this.OnAssetRequested;
+    }
+
+
+    /// &lt;inheritdoc cref="IContentEvents.AssetRequested" />
+    /// &lt;param name="sender">The event sender.&lt;/param>
+    /// &lt;param name="e">The event arguments.&lt;/param>
+    private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
+    {
+        if (e.Name.IsEquivalentTo("Portraits/Abigail"))
+        {
+            e.LoadFromModFile&lt;Texture2D>("assets/portrait.png", AssetLoadPriority.Medium);
+        }
+    }
+}
+&lt;/syntaxhighlight>
+
+Migration tips:
+* '''Asset names are no longer locale-agnostic.''' For example, &lt;samp>Data/Bundles&lt;/samp> and &lt;samp>Data/Bundles.fr-FR&lt;/samp> are ''not'' equivalent. If you want to apply changes regardless of the locale, check &lt;samp>e.NameWithoutLocale&lt;/samp> instead of &lt;samp>e.Name&lt;/samp>.
+* The old &lt;samp>CanLoad&lt;/samp>/&lt;samp>Load&lt;/samp> and &lt;samp>CanEdit&lt;/samp>/&lt;samp>Edit&lt;/samp> methods have been combined, so you only need to check any conditional logic once.
+* When loading an asset, you must now specify an &lt;samp>AssetLoadPriority&lt;/samp> which decides what happens if two loads apply to the same asset. &lt;samp>AssetLoadPriority.Exclusive&lt;/samp> matches the previous behavior, but may reduce mod compatibility. See the IntelliSense documentation for more info.
+
+See the [[Modding:Modder Guide/APIs/Events#Content|content events]] and [[Modding:Modder Guide/APIs/Content|content API]] docs for more info on how to use them.
+
+===Content loading API===
+The &lt;samp>helper.Content&lt;/samp> API was confusing, since game content assets and mod files are handled differently. Some methods had an optional &lt;samp>ContentSource&lt;/samp> parameter (which was easy to forget to specify), some only made sense for one or the other (like &lt;samp>GetActualAssetKey&lt;/samp>), and the documentation tried to handle both by being more abstract. All assets it loaded were also non-cached, which could affect performance and prevented features like the [[#Content interception API|new content events]].
+
+It's been split into two APIs to fix those issues:
+
+{| class="wikitable"
+|-
+! field
+! notes
+|-
+| &lt;samp>helper.ModContent&lt;/samp>
+| Loads assets from your mod's files. These aren't cached (similar to &lt;samp>helper.Content&lt;/samp>), so they'll be re-read from the file each time you load them.
+|-
+| &lt;samp>helper.GameContent&lt;/samp>
+| Loads assets from the game's &lt;samp>Content&lt;/samp> folder or [[#Content interception API|content interception]]. Assets loaded through this ''are'' cached (which is needed for the [[#Content interception API|new content events]] to work).
+|}
+
+Here's how to migrate existing methods &amp; properties:
+
+{| class="wikitable"
+|-
+! old code
+! migration
+|-
+| &lt;samp>helper.Content.AssetEditors&lt;/samp>&lt;br />&lt;samp>helper.Content.AssetLoaders&lt;/samp>
+| Use [[Modding:Modder Guide/APIs/Events#Content|content events]].
+|-
+| &lt;samp>helper.Content.CurrentLocale&lt;/samp>&lt;br />&lt;samp>helper.Content.CurrentLocaleConstant&lt;/samp>&lt;br />&lt;samp>helper.Content.InvalidateCache&lt;/samp>
+| Use &lt;samp>helper.GameContent&lt;/samp>.
+|-
+| &lt;samp>helper.Content.GetActualAssetKey&lt;/samp>
+| Use &lt;samp>helper.ModContent.GetInternalAssetName&lt;/samp>, and remove the &lt;samp>ContentSource&lt;/samp> parameter. This returns an &lt;samp>IAssetName&lt;/samp> value; you can update your code to use that, or get the string value using its &lt;samp>Name&lt;/samp> property.
+|-
+| &lt;samp>helper.Content.GetPatchHelper&lt;/samp>
+| Use &lt;samp>helper.GameContent&lt;/samp> or &lt;samp>helper.ModContent&lt;/samp>.
+|-
+| &lt;samp>helper.Content.Load&lt;/samp>
+| Use &lt;samp>helper.GameContent&lt;/samp> or &lt;samp>helper.ModContent&lt;/samp>, and remove the &lt;samp>ContentSource&lt;/samp> parameter.
+
+Migration notes:
+* When loading assets from &lt;samp>helper.GameContent&lt;/samp>, don't add a &lt;samp>.xnb&lt;/samp> file extension (''e.g.'' use &lt;code>"Portraits/Abigail"&lt;/code> instead of &lt;code>"Portraits/Abigail.xnb"&lt;/code>). You're requesting an [[Modding:Modder Guide/APIs/Content#What's an 'asset name'?|asset name]], not a file path.
+* When loading XNB files from &lt;samp>helper.ModContent&lt;/samp>, ''do'' add the &lt;samp>.xnb&lt;/samp> file extension. It's no longer added automatically if needed.
+|-
+| &lt;samp>helper.Content.NormalizeAssetName&lt;/samp>
+| Use &lt;samp>helper.GameContent.ParseAssetName&lt;/samp> instead. This returns an &lt;samp>IAssetName&lt;/samp> value; you can update your code to use that, or get the string value using its &lt;samp>Name&lt;/samp> property.
+|}
+
+===Other API changes===
+{| class="wikitable"
+|-
+! old code
+! migration
+|-
+| &lt;samp>Constants.ExecutionPath&lt;/samp>
+| Use &lt;samp>Constants.GamePath&lt;/samp> instead.
+|-
+| &lt;samp>GameFramework.Xna&lt;/samp>
+| XNA is no longer used on any platform; you can safely remove any XNA-specific logic.
+|-
+| &lt;samp>helper.ConsoleCommands.Trigger&lt;/samp>
+| No longer supported. You can use [[Modding:Modder Guide/APIs/Integrations#Mod-provided APIs|mod-provided APIs]] to integrate with other mods.
+|-
+| &lt;samp>IAssetInfo.AssetName&lt;/samp>
+| Use &lt;samp>Name&lt;/samp> instead, which includes built-in utility methods to work with asset names.
+|-
+| &lt;samp>IAssetInfo.AssetNameEquals(name)&lt;/samp>
+| Use &lt;samp>Name.IsEquivalentTo(name)&lt;/samp> instead.
+|-
+| &lt;samp>IContentPack.LoadAsset&lt;/samp>
+| Use &lt;samp>ModContent.Load&lt;/samp> instead.
+|-
+| &lt;samp>IContentPack.GetActualAssetKey&lt;/samp>
+| Use &lt;samp>ModContent.GetInternalAssetName&lt;/samp>, and remove the &lt;samp>ContentSource&lt;/samp> parameter. This returns an &lt;samp>IAssetName&lt;/samp> value; you can update your code to use that, or get the string value using its &lt;samp>Name&lt;/samp> property.
+|-
+| &lt;samp>PerScreen&amp;lt;T&amp;gt;(null)&lt;/samp>
+| Passing null into the constructor is deprecated. You should call &lt;code>PerScreen&amp;lt;T&amp;gt;()&lt;/code> to use the default value.
+|-
+| &lt;samp>SDate.Season&lt;/samp>
+| &lt;samp>SDate.Season&lt;/samp> is now the &lt;samp>Season&lt;/samp> enum, to match the game. Use &lt;samp>SDate.SeasonKey&lt;/samp> if you absolutely need the string form.
+|}
+
+===Nullable reference type annotations===
+SMAPI is now fully annotated for [https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references C# nullable reference types]. This has no effect unless you enable them in your mod code too. If your mod does use them, you'll get helpful code analysis warnings from Visual Studio to avoid errors when null values are possible or prohibited. For example:
+&lt;syntaxhighlight lang="c#">
+// warning: dereference of a possibly null reference
+var api = this.Helper.ModRegistry.GetApi&lt;IExampleApi>("SomeExample.ModId");
+api.DoSomething();
+
+// warning: possible null reference argument for parameter 'message'
+string? message = null;
+this.Monitor.Log(message);
+&lt;/syntaxhighlight>
+
+Due to limitations in C# nullable reference annotations, three edge cases aren't fully covered. These are documented in the code IntelliSense too.
+{| class="wikitable"
+|-
+! API
+! edge cases
+|-
+| &lt;samp>helper.Reflection&lt;/samp>
+| The &lt;samp>GetField&lt;/samp>, &lt;samp>GetMethod&lt;/samp>, and &lt;samp>GetProperty&lt;/samp> methods are marked as returning non-nullable values, since they throw an error if the target isn't found. That doesn't change if you explicitly set &lt;code>required: false&lt;/code>; in that case make sure to null-check the result anyway.
+|-
+| &lt;samp>helper.Translation&lt;/samp>
+| Translations are marked non-nullable, since they fallback to the "''missing translation: key''" message. That doesn't change if you explicitly call &lt;code>translation.UsePlaceholder(false)&lt;/code>; in that case make sure to null-check the text anyway if needed.
+|-
+| &lt;samp>PerScreen&amp;lt;T&amp;gt;&lt;/samp>
+| This uses the nullability you set, like &lt;code>PerScreen&amp;lt;string&amp;gt;&lt;/code> for a non-nullable string or &lt;code>PerScreen&amp;lt;string?&amp;gt;&lt;/code> for a nullable one. However, calling the empty constructor with a non-nullable reference type will still create null values since that's the type default. For example:
+&lt;syntaxhighlight lang="c#">
+var perScreen = new PerScreen&lt;string>();
+string value = perScreen.Value; // returns null despite being marked non-nullable
+&lt;/syntaxhighlight>
+
+To avoid that, you can specify the default non-nullable value to use:
+&lt;syntaxhighlight lang="c#">
+var perScreen = new PerScreen&lt;string>(() => string.Empty);
+string value = perScreen.Value; // returns empty string by default
+&lt;/syntaxhighlight>
+|}
+
+===Removed dependencies===
+SMAPI 4.0.0 no longer uses these dependencies, so they won't be loaded automatically anymore. If you manually referenced one of them, either copy it into your mod's release folder or see the suggested migration below.
+
+{| class="wikitable"
+|-
+! dependency
+! suggested migration
+|-
+| &lt;samp>System.Configuration.ConfigurationManager.dll&lt;/samp>
+| Use the [[Modding:Modder Guide/APIs/Config|standard config API]] instead.
+|-
+| &lt;samp>System.Runtime.Caching.dll&lt;/samp>
+| Avoid &lt;samp>MemoryCache&lt;/samp> or &lt;samp>ObjectCache&lt;/samp> from this DLL, which can negatively impact performance for players. If you need cache expiry, consider the faster (but still heavy) [https://docs.microsoft.com/en-us/dotnet/core/extensions/caching &lt;samp>Microsoft.Extensions.Caching.Memory&lt;/samp>] package instead. Otherwise consider using a plain &lt;samp>Dictionary&amp;lt;TKey, TValue&amp;gt;&lt;/samp> field instead.
+|-
+| &lt;samp>System.Security.Permissions.dll&lt;/samp>
+| This is usually only needed for &lt;samp>System.Configuration.ConfigurationManager.dll&lt;/samp> or &lt;samp>System.Runtime.Caching.dll&lt;/samp>, and can probably be removed.
+|}
+
+==Other changes==
+===Raw texture data===
+Creating &lt;samp>Texture2D&lt;/samp> instances is expensive and involves calls to the graphics card. When you don't need a full texture, you can now load it as &lt;samp>IRawTextureData&lt;/samp> instead, and then pass that into SMAPI APIs that accept textures.
+
+For example, you no longer need to create a &lt;samp>Texture2D&lt;/samp> instance to apply an image overlay:
+&lt;syntaxhighlight lang="c#">
+private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
+{
+    if (e.Name.IsEquivalentTo("Portraits/Abigail"))
+    {
+        e.Edit(asset =>
+        {
+            IRawTextureData ribbon = this.Helper.ModContent.Load&lt;IRawTextureData>("assets/ribbon.png");
+            asset.AsImage().PatchImage(source: ribbon);
+        });
+    }
+}
+&lt;/syntaxhighlight>
+
+[[Category:Modding]]
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Template used on this page:
+</p></div><ul>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Template:Modder_compatibility_header" title="Template:Modder compatibility header">Template:Modder compatibility header</a> (<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Template:Modder_compatibility_header&amp;action=edit" title="Template:Modder compatibility header">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0" title="Modding:Migrate to SMAPI 4.0">Modding:Migrate to SMAPI 4.0</a>.</p>
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0">https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;action=edit&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":289});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:56 GMT -->
+</html>
+		

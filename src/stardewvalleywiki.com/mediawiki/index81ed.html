@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Module:NPCDispositions&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 06:56:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>View source for Module:NPCDispositions - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"9ec872f593095232477bc5dc","wgCSPNonce":!1,"wgCanonicalNamespace":"Module","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":828,"wgPageName":"Module:NPCDispositions","wgTitle":"NPCDispositions","wgCurRevisionId":147358,"wgRevisionId":0,"wgArticleId":14260,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"Scribunto","wgRelevantPageName":"Module:NPCDispositions","wgRelevantArticleId":14260,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search":!1,
+"nearby":!1,"watchlist":!1,"tagline":!1},"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["ext.scribunto.edit","mediawiki.action.edit.collapsibleFooter","site","mediawiki.page.startup","mediawiki.page.ready","skins.vector.legacy.html","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="loade33b.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="load52c0.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load2f5e.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="You do not have permission to edit this page, for the following reasons:"/>
+<link rel="shortcut icon" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki Atom feed" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<meta property="og:title" content="View source for Module:NPCDispositions - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Module:NPCDispositions"/>
+<meta property="og:description" content="This module gives access to four data items that are stored in the data file NPCDispositions.xnb: gender, rudeness/politeness, birth season, and birth day."/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2023-04-08T20:07:37Z"/>
+<meta property="article:published_time" content="2023-04-08T20:07:37Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="View source for Module:NPCDispositions - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="This module gives access to four data items that are stored in the data file NPCDispositions.xnb: gender, rudeness/politeness, birth season, and birth day."/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"View source for Module:NPCDispositions - Stardew Valley Wiki","headline":"View source for Module:NPCDispositions - Stardew Valley Wiki","mainEntityOfPage":"View source for Module:NPCDispositions","identifier":"https:\/\/stardewvalleywiki.com\/Module:NPCDispositions","url":"https:\/\/stardewvalleywiki.com\/Module:NPCDispositions","description":"This module gives access to four data items that are stored in the data file NPCDispositions.xnb: gender, rudeness\/politeness, birth season, and birth day.","dateModified":"2023-04-08T20:07:37Z","datePublished":"2023-04-08T20:07:37Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-828 ns-subject page-Module_NPCDispositions rootpage-Module_NPCDispositions skin-vector action-edit minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"><div id="mw-dismissablenotice-anonplace"></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv class=\"mw-dismissable-notice\"\u003E\u003Cdiv class=\"mw-dismissable-notice-close\"\u003E[\u003Ca tabindex=\"0\" role=\"button\"\u003Edismiss\u003C/a\u003E]\u003C/div\u003E\u003Cdiv class=\"mw-dismissable-notice-body\"\u003E\u003Cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cp\u003E\u003Cb\u003ENew editors: Please read \u003Ca href=\"/Help:Editing\" title=\"Help:Editing\"\u003EHelp:Editing\u003C/a\u003E before diving in!\u003C/b\u003E\n\u003Cbr /\u003E\u003Cb\u003EChanges made without adding a \"History\" section will be removed. Thank you for your understanding.\u003C/b\u003E\n\u003C/p\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="en">View source for Module:NPCDispositions</h1>
+	<div id="bodyContent" class="mw-body-content">
+		
+		<div id="contentSub">← <a href="../../external.html?link=https://stardewvalleywiki.com/Module:NPCDispositions" title="Module:NPCDispositions">Module:NPCDispositions</a></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reasons:
+</p>
+<ul class="permissions-errors">
+<li>The action you have requested is limited to users in the group: <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Stardew_Valley_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Stardew Valley Wiki:Users (page does not exist)">Users</a>.</li>
+<li>You do not have permission to edit pages in the <strong>Module</strong> namespace.</li>
+</ul><hr />
+<p>You can view and copy the source of this page.
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-monospace" lang="en" dir="ltr" name="wpTextbox1">local p = {}
+
+function p.getgender(frame)	
+
+	local npc = frame.args[1]
+	
+	local female = {"Abigail", "アビゲイル", "애비게일", "Абигейл", "阿比盖尔", "Emily", "エミリー", "에밀리", "Эмили", "艾米丽", "Haley", "ヘイリー", "헤일리", "Хэйли", "海莉", "Leah", "リア", "레아", "Лея", "莉亚", "Maru", "マル", "마루", "Мару", "玛鲁", "Penny", "ペニー", "페니", "Пенни", "潘妮", "Caroline", "キャロライン", "캐롤라인", "Кэролайн", "卡洛琳", "Evelyn", "エブリン", "에블린", "Эвелин", "艾芙琳", "Jas", "ジャス", "재스", "Джас", "贾斯", "Jodi", "ジョディ", "조디", "Джоди", "乔迪", "Marnie", "マーニー", "마니", "Марни", "玛妮", "Pam", "パム", "팸", "Пэм", "潘姆", "Robin", "Robine", "ロビン", "로빈", "Робин", "罗宾", "Sandy", "サンディ", "샌디", "Сэнди", "桑迪"}
+
+	for k, v in pairs(female) do
+		if v == npc then return "female" end
+	end
+	
+	local male = {"Alex", "アレックス", "알렉스", "Алекс", "亚历克斯", "Elliott", "エリオット", "엘리엇", "Эллиот", "艾利欧特", "Harvey", "ハーヴィー", "하비", "Харви", "哈维", "Leo", "Léo", "レオ", "레오", "Лео", "雷欧", "Sam", "サム", "샘", "Сэм", "山姆", "Sebastian", "セバスチャン", "세바스찬", "Себастиан", "塞巴斯蒂安", "Shane", "シェーン", "셰인", "Шейн", "谢恩", "Clint", "クリント", "클린트", "Клинт", "克林特", "Demetrius", "ディメトリウス", "드미트리우스", "Деметриус", "德米特里厄斯", "George", "ジョージ", "조지", "Джордж", "乔治", "Gus", "ガス", "거스", "Гас", "格斯", "Kent", "ケント", "켄트", "Кент", "肯特", "Krobus", "クロバス", "크로버스", "Кробус", "科罗布斯", "Lewis", "ルイス", "루이스", "Льюис", "刘易斯", "Linus", "ライナス", "라이너스", "Линус", "莱纳斯", "Pierre", "ピエール", "피에르", "Пьер", "皮埃尔", "Vincent", "ヴィンセント", "빈센트", "Винсент", "文森特", "Willy", "ウィリー", "윌리", "Вилли", "威利", "Wizard", "Zauberer", "Rasmodius", "Sorcier", "Mago", "魔術師", "마법사", "Varázsló", "Feiticeiro", "Волшебник", "Büyücü", "法师"}
+	
+	for k, v in pairs(male) do
+		if v == npc then return "male" end
+	end
+	return "undefined"
+end
+
+function p.getdisposition(frame)
+	
+	local npc = frame.args[1]
+	
+	local rude = {"Abigail", "アビゲイル", "애비게일", "Абигейл", "阿比盖尔", "Alex", "アレックス", "알렉스", "Алекс", "亚历克斯", "Clint", "クリント", "클린트", "Клинт", "克林特", "George", "ジョージ", "조지", "Джордж", "乔治", "Haley", "ヘイリー", "헤일리", "Хэйли", "海莉", "Pam", "パム", "팸", "Пэм", "潘姆", "Sebastian", "セバスチャン", "세바스찬", "Себастиан", "塞巴斯蒂安", "Shane", "マーニー", "셰인", "Шейн", "谢恩", "Wizard", "Zauberer", "Rasmodius", "Sorcier", "Mago", "魔術師", "마법사", "Varázsló", "Feiticeiro", "Волшебник", "Büyücü", "法师"}
+	
+	for k, v in pairs(rude) do
+		if v == npc then return "rude" end
+	end	
+	return "polite"
+end
+
+function p.getbirthseason(frame)
+	
+	local npc = frame.args[1]
+
+	local spring = {"Kent", "ケント", "켄트", "Кент", "肯特", "Lewis", "ルイス", "루이스", "Льюис", "刘易斯", "Vincent", "ヴィンセント", "빈센트", "Винсент", "文森特", "Haley", "ヘイリー", "헤일리", "Хэйли", "海莉", "Pam", "パム", "팸", "Пэм", "潘姆", "Shane", "マーニー", "셰인", "Шейн", "谢恩", "Pierre", "ピエール", "피에르", "Пьер", "皮埃尔", "Emily", "エミリー", "에밀리", "Эмили", "艾米丽"}
+	
+	for k, v in pairs(spring) do
+		if v == npc then return "spring" end
+	end
+
+	local summer = {"Leo", "Léo", "レオ", "레오", "Лео", "雷欧", "Jas", "ジャス", "재스", "Джас", "贾斯", "Gus", "ガス", "거스", "Гас", "格斯", "Maru", "マル", "마루", "Мару", "玛鲁", "Alex", "アレックス", "알렉스", "Алекс", "亚历克斯", "Sam", "サム", "샘", "Сэм", "山姆", "Demetrius", "ディメトリウス", "드미트리우스", "Деметриус", "德米特里厄斯", "Dwarf", "Zwerg", "Enano", "Nain", "Nano", "ドワーフ", "드워프", "Törpe", "Anão", "Дварф", "Cüce", "矮人", "Willy", "ウィリー", "윌리", "Вилли", "威利"}
+	
+	for k, v in pairs(summer) do
+		if v == npc then return "summer" end
+	end
+
+	local fall = {"Penny", "ペニー", "페니", "Пенни", "潘妮", "Elliott", "エリオット", "엘리엇", "Эллиот", "艾利欧特", "Jodi", "ジョディ", "조디", "Джоди", "乔迪", "Abigail", "アビゲイル", "애비게일", "Абигейл", "阿比盖尔", "Sandy", "サンディ", "샌디", "Сэнди", "桑迪", "Marnie", "マーニー", "마니", "Марни", "玛妮", "Robin", "Robine", "ロビン", "로빈", "Робин", "罗宾", "George", "ジョージ", "조지", "Джордж", "乔治"}
+	
+	for k, v in pairs(fall) do
+		if v == npc then return "fall" end
+	end
+
+	local winter = {"Krobus", "クロバス", "크로버스", "Кробус", "科罗布斯", "Linus", "ライナス", "라이너스", "Линус", "莱纳斯", "Caroline", "キャロライン", "캐롤라인", "Кэролайн", "卡洛琳", "Sebastian", "セバスチャン", "세바스찬", "Себастиан", "塞巴斯蒂安", "Harvey", "ハーヴィー", "하비", "Харви", "哈维", "Wizard", "Zauberer", "Rasmodius", "Sorcier", "Mago", "魔術師", "마법사", "Varázsló", "Feiticeiro", "Волшебник", "Büyücü", "法师", "Evelyn", "エブリン", "에블린", "Эвелин", "艾芙琳", "Leah", "リア", "레아", "Лея", "莉亚", "Clint", "クリント", "클린트", "Клинт", "克林特"}
+	
+	for k, v in pairs(winter) do
+		if v == npc then return "winter" end
+	end
+	return ""
+end
+
+function p.getbirthday(frame)
+
+	local npc = frame.args[1]
+	
+	if (npc == "Krobus" or npc == "クロバス" or npc == "크로버스" or npc == "Кробус" or npc == "科罗布斯") then return "1"
+	elseif (npc == "Penny" or npc == "ペニー" or npc == "페니" or npc == "Пенни" or npc == "潘妮") then return "2"
+	elseif (npc == "Linus" or npc == "ライナス" or npc == "라이너스" or npc == "Линус" or npc == "莱纳斯") then return "3"
+	elseif (npc == "Kent" or npc == "ケント" or npc == "켄트" or npc == "Кент" or npc == "肯特" or npc == "Jas" or npc == "ジャス" or npc == "재스" or npc == "Джас" or npc == "贾斯") then return "4"
+	elseif (npc == "Elliott" or npc == "エリオット" or npc == "엘리엇" or npc == "Эллиот" or npc == "艾利欧特") then return "5"
+	elseif (npc == "Lewis" or npc == "ルイス" or npc == "루이스" or npc == "Льюис" or npc == "刘易斯" or npc == "Caroline" or npc == "キャロライン" or npc == "캐롤라인" or npc == "Кэролайн" or npc == "卡洛琳") then return "7"
+	elseif (npc == "Gus" or npc == "ガス" or npc == "거스" or npc == "Гас" or npc == "格斯") then return "8"
+	elseif (npc == "Vincent" or npc == "ヴィンセント" or npc == "빈센트" or npc == "Винсент" or npc == "文森特" or npc == "Maru" or npc == "マル" or npc == "마루" or npc == "Мару" or npc == "玛鲁" or npc == "Sebastian" or npc == "セバスチャン" or npc == "세바스찬" or npc == "Себастиан" or npc == "塞巴斯蒂安") then return "10"
+	elseif (npc == "Jodi" or npc == "ジョディ" or npc == "조디" or npc == "Джоди" or npc == "乔迪") then return "11"
+	elseif (npc == "Abigail" or npc == "アビゲイル" or npc == "애비게일" or npc == "Абигейл" or npc == "阿比盖尔" or npc == "Alex" or npc == "アレックス" or npc == "알렉스" or npc == "Алекс" or npc == "亚历克斯") then return "13"
+	elseif (npc == "Haley" or npc == "ヘイリー" or npc == "헤일리" or npc == "Хэйли" or npc == "海莉" or npc == "Harvey" or npc == "ハーヴィー" or npc == "하비" or npc == "Харви" or npc == "哈维") then return "14"
+	elseif (npc == "Sandy" or npc == "サンディ" or npc == "샌디" or npc == "Сэнди" or npc == "桑迪") then return "15"
+	elseif (npc == "Sam" or npc == "サム" or npc == "샘" or npc == "Сэм" or npc == "山姆" or npc == "Wizard" or npc == "Zauberer" or npc == "Rasmodius" or npc == "Sorcier" or npc == "Mago" or npc == "魔術師" or npc == "마법사" or npc == "Varázsló" or npc == "Feiticeiro" or npc == "Волшебник" or npc == "Büyücü" or npc == "法师") then return "17"
+	elseif (npc == "Marnie" or npc == "マーニー" or npc == "마니" or npc == "Марни" or npc == "玛妮" or npc == "Pam" or npc == "パム" or npc == "팸" or npc == "Пэм" or npc == "潘姆") then return "18"
+	elseif (npc == "Demetrius" or npc == "ディメトリウス" or npc == "드미트리우스" or npc == "Деметриус" or npc == "德米特里厄斯") then return "19"
+	elseif (npc == "Evelyn" or npc == "エブリン" or npc == "에블린" or npc == "Эвелин" or npc == "艾芙琳" or npc == "Shane" or npc == "マーニー" or npc == "셰인" or npc == "Шейн" or npc == "谢恩") then return "20"
+	elseif (npc == "Robin" or npc == "Robine" or npc == "ロビン" or npc == "로빈" or npc == "Робин" or npc == "罗宾") then return "21"
+	elseif (npc == "Dwarf" or npc == "Zwerg" or npc == "Enano" or npc == "Nain" or npc == "Nano" or npc == "ドワーフ" or npc == "드워프" or npc == "Törpe" or npc == "Anão" or npc == "Дварф" or npc == "Cüce" or npc == "矮人") then return "22"
+	elseif (npc == "Leah" or npc == "リア" or npc == "레아" or npc == "Лея" or npc == "莉亚") then return "23"
+	elseif (npc == "George" or npc == "ジョージ" or npc == "조지" or npc == "Джордж" or npc == "乔治" or npc == "Willy" or npc == "ウィリー" or npc == "윌리" or npc == "Вилли" or npc == "威利") then return "24"
+	elseif (npc == "Pierre" or npc == "ピエール" or npc == "피에르" or npc == "Пьер" or npc == "皮埃尔" or npc == "Clint" or npc == "クリント" or npc == "클린트" or npc == "Клинт" or npc == "克林特" or npc == "Leo" or npc == "Léo" or npc == "レオ" or npc == "레오" or npc == "Лео" or npc == "雷欧") then return "26"
+	elseif (npc == "Emily" or npc == "エミリー" or npc == "에밀리" or npc == "Эмили" or npc == "艾米丽") then return "27"
+	else return ""
+	end
+end
+
+return p
+</textarea><div id="mw-scribunto-console"></div><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Template used on this page:
+</p></div><ul>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Module:NPCDispositions/doc" title="Module:NPCDispositions/doc">Module:NPCDispositions/doc</a> (<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Module:NPCDispositions/doc&amp;action=edit" title="Module:NPCDispositions/doc">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="../../external.html?link=https://stardewvalleywiki.com/Module:NPCDispositions" title="Module:NPCDispositions">Module:NPCDispositions</a>.</p>
+</div><div class="printfooter">Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/Module:NPCDispositions">https://stardewvalleywiki.com/Module:NPCDispositions</a>"</div>
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Personal tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:CreateAccount&amp;returnto=Module%3ANPCDispositions&amp;returntoquery=action%3Dedit" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Module%3ANPCDispositions&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Namespaces</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-module" class="selected"><a href="../../external.html?link=https://stardewvalleywiki.com/Module:NPCDispositions" title="View the module page">Module</a></li><li id="ca-talk" class="new"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Module_talk:NPCDispositions&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variants</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Views</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible"><a href="../../external.html?link=https://stardewvalleywiki.com/Module:NPCDispositions">Read</a></li><li id="ca-viewsource" class="collapsible selected"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Module:NPCDispositions&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="collapsible"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Module:NPCDispositions&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>More</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Search</label>
+	</h3>
+	<form action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Search Stardew Valley Wiki" title="Search Stardew Valley Wiki [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:Search">
+			<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Visit the main page" class="mw-wiki-logo" href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Navigation</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-Admin-noticeboard"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Admin_noticeboard">Admin noticeboard</a></li><li id="n-Help-Editing"><a href="../../external.html?link=https://stardewvalleywiki.com/Help:Editing">Help Editing</a></li><li id="n-randompage"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Official Links" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Official Links-label" role="navigation" 
+	 >
+	<h3 id="p-Official Links-label">
+		<span>Official Links</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Official-Site"><a href="../../external.html?link=https://stardewvalley.net/" rel="nofollow">Official Site</a></li><li id="n-Official-Forums"><a href="../../external.html?link=https://forums.stardewvalley.net/" rel="nofollow">Official Forums</a></li><li id="n-Official-Merchandise"><a href="../../external.html?link=https://www.stardewvalley.net/shop/" rel="nofollow">Official Merchandise</a></li><li id="n-Discord"><a href="../../external.html?link=https://discord.com/invite/stardewvalley" rel="nofollow">Discord</a></li><li id="n-Reddit"><a href="../../external.html?link=https://www.reddit.com/r/StardewValley" rel="nofollow">Reddit</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:WhatLinksHere/Module:NPCDispositions" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:RecentChangesLinked/Module:NPCDispositions" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="../../external.html?link=http://stardewvalleywiki.com/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-info"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Module:NPCDispositions&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cargopagevalueslink"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Module:NPCDispositions&amp;action=pagevalues" rel="cargo-pagevalues">Page values</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li>
+		<li id="footer-places-mobileview"><a href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Module:NPCDispositions&amp;action=edit&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="../../external.html?link=https://www.mediawiki.org/"><img src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":203});});</script></body>
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Module:NPCDispositions&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 06:56:42 GMT -->
+</html>
