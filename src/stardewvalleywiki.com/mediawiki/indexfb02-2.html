@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_3.0&mobileaction=toggle_view_mobile by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"cf06ad0afcdfe4bfeb675833","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Migrate_to_SMAPI_3.0","wgTitle":"Migrate to SMAPI 3.0","wgCurRevisionId":136201,"wgRevisionId":136201,"wgArticleId":8106,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Migrate_to_SMAPI_3.0","wgRelevantArticleId":8106,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,
+"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},
+"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="loadc65b.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cext.pygments%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="description" content="←Index"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="api-resultc989.json?action=webapp-manifest"/>
+<link rel="shortcut icon" href="extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api-result251f.xml?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_3.0"/>
+<meta property="og:description" content="←Index"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2022-03-26T05:53:02Z"/>
+<meta property="article:published_time" content="2022-03-26T05:53:02Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←Index"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki","headline":"Modding:Migrate to SMAPI 3.0 - Stardew Valley Wiki","mainEntityOfPage":"Modding:Migrate to SMAPI 3.0","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_3.0","url":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_3.0","description":"\u2190Index","dateModified":"2022-03-26T05:53:02Z","datePublished":"2022-03-26T05:53:02Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Migrate_to_SMAPI_3_0 rootpage-Modding_Migrate_to_SMAPI_3_0 stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki.html" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../Pepper_Seeds.html#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="index015f.html?title=Special:UserLogin&amp;returnto=Modding%3AMigrate+to+SMAPI+3.0&amp;returntoquery=mobileaction%3Dtoggle_view_mobile" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="index46a3.html?title=Special:MobileOptions&amp;returnto=Modding%3AMigrate+to+SMAPI+3.0" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki_About.html" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki_General_disclaimer.html" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../Stardew_Valley_Wiki.html">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Modding:Migrate to SMAPI 3.0</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="#" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector disabled"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="Language">Language</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="index8c36.html?title=Special:UserLogin&amp;returnto=Modding%3AMigrate+to+SMAPI+3.0" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="Watch">Watch</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="index3fdd.html?title=Modding:Migrate_to_SMAPI_3.0&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="Edit the lead section of this page">Edit</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><p>←<a href="../Modding_Index.html" title="Modding:Index">Index</a>
+</p>
+<div style="border: 1px solid orange; border-left: 1em solid orange; padding: 0.5em 1em; border-radius: 5px;">
+<p><b>This page is for mod authors. Players: see <a href="../Modding_Mod_compatibility.html" title="Modding:Mod compatibility">Modding:Mod compatibility</a> instead.</b>
+</p>
+</div>
+<p>This page explains how to update your mod code for compatibility with SMAPI 3.0. See also <a href="../Modding_Migrate_to_Stardew_Valley_1-4.html" title="Modding:Migrate to Stardew Valley 1.4">Modding:Migrate to Stardew Valley 1.4</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What.27s_changing.3F"><span class="tocnumber">1.1</span> <span class="toctext">What's changing?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Is_this_the_modapocalypse.3F"><span class="tocnumber">1.2</span> <span class="toctext">Is this the modapocalypse?</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#How_to_update_your_mod"><span class="tocnumber">1.3</span> <span class="toctext">How to update your mod</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Changes"><span class="tocnumber">2</span> <span class="toctext">Changes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Mod_build_package_updated"><span class="tocnumber">2.1</span> <span class="toctext">Mod build package updated</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Mods_are_loaded_earlier"><span class="tocnumber">2.2</span> <span class="toctext">Mods are loaded earlier</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#API_changes"><span class="tocnumber">2.3</span> <span class="toctext">API changes</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Event_changes"><span class="tocnumber">2.4</span> <span class="toctext">Event changes</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Manifest_version_format"><span class="tocnumber">2.5</span> <span class="toctext">Manifest version format</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Version_format"><span class="tocnumber">2.6</span> <span class="toctext">Version format</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Overview">Overview</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<h3 class="in-block"><span id="What's_changing?"></span><span class="mw-headline" id="What.27s_changing.3F">What's changing?</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="../File_SMAPI_compatibility.html" class="image"><noscript><img alt="" src="images/thumb/d/db/SMAPI_compatibility.png/300px-SMAPI_compatibility.png" decoding="async" width="300" height="186" class="thumbimage"></noscript><span class="lazy-image-placeholder" style="width: 300px;height: 186px;" data-src="/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/300px-SMAPI_compatibility.png" data-alt="" data-width="300" data-height="186" data-class="thumbimage"> </span></a>  <div class="thumbcaption"><div class="magnify"><a href="../File_SMAPI_compatibility.html" class="internal" title="Enlarge"></a></div>SMAPI compatibility over time. The SMAPI 2.0 release in October 2017 appears as a small bump. The Stardew Valley 1.3 release in May 2018 appears as a sudden cliff.</div></div></div>
+<p>Events are arguably the most important and most visible part of SMAPI, but they've stayed essentially unchanged since SMAPI 0.40. New events have been added organically since then, but the event system has always been separate from the rest of SMAPI — they're inconsistent, have some weird behaviours (like <samp>MenuEvents.MenuChanged</samp> not being raised when a menu is closed), aren't available through the same helper as every other API, and there are some glaring omissions in the available events.
+</p><p>SMAPI 3.0 is the release that fixes all that. This release...
+</p>
+<ul><li>Completely rewrites the event engine to make events more efficient and enable events that weren't possible before.</li>
+<li>Makes events much more consistent: they're now fully compliant with the <a rel="nofollow" class="external text" href="../../external.html?link=https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/event">.NET design guidelines</a>, have predictable and descriptive names, have consistent event handler signatures, and have clear documentation.</li>
+<li>All events are now accessible through <code>helper.Events</code>, so they're discoverable like any other SMAPI API.</li>
+<li>Weird behaviours and overlapping events have been eliminated.</li>
+<li>Many new events have been added.</li>
+<li>Events now have relevant event arguments.</li>
+<li>Each mod now has its own event instances, to support features like mod message targeting.</li></ul>
+<p>SMAPI 3.0 also adds compatibility with Stardew Valley 1.4, drops all deprecated APIs, and makes a number of other changes listed below.
+</p>
+<h3 class="in-block"><span id="Is_this_the_modapocalypse?"></span><span class="mw-headline" id="Is_this_the_modapocalypse.3F">Is this the modapocalypse?</span></h3>
+<p>Nope. Although this is a major change, significant efforts were undertaken to minimize the impact:
+</p>
+<ul><li>the old events were supported for a long time with increasingly prominent warnings in the SMAPI console about their deprecation and removal;</li>
+<li>pull requests were submitted to update affected open-source mods;</li>
+<li>unofficial updates were created for mods which haven't updated officially by the time SMAPI 3.0 is released;</li>
+<li>the changes were actively communicated and documented to modders.</li></ul>
+<p>In addition, the current target is <i>at least</i> 95% compatibility for open-source mods before SMAPI 3.0 is released. All of this means that the 3.0 release should have minimal impact on mod compatibility, despite the scope of the changes.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="How_to_update_your_mod">How to update your mod</span></h3>
+<p>You don't need to comb through your code manually. SMAPI can tell you if you're using a deprecated interface:
+</p>
+<ol><li>Use the latest <a rel="nofollow" class="external text" href="../../external.html?link=https://smapi.io/">SMAPI for developers</a> download. This will show deprecation messages in the console:<br><a href="../File_Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.html" class="image"><noscript><img alt="Modding - updating deprecated SMAPI code - deprecation warnings.png" src="images/8/8a/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.png" decoding="async" width="1121" height="17"></noscript><span class="lazy-image-placeholder" style="width: 1121px;height: 17px;" data-src="/mediawiki/images/8/8a/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.png" data-alt="Modding - updating deprecated SMAPI code - deprecation warnings.png" data-width="1121" data-height="17"> </span></a></li>
+<li>When you look at the code, you'll see a deprecation warning with a hint of how to fix it:<br><a href="../File_Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.html" class="image"><noscript><img alt="Modding - updating deprecated SMAPI code - deprecation intellisense.png" src="images/2/20/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.png" decoding="async" width="709" height="114"></noscript><span class="lazy-image-placeholder" style="width: 709px;height: 114px;" data-src="/mediawiki/images/2/20/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.png" data-alt="Modding - updating deprecated SMAPI code - deprecation intellisense.png" data-width="709" data-height="114"> </span></a></li>
+<li>You can refer to the following sections on how to replace specific interfaces.</li></ol>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Changes">Changes</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<h3 class="in-block"><span class="mw-headline" id="Mod_build_package_updated">Mod build package updated</span></h3>
+<p>Update the <a rel="nofollow" class="external text" href="../../external.html?link=https://www.nuget.org/packages/Pathoschild.Stardew.ModBuildConfig">mod build package</a> for compatibility with SMAPI 3.0.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Mods_are_loaded_earlier">Mods are loaded earlier</span></h3>
+<p>Mods were previously loaded right before the first <samp>UpdateTicking</samp> event, which is too late for some changes like intercepting core assets. SMAPI 3.0 loads them much earlier, before the game is fully initialised. <b>Do not depend on game fields like <samp>Game1.objectInformation</samp> having a valid value in your <samp>Entry</samp> method!</b> You can use the <samp>GameLaunched</samp> event for that instead. See <a href="../Modding_Modder_Guide/APIs/Mod_structure.html#Mod_entry" title="Modding:Modder Guide/APIs/Mod structure">Modding:Modder Guide/APIs/Mod structure#Mod entry</a> for more info.
+</p><p>For example, let's say you have code like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="n">Config</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">ReadConfig</span><span class="p">&lt;</span><span class="n">ModConfig</span><span class="p">&gt;();</span>
+
+   <span class="n">CommunityCenter</span> <span class="n">communityCenter</span> <span class="p">=</span> <span class="p">(</span><span class="n">CommunityCenter</span><span class="p">)</span><span class="n">Game1</span><span class="p">.</span><span class="n">getLocationFromName</span><span class="p">(</span><span class="s">"CommunityCenter"</span><span class="p">);</span>
+   <span class="k">this</span><span class="p">.</span><span class="n">VaultRoomID</span> <span class="p">=</span> <span class="n">communityCenter</span><span class="p">.</span><span class="n">getAreaNumberFromName</span><span class="p">(</span><span class="s">"Vault"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>That code fails in SMAPI 3.0, because no locations are loaded yet. This code could be rewritten like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="n">Config</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">ReadConfig</span><span class="p">&lt;</span><span class="n">ModConfig</span><span class="p">&gt;();</span>
+
+   <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">GameLoop</span><span class="p">.</span><span class="n">GameLaunched</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnGameLaunched</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">void</span> <span class="nf">OnGameLaunched</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">GameLaunchedEventArgs</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">CommunityCenter</span> <span class="n">communityCenter</span> <span class="p">=</span> <span class="p">(</span><span class="n">CommunityCenter</span><span class="p">)</span><span class="n">Game1</span><span class="p">.</span><span class="n">getLocationFromName</span><span class="p">(</span><span class="s">"CommunityCenter"</span><span class="p">);</span>
+   <span class="k">this</span><span class="p">.</span><span class="n">VaultRoomID</span> <span class="p">=</span> <span class="n">communityCenter</span><span class="p">.</span><span class="n">getAreaNumberFromName</span><span class="p">(</span><span class="s">"Vault"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 class="in-block"><span class="mw-headline" id="API_changes">API changes</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>old API
+</th>
+<th>→
+</th>
+<th>new API
+</th>
+<th>conversion notes
+</th></tr>
+<tr>
+<td><samp>helper.GetContentPacks</samp>
+</td>
+<td>→
+</td>
+<td><samp>helper.ContentPacks.GetOwned</samp>
+</td>
+<td>Identical usage.
+</td></tr>
+<tr>
+<td><samp>helper.CreateTransitionalContentPack</samp>
+</td>
+<td>→
+</td>
+<td><samp>helper.ContentPacks.CreateTemporary</samp>
+</td>
+<td>Identical usage. (This was a temporary method for the transition to <a href="../Modding_Content_packs.html" title="Modding:Content packs">SMAPI content packs</a>, but a few mods have permanent use cases for it.)
+</td></tr>
+<tr>
+<td><samp>assetData.AsDictionary&lt;T, T&gt;().Set</samp>
+</td>
+<td>→
+</td>
+<td><samp>assetData.AsDictionary&lt;T, T&gt;().Data</samp>
+</td>
+<td>The <samp>Set</samp> methods caused a lot of confusion and were of limited usefulness. You can access the dictionary directly using the <samp>Data</samp> field instead.
+</td></tr>
+<tr>
+<td><samp>SemanticVersion.Build</samp>
+</td>
+<td>→
+</td>
+<td><samp>SemanticVersion.PrereleaseTag</samp>
+</td>
+<td>Identical usage.
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Event_changes">Event changes</span></h3>
+<p>The former events are removed in SMAPI 3.0. Here's how to convert them to the new events under <samp>this.Helper.Events</samp>. This list only shows equivalent events in SMAPI 3.0; see <a href="../Modding_Modder_Guide/APIs/Events.html" title="Modding:Modder Guide/APIs/Events"><i>events</i> in the modder guide</a> for a full list.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>old event
+</th>
+<th>→
+</th>
+<th>new event
+</th>
+<th>conversion notes
+</th></tr>
+<tr style="vertical-align: top;" id="ContentEvents.AfterLocaleChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#ContentEvents.AfterLocaleChanged">#</a></small><span id="ContentEvents.AfterLocaleChanged"></span><samp>ContentEvents.AfterLocaleChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><i>none</i>
+</td>
+<td>Mods very rarely need to handle this, since SMAPI's translation and content APIs do. Since the locale can only change on the title screen, mods that used this can check once the save is loaded instead.
+</td></tr>
+<tr style="vertical-align: top;" id="ControlEvents.ControllerButtonPressed">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#ControlEvents.ControllerButtonPressed">#</a></small><span id="ControlEvents.ControllerButtonPressed"></span><span id="ControlEvents.ControllerButtonReleased"></span><span id="ControlEvents.ControllerTriggerPressed"></span><span id="ControlEvents.ControllerTriggerReleased"></span><samp>ControlEvents.ControllerButtonPressed</samp><br><samp>ControlEvents.ControllerButtonReleased</samp><br><samp>ControlEvents.ControllerTriggerPressed</samp><br><samp>ControlEvents.ControllerTriggerReleased</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonPressed" title="Modding:Modder Guide/APIs/Events">Input.ButtonPressed</a></samp><br><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonReleased" title="Modding:Modder Guide/APIs/Events">Input.ButtonReleased</a></samp>
+</td>
+<td>Mostly equivalent.
+<ul><li>Remove <samp>e.PlayerIndex</samp> (this was always <samp>PlayerIndex.One</samp>).</li>
+<li>Change <samp>e.ButtonPressed</samp> to <samp>e.Button</samp>, which is now an <a href="../Modding_Modder_Guide/APIs/Utilities.html#Input" title="Modding:Modder Guide/APIs/Utilities"><samp>SButton</samp></a> value.</li>
+<li>Remove <samp>e.Value</samp> for trigger events.</li></ul>
+</td></tr>
+<tr style="vertical-align: top;" id="ControlEvents.KeyboardChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#ControlEvents.KeyboardChanged">#</a></small><span id="ControlEvents.KeyboardChanged"></span><samp>ControlEvents.KeyboardChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonPressed" title="Modding:Modder Guide/APIs/Events">Input.ButtonPressed</a></samp><br><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonReleased" title="Modding:Modder Guide/APIs/Events">Input.ButtonReleased</a></samp>
+</td>
+<td>Not directly equivalent; may need to rewrite affected code.
+</td></tr>
+<tr style="vertical-align: top;" id="ControlEvents.KeyPressed">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#ControlEvents.KeyPressed">#</a></small><span id="ControlEvents.KeyPressed"></span><span id="ControlEvents.KeyReleased"></span><samp>ControlEvents.KeyPressed</samp><br><samp>ControlEvents.KeyReleased</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonPressed" title="Modding:Modder Guide/APIs/Events">Input.ButtonPressed</a></samp><br><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonReleased" title="Modding:Modder Guide/APIs/Events">Input.ButtonReleased</a></samp>
+</td>
+<td>Mostly equivalent.
+<ul><li>Change <samp>e.KeyPressed</samp> to <samp>e.Button</samp>, which is now an <a href="../Modding_Modder_Guide/APIs/Utilities.html#Input" title="Modding:Modder Guide/APIs/Utilities"><samp>SButton</samp></a> value.</li></ul>
+</td></tr>
+<tr style="vertical-align: top;" id="ControlEvents.MouseChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#ControlEvents.MouseChanged">#</a></small><span id="ControlEvents.MouseChanged"></span><samp>ControlEvents.MouseChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonPressed" title="Modding:Modder Guide/APIs/Events">Input.ButtonPressed</a></samp><br><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonReleased" title="Modding:Modder Guide/APIs/Events">Input.ButtonReleased</a></samp><br><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.CursorMoved" title="Modding:Modder Guide/APIs/Events">Input.CursorMoved</a></samp><br><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.MouseWheelScrolled" title="Modding:Modder Guide/APIs/Events">Input.MouseWheelScrolled</a></samp>
+</td>
+<td>Not directly equivalent; may need to rewrite affected code.
+</td></tr>
+<tr style="vertical-align: top;" id="GameEvents.EighthUpdateTick">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GameEvents.EighthUpdateTick">#</a></small><span id="GameEvents.EighthUpdateTick"></span><span id="GameEvents.FourthUpdateTick"></span><span id="GameEvents.HalfSecondTick"></span><span id="GameEvents.QuarterSecondTick"></span><span id="GameEvents.SecondUpdateTick"></span><samp>GameEvents.EighthUpdateTick</samp><br><samp>GameEvents.FourthUpdateTick</samp><br><samp>GameEvents.HalfSecondTick</samp><br><samp>GameEvents.QuarterSecondTick</samp><br><samp>GameEvents.SecondUpdateTick</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.UpdateTicked" title="Modding:Modder Guide/APIs/Events">GameLoop.UpdateTicked</a></samp>
+</td>
+<td>Mostly equivalent. You can use <code>e.IsMultipleOf</code> to choose an update rate (<samp>SecondUpdateTick</samp> = 2, <samp>FourthUpdateTick</samp> = 4, <samp>EighthUpdateTick</samp> = 8, <samp>QuarterSecondTick</samp> = 15, and <samp>HalfSecondTick</samp> = 30).
+</td></tr>
+<tr style="vertical-align: top;" id="GameEvents.FirstUpdateTick">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GameEvents.FirstUpdateTick">#</a></small><span id="GameEvents.FirstUpdateTick"></span><samp>GameEvents.FirstUpdateTick</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.GameLaunched" title="Modding:Modder Guide/APIs/Events">GameLoop.GameLaunched</a></samp>
+</td>
+<td>The new event is raised before the first update tick (the old one happened after it). To do something <i>after</i> the first update tick, use <samp>GameEvents.UpdateTicked</samp> with <samp>if (e.Ticks == 1)</samp>.
+</td></tr>
+<tr style="vertical-align: top;" id="GameEvents.UpdateTick">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GameEvents.UpdateTick">#</a></small><span id="GameEvents.UpdateTick"></span><samp>GameEvents.UpdateTick</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.UpdateTicked" title="Modding:Modder Guide/APIs/Events">GameLoop.UpdateTicked</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="GameEvents.OneSecondTick">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GameEvents.OneSecondTick">#</a></small><span id="GameEvents.OneSecondTick"></span><samp>GameEvents.OneSecondTick</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.OneSecondUpdateTicked" title="Modding:Modder Guide/APIs/Events">GameLoop.OneSecondUpdateTicked</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="GraphicsEvents.OnPostRenderEvent">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GraphicsEvents.OnPostRenderEvent">#</a></small><span id="GraphicsEvents.OnPostRenderEvent"></span><samp>GraphicsEvents.OnPostRenderEvent</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Display.Rendered" title="Modding:Modder Guide/APIs/Events">Display.Rendered</a></samp>
+</td>
+<td>Equivalent, except the new event isn't triggered during certain special cutscenes and minigames (<i>e.g.,</i> the <a href="../Sebastian.html#Six_Hearts" title="Sebastian">board game scene</a>).
+</td></tr>
+<tr style="vertical-align: top;" id="GraphicsEvents.OnPostRenderGuiEvent">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GraphicsEvents.OnPostRenderGuiEvent">#</a></small><span id="GraphicsEvents.OnPostRenderGuiEvent"></span><samp>GraphicsEvents.OnPostRenderGuiEvent</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Display.RenderedActiveMenu" title="Modding:Modder Guide/APIs/Events">Display.RenderedActiveMenu</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="GraphicsEvents.OnPostRenderHudEvent">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GraphicsEvents.OnPostRenderHudEvent">#</a></small><span id="GraphicsEvents.OnPostRenderHudEvent"></span><samp>GraphicsEvents.OnPostRenderHudEvent</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Display.RenderedHud" title="Modding:Modder Guide/APIs/Events">Display.RenderedHud</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="GraphicsEvents.OnPreRenderEvent">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GraphicsEvents.OnPreRenderEvent">#</a></small><span id="GraphicsEvents.OnPreRenderEvent"></span><samp>GraphicsEvents.OnPreRenderEvent</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Display.RenderingWorld" title="Modding:Modder Guide/APIs/Events">Display.RenderingWorld</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="GraphicsEvents.OnPreRenderGuiEvent">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GraphicsEvents.OnPreRenderGuiEvent">#</a></small><span id="GraphicsEvents.OnPreRenderGuiEvent"></span><samp>GraphicsEvents.OnPreRenderGuiEvent</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Display.RenderingActiveMenu" title="Modding:Modder Guide/APIs/Events">Display.RenderingActiveMenu</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="GraphicsEvents.OnPreRenderHudEvent">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GraphicsEvents.OnPreRenderHudEvent">#</a></small><span id="GraphicsEvents.OnPreRenderHudEvent"></span><samp>GraphicsEvents.OnPreRenderHudEvent</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Display.RenderingHud" title="Modding:Modder Guide/APIs/Events">Display.RenderingHud</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="GraphicsEvents.Resize">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#GraphicsEvents.Resize">#</a></small><span id="GraphicsEvents.Resize"></span><samp>GraphicsEvents.Resize</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Display.WindowResized" title="Modding:Modder Guide/APIs/Events">Display.WindowResized</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="InputEvents.ButtonPressed">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#InputEvents.ButtonPressed">#</a></small><span id="InputEvents.ButtonPressed"></span><span id="InputEvents.ButtonReleased"></span><samp>InputEvents.ButtonPressed</samp><br><samp>InputEvents.ButtonReleased</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonPressed" title="Modding:Modder Guide/APIs/Events">Input.ButtonPressed</a></samp><br><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Input.ButtonReleased" title="Modding:Modder Guide/APIs/Events">Input.ButtonReleased</a></samp>
+</td>
+<td>Mostly equivalent.
+<ul><li>Change <samp>e.IsActionButton</samp> to <samp>e.Button.IsActionButton()</samp>.</li>
+<li>Change <samp>e.IsUseToolButton</samp> to <samp>e.Button.IsUseToolButton()</samp>.</li>
+<li>Change <samp>e.SuppressButton</samp> to <samp>this.Helper.Input.Suppress(button)</samp>.</li></ul>
+</td></tr>
+<tr style="vertical-align: top;" id="LocationEvents.BuildingsChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#LocationEvents.BuildingsChanged">#</a></small><span id="LocationEvents.BuildingsChanged"></span><samp>LocationEvents.BuildingsChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#World.BuildingListChanged" title="Modding:Modder Guide/APIs/Events">World.BuildingListChanged</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="LocationEvents.LocationsChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#LocationEvents.LocationsChanged">#</a></small><span id="LocationEvents.LocationsChanged"></span><samp>LocationEvents.LocationsChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#World.LocationListChanged" title="Modding:Modder Guide/APIs/Events">World.LocationListChanged</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="LocationEvents.ObjectsChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#LocationEvents.ObjectsChanged">#</a></small><span id="LocationEvents.ObjectsChanged"></span><samp>LocationEvents.ObjectsChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#World.ObjectListChanged" title="Modding:Modder Guide/APIs/Events">World.ObjectListChanged</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="MenuEvents.MenuChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#MenuEvents.MenuChanged">#</a></small><span id="MenuEvents.MenuChanged"></span><span id="MenuEvents.MenuClosed"></span><samp>MenuEvents.MenuChanged</samp><br><samp>MenuEvents.MenuClosed</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Display.MenuChanged" title="Modding:Modder Guide/APIs/Events">Display.MenuChanged</a></samp>
+</td>
+<td>These caused a lot of confusion (<i>e.g.,</i> <samp>MenuEvents.MenuClosed</samp> wasn't called when a menu was closed and immediately replaced), so they've been combined into one event which is called when a menu is opened, closed, or replaced. You can check the <samp>e.OldMenu</samp> and <samp>e.NewMenu</samp> event args to know what the change is (<i>e.g.,</i> to match the old <samp>MenuEvents.MenuClosed</samp>, check <code>if (e.NewMenu == null)</code>).
+</td></tr>
+<tr style="vertical-align: top;" id="MineEvents.MineLevelChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#MineEvents.MineLevelChanged">#</a></small><span id="MineEvents.MineLevelChanged"></span><samp>MineEvents.MineLevelChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Player.Warped" title="Modding:Modder Guide/APIs/Events">Player.Warped</a></samp>
+</td>
+<td>Check <code>if (e.NewLocation is MineShaft mine)</code> to detect a mine level change (the new mine level will be <code>mine.mineLevel</code>). Although the new event is still only called for the current player, that may change in a future version; <b>make sure to check <samp>e.IsLocalPlayer</samp> if you only want to handle the current player</b>.
+</td></tr>
+<tr style="vertical-align: top;" id="MultiplayerEvents.AfterMainBroadcast">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#MultiplayerEvents.AfterMainBroadcast">#</a></small><span id="MultiplayerEvents.AfterMainBroadcast"></span><span id="MultiplayerEvents.AfterMainSync"></span><span id="MultiplayerEvents.BeforeMainBroadcast"></span><span id="MultiplayerEvents.BeforeMainSync"></span><samp>MultiplayerEvents.AfterMainBroadcast</samp><br><samp>MultiplayerEvents.AfterMainSync</samp><br><samp>MultiplayerEvents.BeforeMainBroadcast</samp><br><samp>MultiplayerEvents.BeforeMainSync</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><i>none</i>
+</td>
+<td>No known mods use these. If you need them, consider replacing <samp>Game1.multiplayer</samp> with a delegating subclass.
+</td></tr>
+<tr style="vertical-align: top;" id="PlayerEvents.InventoryChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#PlayerEvents.InventoryChanged">#</a></small><span id="PlayerEvents.InventoryChanged"></span><samp>PlayerEvents.InventoryChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Player.InventoryChanged" title="Modding:Modder Guide/APIs/Events">Player.InventoryChanged</a></samp>
+</td>
+<td>Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; <b>make sure to check <samp>e.IsLocalPlayer</samp> if you only want to handle the current player</b>.
+</td></tr>
+<tr style="vertical-align: top;" id="PlayerEvents.LeveledUp">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#PlayerEvents.LeveledUp">#</a></small><span id="PlayerEvents.LeveledUp"></span><samp>PlayerEvents.LeveledUp</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Player.LevelChanged" title="Modding:Modder Guide/APIs/Events">Player.LevelChanged</a></samp>
+</td>
+<td>Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; <b>make sure to check <samp>e.IsLocalPlayer</samp> if you only want to handle the current player</b>.
+</td></tr>
+<tr style="vertical-align: top;" id="PlayerEvents.Warped">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#PlayerEvents.Warped">#</a></small><span id="PlayerEvents.Warped"></span><samp>PlayerEvents.Warped</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Player.Warped" title="Modding:Modder Guide/APIs/Events">Player.Warped</a></samp>
+</td>
+<td>Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; <b>make sure to check <samp>e.IsLocalPlayer</samp> if you only want to handle the current player</b>.
+</td></tr>
+<tr style="vertical-align: top;" id="SaveEvents.AfterCreate">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#SaveEvents.AfterCreate">#</a></small><span id="SaveEvents.AfterCreate"></span><samp>SaveEvents.AfterCreate</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.SaveCreated" title="Modding:Modder Guide/APIs/Events">GameLoop.SaveCreated</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="SaveEvents.AfterLoad">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#SaveEvents.AfterLoad">#</a></small><span id="SaveEvents.AfterLoad"></span><samp>SaveEvents.AfterLoad</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.SaveLoaded" title="Modding:Modder Guide/APIs/Events">GameLoop.SaveLoaded</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="SaveEvents.AfterReturnToTitle">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#SaveEvents.AfterReturnToTitle">#</a></small><span id="SaveEvents.AfterReturnToTitle"></span><samp>SaveEvents.AfterReturnToTitle</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.ReturnedToTitle" title="Modding:Modder Guide/APIs/Events">GameLoop.ReturnedToTitle</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="SaveEvents.AfterSave">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#SaveEvents.AfterSave">#</a></small><span id="SaveEvents.AfterSave"></span><samp>SaveEvents.AfterSave</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.Saved" title="Modding:Modder Guide/APIs/Events">GameLoop.Saved</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="SaveEvents.BeforeCreate">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#SaveEvents.BeforeCreate">#</a></small><span id="SaveEvents.BeforeCreate"></span><samp>SaveEvents.BeforeCreate</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.SaveCreating" title="Modding:Modder Guide/APIs/Events">GameLoop.SaveCreating</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="SaveEvents.BeforeSave">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#SaveEvents.BeforeSave">#</a></small><span id="SaveEvents.BeforeSave"></span><samp>SaveEvents.BeforeSave</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.Saving" title="Modding:Modder Guide/APIs/Events">GameLoop.Saving</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="SpecialisedEvents.UnvalidatedUpdateTick">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#SpecialisedEvents.UnvalidatedUpdateTick">#</a></small><span id="SpecialisedEvents.UnvalidatedUpdateTick"></span><samp>SpecialisedEvents.UnvalidatedUpdateTick</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#Specialised.UnvalidatedUpdateTicked" title="Modding:Modder Guide/APIs/Events">Specialised.UnvalidatedUpdateTicked</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="TimeEvents.AfterDayStarted">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#TimeEvents.AfterDayStarted">#</a></small><span id="TimeEvents.AfterDayStarted"></span><samp>TimeEvents.AfterDayStarted</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.DayStarted" title="Modding:Modder Guide/APIs/Events">GameLoop.DayStarted</a></samp>
+</td>
+<td><span style="color: gray;">Equivalent.</span>
+</td></tr>
+<tr style="vertical-align: top;" id="TimeEvents.TimeOfDayChanged">
+<td style="position: relative; padding-right: 1em;"><small style="position: absolute; top: 1px; right: 1px;"><a href="#TimeEvents.TimeOfDayChanged">#</a></small><span id="TimeEvents.TimeOfDayChanged"></span><samp>TimeEvents.TimeOfDayChanged</samp>
+</td>
+<td style="vertical-align: middle;">→
+</td>
+<td><samp><a href="../Modding_Modder_Guide/APIs/Events.html#GameLoop.TimeChanged" title="Modding:Modder Guide/APIs/Events">GameLoop.TimeChanged</a></samp>
+</td>
+<td>Mostly equivalent. Change <samp>e.OldInt</samp> and <samp>e.NewInt</samp> to <samp>e.OldTime</samp> and <samp>e.NewTime</samp> respectively.
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Manifest_version_format">Manifest version format</span></h3>
+<p>The <a href="../Modding_Modder_Guide/APIs/Manifest.html" title="Modding:Modder Guide/APIs/Manifest"><samp>manifest.json</samp></a> no longer allows versions in this form:
+</p>
+<div class="mw-highlight mw-highlight-lang-js mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"Version"</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s2">"MajorVersion"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">"MinorVersion"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">"PatchVersion"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">"Build"</span><span class="o">:</span> <span class="s2">"beta"</span>
+<span class="p">}</span>
+</pre></div>
+<p>Versions should be written in the standard string form instead:
+</p>
+<div class="mw-highlight mw-highlight-lang-js mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"Version"</span><span class="o">:</span> <span class="s2">"1.0.0-beta"</span>
+</pre></div>
+<h3 class="in-block"><span class="mw-headline" id="Version_format">Version format</span></h3>
+<p>SMAPI no longer omits <code>.0</code> patch numbers when formatting versions. For example, the console now shows SMAPI 3.0.0 instead of 3.0. That's more <a rel="nofollow" class="external text" href="../../external.html?link=https://semver.org/">standard</a>, improves compatibility with external tools, and reduces player confusion.
+</p><p>This doesn't affect most mod code. You may need to update your code if you use <samp>ISemanticVersion.ToString()</samp> and compare the output to a hardcoded two-part version string.
+</p>
+
+
+
+
+</section></div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index761d.html?title=Modding:Migrate_to_SMAPI_3.0&amp;oldid=136201">https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_3.0&amp;oldid=136201</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="../Special_History/Modding_Migrate_to_SMAPI_3.html"
+				data-user-name="Pathoschild"
+				data-user-gender="unknown"
+				data-timestamp="1648273982">
+				<span>Last edited on 26 March 2022, at 05:53</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> This page was last edited on 26 March 2022, at 05:53.</li><li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../Stardew_Valley_Wiki_Privacy_policy.html" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../Stardew_Valley_Wiki_About.html" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../Stardew_Valley_Wiki_General_disclaimer.html" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="index1007.html?title=Modding:Migrate_to_SMAPI_3.0&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.109","walltime":"2.892","ppvisitednodes":{"value":1811,"limit":1000000},"postexpandincludesize":{"value":40165,"limit":2097152},"templateargumentsize":{"value":9753,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":4540,"limit":5000000},"timingprofile":["100.00% 2643.591      1 -total","  2.37%   62.773     35 Modding:Migrate_to_SMAPI_3.0/event","  0.09%    2.379      1 Template:Modder_compatibility_header"]},"cachereport":{"timestamp":"20240410175247","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":87});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_3.0&mobileaction=toggle_view_mobile by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:55 GMT -->
+</html>
+		

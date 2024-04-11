@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Game_state_queries&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>View source for Modding:Game state queries - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"1c7a5c9bef7167959a04286a","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Game_state_queries","wgTitle":"Game state queries","wgCurRevisionId":164773,"wgRevisionId":0,"wgArticleId":14540,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Game_state_queries","wgRelevantArticleId":14540,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,
+"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},
+"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.ui.input":"ready","mediawiki.ui.checkbox":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","mobile.messageBox.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="load85db.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="You do not have permission to edit this page, for the following reason:"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="View source for Modding:Game state queries - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Game_state_queries"/>
+<meta property="og:description" content="← Index"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2024-04-06T18:08:47Z"/>
+<meta property="article:published_time" content="2024-04-06T18:08:47Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="View source for Modding:Game state queries - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="← Index"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"View source for Modding:Game state queries - Stardew Valley Wiki","headline":"View source for Modding:Game state queries - Stardew Valley Wiki","mainEntityOfPage":"View source for Modding:Game state queries","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Game_state_queries","url":"https:\/\/stardewvalleywiki.com\/Modding:Game_state_queries","description":"\u2190 Index","dateModified":"2024-04-06T18:08:47Z","datePublished":"2024-04-06T18:08:47Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Game_state_queries rootpage-Modding_Game_state_queries stable skin-minerva action-edit skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Special:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Modding%3AGame+state+queries&amp;returntoquery=action%3Dedit" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:MobileOptions&amp;returnto=Modding%3AGame+state+queries" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">View source for Modding:Game state queries</h1>
+					<div class="tagline"></div>
+				</div>
+				
+				
+				
+				<div class="minerva__subtitle">← <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Game_state_queries" title="Modding:Game state queries">Modding:Game state queries</a></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Stardew_Valley_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Stardew Valley Wiki:Users (page does not exist)">Users</a>.
+</p>
+</div><hr />
+<p>You can view and copy the source of this page.
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-monospace mw-ui-input" lang="en" dir="ltr" name="wpTextbox1">← [[Modding:Index|Index]]
+
+This page documents '''game state queries''', a built-in way to specify conditions in some of the game's data assets inspired by [[Modding:Content Patcher|Content Patcher]]'s conditions.
+
+==Overview==
+===Query format===
+A query consists of a comma-delimited list of conditions in the form {{t|type}} {{o|arguments}}. The type can be prefixed with &lt;code>!&lt;/code> to negate it. The query is true if it's null/blank, or if every listed condition exists and is true. For example, &lt;code>!SEASON Spring, WEATHER Here Sun&lt;/code> is true on sunny non-[[spring]] days.
+
+'''⚠''' Game state queries are partly case-sensitive. While some values are case-insensitive (e.g. both &lt;code>SEASON Spring&lt;/code> and &lt;code>SEASON spring&lt;/code> will work), this isn't consistent. Using the exact capitalization is recommended to avoid issues.
+
+===Argument format===
+Game state queries can take space-delimited arguments. For example, &lt;code>BUILDINGS_CONSTRUCTED Here Cabins&lt;/code> has two arguments: &lt;code>Here&lt;/code> and &lt;code>Cabins&lt;/code>.
+
+If you have spaces within an argument, you can surround it with quotes to keep it together. For example, &lt;code>BUILDINGS_CONSTRUCTED Here "Junimo Hut"&lt;/code> passes &lt;code>Junimo Hut&lt;/code> as one argument. You can escape inner quotes with backslashes, like &lt;code>ANY "BUILDINGS_CONSTRUCTED Here \"Junimo Hut\""&lt;/code>.
+
+Remember that quotes and backslashes inside JSON strings need to be escaped too. For example, &lt;code>"Condition": "BUILDINGS_CONSTRUCTED Here \"Junimo Hut\""&lt;/code> will send &lt;code>BUILDINGS_CONSTRUCTED Here "Junimo Hut"&lt;/code> to the game code. Alternatively, you can use single-quotes for the JSON string instead, like &lt;code>"Condition": 'BUILDINGS_CONSTRUCTED Here "Junimo Hut"'&lt;/code>.
+
+===Queries versus Content Patcher conditions===
+When making [[Modding:Content Patcher|Content Patcher packs]], you may be able to achieve a certain effect with either &lt;samp>When&lt;/samp> conditions or game state queries (with different formatting in either case, but the same end result).
+
+Which you use is mainly a performance tradeoff:
+* Content Patcher's &lt;samp>When&lt;/samp> conditions are highly optimized and cached, so thousands of patches can check the same condition without impacting performance and the resulting changes are written once to the asset. Then there's no performance impact after the asset edit, since it's just plain unconditional data. However the asset is reloaded when patches are added/removed, which may impact performance if they change often in some cases (like reloading a map or indoor/outdoor NPC appearance).
+* A game state query has no caching, so it can significantly affect performance when it's checked often. For example, a thousand game state queries checked each update tick means sixty thousand condition evaluations per second. On the other hand, game state queries are faster in cases where the conditions are checked rarely and doing so avoids reloading textures or maps (like &lt;samp>Appearance&lt;/samp> in &lt;samp>Data/Characters&lt;/samp> or &lt;samp>Music&lt;/samp> in &lt;samp>Data/Locations&lt;/samp>).
+
+==Built-in queries==
+===Meta===
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>ANY {{t|query}}+&lt;/samp>
+| Get whether at least one of the listed game state queries match, where each argument is a query. For example, &lt;code>ANY "SEASON Winter" "SEASON Spring, DAY_OF_WEEK Friday"&lt;/code> is true if (a) it's winter or (b) it's a spring Friday. You can list any number of queries to check.
+|}
+
+You can nest ANY tokens inside of ANY tokens, but you're likely to get yourself into quote escaping madness if you try. Instead, approach as Sum of Products.
+
+Here's an example.
+
+&lt;pre> "ANY \"LOCATION_NAME Here BathHouse_Pool\" \"LOCATION_NAME Here BathHouse_MensLocker\" \"LOCATION_NAME Here BathHouse_WomensLocker\" \"LOCATION_NAME Here Beach, WEATHER Sun Wind, SEASON Summer\" \"IS_EVENT festival_summer5, {{HasMod|contains=spacechase0.SurfingFestival}}\""&lt;/pre>
+
+Broken down, this means:
+
+* ANY of the following locations: BathHouse_Pool, BathHouse_MensLocker, BathHouse_WomensLocker.
+* The location Beach but only if it's sunny or windy, and it's summer
+* The event (in this case festival) summer5 is active, and spacechase0.SurfingFestival is installed, as the &lt;samp>&lt;nowiki>{{&lt;/nowiki>HasMod|contains=spacechase0.SurfingFestival}}&lt;/samp> token will either resolve to true or false, which are valid tokens.
+
+Remember: you can token inside GSQ!
+
+===Date &amp; time===
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>DAY_OF_MONTH {{t|day}}+&lt;/samp>
+| The day of month. This can be an integer between 1 and 28, or &lt;samp>even&lt;/samp>/&lt;samp>odd&lt;/samp> to match on any even/odd day. You can specify multiple values to match any of them.
+|-
+| &lt;samp>DAY_OF_WEEK {{t|day}}+&lt;/samp>
+| The day of week. This can be an integer between 0 (Sunday) and 6 (Saturday), three-letter English name (like &lt;samp>Fri&lt;/samp>), or full English name (like &lt;samp>Friday&lt;/samp>). You can specify multiple values to match any of them (like &lt;samp>DAY_OF_WEEK Monday Tuesday&lt;/samp> for Monday ''or'' Tuesday).
+|-
+| &lt;samp>DAYS_PLAYED {{t|min}} {{o|max}}&lt;/samp>
+| Whether {{t|min}} to {{o|max}} (default unlimited) days have been played in the current save (including the current one). This always increments in sync with the date in the base game, but when mods change the in-game date, they may or may not update this value.
+|-
+| &lt;samp>IS_FESTIVAL_DAY {{o|location context}} {{o|day offset}}&lt;/samp>
+| Whether there's a festival today, with an optional {{o|day offset}} (e.g. 1 for tomorrow).
+
+The {{o|location context}} (default &lt;samp>Any&lt;/samp>) must be one of these values:
+{| class="wikitable"
+|-
+! value
+! effect
+|-
+| &lt;samp>Any&lt;/samp>
+| Check for a festival anywhere.
+|-
+| &lt;samp>Here&lt;/samp>
+| Check for a festival in the location context containing the player.
+|-
+| &lt;samp>Target&lt;/samp>
+| Check for a festival in the location context containing [[#Target location|the target location]].
+|-
+| ''any other''
+| Check for a festival in the given location context ID.
+|}
+|-
+| &lt;samp>IS_PASSIVE_FESTIVAL_OPEN {{t|id}}&lt;/samp>
+| Whether a [[Modding:Migrate to Stardew Valley 1.6#Custom passive festivals|passive festival]] with the given ID is active today, and the current time is within its opening hours.
+|-
+| &lt;samp>IS_PASSIVE_FESTIVAL_TODAY {{t|id}}&lt;/samp>
+| Whether a [[Modding:Migrate to Stardew Valley 1.6#Custom passive festivals|passive festival]] with the given ID is active today.
+|-
+| &lt;samp>SEASON {{t|season}}+&lt;/samp>
+| The season (one of &lt;samp>spring&lt;/samp>, &lt;samp>summer&lt;/samp>, &lt;samp>fall&lt;/samp>, or &lt;samp>winter&lt;/samp>). You can specify multiple values to match any of them (like &lt;samp>SEASON spring summer&lt;/samp> for spring ''or'' summer).
+|-
+| &lt;samp>SEASON_DAY [{{t|season}} {{t|day}}]+&lt;/samp>
+| The season (in the same format as &lt;samp>SEASON&lt;/samp>) and day (an integer between 1 and 28). You can specify multiple values to match any of them (like &lt;samp>SEASON_DAY fall 15 winter 20&lt;/samp> for fall 15 ''or'' winter 20).
+|-
+| &lt;samp>TIME {{t|min}} {{o|max}}&lt;/samp>
+| Whether the current time is between {{t|min}} and {{o|max}} (default unlimited) inclusively, specified in [[Modding:Modder Guide/Game Fundamentals#Time format|26-hour time]].
+|-
+| &lt;samp>YEAR {{t|min}} {{o|max}}&lt;/samp>
+| Whether the current year is between {{t|min}} and {{o|max}} (default unlimited) inclusively.
+|}
+
+===Events===
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>IS_EVENT&lt;/samp>
+| Whether the player is viewing any [[Modding:Event data|event]] or attending any active festival. This doesn't cover passive festivals like the [[Night Market]].
+|-
+| &lt;samp>IS_EVENT {{t|event ID}}+&lt;/samp>
+| Whether the player is viewing an [[Modding:Event data|event]] or attending an active festival whose ID matches one of the specified {{t|event ID}} values. Festivals have IDs in the form &lt;samp>festival_{{t|season}}{{t|day}}&lt;/samp> (like &lt;samp>festival_spring13&lt;/samp> for the [[Egg Festival]]).
+|}
+
+===World===
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>BUILDINGS_CONSTRUCTED {{t|locations}} {{o|building type}} {{o|min}} {{o|max}} {{o|count unbuilt}}&lt;/samp>
+| Whether the number of matching buildings is within a range.
+
+For example:
+* &lt;code>BUILDINGS_CONSTRUCTED Here&lt;/code> checks if any buildings were constructed in the player's current location.
+* &lt;code>BUILDINGS_CONSTRUCTED Target Cabin&lt;/code> checks if there's at least one cabin in the [[#Target location|target location]].
+* &lt;code>BUILDINGS_CONSTRUCTED All "Junimo Hut" 3 5&lt;/code> checks if there's between 3 and 5 Junimo huts (inclusively) anywhere in the world.
+
+Arguments:
+* {{t|locations}}: a [[#Target location|target location]], or &lt;samp>All&lt;/samp> to count buildings in all locations.
+* {{o|building type}}: the building ID in &lt;samp>Data/Buildings&lt;/samp> to count, or &lt;samp>All&lt;/samp> to count all building types. Note that &lt;samp>All&lt;/samp> includes default buildings like the farmhouse.
+* {{o|min}}/{{o|max}}: the minimum (default 1) and maximum (default unlimited) count to require.
+* {{o|count unbuilt}}: whether to count buildings that haven't been fully constructed yet.
+|-
+| &lt;samp>CAN_BUILD_CABIN&lt;/samp>
+| Whether players can build more [[cabin]]s (i.e. they haven't reached the maximum number of player slots yet).
+|-
+| &lt;samp>CAN_BUILD_FOR_CABINS {{t|building ID}}&lt;/samp>
+| Whether there are fewer of the given building constructed than there are cabins.
+|-
+| &lt;samp>FARM_CAVE {{t|type}}+&lt;/samp>
+| The current [[The Farm#The Cave|farm cave]] (one of &lt;samp>Bats&lt;/samp>, &lt;samp>Mushrooms&lt;/samp>, or &lt;samp>None&lt;/samp>).
+|-
+| &lt;samp>FARM_NAME {{t|name}}&lt;/samp>
+| The name of the farm.
+|-
+| &lt;samp>FARM_TYPE {{t|type}}+&lt;/samp>
+| The [[Farm Maps|farm type]]. The {{t|type}} can be one of...
+* a numeric ID for a vanilla farm type: &lt;samp>1&lt;/samp> (standard), &lt;samp>2&lt;/samp> (riverland), &lt;samp>3&lt;/samp> (forest), &lt;samp>4&lt;/samp> (hilltop), &lt;samp>5&lt;/samp> (combat), &lt;samp>6&lt;/samp> (four corners), or &lt;samp>7&lt;/samp> (beach);
+* a readable key for a vanilla farm type: &lt;samp>Standard&lt;/samp>, &lt;samp>Beach&lt;/samp>, &lt;samp>Forest&lt;/samp>, &lt;samp>FourCorners&lt;/samp>, &lt;samp>Hilltop&lt;/samp>, &lt;samp>Riverland&lt;/samp>, or &lt;samp>Wilderness&lt;/samp>;
+* or the ID for a custom farm type.
+|-
+| &lt;samp>FOUND_ALL_LOST_BOOKS&lt;/samp>
+| Whether all the [[Lost Books]] for the [[museum]] have been found.
+|-
+| &lt;samp>HAS_TARGET_LOCATION&lt;/samp>
+| Whether the [[#Target location|'&lt;samp>Target&lt;/samp>' location]] is explicitly set for the current context (ignoring the fallback to the current player's location).
+|-
+| &lt;samp>IS_COMMUNITY_CENTER_COMPLETE&lt;/samp>
+| Whether the [[Community Center|community center]] has been repaired.
+|-
+| &lt;samp>IS_CUSTOM_FARM_TYPE&lt;/samp>
+| Whether the [[Farm Maps|farm type]] is a custom one created by a mod. (This returns false for mods which edit/replace a vanilla farm type.)
+|-
+| &lt;samp>IS_HOST&lt;/samp>
+| Whether the current player is the main/host player.
+|-
+| &lt;samp>IS_ISLAND_NORTH_BRIDGE_FIXED&lt;/samp>
+| Whether the [[Ginger Island#Island North|North Ginger Island]] bridge to the dig site has been repaired.
+|-
+| &lt;samp>IS_JOJA_MART_COMPLETE&lt;/samp>
+| Whether the [[Joja Warehouse|Joja warehouse]] has been built.
+|-
+| &lt;samp>IS_MULTIPLAYER&lt;/samp>
+| Whether the game is currently in multiplayer mode (regardless of whether there's multiple players connected).
+|-
+| &lt;samp>IS_VISITING_ISLAND {{t|name}}&lt;/samp>
+| Whether the named NPC is visiting [[Ginger Island]] today.
+|-
+| &lt;samp>LOCATION_ACCESSIBLE {{t|name}}&lt;/samp>
+| Whether the [[#Target location|given location]] is accessible. For vanilla locations, this is relevant to &lt;samp>CommunityCenter&lt;/samp>, &lt;samp>JojaMart&lt;/samp>, or &lt;samp>Railroad&lt;/samp>; any other location will return true unless a mod customizes the query.
+|-
+| &lt;samp>LOCATION_CONTEXT {{t|location}} {{t|context ID}}+&lt;/samp>
+| The location context ID for the [[#Target location|given location]].
+|-
+| &lt;smap>LOCATION_HAS_CUSTOM_FIELD {{t|location}} {{t|key}} {{o|value}}
+| Checks to see if the location has a given value in its CustomFields. If the value is omitted, checks to see if the key exists at all.
+|-
+| &lt;samp>LOCATION_IS_INDOORS {{t|location}}&lt;/samp>&lt;br />&lt;samp>LOCATION_IS_OUTDOORS {{t|location}}&lt;/samp>&lt;br />&lt;samp>LOCATION_IS_MINES {{t|location}}&lt;/samp>&lt;br />&lt;samp>LOCATION_IS_SKULL_CAVE {{t|location}}&lt;/samp>
+| Whether the [[#Target location|given location]] is indoors, outdoors, in [[The Mines|the mines]], or in the [[Skull Cavern]].
+|-
+| &lt;samp>LOCATION_NAME {{t|location}} {{t|name}}&lt;/samp>&lt;br />&lt;samp>LOCATION_UNIQUE_NAME {{t|location}} {{t|name}}&lt;/samp>
+| Whether the [[#Target location|given location]] has the specified name or unique instanced name (you can see both names in-game using the {{nexus mod|679|Debug Mode}} mod).
+|-
+| &lt;samp>LOCATION_SEASON {{t|location}} [{{t|season}}]+&lt;/samp>
+| Whether the [[#Target location|given location]] is in one of the given seasons (which can be &lt;samp>spring&lt;/samp>, &lt;samp>summer&lt;/samp>, &lt;samp>fall&lt;/samp>, or &lt;samp>winter&lt;/samp>). This accounts for the &lt;samp>SeasonOverride&lt;/samp> field in the [[Modding:Migrate to Stardew Valley 1.6#Custom location contexts|location's context data]].
+
+For example, this is valid in spring ''or'' summer: &lt;code>LOCATION_SEASON Here spring summer&lt;/code>.
+|-
+| &lt;samp>MUSEUM_DONATIONS {{t|min count}} {{o|max count}} {{o|object type}}+&lt;/samp>
+| Whether all players have donated a total of {{t|min count}} to {{o|max count}} (default unlimited) inclusively to the [[museum]]. This can optionally be filtered by the object type field, like &lt;samp>MUSEUM_DONATIONS 40 Arch Minerals&lt;/samp> to require at least 40 artifacts and minerals combined. You can omit the max count and still specify a filter.
+|-
+| &lt;samp>WEATHER {{t|location}} {{t|weather}}&lt;/samp>
+| The weather ID in the [[#Target location|given location]]. The weather can be one of &lt;samp>Festival&lt;/samp>, &lt;samp>Rain&lt;/samp>, &lt;samp>Snow&lt;/samp>, &lt;samp>Storm&lt;/samp>, &lt;samp>Sun&lt;/samp>, &lt;samp>Wind&lt;/samp>, or a [[Modding:Migrate to Stardew Valley 1.6#Custom weather|custom weather ID]].
+|-
+| &lt;samp>WORLD_STATE_FIELD {{t|name}} {{t|value}}&lt;/samp>
+| Whether a property on &lt;samp>Game1.netWorldState&lt;/samp> has the given value. If the property is numeric, this is the ''minimum'' value. Some useful values not covered by their own query:
+
+{| class="wikitable"
+|-
+! name
+! effect
+|-
+| &lt;samp>GoldenCoconutCracked&lt;/samp>
+| Whether the player has cracked open any [[Golden Coconut]]s (&lt;samp>true&lt;/samp> or &lt;samp>false&lt;/samp>).
+|-
+| &lt;samp>GoldenWalnutsFound&lt;/samp>&lt;br />&lt;samp>GoldenWalnuts&lt;/samp>
+| The total number of [[Golden Walnut]]s found or held by any player. To check how many one player currently holds, see the &lt;samp>PLAYER_HAS_ITEM&lt;/samp> query.
+|-
+| &lt;samp>IsGoblinRemoved&lt;/samp>
+| Whether the [[Henchman]] has been removed, so the player can access [[Witch's Hut]] (&lt;samp>true&lt;/samp> or &lt;samp>false&lt;/samp>).
+|-
+| &lt;samp>IsSubmarineLocked&lt;/samp>
+| Whether the [[Night Market]] submarine is currently in use by a player (&lt;samp>true&lt;/samp> or &lt;samp>false&lt;/samp>).
+|-
+| &lt;samp>LostBooksFound&lt;/samp>
+| The total number of [[Lost Book]]s found or held by any player.
+|-
+| &lt;samp>MinesDifficulty&lt;/samp>&lt;br />&lt;samp>SkullCavesDifficulty&lt;/samp>
+| The current [[The Mines#Shrine of Challenge|Shrine of Challenge]] difficulty level for the [[The Mines|mine]] or [[Skull Cavern]] (a numeric value, where &lt;samp>0&lt;/samp> is the default level when the shrine is deactivated).
+|-
+| &lt;samp>MiniShippingBinsObtained&lt;/samp>
+| The number of times the player has obtained a [[Mini-Shipping Bin]].
+|-
+| &lt;samp>ParrotPlatformsUnlocked&lt;/samp>
+| Whether the player has unlocked [[Ginger Island]] parrot platforms, regardless of whether they've completed them (&lt;samp>true&lt;/samp> or &lt;samp>false&lt;/samp>).
+|-
+| &lt;samp>ServerPrivacy&lt;/samp>
+| The [[multiplayer]] connection privacy mode (&lt;samp>InviteOnly&lt;/samp> or &lt;samp>FriendsOnly&lt;/samp>).
+|-
+| &lt;samp>ShuffleMineChests&lt;/samp>
+| The value of the 'mine rewards' [[Options|game option]] (&lt;samp>Default&lt;/samp> or &lt;samp>Remixed&lt;/samp>).
+|-
+| &lt;samp>WeatherForTomorrow&lt;/samp>
+| The weather ID for tomorrow in the main valley area.
+|-
+| &lt;samp>VisitsUntilY1Guarantee&lt;/samp>
+| The number of times the [[Traveling Cart]] will visit before [[Red Cabbage]] is guaranteed to drop.
+|}
+
+For example, the [[Traveling Cart]] shop uses a &lt;code>WORLD_STATE_FIELD VisitsUntilY1Guarantee 0&lt;/code> condition to check if it should guarantee a [[Red Cabbage]] item.
+|-
+| &lt;samp>WORLD_STATE_FIELD {{t|name}} {{t|min}} {{o|max}}&lt;/samp>
+| For numeric properties only, whether a property on &lt;samp>Game1.netWorldState&lt;/samp> has a value between {{t|min}} and {{o|max}} (default unlimited). If {{o|max}} is omitted or the properties isn't numeric, the previous form is used. See the previous entry for a list of useful properties.
+|-
+| &lt;samp>WORLD_STATE_ID {{t|id}}+&lt;/samp>
+| Whether any world state flag matching the given {{t|id}} values is set.
+|}
+
+===Player info &amp; progress===
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>MINE_LOWEST_LEVEL_REACHED {{t|min}} {{o|max}}&lt;/samp>
+| Whether any player has reached a level between {{t|min}} and {{o|max}} (default unlimited) inclusively in [[The Mines|the mines]].
+|-
+| &lt;samp>PLAYER_COMBAT_LEVEL {{t|player}} {{t|min}} {{o|max}}&lt;/samp>&lt;br />&lt;samp>PLAYER_FARMING_LEVEL {{t|player}} {{t|min}} {{o|max}}&lt;/samp>&lt;br />&lt;samp>PLAYER_FISHING_LEVEL {{t|player}} {{t|min}} {{o|max}}&lt;/samp>&lt;br />&lt;samp>PLAYER_FORAGING_LEVEL {{t|player}} {{t|min}} {{o|max}}&lt;/samp>&lt;br />&lt;samp>PLAYER_LUCK_LEVEL {{t|player}} {{t|min}} {{o|max}}&lt;/samp>&lt;br />&lt;samp>PLAYER_MINING_LEVEL {{t|player}} {{t|min}} {{o|max}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a [[skills|skill level]] between {{t|min}} and {{o|max}} (default unlimited) inclusively, including the effects of buffs which raise them.
+|-
+| &lt;samp>PLAYER_CURRENT_MONEY {{t|player}} {{t|min}} {{o|max}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have between {{t|min}} and {{o|max}} (default unlimited) gold inclusively.
+|-
+| &lt;samp>PLAYER_FARMHOUSE_UPGRADE {{t|player}} {{t|min}} {{o|max}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have upgraded their [[farmhouse]] or [[cabin]] to a level between {{t|min}} and {{o|max}} (default unlimited) inclusively. See [https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide/tokens.md#FarmhouseUpgrade possible levels].
+|-
+| &lt;samp>PLAYER_GENDER {{t|player}} {{t|gender}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] are &lt;samp>Male&lt;/samp> or &lt;samp>Female&lt;/samp>.
+|-
+| &lt;samp>PLAYER_HAS_ACHIEVEMENT {{t|player}} {{t|achievement id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have unlocked a specific achievement ID. The valid IDs are listed in [[Modding:Achievement data|&lt;samp>Data/Achievements&lt;/samp>]], plus a few Steam achievement IDs that aren't listed.
+|-
+| &lt;samp>PLAYER_HAS_ALL_ACHIEVEMENTS {{t|player}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have unlocked every achievement listed in [[Modding:Achievement data|&lt;samp>Data/Achievements&lt;/samp>]]. This doesn't count the extra Steam achievement IDs that aren't listed in that file.
+|-
+| &lt;samp>PLAYER_HAS_BUFF {{t|player}} {{t|id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a given buff ID currently applied.
+|-
+| &lt;samp>PLAYER_HAS_CAUGHT_FISH {{t|player}} {{t|id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have caught at least one fish with the given ID.
+|-
+| &lt;samp>PLAYER_HAS_CONVERSATION_TOPIC {{t|player}} {{t|id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a [[Modding:Dialogue#Conversation topics|conversation topic]] with the ID {{t|id}} active.
+|-
+| &lt;samp>PLAYER_HAS_COOKING_RECIPE {{t|player}} {{t|recipe name}}&lt;/samp>&lt;br />&lt;samp>PLAYER_HAS_CRAFTING_RECIPE {{t|player}} {{t|recipe name}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] know the crafting/cooking recipe identified by its internal name (spaces allowed). For example, &lt;code>PLAYER_HAS_CRAFTING_RECIPE Current Field Snack&lt;/code>.
+|-
+| &lt;samp>PLAYER_HAS_DIALOGUE_ANSWER {{t|player}} {{t|id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have chosen the given dialogue answer in a previous dialogue.
+|-
+| &lt;samp>PLAYER_HAS_HEARD_SONG {{t|player}} {{t|id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have heard a song track's cue name (e.g. for the [[jukebox]] track selection).
+|-
+| &lt;samp>PLAYER_HAS_ITEM {{t|player}} {{t|item}} {{o|min}} {{o|max}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have between {{o|min}} and {{o|max}} (default unlimited) matching items in their inventory, inclusively. The {{t|item}} can be &lt;samp>858&lt;/samp> or &lt;samp>(O)858&lt;/samp> (Qi Gems), &lt;samp>73&lt;/samp> or &lt;samp>(O)73&lt;/samp> (Walnuts), or the [[Modding:Common data field types#Item ID|qualified or unqualified item ID]].
+|-
+| &lt;samp>PLAYER_HAS_MAIL {{t|player}} {{t|mail id}} {{o|type}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have the given [[Modding:Mail data|mail flag]] set.
+
+The {{o|type}} (default &lt;samp>Any&lt;/samp>) can be one of:
+{| class="wikitable"
+|-
+! type
+! effect
+|-
+| &lt;samp>Any&lt;/samp>
+| Mail in [[The Farm#Mailbox|the mailbox]], in the queue for tomorrow's mailbox, or already received.
+|-
+| &lt;samp>Mailbox&lt;/samp>
+| Mail in the mailbox.
+|-
+| &lt;samp>Tomorrow&lt;/samp>
+| Mail in the queue for tomorrow's mailbox.
+|-
+| &lt;samp>Received&lt;/samp>
+| Mail which either:
+* was in the mailbox and read by the player;
+* or has no letter in &lt;samp>Data/mail&lt;/samp>, so it was added to the received list directly.
+|}
+|-
+| &lt;samp>PLAYER_HAS_PROFESSION {{t|player}} {{t|profession id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have the given [[Skills|profession]] ID.
+|-
+| &lt;samp>PLAYER_HAS_RUN_TRIGGER_ACTION {{t|player}} {{t|id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have applied the [[Modding:Trigger actions|trigger action]] with the given {{t|id}}.
+|-
+| &lt;samp>PLAYER_HAS_SECRET_NOTE {{t|player}} {{t|id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have read a secret note, where {{t|id}} is the secret note's integer ID.
+|-
+| &lt;samp>PLAYER_HAS_SEEN_EVENT {{t|player}} {{t|id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have seen the event with the given {{t|id}}.
+|-
+| &lt;samp>PLAYER_HAS_TOWN_KEY {{t|player}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have the [[Key To The Town|town key]].
+|-
+| &lt;samp>PLAYER_HAS_TRASH_CAN_LEVEL {{t|player}} {{t|min}} {{o|max}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a [[Trash Cans|trash can upgrade level]] between {{t|min}} and {{o|max}} (default unlimited) inclusively. The {{t|level}} can be &lt;samp>0&lt;/samp> (base), &lt;samp>1&lt;/samp> (copper), &lt;samp>2&lt;/samp> (steel), &lt;samp>3&lt;/samp> (gold), or &lt;samp>4&lt;/samp> (iridium).
+|-
+| &lt;samp>PLAYER_LOCATION_CONTEXT {{t|player}} {{t|location context}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] are in the given [[Modding:Migrate to Stardew Valley 1.6#Custom location contexts|location context]].
+|-
+| &lt;samp>PLAYER_LOCATION_NAME {{t|player}} {{t|location name}}+&lt;/samp>&lt;br />&lt;samp>PLAYER_LOCATION_UNIQUE_NAME {{t|player}} {{t|location name}}+&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] are in the given location, using the name or unique instanced name (you can see both names in-game using the {{nexus mod|679|Debug Mode}} mod). The {{t|location name}} value doesn't recognize [[#Target location|target location keywords]] like &lt;samp>Here&lt;/samp>.
+|-
+| &lt;samp>PLAYER_MOD_DATA {{t|player}} {{t|key}} {{t|value}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a &lt;samp>player.modData&lt;/samp> entry added by a mod with the given {{t|key}} and {{t|value}}.
+|-
+| &lt;samp>PLAYER_MONEY_EARNED {{t|player}} {{t|min}} {{o|max}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have earned between {{t|min}} and {{o|max}} (default unlimited) gold inclusively.
+|-
+| &lt;samp>PLAYER_MONSTERS_KILLED {{t|player}} {{t|monster name}}+ {{o|min count}} {{o|max count}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have killed the given monster(s) between {{o|min count}} (default 1) and {{o|max count}} (default unlimited) times inclusively. If you list multiple monsters, it'll check the combined count for all of them.
+
+For example:
+&lt;syntaxhighlight lang="js">
+// killed 50+ slimes, skeletons, and bugs combined
+PLAYER_KILLED_MONSTERS Current "Green Slime" Skeleton Bug 50
+&lt;/syntaxhighlight>
+|-
+| &lt;samp>PLAYER_SHIPPED_BASIC_ITEM {{t|player}} {{t|item ID}} {{o|min count}} {{o|max count}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have shipped the given item between {{o|min count}} (default 1) and {{o|max count}} (default unlimited) times inclusively. This only works for the items tracked by the game for shipping stats (shown in the [[Shipping#Collection|shipping collections menu]]).
+|-
+| &lt;samp>PLAYER_SPECIAL_ORDER_ACTIVE {{t|player}} {{t|order id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have the given [[Special Orders|special order]] active.
+|-
+| &lt;samp>PLAYER_SPECIAL_ORDER_COMPLETE {{t|player}} {{t|order id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have completed the given [[Special Orders|special order]].
+|-
+| &lt;samp>PLAYER_SPECIAL_ORDER_RULE_ACTIVE {{t|player}} {{t|rule id}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a [[Modding:Special orders#Special rules|special rule]] active.
+|-
+| &lt;samp>PLAYER_STAT {{t|player}} {{t|stat name}} {{t|min value}} {{o|max value}}&lt;/samp>
+| Whether a stat counter for the [[#Target player|specified player(s)]] has a value between {{t|min value}} and {{o|max value}} (default unlimited) inclusively. The available stat names are...
+* &lt;samp>averageBedtime&lt;/samp>;
+* &lt;samp>beachFarmSpawns&lt;/samp>;
+* &lt;samp>beveragesMade&lt;/samp>;
+* &lt;samp>boatRidesToIsland&lt;/samp>;
+* &lt;samp>bouldersCracked&lt;/samp>;
+* &lt;samp>caveCarrotsFound&lt;/samp>;
+* &lt;samp>cheeseMade&lt;/samp>;
+* &lt;samp>chickenEggsLayed&lt;/samp>;
+* &lt;samp>childrenTurnedToDoves&lt;/samp>;
+* &lt;samp>coalFound&lt;/samp>;
+* &lt;samp>coinsFound&lt;/samp>;
+* &lt;samp>copperFound&lt;/samp>;
+* &lt;samp>cowMilkProduced&lt;/samp>;
+* &lt;samp>cropsShipped&lt;/samp>;
+* &lt;samp>daysPlayed&lt;/samp>;
+* &lt;samp>diamondsFound&lt;/samp>;
+* &lt;samp>dirtHoed&lt;/samp>;
+* &lt;samp>duckEggsLayed&lt;/samp>;
+* &lt;samp>exMemoriesWiped&lt;/samp>;
+* &lt;samp>fishCaught&lt;/samp>;
+* &lt;samp>geodesCracked&lt;/samp>;
+* &lt;samp>giftsGiven&lt;/samp>;
+* &lt;samp>goatCheeseMade&lt;/samp>;
+* &lt;samp>goatMilkProduced&lt;/samp>;
+* &lt;samp>goldFound&lt;/samp>;
+* &lt;samp>goodFriends&lt;/samp>;
+* &lt;samp>hardModeMonstersKilled&lt;/samp>;
+* &lt;samp>individualMoneyEarned&lt;/samp>;
+* &lt;samp>iridiumFound&lt;/samp>;
+* &lt;samp>ironFound&lt;/samp>;
+* &lt;samp>itemsCooked&lt;/samp>;
+* &lt;samp>itemsCrafted&lt;/samp>;
+* &lt;samp>itemsForaged&lt;/samp>;
+* &lt;samp>itemsShipped&lt;/samp>;
+* &lt;samp>monstersKilled&lt;/samp>;
+* &lt;samp>mysticStonesCrushed&lt;/samp>;
+* &lt;samp>notesFound&lt;/samp>;
+* &lt;samp>otherPreciousGemsFound&lt;/samp>;
+* &lt;samp>piecesOfTrashRecycled&lt;/samp>;
+* &lt;samp>preservesMade&lt;/samp>;
+* &lt;samp>prismaticShardsFound&lt;/samp>;
+* &lt;samp>questsCompleted&lt;/samp>;
+* &lt;samp>rabbitWoolProduced&lt;/samp>;
+* &lt;samp>rocksCrushed&lt;/samp>;
+* &lt;samp>seedsSown&lt;/samp>;
+* &lt;samp>sheepWoolProduced&lt;/samp>;
+* &lt;samp>slimesKilled&lt;/samp>;
+* &lt;samp>starLevelCropsShipped&lt;/samp>;
+* &lt;samp>stepsTaken&lt;/samp>;
+* &lt;samp>sticksChopped&lt;/samp>;
+* &lt;samp>stoneGathered&lt;/samp>;
+* &lt;samp>stumpsChopped&lt;/samp>;
+* &lt;samp>timesEnchanted&lt;/samp>;
+* &lt;samp>timesFished&lt;/samp>;
+* &lt;samp>timesUnconscious&lt;/samp>;
+* &lt;samp>totalMoneyGifted&lt;/samp>;
+* &lt;samp>trashCansChecked&lt;/samp>;
+* &lt;samp>trufflesFound&lt;/samp>;
+* &lt;samp>walnutsFound&lt;/samp>;
+* &lt;samp>weedsEliminated&lt;/samp>.
+|-
+| &lt;samp>PLAYER_VISITED_LOCATION {{t|player}} {{t|location name}}+&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have visited one of the given location names. For example, &lt;code>PLAYER_VISITED_LOCATION Current IslandWest&lt;/code> checks whether the current player has ever visited [[Ginger Island#Island West|Ginger Island West]].
+
+Notes:
+* Some locations have both a common name (like &lt;samp>Barn&lt;/samp>) and unique name (like &lt;samp>Barn{unique ID}&lt;/samp>). This tracks the common name.
+* Generated mine and volcano dungeon levels aren't tracked.
+|}
+
+===Player relationships===
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>PLAYER_FRIENDSHIP_POINTS {{t|player}} {{t|npc}} {{t|min points}} {{o|max points}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a friend with [[friendship|friendship points]] between {{t|min points}} and {{o|max points}} (default unlimited) inclusively. The {{t|npc}} can be an NPC's internal name, &lt;samp>Any&lt;/samp> (check every NPC), or &lt;samp>AnyDateable&lt;/samp> (check every romanceable NPC).
+
+For example, this checks if the current player has 750 or more points (i.e. 3+ hearts) with Abigail:
+&lt;pre>PLAYER_FRIENDSHIP_POINTS Current Abigail 750&lt;/pre>
+|-
+| &lt;samp>PLAYER_HAS_CHILDREN {{t|player}} {{o|min}} {{o|max}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a number of children between {{o|min}} (default 1) and {{o|max}} (default unlimited) inclusively.
+|-
+| &lt;samp>PLAYER_HAS_PET {{t|player}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a [[Animals#Cat or Dog|pet]].
+|-
+| &lt;samp>PLAYER_HEARTS {{t|player}} {{t|npc}} {{t|min hearts}} {{o|max hearts}}&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have a friend with a [[friendship|heart level]] between {{t|min hearts}} and {{o|max hearts}} (default unlimited) inclusively. The {{t|npc}} can be an NPC's internal name, &lt;samp>Any&lt;/samp> (check every NPC), or &lt;samp>AnyDateable&lt;/samp> (check every romanceable NPC).
+
+For example, this checks if the current player has 3 or more hearts with Abigail:
+&lt;pre>PLAYER_HEARTS Current Abigail 3&lt;/pre>
+|-
+| &lt;samp>PLAYER_HAS_MET {{t|player}} {{t|npc}}+&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have talked to one of the given NPCs at least once. The {{t|npc}} is an NPC's internal name.
+|-
+| &lt;samp>PLAYER_NPC_RELATIONSHIP {{t|player}} {{t|npc}} {{t|type}}+&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have one of the relationship statuses with an NPC. The {{t|npc}} can be an NPC's internal name or &lt;samp>Any&lt;/samp> (match any NPC).
+
+{{t|type}} can be any combination of these values:
+{| class="wikitable"
+|-
+! type
+! effect
+|-
+| &lt;samp>Friendly&lt;/samp>
+| Met the NPC, but no other status applies.
+|-
+| &lt;samp>Roommate&lt;/samp>
+| The NPC has moved in with the player as a roommate.
+|-
+| &lt;samp>Dating&lt;/samp>
+| The player has given a [[bouquet]] to the NPC, but haven't yet given them a [[Mermaid's Pendant|mermaid's pendant]].
+|-
+| &lt;samp>Engaged&lt;/samp>
+| The player has given a [[Mermaid's Pendant|mermaid's pendant]] to the NPC, but the marriage hasn't happened yet.
+|-
+| &lt;samp>Married&lt;/samp>
+| The NPC has moved in with the player as a spouse.
+|-
+| &lt;samp>Divorced&lt;/samp>
+| The player has dissolved their marriage with the NPC.
+|}
+|-
+| &lt;samp>PLAYER_PLAYER_RELATIONSHIP {{t|player}} {{t|other player}} {{t|type}}+&lt;/samp>
+| Whether the [[#Target player|specified player(s)]] have one of the relationship types with the other specified player(s). The {{t|other player}} can be a [[#Target player|target player]] or &lt;samp>Any&lt;/samp> (match any player).
+
+{{t|type}} can be any combination of these values:
+{| class="wikitable"
+|-
+! type
+! effect
+|-
+| &lt;samp>Friendly&lt;/samp>
+| No other status applies.
+|-
+| &lt;samp>Engaged&lt;/samp>
+| One of the players has given a [[Wedding Ring|wedding ring]] to the other, but the marriage hasn't happened yet.
+|-
+| &lt;samp>Married&lt;/samp>
+| The players are married.
+|}
+|-
+| &lt;samp>PLAYER_PREFERRED_PET {{t|player}} {{t|pet type}}+&lt;/samp>
+| Whether the preferred pet for the [[#Target player|specified player(s)]] is one of the given types. The vanilla pet types are &lt;samp>Cat&lt;/samp> and &lt;samp>Dog&lt;/samp>.
+|}
+
+===Randomization===
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>RANDOM {{t|chance}} {{o|@addDailyLuck}}&lt;/samp>
+| A random probability check which is re-rolled each time it's called. For example, &lt;code>RANDOM 0.4&lt;/code> is true 40% of the time.
+
+If the exact text &lt;samp>@addDailyLuck&lt;/samp> is specified, the current player's daily [[luck]] is added to the probability.
+|-
+| &lt;samp>SYNCED_CHOICE {{t|interval}} {{t|key}} {{t|min}} {{t|max}} {{t|choices}}+&lt;/samp>
+| Choose a random integer between {{t|min}} and {{t|max}} inclusively, and check whether it matches one of the {{t|choices}}. The result will be identical for all queries with the same {{t|key}} value during the given {{t|interval}} (one of &lt;samp>tick&lt;/samp>, &lt;samp>day&lt;/samp>, &lt;samp>season&lt;/samp>, or &lt;samp>year&lt;/samp>), including between players in multiplayer mode.
+
+For example, &lt;samp>SYNCED_CHOICE day example_key 1 5 1 2&lt;/samp> chooses a random value between 1 and 5, and checks if it's either 1 or 2.
+
+This is mainly useful in cases where you need to pick between a number of discrete cases. For regular probability checks, see &lt;samp>SYNCED_RANDOM&lt;/samp> instead.
+|-
+| &lt;samp>SYNCED_RANDOM {{t|interval}} {{t|key}} {{t|chance}} {{o|@addDailyLuck}}&lt;/samp>
+| A random probability check. The result will be identical for all queries with the same {{t|key}} value during the given {{t|interval}} (one of &lt;samp>tick&lt;/samp>, &lt;samp>day&lt;/samp>, &lt;samp>season&lt;/samp>, or &lt;samp>year&lt;/samp>), including between players in multiplayer mode.
+
+For example, &lt;samp>SYNCED_RANDOM day cart_rare_seed 0.4&lt;/samp> has a 40% chance to be true the first time it's called that day, and will always be the same value if called again with the same key on the same day.
+
+If the exact text &lt;samp>@addDailyLuck&lt;/samp> is specified, the current player's daily [[luck]] is added to the probability.
+|-
+| &lt;samp>SYNCED_SUMMER_RAIN_RANDOM {{t|base chance}} {{t|day multiplier}}&lt;/samp>
+| A specialized variant of &lt;samp>SYNCED_DAY_RANDOM&lt;/samp> used to calculate the chance of rain in summer, which increases with the day number.
+|}
+
+===For items only===
+These queries apply in cases where there's an item (e.g. machine recipes, shops, etc); they'll return false if not applicable. They take a {{t|type}} argument which can be &lt;samp>Input&lt;/samp> (the machine input item) or &lt;samp>Target&lt;/samp> (the machine output, tree fruit, shop item, etc).
+
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>ITEM_CATEGORY {{t|target}}&lt;/samp>
+| Whether the item has a non-zero [[Modding:Items#Category|category]].
+|-
+| &lt;samp>ITEM_CATEGORY {{t|target}} {{o|category}}+&lt;/samp>
+| Whether the item's [[Modding:Items#Category|category]] number matches one of the given values.
+|-
+| &lt;samp>ITEM_CONTEXT_TAG {{t|target}} {{t|tags}}&lt;/samp>
+| Whether the item has all of the given space-delimited tags. For example, &lt;code>ITEM_CONTEXT_TAG Target bone_item marine_item&lt;/code> will only match items with both tags.
+|-
+| &lt;samp>ITEM_EDIBILITY {{t|target}} {{o|min}} {{o|max}}&lt;/samp>
+| Whether the item's edibility is between {{o|min}} (default -299) and {{o|max}} (default unlimited) inclusively. A value of -300 is inedible, so &lt;samp>ITEM_EDIBILITY {{t|target}}&lt;/samp> without min/max values checks if the item is edible.
+|-
+| &lt;samp>ITEM_ID {{t|target}} {{t|item ID}}+&lt;/samp>
+| Whether the item has one of the given [[Modding:Common data field types#Item ID|qualified or unqualified item IDs]].
+|-
+| &lt;samp>ITEM_ID_PREFIX {{t|target}} {{t|prefix}}&lt;/samp>
+| Whether the item's [[Modding:Common data field types#Item ID|qualified or unqualified item ID]] starts with the given prefix.
+|-
+| &lt;samp>ITEM_NUMERIC_ID {{t|target}} {{o|min}} {{o|max}}&lt;/samp>
+| Whether the item has a numeric [[Modding:Common data field types#Item ID|unqualified item ID]] which is between {{o|min}} and {{o|max}} (both defaulting to the lowest and highest possible value).
+|-
+| &lt;samp>ITEM_OBJECT_TYPE {{t|target}} {{t|type}}+&lt;/samp>
+| Whether the item has one of the given [[Modding:Items#Objects|object types]].
+|-
+| &lt;samp>ITEM_PRICE {{t|target}} {{t|min}} {{o|max}}&lt;/samp>
+| Whether the item has a sell-to-shop price between {{t|min}} and {{o|max}} (default highest possible value).
+|-
+| &lt;samp>ITEM_QUALITY {{t|target}} {{t|min}} {{o|max}}&lt;/samp>
+| Whether the item's quality is between {{t|min}} and {{o|max}} (default unlimited) inclusively. The possible values are &lt;samp>0&lt;/samp> (normal), &lt;samp>1&lt;/samp> (silver), &lt;samp>2&lt;/samp> (gold), or &lt;samp>4&lt;/samp> (iridium).
+|-
+| &lt;samp>ITEM_STACK {{t|target}} {{t|min}} {{o|max}}&lt;/samp>
+| Whether the item stack size is between {{t|min}} and {{o|max}} (default unlimited) inclusively. Note that this only applies to the target item, it doesn't include other stacks in the inventory.
+|-
+| &lt;samp>ITEM_TYPE {{t|target}} {{t|type}}+&lt;/samp>
+| Whether the [[Modding:Common data field types#Item ID|item's type definition ID]] matches one of the given values. For example, &lt;samp>ITEM_TYPE Target (BC)&lt;/samp> matches bigcraftables.
+|-
+| &lt;samp>ITEM_HAS_EXPLICIT_OBJECT_CATEGORY {{t|target}}&lt;/samp>
+| ''(Specialized)'' Whether the item has an explicit category set in &lt;samp>Data/Objects&lt;/samp>, ignoring categories assigned dynamically in code (e.g. for rings). Items without an explicit category are often (but not always) special items like [[Secret Notes|secret notes]] or unimplemented items.
+|}
+
+===Immutable===
+{| class="wikitable"
+|-
+! Condition
+! effect
+|-
+| &lt;samp>TRUE&lt;/samp>
+| A condition which always matches.
+|-
+| &lt;samp>FALSE&lt;/samp>
+| A condition which never matches.
+|}
+
+==Common values==
+===Target location===
+Some conditions have a {{t|location}} argument. This can be one of...
+{| class="wikitable"
+|-
+! value
+! result
+|-
+| &lt;samp>Here&lt;/samp>
+| The location containing the current player (regardless of the [[#Target player|target player]]).
+|-
+| &lt;samp>Target&lt;/samp>
+| The location containing the in-game entity being edited (e.g. the machine for &lt;samp>Data/Machines&lt;/samp> or fruit tree for &lt;samp>Data/FruitTrees&lt;/samp>).
+
+If the asset being edited isn't tied to a location, this is the location of the [[#Target player|target player]] (if set), else equivalent to &lt;samp>Here&lt;/samp>.
+|-
+| ''any other''
+| The [[Modding:Migrate to Stardew Valley 1.6#Custom locations|location ID]] (i.e. internal name) for the location to check.
+|}
+
+===Target player===
+Some conditions have a {{t|player}} argument. This can be one of...
+{| class="wikitable"
+|-
+! value
+! result
+|-
+| &lt;samp>Any&lt;/samp>
+| At least one player must match the condition, regardless of whether they're online.
+|-
+| &lt;samp>All&lt;/samp>
+| Every player must match the condition, regardless of whether they're online.
+|-
+| &lt;samp>Current&lt;/samp>
+| The local player.
+|-
+| &lt;samp>Host&lt;/samp>
+| The main player.
+|-
+| &lt;samp>Target&lt;/samp>
+| This value depends on the context:
+{| class="wikitable"
+|-
+! context
+! effect
+|-
+| &lt;samp>Data/LocationContexts&lt;/samp>
+| For the &lt;samp>PassOutLocations&lt;/samp> field only, the player whose pass-out location to get.
+|-
+| &lt;samp>Data/Weddings&lt;/samp>
+| For the &lt;samp>Attendees&lt;/samp> field only, the attendee player (if the attendee is a player).
+|-
+| &lt;samp>Data/WildTrees&lt;/samp>
+| For the &lt;samp>AdditionalChopDrops&lt;/samp> field only, the last player who chopped the tree.
+|-
+| ''custom queries''
+| C# mods may specify a &lt;samp>target_farmer&lt;/samp> parameter when calling &lt;samp>GameStateQuery.CheckConditions&lt;/samp>.
+|-
+| ''any other''
+| Equivalent to &lt;samp>Current&lt;/samp>.
+|}
+|-
+| ''any other''
+| The unique multiplayer ID for the player to check.
+|}
+
+==For C# mod authors==
+===Using queries elsewhere===
+C# code can work with queries using the &lt;samp>GameStateQuery&lt;/samp> class, which provides utility methods like &lt;code>GameStateQuery.CheckConditions(query)&lt;/code> or &lt;code>GameStateQuery.IsImmutablyTrue(query)&lt;/code>.
+
+You can also use game state queries in [[Modding:Event data|event preconditions]] using the new precondition flag, like &lt;code>some_event_id/gameStateQuery !SEASON Spring, WEATHER Here Sun&lt;/code>.
+
+===Extensibility===
+C# mods can...
+* check if a query exists using &lt;code>GameStateQuery.Exists("Example.ModId_ConditionName")&lt;/code>;
+* define custom queries using &lt;code>GameStateQuery.Register("Example.ModId_ConditionName", handleQueryMethod)&lt;/code> (using a [[Modding:Common data field types#Unique string ID|unique string ID]] for the query name);
+* and add query aliases using &lt;code>GameStateQuery.RegisterAlias("Example.ModId_AliasName", "Example.ModId_ConditionName")&lt;/code> (ideally using a [[Modding:Common data field types#Unique string ID|unique string ID]] for the alias).
+
+[[Category:Modding]]
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Template:Nexus_mod" title="Template:Nexus mod">Template:Nexus mod</a> (<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Template:Nexus_mod&amp;action=edit" title="Template:Nexus mod">view source</a>) </li><li><a href="../../external.html?link=https://stardewvalleywiki.com/Template:O" title="Template:O">Template:O</a> (<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Template:O&amp;action=edit" title="Template:O">view source</a>) </li><li><a href="../../external.html?link=https://stardewvalleywiki.com/Template:T" title="Template:T">Template:T</a> (<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Template:T&amp;action=edit" title="Template:T">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Game_state_queries" title="Modding:Game state queries">Modding:Game state queries</a>.</p>
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/Modding:Game_state_queries">https://stardewvalleywiki.com/Modding:Game_state_queries</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Game_state_queries&amp;action=edit&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":312});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Game_state_queries&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:21 GMT -->
+</html>
+		
