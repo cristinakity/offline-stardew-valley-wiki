@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Update_checks&mobileaction=toggle_view_mobile by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:49:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Modding:Modder Guide/APIs/Update checks - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"db619a88f61dbdbf12ae27cb","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Modder_Guide/APIs/Update_checks","wgTitle":"Modder Guide/APIs/Update checks","wgCurRevisionId":164769,"wgRevisionId":164769,"wgArticleId":10686,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Modder_Guide/APIs/Update_checks","wgRelevantArticleId":10686,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":
+"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0}
+,"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="loadc65b.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cext.pygments%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="description" content="Creating SMAPI mods"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="api-resultc989.json?action=webapp-manifest"/>
+<link rel="shortcut icon" href="extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api-result251f.xml?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Modding:Modder Guide/APIs/Update checks - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks"/>
+<meta property="og:description" content="Creating SMAPI mods"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2024-04-06T18:07:13Z"/>
+<meta property="article:published_time" content="2024-04-06T18:07:13Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modding:Modder Guide/APIs/Update checks - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="Creating SMAPI mods"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Modder Guide\/APIs\/Update checks - Stardew Valley Wiki","headline":"Modding:Modder Guide\/APIs\/Update checks - Stardew Valley Wiki","mainEntityOfPage":"Modding:Modder Guide\/APIs\/Update checks","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Update_checks","url":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Update_checks","description":"Creating SMAPI mods","dateModified":"2024-04-06T18:07:13Z","datePublished":"2024-04-06T18:07:13Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Modder_Guide_APIs_Update_checks rootpage-Modding_Modder_Guide stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki.html" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../Pepper_Seeds.html#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="index949f-2.html?title=Special:UserLogin&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FUpdate+checks&amp;returntoquery=mobileaction%3Dtoggle_view_mobile" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="index9088-3.html?title=Special:MobileOptions&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FUpdate+checks" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki_About.html" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki_General_disclaimer.html" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../Stardew_Valley_Wiki.html">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Modding:Modder Guide/APIs/Update checks</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="#" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector disabled"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="Language">Language</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="index7377.html?title=Special:UserLogin&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FUpdate+checks" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="Watch">Watch</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="index9dc7.html?title=Modding:Modder_Guide/APIs/Update_checks&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="Edit the lead section of this page">Edit</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"><span class="subpages">&lt; <a href="../Modding_Modder_Guide.html" class="mw-redirect" title="Modding:Modder Guide">Modding:Modder Guide</a>&lrm; | <a href="../Modding_Modder_Guide/APIs.html" title="Modding:Modder Guide/APIs">APIs</a></span></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><div style="float: right; border: 2px solid rgb(0, 116, 72); background: #A1DEE2; padding: 0.75em; padding-top: 0.5em; margin: 0 0 2em 2em;">
+<p><span style="font-size: larger;"><b>Creating SMAPI mods</b> <a href="../File_SMAPI_mascot.html" class="image"><img alt="SMAPI mascot.png" src="images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25"></a></span>
+</p>
+<hr>
+<ul><li><a href="../Modding_Modder_Guide/Get_Started.html" title="Modding:Modder Guide/Get Started">Get started</a></li>
+<li><a href="../Modding_Modder_Guide/Game_Fundamentals.html" title="Modding:Modder Guide/Game Fundamentals">Game fundamentals</a></li>
+<li><a href="../Modding_Modder_Guide/Test_and_Troubleshoot.html" title="Modding:Modder Guide/Test and Troubleshoot">Test &amp; troubleshoot</a></li>
+<li><a href="../Modding_Modder_Guide/Release.html" title="Modding:Modder Guide/Release">Release</a></li>
+<li><a href="../Modding_Modder_Guide/APIs.html" title="Modding:Modder Guide/APIs">API reference</a>
+<dl><dd>Basic SMAPI APIs:
+<ul><li><a href="../Modding_Modder_Guide/APIs/Mod_structure.html" title="Modding:Modder Guide/APIs/Mod structure">Mod structure</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Manifest.html" title="Modding:Modder Guide/APIs/Manifest">Manifest</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Events.html" title="Modding:Modder Guide/APIs/Events">Events</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Config.html" title="Modding:Modder Guide/APIs/Config">Configuration</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Content.html" title="Modding:Modder Guide/APIs/Content">Load &amp; edit content</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Data.html" title="Modding:Modder Guide/APIs/Data">Data</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Input.html" title="Modding:Modder Guide/APIs/Input">Input</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Logging.html" title="Modding:Modder Guide/APIs/Logging">Logging</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Reflection.html" title="Modding:Modder Guide/APIs/Reflection">Reflection</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Multiplayer.html" title="Modding:Modder Guide/APIs/Multiplayer">Multiplayer</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Translation.html" title="Modding:Modder Guide/APIs/Translation">Translation</a></li>
+<li><a class="mw-selflink selflink">Update checks</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Utilities.html" title="Modding:Modder Guide/APIs/Utilities">Utilities</a></li></ul></dd>
+<dd>Advanced SMAPI APIs:
+<ul><li><a href="../Modding_Modder_Guide/APIs/Content_Packs.html" title="Modding:Modder Guide/APIs/Content Packs">Content packs</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Console.html" title="Modding:Modder Guide/APIs/Console">Mod console commands</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Integrations.html" title="Modding:Modder Guide/APIs/Integrations">Mod integrations</a></li>
+<li><a href="../Modding_Modder_Guide/APIs/Harmony.html" title="Modding:Modder Guide/APIs/Harmony">Harmony patching</a></li></ul></dd></dl></li>
+<li><a href="../Modding_Index.html#Advanced_topics" title="Modding:Index">Specific guides</a></li></ul>
+</div><p>← <span style="font-size: smaller;"><a href="../Modding_Index.html" title="Modding:Index">Modding:Index</a></span>
+</p><p>Every SMAPI mod or content pack can benefit from automatic update checks, so the player sees an alert when a new version is available. This helps ensures players always have the latest version of your mod, which improves their experience and reduces support requests.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Enable_update_checks"><span class="tocnumber">1.1</span> <span class="toctext">Enable update checks</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Valid_sites"><span class="tocnumber">1.2</span> <span class="toctext">Valid sites</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Advanced"><span class="tocnumber">2</span> <span class="toctext">Advanced</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Beta_versions"><span class="tocnumber">2.1</span> <span class="toctext">Beta versions</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Update_subkeys"><span class="tocnumber">2.2</span> <span class="toctext">Update subkeys</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Disable_update_checks_locally"><span class="tocnumber">2.3</span> <span class="toctext">Disable update checks locally</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Update_check_algorithm"><span class="tocnumber">2.4</span> <span class="toctext">Update check algorithm</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Custom_update_manifest"><span class="tocnumber">2.5</span> <span class="toctext">Custom update manifest</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Introduction">Introduction</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<h3 class="in-block"><span class="mw-headline" id="Enable_update_checks">Enable update checks</span></h3>
+<p>You can add <i>update keys</i> to <a href="../Modding_Modder_Guide/APIs/Manifest.html" title="Modding:Modder Guide/APIs/Manifest">your <samp>manifest.json</samp></a> to enable update checks. An update key tells SMAPI where the mod page is. For example, <code>Nexus:2400</code> means <a rel="nofollow" class="external text" href="../../external.html?link=https://www.nexusmods.com/stardewvalley/mods/2400">mod ID 2400 on Nexus</a>:
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="err">:</span> <span class="p">[</span> <span class="s2">"Nexus:2400"</span> <span class="p">]</span>
+</pre></div>
+<p>If you have multiple update keys, SMAPI will check them all and show an alert for the latest version it finds. (If multiple sites have the latest version, it will link to the earlier one in the list.)
+</p>
+<div class="mw-highlight mw-highlight-lang-javascript mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="o">:</span> <span class="p">[</span> <span class="s2">"Chucklefish:4250"</span><span class="p">,</span> <span class="s2">"Nexus:541"</span><span class="p">,</span> <span class="s2">"GitHub:Pathoschild/LookupAnything"</span> <span class="p">]</span>
+</pre></div>
+<p>(SMAPI also fetches mod info from the <a href="../Modding_Mod_compatibility.html" title="Modding:Mod compatibility">mod compatibility list</a>, so mods on that page may get update checks even without update keys. You should still add update keys to your manifest in case that changes, and to support mod managers and other tools.)
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Valid_sites">Valid sites</span></h3>
+<p>Here are the supported mod sites:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>mod site
+</th>
+<th>description
+</th></tr>
+<tr valign="top">
+<td><a rel="nofollow" class="external text" href="../../external.html?link=https://community.playstarbound.com/resources/categories/stardew-valley.22/">Chucklefish</a>
+</td>
+<td><b>(Deprecated)</b> Make sure you have a mod release page (with a URL containing <samp>/resources/</samp> instead of <samp>/thread/</samp>) and it has a <a rel="nofollow" class="external text" href="../../external.html?link=http://semver.org/">semantic version</a>, then specify the mod ID (the number in the mod page URL). <div class="mw-highlight mw-highlight-lang-javascript mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="o">:</span> <span class="p">[</span> <span class="s2">"Chucklefish:4250"</span> <span class="p">]</span>
+</pre></div>
+</td></tr>
+<tr valign="top">
+<td><a rel="nofollow" class="external text" href="../../external.html?link=https://www.curseforge.com/stardewvalley">CurseForge</a>
+</td>
+<td>Make sure the latest file's display name contains a <a rel="nofollow" class="external text" href="../../external.html?link=http://semver.org/">semantic version</a> at the end, with a space before the version and optional file extension. For example, SMAPI will recognise the version in these display names: <code>1.3.0</code>, <code>Example Mod 1.10</code>, <code>Example Mod 1.10.0-prerelease.zip</code>. <div class="mw-highlight mw-highlight-lang-javascript mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="o">:</span> <span class="p">[</span> <span class="s2">"CurseForge:309243"</span> <span class="p">]</span>
+</pre></div>
+</td></tr>
+<tr valign="top">
+<td><a rel="nofollow" class="external text" href="../../external.html?link=https://github.com/">GitHub</a>
+</td>
+<td>Make sure your <a rel="nofollow" class="external text" href="../../external.html?link=https://help.github.com/articles/creating-releases/">GitHub project has at least one release</a> and the latest release's tag is a <a rel="nofollow" class="external text" href="../../external.html?link=http://semver.org/">semantic version</a>, then specify your GitHub username and project name. <div class="mw-highlight mw-highlight-lang-javascript mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="o">:</span> <span class="p">[</span> <span class="s2">"GitHub:Pathoschild/LookupAnything"</span> <span class="p">]</span>
+</pre></div> SMAPI will get the version from the release tag. Note that with the way GitHub release tags work, they do not support "monorepos", when multiple mods are on the same repository with different version numbers.
+</td></tr>
+<tr valign="top">
+<td><a rel="nofollow" class="external text" href="../../external.html?link=https://www.moddrop.com/stardew-valley/">ModDrop</a>
+</td>
+<td>Make sure the mod page has a <a rel="nofollow" class="external text" href="../../external.html?link=http://semver.org/">semantic version</a>, then specify the mod ID (the number in the mod page URL). <div class="mw-highlight mw-highlight-lang-javascript mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="o">:</span> <span class="p">[</span> <span class="s2">"ModDrop:123338"</span> <span class="p">]</span>
+</pre></div> SMAPI will get the version from files under 'Main Versions'.
+</td></tr>
+<tr valign="top">
+<td><a rel="nofollow" class="external text" href="../../external.html?link=https://www.nexusmods.com/stardewvalley">Nexus Mods</a>
+</td>
+<td>Make sure the Nexus mod has a <a rel="nofollow" class="external text" href="../../external.html?link=http://semver.org/">semantic version</a>, then specify the mod ID (the number in the mod page URL). When creating a new mod on Nexus, the ID is added to the URL after the first step, before you need to upload the file. <div class="mw-highlight mw-highlight-lang-javascript mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="o">:</span> <span class="p">[</span> <span class="s2">"Nexus:541"</span> <span class="p">]</span>
+</pre></div> SMAPI will get the version from the mod, 'main files' downloads, or 'optional files' downloads (whichever is higher).
+</td></tr></tbody></table>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Advanced">Advanced</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<h3 class="in-block"><span class="mw-headline" id="Beta_versions">Beta versions</span></h3>
+<p>A <i>prerelease version</i> (often called an <i>alpha</i> or <i>beta</i>) has a prerelease tag in the version number. For example, <code>1.0.0-beta.5</code> is a prerelease version of an upcoming <code>1.0.0</code>.
+</p><p>If you have both prerelease and non-prerelease versions, update checks depend on the player's installed mod version:
+</p>
+<ul><li>Stable channel: players with a non-prerelease version installed only see update alerts for non-prerelease versions (unless the main mod version is prerelease).</li>
+<li>Beta channel: players with a prerelease version see update alerts for any newer version, whether prerelease or non-prerelease.</li></ul>
+<p>For example, let's say your mod has two current versions: <code>1.7.0</code> and <code>2.0.0-beta</code>. A player who has <code>1.6.0</code> installed would see an update alert for <code>1.7.0</code>, and a player with <code>1.6.1-beta</code> would see an update alert for <code>2.0.0-beta</code>.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Update_subkeys">Update subkeys</span></h3>
+<p>SMAPI assumes each mod page is about a single mod, so the highest file version is the latest one. That means having multiple mods on the same page can cause false update alerts. For example, let's say you have one Nexus page with two different mods in the downloads: <i>Geode Crusher</i> (version <code>1.0.5</code>) and <i>Diamond Crusher</i> (version <code>2.1.0</code>). If a player has the latest version of <i>Geode Crusher</i> installed, they would always get update alerts for version <code>2.1.0</code> even though that's a different mod.
+</p><p>You can add an <i>update subkey</i> at the end of your normal update key after <code>@</code>:
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="err">:</span> <span class="p">[</span> <span class="s2">"Nexus:2400@GeodeCrusher"</span> <span class="p">]</span>
+</pre></div>
+<p>When SMAPI fetches available versions from the page, it will only consider files that have <samp>@GeodeCrusher</samp> (<b>including <samp>@</samp></b>) somewhere in the title or description.
+</p><p>Caveats:
+</p>
+<ul><li>If no files match the subkey, SMAPI will ignore the subkey and perform a normal update check.</li>
+<li>For mods on CurseForge, SMAPI won't see subkeys in the file description since that's not available through the CurseForge API.</li>
+<li>For mods on GitHub, subkeys don't really do anything since only the latest release is fetched.</li></ul>
+<h3 class="in-block"><span class="mw-headline" id="Disable_update_checks_locally">Disable update checks locally</span></h3>
+<p>SMAPI checks for updates in the background, so disabling update checks has zero effect on load times.
+</p><p>To disable update checks...
+</p>
+<ul><li>For SMAPI and all mods: edit the <samp>smapi-internal/config.json</samp> file and set <samp>CheckForUpdates</samp> to false. You'll no longer be notified about newer versions of SMAPI or installed mods, so this is not recommended.</li>
+<li>For a specific mod: edit the <samp>smapi-internal/config.json</samp> file and add the mod ID to the <samp>SuppressUpdateChecks</samp> field.</li></ul>
+<p>Note that edits to <samp>smapi-internal/config.json</samp> will be lost when you update SMAPI. See the instructions at the top of that file to create a permanent config file.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Update_check_algorithm">Update check algorithm</span></h3>
+<p>Here's how SMAPI decides which update alerts to show in the SMAPI console for a mod:
+</p>
+<ol><li>Collect update keys:
+<ol><li>Get the initial <a href="#Introduction">update keys</a> from the mod's <a href="../Modding_Modder_Guide/APIs/Manifest.html" title="Modding:Modder Guide/APIs/Manifest">manifest</a>.</li>
+<li>Match the mod ID with the <a href="../Modding_Mod_compatibility.html" title="Modding:Mod compatibility">mod compatibility list</a> and <samp>smapi-internal/metadata.json</samp> to add any other update keys that aren't in the manifest.</li>
+<li>Apply update key overrides from the mod compatibility list.</li></ol></li>
+<li>Get the possible updates:
+<ol><li>Collect versions from every matched update key (see <a href="#Valid_sites"><i>valid sites</i></a> for which versions are used).</li>
+<li>Filter the list of versions to...
+<ul><li>the main mod version;</li>
+<li>the optional prerelease version if the player has a beta version of SMAPI, <i>or</i> they have an older prerelease mod version installed, <i>or</i> the installed version failed to load;</li>
+<li>the unofficial version from the mod compatibility list;</li>
+<li>and the unofficial version for the beta, if using a prerelease version of SMAPI.</li></ul></li></ol></li>
+<li>Recommend the highest version from the filtered list (if newer than the installed version).</li></ol>
+<p>If multiple mod pages have the recommended update, SMAPI links to the first match in this order:
+</p>
+<ol><li>pages listed in the mod manifest's update keys (in the order listed);</li>
+<li>the default update key from SMAPI's <samp>smapi-internal/metadata.json</samp>;</li>
+<li>update keys from the mod compatibility list (in the order Nexus, ModDrop, CurseForge, and Chucklefish);</li>
+<li>update key overrides from the mod compatibility list.</li></ol>
+<h3 class="in-block"><span class="mw-headline" id="Custom_update_manifest">Custom update manifest</span></h3>
+<p><b>This is highly specialized</b> and supports specific edge cases (like mods which only exist in a shared GitHub repository or custom website). Most mods should use normal update keys instead.
+</p><p>An <i>update manifest</i> is a JSON file hosted on a website, which the SMAPI servers can download to get info about mods which aren't available on a more usual site like Nexus. For example, this manifest shows info about a mod which is only hosted on a custom website:
+</p>
+<div class="mw-highlight mw-highlight-lang-js mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+    <span class="s2">"Format"</span><span class="o">:</span> <span class="s2">"4.0.0"</span><span class="p">,</span>
+    <span class="s2">"Mods"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"ExampleMod"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"Name"</span><span class="o">:</span> <span class="s2">"Example Mod"</span><span class="p">,</span>
+            <span class="s2">"ModPageUrl"</span><span class="o">:</span> <span class="s2">"https://example.org/mods/example-mod"</span><span class="p">,</span>
+            <span class="s2">"Versions"</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span> <span class="s2">"Version"</span><span class="o">:</span> <span class="s2">"1.0.0"</span> <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Here are the expected fields (all required unless noted otherwise):
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>field
+</th>
+<th>usage
+</th></tr>
+<tr>
+<td><samp>Format</samp>
+</td>
+<td>The version of the manifest format (currently <samp>4.0.0</samp>). This is used to parse older manifests correctly if later versions of SMAPI change the format.
+</td></tr>
+<tr>
+<td><samp>Mods</samp>
+</td>
+<td>The mods for which info is provided. Any number of mods can be listed.
+<p>This consists of a string → model lookup, where...
+</p>
+<ul><li>The key is the update subkey (see details below the table).</li>
+<li>The value is a model with the fields listed below.</li></ul>
+<p>Each mod has these fields:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>field
+</th>
+<th>usage
+</th></tr>
+<tr>
+<td><samp>Name</samp>
+</td>
+<td>The human-readable display name for the mod.
+</td></tr>
+<tr>
+<td><samp>ModPageUrl</samp>
+</td>
+<td>The URL of the page from which the player can download updates.
+</td></tr>
+<tr>
+<td><samp>Versions</samp>
+</td>
+<td>The versions available to download. Any number of versions can be listed, and they'll be compared to the player's installed version using the <a href="#Update_check_algorithm">usual update check algorithm</a>.
+<p>This consists of a list of models with these fields:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>field
+</th>
+<th>usage
+</th></tr>
+<tr>
+<td><samp>Version</samp>
+</td>
+<td>The semantic version number.
+</td></tr>
+<tr>
+<td><samp>ModPageUrl</samp>
+</td>
+<td><i>(Optional)</i> The URL of the page from which the player can download this update, if different from the <samp>ModPageUrl</samp> for the mod itself.
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p>To use the manifest, a mod must add an <a href="#Enable_update_checks">update key</a> in the form <samp>UpdateManifest:<code title="required field 'full URL to json file'">&lt;full URL to json file&gt;</code>@<code title="required field 'mod key'">&lt;mod key&gt;</code></samp>. If the example above was hosted at <samp>https://example.org/mod-updates.json</samp>, then its update key would look like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-js mw-content-ltr" dir="ltr"><pre><span></span><span class="s2">"UpdateKeys"</span><span class="o">:</span> <span class="p">[</span> <span class="s2">"UpdateManifest:https://example.org/mod-updates.json@ExampleMod"</span> <span class="p">]</span>
+</pre></div>
+
+
+
+
+</section></div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="indexc069.html?title=Modding:Modder_Guide/APIs/Update_checks&amp;oldid=164769">https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Update_checks&amp;oldid=164769</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="../Special_History/Modding_Modder_Guide/APIs/Update_checks.html"
+				data-user-name="Pathoschild"
+				data-user-gender="unknown"
+				data-timestamp="1712426833">
+				<span>Last edited on 6 April 2024, at 18:07</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> This page was last edited on 6 April 2024, at 18:07.</li><li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../Stardew_Valley_Wiki_Privacy_policy.html" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../Stardew_Valley_Wiki_About.html" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../Stardew_Valley_Wiki_General_disclaimer.html" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="index1e13-2.html?title=Modding:Modder_Guide/APIs/Update_checks&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.051","walltime":"0.943","ppvisitednodes":{"value":135,"limit":1000000},"postexpandincludesize":{"value":1950,"limit":2097152},"templateargumentsize":{"value":100,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":4473,"limit":5000000},"timingprofile":["100.00%  660.911      1 -total","  0.82%    5.410      1 Template:Nexus_mod","  0.46%    3.042      1 Modding:Modder_Guide/header","  0.43%    2.821      2 Template:T"]},"cachereport":{"timestamp":"20240410080929","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":494});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Update_checks&mobileaction=toggle_view_mobile by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:00 GMT -->
+</html>
+		
