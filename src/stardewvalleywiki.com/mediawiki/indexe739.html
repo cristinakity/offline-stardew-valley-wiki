@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Game_state_queries&mobileaction=toggle_view_mobile by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Modding:Game state queries - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"7ca93b186ccf19c8aa66e0b9","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Game_state_queries","wgTitle":"Game state queries","wgCurRevisionId":164773,"wgRevisionId":164773,"wgArticleId":14540,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Game_state_queries","wgRelevantArticleId":14540,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,
+"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},
+"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="loadc65b.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cext.pygments%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="description" content="← Index"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="api-resultc989.json?action=webapp-manifest"/>
+<link rel="shortcut icon" href="extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api-result251f.xml?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Modding:Game state queries - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Game_state_queries"/>
+<meta property="og:description" content="← Index"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2024-04-06T18:08:47Z"/>
+<meta property="article:published_time" content="2024-04-06T18:08:47Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modding:Game state queries - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="← Index"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Game state queries - Stardew Valley Wiki","headline":"Modding:Game state queries - Stardew Valley Wiki","mainEntityOfPage":"Modding:Game state queries","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Game_state_queries","url":"https:\/\/stardewvalleywiki.com\/Modding:Game_state_queries","description":"\u2190 Index","dateModified":"2024-04-06T18:08:47Z","datePublished":"2024-04-06T18:08:47Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Game_state_queries rootpage-Modding_Game_state_queries stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki.html" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../Pepper_Seeds.html#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="index5da7-3.html?title=Special:UserLogin&amp;returnto=Modding%3AGame+state+queries&amp;returntoquery=mobileaction%3Dtoggle_view_mobile" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="index7906.html?title=Special:MobileOptions&amp;returnto=Modding%3AGame+state+queries" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki_About.html" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../Stardew_Valley_Wiki_General_disclaimer.html" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../Stardew_Valley_Wiki.html">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Modding:Game state queries</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="#" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector disabled"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="Language">Language</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="indexa3ad.html?title=Special:UserLogin&amp;returnto=Modding%3AGame+state+queries" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="Watch">Watch</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="index3c11.html?title=Modding:Game_state_queries&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="Edit the lead section of this page">Edit</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><p>← <a href="../Modding_Index.html" title="Modding:Index">Index</a>
+</p><p>This page documents <b>game state queries</b>, a built-in way to specify conditions in some of the game's data assets inspired by <a href="../Modding_Content_Patcher.html" title="Modding:Content Patcher">Content Patcher</a>'s conditions.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Query_format"><span class="tocnumber">1.1</span> <span class="toctext">Query format</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Argument_format"><span class="tocnumber">1.2</span> <span class="toctext">Argument format</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Queries_versus_Content_Patcher_conditions"><span class="tocnumber">1.3</span> <span class="toctext">Queries versus Content Patcher conditions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Built-in_queries"><span class="tocnumber">2</span> <span class="toctext">Built-in queries</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Meta"><span class="tocnumber">2.1</span> <span class="toctext">Meta</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Date_.26_time"><span class="tocnumber">2.2</span> <span class="toctext">Date &amp; time</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Events"><span class="tocnumber">2.3</span> <span class="toctext">Events</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#World"><span class="tocnumber">2.4</span> <span class="toctext">World</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Player_info_.26_progress"><span class="tocnumber">2.5</span> <span class="toctext">Player info &amp; progress</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Player_relationships"><span class="tocnumber">2.6</span> <span class="toctext">Player relationships</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Randomization"><span class="tocnumber">2.7</span> <span class="toctext">Randomization</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#For_items_only"><span class="tocnumber">2.8</span> <span class="toctext">For items only</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Immutable"><span class="tocnumber">2.9</span> <span class="toctext">Immutable</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Common_values"><span class="tocnumber">3</span> <span class="toctext">Common values</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Target_location"><span class="tocnumber">3.1</span> <span class="toctext">Target location</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Target_player"><span class="tocnumber">3.2</span> <span class="toctext">Target player</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#For_C.23_mod_authors"><span class="tocnumber">4</span> <span class="toctext">For C# mod authors</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#Using_queries_elsewhere"><span class="tocnumber">4.1</span> <span class="toctext">Using queries elsewhere</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Extensibility"><span class="tocnumber">4.2</span> <span class="toctext">Extensibility</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Overview">Overview</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<h3 class="in-block"><span class="mw-headline" id="Query_format">Query format</span></h3>
+<p>A query consists of a comma-delimited list of conditions in the form <code title="required field 'type'">&lt;type&gt;</code> <code title="optional field 'arguments'">[arguments]</code>. The type can be prefixed with <code>!</code> to negate it. The query is true if it's null/blank, or if every listed condition exists and is true. For example, <code>!SEASON Spring, WEATHER Here Sun</code> is true on sunny non-<a href="../Spring.html" title="Spring">spring</a> days.
+</p><p><b>⚠</b> Game state queries are partly case-sensitive. While some values are case-insensitive (e.g. both <code>SEASON Spring</code> and <code>SEASON spring</code> will work), this isn't consistent. Using the exact capitalization is recommended to avoid issues.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Argument_format">Argument format</span></h3>
+<p>Game state queries can take space-delimited arguments. For example, <code>BUILDINGS_CONSTRUCTED Here Cabins</code> has two arguments: <code>Here</code> and <code>Cabins</code>.
+</p><p>If you have spaces within an argument, you can surround it with quotes to keep it together. For example, <code>BUILDINGS_CONSTRUCTED Here "Junimo Hut"</code> passes <code>Junimo Hut</code> as one argument. You can escape inner quotes with backslashes, like <code>ANY "BUILDINGS_CONSTRUCTED Here \"Junimo Hut\""</code>.
+</p><p>Remember that quotes and backslashes inside JSON strings need to be escaped too. For example, <code>"Condition": "BUILDINGS_CONSTRUCTED Here \"Junimo Hut\""</code> will send <code>BUILDINGS_CONSTRUCTED Here "Junimo Hut"</code> to the game code. Alternatively, you can use single-quotes for the JSON string instead, like <code>"Condition": 'BUILDINGS_CONSTRUCTED Here "Junimo Hut"'</code>.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Queries_versus_Content_Patcher_conditions">Queries versus Content Patcher conditions</span></h3>
+<p>When making <a href="../Modding_Content_Patcher.html" title="Modding:Content Patcher">Content Patcher packs</a>, you may be able to achieve a certain effect with either <samp>When</samp> conditions or game state queries (with different formatting in either case, but the same end result).
+</p><p>Which you use is mainly a performance tradeoff:
+</p>
+<ul><li>Content Patcher's <samp>When</samp> conditions are highly optimized and cached, so thousands of patches can check the same condition without impacting performance and the resulting changes are written once to the asset. Then there's no performance impact after the asset edit, since it's just plain unconditional data. However the asset is reloaded when patches are added/removed, which may impact performance if they change often in some cases (like reloading a map or indoor/outdoor NPC appearance).</li>
+<li>A game state query has no caching, so it can significantly affect performance when it's checked often. For example, a thousand game state queries checked each update tick means sixty thousand condition evaluations per second. On the other hand, game state queries are faster in cases where the conditions are checked rarely and doing so avoids reloading textures or maps (like <samp>Appearance</samp> in <samp>Data/Characters</samp> or <samp>Music</samp> in <samp>Data/Locations</samp>).</li></ul>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Built-in_queries">Built-in queries</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<h3 class="in-block"><span class="mw-headline" id="Meta">Meta</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>ANY <code title="required field 'query'">&lt;query&gt;</code>+</samp>
+</td>
+<td>Get whether at least one of the listed game state queries match, where each argument is a query. For example, <code>ANY "SEASON Winter" "SEASON Spring, DAY_OF_WEEK Friday"</code> is true if (a) it's winter or (b) it's a spring Friday. You can list any number of queries to check.
+</td></tr></tbody></table>
+<p>You can nest ANY tokens inside of ANY tokens, but you're likely to get yourself into quote escaping madness if you try. Instead, approach as Sum of Products.
+</p><p>Here's an example.
+</p>
+<pre> "ANY \"LOCATION_NAME Here BathHouse_Pool\" \"LOCATION_NAME Here BathHouse_MensLocker\" \"LOCATION_NAME Here BathHouse_WomensLocker\" \"LOCATION_NAME Here Beach, WEATHER Sun Wind, SEASON Summer\" \"IS_EVENT festival_summer5, {{HasMod|contains=spacechase0.SurfingFestival}}\""</pre>
+<p>Broken down, this means:
+</p>
+<ul><li>ANY of the following locations: BathHouse_Pool, BathHouse_MensLocker, BathHouse_WomensLocker.</li>
+<li>The location Beach but only if it's sunny or windy, and it's summer</li>
+<li>The event (in this case festival) summer5 is active, and spacechase0.SurfingFestival is installed, as the <samp>{{HasMod|contains=spacechase0.SurfingFestival}}</samp> token will either resolve to true or false, which are valid tokens.</li></ul>
+<p>Remember: you can token inside GSQ!
+</p>
+<h3 class="in-block"><span id="Date_&amp;_time"></span><span class="mw-headline" id="Date_.26_time">Date &amp; time</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>DAY_OF_MONTH <code title="required field 'day'">&lt;day&gt;</code>+</samp>
+</td>
+<td>The day of month. This can be an integer between 1 and 28, or <samp>even</samp>/<samp>odd</samp> to match on any even/odd day. You can specify multiple values to match any of them.
+</td></tr>
+<tr>
+<td><samp>DAY_OF_WEEK <code title="required field 'day'">&lt;day&gt;</code>+</samp>
+</td>
+<td>The day of week. This can be an integer between 0 (Sunday) and 6 (Saturday), three-letter English name (like <samp>Fri</samp>), or full English name (like <samp>Friday</samp>). You can specify multiple values to match any of them (like <samp>DAY_OF_WEEK Monday Tuesday</samp> for Monday <i>or</i> Tuesday).
+</td></tr>
+<tr>
+<td><samp>DAYS_PLAYED <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether <code title="required field 'min'">&lt;min&gt;</code> to <code title="optional field 'max'">[max]</code> (default unlimited) days have been played in the current save (including the current one). This always increments in sync with the date in the base game, but when mods change the in-game date, they may or may not update this value.
+</td></tr>
+<tr>
+<td><samp>IS_FESTIVAL_DAY <code title="optional field 'location context'">[location context]</code> <code title="optional field 'day offset'">[day offset]</code></samp>
+</td>
+<td>Whether there's a festival today, with an optional <code title="optional field 'day offset'">[day offset]</code> (e.g. 1 for tomorrow).
+<p>The <code title="optional field 'location context'">[location context]</code> (default <samp>Any</samp>) must be one of these values:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>value
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>Any</samp>
+</td>
+<td>Check for a festival anywhere.
+</td></tr>
+<tr>
+<td><samp>Here</samp>
+</td>
+<td>Check for a festival in the location context containing the player.
+</td></tr>
+<tr>
+<td><samp>Target</samp>
+</td>
+<td>Check for a festival in the location context containing <a href="#Target_location">the target location</a>.
+</td></tr>
+<tr>
+<td><i>any other</i>
+</td>
+<td>Check for a festival in the given location context ID.
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>IS_PASSIVE_FESTIVAL_OPEN <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether a <a href="../Modding_Migrate_to_Stardew_Valley_1.html#Custom_passive_festivals" title="Modding:Migrate to Stardew Valley 1.6">passive festival</a> with the given ID is active today, and the current time is within its opening hours.
+</td></tr>
+<tr>
+<td><samp>IS_PASSIVE_FESTIVAL_TODAY <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether a <a href="../Modding_Migrate_to_Stardew_Valley_1.html#Custom_passive_festivals" title="Modding:Migrate to Stardew Valley 1.6">passive festival</a> with the given ID is active today.
+</td></tr>
+<tr>
+<td><samp>SEASON <code title="required field 'season'">&lt;season&gt;</code>+</samp>
+</td>
+<td>The season (one of <samp>spring</samp>, <samp>summer</samp>, <samp>fall</samp>, or <samp>winter</samp>). You can specify multiple values to match any of them (like <samp>SEASON spring summer</samp> for spring <i>or</i> summer).
+</td></tr>
+<tr>
+<td><samp>SEASON_DAY [<code title="required field 'season'">&lt;season&gt;</code> <code title="required field 'day'">&lt;day&gt;</code>]+</samp>
+</td>
+<td>The season (in the same format as <samp>SEASON</samp>) and day (an integer between 1 and 28). You can specify multiple values to match any of them (like <samp>SEASON_DAY fall 15 winter 20</samp> for fall 15 <i>or</i> winter 20).
+</td></tr>
+<tr>
+<td><samp>TIME <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the current time is between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively, specified in <a href="../Modding_Modder_Guide/Game_Fundamentals.html#Time_format" title="Modding:Modder Guide/Game Fundamentals">26-hour time</a>.
+</td></tr>
+<tr>
+<td><samp>YEAR <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the current year is between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively.
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Events">Events</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>IS_EVENT</samp>
+</td>
+<td>Whether the player is viewing any <a href="../Modding_Event_data.html" title="Modding:Event data">event</a> or attending any active festival. This doesn't cover passive festivals like the <a href="../Night_Market.html" title="Night Market">Night Market</a>.
+</td></tr>
+<tr>
+<td><samp>IS_EVENT <code title="required field 'event ID'">&lt;event ID&gt;</code>+</samp>
+</td>
+<td>Whether the player is viewing an <a href="../Modding_Event_data.html" title="Modding:Event data">event</a> or attending an active festival whose ID matches one of the specified <code title="required field 'event ID'">&lt;event ID&gt;</code> values. Festivals have IDs in the form <samp>festival_<code title="required field 'season'">&lt;season&gt;</code><code title="required field 'day'">&lt;day&gt;</code></samp> (like <samp>festival_spring13</samp> for the <a href="../Egg_Festival.html" title="Egg Festival">Egg Festival</a>).
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="World">World</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>BUILDINGS_CONSTRUCTED <code title="required field 'locations'">&lt;locations&gt;</code> <code title="optional field 'building type'">[building type]</code> <code title="optional field 'min'">[min]</code> <code title="optional field 'max'">[max]</code> <code title="optional field 'count unbuilt'">[count unbuilt]</code></samp>
+</td>
+<td>Whether the number of matching buildings is within a range.
+<p>For example:
+</p>
+<ul><li><code>BUILDINGS_CONSTRUCTED Here</code> checks if any buildings were constructed in the player's current location.</li>
+<li><code>BUILDINGS_CONSTRUCTED Target Cabin</code> checks if there's at least one cabin in the <a href="#Target_location">target location</a>.</li>
+<li><code>BUILDINGS_CONSTRUCTED All "Junimo Hut" 3 5</code> checks if there's between 3 and 5 Junimo huts (inclusively) anywhere in the world.</li></ul>
+<p>Arguments:
+</p>
+<ul><li><code title="required field 'locations'">&lt;locations&gt;</code>: a <a href="#Target_location">target location</a>, or <samp>All</samp> to count buildings in all locations.</li>
+<li><code title="optional field 'building type'">[building type]</code>: the building ID in <samp>Data/Buildings</samp> to count, or <samp>All</samp> to count all building types. Note that <samp>All</samp> includes default buildings like the farmhouse.</li>
+<li><code title="optional field 'min'">[min]</code>/<code title="optional field 'max'">[max]</code>: the minimum (default 1) and maximum (default unlimited) count to require.</li>
+<li><code title="optional field 'count unbuilt'">[count unbuilt]</code>: whether to count buildings that haven't been fully constructed yet.</li></ul>
+</td></tr>
+<tr>
+<td><samp>CAN_BUILD_CABIN</samp>
+</td>
+<td>Whether players can build more <a href="../Cabin.html" title="Cabin">cabins</a> (i.e. they haven't reached the maximum number of player slots yet).
+</td></tr>
+<tr>
+<td><samp>CAN_BUILD_FOR_CABINS <code title="required field 'building ID'">&lt;building ID&gt;</code></samp>
+</td>
+<td>Whether there are fewer of the given building constructed than there are cabins.
+</td></tr>
+<tr>
+<td><samp>FARM_CAVE <code title="required field 'type'">&lt;type&gt;</code>+</samp>
+</td>
+<td>The current <a href="../The_Farm.html#The_Cave" title="The Farm">farm cave</a> (one of <samp>Bats</samp>, <samp>Mushrooms</samp>, or <samp>None</samp>).
+</td></tr>
+<tr>
+<td><samp>FARM_NAME <code title="required field 'name'">&lt;name&gt;</code></samp>
+</td>
+<td>The name of the farm.
+</td></tr>
+<tr>
+<td><samp>FARM_TYPE <code title="required field 'type'">&lt;type&gt;</code>+</samp>
+</td>
+<td>The <a href="../Farm_Maps.html" title="Farm Maps">farm type</a>. The <code title="required field 'type'">&lt;type&gt;</code> can be one of...
+<ul><li>a numeric ID for a vanilla farm type: <samp>1</samp> (standard), <samp>2</samp> (riverland), <samp>3</samp> (forest), <samp>4</samp> (hilltop), <samp>5</samp> (combat), <samp>6</samp> (four corners), or <samp>7</samp> (beach);</li>
+<li>a readable key for a vanilla farm type: <samp>Standard</samp>, <samp>Beach</samp>, <samp>Forest</samp>, <samp>FourCorners</samp>, <samp>Hilltop</samp>, <samp>Riverland</samp>, or <samp>Wilderness</samp>;</li>
+<li>or the ID for a custom farm type.</li></ul>
+</td></tr>
+<tr>
+<td><samp>FOUND_ALL_LOST_BOOKS</samp>
+</td>
+<td>Whether all the <a href="../Lost_Books.html" title="Lost Books">Lost Books</a> for the <a href="../Museum.html" title="Museum">museum</a> have been found.
+</td></tr>
+<tr>
+<td><samp>HAS_TARGET_LOCATION</samp>
+</td>
+<td>Whether the <a href="#Target_location">'<samp>Target</samp>' location</a> is explicitly set for the current context (ignoring the fallback to the current player's location).
+</td></tr>
+<tr>
+<td><samp>IS_COMMUNITY_CENTER_COMPLETE</samp>
+</td>
+<td>Whether the <a href="../Community_Center.html" title="Community Center">community center</a> has been repaired.
+</td></tr>
+<tr>
+<td><samp>IS_CUSTOM_FARM_TYPE</samp>
+</td>
+<td>Whether the <a href="../Farm_Maps.html" title="Farm Maps">farm type</a> is a custom one created by a mod. (This returns false for mods which edit/replace a vanilla farm type.)
+</td></tr>
+<tr>
+<td><samp>IS_HOST</samp>
+</td>
+<td>Whether the current player is the main/host player.
+</td></tr>
+<tr>
+<td><samp>IS_ISLAND_NORTH_BRIDGE_FIXED</samp>
+</td>
+<td>Whether the <a href="../Ginger_Island.html#Island_North" title="Ginger Island">North Ginger Island</a> bridge to the dig site has been repaired.
+</td></tr>
+<tr>
+<td><samp>IS_JOJA_MART_COMPLETE</samp>
+</td>
+<td>Whether the <a href="../Joja_Warehouse.html" title="Joja Warehouse">Joja warehouse</a> has been built.
+</td></tr>
+<tr>
+<td><samp>IS_MULTIPLAYER</samp>
+</td>
+<td>Whether the game is currently in multiplayer mode (regardless of whether there's multiple players connected).
+</td></tr>
+<tr>
+<td><samp>IS_VISITING_ISLAND <code title="required field 'name'">&lt;name&gt;</code></samp>
+</td>
+<td>Whether the named NPC is visiting <a href="../Ginger_Island.html" title="Ginger Island">Ginger Island</a> today.
+</td></tr>
+<tr>
+<td><samp>LOCATION_ACCESSIBLE <code title="required field 'name'">&lt;name&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_location">given location</a> is accessible. For vanilla locations, this is relevant to <samp>CommunityCenter</samp>, <samp>JojaMart</samp>, or <samp>Railroad</samp>; any other location will return true unless a mod customizes the query.
+</td></tr>
+<tr>
+<td><samp>LOCATION_CONTEXT <code title="required field 'location'">&lt;location&gt;</code> <code title="required field 'context ID'">&lt;context ID&gt;</code>+</samp>
+</td>
+<td>The location context ID for the <a href="#Target_location">given location</a>.
+</td></tr>
+<tr>
+<td>&lt;smap&gt;LOCATION_HAS_CUSTOM_FIELD <code title="required field 'location'">&lt;location&gt;</code> <code title="required field 'key'">&lt;key&gt;</code> <code title="optional field 'value'">[value]</code>
+</td>
+<td>Checks to see if the location has a given value in its CustomFields. If the value is omitted, checks to see if the key exists at all.
+</td></tr>
+<tr>
+<td><samp>LOCATION_IS_INDOORS <code title="required field 'location'">&lt;location&gt;</code></samp><br><samp>LOCATION_IS_OUTDOORS <code title="required field 'location'">&lt;location&gt;</code></samp><br><samp>LOCATION_IS_MINES <code title="required field 'location'">&lt;location&gt;</code></samp><br><samp>LOCATION_IS_SKULL_CAVE <code title="required field 'location'">&lt;location&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_location">given location</a> is indoors, outdoors, in <a href="../The_Mines.html" title="The Mines">the mines</a>, or in the <a href="../Skull_Cavern.html" title="Skull Cavern">Skull Cavern</a>.
+</td></tr>
+<tr>
+<td><samp>LOCATION_NAME <code title="required field 'location'">&lt;location&gt;</code> <code title="required field 'name'">&lt;name&gt;</code></samp><br><samp>LOCATION_UNIQUE_NAME <code title="required field 'location'">&lt;location&gt;</code> <code title="required field 'name'">&lt;name&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_location">given location</a> has the specified name or unique instanced name (you can see both names in-game using the <a rel="nofollow" class="external text" href="../../external.html?link=https://www.nexusmods.com/stardewvalley/mods/679">Debug Mode</a> mod).
+</td></tr>
+<tr>
+<td><samp>LOCATION_SEASON <code title="required field 'location'">&lt;location&gt;</code> [<code title="required field 'season'">&lt;season&gt;</code>]+</samp>
+</td>
+<td>Whether the <a href="#Target_location">given location</a> is in one of the given seasons (which can be <samp>spring</samp>, <samp>summer</samp>, <samp>fall</samp>, or <samp>winter</samp>). This accounts for the <samp>SeasonOverride</samp> field in the <a href="../Modding_Migrate_to_Stardew_Valley_1.html#Custom_location_contexts" title="Modding:Migrate to Stardew Valley 1.6">location's context data</a>.
+<p>For example, this is valid in spring <i>or</i> summer: <code>LOCATION_SEASON Here spring summer</code>.
+</p>
+</td></tr>
+<tr>
+<td><samp>MUSEUM_DONATIONS <code title="required field 'min count'">&lt;min count&gt;</code> <code title="optional field 'max count'">[max count]</code> <code title="optional field 'object type'">[object type]</code>+</samp>
+</td>
+<td>Whether all players have donated a total of <code title="required field 'min count'">&lt;min count&gt;</code> to <code title="optional field 'max count'">[max count]</code> (default unlimited) inclusively to the <a href="../Museum.html" title="Museum">museum</a>. This can optionally be filtered by the object type field, like <samp>MUSEUM_DONATIONS 40 Arch Minerals</samp> to require at least 40 artifacts and minerals combined. You can omit the max count and still specify a filter.
+</td></tr>
+<tr>
+<td><samp>WEATHER <code title="required field 'location'">&lt;location&gt;</code> <code title="required field 'weather'">&lt;weather&gt;</code></samp>
+</td>
+<td>The weather ID in the <a href="#Target_location">given location</a>. The weather can be one of <samp>Festival</samp>, <samp>Rain</samp>, <samp>Snow</samp>, <samp>Storm</samp>, <samp>Sun</samp>, <samp>Wind</samp>, or a <a href="../Modding_Migrate_to_Stardew_Valley_1.html#Custom_weather" title="Modding:Migrate to Stardew Valley 1.6">custom weather ID</a>.
+</td></tr>
+<tr>
+<td><samp>WORLD_STATE_FIELD <code title="required field 'name'">&lt;name&gt;</code> <code title="required field 'value'">&lt;value&gt;</code></samp>
+</td>
+<td>Whether a property on <samp>Game1.netWorldState</samp> has the given value. If the property is numeric, this is the <i>minimum</i> value. Some useful values not covered by their own query:
+<table class="wikitable">
+
+<tbody><tr>
+<th>name
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>GoldenCoconutCracked</samp>
+</td>
+<td>Whether the player has cracked open any <a href="../Golden_Coconut.html" title="Golden Coconut">Golden Coconuts</a> (<samp>true</samp> or <samp>false</samp>).
+</td></tr>
+<tr>
+<td><samp>GoldenWalnutsFound</samp><br><samp>GoldenWalnuts</samp>
+</td>
+<td>The total number of <a href="../Golden_Walnut.html" title="Golden Walnut">Golden Walnuts</a> found or held by any player. To check how many one player currently holds, see the <samp>PLAYER_HAS_ITEM</samp> query.
+</td></tr>
+<tr>
+<td><samp>IsGoblinRemoved</samp>
+</td>
+<td>Whether the <a href="../Henchman.html" title="Henchman">Henchman</a> has been removed, so the player can access <a href="../Witch%27s_Hut.html" title="Witch's Hut">Witch's Hut</a> (<samp>true</samp> or <samp>false</samp>).
+</td></tr>
+<tr>
+<td><samp>IsSubmarineLocked</samp>
+</td>
+<td>Whether the <a href="../Night_Market.html" title="Night Market">Night Market</a> submarine is currently in use by a player (<samp>true</samp> or <samp>false</samp>).
+</td></tr>
+<tr>
+<td><samp>LostBooksFound</samp>
+</td>
+<td>The total number of <a href="../Lost_Book.html" class="mw-redirect" title="Lost Book">Lost Books</a> found or held by any player.
+</td></tr>
+<tr>
+<td><samp>MinesDifficulty</samp><br><samp>SkullCavesDifficulty</samp>
+</td>
+<td>The current <a href="../The_Mines.html#Shrine_of_Challenge" title="The Mines">Shrine of Challenge</a> difficulty level for the <a href="../The_Mines.html" title="The Mines">mine</a> or <a href="../Skull_Cavern.html" title="Skull Cavern">Skull Cavern</a> (a numeric value, where <samp>0</samp> is the default level when the shrine is deactivated).
+</td></tr>
+<tr>
+<td><samp>MiniShippingBinsObtained</samp>
+</td>
+<td>The number of times the player has obtained a <a href="../Mini-Shipping_Bin.html" title="Mini-Shipping Bin">Mini-Shipping Bin</a>.
+</td></tr>
+<tr>
+<td><samp>ParrotPlatformsUnlocked</samp>
+</td>
+<td>Whether the player has unlocked <a href="../Ginger_Island.html" title="Ginger Island">Ginger Island</a> parrot platforms, regardless of whether they've completed them (<samp>true</samp> or <samp>false</samp>).
+</td></tr>
+<tr>
+<td><samp>ServerPrivacy</samp>
+</td>
+<td>The <a href="../Multiplayer.html" title="Multiplayer">multiplayer</a> connection privacy mode (<samp>InviteOnly</samp> or <samp>FriendsOnly</samp>).
+</td></tr>
+<tr>
+<td><samp>ShuffleMineChests</samp>
+</td>
+<td>The value of the 'mine rewards' <a href="../Options.html" title="Options">game option</a> (<samp>Default</samp> or <samp>Remixed</samp>).
+</td></tr>
+<tr>
+<td><samp>WeatherForTomorrow</samp>
+</td>
+<td>The weather ID for tomorrow in the main valley area.
+</td></tr>
+<tr>
+<td><samp>VisitsUntilY1Guarantee</samp>
+</td>
+<td>The number of times the <a href="../Traveling_Cart.html" title="Traveling Cart">Traveling Cart</a> will visit before <a href="../Red_Cabbage.html" title="Red Cabbage">Red Cabbage</a> is guaranteed to drop.
+</td></tr></tbody></table>
+<p>For example, the <a href="../Traveling_Cart.html" title="Traveling Cart">Traveling Cart</a> shop uses a <code>WORLD_STATE_FIELD VisitsUntilY1Guarantee 0</code> condition to check if it should guarantee a <a href="../Red_Cabbage.html" title="Red Cabbage">Red Cabbage</a> item.
+</p>
+</td></tr>
+<tr>
+<td><samp>WORLD_STATE_FIELD <code title="required field 'name'">&lt;name&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>For numeric properties only, whether a property on <samp>Game1.netWorldState</samp> has a value between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited). If <code title="optional field 'max'">[max]</code> is omitted or the properties isn't numeric, the previous form is used. See the previous entry for a list of useful properties.
+</td></tr>
+<tr>
+<td><samp>WORLD_STATE_ID <code title="required field 'id'">&lt;id&gt;</code>+</samp>
+</td>
+<td>Whether any world state flag matching the given <code title="required field 'id'">&lt;id&gt;</code> values is set.
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="Player_info_&amp;_progress"></span><span class="mw-headline" id="Player_info_.26_progress">Player info &amp; progress</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>MINE_LOWEST_LEVEL_REACHED <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether any player has reached a level between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively in <a href="../The_Mines.html" title="The Mines">the mines</a>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_COMBAT_LEVEL <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp><br><samp>PLAYER_FARMING_LEVEL <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp><br><samp>PLAYER_FISHING_LEVEL <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp><br><samp>PLAYER_FORAGING_LEVEL <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp><br><samp>PLAYER_LUCK_LEVEL <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp><br><samp>PLAYER_MINING_LEVEL <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a <a href="../Skills.html" title="Skills">skill level</a> between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively, including the effects of buffs which raise them.
+</td></tr>
+<tr>
+<td><samp>PLAYER_CURRENT_MONEY <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) gold inclusively.
+</td></tr>
+<tr>
+<td><samp>PLAYER_FARMHOUSE_UPGRADE <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have upgraded their <a href="../Farmhouse.html" title="Farmhouse">farmhouse</a> or <a href="../Cabin.html" title="Cabin">cabin</a> to a level between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively. See <a rel="nofollow" class="external text" href="../../external.html?link=https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide/tokens.md#FarmhouseUpgrade">possible levels</a>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_GENDER <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'gender'">&lt;gender&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> are <samp>Male</samp> or <samp>Female</samp>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_ACHIEVEMENT <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'achievement id'">&lt;achievement id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have unlocked a specific achievement ID. The valid IDs are listed in <a href="../Modding_Achievement_data.html" title="Modding:Achievement data"><samp>Data/Achievements</samp></a>, plus a few Steam achievement IDs that aren't listed.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_ALL_ACHIEVEMENTS <code title="required field 'player'">&lt;player&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have unlocked every achievement listed in <a href="../Modding_Achievement_data.html" title="Modding:Achievement data"><samp>Data/Achievements</samp></a>. This doesn't count the extra Steam achievement IDs that aren't listed in that file.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_BUFF <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a given buff ID currently applied.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_CAUGHT_FISH <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have caught at least one fish with the given ID.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_CONVERSATION_TOPIC <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a <a href="../Modding_Dialogue.html#Conversation_topics" title="Modding:Dialogue">conversation topic</a> with the ID <code title="required field 'id'">&lt;id&gt;</code> active.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_COOKING_RECIPE <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'recipe name'">&lt;recipe name&gt;</code></samp><br><samp>PLAYER_HAS_CRAFTING_RECIPE <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'recipe name'">&lt;recipe name&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> know the crafting/cooking recipe identified by its internal name (spaces allowed). For example, <code>PLAYER_HAS_CRAFTING_RECIPE Current Field Snack</code>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_DIALOGUE_ANSWER <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have chosen the given dialogue answer in a previous dialogue.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_HEARD_SONG <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have heard a song track's cue name (e.g. for the <a href="../Jukebox.html" class="mw-redirect" title="Jukebox">jukebox</a> track selection).
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_ITEM <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'item'">&lt;item&gt;</code> <code title="optional field 'min'">[min]</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have between <code title="optional field 'min'">[min]</code> and <code title="optional field 'max'">[max]</code> (default unlimited) matching items in their inventory, inclusively. The <code title="required field 'item'">&lt;item&gt;</code> can be <samp>858</samp> or <samp>(O)858</samp> (Qi Gems), <samp>73</samp> or <samp>(O)73</samp> (Walnuts), or the <a href="../Modding_Common_data_field_types.html#Item_ID" title="Modding:Common data field types">qualified or unqualified item ID</a>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_MAIL <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'mail id'">&lt;mail id&gt;</code> <code title="optional field 'type'">[type]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have the given <a href="../Modding_Mail_data.html" title="Modding:Mail data">mail flag</a> set.
+<p>The <code title="optional field 'type'">[type]</code> (default <samp>Any</samp>) can be one of:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>type
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>Any</samp>
+</td>
+<td>Mail in <a href="../The_Farm.html#Mailbox" title="The Farm">the mailbox</a>, in the queue for tomorrow's mailbox, or already received.
+</td></tr>
+<tr>
+<td><samp>Mailbox</samp>
+</td>
+<td>Mail in the mailbox.
+</td></tr>
+<tr>
+<td><samp>Tomorrow</samp>
+</td>
+<td>Mail in the queue for tomorrow's mailbox.
+</td></tr>
+<tr>
+<td><samp>Received</samp>
+</td>
+<td>Mail which either:
+<ul><li>was in the mailbox and read by the player;</li>
+<li>or has no letter in <samp>Data/mail</samp>, so it was added to the received list directly.</li></ul>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_PROFESSION <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'profession id'">&lt;profession id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have the given <a href="../Skills.html" title="Skills">profession</a> ID.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_RUN_TRIGGER_ACTION <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have applied the <a href="../Modding_Trigger_actions.html" title="Modding:Trigger actions">trigger action</a> with the given <code title="required field 'id'">&lt;id&gt;</code>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_SECRET_NOTE <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have read a secret note, where <code title="required field 'id'">&lt;id&gt;</code> is the secret note's integer ID.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_SEEN_EVENT <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'id'">&lt;id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have seen the event with the given <code title="required field 'id'">&lt;id&gt;</code>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_TOWN_KEY <code title="required field 'player'">&lt;player&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have the <a href="../Key_To_The_Town.html" title="Key To The Town">town key</a>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_TRASH_CAN_LEVEL <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a <a href="../Trash_Cans.html" title="Trash Cans">trash can upgrade level</a> between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively. The <code title="required field 'level'">&lt;level&gt;</code> can be <samp>0</samp> (base), <samp>1</samp> (copper), <samp>2</samp> (steel), <samp>3</samp> (gold), or <samp>4</samp> (iridium).
+</td></tr>
+<tr>
+<td><samp>PLAYER_LOCATION_CONTEXT <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'location context'">&lt;location context&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> are in the given <a href="../Modding_Migrate_to_Stardew_Valley_1.html#Custom_location_contexts" title="Modding:Migrate to Stardew Valley 1.6">location context</a>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_LOCATION_NAME <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'location name'">&lt;location name&gt;</code>+</samp><br><samp>PLAYER_LOCATION_UNIQUE_NAME <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'location name'">&lt;location name&gt;</code>+</samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> are in the given location, using the name or unique instanced name (you can see both names in-game using the <a rel="nofollow" class="external text" href="../../external.html?link=https://www.nexusmods.com/stardewvalley/mods/679">Debug Mode</a> mod). The <code title="required field 'location name'">&lt;location name&gt;</code> value doesn't recognize <a href="#Target_location">target location keywords</a> like <samp>Here</samp>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_MOD_DATA <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'key'">&lt;key&gt;</code> <code title="required field 'value'">&lt;value&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a <samp>player.modData</samp> entry added by a mod with the given <code title="required field 'key'">&lt;key&gt;</code> and <code title="required field 'value'">&lt;value&gt;</code>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_MONEY_EARNED <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have earned between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) gold inclusively.
+</td></tr>
+<tr>
+<td><samp>PLAYER_MONSTERS_KILLED <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'monster name'">&lt;monster name&gt;</code>+ <code title="optional field 'min count'">[min count]</code> <code title="optional field 'max count'">[max count]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have killed the given monster(s) between <code title="optional field 'min count'">[min count]</code> (default 1) and <code title="optional field 'max count'">[max count]</code> (default unlimited) times inclusively. If you list multiple monsters, it'll check the combined count for all of them.
+<p>For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-js mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// killed 50+ slimes, skeletons, and bugs combined</span>
+<span class="nx">PLAYER_KILLED_MONSTERS</span> <span class="nx">Current</span> <span class="s2">"Green Slime"</span> <span class="nx">Skeleton</span> <span class="nx">Bug</span> <span class="mi">50</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><samp>PLAYER_SHIPPED_BASIC_ITEM <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'item ID'">&lt;item ID&gt;</code> <code title="optional field 'min count'">[min count]</code> <code title="optional field 'max count'">[max count]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have shipped the given item between <code title="optional field 'min count'">[min count]</code> (default 1) and <code title="optional field 'max count'">[max count]</code> (default unlimited) times inclusively. This only works for the items tracked by the game for shipping stats (shown in the <a href="../Shipping.html#Collection" title="Shipping">shipping collections menu</a>).
+</td></tr>
+<tr>
+<td><samp>PLAYER_SPECIAL_ORDER_ACTIVE <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'order id'">&lt;order id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have the given <a href="../Special_Orders.html" class="mw-redirect" title="Special Orders">special order</a> active.
+</td></tr>
+<tr>
+<td><samp>PLAYER_SPECIAL_ORDER_COMPLETE <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'order id'">&lt;order id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have completed the given <a href="../Special_Orders.html" class="mw-redirect" title="Special Orders">special order</a>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_SPECIAL_ORDER_RULE_ACTIVE <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'rule id'">&lt;rule id&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a <a href="../Modding_Special_orders.html#Special_rules" title="Modding:Special orders">special rule</a> active.
+</td></tr>
+<tr>
+<td><samp>PLAYER_STAT <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'stat name'">&lt;stat name&gt;</code> <code title="required field 'min value'">&lt;min value&gt;</code> <code title="optional field 'max value'">[max value]</code></samp>
+</td>
+<td>Whether a stat counter for the <a href="#Target_player">specified player(s)</a> has a value between <code title="required field 'min value'">&lt;min value&gt;</code> and <code title="optional field 'max value'">[max value]</code> (default unlimited) inclusively. The available stat names are...
+<ul><li><samp>averageBedtime</samp>;</li>
+<li><samp>beachFarmSpawns</samp>;</li>
+<li><samp>beveragesMade</samp>;</li>
+<li><samp>boatRidesToIsland</samp>;</li>
+<li><samp>bouldersCracked</samp>;</li>
+<li><samp>caveCarrotsFound</samp>;</li>
+<li><samp>cheeseMade</samp>;</li>
+<li><samp>chickenEggsLayed</samp>;</li>
+<li><samp>childrenTurnedToDoves</samp>;</li>
+<li><samp>coalFound</samp>;</li>
+<li><samp>coinsFound</samp>;</li>
+<li><samp>copperFound</samp>;</li>
+<li><samp>cowMilkProduced</samp>;</li>
+<li><samp>cropsShipped</samp>;</li>
+<li><samp>daysPlayed</samp>;</li>
+<li><samp>diamondsFound</samp>;</li>
+<li><samp>dirtHoed</samp>;</li>
+<li><samp>duckEggsLayed</samp>;</li>
+<li><samp>exMemoriesWiped</samp>;</li>
+<li><samp>fishCaught</samp>;</li>
+<li><samp>geodesCracked</samp>;</li>
+<li><samp>giftsGiven</samp>;</li>
+<li><samp>goatCheeseMade</samp>;</li>
+<li><samp>goatMilkProduced</samp>;</li>
+<li><samp>goldFound</samp>;</li>
+<li><samp>goodFriends</samp>;</li>
+<li><samp>hardModeMonstersKilled</samp>;</li>
+<li><samp>individualMoneyEarned</samp>;</li>
+<li><samp>iridiumFound</samp>;</li>
+<li><samp>ironFound</samp>;</li>
+<li><samp>itemsCooked</samp>;</li>
+<li><samp>itemsCrafted</samp>;</li>
+<li><samp>itemsForaged</samp>;</li>
+<li><samp>itemsShipped</samp>;</li>
+<li><samp>monstersKilled</samp>;</li>
+<li><samp>mysticStonesCrushed</samp>;</li>
+<li><samp>notesFound</samp>;</li>
+<li><samp>otherPreciousGemsFound</samp>;</li>
+<li><samp>piecesOfTrashRecycled</samp>;</li>
+<li><samp>preservesMade</samp>;</li>
+<li><samp>prismaticShardsFound</samp>;</li>
+<li><samp>questsCompleted</samp>;</li>
+<li><samp>rabbitWoolProduced</samp>;</li>
+<li><samp>rocksCrushed</samp>;</li>
+<li><samp>seedsSown</samp>;</li>
+<li><samp>sheepWoolProduced</samp>;</li>
+<li><samp>slimesKilled</samp>;</li>
+<li><samp>starLevelCropsShipped</samp>;</li>
+<li><samp>stepsTaken</samp>;</li>
+<li><samp>sticksChopped</samp>;</li>
+<li><samp>stoneGathered</samp>;</li>
+<li><samp>stumpsChopped</samp>;</li>
+<li><samp>timesEnchanted</samp>;</li>
+<li><samp>timesFished</samp>;</li>
+<li><samp>timesUnconscious</samp>;</li>
+<li><samp>totalMoneyGifted</samp>;</li>
+<li><samp>trashCansChecked</samp>;</li>
+<li><samp>trufflesFound</samp>;</li>
+<li><samp>walnutsFound</samp>;</li>
+<li><samp>weedsEliminated</samp>.</li></ul>
+</td></tr>
+<tr>
+<td><samp>PLAYER_VISITED_LOCATION <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'location name'">&lt;location name&gt;</code>+</samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have visited one of the given location names. For example, <code>PLAYER_VISITED_LOCATION Current IslandWest</code> checks whether the current player has ever visited <a href="../Ginger_Island.html#Island_West" title="Ginger Island">Ginger Island West</a>.
+<p>Notes:
+</p>
+<ul><li>Some locations have both a common name (like <samp>Barn</samp>) and unique name (like <samp>Barn{unique ID}</samp>). This tracks the common name.</li>
+<li>Generated mine and volcano dungeon levels aren't tracked.</li></ul>
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Player_relationships">Player relationships</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>PLAYER_FRIENDSHIP_POINTS <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'npc'">&lt;npc&gt;</code> <code title="required field 'min points'">&lt;min points&gt;</code> <code title="optional field 'max points'">[max points]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a friend with <a href="../Friendship.html" title="Friendship">friendship points</a> between <code title="required field 'min points'">&lt;min points&gt;</code> and <code title="optional field 'max points'">[max points]</code> (default unlimited) inclusively. The <code title="required field 'npc'">&lt;npc&gt;</code> can be an NPC's internal name, <samp>Any</samp> (check every NPC), or <samp>AnyDateable</samp> (check every romanceable NPC).
+<p>For example, this checks if the current player has 750 or more points (i.e. 3+ hearts) with Abigail:
+</p>
+<pre>PLAYER_FRIENDSHIP_POINTS Current Abigail 750</pre>
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_CHILDREN <code title="required field 'player'">&lt;player&gt;</code> <code title="optional field 'min'">[min]</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a number of children between <code title="optional field 'min'">[min]</code> (default 1) and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_PET <code title="required field 'player'">&lt;player&gt;</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a <a href="../Animals.html#Cat_or_Dog" title="Animals">pet</a>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_HEARTS <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'npc'">&lt;npc&gt;</code> <code title="required field 'min hearts'">&lt;min hearts&gt;</code> <code title="optional field 'max hearts'">[max hearts]</code></samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have a friend with a <a href="../Friendship.html" title="Friendship">heart level</a> between <code title="required field 'min hearts'">&lt;min hearts&gt;</code> and <code title="optional field 'max hearts'">[max hearts]</code> (default unlimited) inclusively. The <code title="required field 'npc'">&lt;npc&gt;</code> can be an NPC's internal name, <samp>Any</samp> (check every NPC), or <samp>AnyDateable</samp> (check every romanceable NPC).
+<p>For example, this checks if the current player has 3 or more hearts with Abigail:
+</p>
+<pre>PLAYER_HEARTS Current Abigail 3</pre>
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_MET <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'npc'">&lt;npc&gt;</code>+</samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have talked to one of the given NPCs at least once. The <code title="required field 'npc'">&lt;npc&gt;</code> is an NPC's internal name.
+</td></tr>
+<tr>
+<td><samp>PLAYER_NPC_RELATIONSHIP <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'npc'">&lt;npc&gt;</code> <code title="required field 'type'">&lt;type&gt;</code>+</samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have one of the relationship statuses with an NPC. The <code title="required field 'npc'">&lt;npc&gt;</code> can be an NPC's internal name or <samp>Any</samp> (match any NPC).
+<p><code title="required field 'type'">&lt;type&gt;</code> can be any combination of these values:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>type
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>Friendly</samp>
+</td>
+<td>Met the NPC, but no other status applies.
+</td></tr>
+<tr>
+<td><samp>Roommate</samp>
+</td>
+<td>The NPC has moved in with the player as a roommate.
+</td></tr>
+<tr>
+<td><samp>Dating</samp>
+</td>
+<td>The player has given a <a href="../Bouquet.html" title="Bouquet">bouquet</a> to the NPC, but haven't yet given them a <a href="../Mermaid%27s_Pendant.html" title="Mermaid's Pendant">mermaid's pendant</a>.
+</td></tr>
+<tr>
+<td><samp>Engaged</samp>
+</td>
+<td>The player has given a <a href="../Mermaid%27s_Pendant.html" title="Mermaid's Pendant">mermaid's pendant</a> to the NPC, but the marriage hasn't happened yet.
+</td></tr>
+<tr>
+<td><samp>Married</samp>
+</td>
+<td>The NPC has moved in with the player as a spouse.
+</td></tr>
+<tr>
+<td><samp>Divorced</samp>
+</td>
+<td>The player has dissolved their marriage with the NPC.
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>PLAYER_PLAYER_RELATIONSHIP <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'other player'">&lt;other player&gt;</code> <code title="required field 'type'">&lt;type&gt;</code>+</samp>
+</td>
+<td>Whether the <a href="#Target_player">specified player(s)</a> have one of the relationship types with the other specified player(s). The <code title="required field 'other player'">&lt;other player&gt;</code> can be a <a href="#Target_player">target player</a> or <samp>Any</samp> (match any player).
+<p><code title="required field 'type'">&lt;type&gt;</code> can be any combination of these values:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>type
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>Friendly</samp>
+</td>
+<td>No other status applies.
+</td></tr>
+<tr>
+<td><samp>Engaged</samp>
+</td>
+<td>One of the players has given a <a href="../Wedding_Ring.html" title="Wedding Ring">wedding ring</a> to the other, but the marriage hasn't happened yet.
+</td></tr>
+<tr>
+<td><samp>Married</samp>
+</td>
+<td>The players are married.
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>PLAYER_PREFERRED_PET <code title="required field 'player'">&lt;player&gt;</code> <code title="required field 'pet type'">&lt;pet type&gt;</code>+</samp>
+</td>
+<td>Whether the preferred pet for the <a href="#Target_player">specified player(s)</a> is one of the given types. The vanilla pet types are <samp>Cat</samp> and <samp>Dog</samp>.
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Randomization">Randomization</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>RANDOM <code title="required field 'chance'">&lt;chance&gt;</code> <code title="optional field '@addDailyLuck'">[@addDailyLuck]</code></samp>
+</td>
+<td>A random probability check which is re-rolled each time it's called. For example, <code>RANDOM 0.4</code> is true 40% of the time.
+<p>If the exact text <samp>@addDailyLuck</samp> is specified, the current player's daily <a href="../Luck.html" title="Luck">luck</a> is added to the probability.
+</p>
+</td></tr>
+<tr>
+<td><samp>SYNCED_CHOICE <code title="required field 'interval'">&lt;interval&gt;</code> <code title="required field 'key'">&lt;key&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="required field 'max'">&lt;max&gt;</code> <code title="required field 'choices'">&lt;choices&gt;</code>+</samp>
+</td>
+<td>Choose a random integer between <code title="required field 'min'">&lt;min&gt;</code> and <code title="required field 'max'">&lt;max&gt;</code> inclusively, and check whether it matches one of the <code title="required field 'choices'">&lt;choices&gt;</code>. The result will be identical for all queries with the same <code title="required field 'key'">&lt;key&gt;</code> value during the given <code title="required field 'interval'">&lt;interval&gt;</code> (one of <samp>tick</samp>, <samp>day</samp>, <samp>season</samp>, or <samp>year</samp>), including between players in multiplayer mode.
+<p>For example, <samp>SYNCED_CHOICE day example_key 1 5 1 2</samp> chooses a random value between 1 and 5, and checks if it's either 1 or 2.
+</p><p>This is mainly useful in cases where you need to pick between a number of discrete cases. For regular probability checks, see <samp>SYNCED_RANDOM</samp> instead.
+</p>
+</td></tr>
+<tr>
+<td><samp>SYNCED_RANDOM <code title="required field 'interval'">&lt;interval&gt;</code> <code title="required field 'key'">&lt;key&gt;</code> <code title="required field 'chance'">&lt;chance&gt;</code> <code title="optional field '@addDailyLuck'">[@addDailyLuck]</code></samp>
+</td>
+<td>A random probability check. The result will be identical for all queries with the same <code title="required field 'key'">&lt;key&gt;</code> value during the given <code title="required field 'interval'">&lt;interval&gt;</code> (one of <samp>tick</samp>, <samp>day</samp>, <samp>season</samp>, or <samp>year</samp>), including between players in multiplayer mode.
+<p>For example, <samp>SYNCED_RANDOM day cart_rare_seed 0.4</samp> has a 40% chance to be true the first time it's called that day, and will always be the same value if called again with the same key on the same day.
+</p><p>If the exact text <samp>@addDailyLuck</samp> is specified, the current player's daily <a href="../Luck.html" title="Luck">luck</a> is added to the probability.
+</p>
+</td></tr>
+<tr>
+<td><samp>SYNCED_SUMMER_RAIN_RANDOM <code title="required field 'base chance'">&lt;base chance&gt;</code> <code title="required field 'day multiplier'">&lt;day multiplier&gt;</code></samp>
+</td>
+<td>A specialized variant of <samp>SYNCED_DAY_RANDOM</samp> used to calculate the chance of rain in summer, which increases with the day number.
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="For_items_only">For items only</span></h3>
+<p>These queries apply in cases where there's an item (e.g. machine recipes, shops, etc); they'll return false if not applicable. They take a <code title="required field 'type'">&lt;type&gt;</code> argument which can be <samp>Input</samp> (the machine input item) or <samp>Target</samp> (the machine output, tree fruit, shop item, etc).
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>ITEM_CATEGORY <code title="required field 'target'">&lt;target&gt;</code></samp>
+</td>
+<td>Whether the item has a non-zero <a href="../Modding_Items.html#Category" title="Modding:Items">category</a>.
+</td></tr>
+<tr>
+<td><samp>ITEM_CATEGORY <code title="required field 'target'">&lt;target&gt;</code> <code title="optional field 'category'">[category]</code>+</samp>
+</td>
+<td>Whether the item's <a href="../Modding_Items.html#Category" title="Modding:Items">category</a> number matches one of the given values.
+</td></tr>
+<tr>
+<td><samp>ITEM_CONTEXT_TAG <code title="required field 'target'">&lt;target&gt;</code> <code title="required field 'tags'">&lt;tags&gt;</code></samp>
+</td>
+<td>Whether the item has all of the given space-delimited tags. For example, <code>ITEM_CONTEXT_TAG Target bone_item marine_item</code> will only match items with both tags.
+</td></tr>
+<tr>
+<td><samp>ITEM_EDIBILITY <code title="required field 'target'">&lt;target&gt;</code> <code title="optional field 'min'">[min]</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the item's edibility is between <code title="optional field 'min'">[min]</code> (default -299) and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively. A value of -300 is inedible, so <samp>ITEM_EDIBILITY <code title="required field 'target'">&lt;target&gt;</code></samp> without min/max values checks if the item is edible.
+</td></tr>
+<tr>
+<td><samp>ITEM_ID <code title="required field 'target'">&lt;target&gt;</code> <code title="required field 'item ID'">&lt;item ID&gt;</code>+</samp>
+</td>
+<td>Whether the item has one of the given <a href="../Modding_Common_data_field_types.html#Item_ID" title="Modding:Common data field types">qualified or unqualified item IDs</a>.
+</td></tr>
+<tr>
+<td><samp>ITEM_ID_PREFIX <code title="required field 'target'">&lt;target&gt;</code> <code title="required field 'prefix'">&lt;prefix&gt;</code></samp>
+</td>
+<td>Whether the item's <a href="../Modding_Common_data_field_types.html#Item_ID" title="Modding:Common data field types">qualified or unqualified item ID</a> starts with the given prefix.
+</td></tr>
+<tr>
+<td><samp>ITEM_NUMERIC_ID <code title="required field 'target'">&lt;target&gt;</code> <code title="optional field 'min'">[min]</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the item has a numeric <a href="../Modding_Common_data_field_types.html#Item_ID" title="Modding:Common data field types">unqualified item ID</a> which is between <code title="optional field 'min'">[min]</code> and <code title="optional field 'max'">[max]</code> (both defaulting to the lowest and highest possible value).
+</td></tr>
+<tr>
+<td><samp>ITEM_OBJECT_TYPE <code title="required field 'target'">&lt;target&gt;</code> <code title="required field 'type'">&lt;type&gt;</code>+</samp>
+</td>
+<td>Whether the item has one of the given <a href="../Modding_Items.html#Objects" title="Modding:Items">object types</a>.
+</td></tr>
+<tr>
+<td><samp>ITEM_PRICE <code title="required field 'target'">&lt;target&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the item has a sell-to-shop price between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default highest possible value).
+</td></tr>
+<tr>
+<td><samp>ITEM_QUALITY <code title="required field 'target'">&lt;target&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the item's quality is between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively. The possible values are <samp>0</samp> (normal), <samp>1</samp> (silver), <samp>2</samp> (gold), or <samp>4</samp> (iridium).
+</td></tr>
+<tr>
+<td><samp>ITEM_STACK <code title="required field 'target'">&lt;target&gt;</code> <code title="required field 'min'">&lt;min&gt;</code> <code title="optional field 'max'">[max]</code></samp>
+</td>
+<td>Whether the item stack size is between <code title="required field 'min'">&lt;min&gt;</code> and <code title="optional field 'max'">[max]</code> (default unlimited) inclusively. Note that this only applies to the target item, it doesn't include other stacks in the inventory.
+</td></tr>
+<tr>
+<td><samp>ITEM_TYPE <code title="required field 'target'">&lt;target&gt;</code> <code title="required field 'type'">&lt;type&gt;</code>+</samp>
+</td>
+<td>Whether the <a href="../Modding_Common_data_field_types.html#Item_ID" title="Modding:Common data field types">item's type definition ID</a> matches one of the given values. For example, <samp>ITEM_TYPE Target (BC)</samp> matches bigcraftables.
+</td></tr>
+<tr>
+<td><samp>ITEM_HAS_EXPLICIT_OBJECT_CATEGORY <code title="required field 'target'">&lt;target&gt;</code></samp>
+</td>
+<td><i>(Specialized)</i> Whether the item has an explicit category set in <samp>Data/Objects</samp>, ignoring categories assigned dynamically in code (e.g. for rings). Items without an explicit category are often (but not always) special items like <a href="../Secret_Notes.html" title="Secret Notes">secret notes</a> or unimplemented items.
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Immutable">Immutable</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Condition
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>TRUE</samp>
+</td>
+<td>A condition which always matches.
+</td></tr>
+<tr>
+<td><samp>FALSE</samp>
+</td>
+<td>A condition which never matches.
+</td></tr></tbody></table>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Common_values">Common values</span></h2><section class="mf-section-3 collapsible-block" id="mf-section-3">
+<h3 class="in-block"><span class="mw-headline" id="Target_location">Target location</span></h3>
+<p>Some conditions have a <code title="required field 'location'">&lt;location&gt;</code> argument. This can be one of...
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>value
+</th>
+<th>result
+</th></tr>
+<tr>
+<td><samp>Here</samp>
+</td>
+<td>The location containing the current player (regardless of the <a href="#Target_player">target player</a>).
+</td></tr>
+<tr>
+<td><samp>Target</samp>
+</td>
+<td>The location containing the in-game entity being edited (e.g. the machine for <samp>Data/Machines</samp> or fruit tree for <samp>Data/FruitTrees</samp>).
+<p>If the asset being edited isn't tied to a location, this is the location of the <a href="#Target_player">target player</a> (if set), else equivalent to <samp>Here</samp>.
+</p>
+</td></tr>
+<tr>
+<td><i>any other</i>
+</td>
+<td>The <a href="../Modding_Migrate_to_Stardew_Valley_1.html#Custom_locations" title="Modding:Migrate to Stardew Valley 1.6">location ID</a> (i.e. internal name) for the location to check.
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="Target_player">Target player</span></h3>
+<p>Some conditions have a <code title="required field 'player'">&lt;player&gt;</code> argument. This can be one of...
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>value
+</th>
+<th>result
+</th></tr>
+<tr>
+<td><samp>Any</samp>
+</td>
+<td>At least one player must match the condition, regardless of whether they're online.
+</td></tr>
+<tr>
+<td><samp>All</samp>
+</td>
+<td>Every player must match the condition, regardless of whether they're online.
+</td></tr>
+<tr>
+<td><samp>Current</samp>
+</td>
+<td>The local player.
+</td></tr>
+<tr>
+<td><samp>Host</samp>
+</td>
+<td>The main player.
+</td></tr>
+<tr>
+<td><samp>Target</samp>
+</td>
+<td>This value depends on the context:
+<table class="wikitable">
+
+<tbody><tr>
+<th>context
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><samp>Data/LocationContexts</samp>
+</td>
+<td>For the <samp>PassOutLocations</samp> field only, the player whose pass-out location to get.
+</td></tr>
+<tr>
+<td><samp>Data/Weddings</samp>
+</td>
+<td>For the <samp>Attendees</samp> field only, the attendee player (if the attendee is a player).
+</td></tr>
+<tr>
+<td><samp>Data/WildTrees</samp>
+</td>
+<td>For the <samp>AdditionalChopDrops</samp> field only, the last player who chopped the tree.
+</td></tr>
+<tr>
+<td><i>custom queries</i>
+</td>
+<td>C# mods may specify a <samp>target_farmer</samp> parameter when calling <samp>GameStateQuery.CheckConditions</samp>.
+</td></tr>
+<tr>
+<td><i>any other</i>
+</td>
+<td>Equivalent to <samp>Current</samp>.
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><i>any other</i>
+</td>
+<td>The unique multiplayer ID for the player to check.
+</td></tr></tbody></table>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(4)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="For_C#_mod_authors"></span><span class="mw-headline" id="For_C.23_mod_authors">For C# mod authors</span></h2><section class="mf-section-4 collapsible-block" id="mf-section-4">
+<h3 class="in-block"><span class="mw-headline" id="Using_queries_elsewhere">Using queries elsewhere</span></h3>
+<p>C# code can work with queries using the <samp>GameStateQuery</samp> class, which provides utility methods like <code>GameStateQuery.CheckConditions(query)</code> or <code>GameStateQuery.IsImmutablyTrue(query)</code>.
+</p><p>You can also use game state queries in <a href="../Modding_Event_data.html" title="Modding:Event data">event preconditions</a> using the new precondition flag, like <code>some_event_id/gameStateQuery !SEASON Spring, WEATHER Here Sun</code>.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Extensibility">Extensibility</span></h3>
+<p>C# mods can...
+</p>
+<ul><li>check if a query exists using <code>GameStateQuery.Exists("Example.ModId_ConditionName")</code>;</li>
+<li>define custom queries using <code>GameStateQuery.Register("Example.ModId_ConditionName", handleQueryMethod)</code> (using a <a href="../Modding_Common_data_field_types.html#Unique_string_ID" title="Modding:Common data field types">unique string ID</a> for the query name);</li>
+<li>and add query aliases using <code>GameStateQuery.RegisterAlias("Example.ModId_AliasName", "Example.ModId_ConditionName")</code> (ideally using a <a href="../Modding_Common_data_field_types.html#Unique_string_ID" title="Modding:Common data field types">unique string ID</a> for the alias).</li></ul>
+
+
+
+
+</section></div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="indexc708-2.html?title=Modding:Game_state_queries&amp;oldid=164773">https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Game_state_queries&amp;oldid=164773</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="../Special_History/Modding_Game_state_queries.html"
+				data-user-name="Pathoschild"
+				data-user-gender="unknown"
+				data-timestamp="1712426927">
+				<span>Last edited on 6 April 2024, at 18:08</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> This page was last edited on 6 April 2024, at 18:08.</li><li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../Stardew_Valley_Wiki_Privacy_policy.html" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../Stardew_Valley_Wiki_About.html" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../Stardew_Valley_Wiki_General_disclaimer.html" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="index9511.html?title=Modding:Game_state_queries&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.197","walltime":"0.399","ppvisitednodes":{"value":6315,"limit":1000000},"postexpandincludesize":{"value":17387,"limit":2097152},"templateargumentsize":{"value":3452,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":825,"limit":5000000},"timingprofile":["100.00%  207.469      1 -total"," 55.23%  114.591    219 Template:T"," 19.10%   39.634     84 Template:O","  0.95%    1.968      2 Template:Nexus_mod"]},"cachereport":{"timestamp":"20240411033405","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":706});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Modding:Game_state_queries&mobileaction=toggle_view_mobile by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:50:21 GMT -->
+</html>
+		

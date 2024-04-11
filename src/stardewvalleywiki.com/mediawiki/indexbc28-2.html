@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Developer_Blog&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>View source for Developer Blog - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"c6eb0d5e0e063d4ad75d4065","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Developer_Blog","wgTitle":"Developer Blog","wgCurRevisionId":150458,"wgRevisionId":0,"wgArticleId":212,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Developer_Blog","wgRelevantArticleId":212,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":
+!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":
+"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.ui.input":"ready","mediawiki.ui.checkbox":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","mobile.messageBox.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="load85db.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="You do not have permission to edit this page, for the following reason:"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="View source for Developer Blog - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Developer_Blog"/>
+<meta property="og:description" content="This is a listing of official Stardew Valley development updates from ConcernedApe (unless otherwise noted) posted on https://www.stardewvalley.net/blog/ (2013-present) and before that on https://stardewvalley.blogspot.com/ (2012-2013). Blog posts are sorted in reverse chronological order, with the most recent at the top of the page."/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2023-09-22T23:00:38Z"/>
+<meta property="article:published_time" content="2023-09-22T23:00:38Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="View source for Developer Blog - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="This is a listing of official Stardew Valley development updates from ConcernedApe (unless otherwise noted) posted on https://www.stardewvalley.net/blog/ (2013-present) and before that on https://stardewvalley.blogspot.com/ (2012-2013). Blog posts are sorted in reverse chronological order, with the most recent at the top of the page."/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"View source for Developer Blog - Stardew Valley Wiki","headline":"View source for Developer Blog - Stardew Valley Wiki","mainEntityOfPage":"View source for Developer Blog","identifier":"https:\/\/stardewvalleywiki.com\/Developer_Blog","url":"https:\/\/stardewvalleywiki.com\/Developer_Blog","description":"This is a listing of official Stardew Valley development updates from ConcernedApe (unless otherwise noted) posted on https:\/\/www.stardewvalley.net\/blog\/ (2013-present) and before that on https:\/\/stardewvalley.blogspot.com\/ (2012-2013). Blog posts are sorted in reverse chronological order, with the most recent at the top of the page.","dateModified":"2023-09-22T23:00:38Z","datePublished":"2023-09-22T23:00:38Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Developer_Blog rootpage-Developer_Blog stable issues-group-B skin-minerva action-edit skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Open main menu" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Special:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Developer+Blog&amp;returntoquery=action%3Dedit" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:MobileOptions&amp;returnto=Developer+Blog" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" class="" data-event-name=""><span>About Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Search Stardew Valley Wiki" aria-label="Search Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">View source for Developer Blog</h1>
+					<div class="tagline"></div>
+				</div>
+				
+				
+				
+				<div class="minerva__subtitle">← <a href="../../external.html?link=https://stardewvalleywiki.com/Developer_Blog" title="Developer Blog">Developer Blog</a></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Stardew_Valley_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Stardew Valley Wiki:Users (page does not exist)">Users</a>.
+</p>
+</div><hr />
+<p>You can view and copy the source of this page.
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-monospace mw-ui-input" lang="en" dir="ltr" name="wpTextbox1">This is a listing of official Stardew Valley development updates from [[ConcernedApe]] (unless otherwise noted) posted on https://www.stardewvalley.net/blog/ (2013-present) and before that on https://stardewvalley.blogspot.com/ (2012-2013). Blog posts are sorted in reverse chronological order, with the most recent at the top of the page.
+
+==2023==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://www.stardewvalley.net/the-stardew-valley-cookbook/ The Stardew Valley Cookbook]
+|September 22, 2023
+|News about the upcoming Official Stardew Valley Cookbook
+|-
+|}
+
+==2022==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://www.stardewvalley.net/some-cool-stardew-valley-music-arrangements-interpretations-and-covers/ Some cool Stardew Valley music arrangements, interpretations, and covers]
+|May 3, 2022
+|ConcernedApe shares music from the game that has been performed by others.
+|-
+|}
+
+==2021==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://www.stardewvalley.net/1-5-6-out-now-on-steam-gog/ 1.5.6 out now on Steam/GOG]
+|December 21, 2021
+|Announces the release of Stardew Valley v1.5.6 on Steam/GOG
+|-
+|[https://www.stardewvalley.net/move-to-self-publishing-for-ios/ Move To Self-Publishing for iOS]
+|December 7, 2021
+|Announces that as of October 24, 2021, ConcernedApe is the official publisher of Stardew Valley on iOS.
+|-
+|[https://www.stardewvalley.net/stardew-valley-now-available-on-game-pass/ Stardew Valley now available on Game Pass]
+|December 3, 2021
+|Announces that Stardew Valley is now available on Game Pass for Xbox and PC; announces a 1.5.5 hotfix, and links to [https://www.stardewvalley.net/compatibility/ a guide] for running Stardew Valley on 32-bit operating systems.
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-5-5-released-on-pc/ Stardew Valley 1.5.5 Released on PC]
+|November 30, 2021
+|Announces the move from beta to full release of Stardew Valley v1.5.5 on PC
+|-
+|[https://www.stardewvalley.net/stardew-valley-board-game-taking-orders-again-on-wednesday-11-3/ Stardew Valley Board Game &amp;mdash; Taking orders again on Wednesday, 11/3]
+|November 1, 2021
+|Announces that the board game is back in stock, and contains minor adjustments to gameplay based on player feedback.
+|-
+|[https://www.stardewvalley.net/stardew-1-5-mobile-update/ Stardew 1.5 Mobile Update]
+|July 6, 2021
+|Announces that "someone new" is porting the 1.5 update to mobile platforms, and that the update will "be a while off yet".
+|-
+|[https://www.stardewvalley.net/the-mac-multiplayer-issue-is-now-fixed/ The Mac Multiplayer Issue Is Now Fixed]
+|July 2, 2021
+|Announces a patch that resolves an issue that broke multiplayer on the Mac.
+|-
+|[https://www.stardewvalley.net/stardew-monetization-policy-for-twitch-streamers-youtubers-etc/ Stardew monetization policy for Twitch Streamers/Youtubers/etc.]
+|May 7, 2021
+|Clarifies that people can monetize videos and livestreams of the game on Twitch, YouTube, or elsewhere.
+|-
+|[https://www.stardewvalley.net/1-5-4-2-patch-for-playstation/ 1.5.4.2 Patch for Playstation]
+|April 30, 2021
+|Patch notes for the 1.5.4.2 bug-fix update on PlayStation.
+|-
+|[https://www.stardewvalley.net/stardew-valley-the-board-game-available-now/ Stardew Valley: The Board Game (Available Now!)]
+|February 23, 2021
+|Announces a board game based on Stardew Valley for 1-4 players.
+|-
+|[https://www.stardewvalley.net/stardew-valley-wiki-ownership-change/ Stardew Valley Wiki Ownership Change]
+|February 23, 2021
+|Discusses the transfer of hosting the wiki from Chucklefish to ConcernedApe.
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-5-out-now-on-consoles/ Stardew Valley 1.5 Out Now On Consoles]
+|February 12, 2021
+|Announces release of the 1.5 content update on consoles.
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-5-4-patch-out-now-on-pc/ Stardew Valley 1.5.4 Patch Out Now On PC]
+|January 22, 2021
+|Patch notes for the 1.5.4 bug-fix update on PC. 
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-5-3-patch-out-now-on-pc/ Stardew Valley 1.5.3 Patch Out Now On PC]
+|January 15, 2021
+|Patch notes for the 1.5.3 bug-fix update on PC. 
+|-
+|[https://www.stardewvalley.net/upcoming-wiki-transfer/ Upcoming Wiki Transfer]
+| January 8, 2021
+|Discusses the upcoming host transfer of the wiki from Chucklefish to ConcernedApe.
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-5-2-patch-out-now-on-pc/ Stardew Valley 1.5.2 Patch Out Now On PC]
+|January 8, 2021
+|Patch notes for the 1.5.2 bug-fix update on PC. 
+|}
+
+==2020==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-5-1-patch-notes/ Stardew Valley 1.5.1 Patch Notes]
+|December 24, 2020
+|Patch notes for the 1.5.1 bug-fix update on PC.
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-5-update-out-now-on-pc/ Stardew Valley 1.5 Update out now on PC!]
+|December 21, 2020
+|Announces release of the 1.5 content update on PC. Details many new features and links to [https://www.stardewvalley.net/stardew-valley-1-5-update-full-changelog/ a full changelog].
+|-
+|[https://www.stardewvalley.net/new-update-for-android-and-hotfix-patch-for-pc/ New Update for Android and Hotfix patch for PC]
+|February 11, 2020
+|Announces release of the 1.4 update on Android and shares patch notes for the 1.4.5 bug-fix update on PC.
+|-
+|[https://www.stardewvalley.net/patch-1-4-4-available-now-for-pc-consoles/ Patch 1.4.4 available now for PC &amp; Consoles]
+|January 31, 2020
+|Patch notes for the 1.4.4 bug-fix update on PC and consoles.
+|}
+
+==2019==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://www.stardewvalley.net/console-1-4-3-patch/ Console 1.4.3 Patch]
+|December 20, 2019
+|Patch notes for the 1.4.3 bug-fix update on consoles.
+|-
+|[https://www.stardewvalley.net/1-4-content-update-out-now-on-switch-ps4-and-xbox/ 1.4 Content Update out now on Switch, PS4, and XBOX]
+|December 19, 2019
+|Announces release of the 1.4.2 update on Switch, PS4, and Xbox One. Announces planned bug fix updates 1.4.3 and 1.4.4 for consoles.
+|-
+|[https://www.stardewvalley.net/1-4-3-bug-fix-patch-for-pc/ 1.4.3 Bug-Fix patch for PC]
+|December 13, 2019
+|Patch notes for the 1.4.3 bug-fix update on PC.
+|-
+|[https://www.stardewvalley.net/1-4-2-bug-fix-patch-on-pc/ 1.4.2 Bug-Fix Patch on PC]
+|December 4, 2019
+|Patch notes for the 1.4.2 bug-fix update on PC.
+|-
+|[https://www.stardewvalley.net/1-4-bugfix-patch/ Stardew Valley 1.4.1 Bug-Fix Patch]
+|December 2, 2019
+|Patch notes for the 1.4.1 bug-fix update on PC.
+|-
+|[https://www.stardewvalley.net/the-stardew-valley-1-4-content-update-is-now-available-on-steam-gog/ The Stardew Valley 1.4 Content Update is Now Available on Steam &amp; GOG]
+|November 26, 2019
+|Announces release of the 1.4 content update on PC. Details many new features and links to [https://www.stardewvalley.net/stardew-valley-1-4-update-full-changelog/ a full changelog].
+|-
+|[https://www.stardewvalley.net/1-4-pc-release-date-more/ 1.4 PC Release Date &amp; More!]
+|November 12, 2019
+|Announces that Xbox One and PS4 have received the 1.3 update. Announces release date of November 26th, 2019 for the 1.4 update on PC and shares details on some of the new features.
+|-
+|[https://www.stardewvalley.net/self-publishing-on-switch/ Self-publishing on Switch]
+|October 1, 2019
+|ConcernedApe announces he has begun self-publishing Stardew Valley on Switch.
+|-
+|[https://www.stardewvalley.net/clarification-on-the-relationship-between-chucklefish-and-stardew-valley/ Clarification on the relationship between Chucklefish and Stardew Valley]
+|September 14, 2019
+|ConcernedApe explains Chucklefish's role in relation to Stardew Valley.
+|-
+|[https://www.stardewvalley.net/stardew-valley-now-available-on-android/ Stardew Valley now available on Android]
+|March 13, 2019
+|Announces release on Android.
+|-
+|[https://www.stardewvalley.net/android-version-coming-soon/ Android Version Coming March 14th]
+|February 14, 2019
+|Announces release date of March 14th, 2019 for Android. The Android version will include all single player content as well as the five new languages recently added on PC.
+|-
+|[https://www.stardewvalley.net/beta-is-now-open-for-4-new-languages-french-turkish-korean-and-italian/ Beta is now open for 5 New Languages: French, Turkish, Korean, Hungarian, and Italian]
+|January 24, 2019
+|Announces PC beta update for several new languages. 
+|-
+|[https://www.stardewvalley.net/job-openings/ Job Openings]
+|January 2, 2019
+|Opens applications for a programming job.
+|}
+
+==2018==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://www.stardewvalley.net/whats-in-store-for-stardew-valley/ What’s In Store For Stardew Valley]
+|December 14, 2018
+|ConcernedApe discusses his work on a new game set in the same world and his plans hire a team to help create new Stardew Valley updates in the future.
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-3-multiplayer-update-is-coming-to-nintendo-switch-this-week/ Stardew Valley 1.3 (Multiplayer Update) is coming to Nintendo Switch this week]
+|December 11, 2018
+|Announces release date of December 12th, 2018 for the 1.3 update on Switch.
+|-
+|[https://www.stardewvalley.net/move-to-self-publishing-starting-december-14th/ Move to Self-Publishing starting December 14th]
+|November 30, 2018
+|ConcernedApe announces he will begin self-publishing Stardew Valley on PC, Xbox, PS4, and PS Vita beginning December 14th, 2018. 
+|-
+|[https://www.stardewvalley.net/1-3-32-small-bug-fix-patch-released-on-pc-today/ 1.3.32 — Small Patch Released On PC Today]
+|November 19, 2018
+|A small bug fix patch for PC.
+|-
+|[https://www.stardewvalley.net/stardew-valley-coming-to-mobile/ Stardew Valley coming to mobile]
+|October 9, 2018
+|Announces Stardew Valley will be available on iOS on October 24th, 2018 and on Android at a later date. The mobile version will include all game content except multiplayer, allows transferring save data between PC and mobile, and will be available for $7.99 USD.
+|-
+|[https://www.stardewvalley.net/stardew-valley-1-3-multiplayer-update-is-now-available/ Stardew Valley 1.3 (Multiplayer Update) is now available!]
+|August 1, 2018
+|Announces release of the 1.3 multiplayer update for PC. 
+|-
+|[https://www.stardewvalley.net/ps-vita-release-date/ PS VITA release date!]
+|May 14, 2018
+|Announces release date of May 22nd, 2018 for the PS Vita.
+|-
+|[https://www.stardewvalley.net/stardew-valley-v1-3-beta/ Stardew Valley v1.3 Beta]
+|April 30, 2018
+|Announces 1.3 beta and explains how multiplayer works in Stardew Valley. ''(posted by Tom Coxon)''
+|-
+|[https://www.stardewvalley.net/update-on-1_3/ Update On 1.3]
+|February 15, 2018
+|Thanks Tom Coxon for his work on the network coding and reveals signs will be included in the 1.3 update.
+|}
+
+==2017==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://www.stardewvalley.net/status-update-multiplayer-beyond/ Status Update: Multiplayer + Beyond]
+|December 8, 2017
+|Update on some features in development, including multiplayer, a PS Vita port, and new languages. ''(posted by Molly Carroll)''
+|-
+|[https://www.stardewvalley.net/stardew-valley-switch-1-2-36-patch-notes/ Stardew Valley Switch – 1.2.36 Patch Notes]
+|November 29, 2017
+|Bug fix update for the Switch. ''(posted by Molly Carroll)''
+|-
+|[https://www.stardewvalley.net/sdvswitchbugfixes/ Stardew Valley on Nintendo Switch – Bug Fixes]
+|October 6, 2017
+|Addresses some common Switch bug reports. ''(posted by Molly Carroll)''
+|-
+|[https://www.stardewvalley.net/stardew-valley-coming-soon-to-nintendo-switch/ Stardew Valley Coming Soon to Nintendo Switch]
+|October 2, 2017
+|Announces release date of October 5th, 2017 for the Switch. 
+|-
+|[https://stardewvalley.net/stardew-valley-multiplayer-news/ Stardew Valley Multiplayer News]
+|August 1, 2017
+|What to expect from Multiplayer. ''(posted by Tom Coxon)''
+|-
+|[https://stardewvalley.net/stardew-valley-1-2-live-on-xbox-one-playstation-4/ Stardew Valley 1.2 live on Xbox One + Playstation 4!]
+|June 22, 2017
+|Announces release of the 1.2 update on Xbox One and PS4. ''(posted by Molly Carroll)''
+|-
+|[https://stardewvalley.net/stardew-valley-1-2-is-here/ Stardew Valley 1.2 is out on PC!]
+|April 24, 2017
+|Announces release of the 1.2 update on PC. ''(posted by Molly Carroll)''
+|-
+|[https://stardewvalley.net/stardew-valley-1-year-anniversary/ Stardew Valley 1-year Anniversary]
+|February 26, 2017
+|The year in review; contains screenshots from early Stardew Valley development.
+|-
+|[https://stardewvalley.net/stardew-valley-localization-feedback/ Stardew Valley Localization Feedback]
+|February 7, 2017
+|Instructions for installing the 1.2 Beta version on Steam and providing feedback. ''(posted by Molly Carroll)''
+|-
+|[https://stardewvalley.net/stardew-valley-progress-update-second-console-patch-localization-and-more/ Stardew Valley Progress Update — Second console patch, localization, and more]
+|January 19, 2017
+|Update on what to expect in the next months.
+|}
+
+==2016==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://stardewvalley.net/upcoming-xbox-and-ps4-patch/ Stardew Upcoming Xbox and PS4 patch]
+|December 16, 2016
+|Patch notes for a lot of console fixes.
+|-
+|[https://stardewvalley.net/stardew-valley-now-available-on-xbox-one-and-playstation-4/ Stardew Valley now available on Xbox One and Playstation 4]
+|December 14, 2016
+|Announces release of Stardew Valley on Xbox One and PS4.
+|-
+|[https://stardewvalley.net/stardew-valley-console-release-dates/ Stardew Valley Console Release Dates]
+|November 29, 2016
+|Announcement for PS4 (December 13th, 2016) and Xbox One (December 14th, 2016) release dates.
+|-
+|[https://stardewvalley.net/stardew-valley-localization-update/ Stardew Valley Localization Update]
+|October 26, 2016
+|Update on multi-language support, which has been slightly pushed back to ensure quality.
+|-
+|[https://stardewvalley.net/stardew-valley-v1-1-changelog/ Stardew Valley v1.1 – Changelog]
+|October 3, 2016
+|Update 1.1 full changelog and new trailer. Read the [[Version History|wiki changelog]] for full details.
+|-
+|[https://stardewvalley.net/update-on-1-1-progress-2/ Update on 1.1 Progress #2]
+|September 7, 2016
+|More details on 1.1, previews of upcoming [[Farm Maps]]. Post-PAX wrap up.
+|-
+|[https://stardewvalley.net/update-on-1-1-progress/ Update on 1.1 progress]
+|August 6, 2016
+|Details on 1.1 progress and a preview of dating features for [[Shane]] and [[Emily]].
+|-
+|[https://stardewvalley.net/stardew-valley-now-available-for-mac-linux/ Stardew Valley now available for Mac &amp; Linux!]
+|July 29, 2016
+|Stardew Valley is now available for both Mac and Linux now in a free update.
+|-
+|[https://stardewvalley.net/stardew-valley-coming-to-consoles-q4-2016/ Stardew Valley coming to consoles Q4 2016]
+|June 13, 2016
+|Official announcement that Stardew Valley is coming to the Xbox One, Playstation 4 and Wii U in Q4 2016!  Console ports are being developed with the help of Chucklefish and Sickhead Games.
+|-
+|[https://stardewvalley.net/stardew-valley-on-the-yetee/ Stardew Valley on The Yetee]
+|June 8, 2016
+|New official merch available at [https://theyetee.com/stardewvalley/ The Yetee]. This includes some shirts, stickers and posters!
+|-
+|[https://stardewvalley.net/post-launch-progress-update-version-1-1-and-more/ Post-Launch Progress Update: Version 1.1 and more!]
+|May 1, 2016
+|Update post release happenings. Plans for localization, consoles and multiplayer. List of some additional planned features for version 1.1
+|-
+|[https://stardewvalley.net/stardew-valley-is-now-available/ Stardew Valley Is Now Available!]
+|February 26, 2016
+|Game released for sale. $14.99 USD on Steam, GOG and Humble.
+|-
+|[https://stardewvalley.net/release-date-and-trailer/ Release Date and Trailer!]
+|January 29th, 2016
+|Announced release date of February 26, 2016. New trailer.
+|}
+
+==2015==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://stardewvalley.net/dev-update-32/ Dev Update #32]
+|December 18, 2015
+|Single player to be released before multiplayer
+|-
+|[https://stardewvalley.net/dev-update-31/ Dev Update #31]
+|November 7, 2015
+|
+|-
+|[https://stardewvalley.net/dev-update-30/ Dev Update #30]
+|September 16, 2015
+|Gameplay stream
+|-
+|[https://stardewvalley.net/dev-update-29/ Dev Update #29]
+|August 2, 2015
+|
+|-
+|[https://stardewvalley.net/dev-update-28/ Dev Update #28]
+|June 27, 2015
+|
+|-
+|[https://stardewvalley.net/dev-update-27/ Dev Update #27]
+|May 18, 2015
+|
+|-
+|[https://stardewvalley.net/dev-update-26/ Dev Update #26]
+|April 4, 2015
+|
+|-
+|[https://stardewvalley.net/dev-update-25/ Dev Update #25]
+|February 28, 2015
+|
+|-
+|[https://stardewvalley.net/dev-update-24/ Dev Update #24]
+|January 26, 2015
+|
+|}
+
+==2014==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://stardewvalley.net/dev-update-23/ Dev Update #23]
+|December 16, 2014
+|
+|-
+|[https://stardewvalley.net/dev-update-22/ Dev Update #22]
+|November 15, 2014
+|
+|-
+|[https://stardewvalley.net/dev-update-21/ Dev Update #21]
+|October 14, 2014
+|
+|-
+|[https://stardewvalley.net/dev-update-20/ Dev Update #20]
+|September 9, 2014
+|
+|-
+|[https://stardewvalley.net/dev-update-19/ Dev Update #19]
+|August 2, 2014
+|
+|-
+|[https://stardewvalley.net/dev-update-18/ Dev Update #18]
+|July 5, 2014
+|
+|-
+|[https://stardewvalley.net/dev-update-17/ Dev Update #17]
+|May 21, 2014
+|
+|-
+|[https://stardewvalley.net/dev-update-16/ Dev Update #16]
+|April 20, 2014
+|
+|-
+|[https://stardewvalley.net/stardew-valley-is-still-under-development/ Dev Update #15]
+|March 23, 2014
+|
+|-
+|[https://stardewvalley.net/dev-update-14/ Dev Update #14]
+|January 17, 2014
+|
+|}
+
+==2013==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://stardewvalley.net/dev-update-13/ Dev Update #13]
+|December 13, 2013
+|Winter-themed screenshots.
+|-
+|[https://stardewvalley.net/dev-update-12/ Mini Dev Update #12]
+|November 15, 2013
+|Gives an update on overall development progress and shares details on character you can marry.
+|-
+|[https://stardewvalley.net/dev-update-11/ Mini Dev Update #11]
+|October 7, 2013
+|Details on skills that can be leveled up.
+|-
+|[https://stardewvalley.net/dev-update-10/ Mini Dev Update #10]
+|September 5, 2013
+|Details on fishing, in game UI, and more.
+|-
+|[https://stardewvalley.net/dev-update-9/ Mini Dev Update #9]
+|August 4, 2013
+|Details on farm animals.
+|-
+|[https://stardewvalley.net/mini-dev-update-8/ Mini Dev Update #8]
+|July 14, 2013
+|Details on fruit trees and several new or updated game areas.
+|-
+|[https://stardewvalley.net/mini-dev-update-7/ Mini Dev Update #7]
+|June 28th, 2013
+|Flower and tool designs as well as new game locations.
+|-
+|[https://stardewvalley.net/mini-dev-update-6/ Mini Dev Update #6]
+|June 6th, 2013
+|Discusses several game items including rings, boots, minerals, geodes, and a slingshot.
+|-
+|[https://stardewvalley.net/mini-dev-update-5/ Mini Dev Update #5]
+|May 25th, 2013
+|Shares work on the mines.
+|-
+|[https://stardewvalley.net/stardew-valley-has-been-greenlit/ Greenlit]
+|May 17th, 2013
+|Announces that Stardew Valley has been Greenlit on Steam.
+|-
+|[https://stardewvalley.net/mini-dev-update-4/ Mini Dev Update #4]
+|May 5th, 2013
+|Shares a range of game art improvements.
+|-
+|[https://stardewvalley.net/mini-dev-update-3/ Mini Dev Update #3]
+|April 15th, 2013
+|New farmhouse, npc sprites, and character portraits.
+|-
+|[https://stardewvalley.net/mini-dev-update-2/ Mini Dev Update #2]
+|March 22, 2013
+|Character customization details.
+|-
+|[https://stardewvalley.net/mini-dev-update-1/ Mini Dev Update #1]
+|March 13, 2013
+|New farmer sprite.
+|-
+|[https://www.stardewvalley.net/new-wallpaper/ New Wallpaper]
+|March 7, 2013
+|Includes a desktop wallpaper.
+|-
+|[https://www.stardewvalley.net/new-website-chucklefish-publishing-partnership/ New website &amp; Chucklefish publishing partnership]
+|February 13, 2013
+|Announces that Chucklefish will be publishing Stardew Valley and a new website for the game.
+|-
+|[https://stardewvalley.blogspot.com/2013/02/2913.html 2/9/13]
+|February 9, 2013
+|A new trailer for the game.
+|-
+|[https://stardewvalley.blogspot.com/2013/02/2813.html 2/8/13]
+|February 8, 2013
+|Some co-op screenshots.
+|-
+|[https://stardewvalley.blogspot.com/2013/02/2513.html 2/5/13]
+|February 5, 2013
+|A video of an early co-op demo.
+|-
+|[https://stardewvalley.blogspot.com/2013/01/1413.html 1/4/13]
+|January 4, 2013
+|A video of UI and crops and a video of the caves.
+|-
+|[https://stardewvalley.blogspot.com/2013/01/1113.html 1/1/13]
+|January 1, 2013
+|Stardew Valley was selected as IndieDB's Editor's Choice Upcoming Indie Game of the Year.
+|}
+
+==2012==
+{|class="wikitable"
+!Update
+!Date
+!Summary
+|-
+|[https://stardewvalley.blogspot.com/2012/12/1219.html 12/19]
+|December 19, 2012
+|Discusses a false YouTube copyright claim.
+|-
+|[https://stardewvalley.blogspot.com/2012/12/127.html 12/7]
+|December 7, 2012
+|Crop growth stages.
+|-
+|[https://stardewvalley.blogspot.com/2012/11/1124.html 11/24]
+|November 24, 2012
+|A video of soundtrack highlights.
+|-
+|[https://stardewvalley.blogspot.com/2012/11/1119.html 11/19]
+|November 19, 2012
+|A draft of the game map.
+|-
+|[https://stardewvalley.blogspot.com/2012/11/1113.html 11/13]
+|November 13, 2012
+|
+|-
+|[https://stardewvalley.blogspot.com/2012/11/116.html 11/6]
+|November 6, 2012
+|Shares a few screenshots.
+|-
+|[https://stardewvalley.blogspot.com/2012/10/101712.html 10/17/12]
+|October 17, 2012
+|A video where the farmer places buildings on the farm.
+|-
+|[https://stardewvalley.blogspot.com/2012/10/10712.html 10/7/12]
+|October 7, 2012
+|Links to an interview.
+|-
+|[https://stardewvalley.blogspot.com/2012/10/10512.html 10/5/12]
+|October 5, 2012
+|A gameplay trailer.
+|-
+|[https://stardewvalley.blogspot.com/2012/10/10212-2.html 10/2/12 #2]
+|October 2, 2012
+|Shares gif of a melon.
+|-
+|[https://stardewvalley.blogspot.com/2012/10/10212.html 10/2/12]
+|October 2, 2012
+|
+|-
+|[https://stardewvalley.blogspot.com/2012/09/92912.html 9/29/12]
+|September 29, 2012
+|Details about fences.
+|-
+|[https://stardewvalley.blogspot.com/2012/09/92612.html 9/26/12]
+|September 26, 2012
+|Updated animation with twice as many frames.
+|-
+|[https://stardewvalley.blogspot.com/2012/09/92112.html  9/21/12]
+|September 21, 2012
+|Lighting system video.
+|-
+|[https://stardewvalley.blogspot.com/2012/09/91812.html 9/18/12]
+|September 18, 2012
+|Screenshot of a lighting system.
+|-
+|[https://stardewvalley.blogspot.com/2012/09/91712.html 9/17/12]
+|September 17, 2012
+|A video of chopping down trees and tall grass.
+|-
+|[https://stardewvalley.blogspot.com/2012/09/91312.html 9/13/12]
+|September 13, 2012
+|Discusses new farmstand mechanic.
+|-
+|[https://stardewvalley.blogspot.com/2012/09/9712.html 9/8/12]
+|September 7, 2012
+|Screenshots of improvements to graphics.&lt;br />''Note that the missing image can be seen on [https://kristi78968.wordpress.com/2012/10/07/interview-with-eric-barone-creator-of-stardew-valley/ Kristi's Blog]''
+|-
+|[https://stardewvalley.blogspot.com/2012/09/9612-my-goodness-you-so-much-for.html 9/6/12]
+|September 6, 2012
+|Discusses improvements to graphics.
+|-
+|[https://stardewvalley.blogspot.com/2012/09/942012.html 9/4/2012]
+|September 4, 2012
+|Discusses improving all of the game's graphics, as well as making sure modding is as easy as possible.
+|-
+|[https://stardewvalley.blogspot.com/2012/09/922012.html 9/2/2012]
+|September 2, 2012
+|Announces the new website for the game.
+|}
+
+[[Category:Browse]]
+
+[[de:Entwickler-Blog]]
+[[es:Blog del desarrollador]]
+[[fr:Blog de développeur]]
+[[it:Blog degli sviluppatori]]
+[[ja:開発者ブログ]]
+[[ko:개발자 블로그]]
+[[hu:Fejlesztői blog]]
+[[pt:Blog do desenvolvedor]]
+[[ru:Блог разработчика]]
+[[tr:Geliştirici Blogu]]
+[[zh:开发者博客]]
+</textarea><div class="templatesUsed"></div><p id="mw-returnto">Return to <a href="../../external.html?link=https://stardewvalleywiki.com/Developer_Blog" title="Developer Blog">Developer Blog</a>.</p>
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/Developer_Blog">https://stardewvalleywiki.com/Developer_Blog</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
+			<ul class="footer-info hlist hlist-separated">
+				
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Developer_Blog&amp;action=edit&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":66});});</script>		</body>
+		
+<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Developer_Blog&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 05:11:15 GMT -->
+</html>
+		
