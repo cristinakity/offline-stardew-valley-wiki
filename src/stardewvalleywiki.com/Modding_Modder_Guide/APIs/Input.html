@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 03:32:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Modding:Modder Guide/APIs/Input - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"4f51ee53044f32a055c2abb3","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Modder_Guide/APIs/Input","wgTitle":"Modder Guide/APIs/Input","wgCurRevisionId":149175,"wgRevisionId":149175,"wgArticleId":8109,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Modding"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Modder_Guide/APIs/Input","wgRelevantArticleId":8109,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],
+"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.html","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="../../mediawiki/loaddde3.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cext.pygments%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="../../mediawiki/load52c0.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="../../mediawiki/load2f5e.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="Creating SMAPI mods"/>
+<link rel="shortcut icon" href="../../mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../../mediawiki/api-result251f.xml?action=rsd"/>
+<link rel="license" href="../../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki Atom feed" href="../../mediawiki/feeda295.xml?title=Special:RecentChanges&amp;feed=atom"/>
+<meta property="og:title" content="Modding:Modder Guide/APIs/Input - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input"/>
+<meta property="og:description" content="Creating SMAPI mods"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2023-07-10T18:19:00Z"/>
+<meta property="article:published_time" content="2023-07-10T18:19:00Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modding:Modder Guide/APIs/Input - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="Creating SMAPI mods"/>
+<meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Modder Guide\/APIs\/Input - Stardew Valley Wiki","headline":"Modding:Modder Guide\/APIs\/Input - Stardew Valley Wiki","mainEntityOfPage":"Modding:Modder Guide\/APIs\/Input","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Input","url":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Input","description":"Creating SMAPI mods","dateModified":"2023-07-10T18:19:00Z","datePublished":"2023-07-10T18:19:00Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Modder_Guide_APIs_Input rootpage-Modding_Modder_Guide skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"><div id="mw-dismissablenotice-anonplace"></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv class=\"mw-dismissable-notice\"\u003E\u003Cdiv class=\"mw-dismissable-notice-close\"\u003E[\u003Ca tabindex=\"0\" role=\"button\"\u003Edismiss\u003C/a\u003E]\u003C/div\u003E\u003Cdiv class=\"mw-dismissable-notice-body\"\u003E\u003Cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cp\u003E\u003Cb\u003ENew editors: Please read \u003Ca href=\"/Help:Editing\" title=\"Help:Editing\"\u003EHelp:Editing\u003C/a\u003E before diving in!\u003C/b\u003E\n\u003Cbr /\u003E\u003Cb\u003EChanges made without adding a \"History\" section will be removed. Thank you for your understanding.\u003C/b\u003E\n\u003C/p\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="en">Modding:Modder Guide/APIs/Input</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From Stardew Valley Wiki</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../../Modding_Modder_Guide.html" class="mw-redirect" title="Modding:Modder Guide">Modding:Modder Guide</a>&lrm; | <a href="../APIs.html" title="Modding:Modder Guide/APIs">APIs</a></span></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div style="float: right; border: 2px solid rgb(0, 116, 72); background: #A1DEE2; padding: 0.75em; padding-top: 0.5em; margin: 0 0 2em 2em;">
+<p><span style="font-size: larger;"><b>Creating SMAPI mods</b> <a href="../../File_SMAPI_mascot.html" class="image"><img alt="SMAPI mascot.png" src="../../mediawiki/images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25" srcset="/mediawiki/images/thumb/9/96/SMAPI_mascot.png/38px-SMAPI_mascot.png 1.5x, /mediawiki/images/thumb/9/96/SMAPI_mascot.png/50px-SMAPI_mascot.png 2x" /></a></span>
+</p>
+<hr />
+<ul><li><a href="../Get_Started.html" title="Modding:Modder Guide/Get Started">Get started</a></li>
+<li><a href="../Game_Fundamentals.html" title="Modding:Modder Guide/Game Fundamentals">Game fundamentals</a></li>
+<li><a href="../Test_and_Troubleshoot.html" title="Modding:Modder Guide/Test and Troubleshoot">Test &amp; troubleshoot</a></li>
+<li><a href="../Release.html" title="Modding:Modder Guide/Release">Release</a></li>
+<li><a href="../APIs.html" title="Modding:Modder Guide/APIs">API reference</a>
+<dl><dd>Basic SMAPI APIs:
+<ul><li><a href="Mod_structure.html" title="Modding:Modder Guide/APIs/Mod structure">Mod structure</a></li>
+<li><a href="Manifest.html" title="Modding:Modder Guide/APIs/Manifest">Manifest</a></li>
+<li><a href="Events.html" title="Modding:Modder Guide/APIs/Events">Events</a></li>
+<li><a href="Config.html" title="Modding:Modder Guide/APIs/Config">Configuration</a></li>
+<li><a href="Content.html" title="Modding:Modder Guide/APIs/Content">Load &amp; edit content</a></li>
+<li><a href="Data.html" title="Modding:Modder Guide/APIs/Data">Data</a></li>
+<li><a class="mw-selflink selflink">Input</a></li>
+<li><a href="Logging.html" title="Modding:Modder Guide/APIs/Logging">Logging</a></li>
+<li><a href="Reflection.html" title="Modding:Modder Guide/APIs/Reflection">Reflection</a></li>
+<li><a href="Multiplayer.html" title="Modding:Modder Guide/APIs/Multiplayer">Multiplayer</a></li>
+<li><a href="Translation.html" title="Modding:Modder Guide/APIs/Translation">Translation</a></li>
+<li><a href="Update_checks.html" title="Modding:Modder Guide/APIs/Update checks">Update checks</a></li>
+<li><a href="Utilities.html" title="Modding:Modder Guide/APIs/Utilities">Utilities</a></li></ul></dd>
+<dd>Advanced SMAPI APIs:
+<ul><li><a href="Content_Packs.html" title="Modding:Modder Guide/APIs/Content Packs">Content packs</a></li>
+<li><a href="Console.html" title="Modding:Modder Guide/APIs/Console">Mod console commands</a></li>
+<li><a href="Integrations.html" title="Modding:Modder Guide/APIs/Integrations">Mod integrations</a></li>
+<li><a href="Harmony.html" title="Modding:Modder Guide/APIs/Harmony">Harmony patching</a></li></ul></dd></dl></li>
+<li><a href="../../Modding_Index.html#Advanced_topics" title="Modding:Index">Specific guides</a></li></ul>
+</div><p>← <span style="font-size: smaller;"><a href="../../Modding_Index.html" title="Modding:Index">Modding:Index</a></span>
+</p><p>The input API lets you check and suppress controller/keyboard/mouse state.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#APIs"><span class="tocnumber">1</span> <span class="toctext">APIs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Check_button_state"><span class="tocnumber">1.1</span> <span class="toctext">Check button state</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Check_cursor_position"><span class="tocnumber">1.2</span> <span class="toctext">Check cursor position</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Suppress_input"><span class="tocnumber">1.3</span> <span class="toctext">Suppress input</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Data_structures"><span class="tocnumber">2</span> <span class="toctext">Data structures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#SButton"><span class="tocnumber">2.1</span> <span class="toctext">SButton</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#KeybindList"><span class="tocnumber">2.2</span> <span class="toctext">KeybindList</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#ICursorPosition"><span class="tocnumber">2.3</span> <span class="toctext">ICursorPosition</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="APIs">APIs</span></h2>
+<h3><span class="mw-headline" id="Check_button_state">Check button state</span></h3>
+<dl>
+<dt><samp>IsDown</samp></dt>
+<dd>
+You can check if any <a href="#SButton">controller/keyboard/mouse button</a> is currently pressed by calling the <samp>IsDown(button)</samp> method. For example:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">bool</span> <span class="n">isShiftPressed</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">IsDown</span><span class="p">(</span><span class="n">SButton</span><span class="p">.</span><span class="n">LeftShift</span><span class="p">)</span> <span class="p">||</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">IsDown</span><span class="p">(</span><span class="n">SButton</span><span class="p">.</span><span class="n">RightShift</span><span class="p">);</span>
+</pre></div>
+</dd>
+
+<dt><samp>GetState</samp></dt>
+<dd>
+For more finetuned control, you can check the <a href="#SButton">button</a> state relative to the previous game tick:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">SButtonState</span> <span class="n">state</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">GetState</span><span class="p">(</span><span class="n">SButton</span><span class="p">.</span><span class="n">LeftShift</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">isDown</span> <span class="p">=</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">SButtonState</span><span class="p">.</span><span class="n">Pressed</span> <span class="p">||</span> <span class="n">state</span> <span class="p">==</span> <span class="n">SButtonState</span><span class="p">.</span><span class="n">Held</span><span class="p">);</span>
+</pre></div>
+<p>Available button states:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>previous tick
+</th>
+<th>current tick
+</th>
+<th>resulting state
+</th></tr>
+<tr>
+<td>up
+</td>
+<td>up
+</td>
+<td><samp>None</samp>
+</td></tr>
+<tr>
+<td>up
+</td>
+<td>down
+</td>
+<td><samp>Pressed</samp>
+</td></tr>
+<tr>
+<td>down
+</td>
+<td>down
+</td>
+<td><samp>Held</samp>
+</td></tr>
+<tr>
+<td>down
+</td>
+<td>up
+</td>
+<td><samp>Released</samp>
+</td></tr></tbody></table>
+</dd>
+</dl>
+<h3><span class="mw-headline" id="Check_cursor_position">Check cursor position</span></h3>
+<p>The <samp>GetCursorPosition()</samp> method provides the <a href="#ICursorPosition">cursor position in three coordinate systems</a>.
+</p><p>For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// draw text at the cursor position</span>
+<span class="n">ICursorPosition</span> <span class="n">cursorPos</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">GetCursorPosition</span><span class="p">();</span>
+<span class="n">Game1</span><span class="p">.</span><span class="n">spriteBatch</span><span class="p">.</span><span class="n">DrawString</span><span class="p">(</span><span class="n">Game1</span><span class="p">.</span><span class="n">smallFont</span><span class="p">,</span> <span class="s">&quot;some text&quot;</span><span class="p">,</span> <span class="n">cursorPos</span><span class="p">.</span><span class="n">ScreenPixels</span><span class="p">,</span> <span class="n">Color</span><span class="p">.</span><span class="n">Black</span><span class="p">);</span>
+</pre></div>
+<h3><span class="mw-headline" id="Suppress_input">Suppress input</span></h3>
+<p>You can prevent the game from handling any <a href="#SButton">controller/keyboard/mouse button press</a> (including clicks) by <i>suppressing</i> it. This suppression will remain in effect until the player releases the button. This won't prevent other mods from handling it.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>method
+</th>
+<th>effect
+</th></tr>
+<tr>
+<td><code>Suppress</code>
+</td>
+<td>Suppress the specified <a href="#SButton"><samp>SButton</samp></a> value.
+</td></tr>
+<tr>
+<td><code>SuppressActiveKeybinds</code>
+</td>
+<td>For the given <a href="#KeybindList"><samp>KeybindList</samp></a>, suppress every button that's part of an activated keybind.
+</td></tr>
+<tr>
+<td><code>IsSuppressed</code>
+</td>
+<td>Get whether the specified <a href="#SButton"><samp>SButton</samp></a> value is currently suppressed.
+</td></tr></tbody></table>
+<p>For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// prevent game from seeing that LeftShift is pressed</span>
+<span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">Suppress</span><span class="p">(</span><span class="n">SButton</span><span class="p">.</span><span class="n">LeftShift</span><span class="p">);</span>
+
+<span class="c1">// that works for clicks too:</span>
+<span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">Suppress</span><span class="p">(</span><span class="n">SButton</span><span class="p">.</span><span class="n">MouseLeft</span><span class="p">);</span>
+
+<span class="c1">// check if a button is being suppressed:</span>
+<span class="kt">bool</span> <span class="n">suppressed</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">IsSuppressed</span><span class="p">(</span><span class="n">SButton</span><span class="p">.</span><span class="n">LeftShift</span><span class="p">);</span>
+</pre></div>
+<p>Side-effects:
+</p>
+<ul>
+<li>The <a href="Events.html#Input.ButtonReleased" title="Modding:Modder Guide/APIs/Events"><samp>ButtonReleased</samp> event</a> will be raised on the next tick for the suppressed input.</li>
+<li>Methods like <samp>helper.Input.IsDown(button)</samp> and <samp>helper.Input.GetState(button)</samp> will show the button as released for the duration of the suppression, even if it's physically still pressed. You can use <samp>helper.Input.IsSuppressed(button)</samp> to check if that's the case (it will only be true until the button is physically released):
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">bool</span> <span class="n">isPhysicallyDown</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">IsDown</span><span class="p">(</span><span class="n">button</span><span class="p">)</span> <span class="p">||</span> <span class="n">helper</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">IsSuppressed</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+</pre></div></li>
+</ul>
+<h2><span class="mw-headline" id="Data_structures">Data structures</span></h2>
+<h3><span class="mw-headline" id="SButton">SButton</span></h3>
+<p>SMAPI's <samp>SButton</samp> is a constant which includes every <a rel="nofollow" class="external text" href="../../../external.html?link=https://docs.microsoft.com/en-us/previous-versions/windows/xna/bb975202(v%3dxnagamestudio.40)">controller</a>, <a rel="nofollow" class="external text" href="../../../external.html?link=https://docs.microsoft.com/en-us/previous-versions/windows/xna/bb197781(v%3dxnagamestudio.40)">keyboard</a>, and <a rel="nofollow" class="external text" href="../../../external.html?link=https://docs.microsoft.com/en-us/previous-versions/windows/xna/bb198097(v%3dxnagamestudio.40)">mouse</a> button. SMAPI events use this to let you handle button presses without needing separate code for each. See <a href="../../Modding_Player_Guide/Key_Bindings.html" title="Modding:Player Guide/Key Bindings">Modding:Player Guide/Key Bindings</a> for a list of values.
+</p><p>SMAPI provides extensions to convert any of the other constants to <samp>SButton</samp>:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">SButton</span> <span class="n">key</span> <span class="p">=</span> <span class="n">Keys</span><span class="p">.</span><span class="n">A</span><span class="p">.</span><span class="n">ToSButton</span><span class="p">();</span> <span class="c1">// SButton.A</span>
+<span class="n">SButton</span> <span class="n">button</span> <span class="p">=</span> <span class="n">Buttons</span><span class="p">.</span><span class="n">A</span><span class="p">.</span><span class="n">ToSButton</span><span class="p">();</span> <span class="c1">// SButton.ControllerA</span>
+<span class="n">SButton</span> <span class="n">input</span> <span class="p">=</span> <span class="k">new</span> <span class="n">InputButton</span><span class="p">(</span><span class="k">true</span><span class="p">).</span><span class="n">ToSButton</span><span class="p">();</span> <span class="c1">// SButton.MouseLeft</span>
+</pre></div>
+<p>You can also convert <samp>SButton</samp> to the other constants. This uses a <samp>TryGet</samp> approach since <samp>SButton</samp> is a superset of the others (<i>e.g.,</i> you can't convert <samp>SButton.ControllerA</samp> to a keyboard value):
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">SButton</span> <span class="k">value</span> <span class="p">=</span> <span class="n">SButton</span><span class="p">.</span><span class="n">A</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">value</span><span class="p">.</span><span class="n">TryGetKeyboard</span><span class="p">(</span><span class="k">out</span> <span class="n">Keys</span> <span class="n">key</span><span class="p">))</span>
+   <span class="p">...;</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">value</span><span class="p">.</span><span class="n">TryGetController</span><span class="p">(</span><span class="k">out</span> <span class="n">Buttons</span> <span class="n">button</span><span class="p">))</span>
+   <span class="p">...;</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">value</span><span class="p">.</span><span class="n">TryGetStardewInput</span><span class="p">(</span><span class="k">out</span> <span class="n">InputButton</span> <span class="n">input</span><span class="p">))</span>
+   <span class="p">...;</span>
+</pre></div>
+<p>Two last extensions let you check how the button is mapped in the game:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">SButton</span> <span class="n">button</span> <span class="p">=</span> <span class="n">SButton</span><span class="p">.</span><span class="n">MouseLeft</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="n">IsUseToolButton</span><span class="p">())</span>
+   <span class="c1">// use tool</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="n">IsActionButton</span><span class="p">())</span>
+   <span class="c1">// perform action</span>
+</pre></div>
+<p>You can use <samp>SButton</samp> values directly in your <a href="Config.html" title="Modding:Modder Guide/APIs/Config">config model</a>, but <samp><a href="#KeybindList">KeybindList</a></samp> is recommended instead in most cases.
+</p>
+<h3><span class="mw-headline" id="KeybindList">KeybindList</span></h3>
+<p>SMAPI's <samp>KeybindList</samp> utility lets you manage an arbitrary set of keybindings. A <i>keybind list</i> has any number of <i>keybinds</i>, each of which has any number of <a href="#SButton">button codes</a>. For example, the keybind list <code>"F2, LeftShift + S"</code> would be pressed if (a) <samp>F2</samp> is pressed, <i>or</i> (b) both <samp>LeftShift</samp> and <samp>S</samp> are pressed.
+</p><p>You can use a <samp>KeybindList</samp> directly in <a href="Config.html" title="Modding:Modder Guide/APIs/Config">your <samp>config.json</samp> model</a>:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>C# model
+</th>
+<th>&#160;
+</th>
+<th>JSON file
+</th></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">class</span> <span class="nc">ModConfig</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="n">KeybindList</span> <span class="n">ToggleKey</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="n">KeybindList</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="s">&quot;LeftShift + F2&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td>
+<td>&#8594;
+</td>
+<td><div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;ToggleKey&quot;</span><span class="p">:</span> <span class="s2">&quot;LeftShift + F2&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table>
+<p>And you can then check whether it's pressed directly in your code. For example, in a <a href="Events.html" title="Modding:Modder Guide/APIs/Events"><samp>ButtonsChanged</samp> event handler</a>:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">private</span> <span class="k">void</span> <span class="nf">OnButtonsChanged</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">ButtonsChangedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Config</span><span class="p">.</span><span class="n">ToggleKey</span><span class="p">.</span><span class="n">JustPressed</span><span class="p">())</span>
+   <span class="p">{</span>
+      <span class="c1">// perform desired action</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>The <samp>KeybindList</samp> provides a number of methods depending on your use case:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>member
+</th>
+<th>description
+</th></tr>
+<tr>
+<td><code>KeybindList.Parse(…)</code><br /><code>KeybindList.TryParse(…)</code>
+</td>
+<td>Parse a keybind string like <code>"F2, LeftShift + S"</code> into a keybind list.
+</td></tr>
+<tr>
+<td><code>IsBound</code>
+</td>
+<td>Whether the keybind list has any keys bound. For example, this would be false for the strings <code>"None"</code> or <code>""</code>.
+</td></tr>
+<tr>
+<td><code>Keybinds</code>
+</td>
+<td>The individual keybinds. In most cases you shouldn't use these directly.
+</td></tr>
+<tr>
+<td><code>GetState()</code>
+</td>
+<td>Get the overall <a href="#Check_button_state">keybind state relative to the previous tick</a>. This state is transitive across keybinds; <i>e.g.,</i> if the player releases one keybind and immediately presses another within the list, the overall state is <samp>Held</samp>.
+</td></tr>
+<tr>
+<td><code>IsDown()</code>
+</td>
+<td>Get whether any keybind in the list is currently down (<i>i.e.,</i> the player pressed or is holding down the keys).
+</td></tr>
+<tr>
+<td><code>JustPressed()</code>
+</td>
+<td>Get whether the player just activated the keybind during the current tick (<i>i.e.,</i> <code>GetState()</code> returns <samp>Pressed</samp> instead of <samp>Held</samp>).
+</td></tr>
+<tr>
+<td><code>GetKeybindCurrentlyDown()</code>
+</td>
+<td>Get the individual <samp>Keybind</samp> in the list which is currently down, if any. If there are multiple keybinds down, the first one is returned.
+</td></tr>
+<tr>
+<td><code>ToString()</code>
+</td>
+<td>Get a string representation of the input binding (<i>e.g.,</i> <code>"F2, LeftShift + S"</code>).
+</td></tr></tbody></table>
+<p>Caveats:
+</p>
+<ul><li><b>Don't use the <samp>ButtonPressed</samp> <a href="Events.html" title="Modding:Modder Guide/APIs/Events">event</a> to check keybinds</b>, since it's raised once for each button pressed. If the player presses two keys at once, your keybind would be activated twice. Use <samp>ButtonsChanged</samp> instead.</li></ul>
+<h3><span class="mw-headline" id="ICursorPosition">ICursorPosition</span></h3>
+<p>SMAPI's <samp>ICursorPosition</samp> provides the cursor position in four coordinate systems:
+</p>
+<ul><li><samp>AbsolutePixels</samp> is the pixel position relative to the top-left corner of the in-game map, adjusted for <a href="../Game_Fundamentals.html#Zoom_level" title="Modding:Modder Guide/Game Fundamentals">zoom</a> but not <a href="../Game_Fundamentals.html#UI_scaling" title="Modding:Modder Guide/Game Fundamentals">UI scaling</a>.</li>
+<li><samp>ScreenPixels</samp> is the pixel position relative to the top-left corner of the visible screen, adjusted for <a href="../Game_Fundamentals.html#Zoom_level" title="Modding:Modder Guide/Game Fundamentals">zoom</a> but not <a href="../Game_Fundamentals.html#UI_scaling" title="Modding:Modder Guide/Game Fundamentals">UI scaling</a>.</li>
+<li><samp>Tile</samp> is the <a href="../Game_Fundamentals.html#Tiles" title="Modding:Modder Guide/Game Fundamentals">tile position</a> under the cursor.</li>
+<li><samp>GrabTile</samp> is the tile position that the game considers under the cursor for the purposes of clicking actions. This automatically accounts for controller mode. This may be different than <samp>Tile</samp> if that's too far from the player.</li></ul>
+<p>This is returned by the <samp>this.Helper.Input.GetCursorPosition()</samp> method and in the event args for some input events.
+</p><p><b>The pixel positions are <i>not</i> adjusted for <a href="../Game_Fundamentals.html#UI_scaling" title="Modding:Modder Guide/Game Fundamentals">UI scaling</a></b> (<i>i.e.,</i> they're non-UI mode). Whether you need UI or non-UI positions depends how you're using them, so you can use <samp>cursorPos.GetScaledAbsolutePixels()</samp> or <samp>cursorPos.GetScaledScreenPixels()</samp> to adjust them automatically for the current mode or <samp>Utility.ModifyCoordinatesForUIScale</samp> to always get UI mode coordinates.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="Events.html#Input" title="Modding:Modder Guide/APIs/Events">Input events</a></li>
+<li><a href="../../Modding_Player_Guide/Key_Bindings.html" title="Modding:Player Guide/Key Bindings">Modding:Player Guide/Key Bindings</a> for a list of valid <samp>SButton</samp> values</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20240410191834
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.045 seconds
+Real time usage: 0.547 seconds
+Preprocessor visited node count: 111/1000000
+Post‐expand include size: 1656/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 10175/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   14.282      1 Modding:Modder_Guide/header
+100.00%   14.282      1 -total
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:8109-0!canonical and timestamp 20240410191833 and revision id 149175
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="../../mediawiki/index24f0-2.html?title=Modding:Modder_Guide/APIs/Input&amp;oldid=149175">https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Input&amp;oldid=149175</a>"</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../../Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../Category_Modding.html" title="Category:Modding">Modding</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Personal tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="../../mediawiki/index0ed0.html?title=Special:CreateAccount&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FInput" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="../../mediawiki/index08e8-2.html?title=Special:UserLogin&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FInput" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Namespaces</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-modding" class="selected"><a href="Input.html">Modding</a></li><li id="ca-talk" class="new"><a href="../../Modding_talk_Modder_Guide/APIs/Input.html?title=Modding_talk:Modder_Guide/APIs/Input&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variants</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Views</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="Input.html">Read</a></li><li id="ca-viewsource" class="collapsible"><a href="../../mediawiki/index1318.html?title=Modding:Modder_Guide/APIs/Input&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="collapsible"><a href="../../Special_History/Modding_Modder_Guide/APIs/Input.html?title=Modding:Modder_Guide/APIs/Input&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>More</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Search</label>
+	</h3>
+	<form action="../../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Search Stardew Valley Wiki" title="Search Stardew Valley Wiki [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:Search">
+			<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Visit the main page" class="mw-wiki-logo" href="../../Stardew_Valley_Wiki.html"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Navigation</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="../../Stardew_Valley_Wiki.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-Admin-noticeboard"><a href="../../Stardew_Valley_Wiki_Admin_noticeboard.html">Admin noticeboard</a></li><li id="n-Help-Editing"><a href="../../Help_Editing.html">Help Editing</a></li><li id="n-randompage"><a href="../../Pepper_Seeds.html" title="Load a random page [x]" accesskey="x">Random page</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Official Links" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Official Links-label" role="navigation" 
+	 >
+	<h3 id="p-Official Links-label">
+		<span>Official Links</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Official-Site"><a href="../../../external.html?link=https://stardewvalley.net/" rel="nofollow">Official Site</a></li><li id="n-Official-Forums"><a href="../../../external.html?link=https://forums.stardewvalley.net/" rel="nofollow">Official Forums</a></li><li id="n-Official-Merchandise"><a href="../../../external.html?link=https://www.stardewvalley.net/shop/" rel="nofollow">Official Merchandise</a></li><li id="n-Discord"><a href="../../../external.html?link=https://discord.com/invite/stardewvalley" rel="nofollow">Discord</a></li><li id="n-Reddit"><a href="../../../external.html?link=https://www.reddit.com/r/StardewValley" rel="nofollow">Reddit</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="../../Special_WhatLinksHere/Modding_Modder_Guide/APIs/Input.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../Special_RecentChangesLinked/Modding_Modder_Guide/APIs/Input.html" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="../../Special_Upload.html" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="../../mediawiki/index24f0-2.html?title=Modding:Modder_Guide/APIs/Input&amp;oldid=149175" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="../../mediawiki/index6386.html?title=Modding:Modder_Guide/APIs/Input&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cargopagevalueslink"><a href="../../mediawiki/index1e3f.html?title=Modding:Modder_Guide/APIs/Input&amp;action=pagevalues" rel="cargo-pagevalues">Page values</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>In other languages</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-zh"><a href="../../../external.html?link=https://zh.stardewvalleywiki.com/模组:制作指南/APIs/Input" title="模组:制作指南/APIs/Input – 中文" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li></ul>
+		
+	</div>
+</nav>
+
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> This page was last edited on 10 July 2023, at 18:19.</li>
+		<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="../../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="../../Stardew_Valley_Wiki_Privacy_policy.html" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="footer-places-about"><a href="../../Stardew_Valley_Wiki_About.html" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="../../Stardew_Valley_Wiki_General_disclaimer.html" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li>
+		<li id="footer-places-mobileview"><a href="../../mediawiki/index0180-2.html?title=Modding:Modder_Guide/APIs/Input&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="../../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="../../../external.html?link=https://www.mediawiki.org/"><img src="../../mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="../../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.045","walltime":"0.547","ppvisitednodes":{"value":111,"limit":1000000},"postexpandincludesize":{"value":1656,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":10175,"limit":5000000},"timingprofile":["100.00%   14.282      1 Modding:Modder_Guide/header","100.00%   14.282      1 -total"]},"cachereport":{"timestamp":"20240410191834","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":83});});</script></body>
+<!-- Mirrored from stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 03:32:30 GMT -->
+</html>
