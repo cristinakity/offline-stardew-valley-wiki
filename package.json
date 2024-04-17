@@ -1,9 +1,15 @@
 {
   "name": "offline-stardew-valley-wiki",
   "productName": "offline-stardew-valley-wiki",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "My Electron application description",
   "main": "src/index.js",
+  "build": {
+    "appId": "com.offline-stardew-valley-wiki",
+    "linux": {
+      "target": ["AppImage", "deb"]
+    }
+  },
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -19,8 +25,11 @@
     "@electron-forge/maker-zip": "^7.3.1",
     "@electron-forge/plugin-auto-unpack-natives": "^7.3.1",
     "@electron-forge/plugin-fuses": "^7.3.1",
+    "@electron-forge/publisher-github": "^7.3.1",
     "@electron/fuses": "^1.8.0",
-    "electron": "29.2.0"
+    "@electron/packager": "^18.3.2",
+    "electron": "29.2.0",
+    "electron-builder": "^24.13.3"
   },
   "keywords": [],
   "author": {
