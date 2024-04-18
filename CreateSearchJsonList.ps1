@@ -22,11 +22,24 @@ foreach ($file in $htmlFiles) {
 
     # Get the HTML meta data keywords (assuming they are stored in a <meta name="keywords" content="..." /> tag)
     $metaKeywordsMatch = (Get-Content -Path $file.FullName | Select-String -Pattern '<meta name="keywords" content="([^"]+)"' -AllMatches).Matches
+    # Get the HTML meta data description (assuming it is stored in a <meta name="description" content="..." /> tag)
+    $metaDescriptionMatch = (Get-Content -Path $file.FullName | Select-String -Pattern '<meta name="description" content="([^"]+)"' -AllMatches).Matches
+    # if ($metaDescriptionMatch) {
+    #     $metaDescription = $metaDescriptionMatch.Groups[1].Value
+    # } else {
+    #     $metaDescription = ""
+    # }
+
     if ($metaKeywordsMatch) {
         $headContent = Get-Content -Path $file.FullName | Out-String
         $pageTitle = [regex]::Match($headContent, '<title>(.*?)<\/title>').Groups[1].Value
      
         $metaKeywords = $metaKeywordsMatch.Groups[1].Value
+        # Add description to the meta keywords
+        # validate if the description is not empty
+        if ($metaDescriptionMatch) {
+            $metaKeywords += ", " + $metaDescriptionMatch.Groups[1].Value
+        }
 
         $urlPath = $file.FullName -replace [regex]::Escape($partToRemove), ""
 
@@ -35,6 +48,7 @@ foreach ($file in $htmlFiles) {
             UrlPath = "." + $urlPath
             Title = $pageTitle
             Keywords = $metaKeywords -split ','
+            Description = $metaDescriptionMatch.Groups[1].Value
         }
 
         # Add the result to the array
@@ -55,6 +69,9 @@ foreach ($file in $htmlFiles) {
     # Calculate the percentage of total HTML files processed and round it to 2 decimal places
     # Write-Progress "Percentage of total HTML files processed: $($percentage)%"
 }
+# Remove the last comma from the JSON file
+(Get-Content -Path $resultJsonFilePath) -replace ',\s*$' | Set-Content -Path $resultJsonFilePath
+# Add the closing square bracket to the JSON file
 ']' | Out-File -FilePath $resultJsonFilePath -Append
 
 # # Convert the results array to JSON format
