@@ -44,6 +44,12 @@
 		.highlight {
 			background-color: yellow;
 		}
+		.text-small {
+			font-size: 0.8em;
+		}
+		.description {
+			color: gray;
+		}
 	</style>
 </head>
 <body>
@@ -107,6 +113,19 @@
 				const linkInnerHtml = result.Title.replace(new RegExp(searchText, 'gi'), match => `<span class="highlight">${match}</span>`);
 				link.innerHTML = linkInnerHtml;
 				titleCell.appendChild(link);
+
+				// validate is Description is not empty
+				if (result.Description) {
+					// Add <br> to titleCell
+					titleCell.appendChild(document.createElement('br'));
+					// Add an span element to titleCell, which contains the Description
+					const descriptionDiv = document.createElement('div');
+					descriptionDiv.classList.add("text-small");
+					descriptionDiv.classList.add("description");
+					descriptionDiv.innerHTML = result.Description.replace(new RegExp(searchText, 'gi'), match => `<span class="highlight">${match}</span>`);
+					titleCell.appendChild(descriptionDiv);
+				}
+
 				row.appendChild(titleCell);
 				tableBody.appendChild(row);
 			});
