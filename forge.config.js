@@ -41,4 +41,17 @@ module.exports = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'cristinakity',
+          name: 'offline-stardew-valley-wiki'
+        },
+        prerelease: false,
+        draft: true
+      }
+    }
+  ]
 };

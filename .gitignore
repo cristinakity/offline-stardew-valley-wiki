@@ -90,3 +90,20 @@ typings/
 
 # Electron-Forge
 out/
+
+# tmp files
+*.tmp
+
+# exclude hts-cache folder
+hts-cache/
+
+# exclude compressed files
+*.z
+*.zip
+*.rar
+*.gz
+*.7z
+*.exe
+*.tar
+*.tgz
+*.iso

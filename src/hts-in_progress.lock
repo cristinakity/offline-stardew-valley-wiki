@@ -1,5 +1,0 @@
-Mirror in progress since Wed, 10 Apr 2024 12:01:10 .. please wait!
-winhttrack -qwC2%Pxs2u1%s%uN0%I0p7DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://stardewvalleywiki.com/Stardew_Valley_Wiki -O1 ""C:\My Web Sites\StardewValleyWiki"" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar 
-To pause the engine: create an empty file named 'hts-stop.lock'
-PID=41852
-START=1712768470

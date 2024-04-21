@@ -73,7 +73,7 @@
 
 	<script>
 		document.getElementById("iFrame").addEventListener("load", function() {
-			hackIFrame();
+			iFrameFixes();
 		});
 		document.addEventListener("DOMContentLoaded", function() {
 
@@ -133,8 +133,8 @@
 			iFrame.contentWindow.history.forward();
 		}
 
-		function hackIFrame() {
-			console.log("Hacking iframe");
+		function iFrameFixes() {
+			console.log("iframe Fixes applied");
 			var iFrame = document.getElementById("iFrame");
 			var iFrameDocument = iFrame.contentDocument || iFrame.contentWindow.document;
 			var css = `
@@ -154,13 +154,15 @@
 			// inject javascript code into the iframe
 			var script = iFrameDocument.createElement("script");
 			script.innerHTML = `
-				// Add your custom JavaScript code for the iframe content here
+				// Remove srcset attribute from all img elements
+				// Fix: Images not loading in the iframe
 				var images = document.getElementsByTagName("img");
 				for (var i = 0; i < images.length; i++) {
 					images[i].removeAttribute("srcset");
 				}
 
-				// data-src="/mediawiki/images/2/25/Coffee_Stage_2.png"
+				// Transform span elements with data-src attribute to img elements
+				// Fix: the issue with images not loading in the iframe
 				var spans = document.querySelectorAll("span[data-src^='/mediawiki/']");
 				for (var i = 0; i < spans.length; i++) {
 					var span = spans[i];
@@ -172,7 +174,8 @@
 					span.parentNode.replaceChild(img, span);
 				}
 
-				//mw-collapsible
+				// Add click event to the first tr element in the mw-collapsible class
+				// Fix: Collapsible tables not working in the iframe
 				var collapsibleElements = document.getElementsByClassName("mw-collapsible");
 				for (var i = 0; i < collapsibleElements.length; i++) {
 					var currentElement = collapsibleElements[i];
