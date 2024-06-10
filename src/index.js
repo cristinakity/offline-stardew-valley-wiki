@@ -1,14 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('node:path');
 const fs = require('fs');
-const pathToJSON = './searchTest.json'; // Adjust the path as needed
-
-try {
-  const jsonData = JSON.parse(fs.readFileSync(pathToJSON));
-  console.log(jsonData); // Use the data as needed
-} catch (error) {
-  console.error('Error reading JSON file:', error);
-}
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
