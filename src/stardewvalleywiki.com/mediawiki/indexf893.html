@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html class="client-nojs" lang="en" dir="ltr">
 
-<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Special:CreateAccount&returnto=Template%3AFishLocations+Mines by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 07:53:30 GMT -->
+
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <meta charset="UTF-8"/>
-<title>Create account - Stardew Valley Wiki</title>
-<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"cb0a3d76eaae66548e24c7c1","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"CreateAccount","wgNamespaceNumber":-1,"wgPageName":"Special:CreateAccount","wgTitle":"CreateAccount","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Special:CreateAccount","wgRelevantArticleId":0,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgMFMode":"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":
-!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgCreateacctImgcaptchaHelp":"","wgMinervaPermissions":{"watch":!1,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!1},"wgMinervaDownloadNamespaces":[0],"wgSiteNoticeId":"1.0"};RLSTATE={
-"user.options":"loading","mobile.special.styles":"ready","mobile.messageBox.styles":"ready","mediawiki.ui.input":"ready","mediawiki.ui.radio":"ready","mediawiki.ui.checkbox":"ready","mediawiki.ui":"ready","mediawiki.ui.button":"ready","mediawiki.special.userlogin.common.styles":"ready","mediawiki.htmlform.styles":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["mobile.special.userlogin.scripts","mediawiki.htmlform","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init","ext.dismissableSiteNotice"];</script>
+<title>Modding:Modder Guide/APIs/Harmony - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"9196f40653b7fad184148d4f","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Modder_Guide/APIs/Harmony","wgTitle":"Modder Guide/APIs/Harmony","wgCurRevisionId":170950,"wgRevisionId":170950,"wgArticleId":9905,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Modder_Guide/APIs/Harmony","wgRelevantArticleId":9905,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":
+!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},
+"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready","mobile.messageBox.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
 <script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
 });});</script>
-<link rel="stylesheet" href="load6b6e.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cmediawiki.hlist%2Cui%7Cmediawiki.htmlform.styles%7Cmediawiki.special.userlogin.common.styles%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%2Cradio%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cmobile.special.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
-<script async="" src="loadc205.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;safemode=1&amp;skin=minerva&amp;target=mobile"></script>
+<link rel="stylesheet" href="load55a2.css?lang=en&amp;modules=ext.pygments%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="loadc82b.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load1154.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
 <meta name="generator" content="MediaWiki 1.35.1"/>
 <meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="Creating SMAPI mods"/>
+<meta name="theme-color" content="#eaecf0"/>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
 <link rel="manifest" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/api.php?action=webapp-manifest"/>
 <link rel="shortcut icon" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/favicon.png"/>
 <link rel="search" type="application/opensearchdescription+xml" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
 <link rel="EditURI" type="application/rsd+xml" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
 <link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
-<meta property="og:title" content="Create account - Stardew Valley Wiki"/>
+<meta property="og:title" content="Modding:Modder Guide/APIs/Harmony - Stardew Valley Wiki"/>
 <meta property="og:site_name" content="Stardew Valley Wiki"/>
-<meta property="og:url" content="https://stardewvalleywiki.com/Special:CreateAccount"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Harmony"/>
+<meta property="og:description" content="Creating SMAPI mods"/>
 <meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
-<meta property="article:modified_time" content="2024-04-11T07:00:23Z"/>
-<meta property="article:published_time" content="2024-04-11T07:00:23Z"/>
+<meta property="article:modified_time" content="2024-05-17T18:22:09Z"/>
+<meta property="article:published_time" content="2024-05-17T18:22:09Z"/>
 <meta property="twitter:site" content="@stardewwiki"/>
-<meta property="twitter:title" content="Create account - Stardew Valley Wiki"/>
+<meta property="twitter:title" content="Modding:Modder Guide/APIs/Harmony - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="Creating SMAPI mods"/>
 <meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
 <meta property="twitter:card" content="summary_large_image"/>
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Create account - Stardew Valley Wiki","headline":"Create account - Stardew Valley Wiki","mainEntityOfPage":"Create account","identifier":"https:\/\/stardewvalleywiki.com\/Special:CreateAccount","url":"https:\/\/stardewvalleywiki.com\/Special:CreateAccount","dateModified":"2024-04-11T07:00:23Z","datePublished":"2024-04-11T07:00:23Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Modder Guide\/APIs\/Harmony - Stardew Valley Wiki","headline":"Modding:Modder Guide\/APIs\/Harmony - Stardew Valley Wiki","mainEntityOfPage":"Modding:Modder Guide\/APIs\/Harmony","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Harmony","url":"https:\/\/stardewvalleywiki.com\/Modding:Modder_Guide\/APIs\/Harmony","description":"Creating SMAPI mods","dateModified":"2024-05-17T18:22:09Z","datePublished":"2024-05-17T18:22:09Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
 <!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
 </head>
-<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns--1 ns-special mw-special-CreateAccount page-Special_CreateAccount rootpage-Special_CreateAccount stable skin-minerva action-view skin-vector-legacy">
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Modder_Guide_APIs_Harmony rootpage-Modding_Modder_Guide stable skin-minerva action-view skin-vector-legacy">
 <div id="mw-mf-viewport">
 	<div id="mw-mf-page-center">
 		<a class="mw-mf-page-center__mask" href="#"></a>
@@ -56,12 +62,12 @@
 	</ul>
 	<ul id="p-personal">
 			<li class="">
-			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Special%3ACreateAccount&amp;returntoquery=warning%3Dmobile-frontend-generic-login-new" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FHarmony&amp;returntoquery=oldid%3D170950" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
 			</li>
 	</ul>
 	<ul id="pt-preferences">
 			<li class="jsonly">
-			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:MobileOptions&amp;returnto=Special%3ACreateAccount" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			    <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:MobileOptions&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FHarmony" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
 			</li>
 	</ul>
 	<ul class="hlist">
@@ -100,51 +106,207 @@
 			
 			<div class="pre-content heading-holder">
 				<div class="page-heading">
-					<h1 id="section_0">Create account</h1>
+					<h1 id="section_0">Modding:Modder Guide/APIs/Harmony</h1>
 					<div class="tagline"></div>
 				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="#" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector disabled"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="Language">Language</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Modding%3AModder+Guide%2FAPIs%2FHarmony" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="Watch">Watch</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Harmony&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="Edit the lead section of this page">Edit</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
 				
 				
-				
-				<div class="minerva__subtitle"></div>
+				<div class="minerva__subtitle"><span class="subpages">&lt; <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide" class="mw-redirect" title="Modding:Modder Guide">Modding:Modder Guide</a>&lrm; | <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs" title="Modding:Modder Guide/APIs">APIs</a></span><div class="mw-revision warningbox"><div id="mw-revision-info">Revision as of 18:22, 17 May 2024 by <a href="../../external.html?link=https://stardewvalleywiki.com/User:Pathoschild" class="mw-userlink" title="User:Pathoschild"><bdi>Pathoschild</bdi></a> <span class="mw-usertoollinks">(<a href="../../external.html?link=https://stardewvalleywiki.com/User_talk:Pathoschild" class="mw-usertoollinks-talk" title="User talk:Pathoschild">talk</a> | <a href="../../external.html?link=https://stardewvalleywiki.com/Special:Contributions/Pathoschild" class="mw-usertoollinks-contribs" title="Special:Contributions/Pathoschild">contribs</a>)</span> <span class="comment">(<span dir="auto"><span class="autocomment"><a href="#Which_version_of_Harmony_should_I_use.3F">→‎Which version of Harmony should I use?</a>: </span> update Harmony version</span>)</span></div><div id="mw-revision-nav">(<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Harmony&amp;diff=prev&amp;oldid=170950" title="Modding:Modder Guide/APIs/Harmony">diff</a>) <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Harmony&amp;direction=prev&amp;oldid=170950" title="Modding:Modder Guide/APIs/Harmony">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div></div>
 			</div>
 			
-			<div id="bodyContent" class="content"><div id="mw-content-text"><div class="mw-ui-container"><div id="userloginForm"><form class="mw-htmlform mw-ui-vform mw-ui-container" action="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:CreateAccount&amp;returnto=Template:FishLocations+Mines" method="post" id="userlogin2" name="userlogin2" novalidate=""><div>
-<div class="mw-htmlform-field-HTMLInfoField mw-ui-vform-field"><div class="mw-input mw-htmlform-nolabel"><div id="mw-createacct-status-area"></div>
-</div></div><div class="warningbox"><strong>Stardew Valley Wiki is made by people like you.</strong><br />Log in to contribute.</div><div class="mw-htmlform-field-HTMLTextField loginText mw-ui-vform-field"><label for="wpName2">Username</label><div class="mw-input"><input id="wpName2" name="wpName" size="20" class="loginText mw-ui-input" placeholder="Enter your username" tabindex="1" required=""/>
-</div></div><div class="mw-htmlform-field-HTMLTextField loginPassword mw-ui-vform-field mw-htmlform-hide-if" data-hide-if="[&quot;===&quot;,&quot;wpCreateaccountMail&quot;,&quot;1&quot;]"><label for="wpPassword2">Password</label><div class="mw-input"><input id="wpPassword2" name="wpPassword" size="20" class="loginPassword mw-ui-input" placeholder="Enter a password" tabindex="2" required="" type="password"/>
-</div></div><div class="mw-htmlform-field-HTMLTextField loginPassword mw-ui-vform-field mw-htmlform-hide-if" data-hide-if="[&quot;===&quot;,&quot;wpCreateaccountMail&quot;,&quot;1&quot;]"><label for="wpRetype">Confirm password</label><div class="mw-input"><input id="wpRetype" name="retype" size="20" class="loginPassword mw-ui-input" placeholder="Enter password again" tabindex="3" required="" type="password"/>
-</div></div><div class="mw-htmlform-field-HTMLTextField loginText mw-ui-vform-field"><label for="wpEmail">Email address (optional)</label><div class="mw-input"><input id="wpEmail" name="email" size="20" class="loginText mw-ui-input" placeholder="Enter your email address" tabindex="4" type="email"/>
-</div></div><div class="mw-htmlform-field-HTMLTextField loginText mw-ui-vform-field"><label for="wpRealName">Real name (optional)</label><div class="mw-input"><input id="wpRealName" name="realname" size="20" class="loginText mw-ui-input" tabindex="5"/>
-</div></div><div class="htmlform-tip">Real name is optional.
-If provided, it may be used to give you attribution for your work.</div><div class="mw-htmlform-field-HTMLInfoField mw-ui-vform-field"><label>To protect the wiki against automated account creation, we kindly ask you to answer the question that appears below (<a href="../../external.html?link=https://stardewvalleywiki.com/Special:Captcha/help" title="Special:Captcha/help">more info</a>):</label><div class="mw-input">Who is this? <img src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/5/52/Gus.png" alt="" title="" />
-</div></div><div class="mw-htmlform-field-HTMLTextField mw-ui-vform-field"><div class="mw-input mw-htmlform-nolabel"><input id="mw-input-captchaWord" name="captchaWord" size="45" tabindex="7" required="" class="mw-ui-input"/>
-</div></div><div class="mw-htmlform-field-HTMLSubmitField mw-ui-vform-field"><div class="mw-input mw-htmlform-nolabel"><button class="mw-htmlform-submit mw-ui-button mw-ui-primary mw-ui-progressive" id="wpCreateaccount" type="submit" name="wpCreateaccount" value="Create your account" tabindex="8">Create your account</button>
-</div></div>
-</div><input id="wpEditToken" type="hidden" value="+\" name="wpEditToken"/>
-<input type="hidden" value="Special:CreateAccount" name="title"/>
-<input name="authAction" type="hidden" value="create"/>
-<input name="force" type="hidden"/>
-<input name="wpCreateaccountToken" type="hidden" value="82cac55c516bb7c0604dd78aeb3ef77166178a87+\"/>
-<input id="mw-input-captchaId" name="captchaId" type="hidden" value="819886056"/>
-</form></div><div class="mw-createacct-benefits-container"><h2>Stardew Valley Wiki is made by people like you.</h2><div class="mw-createacct-benefits-list"><div class="mw-number-text icon-edits"><h3>148,771</h3><p>edits</p></div><div class="mw-number-text icon-pages"><h3>1,982</h3><p>pages</p></div><div class="mw-number-text icon-contributors"><h3>0</h3><p>recent contributors</p></div></div></div></div></div><div class="printfooter">
-Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/Special:CreateAccount">https://stardewvalleywiki.com/Special:CreateAccount</a>"</div>
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><div style="float: right; border: 2px solid rgb(0, 116, 72); background: #A1DEE2; padding: 0.75em; padding-top: 0.5em; margin: 0 0 2em 2em;">
+<p><span style="font-size: larger;"><b>Creating SMAPI mods</b> <a href="../../external.html?link=https://stardewvalleywiki.com/File:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25"></a></span>
+</p>
+<hr>
+<ul><li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/Get_Started" title="Modding:Modder Guide/Get Started">Get started</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/Game_Fundamentals" title="Modding:Modder Guide/Game Fundamentals">Game fundamentals</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/Test_and_Troubleshoot" title="Modding:Modder Guide/Test and Troubleshoot">Test &amp; troubleshoot</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/Release" title="Modding:Modder Guide/Release">Release</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs" title="Modding:Modder Guide/APIs">API reference</a>
+<dl><dd>Basic SMAPI APIs:
+<ul><li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Mod_structure" title="Modding:Modder Guide/APIs/Mod structure">Mod structure</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Manifest" title="Modding:Modder Guide/APIs/Manifest">Manifest</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Events" title="Modding:Modder Guide/APIs/Events">Events</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Config" title="Modding:Modder Guide/APIs/Config">Configuration</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Content" title="Modding:Modder Guide/APIs/Content">Load &amp; edit content</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Data" title="Modding:Modder Guide/APIs/Data">Data</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input" title="Modding:Modder Guide/APIs/Input">Input</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Logging" title="Modding:Modder Guide/APIs/Logging">Logging</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Reflection" title="Modding:Modder Guide/APIs/Reflection">Reflection</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Multiplayer" title="Modding:Modder Guide/APIs/Multiplayer">Multiplayer</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Translation" title="Modding:Modder Guide/APIs/Translation">Translation</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks" title="Modding:Modder Guide/APIs/Update checks">Update checks</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Utilities" title="Modding:Modder Guide/APIs/Utilities">Utilities</a></li></ul></dd>
+<dd>Advanced SMAPI APIs:
+<ul><li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Content_Packs" title="Modding:Modder Guide/APIs/Content Packs">Content packs</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Console" title="Modding:Modder Guide/APIs/Console">Mod console commands</a></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Integrations" title="Modding:Modder Guide/APIs/Integrations">Mod integrations</a></li>
+<li><a class="mw-selflink selflink">Harmony patching</a></li></ul></dd></dl></li>
+<li><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Index#Advanced_topics" title="Modding:Index">Specific guides</a></li></ul>
+</div><p>← <span style="font-size: smaller;"><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Index" title="Modding:Index">Modding:Index</a></span>
+<style data-mw-deduplicate="TemplateStyles:r130583">.mw-parser-output .decorativequotemark{font-family:"Georgia","Times New Roman","Times",serif;font-size:5em;line-height:0.02em;font-weight:bold;color:rgb(41,129,178);border-right:1px solid rgb(47,148,204);padding:25px 0.06em 0em 0.2em}.mw-parser-output .quotetext{font-family:"Georgia","Times New Roman","Times",serif;font-size:1.1em;font-style:italic;line-height:1.5em;padding-left:15px}.mw-parser-output .quotesource{text-align:left;font-size:0.9em;font-style:italic;margin-top:0;padding-left:120px}</style>
+</p><table>
+
+<tbody><tr>
+<td rowspan="2" class="decorativequotemark">“
+</td>
+<td class="quotetext">“Here be dragons. Thou art forewarned.”
+</td></tr>
+</tbody></table>
+<p><a rel="nofollow" class="external text" href="../../external.html?link=https://github.com/pardeike/Harmony">Harmony</a> lets you patch or replace methods, effectively rewriting the game code. SMAPI includes a copy of Harmony for mods to use.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#When_to_use_Harmony"><span class="tocnumber">1</span> <span class="toctext">When to use Harmony</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#How_to_use_it"><span class="tocnumber">2</span> <span class="toctext">How to use it</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Best_practices"><span class="tocnumber">3</span> <span class="toctext">Best practices</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#FAQs"><span class="tocnumber">4</span> <span class="toctext">FAQs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Which_version_of_Harmony_should_I_use.3F"><span class="tocnumber">4.1</span> <span class="toctext">Which version of Harmony should I use?</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Why_should_I_avoid_Harmony_annotations_and_PatchAll.3F"><span class="tocnumber">4.2</span> <span class="toctext">Why should I avoid Harmony annotations and PatchAll?</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#What_is_inlining_and_why_does_it_matter.3F"><span class="tocnumber">4.3</span> <span class="toctext">What is inlining and why does it matter?</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="When_to_use_Harmony">When to use Harmony</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<p><b>Harmony should be a last resort.</b> It's a powerful tool that lets you do things that may be harder otherwise, but it comes with significant disadvantages:
+</p>
+<ul><li>It's very easy to cause crashes, errors, or subtle bugs, including difficult-to-diagnose memory corruption errors.</li>
+<li>SMAPI often can't detect incompatible Harmony code.</li>
+<li>SMAPI often can't rewrite Harmony patches for compatibility, so the mod may break on other platforms (e.g. Android) or in future game updates.</li>
+<li>Patches may conflict with other Harmony mods, sometimes in ways that are difficult to troubleshoot.</li>
+<li>Patches may have unpredictable effects on other mods that aren't using Harmony. That may also irritate other modders, if players often report bugs to other mods due to your patches.</li>
+<li>Patches may prevent you from attaching a debugger when testing (even when you're testing unrelated code).</li>
+<li>If someone else's mod calls code you patched and that code crashes, the error will be logged under their mod's name (unless you handle errors). This can cause players to report bugs to other authors, which can be irritating if they know it's due to your mod.</li>
+<li>SMAPI will show a warning when your mod is loaded saying it may affect game stability.</li></ul>
+<p>You should only use Harmony if you're sure what you want isn't feasible without it. For example: instead of patching logic that handles player interaction, you can detect and suppress the interaction using <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Input" title="Modding:Modder Guide/APIs/Input">SMAPI's input API</a>, and run your own code to handle it.
+</p>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="How_to_use_it">How to use it</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<p><b>Harmony should be a last resort</b> (see the previous section).
+</p>
+<ol>
+<li>Edit your mod's <samp>.csproj</samp> project file, and add this to the first <samp>&lt;PropertyGroup&gt;</samp> section:
+<div class="mw-highlight mw-highlight-lang-xml mw-content-ltr" dir="ltr"><pre><span></span><span class="nt">&lt;EnableHarmony&gt;</span>true<span class="nt">&lt;/EnableHarmony&gt;</span>
+</pre></div></li>
+<li>In your mod's <samp>Entry</samp> method, use Harmony's code API to register patches:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">harmony</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Harmony</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">ModManifest</span><span class="p">.</span><span class="n">UniqueID</span><span class="p">);</span>
+
+<span class="c1">// example patch, you'll need to edit this for your patch</span>
+<span class="n">harmony</span><span class="p">.</span><span class="n">Patch</span><span class="p">(</span>
+   <span class="n">original</span><span class="p">:</span> <span class="n">AccessTools</span><span class="p">.</span><span class="n">Method</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">StardewValley</span><span class="p">.</span><span class="n">Object</span><span class="p">),</span> <span class="n">nameof</span><span class="p">(</span><span class="n">StardewValley</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">canBePlacedHere</span><span class="p">)),</span>
+   <span class="n">prefix</span><span class="p">:</span> <span class="k">new</span> <span class="n">HarmonyMethod</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">ObjectPatches</span><span class="p">),</span> <span class="n">nameof</span><span class="p">(</span><span class="n">ObjectPatches</span><span class="p">.</span><span class="n">CanBePlacedHere_Prefix</span><span class="p">))</span>
+<span class="p">);</span>
+</pre></div></li>
+<li>See the <a rel="nofollow" class="external text" href="../../external.html?link=https://harmony.pardeike.net/">Harmony tutorials and documentation</a>.</li>
+</ol>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Best_practices">Best practices</span></h2><section class="mf-section-3 collapsible-block" id="mf-section-3">
+<ol>
+<li>See <a href="#When_to_use_Harmony">when to use Harmony</a>.</li>
+<li>Unhandled errors in a patch can be hard to troubleshoot, which often leads to players asking for help on the SMAPI page instead of your mod. <b>Please</b> handle errors, log them, and default to the original code. For example:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">internal</span> <span class="k">class</span> <span class="nc">ObjectPatches</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">static</span> <span class="n">IMonitor</span> <span class="n">Monitor</span><span class="p">;</span>
+
+    <span class="c1">// call this method from your Entry class</span>
+    <span class="k">internal</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Initialize</span><span class="p">(</span><span class="n">IMonitor</span> <span class="n">monitor</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Monitor</span> <span class="p">=</span> <span class="n">monitor</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// patches need to be static!</span>
+    <span class="k">internal</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">CanBePlacedHere_Prefix</span><span class="p">(</span><span class="n">StardewValley</span><span class="p">.</span><span class="n">Object</span> <span class="n">__instance</span><span class="p">,</span> <span class="n">GameLocation</span> <span class="n">location</span><span class="p">,</span> <span class="n">Vector2</span> <span class="n">tile</span><span class="p">,</span> <span class="k">ref</span> <span class="kt">bool</span> <span class="n">__result</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="p">...;</span> <span class="c1">// your patch logic here</span>
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// don't run original logic</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Monitor</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="err">$</span><span class="s">"Failed in {nameof(CanBePlacedHere_Prefix)}:\n{ex}"</span><span class="p">,</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// run original logic</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>Use postfixes when possible for best compatibility and stability.</li>
+<li>Don't use transpile patches unless you have no choice and you know what you're doing. This has a much higher chance of causing issues, is more fragile and likely to break in game updates, and makes it much less likely that other modders can help if you need it.</li>
+<li><a href="#How_to_use_it">Use the code API</a> instead of annotations like <samp>[HarmonyPatch]</samp> (see <i><a href="#Why_should_I_avoid_Harmony_annotations_and_PatchAll.3F">Why should I avoid Harmony annotations and <samp>PatchAll</samp>?</a></i>).</li>
+</ol>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(4)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="FAQs">FAQs</span></h2><section class="mf-section-4 collapsible-block" id="mf-section-4">
+<h3 class="in-block"><span id="Which_version_of_Harmony_should_I_use?"></span><span class="mw-headline" id="Which_version_of_Harmony_should_I_use.3F">Which version of Harmony should I use?</span></h3>
+<p>The Harmony version is managed by SMAPI (currently 2.2.<i>x</i>). If you <a href="#How_to_use_it">use the <samp>EnableHarmony</samp> option</a>, you'll use the version bundled with SMAPI automatically.
+</p>
+<h3 class="in-block"><span id="Why_should_I_avoid_Harmony_annotations_and_PatchAll?"></span><span class="mw-headline" id="Why_should_I_avoid_Harmony_annotations_and_PatchAll.3F">Why should I avoid Harmony annotations and <samp>PatchAll</samp>?</span></h3>
+<p>There are two ways to add patches:
+</p>
+<ul><li><a href="#How_to_use_it">Use the code API</a> (recommended).</li>
+<li>Use annotations like <samp>[HarmonyPatch]</samp> on static classes, then call Harmony's <samp>PatchAll</samp> to dynamically scan the assembly for those annotations. This is fragile and discouraged.</li></ul>
+<p>For context, SMAPI automatically rewrites mods when needed for compatibility. That's used to keep mods working when there are breaking changes in the game/SMAPI/Harmony, or to handle crossplatform differences (e.g. using PC mods on Android). For example, the Stardew Valley 1.5.5 update broke most C# mods, but nearly all of them were fixed automatically by SMAPI's rewriting.
+</p><p>However annotations work differently in the compiled code, so SMAPI can't rewrite them. That means mods which use annotations are more fragile; they may break without warning in future game/SMAPI/Harmony updates, and may not work on some platforms.
+</p>
+<h3 class="in-block"><span id="What_is_inlining_and_why_does_it_matter?"></span><span class="mw-headline" id="What_is_inlining_and_why_does_it_matter.3F">What is inlining and why does it matter?</span></h3>
+<p><a rel="nofollow" class="external text" href="../../external.html?link=https://en.wikipedia.org/wiki/Inline_expansion">Inlining</a> is when the JIT takes a method call and sticks the body of the method called instead of emitting an actual call. If this happens, a harmony patch applied to the callee will not take effect.
+</p><p>The heuristics the JIT uses to decide whether or not to inline a method are not documented and are subject to change, but <a rel="nofollow" class="external text" href="../../external.html?link=https://stackoverflow.com/a/31467000/19366602">small, simple methods that do not throw exceptions</a> are the most likely to be inlined. Additionally, the heuristic seems to change between platform and platform, with mac being more aggressive than Windows.
+</p>
+
+
+
+
+</section></div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Harmony&amp;oldid=170950">https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Harmony&amp;oldid=170950</a>"</div>
 </div>
 			<div class="post-content" id="page-secondary-actions">
 			
 			</div>
 		</main>
 		<footer class="mw-footer minerva-footer">
-		
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="../../external.html?link=https://stardewvalleywiki.com/Special:History/Modding:Modder_Guide/APIs/Harmony"
+				data-user-name="Pathoschild"
+				data-user-gender="unknown"
+				data-timestamp="1715970129">
+				<span>Last edited on 17 May 2024, at 18:22</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
 		<div class="post-content footer-content">
 			
 			<h2>Stardew Valley Wiki</h2>
 			<div class="license">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</div>
 			<ul class="footer-info hlist hlist-separated">
-				
+				<li id="footer-info-lastmod"> This page was last edited on 17 May 2024, at 18:22.</li><li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</li>
 			</ul>
 			<ul class="footer-places hlist hlist-separated">
-				<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Special:CreateAccount&amp;returnto=Template%3AFishLocations+Mines&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+				<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li><li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Harmony&amp;oldid=170950&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
 			</ul>
 		</div>
 		</footer>
@@ -153,7 +315,6 @@ Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalle
 <div class="mw-notification-area" data-mw="interface"></div>
 <!-- v:8.3.0 -->
 
-<script>(RLQ=window.RLQ||[]).push(function(){mw.log.warn("This page is using the deprecated ResourceLoader module \"mediawiki.ui\".\nPlease use OOUI instead.");});</script>
 <script src="../../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -161,9 +322,11 @@ gtag('js', new Date());
 gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
 </script>
 
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.018","walltime":"0.020","ppvisitednodes":{"value":69,"limit":1000000},"postexpandincludesize":{"value":1920,"limit":2097152},"templateargumentsize":{"value":67,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":5268,"limit":5000000},"timingprofile":["100.00%    7.935      1 -total"," 71.51%    5.674      1 Template:Quote"," 14.43%    1.145      1 Modding:Modder_Guide/header"," 12.54%    0.995      1 Template:Github"]},"cachereport":{"timestamp":"20240607063524","ttl":86400,"transientcontent":false}}});});</script>
 <script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
-<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":104});});</script>		</body>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":63});});</script>		</body>
 		
-<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Special:CreateAccount&returnto=Template%3AFishLocations+Mines by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 07:53:30 GMT -->
+
 </html>
 		
+

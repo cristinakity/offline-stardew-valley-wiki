@@ -2,995 +2,382 @@
 <!DOCTYPE html>
 <html class="client-nojs" lang="en" dir="ltr">
 
-<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Poppy&oldid=144201 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 00:47:00 GMT -->
+
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <meta charset="UTF-8"/>
-<title>Poppy - Stardew Valley Wiki</title>
-<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"2f012c89ca71380797f5a4cf","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Poppy","wgTitle":"Poppy","wgCurRevisionId":144201,"wgRevisionId":144201,"wgArticleId":1843,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Summer crops"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Poppy","wgRelevantArticleId":1843,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,
-"tagline":!1},"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"wgSiteNoticeId":"1.0"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready","jquery.tablesorter.styles":"ready","jquery.makeCollapsible.styles":"ready","mediawiki.toc.styles":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","jquery.tablesorter","jquery.makeCollapsible","mediawiki.toc","skins.vector.legacy.html","ext.dismissableSiteNotice"];</script>
+<title>Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"d60b936f613a837d1b54e17e","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Migrate_to_SMAPI_4.0","wgTitle":"Migrate to SMAPI 4.0","wgCurRevisionId":149792,"wgRevisionId":149792,"wgArticleId":13688,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Modding"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Migrate_to_SMAPI_4.0","wgRelevantArticleId":13688,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],
+"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
 <script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
 });});</script>
-<link rel="stylesheet" href="loadacd1.css?lang=en&amp;modules=ext.dismissableSiteNotice.styles%7Cjquery.makeCollapsible.styles%7Cjquery.tablesorter.styles%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<link rel="stylesheet" href="loadb7e5.css?lang=en&amp;modules=ext.pygments%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
 <script async="" src="load52c0.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
 <meta name="ResourceLoaderDynamicStyles" content=""/>
 <link rel="stylesheet" href="load2f5e.css?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
 <meta name="generator" content="MediaWiki 1.35.1"/>
 <meta name="robots" content="noindex,nofollow"/>
-<meta name="description" content="The Poppy is a flower that can be grown from Poppy Seeds in 7 days. Unlike all other flowers, Poppies are a universally hated gift; Penny, who loves Poppies, is the only exception."/>
-<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/images/3/37/Poppy.png"/>
-<meta name="keywords" content="Stardew Valley Wiki, Stardew Valley, Poppy, gift"/>
+<meta name="description" content="←Index"/>
 <link rel="shortcut icon" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/favicon.png"/>
 <link rel="search" type="application/opensearchdescription+xml" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (en)"/>
 <link rel="EditURI" type="application/rsd+xml" href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
 <link rel="license" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
 <link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki Atom feed" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
-<meta property="og:title" content="Poppy - Stardew Valley Wiki"/>
-<meta property="og:url" content="https://stardewvalleywiki.com/Poppy"/>
-<meta property="og:description" content="The Poppy is a flower that can be grown from Poppy Seeds in 7 days. Unlike all other flowers, Poppies are a universally hated gift; Penny, who loves Poppies, is the only exception."/>
-<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
-<meta property="article:tag" content="Stardew Valley Wiki, Stardew Valley, Poppy, gift"/>
-<meta property="article:modified_time" content="2022-12-16T18:40:44Z"/>
-<meta property="article:published_time" content="2022-12-16T18:40:44Z"/>
+<meta property="og:title" content="Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki"/>
 <meta property="og:site_name" content="Stardew Valley Wiki"/>
-<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0"/>
+<meta property="og:description" content="←Index"/>
+<meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2023-08-23T09:53:11Z"/>
+<meta property="article:published_time" content="2023-08-23T09:53:11Z"/>
 <meta property="twitter:site" content="@stardewwiki"/>
-<meta property="twitter:title" content="Poppy - Stardew Valley Wiki"/>
-<meta property="twitter:description" content="The Poppy is a flower that can be grown from Poppy Seeds in 7 days. Unlike all other flowers, Poppies are a universally hated gift; Penny, who loves Poppies, is the only exception."/>
+<meta property="twitter:title" content="Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←Index"/>
 <meta property="twitter:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
 <meta property="twitter:card" content="summary_large_image"/>
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Poppy - Stardew Valley Wiki","headline":"Poppy - Stardew Valley Wiki","mainEntityOfPage":"Poppy","identifier":"https:\/\/stardewvalleywiki.com\/Poppy","url":"https:\/\/stardewvalleywiki.com\/Poppy","description":"The Poppy is a flower that can be grown from Poppy Seeds in 7 days. Unlike all other flowers, Poppies are a universally hated gift; Penny, who loves Poppies, is the only exception.","keywords":"Stardew Valley Wiki, Stardew Valley, Poppy, gift","dateModified":"2022-12-16T18:40:44Z","datePublished":"2022-12-16T18:40:44Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki","headline":"Modding:Migrate to SMAPI 4.0 - Stardew Valley Wiki","mainEntityOfPage":"Modding:Migrate to SMAPI 4.0","identifier":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_4.0","url":"https:\/\/stardewvalleywiki.com\/Modding:Migrate_to_SMAPI_4.0","description":"\u2190Index","dateModified":"2023-08-23T09:53:11Z","datePublished":"2023-08-23T09:53:11Z","image":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
 <!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
 </head>
-<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Poppy rootpage-Poppy skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Migrate_to_SMAPI_4_0 rootpage-Modding_Migrate_to_SMAPI_4_0 skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
 <div id="mw-page-base" class="noprint"></div>
 <div id="mw-head-base" class="noprint"></div>
 <div id="content" class="mw-body" role="main">
 	<a id="top"></a>
-	<div id="siteNotice" class="mw-body-content"><div id="mw-dismissablenotice-anonplace"></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv class=\"mw-dismissable-notice\"\u003E\u003Cdiv class=\"mw-dismissable-notice-close\"\u003E[\u003Ca tabindex=\"0\" role=\"button\"\u003Edismiss\u003C/a\u003E]\u003C/div\u003E\u003Cdiv class=\"mw-dismissable-notice-body\"\u003E\u003Cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cp\u003E\u003Cb\u003ENew editors: Please read \u003Ca href=\"/Help:Editing\" title=\"Help:Editing\"\u003EHelp:Editing\u003C/a\u003E before diving in!\u003C/b\u003E\n\u003Cbr /\u003E\u003Cb\u003EChanges made without adding a \"History\" section will be removed. Thank you for your understanding.\u003C/b\u003E\n\u003C/p\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+	<div id="siteNotice" class="mw-body-content"></div>
 	<div class="mw-indicators mw-body-content">
 	</div>
-	<h1 id="firstHeading" class="firstHeading" lang="en">Poppy</h1>
+	<h1 id="firstHeading" class="firstHeading" lang="en">Modding:Migrate to SMAPI 4.0</h1>
 	<div id="bodyContent" class="mw-body-content">
 		<div id="siteSub" class="noprint">From Stardew Valley Wiki</div>
-		<div id="contentSub"><div class="mw-revision warningbox"><div id="mw-revision-info">Revision as of 18:40, 16 December 2022 by <a href="../../external.html?link=https://stardewvalleywiki.com/User:Margotbean" class="mw-userlink" title="User:Margotbean"><bdi>Margotbean</bdi></a> <span class="mw-usertoollinks">(<a href="../../external.html?link=https://stardewvalleywiki.com/User_talk:Margotbean" class="mw-usertoollinks-talk" title="User talk:Margotbean">talk</a> | <a href="../../external.html?link=https://stardewvalleywiki.com/Special:Contributions/Margotbean" class="mw-usertoollinks-contribs" title="Special:Contributions/Margotbean">contribs</a>)</span></div><div id="mw-revision-nav">(<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;diff=prev&amp;oldid=144201" title="Poppy">diff</a>) <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;direction=prev&amp;oldid=144201" title="Poppy">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div></div>
+		<div id="contentSub"><div class="mw-revision warningbox"><div id="mw-revision-info">Revision as of 09:53, 23 August 2023 by <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=User:Atravita&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Atravita (page does not exist)"><bdi>Atravita</bdi></a> <span class="mw-usertoollinks">(<a href="../../external.html?link=https://stardewvalleywiki.com/User_talk:Atravita" class="mw-usertoollinks-talk" title="User talk:Atravita">talk</a> | <a href="../../external.html?link=https://stardewvalleywiki.com/Special:Contributions/Atravita" class="mw-usertoollinks-contribs" title="Special:Contributions/Atravita">contribs</a>)</span> <span class="comment">(<span dir="auto"><span class="autocomment"><a href="#Other_API_changes">→‎Other API changes</a></span></span>)</span></div><div id="mw-revision-nav">(<a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;diff=prev&amp;oldid=149792" title="Modding:Migrate to SMAPI 4.0">diff</a>) <a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;direction=prev&amp;oldid=149792" title="Modding:Migrate to SMAPI 4.0">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div></div>
 		<div id="contentSub2"></div>
 		
 		<div id="jump-to-nav"></div>
 		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
 		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
-		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="infoboxborder">
-<table id="infoboxtable">
-<tbody><tr>
-	<td colspan="2" id="infoboxheader">Poppy</td>
-</tr>
-<tr>
-	<td colspan="2" style="padding-bottom: 5px; text-align: center;"><a href="../../external.html?link=https://stardewvalleywiki.com/File:Poppy.png" class="image"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/3/37/Poppy.png" decoding="async" width="48" height="48" /></a></td>
-</tr>
-<tr>
-	<td colspan="2" id="infoboxdetail" style="text-align: center; font-style: italic; padding-right: 3px;">In addition to its colorful flower, the Poppy has culinary and medicinal uses.</td>
-</tr>
-<tr>
-	<td colspan="2" id="infoboxsection" style="text-align: center; padding-left: 0; padding-right: 0;">Information</td>
-</tr>
-
-	<tr>
-		<td id="infoboxsection">Seed</td>
-		<td id="infoboxdetail"><style data-mw-deduplicate="TemplateStyles:r120955">.mw-parser-output .nametemplate{margin:2px 5px 1px 2px;display:block;white-space:nowrap}.mw-parser-output .nametemplateinline{margin:2px 0 1px 2px;display:inline;white-space:nowrap}.mw-parser-output .nametemplate img,.mw-parser-output .nametemplateinline img{max-width:none}</style><span class="nametemplate"><img alt="Poppy Seeds.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a2/Poppy_Seeds.png/24px-Poppy_Seeds.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/a/a2/Poppy_Seeds.png/36px-Poppy_Seeds.png 1.5x, /mediawiki/images/a/a2/Poppy_Seeds.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Poppy_Seeds" title="Poppy Seeds">Poppy Seeds</a></span></td>
-	</tr>
-	<tr>
-		<td id="infoboxsection">Growth Time</td>
-		<td id="infoboxdetail">7 days</td>
-	</tr>
-	<tr>
-		<td id="infoboxsection">Season</td>
-		<td id="infoboxdetail"><span style="display:inline; margin-right:0;"><img alt="Summer.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/8/85/Summer.png/24px-Summer.png" decoding="async" width="24" height="16" srcset="/mediawiki/images/thumb/8/85/Summer.png/36px-Summer.png 1.5x, /mediawiki/images/8/85/Summer.png 2x" />&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Summer" title="Summer">Summer</a></span></td>
-	</tr>
-	<tr>
-		<td id="infoboxsection" title="Experience Points">XP</td>
-		<td id="infoboxdetail">20 <a href="../../external.html?link=https://stardewvalleywiki.com/Farming#Experience_Points" title="Farming">Farming XP</a></td>
-	</tr>
-	<tr>
-		<td id="infoboxsection"><a href="../../external.html?link=https://stardewvalleywiki.com/Energy" title="Energy">Energy</a> / <a href="../../external.html?link=https://stardewvalleywiki.com/Health" title="Health">Health</a></td>
-			<td id="infoboxdetail">
-				<table class="no-wrap" style="text-align: left; margin: 0; padding: 0; border-spacing: 0; border: 0;">
-<tbody><tr>
-	
-	<td><style data-mw-deduplicate="TemplateStyles:r146727">.mw-parser-output .parent,.mw-parser-output .backimage,.mw-parser-output .backimagetransparent{position:relative;top:0;left:0}.mw-parser-output .backimage img,.mw-parser-output .foreimage img,.mw-parser-output .backimagetransparent img{display:block}.mw-parser-output .backimagetransparent img{opacity:0.6}.mw-parser-output .foreimage{position:absolute;bottom:0;right:0}</style><div class="parent" style="width: 20px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Energy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Energy.png/20px-Energy.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/a/a9/Energy.png/30px-Energy.png 1.5x, /mediawiki/images/thumb/a/a9/Energy.png/40px-Energy.png 2x" /></div><div class="foreimage"></div></div></td>
-	<td style="vertical-align: bottom; padding-right: 6px;">45</td>
-		<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 20px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Health.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/94/Health.png/20px-Health.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/9/94/Health.png/30px-Health.png 1.5x, /mediawiki/images/thumb/9/94/Health.png/40px-Health.png 2x" /></div><div class="foreimage"></div></div></td>
-		<td style="vertical-align: bottom;">20</td>
-</tr><tr>
-	
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 20px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Energy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Energy.png/20px-Energy.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/a/a9/Energy.png/30px-Energy.png 1.5x, /mediawiki/images/thumb/a/a9/Energy.png/40px-Energy.png 2x" /></div><div class="foreimage"><img alt="Silver Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/20px-Silver_Quality_Icon.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/30px-Silver_Quality_Icon.png 1.5x, /mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/40px-Silver_Quality_Icon.png 2x" /></div></div>
-	</td>
-	<td style="vertical-align: bottom; padding-right: 6px;">63</td>
-		<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 20px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Health.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/94/Health.png/20px-Health.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/9/94/Health.png/30px-Health.png 1.5x, /mediawiki/images/thumb/9/94/Health.png/40px-Health.png 2x" /></div><div class="foreimage"><img alt="Silver Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/20px-Silver_Quality_Icon.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/30px-Silver_Quality_Icon.png 1.5x, /mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/40px-Silver_Quality_Icon.png 2x" /></div></div></td>
-		<td style="vertical-align: bottom;">28</td>
-</tr><tr>
-	
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 20px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Energy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Energy.png/20px-Energy.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/a/a9/Energy.png/30px-Energy.png 1.5x, /mediawiki/images/thumb/a/a9/Energy.png/40px-Energy.png 2x" /></div><div class="foreimage"><img alt="Gold Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/20px-Gold_Quality_Icon.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/30px-Gold_Quality_Icon.png 1.5x, /mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/40px-Gold_Quality_Icon.png 2x" /></div></div>
-	</td>
-	<td style="vertical-align: bottom; padding-right: 6px;">81</td>
-		<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 20px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Health.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/94/Health.png/20px-Health.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/9/94/Health.png/30px-Health.png 1.5x, /mediawiki/images/thumb/9/94/Health.png/40px-Health.png 2x" /></div><div class="foreimage"><img alt="Gold Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/20px-Gold_Quality_Icon.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/30px-Gold_Quality_Icon.png 1.5x, /mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/40px-Gold_Quality_Icon.png 2x" /></div></div></td>
-		<td style="vertical-align: bottom;">36</td>
-</tr><tr>
-	
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 20px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Energy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Energy.png/20px-Energy.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/a/a9/Energy.png/30px-Energy.png 1.5x, /mediawiki/images/thumb/a/a9/Energy.png/40px-Energy.png 2x" /></div><div class="foreimage"><img alt="Iridium Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/20px-Iridium_Quality_Icon.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/30px-Iridium_Quality_Icon.png 1.5x, /mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/40px-Iridium_Quality_Icon.png 2x" /></div></div>
-	</td>
-	<td style="vertical-align: bottom; padding-right: 6px;">117</td>
-		<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 20px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Health.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/94/Health.png/20px-Health.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/9/94/Health.png/30px-Health.png 1.5x, /mediawiki/images/thumb/9/94/Health.png/40px-Health.png 2x" /></div><div class="foreimage"><img alt="Iridium Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/20px-Iridium_Quality_Icon.png" decoding="async" width="20" height="20" srcset="/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/30px-Iridium_Quality_Icon.png 1.5x, /mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/40px-Iridium_Quality_Icon.png 2x" /></div></div></td>
-		<td style="vertical-align: bottom;">52</td>
-</tr>
-</tbody></table>
-			</td>
-	</tr>
-	<tr>
-	<td colspan="2" style="padding: 0; border: 0;">
-			<table style="width: 101%; margin-top: -2px; margin-left: -2px;">
-			<tbody><tr>
-				<td id="infoboxsection" colspan="2" style="text-align: center; padding-left: 0; padding-right: 0;">Sell Prices</td>
-			</tr>
-			<tr>
-				<td id="infoboxsection">Base</td>
-				<td id="infoboxsection" class="no-wrap"><img alt="Tiller.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/b/b2/Tiller.png/24px-Tiller.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/b/b2/Tiller.png/36px-Tiller.png 1.5x, /mediawiki/images/b/b2/Tiller.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Skills#Farming" title="Skills">Tiller</a> <i>(+10%)</i></td>
-			</tr>
-			<tr>
-				<td><table class="no-wrap" style="text-align: left; margin: 0; padding: 0; border-spacing: 0; border: 0;">
-<tbody><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /></div><div class="foreimage"></div></div></td>
-	<td>140g
-	</td>
-</tr><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /></div><div class="foreimage"><img alt="Silver Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/24px-Silver_Quality_Icon.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/36px-Silver_Quality_Icon.png 1.5x, /mediawiki/images/8/8a/Silver_Quality_Icon.png 2x" /></div></div></td>
-	<td>175g
-	</td>
-</tr><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /></div><div class="foreimage"><img alt="Gold Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/24px-Gold_Quality_Icon.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/36px-Gold_Quality_Icon.png 1.5x, /mediawiki/images/4/47/Gold_Quality_Icon.png 2x" /></div></div></td>
-	<td>210g
-	</td>
-</tr><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /></div><div class="foreimage"><img alt="Iridium Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/24px-Iridium_Quality_Icon.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/36px-Iridium_Quality_Icon.png 1.5x, /mediawiki/images/e/e4/Iridium_Quality_Icon.png 2x" /></div></div></td>
-	<td>280g
-	</td>
-</tr></tbody></table></td>
-				<td><table class="no-wrap" style="text-align: left; margin: 0; padding: 0; border-spacing: 0; border: 0;">
-<tbody><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /></div><div class="foreimage"></div></div></td>
-	<td>154g
-	</td>
-</tr><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /></div><div class="foreimage"><img alt="Silver Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/24px-Silver_Quality_Icon.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/8/8a/Silver_Quality_Icon.png/36px-Silver_Quality_Icon.png 1.5x, /mediawiki/images/8/8a/Silver_Quality_Icon.png 2x" /></div></div></td>
-	<td>192g
-	</td>
-</tr><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /></div><div class="foreimage"><img alt="Gold Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/24px-Gold_Quality_Icon.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/4/47/Gold_Quality_Icon.png/36px-Gold_Quality_Icon.png 1.5x, /mediawiki/images/4/47/Gold_Quality_Icon.png 2x" /></div></div></td>
-	<td>231g
-	</td>
-</tr><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /></div><div class="foreimage"><img alt="Iridium Quality Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/24px-Iridium_Quality_Icon.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/e/e4/Iridium_Quality_Icon.png/36px-Iridium_Quality_Icon.png 1.5x, /mediawiki/images/e/e4/Iridium_Quality_Icon.png 2x" /></div></div></td>
-	<td>308g
-	</td>
-</tr></tbody></table></td>
-			</tr>
-			</tbody></table>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" style="padding: 0; border: 0;">
-			<table style="width: 101%; margin-top: -2px; margin-left: -2px;">
-			<tbody><tr>
-				<td id="infoboxsection" colspan="2" style="text-align: center; padding-left: 0; padding-right: 0;">Artisan Sell Prices</td>
-			</tr>
-			<tr>
-				<td id="infoboxsection">Base</td>
-				<td id="infoboxsection" class="no-wrap"><img alt="Artisan.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/4/46/Artisan.png/24px-Artisan.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/4/46/Artisan.png/36px-Artisan.png 1.5x, /mediawiki/images/4/46/Artisan.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Skills#Farming" title="Skills">Artisan</a> <i>(+40%)</i></td>
-			</tr>
-			<tr>
-				<td><table class="no-wrap" style="text-align: left; margin: 0; padding: 0; border-spacing: 0; border: 0;">
-<tbody><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Honey.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/c/c6/Honey.png/24px-Honey.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/c/c6/Honey.png/36px-Honey.png 1.5x, /mediawiki/images/c/c6/Honey.png 2x" /></div><div class="foreimage"></div></div></td>
-	<td>380g
-	</td>
-</tr></tbody></table>					
-				</td>
-				<td><table class="no-wrap" style="text-align: left; margin: 0; padding: 0; border-spacing: 0; border: 0;">
-<tbody><tr>
-	<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r146727"/><div class="parent" style="width: 24px; height: auto; margin: 0 auto;"><div class="backimage"><img alt="Honey.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/c/c6/Honey.png/24px-Honey.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/c/c6/Honey.png/36px-Honey.png 1.5x, /mediawiki/images/c/c6/Honey.png 2x" /></div><div class="foreimage"></div></div></td>
-	<td>532g
-	</td>
-</tr></tbody></table>					
-				</td>
-			</tr>
-			</tbody></table>
-		</td>
-</tr>
-</tbody></table>
+		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>←<a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Index" title="Modding:Index">Index</a>
+</p>
+<div style="border: 1px solid orange; border-left: 1em solid orange; padding: 0.5em 1em; border-radius: 5px;">
+<p><b>This page is for mod authors. Players: see <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Mod_compatibility" title="Modding:Mod compatibility">Modding:Mod compatibility</a> instead.</b>
+</p>
 </div>
-<p>The <b>Poppy</b> is a <a href="../../external.html?link=https://stardewvalleywiki.com/Flowers" title="Flowers">flower</a> that can be <a href="../../external.html?link=https://stardewvalleywiki.com/Crops" title="Crops">grown</a> from <a href="../../external.html?link=https://stardewvalleywiki.com/Poppy_Seeds" title="Poppy Seeds">Poppy Seeds</a> in 7 days. Unlike all other flowers, Poppies are a <a href="../../external.html?link=https://stardewvalleywiki.com/Friendship#Universal_Hates" title="Friendship">universally hated gift</a>; <a href="../../external.html?link=https://stardewvalleywiki.com/Penny" title="Penny">Penny</a>, who loves Poppies, is the only exception.
-</p><p>If placed within proper range of a <a href="../../external.html?link=https://stardewvalleywiki.com/Bee_House#Range" title="Bee House">Bee House</a> (5 squares in any cardinal direction), a Poppy will cause <a href="../../external.html?link=https://stardewvalleywiki.com/Honey" title="Honey">Poppy Honey</a> to be produced, increasing the honey base value from <span style="display: none;">data-sort-value="100"&gt;</span><span class="no-wrap"><img alt="Gold.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" decoding="async" width="18" height="18" srcset="/mediawiki/images/thumb/1/10/Gold.png/27px-Gold.png 1.5x, /mediawiki/images/thumb/1/10/Gold.png/36px-Gold.png 2x" />100g</span> to <span style="display: none;">data-sort-value="380"&gt;</span><span class="no-wrap"><img alt="Gold.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" decoding="async" width="18" height="18" srcset="/mediawiki/images/thumb/1/10/Gold.png/27px-Gold.png 1.5x, /mediawiki/images/thumb/1/10/Gold.png/36px-Gold.png 2x" />380g</span>.
-</p><p>Poppies can be purchased from the <a href="../../external.html?link=https://stardewvalleywiki.com/Traveling_Cart" title="Traveling Cart">Traveling Cart</a> for <span style="display: none;">data-sort-value="140"</span><img alt="Gold.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" decoding="async" width="18" height="18" srcset="/mediawiki/images/thumb/1/10/Gold.png/27px-Gold.png 1.5x, /mediawiki/images/thumb/1/10/Gold.png/36px-Gold.png 2x" />420–1,000g.
+<p><br />
+This page explains how to update your C# mod code for compatibility with SMAPI 4.0.0. (Content packs aren't affected.) You can update mods now, there's no need to wait for the 4.0 release itself.
 </p>
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
-<li class="toclevel-1 tocsection-1"><a href="#Stages"><span class="tocnumber">1</span> <span class="toctext">Stages</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="#Crop_Growth_Calendar"><span class="tocnumber">2</span> <span class="toctext">Crop Growth Calendar</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="#Gifting"><span class="tocnumber">3</span> <span class="toctext">Gifting</span></a></li>
-<li class="toclevel-1 tocsection-4"><a href="#Bundles"><span class="tocnumber">4</span> <span class="toctext">Bundles</span></a></li>
-<li class="toclevel-1 tocsection-5"><a href="#Recipes"><span class="tocnumber">5</span> <span class="toctext">Recipes</span></a></li>
-<li class="toclevel-1 tocsection-6"><a href="#Tailoring"><span class="tocnumber">6</span> <span class="toctext">Tailoring</span></a></li>
-<li class="toclevel-1 tocsection-7"><a href="#Notes"><span class="tocnumber">7</span> <span class="toctext">Notes</span></a></li>
-<li class="toclevel-1 tocsection-8"><a href="#History"><span class="tocnumber">8</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What.27s_changing.3F"><span class="tocnumber">1.1</span> <span class="toctext">What's changing?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Is_this_the_modapocalypse.3F"><span class="tocnumber">1.2</span> <span class="toctext">Is this the modapocalypse?</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#How_to_update_your_mod"><span class="tocnumber">1.3</span> <span class="toctext">How to update your mod</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Breaking_changes"><span class="tocnumber">2</span> <span class="toctext">Breaking changes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Content_interception_API"><span class="tocnumber">2.1</span> <span class="toctext">Content interception API</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Content_loading_API"><span class="tocnumber">2.2</span> <span class="toctext">Content loading API</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Other_API_changes"><span class="tocnumber">2.3</span> <span class="toctext">Other API changes</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Nullable_reference_type_annotations"><span class="tocnumber">2.4</span> <span class="toctext">Nullable reference type annotations</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Removed_dependencies"><span class="tocnumber">2.5</span> <span class="toctext">Removed dependencies</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Other_changes"><span class="tocnumber">3</span> <span class="toctext">Other changes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Raw_texture_data"><span class="tocnumber">3.1</span> <span class="toctext">Raw texture data</span></a></li>
+</ul>
+</li>
 </ul>
 </div>
 
-<h2><span class="mw-headline" id="Stages">Stages</span></h2>
-<table class="wikitable roundedborder" style="text-align:center;">
-<tbody><tr>
-<th>Stage 1
-</th>
-<th>Stage 2
-</th>
-<th>Stage 3
-</th>
-<th>Stage 4
-</th>
-<th>Harvest
-</th></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 1.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/2/25/Poppy_Stage_1.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 6.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/e/ee/Poppy_Stage_6.png" decoding="async" width="42" height="64" /></div></div>
-</td></tr>
-<tr>
-<td>1 Day
-</td>
-<td>2 Days
-</td>
-<td>2 Days
-</td>
-<td>2 Days
-</td>
-<td>Total: 7 Days
-</td></tr>
-</tbody></table>
-<h2><span class="mw-headline" id="Crop_Growth_Calendar">Crop Growth Calendar</span></h2>
-<table class="wikitable roundedborder" style="text-align:center;">
-
-<tbody><tr>
-<th colspan="7">Base
-</th></tr>
-<tr>
-<th>Mon
-</th>
-<th>Tue
-</th>
-<th>Wed
-</th>
-<th>Thu
-</th>
-<th>Fri
-</th>
-<th>Sat
-</th>
-<th>Sun
-</th></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 1.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/2/25/Poppy_Stage_1.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/3/37/Poppy.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/3/37/Poppy.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/3/37/Poppy.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/a9/Poppy_Stage_2.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/9/96/Poppy_Stage_3.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/67/Poppy_Stage_4.png" decoding="async" width="48" height="48" /></div></div>
-</td></tr></tbody></table>
-<table class="wikitable mw-collapsible mw-collapsed roundedborder" style="text-align: center;">
-<tbody><tr>
-<th colspan="4" style="min-width:450px; min-height:40px;">Agriculturist and Speed-Gro Comparison
-</th></tr>
-<tr>
-<th>
-</th>
-<th><img alt="Speed-Gro.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/94/Speed-Gro.png/24px-Speed-Gro.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/9/94/Speed-Gro.png/36px-Speed-Gro.png 1.5x, /mediawiki/images/9/94/Speed-Gro.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Speed-Gro" title="Speed-Gro">Speed-Gro</a>
-</th>
-<th><img alt="Deluxe Speed-Gro.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/6d/Deluxe_Speed-Gro.png/24px-Deluxe_Speed-Gro.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/6/6d/Deluxe_Speed-Gro.png/36px-Deluxe_Speed-Gro.png 1.5x, /mediawiki/images/6/6d/Deluxe_Speed-Gro.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Deluxe_Speed-Gro" title="Deluxe Speed-Gro">Deluxe Speed-Gro</a>
-</th>
-<th><img alt="Hyper Speed-Gro.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/5/53/Hyper_Speed-Gro.png/24px-Hyper_Speed-Gro.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/5/53/Hyper_Speed-Gro.png/36px-Hyper_Speed-Gro.png 1.5x, /mediawiki/images/5/53/Hyper_Speed-Gro.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Hyper_Speed-Gro" title="Hyper Speed-Gro">Hyper Speed-Gro</a>
-</th></tr>
-<tr>
-<th rowspan="2" style="max-width: 2em; padding: 0;"><div style="transform:rotate(-90deg); white-space: nowrap;">Regular</div>
-</th>
-<td style="background-color: transparent; border: 0;">
-<table class="wikitable roundedborder">
-
-<tbody><tr>
-<th colspan="7">10%*
-</th></tr>
-<tr>
-<th>Mon
-</th>
-<th>Tue
-</th>
-<th>Wed
-</th>
-<th>Thu
-</th>
-<th>Fri
-</th>
-<th>Sat
-</th>
-<th>Sun
-</th></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 1.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/2/25/Poppy_Stage_1.png/36px-Poppy_Stage_1.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/2/25/Poppy_Stage_1.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td></tr></tbody></table>
-</td>
-<td style="background-color: transparent; border: 0;">
-<table class="wikitable roundedborder">
-
-<tbody><tr>
-<th colspan="7">25%
-</th></tr>
-<tr>
-<th>Mon
-</th>
-<th>Tue
-</th>
-<th>Wed
-</th>
-<th>Thu
-</th>
-<th>Fri
-</th>
-<th>Sat
-</th>
-<th>Sun
-</th></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 1.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/2/25/Poppy_Stage_1.png/36px-Poppy_Stage_1.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/2/25/Poppy_Stage_1.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td></tr></tbody></table>
-</td>
-<td style="background-color: transparent; border: 0;">
-<table class="wikitable roundedborder">
-
-<tbody><tr>
-<th colspan="7">33%
-</th></tr>
-<tr>
-<th>Mon
-</th>
-<th>Tue
-</th>
-<th>Wed
-</th>
-<th>Thu
-</th>
-<th>Fri
-</th>
-<th>Sat
-</th>
-<th>Sun
-</th></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 1.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/2/25/Poppy_Stage_1.png/36px-Poppy_Stage_1.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/2/25/Poppy_Stage_1.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td></tr></tbody></table>
-</td></tr>
-<tr>
-<td colspan="3" style="background-color: transparent; padding: 0 0 0 8px; text-align: left; font-size: smaller; border: 0;">*<i>Note that the 10% table also applies to the <a href="../../external.html?link=https://stardewvalleywiki.com/Skills#Farming" title="Skills">Agriculturist Profession</a> without any fertilizer.</i>
-</td></tr>
-<tr>
-<th style="max-width: 2em; padding: 0;"><div style="transform:rotate(-90deg); white-space: nowrap; margin-top: 84px;"><img alt="Agriculturist.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/7/78/Agriculturist.png/24px-Agriculturist.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/7/78/Agriculturist.png/36px-Agriculturist.png 1.5x, /mediawiki/images/7/78/Agriculturist.png 2x" /> Agriculturist</div>
-</th>
-<td style="background-color: transparent; border: 0;">
-<table class="wikitable roundedborder">
-
-<tbody><tr>
-<th colspan="7">20%
-</th></tr>
-<tr>
-<th>Mon
-</th>
-<th>Tue
-</th>
-<th>Wed
-</th>
-<th>Thu
-</th>
-<th>Fri
-</th>
-<th>Sat
-</th>
-<th>Sun
-</th></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 1.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/2/25/Poppy_Stage_1.png/36px-Poppy_Stage_1.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/2/25/Poppy_Stage_1.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td></tr></tbody></table>
-</td>
-<td style="background-color: transparent; border: 0;">
-<table class="wikitable roundedborder">
-
-<tbody><tr>
-<th colspan="7">35%
-</th></tr>
-<tr>
-<th>Mon
-</th>
-<th>Tue
-</th>
-<th>Wed
-</th>
-<th>Thu
-</th>
-<th>Fri
-</th>
-<th>Sat
-</th>
-<th>Sun
-</th></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 1.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/2/25/Poppy_Stage_1.png/36px-Poppy_Stage_1.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/2/25/Poppy_Stage_1.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 2.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Poppy_Stage_2.png/36px-Poppy_Stage_2.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/a/a9/Poppy_Stage_2.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td></tr></tbody></table>
-</td>
-<td style="background-color: transparent; border: 0;">
-<table class="wikitable roundedborder">
-
-<tbody><tr>
-<th colspan="7">43%
-</th></tr>
-<tr>
-<th>Mon
-</th>
-<th>Tue
-</th>
-<th>Wed
-</th>
-<th>Thu
-</th>
-<th>Fri
-</th>
-<th>Sat
-</th>
-<th>Sun
-</th></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 1.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/2/25/Poppy_Stage_1.png/36px-Poppy_Stage_1.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/2/25/Poppy_Stage_1.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td></tr>
-<tr>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 3.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/Poppy_Stage_3.png/36px-Poppy_Stage_3.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/96/Poppy_Stage_3.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy Stage 4.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/6/67/Poppy_Stage_4.png/36px-Poppy_Stage_4.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/6/67/Poppy_Stage_4.png 1.5x" /></div></div>
-</td>
-<td><div class="center"><div class="floatnone"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/3/37/Poppy.png 1.5x" /></div></div>
-</td></tr></tbody></table>
-</td></tr></tbody></table>
-<h2><span class="mw-headline" id="Gifting">Gifting</span></h2>
-<table class="wikitable roundedborder">
-<tbody><tr>
-<th colspan="2">Villager Reactions
-<p class="mw-empty-elt">
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<h3><span id="What's_changing?"></span><span class="mw-headline" id="What.27s_changing.3F">What's changing?</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="../../external.html?link=https://stardewvalleywiki.com/File:SMAPI_compatibility.png" class="image"><img alt="" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/300px-SMAPI_compatibility.png" decoding="async" width="300" height="186" class="thumbimage" srcset="/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/450px-SMAPI_compatibility.png 1.5x, /mediawiki/images/thumb/d/db/SMAPI_compatibility.png/600px-SMAPI_compatibility.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="../../external.html?link=https://stardewvalleywiki.com/File:SMAPI_compatibility.png" class="internal" title="Enlarge"></a></div>SMAPI compatibility over time. The SMAPI 2.0 release appears as a small bump in October 2017, and SMAPI 3.0 was released alongside Stardew Valley 1.4.</div></div></div>
+<p>The <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Content" title="Modding:Modder Guide/APIs/Content">content interception API</a> (<i>i.e.</i> <samp>IAssetLoader</samp> and <samp>IAssetEditor</samp>) was introduced five years ago in <a rel="nofollow" class="external text" href="../../external.html?link=https://github.com/Pathoschild/SMAPI/blob/develop/docs/release-notes-archived.md#20">SMAPI 2.0.0</a>. Since then it's become one of the most important parts of SMAPI; for example, it's the basis for Content Patcher which is now the backbone for 41.1% of all mods. However, the API has remained essentially unchanged since its introduction and it doesn't account for all the use cases that apply today.
+</p><p>SMAPI 4.0.0 is the release that fixes that. This completely redesigns the content API:
 </p>
+<ul><li>The API is now fully discoverable through <samp>helper</samp>, just like any other API. That makes it much more intuitive for mod authors.</li>
+<li>Load operations are no longer always exclusive, since that led to frequent mod conflicts. Instead you can now specify the priority for each load operation.</li>
+<li>The API no longer hides locale handling — <samp>Data/Bundles</samp> and <samp>Data/Bundles.fr-FR</samp> are <i>not</i> equivalent (though you can still apply locale-agnostic changes if needed).</li>
+<li>Added content pack labels, which let you indicate that your mod is loading/editing an asset on behalf of a content pack. This is reflected in logged messages to simplify troubleshooting, and avoid every error being reported to the framework mod author.</li>
+<li>Added edit priority, which lets you finetune compatibility with other mods or edits.</li></ul>
+<p>SMAPI 4.0.0 also adds compatibility with Stardew Valley 1.6 and drops all deprecated APIs.
+</p>
+<h3><span id="Is_this_the_modapocalypse?"></span><span class="mw-headline" id="Is_this_the_modapocalypse.3F">Is this the modapocalypse?</span></h3>
+<p>Nope. Although this is a major change, significant efforts will be undertaken to minimize the impact:
+</p>
+<ul><li>the old content API will be supported for a long time with increasingly prominent warnings in the SMAPI console about its deprecation and removal;</li>
+<li>pull requests will be submitted to update affected open-source mods;</li>
+<li>unofficial updates will be created for mods which haven't updated officially by the time SMAPI 4.0.0 was released;</li>
+<li>the changes will be actively communicated and documented to modders.</li></ul>
+<p>All of this means that the 4.0.0 release should have minimal impact on mod compatibility, despite the scope of the changes.
+</p>
+<h3><span class="mw-headline" id="How_to_update_your_mod">How to update your mod</span></h3>
+<p>You don't need to comb through your code manually. SMAPI can tell you if you're using a deprecated API:
+</p>
+<ol><li>SMAPI will show deprecation messages in the console window (the exact format changes depending on the deprecation level, but you can just search for your mod name):<br /><a href="../../external.html?link=https://stardewvalleywiki.com/File:Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.png" class="image"><img alt="Modding - updating deprecated SMAPI code - deprecation warnings.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/8/8a/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.png" decoding="async" width="1121" height="17" /></a></li>
+<li>When you look at the code in Visual Studio, you'll see build warnings with hints on how to fix them:<br /><a href="../../external.html?link=https://stardewvalleywiki.com/File:Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.png" class="image"><img alt="Modding - updating deprecated SMAPI code - deprecation intellisense.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/2/20/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.png" decoding="async" width="709" height="114" /></a></li>
+<li>You can refer to the following sections on how to replace specific APIs.</li></ol>
+<h2><span class="mw-headline" id="Breaking_changes">Breaking changes</span></h2>
+<h3><span class="mw-headline" id="Content_interception_API">Content interception API</span></h3>
+<p>The <samp>IAssetLoader</samp> and <samp>IAssetEditor</samp> interfaces no longer exist. Both have been replaced by the <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Events#Content.AssetRequested" title="Modding:Modder Guide/APIs/Events"><samp>AssetRequested</samp> event</a>, which is used like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;inheritdoc /&gt;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="c1">/// &lt;inheritdoc cref=&quot;IContentEvents.AssetRequested&quot; /&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;sender&quot;&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;e&quot;&gt;The event arguments.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">&quot;Portraits/Abigail&quot;</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">LoadFromModFile</span><span class="p">&lt;</span><span class="n">Texture2D</span><span class="p">&gt;(</span><span class="s">&quot;assets/portrait.png&quot;</span><span class="p">,</span> <span class="n">AssetLoadPriority</span><span class="p">.</span><span class="n">Medium</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Migration tips:
+</p>
+<ul><li><b>Asset names are no longer locale-agnostic.</b> For example, <samp>Data/Bundles</samp> and <samp>Data/Bundles.fr-FR</samp> are <i>not</i> equivalent. If you want to apply changes regardless of the locale, check <samp>e.NameWithoutLocale</samp> instead of <samp>e.Name</samp>.</li>
+<li>The old <samp>CanLoad</samp>/<samp>Load</samp> and <samp>CanEdit</samp>/<samp>Edit</samp> methods have been combined, so you only need to check any conditional logic once.</li>
+<li>When loading an asset, you must now specify an <samp>AssetLoadPriority</samp> which decides what happens if two loads apply to the same asset. <samp>AssetLoadPriority.Exclusive</samp> matches the previous behavior, but may reduce mod compatibility. See the IntelliSense documentation for more info.</li></ul>
+<p>See the <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Events#Content" title="Modding:Modder Guide/APIs/Events">content events</a> and <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Content" title="Modding:Modder Guide/APIs/Content">content API</a> docs for more info on how to use them.
+</p>
+<h3><span class="mw-headline" id="Content_loading_API">Content loading API</span></h3>
+<p>The <samp>helper.Content</samp> API was confusing, since game content assets and mod files are handled differently. Some methods had an optional <samp>ContentSource</samp> parameter (which was easy to forget to specify), some only made sense for one or the other (like <samp>GetActualAssetKey</samp>), and the documentation tried to handle both by being more abstract. All assets it loaded were also non-cached, which could affect performance and prevented features like the <a href="#Content_interception_API">new content events</a>.
+</p><p>It's been split into two APIs to fix those issues:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>field
+</th>
+<th>notes
 </th></tr>
 <tr>
-<th>Love
-</th>
-<td><span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Penny" title="Penny"><img alt="Penny Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/b/bc/Penny_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Penny" title="Penny">Penny</a></span>
+<td><samp>helper.ModContent</samp>
+</td>
+<td>Loads assets from your mod's files. These aren't cached (similar to <samp>helper.Content</samp>), so they'll be re-read from the file each time you load them.
 </td></tr>
 <tr>
-<th>Hate
-</th>
-<td><span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Abigail" title="Abigail"><img alt="Abigail Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/63/Abigail_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Abigail" title="Abigail">Abigail</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Alex" title="Alex"><img alt="Alex Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/7/73/Alex_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Alex" title="Alex">Alex</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Caroline" title="Caroline"><img alt="Caroline Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/d/d4/Caroline_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Caroline" title="Caroline">Caroline</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Clint" title="Clint"><img alt="Clint Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/7/74/Clint_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Clint" title="Clint">Clint</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Demetrius" title="Demetrius"><img alt="Demetrius Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/0/0b/Demetrius_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Demetrius" title="Demetrius">Demetrius</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Dwarf" title="Dwarf"><img alt="Dwarf Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/0/08/Dwarf_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Dwarf" title="Dwarf">Dwarf</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Elliott" title="Elliott"><img alt="Elliott Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/6f/Elliott_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Elliott" title="Elliott">Elliott</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Emily" title="Emily"><img alt="Emily Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/c/c3/Emily_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Emily" title="Emily">Emily</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Evelyn" title="Evelyn"><img alt="Evelyn Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/5/54/Evelyn_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Evelyn" title="Evelyn">Evelyn</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/George" title="George"><img alt="George Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/a/ad/George_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/George" title="George">George</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Gus" title="Gus"><img alt="Gus Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/d/db/Gus_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Gus" title="Gus">Gus</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Haley" title="Haley"><img alt="Haley Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/f/f7/Haley_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Haley" title="Haley">Haley</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Harvey" title="Harvey"><img alt="Harvey Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/7/7a/Harvey_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Harvey" title="Harvey">Harvey</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Jas" title="Jas"><img alt="Jas Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/68/Jas_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Jas" title="Jas">Jas</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Jodi" title="Jodi"><img alt="Jodi Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/f/f7/Jodi_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Jodi" title="Jodi">Jodi</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Kent" title="Kent"><img alt="Kent Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/8/86/Kent_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Kent" title="Kent">Kent</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Krobus" title="Krobus"><img alt="Krobus Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/1/10/Krobus_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Krobus" title="Krobus">Krobus</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Leah" title="Leah"><img alt="Leah Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/6e/Leah_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Leah" title="Leah">Leah</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Leo" title="Leo"><img alt="Leo Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/3/3d/Leo_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Leo" title="Leo">Leo</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Lewis" title="Lewis"><img alt="Lewis Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/b/b6/Lewis_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Lewis" title="Lewis">Lewis</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Linus" title="Linus"><img alt="Linus Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/d/db/Linus_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Linus" title="Linus">Linus</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Marnie" title="Marnie"><img alt="Marnie Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/d/d4/Marnie_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Marnie" title="Marnie">Marnie</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Maru" title="Maru"><img alt="Maru Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/2/23/Maru_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Maru" title="Maru">Maru</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Pam" title="Pam"><img alt="Pam Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/b/b6/Pam_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Pam" title="Pam">Pam</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Pierre" title="Pierre"><img alt="Pierre Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/c/cf/Pierre_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Pierre" title="Pierre">Pierre</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Robin" title="Robin"><img alt="Robin Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/d/d1/Robin_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Robin" title="Robin">Robin</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Sam" title="Sam"><img alt="Sam Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/5/52/Sam_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Sam" title="Sam">Sam</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Sandy" title="Sandy"><img alt="Sandy Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/7/7d/Sandy_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Sandy" title="Sandy">Sandy</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Sebastian" title="Sebastian"><img alt="Sebastian Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/6/6a/Sebastian_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Sebastian" title="Sebastian">Sebastian</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Shane" title="Shane"><img alt="Shane Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/b/b4/Shane_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Shane" title="Shane">Shane</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Vincent" title="Vincent"><img alt="Vincent Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/0/0b/Vincent_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Vincent" title="Vincent">Vincent</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Willy" title="Willy"><img alt="Willy Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/7/73/Willy_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Willy" title="Willy">Willy</a></span> • <span class="no-wrap"><a href="../../external.html?link=https://stardewvalleywiki.com/Wizard" title="Wizard"><img alt="Wizard Icon.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/e/e9/Wizard_Icon.png" decoding="async" width="32" height="32" /></a>&#160;<a href="../../external.html?link=https://stardewvalleywiki.com/Wizard" title="Wizard">Wizard</a></span>
+<td><samp>helper.GameContent</samp>
+</td>
+<td>Loads assets from the game's <samp>Content</samp> folder or <a href="#Content_interception_API">content interception</a>. Assets loaded through this <i>are</i> cached (which is needed for the <a href="#Content_interception_API">new content events</a> to work).
 </td></tr></tbody></table>
-<h2><span class="mw-headline" id="Bundles">Bundles</span></h2>
-<p>A Poppy is used in the <span style="display:inline; margin-right:0;"><img alt="Bundle Red.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/3f/Bundle_Red.png/24px-Bundle_Red.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/3f/Bundle_Red.png/36px-Bundle_Red.png 1.5x, /mediawiki/images/3/3f/Bundle_Red.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Bundles#Chefs_Bundle" title="Bundles">Chef's Bundle</a> on the <a href="../../external.html?link=https://stardewvalleywiki.com/Bundles#Bulletin_Board" title="Bundles">Bulletin Board</a></span>.
+<p>Here's how to migrate existing methods &amp; properties:
 </p>
-<h2><span class="mw-headline" id="Recipes">Recipes</span></h2>
-<table class="wikitable sortable roundedborder">
+<table class="wikitable">
 
 <tbody><tr>
-<th class="unsortable">Image
+<th>old code
 </th>
-<th>Name</th>
-<th>Description</th>
-<th>Ingredients</th>
-<th>Energy&#160;/ Health</th>
-<th>Recipe Source(s)</th>
-<th>Sell Price
+<th>migration
 </th></tr>
 <tr>
-<td><div class="center"><div class="floatnone"><a href="../../external.html?link=https://stardewvalleywiki.com/File:Poppyseed_Muffin.png" class="image"><img alt="Poppyseed Muffin.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/8/8e/Poppyseed_Muffin.png" decoding="async" width="48" height="48" /></a></div></div>
+<td><samp>helper.Content.AssetEditors</samp><br /><samp>helper.Content.AssetLoaders</samp>
 </td>
-<td><a href="../../external.html?link=https://stardewvalleywiki.com/Poppyseed_Muffin" title="Poppyseed Muffin">Poppyseed Muffin</a>
-</td>
-<td>It has a soothing effect.
-</td>
-<td><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r120955"/><span class="nametemplate"><img alt="Poppy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/3/37/Poppy.png/36px-Poppy.png 1.5x, /mediawiki/images/3/37/Poppy.png 2x" /> <a class="mw-selflink selflink">Poppy</a>&#160;(1)</span><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r120955"/><span class="nametemplate"><img alt="Wheat Flour.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/2/2c/Wheat_Flour.png/24px-Wheat_Flour.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/2/2c/Wheat_Flour.png/36px-Wheat_Flour.png 1.5x, /mediawiki/images/2/2c/Wheat_Flour.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Wheat_Flour" title="Wheat Flour">Wheat Flour</a>&#160;(1)</span><link rel="mw-deduplicated-inline-style" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/mw-data:TemplateStyles:r120955"/><span class="nametemplate"><img alt="Sugar.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Sugar.png/24px-Sugar.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/a/a9/Sugar.png/36px-Sugar.png 1.5x, /mediawiki/images/a/a9/Sugar.png 2x" /> <a href="../../external.html?link=https://stardewvalleywiki.com/Sugar" title="Sugar">Sugar</a>&#160;(1)</span>
-</td>
-<td data-sort-value="0060"><img alt="Energy.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Energy.png/24px-Energy.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/a/a9/Energy.png/36px-Energy.png 1.5x, /mediawiki/images/a/a9/Energy.png 2x" /> 150<br /><img alt="Health.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/94/Health.png/24px-Health.png" decoding="async" width="24" height="24" srcset="/mediawiki/images/thumb/9/94/Health.png/36px-Health.png 1.5x, /mediawiki/images/9/94/Health.png 2x" /> 67
-</td>
-<td><p style="margin-top: 0; padding-top: 0;">
-</p><table style="margin: 0; border-spacing: 0; border: 0; padding: 0; border-collapse: collapse;">
-
-<tbody><tr>
-<td rowspan="2" style="width: 22px; vertical-align: bottom; padding: 0 4px 2px 0; border: 0;"><img alt="Cooking Channel.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/d/d6/Cooking_Channel.png/22px-Cooking_Channel.png" decoding="async" width="22" height="28" srcset="/mediawiki/images/thumb/d/d6/Cooking_Channel.png/33px-Cooking_Channel.png 1.5x, /mediawiki/images/thumb/d/d6/Cooking_Channel.png/44px-Cooking_Channel.png 2x" />
-</td>
-<td style="padding: 2px 0 3px 0; border: 0; line-height: 0.90; white-space: nowrap;"><a href="../../external.html?link=https://stardewvalleywiki.com/The_Queen_of_Sauce" title="The Queen of Sauce">The Queen of Sauce</a>
+<td>Use <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Events#Content" title="Modding:Modder Guide/APIs/Events">content events</a>.
 </td></tr>
 <tr>
-<td style="padding: 0 0 0 1px; border: 0; line-height: 1.1; white-space: nowrap; font-size: 95%;">7 Winter, Year 2
-</td></tr></tbody></table><p class="mw-empty-elt"></p>
+<td><samp>helper.Content.CurrentLocale</samp><br /><samp>helper.Content.CurrentLocaleConstant</samp><br /><samp>helper.Content.InvalidateCache</samp>
 </td>
-<td data-sort-value="0250"><span style="display: none;">data-sort-value="250"&gt;</span><span class="no-wrap"><img alt="Gold.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" decoding="async" width="18" height="18" srcset="/mediawiki/images/thumb/1/10/Gold.png/27px-Gold.png 1.5x, /mediawiki/images/thumb/1/10/Gold.png/36px-Gold.png 2x" />250g</span>
+<td>Use <samp>helper.GameContent</samp>.
 </td></tr>
-
-
-</tbody></table>
-<h2><span class="mw-headline" id="Tailoring">Tailoring</span></h2>
-<p>Poppy can be used in the spool of the <a href="../../external.html?link=https://stardewvalleywiki.com/2_Willow_Lane#Sewing_Machine" title="2 Willow Lane">Sewing Machine</a> to create the dyeable <a href="../../external.html?link=https://stardewvalleywiki.com/Tailoring#Pants" title="Tailoring">Pleated Skirt</a>. <a href="../../external.html?link=https://stardewvalleywiki.com/File:Pleated_Skirt.png" class="image"><img alt="Pleated Skirt.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/thumb/9/92/Pleated_Skirt.png/36px-Pleated_Skirt.png" decoding="async" width="36" height="36" srcset="/mediawiki/images/9/92/Pleated_Skirt.png 1.5x" /></a> It can be used in <a href="../../external.html?link=https://stardewvalleywiki.com/Dyeing" title="Dyeing">dyeing</a>, serving as an orange dye at the dye pots, located in <a href="../../external.html?link=https://stardewvalleywiki.com/Emily" title="Emily">Emily</a>'s and <a href="../../external.html?link=https://stardewvalleywiki.com/Haley" title="Haley">Haley</a>'s house, <a href="../../external.html?link=https://stardewvalleywiki.com/2_Willow_Lane" title="2 Willow Lane">2 Willow Lane</a>.
+<tr>
+<td><samp>helper.Content.GetActualAssetKey</samp>
+</td>
+<td>Use <samp>helper.ModContent.GetInternalAssetName</samp>, and remove the <samp>ContentSource</samp> parameter. This returns an <samp>IAssetName</samp> value; you can update your code to use that, or get the string value using its <samp>Name</samp> property.
+</td></tr>
+<tr>
+<td><samp>helper.Content.GetPatchHelper</samp>
+</td>
+<td>Use <samp>helper.GameContent</samp> or <samp>helper.ModContent</samp>.
+</td></tr>
+<tr>
+<td><samp>helper.Content.Load</samp>
+</td>
+<td>Use <samp>helper.GameContent</samp> or <samp>helper.ModContent</samp>, and remove the <samp>ContentSource</samp> parameter.
+<p>Migration notes:
 </p>
-<h2><span class="mw-headline" id="Notes">Notes</span></h2>
-<ul><li>Poppies have an equal chance of being one of three different colors. Poppies of different colors will occupy different slots in inventory or chests. Three colors &#215; four <a href="../../external.html?link=https://stardewvalleywiki.com/Crops#Crop_Quality" title="Crops">quality</a> levels = 12 possible spaces used.</li></ul>
-<dl><dd><a href="../../external.html?link=https://stardewvalleywiki.com/File:PoppyColors.png" class="image"><img alt="PoppyColors.png" src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/images/e/ec/PoppyColors.png" decoding="async" width="135" height="45" /></a></dd></dl>
-<h2><span class="mw-headline" id="History">History</span></h2>
-<ul><li><a href="../../external.html?link=https://stardewvalleywiki.com/Version_History#1.4" title="Version History">1.4</a>: Can now be used in <a href="../../external.html?link=https://stardewvalleywiki.com/Tailoring" title="Tailoring">Tailoring</a>.</li>
-<li><a href="../../external.html?link=https://stardewvalleywiki.com/Version_History#1.5" title="Version History">1.5</a>: Iridium quality is now possible when using <a href="../../external.html?link=https://stardewvalleywiki.com/Deluxe_Fertilizer" title="Deluxe Fertilizer">Deluxe Fertilizer</a>.</li></ul>
-<table class="wikitable" id="navbox">
+<ul><li>When loading assets from <samp>helper.GameContent</samp>, don't add a <samp>.xnb</samp> file extension (<i>e.g.</i> use <code>"Portraits/Abigail"</code> instead of <code>"Portraits/Abigail.xnb"</code>). You're requesting an <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Content#What.27s_an_.27asset_name.27.3F" title="Modding:Modder Guide/APIs/Content">asset name</a>, not a file path.</li>
+<li>When loading XNB files from <samp>helper.ModContent</samp>, <i>do</i> add the <samp>.xnb</samp> file extension. It's no longer added automatically if needed.</li></ul>
+</td></tr>
+<tr>
+<td><samp>helper.Content.NormalizeAssetName</samp>
+</td>
+<td>Use <samp>helper.GameContent.ParseAssetName</samp> instead. This returns an <samp>IAssetName</samp> value; you can update your code to use that, or get the string value using its <samp>Name</samp> property.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Other_API_changes">Other API changes</span></h3>
+<table class="wikitable">
+
 <tbody><tr>
-<th colspan="2"><a href="../../external.html?link=https://stardewvalleywiki.com/Crops" title="Crops">Crops</a>
+<th>old code
+</th>
+<th>migration
 </th></tr>
 <tr>
-<th><a href="../../external.html?link=https://stardewvalleywiki.com/Spring#Crops" title="Spring">Spring</a>
-</th>
-<td><a href="../../external.html?link=https://stardewvalleywiki.com/Blue_Jazz" title="Blue Jazz">Blue Jazz</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Carrot" title="Carrot">Carrot</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Cauliflower" title="Cauliflower">Cauliflower</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Coffee_Bean" title="Coffee Bean">Coffee Bean</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Garlic" title="Garlic">Garlic</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Green_Bean" title="Green Bean">Green Bean</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Kale" title="Kale">Kale</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Parsnip" title="Parsnip">Parsnip</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Potato" title="Potato">Potato</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Rhubarb" title="Rhubarb">Rhubarb</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Strawberry" title="Strawberry">Strawberry</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Tulip" title="Tulip">Tulip</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Unmilled_Rice" title="Unmilled Rice">Unmilled Rice</a>
+<td><samp>Constants.ExecutionPath</samp>
+</td>
+<td>Use <samp>Constants.GamePath</samp> instead.
 </td></tr>
 <tr>
-<th><a href="../../external.html?link=https://stardewvalleywiki.com/Summer#Crops" title="Summer">Summer</a>
-</th>
-<td><a href="../../external.html?link=https://stardewvalleywiki.com/Blueberry" title="Blueberry">Blueberry</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Coffee_Bean" title="Coffee Bean">Coffee Bean</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Corn" title="Corn">Corn</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Hops" title="Hops">Hops</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Hot_Pepper" title="Hot Pepper">Hot Pepper</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Melon" title="Melon">Melon</a> • <a class="mw-selflink selflink">Poppy</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Radish" title="Radish">Radish</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Red_Cabbage" title="Red Cabbage">Red Cabbage</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Starfruit" title="Starfruit">Starfruit</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Summer_Spangle" title="Summer Spangle">Summer Spangle</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Summer_Squash" title="Summer Squash">Summer Squash</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Sunflower" title="Sunflower">Sunflower</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Tomato" title="Tomato">Tomato</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Wheat" title="Wheat">Wheat</a>
+<td><samp>GameFramework.Xna</samp>
+</td>
+<td>XNA is no longer used on any platform; you can safely remove any XNA-specific logic.
 </td></tr>
 <tr>
-<th><a href="../../external.html?link=https://stardewvalleywiki.com/Fall#Crops" title="Fall">Fall</a>
-</th>
-<td><a href="../../external.html?link=https://stardewvalleywiki.com/Amaranth" title="Amaranth">Amaranth</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Artichoke" title="Artichoke">Artichoke</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Beet" title="Beet">Beet</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Bok_Choy" title="Bok Choy">Bok Choy</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Broccoli" title="Broccoli">Broccoli</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Corn" title="Corn">Corn</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Cranberries" title="Cranberries">Cranberries</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Eggplant" title="Eggplant">Eggplant</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Fairy_Rose" title="Fairy Rose">Fairy Rose</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Grape" title="Grape">Grape</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Pumpkin" title="Pumpkin">Pumpkin</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Sunflower" title="Sunflower">Sunflower</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Wheat" title="Wheat">Wheat</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Yam" title="Yam">Yam</a>
+<td><samp>helper.ConsoleCommands.Trigger</samp>
+</td>
+<td>No longer supported. You can use <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Integrations#Mod-provided_APIs" title="Modding:Modder Guide/APIs/Integrations">mod-provided APIs</a> to integrate with other mods.
 </td></tr>
 <tr>
-<th><a href="../../external.html?link=https://stardewvalleywiki.com/Winter#Crops" title="Winter">Winter</a>
-</th>
-<td><a href="../../external.html?link=https://stardewvalleywiki.com/Powdermelon" title="Powdermelon">Powdermelon</a>
+<td><samp>IAssetInfo.AssetName</samp>
+</td>
+<td>Use <samp>Name</samp> instead, which includes built-in utility methods to work with asset names.
 </td></tr>
 <tr>
-<th>Special
-</th>
-<td><a href="../../external.html?link=https://stardewvalleywiki.com/Ancient_Fruit" title="Ancient Fruit">Ancient Fruit</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Cactus_Fruit" title="Cactus Fruit">Cactus Fruit</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Pineapple" title="Pineapple">Pineapple</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Qi_Fruit" title="Qi Fruit">Qi Fruit</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Sweet_Gem_Berry" title="Sweet Gem Berry">Sweet Gem Berry</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Taro_Root" title="Taro Root">Taro Root</a> • <a href="../../external.html?link=https://stardewvalleywiki.com/Tea_Leaves" title="Tea Leaves">Tea Leaves</a>
+<td><samp>IAssetInfo.AssetNameEquals(name)</samp>
+</td>
+<td>Use <samp>Name.IsEquivalentTo(name)</samp> instead.
 </td></tr>
-</tbody></table>
+<tr>
+<td><samp>IContentPack.LoadAsset</samp>
+</td>
+<td>Use <samp>ModContent.Load</samp> instead.
+</td></tr>
+<tr>
+<td><samp>IContentPack.GetActualAssetKey</samp>
+</td>
+<td>Use <samp>ModContent.GetInternalAssetName</samp>, and remove the <samp>ContentSource</samp> parameter. This returns an <samp>IAssetName</samp> value; you can update your code to use that, or get the string value using its <samp>Name</samp> property.
+</td></tr>
+<tr>
+<td><samp>PerScreen&lt;T&gt;(null)</samp>
+</td>
+<td>Passing null into the constructor is deprecated. You should call <code>PerScreen&lt;T&gt;()</code> to use the default value.
+</td></tr>
+<tr>
+<td><samp>SDate.Season</samp>
+</td>
+<td><samp>SDate.Season</samp> is now the <samp>Season</samp> enum, to match the game. Use <samp>SDate.SeasonKey</samp> if you absolutely need the string form.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Nullable_reference_type_annotations">Nullable reference type annotations</span></h3>
+<p>SMAPI is now fully annotated for <a rel="nofollow" class="external text" href="../../external.html?link=https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references">C# nullable reference types</a>. This has no effect unless you enable them in your mod code too. If your mod does use them, you'll get helpful code analysis warnings from Visual Studio to avoid errors when null values are possible or prohibited. For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// warning: dereference of a possibly null reference</span>
+<span class="kt">var</span> <span class="n">api</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModRegistry</span><span class="p">.</span><span class="n">GetApi</span><span class="p">&lt;</span><span class="n">IExampleApi</span><span class="p">&gt;(</span><span class="s">&quot;SomeExample.ModId&quot;</span><span class="p">);</span>
+<span class="n">api</span><span class="p">.</span><span class="n">DoSomething</span><span class="p">();</span>
+
+<span class="c1">// warning: possible null reference argument for parameter &#39;message&#39;</span>
+<span class="kt">string?</span> <span class="n">message</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="n">Monitor</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</pre></div>
+<p>Due to limitations in C# nullable reference annotations, three edge cases aren't fully covered. These are documented in the code IntelliSense too.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>API
+</th>
+<th>edge cases
+</th></tr>
+<tr>
+<td><samp>helper.Reflection</samp>
+</td>
+<td>The <samp>GetField</samp>, <samp>GetMethod</samp>, and <samp>GetProperty</samp> methods are marked as returning non-nullable values, since they throw an error if the target isn't found. That doesn't change if you explicitly set <code>required: false</code>; in that case make sure to null-check the result anyway.
+</td></tr>
+<tr>
+<td><samp>helper.Translation</samp>
+</td>
+<td>Translations are marked non-nullable, since they fallback to the "<i>missing translation: key</i>" message. That doesn't change if you explicitly call <code>translation.UsePlaceholder(false)</code>; in that case make sure to null-check the text anyway if needed.
+</td></tr>
+<tr>
+<td><samp>PerScreen&lt;T&gt;</samp>
+</td>
+<td>This uses the nullability you set, like <code>PerScreen&lt;string&gt;</code> for a non-nullable string or <code>PerScreen&lt;string?&gt;</code> for a nullable one. However, calling the empty constructor with a non-nullable reference type will still create null values since that's the type default. For example:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">perScreen</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PerScreen</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<span class="kt">string</span> <span class="k">value</span> <span class="p">=</span> <span class="n">perScreen</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span> <span class="c1">// returns null despite being marked non-nullable</span>
+</pre></div>
+<p>To avoid that, you can specify the default non-nullable value to use:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">perScreen</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PerScreen</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(()</span> <span class="p">=&gt;</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+<span class="kt">string</span> <span class="k">value</span> <span class="p">=</span> <span class="n">perScreen</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span> <span class="c1">// returns empty string by default</span>
+</pre></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Removed_dependencies">Removed dependencies</span></h3>
+<p>SMAPI 4.0.0 no longer uses these dependencies, so they won't be loaded automatically anymore. If you manually referenced one of them, either copy it into your mod's release folder or see the suggested migration below.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>dependency
+</th>
+<th>suggested migration
+</th></tr>
+<tr>
+<td><samp>System.Configuration.ConfigurationManager.dll</samp>
+</td>
+<td>Use the <a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Config" title="Modding:Modder Guide/APIs/Config">standard config API</a> instead.
+</td></tr>
+<tr>
+<td><samp>System.Runtime.Caching.dll</samp>
+</td>
+<td>Avoid <samp>MemoryCache</samp> or <samp>ObjectCache</samp> from this DLL, which can negatively impact performance for players. If you need cache expiry, consider the faster (but still heavy) <a rel="nofollow" class="external text" href="../../external.html?link=https://docs.microsoft.com/en-us/dotnet/core/extensions/caching"><samp>Microsoft.Extensions.Caching.Memory</samp></a> package instead. Otherwise consider using a plain <samp>Dictionary&lt;TKey, TValue&gt;</samp> field instead.
+</td></tr>
+<tr>
+<td><samp>System.Security.Permissions.dll</samp>
+</td>
+<td>This is usually only needed for <samp>System.Configuration.ConfigurationManager.dll</samp> or <samp>System.Runtime.Caching.dll</samp>, and can probably be removed.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Other_changes">Other changes</span></h2>
+<h3><span class="mw-headline" id="Raw_texture_data">Raw texture data</span></h3>
+<p>Creating <samp>Texture2D</samp> instances is expensive and involves calls to the graphics card. When you don't need a full texture, you can now load it as <samp>IRawTextureData</samp> instead, and then pass that into SMAPI APIs that accept textures.
+</p><p>For example, you no longer need to create a <samp>Texture2D</samp> instance to apply an image overlay:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object?</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">&quot;Portraits/Abigail&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+        <span class="p">{</span>
+            <span class="n">IRawTextureData</span> <span class="n">ribbon</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">IRawTextureData</span><span class="p">&gt;(</span><span class="s">&quot;assets/ribbon.png&quot;</span><span class="p">);</span>
+            <span class="n">asset</span><span class="p">.</span><span class="n">AsImage</span><span class="p">().</span><span class="n">PatchImage</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">ribbon</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 <!-- 
 NewPP limit report
-Cached time: 20240410200716
+Cached time: 20240607171022
 Cache expiry: 86400
 Dynamic content: false
 Complications: []
-CPU time usage: 0.590 seconds
-Real time usage: 9.009 seconds
-Preprocessor visited node count: 4839/1000000
-Post‐expand include size: 88485/2097152 bytes
-Template argument size: 3000/2097152 bytes
-Highest expansion depth: 16/40
+CPU time usage: 0.030 seconds
+Real time usage: 0.307 seconds
+Preprocessor visited node count: 84/1000000
+Post‐expand include size: 206/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
 Expensive parser function count: 0/100
 Unstrip recursion depth: 0/20
-Unstrip post‐expand size: 10001/5000000 bytes
-Lua time usage: 0.018/7.000 seconds
-Lua memory usage: 1.18 MB/50 MB
+Unstrip post‐expand size: 6993/5000000 bytes
 -->
 <!--
 Transclusion expansion time report (%,ms,calls,template)
-100.00% 2541.786      1 -total
- 59.53% 1513.035      1 Template:Infobox
- 19.41%  493.316      1 Template:EdibilityGrid
- 16.81%  427.272      4 Template:Qualityprice
- 12.93%  328.728     18 Template:Overlayimg
- 12.73%  323.564      2 Template:Description
- 11.91%  302.743      1 Poppyseed_Muffin
- 10.01%  254.516      1 Template:RecipeRow/NoBuffs
-  6.90%  175.424      4 Template:Name
-  4.78%  121.589      1 Template:GiftsByItem
+100.00%    1.316      1 Template:Modder_compatibility_header
+100.00%    1.316      1 -total
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:1843-0!canonical and timestamp 20240410200707 and revision id 144201
+<!-- Saved in parser cache with key enwiki:pcache:idhash:13688-0!canonical and timestamp 20240607171022 and revision id 149792
  -->
-</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;oldid=144201">https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;oldid=144201</a>"</div>
-		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../external.html?link=https://stardewvalleywiki.com/Category:Summer_crops" title="Category:Summer crops">Summer crops</a></li></ul></div></div>
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;oldid=149792">https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;oldid=149792</a>"</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../external.html?link=https://stardewvalleywiki.com/Category:Modding" title="Category:Modding">Modding</a></li></ul></div></div>
 	</div>
 </div>
 
@@ -1006,7 +393,7 @@ Transclusion expansion time report (%,ms,calls,template)
 	<!-- Please do not use the .body class, it is deprecated. -->
 	<div class="body vector-menu-content">
 		<!-- Please do not use the .menu class, it is deprecated. -->
-		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:CreateAccount&amp;returnto=Poppy&amp;returntoquery=oldid%3D144201" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Poppy&amp;returntoquery=oldid%3D144201" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:CreateAccount&amp;returnto=Modding%3AMigrate+to+SMAPI+4.0&amp;returntoquery=oldid%3D149792" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Modding%3AMigrate+to+SMAPI+4.0&amp;returntoquery=oldid%3D149792" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
 		
 	</div>
 </nav>
@@ -1022,7 +409,7 @@ Transclusion expansion time report (%,ms,calls,template)
 	<!-- Please do not use the .body class, it is deprecated. -->
 	<div class="body vector-menu-content">
 		<!-- Please do not use the .menu class, it is deprecated. -->
-		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected"><a href="../../external.html?link=https://stardewvalleywiki.com/Poppy" title="View the content page [c]" accesskey="c">Page</a></li><li id="ca-talk" class="new"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Talk:Poppy&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></li></ul>
+		<ul class="vector-menu-content-list"><li id="ca-nstab-modding" class="selected"><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0">Modding</a></li><li id="ca-talk" class="new"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding_talk:Migrate_to_SMAPI_4.0&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></li></ul>
 		
 	</div>
 </nav>
@@ -1055,7 +442,7 @@ Transclusion expansion time report (%,ms,calls,template)
 	<!-- Please do not use the .body class, it is deprecated. -->
 	<div class="body vector-menu-content">
 		<!-- Please do not use the .menu class, it is deprecated. -->
-		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="../../external.html?link=https://stardewvalleywiki.com/Poppy">Read</a></li><li id="ca-viewsource" class="collapsible"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="collapsible"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="../../external.html?link=https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0">Read</a></li><li id="ca-viewsource" class="collapsible"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="collapsible"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
 		
 	</div>
 </nav>
@@ -1136,41 +523,27 @@ Transclusion expansion time report (%,ms,calls,template)
 	<!-- Please do not use the .body class, it is deprecated. -->
 	<div class="body vector-menu-content">
 		<!-- Please do not use the .menu class, it is deprecated. -->
-		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:WhatLinksHere/Poppy" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:RecentChangesLinked/Poppy" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="../../external.html?link=http://stardewvalleywiki.com/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;oldid=144201" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cargopagevalueslink"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;action=pagevalues" rel="cargo-pagevalues">Page values</a></li></ul>
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:WhatLinksHere/Modding:Migrate_to_SMAPI_4.0" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:RecentChangesLinked/Modding:Migrate_to_SMAPI_4.0" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="../../external.html?link=http://stardewvalleywiki.com/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="../../external.html?link=https://stardewvalleywiki.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;oldid=149792" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cargopagevalueslink"><a href="../../external.html?link=https://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;action=pagevalues" rel="cargo-pagevalues">Page values</a></li></ul>
 		
 	</div>
 </nav>
 
 
-	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
-<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
-	 >
-	<h3 id="p-lang-label">
-		<span>In other languages</span>
-	</h3>
-	<!-- Please do not use the .body class, it is deprecated. -->
-	<div class="body vector-menu-content">
-		<!-- Please do not use the .menu class, it is deprecated. -->
-		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-de"><a href="../../external.html?link=https://de.stardewvalleywiki.com/Mohn" title="Mohn – Deutsch" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-es"><a href="../../external.html?link=https://es.stardewvalleywiki.com/Amapola" title="Amapola – español" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-fr"><a href="../../external.html?link=https://fr.stardewvalleywiki.com/Pavot" title="Pavot – français" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-it"><a href="../../external.html?link=https://it.stardewvalleywiki.com/Papavero" title="Papavero – italiano" lang="it" hreflang="it" class="interlanguage-link-target">Italiano</a></li><li class="interlanguage-link interwiki-ja"><a href="../../external.html?link=https://ja.stardewvalleywiki.com/ポピー" title="ポピー – 日本語" lang="ja" hreflang="ja" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-ko"><a href="../../external.html?link=https://ko.stardewvalleywiki.com/양귀비" title="양귀비 – 한국어" lang="ko" hreflang="ko" class="interlanguage-link-target">한국어</a></li><li class="interlanguage-link interwiki-hu"><a href="../../external.html?link=https://hu.stardewvalleywiki.com/Mák" title="Mák – magyar" lang="hu" hreflang="hu" class="interlanguage-link-target">Magyar</a></li><li class="interlanguage-link interwiki-pt"><a href="../../external.html?link=https://pt.stardewvalleywiki.com/Papoula" title="Papoula – português" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-ru"><a href="../../external.html?link=https://ru.stardewvalleywiki.com/Мак" title="Мак – русский" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-tr"><a href="../../external.html?link=https://tr.stardewvalleywiki.com/Haşhaş" title="Haşhaş – Türkçe" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li><li class="interlanguage-link interwiki-zh"><a href="../../external.html?link=https://zh.stardewvalleywiki.com/虞美人花" title="虞美人花 – 中文" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li></ul>
-		
-	</div>
-</nav>
-
-
+	
 </div>
 
 </div>
 
 <footer id="footer" class="mw-footer" role="contentinfo" >
 	<ul id="footer-info" >
-		<li id="footer-info-lastmod"> This page was last edited on 16 December 2022, at 18:40.</li>
+		<li id="footer-info-lastmod"> This page was last edited on 23 August 2023, at 09:53.</li>
 		<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> unless otherwise noted.</li>
 	</ul>
 	<ul id="footer-places" >
 		<li id="footer-places-privacy"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:Privacy_policy" title="Stardew Valley Wiki:Privacy policy">Privacy policy</a></li>
 		<li id="footer-places-about"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:About" title="Stardew Valley Wiki:About">About Stardew Valley Wiki</a></li>
 		<li id="footer-places-disclaimer"><a href="../../external.html?link=https://stardewvalleywiki.com/Stardew_Valley_Wiki:General_disclaimer" title="Stardew Valley Wiki:General disclaimer">Disclaimers</a></li>
-		<li id="footer-places-mobileview"><a href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Poppy&amp;oldid=144201&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+		<li id="footer-places-mobileview"><a href="../../external.html?link=http://stardewvalleywiki.com/mediawiki/index.php?title=Modding:Migrate_to_SMAPI_4.0&amp;oldid=149792&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
 	</ul>
 	<ul id="footer-icons" class="noprint">
 		<li id="footer-copyrightico"><a href="../../external.html?link=https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../external.html?link=https://stardewvalleywiki.com/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
@@ -1188,6 +561,8 @@ gtag('js', new Date());
 gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
 </script>
 
-<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.590","walltime":"9.009","ppvisitednodes":{"value":4839,"limit":1000000},"postexpandincludesize":{"value":88485,"limit":2097152},"templateargumentsize":{"value":3000,"limit":2097152},"expansiondepth":{"value":16,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":10001,"limit":5000000},"timingprofile":["100.00% 2541.786      1 -total"," 59.53% 1513.035      1 Template:Infobox"," 19.41%  493.316      1 Template:EdibilityGrid"," 16.81%  427.272      4 Template:Qualityprice"," 12.93%  328.728     18 Template:Overlayimg"," 12.73%  323.564      2 Template:Description"," 11.91%  302.743      1 Poppyseed_Muffin"," 10.01%  254.516      1 Template:RecipeRow/NoBuffs","  6.90%  175.424      4 Template:Name","  4.78%  121.589      1 Template:GiftsByItem"]},"scribunto":{"limitreport-timeusage":{"value":"0.018","limit":"7.000"},"limitreport-memusage":{"value":1234629,"limit":52428800}},"cachereport":{"timestamp":"20240410200716","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":321});});</script></body>
-<!-- Mirrored from stardewvalleywiki.com/mediawiki/index.php?title=Poppy&oldid=144201 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 00:47:00 GMT -->
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.030","walltime":"0.307","ppvisitednodes":{"value":84,"limit":1000000},"postexpandincludesize":{"value":206,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":6993,"limit":5000000},"timingprofile":["100.00%    1.316      1 Template:Modder_compatibility_header","100.00%    1.316      1 -total"]},"cachereport":{"timestamp":"20240607171022","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":451});});</script></body>
+
 </html>
+
+
