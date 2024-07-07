@@ -107,3 +107,6 @@ hts-cache/
 *.tar
 *.tgz
 *.iso
+
+# exclude src\stardewvalleywiki.com\Special_MobileLanguages
+src/stardewvalleywiki.com/Special_MobileLanguages/
