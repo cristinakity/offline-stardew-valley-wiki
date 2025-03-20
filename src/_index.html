@@ -134,7 +134,7 @@
 		}
 
 		function iFrameFixes() {
-			console.log("iframe Fixes applied");
+			console.log("iframe Fixes started");
 			var iFrame = document.getElementById("iFrame");
 			var iFrameDocument = iFrame.contentDocument || iFrame.contentWindow.document;
 			var css = `
@@ -188,9 +188,18 @@
 						parentTable.classList.toggle("mw-collapsed");
 					});
 				}
+				
+				// get all element with class  interlanguage-link-target
+				var interlanguageLinks = document.getElementsByClassName("interlanguage-link-target");
+				for (var i = 0; i < interlanguageLinks.length; i++) {
+					let newLink = '../' + interlanguageLinks[i].hreflang + '.stardewvalleywiki.com/Stardew_Valley_Wiki.html';
+					// replace href link with '../' + (lang + '.stardewvalleywiki.com/Stardew_Valley_Wiki.html'), lang value is in hreflang attribute
+					interlanguageLinks[i].href = newLink;
+				}
 			`;
 			iFrameDocument.body.appendChild(script);
 
+			console.log("iframe Fixes ended");
 		}
 	</script>
 </body>
