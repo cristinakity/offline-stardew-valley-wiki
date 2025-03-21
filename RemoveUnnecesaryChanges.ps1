@@ -15,16 +15,16 @@ foreach ($file in $htmlFiles) {
     $progressPercentage = ($completedFiles / $totalFiles) * 100
     $progressPercentage = [Math]::Round($progressPercentage, 2)
 
-    Write-Progress -Activity "Removing Unnecesary changes" -Status "Processing file $completedFiles of $totalFiles ($progressPercentage%)" -PercentComplete $progressPercentage
+    Write-Progress -Activity "Removing Unnecessary changes" -Status "Processing file $completedFiles of $totalFiles ($progressPercentage%)" -PercentComplete $progressPercentage
 
     # Read the content of the file
     $content = Get-Content -Path $file.FullName -Raw
 
     # Remove meta property="article:modified_time"
-    $content = $content -replace "<meta property=`"article:modified_time`".*?>", ""
+    $content = $content -replace ".*<meta property=`"article:modified_time`".*?>.*\r?\n?", ""
 
     # Remove meta property="article:published_time"
-    $content = $content -replace "<meta property=`"article:published_time`".*?>", ""    
+    $content = $content -replace "<meta property=`"article:published_time`".*?>.*\r?\n?", ""    
     
     # # Remove <script type="application/ld+json"
     # $content = $content -replace "<script type=`"application/ld\+json`".*?</script>", ""

@@ -1,0 +1,122 @@
+{
+    "en": {
+        "txtSearchPlaceholder": "Search",
+        "btnSearchText": "Search",
+        "navMainPageText": "Go to Main Wiki page",
+        "tableResultsTitle": "Results",
+        "titleSearchingForText": "Searching for text:",
+        "titleSearchResults": "Search Results",
+        "noResultsText": "No results found",
+        "languageDropdownText": "Select Language"
+    },
+    "es": {
+        "txtSearchPlaceholder": "Buscar",
+        "btnSearchText": "Buscar",
+        "navMainPageText": "Ir a la página principal del Wiki",
+        "tableResultsTitle": "Resultados",
+        "titleSearchingForText": "Buscando texto:",
+        "titleSearchResults": "Resultados de búsqueda",
+        "noResultsText": "No se encontraron resultados",
+        "languageDropdownText": "Seleccionar idioma"
+    },
+    "de": {
+        "txtSearchPlaceholder": "Suchen",
+        "btnSearchText": "Suchen",
+        "navMainPageText": "Zur Hauptseite des Wikis gehen",
+        "tableResultsTitle": "Ergebnisse",
+        "titleSearchingForText": "Textsuche:",
+        "titleSearchResults": "Suchergebnisse",
+        "noResultsText": "Keine Ergebnisse gefunden",
+        "languageDropdownText": "Sprache auswählen"
+    },
+    "fr": {
+        "txtSearchPlaceholder": "Rechercher",
+        "btnSearchText": "Rechercher",
+        "navMainPageText": "Aller à la page principale du Wiki",
+        "tableResultsTitle": "Résultats",
+        "titleSearchingForText": "Recherche de texte :",
+        "titleSearchResults": "Résultats de recherche",
+        "noResultsText": "Aucun résultat trouvé",
+        "languageDropdownText": "Choisir la langue"
+    },
+    "it": {
+        "txtSearchPlaceholder": "Cerca",
+        "btnSearchText": "Cerca",
+        "navMainPageText": "Vai alla pagina principale del Wiki",
+        "tableResultsTitle": "Risultati",
+        "titleSearchingForText": "Ricerca del testo:",
+        "titleSearchResults": "Risultati della ricerca",
+        "noResultsText": "Nessun risultato trovato",
+        "languageDropdownText": "Seleziona lingua"
+    },
+    "ja": {
+        "txtSearchPlaceholder": "検索",
+        "btnSearchText": "検索",
+        "navMainPageText": "Wikiのメインページに移動",
+        "tableResultsTitle": "結果",
+        "titleSearchingForText": "テキストを検索中:",
+        "titleSearchResults": "検索結果",
+        "noResultsText": "結果が見つかりませんでした",
+        "languageDropdownText": "言語を選択"
+    },
+    "ko": {
+        "txtSearchPlaceholder": "검색",
+        "btnSearchText": "검색",
+        "navMainPageText": "위키 메인 페이지로 이동",
+        "tableResultsTitle": "결과",
+        "titleSearchingForText": "텍스트 검색 중:",
+        "titleSearchResults": "검색 결과",
+        "noResultsText": "결과를 찾을 수 없습니다",
+        "languageDropdownText": "언어 선택"
+    },
+    "hu": {
+        "txtSearchPlaceholder": "Keresés",
+        "btnSearchText": "Keresés",
+        "navMainPageText": "Ugrás a Wiki főoldalára",
+        "tableResultsTitle": "Eredmények",
+        "titleSearchingForText": "Szöveg keresése:",
+        "titleSearchResults": "Keresési eredmények",
+        "noResultsText": "Nincs találat",
+        "languageDropdownText": "Nyelv kiválasztása"
+    },
+    "pt": {
+        "txtSearchPlaceholder": "Pesquisar",
+        "btnSearchText": "Pesquisar",
+        "navMainPageText": "Ir para a página principal do Wiki",
+        "tableResultsTitle": "Resultados",
+        "titleSearchingForText": "Procurando texto:",
+        "titleSearchResults": "Resultados da pesquisa",
+        "noResultsText": "Nenhum resultado encontrado",
+        "languageDropdownText": "Selecionar idioma"
+    },
+    "ru": {
+        "txtSearchPlaceholder": "Поиск",
+        "btnSearchText": "Поиск",
+        "navMainPageText": "Перейти на главную страницу Wiki",
+        "tableResultsTitle": "Результаты",
+        "titleSearchingForText": "Поиск текста:",
+        "titleSearchResults": "Результаты поиска",
+        "noResultsText": "Результатов не найдено",
+        "languageDropdownText": "Выбрать язык"
+    },
+    "tr": {
+        "txtSearchPlaceholder": "Ara",
+        "btnSearchText": "Ara",
+        "navMainPageText": "Wiki ana sayfasına git",
+        "tableResultsTitle": "Sonuçlar",
+        "titleSearchingForText": "Metin aranıyor:",
+        "titleSearchResults": "Arama Sonuçları",
+        "noResultsText": "Sonuç bulunamadı",
+        "languageDropdownText": "Dil Seç"
+    },
+    "zh": {
+        "txtSearchPlaceholder": "搜索",
+        "btnSearchText": "搜索",
+        "navMainPageText": "转到Wiki主页",
+        "tableResultsTitle": "结果",
+        "titleSearchingForText": "正在搜索文本：",
+        "titleSearchResults": "搜索结果",
+        "noResultsText": "未找到结果",
+        "languageDropdownText": "选择语言"
+    }
+}
