@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>가리키는 글의 최근 바뀜 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgRequestId":"3be6a44d34fe824cbfa6de6c","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"Recentchangeslinked","wgNamespaceNumber":-1,"wgPageName":"특수:링크최근바뀜/멀티플레이어","wgTitle":"링크최근바뀜/멀티플레이어","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgRelevantPageName":"멀티플레이어","wgRelevantArticleId":1041,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgMFMode":"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":!1,
+"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgStructuredChangeFilters":[{"name":"userExpLevel","type":"string_options","fullCoverage":!0,"filters":[{"name":"unregistered","label":"rcfilters-filter-user-experience-level-unregistered-label","description":"rcfilters-filter-user-experience-level-unregistered-description","cssClass":"mw-changeslist-user-unregistered","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"registered","label":"rcfilters-filter-user-experience-level-registered-label","description":"rcfilters-filter-user-experience-level-registered-description","cssClass":"mw-changeslist-user-registered","priority":-3,"subset":[{"group":"userExpLevel","filter":"newcomer"},{"group":"userExpLevel","filter":"learner"},{"group":"userExpLevel","filter":"experienced"}],"conflicts":[],
+"defaultHighlightColor":null},{"name":"newcomer","label":"rcfilters-filter-user-experience-level-newcomer-label","description":"rcfilters-filter-user-experience-level-newcomer-description","cssClass":"mw-changeslist-user-newcomer","priority":-4,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"learner","label":"rcfilters-filter-user-experience-level-learner-label","description":"rcfilters-filter-user-experience-level-learner-description","cssClass":"mw-changeslist-user-learner","priority":-5,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"experienced","label":"rcfilters-filter-user-experience-level-experienced-label","description":"rcfilters-filter-user-experience-level-experienced-description","cssClass":"mw-changeslist-user-experienced","priority":-6,"subset":[],"conflicts":[],"defaultHighlightColor":null}],"priority":-2,"conflicts":[],"title":"rcfilters-filtergroup-user-experience-level","separator":";","default":""},{"name":"authorship","type":
+"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidemyself","label":"rcfilters-filter-editsbyself-label","description":"rcfilters-filter-editsbyself-description","cssClass":"mw-changeslist-self","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidebyothers","label":"rcfilters-filter-editsbyother-label","description":"rcfilters-filter-editsbyother-description","cssClass":"mw-changeslist-others","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-3,"conflicts":[],"title":"rcfilters-filtergroup-authorship"},{"name":"automated","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidebots","label":"rcfilters-filter-bots-label","description":"rcfilters-filter-bots-description","cssClass":"mw-changeslist-bot","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!0},{"name":"hidehumans","label":"rcfilters-filter-humans-label",
+"description":"rcfilters-filter-humans-description","cssClass":"mw-changeslist-human","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-4,"conflicts":[],"title":"rcfilters-filtergroup-automated"},{"name":"significance","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hideminor","label":"rcfilters-filter-minor-label","description":"rcfilters-filter-minor-description","cssClass":"mw-changeslist-minor","priority":-2,"subset":[],"conflicts":[{"group":"changeType","filter":"hidelog","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-hideminor-conflicts-typeofchange"},{"group":"changeType","filter":"hidenewpages","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-hideminor-conflicts-typeofchange"}],"defaultHighlightColor":null,"default":!1},{"name":"hidemajor","label":"rcfilters-filter-major-label","description":
+"rcfilters-filter-major-description","cssClass":"mw-changeslist-major","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-6,"conflicts":[],"title":"rcfilters-filtergroup-significance"},{"name":"lastRevision","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidelastrevision","label":"rcfilters-filter-lastrevision-label","description":"rcfilters-filter-lastrevision-description","cssClass":"mw-changeslist-last","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidepreviousrevisions","label":"rcfilters-filter-previousrevision-label","description":"rcfilters-filter-previousrevision-description","cssClass":"mw-changeslist-previous","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-7,"conflicts":[],"title":"rcfilters-filtergroup-lastrevision"},{"name":"changeType","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{
+"name":"hidepageedits","label":"rcfilters-filter-pageedits-label","description":"rcfilters-filter-pageedits-description","cssClass":"mw-changeslist-src-mw-edit","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidenewpages","label":"rcfilters-filter-newpages-label","description":"rcfilters-filter-newpages-description","cssClass":"mw-changeslist-src-mw-new","priority":-3,"subset":[],"conflicts":[{"group":"significance","filter":"hideminor","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-typeofchange-conflicts-hideminor"}],"defaultHighlightColor":null,"default":!1},{"name":"hidelog","label":"rcfilters-filter-logactions-label","description":"rcfilters-filter-logactions-description","cssClass":"mw-changeslist-src-mw-log","priority":-5,"subset":[],"conflicts":[{"group":"significance","filter":"hideminor","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global",
+"contextDescription":"rcfilters-typeofchange-conflicts-hideminor"}],"defaultHighlightColor":null,"default":!1}],"priority":-8,"conflicts":[],"title":"rcfilters-filtergroup-changetype"}],"wgStructuredChangeFiltersMessages":{"rcfilters-filtergroup-user-experience-level":"사용자 등록 및 경험","rcfilters-filter-user-experience-level-unregistered-label":"등록 안 됨","rcfilters-filter-user-experience-level-unregistered-description":"로그인하지 않은 편집자.","rcfilters-filter-user-experience-level-registered-label":"등록됨","rcfilters-filter-user-experience-level-registered-description":"로그인한 편집자.","rcfilters-filter-user-experience-level-newcomer-label":"신입 사용자","rcfilters-filter-user-experience-level-newcomer-description":"10회 미만의 편집 또는 4일 미만의 활동을 한 등록된 편집자.","rcfilters-filter-user-experience-level-learner-label":"학습자","rcfilters-filter-user-experience-level-learner-description":
+"\"신입 사용자\"보다 경험이 더 많지만 \"능숙한 사용자\"보다는 적습니다.","rcfilters-filter-user-experience-level-experienced-label":"능숙한 사용자","rcfilters-filter-user-experience-level-experienced-description":"30일 이상의 활동 및 500회 이상의 편집을 한 등록된 편집자.","rcfilters-filtergroup-authorship":"기여의 저자","rcfilters-filter-editsbyself-label":"자신의 변경사항","rcfilters-filter-editsbyself-description":"당신의 기여.","rcfilters-filter-editsbyother-label":"다른 사용자의 변경사항","rcfilters-filter-editsbyother-description":"나 이외의 모든 변경사항.","rcfilters-filtergroup-automated":"자동으로 된 기여","rcfilters-filter-bots-label":"봇","rcfilters-filter-bots-description":"자동 도구를 이용한 편집.","rcfilters-filter-humans-label":"사람 (봇이 아님)","rcfilters-filter-humans-description":"사람이 한 편집.","rcfilters-filtergroup-significance":"의미",
+"rcfilters-filter-minor-label":"사소한 편집","rcfilters-filter-minor-description":"기여자가 사소한 기여로 표시한 편집.","rcfilters-hideminor-conflicts-typeofchange-global":"특정한 유형의 변경사항을 \"사소한 편집\"으로 지정할 수 없기 때문에 \"사소한 편집\" 필터는 하나 이상의 변경사항 유형 필터와 충돌합니다. 충돌되는 필터들은 위의 사용 중인 필터 영역에 표시됩니다.","rcfilters-hideminor-conflicts-typeofchange":"특정한 종류의 변경사항은 \"사소한 편집\"으로 지정할 수 없으므로 이 필터는 다음 유형의 변경사항 필터와 충돌합니다: $1","rcfilters-filter-major-label":"사소하지 않은 편집","rcfilters-filter-major-description":"사소한 편집으로 표시하지 않은 편집.","rcfilters-filtergroup-lastrevision":"최신판","rcfilters-filter-lastrevision-label":"최신판","rcfilters-filter-lastrevision-description":
+"문서의 가장 최근 바뀜만.","rcfilters-filter-previousrevision-label":"최신판이 아님","rcfilters-filter-previousrevision-description":"\"최신판\"이 아닌 모든 변경사항.","rcfilters-filtergroup-changetype":"차이 종류","rcfilters-filter-pageedits-label":"문서 편집","rcfilters-filter-pageedits-description":"위키 내용, 토론, 분류 설명에 대한 편집.","rcfilters-filter-newpages-label":"문서 생성","rcfilters-filter-newpages-description":"새 문서 생성 편집.","rcfilters-typeofchange-conflicts-hideminor":"이 유형의 변경사항 필터는 \"사소한 편집\" 필터와 충돌합니다. 특정한 종류의 변경사항은 \"사소한 편집\"으로 지정할 수 없습니다.","rcfilters-filter-logactions-label":"기록된 행위","rcfilters-filter-logactions-description":"관리 조치, 계정 만들기, 문서 삭제, 올리기 등"},"wgStructuredChangeFiltersCollapsedState":!1,"StructuredChangeFiltersDisplayConfig":{"maxDays":90,
+"limitArray":[50,100,250,500],"limitDefault":50,"daysArray":[1,3,7,14,30],"daysDefault":7},"wgStructuredChangeFiltersSavedQueriesPreferenceName":"rcfilters-saved-queries","wgStructuredChangeFiltersLimitPreferenceName":"rcfilters-limit","wgStructuredChangeFiltersDaysPreferenceName":"rcdays","wgStructuredChangeFiltersCollapsedPreferenceName":"rcfilters-rc-collapsed","wgMinervaPermissions":{"watch":!1,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!1},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mobile.special.styles":"ready","mobile.messageBox.styles":"ready","mediawiki.helplink":"ready","mediawiki.ui.input":"ready","mediawiki.ui.radio":"ready",
+"mediawiki.ui.checkbox":"ready","mediawiki.interface.helpers.styles":"ready","mediawiki.special.changeslist.legend":"ready","mediawiki.special.changeslist":"ready","mediawiki.rcfilters.filters.base.styles":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["mediawiki.special.changeslist.legend.js","mediawiki.rcfilters.filters.ui","mediawiki.special.recentchanges","site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"ko"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=ko&amp;modules=mediawiki.helplink%2Chlist%7Cmediawiki.interface.helpers.styles%7Cmediawiki.rcfilters.filters.base.styles%7Cmediawiki.special.changeslist%7Cmediawiki.special.changeslist.legend%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%2Cradio%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cmobile.special.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="/mediawiki/load.php?lang=ko&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=ko&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (ko)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//ko.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="가리키는 글의 최근 바뀜 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://ko.stardewvalleywiki.com/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4"/>
+<meta property="og:image" content="https://ko.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2025-03-20T20:15:31Z"/>
+<meta property="article:published_time" content="2025-03-20T20:15:31Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="가리키는 글의 최근 바뀜 - Stardew Valley Wiki"/>
+<meta property="twitter:image" content="https://ko.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\uac00\ub9ac\ud0a4\ub294 \uae00\uc758 \ucd5c\uadfc \ubc14\ub01c - Stardew Valley Wiki","headline":"\uac00\ub9ac\ud0a4\ub294 \uae00\uc758 \ucd5c\uadfc \ubc14\ub01c - Stardew Valley Wiki","mainEntityOfPage":"\uac00\ub9ac\ud0a4\ub294 \uae00\uc758 \ucd5c\uadfc \ubc14\ub01c","identifier":"https:\/\/ko.stardewvalleywiki.com\/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C\/%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4","url":"https:\/\/ko.stardewvalleywiki.com\/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C\/%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4","dateModified":"2025-03-20T20:15:31Z","datePublished":"2025-03-20T20:15:31Z","image":{"@type":"ImageObject","url":"https:\/\/ko.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/ko.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/ko.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/ko.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/ko.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/ko.stardewvalleywiki.com\/mediawiki\/index.php?title=%ED%8A%B9%EC%88%98:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mw-rcfilters-enabled mediawiki ltr sitedir-ltr mw-hide-empty-elt ns--1 ns-special mw-special-Recentchangeslinked page-특수_링크최근바뀜_멀티플레이어 rootpage-특수_링크최근바뀜_멀티플레이어 stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="주 메뉴 열기" data-event-name="ui.mainmenu">주 메뉴 열기</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>대문</span></a>
+			</li>
+			<li class="">
+			    <a href="/%ED%8A%B9%EC%88%98:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>임의의 문서로</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A1%9C%EA%B7%B8%EC%9D%B8&amp;returnto=%ED%8A%B9%EC%88%98%3A%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C%2F%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>로그인</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%AA%A8%EB%B0%94%EC%9D%BC%EC%84%A4%EC%A0%95&amp;returnto=%ED%8A%B9%EC%88%98%3A%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C%2F%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>설정</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%EC%86%8C%EA%B0%9C" class="" data-event-name=""><span>Stardew Valley Wiki 소개</span></a>
+			</li>
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD" class="" data-event-name=""><span>면책 조항</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Stardew Valley Wiki 검색" aria-label="Stardew Valley Wiki 검색"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">검색</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">가리키는 글의 최근 바뀜</h1>
+					<div class="tagline"></div>
+				</div>
+				
+				
+				
+				<div class="minerva__subtitle">← <a href="/%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="멀티플레이어">멀티플레이어</a></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text"><div class="mw-specialpage-summary">
+<p>해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). <a href="/%ED%8A%B9%EC%88%98:%EC%A3%BC%EC%8B%9C%EB%AC%B8%EC%84%9C%EB%AA%A9%EB%A1%9D" title="특수:주시문서목록">내 주시문서 목록</a>에 있는 문서의 변경사항은 <strong>굵게</strong> 나타납니다.
+</p>
+</div><div class="rcfilters-head mw-rcfilters-head"><div class="rcfilters-container mw-rcfilters-container"></div><fieldset class="rcoptions cloptions">
+<legend>최근 바뀜 설정</legend>
+<span class="rclinks">최근 <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;days=1&amp;from=&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;days&quot;:1,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">1</a> | <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;days=3&amp;from=&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;days&quot;:3,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">3</a> | <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;days=7&amp;from=&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;days&quot;:7,&quot;from&quot;:&quot;&quot;}" data-keys="days,from"><strong>7</strong></a> | <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;days=14&amp;from=&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;days&quot;:14,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">14</a> | <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;days=30&amp;from=&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;days&quot;:30,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">30</a>일간의 <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;limit=50&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;limit&quot;:50}" data-keys="limit"><strong>50</strong></a> | <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;limit=100&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;limit&quot;:100}" data-keys="limit">100</a> | <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;limit=250&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;limit&quot;:250}" data-keys="limit">250</a> | <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;limit=500&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;limit&quot;:500}" data-keys="limit">500</a>개 바뀐 문서 보기</span><br /><span class="rcshowhide"><span class="rcshowhideliu rcshowhideoption clshowhideoption" data-filter-name="hideliu" data-feature-in-structured-ui="1">등록된 사용자 <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;hideliu=1&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;hideliu&quot;:1}" data-keys="hideliu">숨기기</a></span> | <span class="rcshowhideanons rcshowhideoption clshowhideoption" data-filter-name="hideanons" data-feature-in-structured-ui="1">익명 사용자를 <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;hideanons=1&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;hideanons&quot;:1}" data-keys="hideanons">숨기기</a></span> | <span class="rcshowhidemine rcshowhideoption clshowhideoption" data-filter-name="hidemyself" data-feature-in-structured-ui="1">내 편집 <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;hidemyself=1&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;hidemyself&quot;:1}" data-keys="hidemyself">숨기기</a></span> | <span class="rcshowhidebots rcshowhideoption clshowhideoption" data-filter-name="hidebots" data-feature-in-structured-ui="1">봇 <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;hidebots=0&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;hidebots&quot;:0}" data-keys="hidebots">보이기</a></span> | <span class="rcshowhideminor rcshowhideoption clshowhideoption" data-filter-name="hideminor" data-feature-in-structured-ui="1">사소한 편집 <a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;hideminor=1&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;hideminor&quot;:1}" data-keys="hideminor">숨기기</a></span></span><br /><span class="rclistfrom"><a href="/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;from=20250320201531&amp;fromFormatted=2025%EB%85%84+3%EC%9B%94+20%EC%9D%BC+%28%EB%AA%A9%29+20%3A15&amp;target=%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4" title="특수:링크최근바뀜" data-params="{&quot;from&quot;:&quot;20250320201531&quot;,&quot;fromFormatted&quot;:&quot;2025\ub144 3\uc6d4 20\uc77c (\ubaa9) 20:15&quot;}" data-keys="from,fromFormatted">2025년 3월 20일 (목) 20:15부터 시작하는 새로 바뀐 문서 보기</a></span>
+<hr />
+<form action="/mediawiki/index.php"><table class="mw-recentchanges-table"><tr class="namespaceForm"><td class="mw-label mw-namespace-label"><label for="namespace">이름공간:</label></td><td class="mw-input"><select id="namespace" name="namespace">
+<option value="" selected="">모두</option>
+<option value="0">(일반)</option>
+<option value="1">토론</option>
+<option value="2">사용자</option>
+<option value="3">사용자토론</option>
+<option value="4">Stardew Valley Wiki</option>
+<option value="5">Stardew Valley Wiki토론</option>
+<option value="6">파일</option>
+<option value="7">파일토론</option>
+<option value="8">미디어위키</option>
+<option value="9">미디어위키토론</option>
+<option value="10">틀</option>
+<option value="11">틀토론</option>
+<option value="12">도움말</option>
+<option value="13">도움말토론</option>
+<option value="14">분류</option>
+<option value="15">분류토론</option>
+<option value="274">위젯</option>
+<option value="275">위젯토론</option>
+<option value="570">Modding</option>
+<option value="571">Modding talk</option>
+<option value="828">모듈</option>
+<option value="829">모듈토론</option>
+</select> <span class="mw-input-with-label mw-input-hidden"><div class="mw-ui-checkbox"><input name="invert" type="checkbox" value="1" id="nsinvert" title="선택한 이름공간(선택되어 있다면 관련된 이름공간도 포함)에 있는 문서의 바뀜을 숨기려면 이 상자를 선택하세요" /> <label for="nsinvert" title="선택한 이름공간(선택되어 있다면 관련된 이름공간도 포함)에 있는 문서의 바뀜을 숨기려면 이 상자를 선택하세요">선택 반전</label></div></span> <span class="mw-input-with-label mw-input-hidden"><div class="mw-ui-checkbox"><input name="associated" type="checkbox" value="1" id="nsassociated" title="선택한 이름공간과 관련된 토론이나 본문 이름공간을 포함하려면 이 상자를 선택하세요" /> <label for="nsassociated" title="선택한 이름공간과 관련된 토론이나 본문 이름공간을 포함하려면 이 상자를 선택하세요">관련된 이름공간</label></div></span></td></tr><tr class="tagfilterForm"><td class="mw-label mw-tagfilter-label"><label for="tagfilter"><a href="/%ED%8A%B9%EC%88%98:%ED%83%9C%EA%B7%B8" title="특수:태그">태그</a> 필터:</label></td><td class="mw-input"><input name="tagfilter" size="20" value="" class="mw-tagfilter-input mw-ui-input mw-ui-input-inline mw-ui-input" id="tagfilter" /></td></tr><tr class="targetForm"><td class="mw-label mw-target-label">문서 이름:</td><td class="mw-input"><input name="target" size="40" value="멀티플레이어" class="mw-ui-input" /><input name="showlinkedto" type="checkbox" value="1" id="showlinkedto" /> <label for="showlinkedto">해당 문서를 가리키는 문서의 최근 바뀜 보기</label> <input type="submit" value="보기" class="mw-ui-button mw-ui-progressive"/></td></tr></table><input type="hidden" value="특수:링크최근바뀜" name="title"/></form>
+</fieldset>
+</div><div class="mw-rcfilters-spinner"><div class="mw-rcfilters-spinner-bounce"></div></div><div class="mw-changeslist-empty">주어진 기간 동안에 이 조건들에 맞는 바뀜이 없습니다.</div></div><div class="printfooter">
+원본 주소 "<a dir="ltr" href="https://ko.stardewvalleywiki.com/특수:링크최근바뀜/멀티플레이어">https://ko.stardewvalleywiki.com/특수:링크최근바뀜/멀티플레이어</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">별도로 명시하지 않은 경우, 내용은 <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>에 따라 사용할 수 있습니다.</div>
+			<ul class="footer-info hlist hlist-separated">
+				
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EB%B0%A9%EC%B9%A8" title="Stardew Valley Wiki:개인정보처리방침">개인정보처리방침</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%EC%86%8C%EA%B0%9C" title="Stardew Valley Wiki:소개">Stardew Valley Wiki 소개</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD" title="Stardew Valley Wiki:면책 조항">면책 조항</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//ko.stardewvalleywiki.com/mediawiki/index.php?title=%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4&amp;mobileaction=toggle_view_desktop">데스크톱</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":109});});</script>		</body>
+		</html>
+		

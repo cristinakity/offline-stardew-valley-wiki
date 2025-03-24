@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>模组:创建 SMAPI 模组 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"313341ec9828eea52abdb911","wgCSPNonce":!1,"wgCanonicalNamespace":"模组","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"模组:创建_SMAPI_模组","wgTitle":"创建 SMAPI 模组","wgCurRevisionId":51142,"wgRevisionId":51142,"wgArticleId":1797,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["模组"],"wgPageContentLanguage":"zh","wgPageContentModel":"wikitext","wgRelevantPageName":"模组:创建_SMAPI_模组","wgRelevantArticleId":1797,"wgUserVariant":"zh","wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":
+{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready","jquery.makeCollapsible.styles":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","jquery.makeCollapsible","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=ext.pygments%7Cjquery.makeCollapsible.styles%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/mediawiki/load.php?lang=zh&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="制作SMAPI模组"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (zh)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//zh.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="alternate" hreflang="zh" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh"/>
+<link rel="alternate" hreflang="zh-Hans" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-hans"/>
+<link rel="alternate" hreflang="zh-Hant" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-hant"/>
+<link rel="alternate" hreflang="zh-Hans-CN" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-cn"/>
+<link rel="alternate" hreflang="zh-Hant-HK" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-hk"/>
+<link rel="alternate" hreflang="zh-Hant-MO" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-mo"/>
+<link rel="alternate" hreflang="zh-Hans-MY" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-my"/>
+<link rel="alternate" hreflang="zh-Hans-SG" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-sg"/>
+<link rel="alternate" hreflang="zh-Hant-TW" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-tw"/>
+<link rel="alternate" hreflang="x-default" href="/%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki的Atom feed" href="/mediawiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+<meta property="og:title" content="模组:创建 SMAPI 模组 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84"/>
+<meta property="og:description" content="制作SMAPI模组"/>
+<meta property="og:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2025-03-10T03:35:20Z"/>
+<meta property="article:published_time" content="2025-03-10T03:35:20Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="模组:创建 SMAPI 模组 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="制作SMAPI模组"/>
+<meta property="twitter:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u6a21\u7ec4:\u521b\u5efa SMAPI \u6a21\u7ec4 - Stardew Valley Wiki","headline":"\u6a21\u7ec4:\u521b\u5efa SMAPI \u6a21\u7ec4 - Stardew Valley Wiki","mainEntityOfPage":"\u6a21\u7ec4:\u521b\u5efa SMAPI \u6a21\u7ec4","identifier":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84","url":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84","description":"\u5236\u4f5cSMAPI\u6a21\u7ec4","dateModified":"2025-03-10T03:35:20Z","datePublished":"2025-03-10T03:35:20Z","image":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-模组_创建_SMAPI_模组 rootpage-模组_创建_SMAPI_模组 skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="zh">模组:创建 SMAPI 模组</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">来自Stardew Valley Wiki</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">跳到导航</a>
+		<a class="mw-jump-link" href="#searchInput">跳到搜索</a>
+		<div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div style="float: right; border: 2px solid rgb(0, 116, 72); background: #A1DEE2; padding: 0.75em; padding-top: 0.5em; margin: 0 0 2em 2em;">
+<p><span style="font-size: larger;"><b>制作SMAPI模组</b> <a href="/File:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/38px-SMAPI_mascot.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/50px-SMAPI_mascot.png 2x" /></a></span>
+</p>
+<hr />
+<ul><li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8" class="mw-redirect" title="模组:制作指南/入门">入门</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/%E6%B8%B8%E6%88%8F%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84" title="模组:制作指南/游戏基本架构">游戏基本架构</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/%E6%B5%8B%E8%AF%95%E5%92%8C%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94" title="模组:制作指南/测试和疑难解答">测试和疑难解答</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/%E5%8F%91%E5%B8%83" title="模组:制作指南/发布">发布</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs" title="模组:制作指南/APIs">SMAPI中的API</a>
+<dl><dd>基本API：
+<ul><li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Mod_structure" title="模组:制作指南/APIs/Mod structure">Mod structure（模组结构）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Manifest" title="模组:制作指南/APIs/Manifest">Manifest（清单）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Events" title="模组:制作指南/APIs/Events">Events（事件）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Config" title="模组:制作指南/APIs/Config">Config（配置）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Content" title="模组:制作指南/APIs/Content">Content（内容）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Data" title="模组:制作指南/APIs/Data">Data（数据）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Input" title="模组:制作指南/APIs/Input">Input（输入）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Logging" title="模组:制作指南/APIs/Logging">Logging（日志）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Reflection" title="模组:制作指南/APIs/Reflection">Reflection（反射）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Multiplayer" title="模组:制作指南/APIs/Multiplayer">Multiplayer（多人）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Translation" title="模组:制作指南/APIs/Translation">Translation（翻译）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Update_checks" title="模组:制作指南/APIs/Update checks">Update checks（检查更新）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Utilities" title="模组:制作指南/APIs/Utilities">Utilities（工具）</a></li></ul></dd>
+<dd>进阶API:
+<ul><li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Content_Packs" title="模组:制作指南/APIs/Content Packs">Content packs（内容包）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Console" title="模组:制作指南/APIs/Console">Console（控制台命令）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Integrations" title="模组:制作指南/APIs/Integrations">Integrations（模组整合）</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Harmony" title="模组:制作指南/APIs/Harmony">Harmony</a></li></ul></dd></dl></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95#.E9.AB.98.E9.98.B6.E4.B8.BB.E9.A2.98" title="模组:目录">更多指南</a></li></ul>
+</div><p>← <span style="font-size: smaller;"><a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95" title="模组:目录">模组:目录</a></span>
+</p><p><b>如果您是第一次制作模组</b> 请参阅 <a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95#.E5.88.9B.E5.BB.BA.E6.A8.A1.E7.BB.84" title="模组:目录">模组:目录#创建模组</a> 来了解 C# 模组和内容包模组之间差异的简短描述。
+</p><p>您想使用 C# 创建“SMAPI 模组”吗？”本指南适合您！
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="zh" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">1</span> <span class="toctext">介绍</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E4.BB.80.E4.B9.88.E6.98.AF_SMAPI_.E6.A8.A1.E7.BB.84.EF.BC.9F"><span class="tocnumber">1.1</span> <span class="toctext">什么是 SMAPI 模组？</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E4.B8.BA.E4.BB.80.E4.B9.88.E6.A8.A1.E7.BB.84.E4.BD.BF.E7.94.A8_SMAPI.EF.BC.9F"><span class="tocnumber">1.2</span> <span class="toctext">为什么模组使用 SMAPI？</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E6.88.91.E8.83.BD.E5.88.B6.E4.BD.9C.E4.B8.80.E4.B8.AA.E6.A8.A1.E7.BB.84.E5.90.97.EF.BC.9F"><span class="tocnumber">1.3</span> <span class="toctext">我能制作一个模组吗？</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E6.88.91.E5.8F.AF.E4.BB.A5.E4.B8.8D.E4.BD.BF.E7.94.A8_SMAPI_.E6.9D.A5.E5.88.B6.E4.BD.9C.E6.A8.A1.E7.BB.84.E5.90.97.EF.BC.9F"><span class="tocnumber">1.4</span> <span class="toctext">我可以不使用 SMAPI 来制作模组吗？</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E6.88.91.E5.9C.A8.E5.93.AA.E9.87.8C.E5.8F.AF.E4.BB.A5.E5.BE.97.E5.88.B0.E5.B8.AE.E5.8A.A9.EF.BC.9F"><span class="tocnumber">1.5</span> <span class="toctext">我在哪里可以得到帮助？</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#.E5.BC.80.E5.A7.8B"><span class="tocnumber">2</span> <span class="toctext">开始</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#.E5.AD.A6.E4.B9.A0_C.23"><span class="tocnumber">2.1</span> <span class="toctext">学习 C#</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E8.A6.81.E6.B1.82"><span class="tocnumber">2.2</span> <span class="toctext">要求</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#.E5.88.9B.E5.BB.BA.E4.B8.80.E4.B8.AA.E5.9F.BA.E6.9C.AC.E6.A8.A1.E7.BB.84"><span class="tocnumber">3</span> <span class="toctext">创建一个基本模组</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#.E5.BF.AB.E9.80.9F.E5.90.AF.E5.8A.A8"><span class="tocnumber">3.1</span> <span class="toctext">快速启动</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.E5.88.9B.E5.BB.BA.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88"><span class="tocnumber">3.2</span> <span class="toctext">创建解决方案</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.E6.B7.BB.E5.8A.A0.E4.BB.A3.E7.A0.81"><span class="tocnumber">3.3</span> <span class="toctext">添加代码</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#.E6.B7.BB.E5.8A.A0.E4.BD.A0.E7.9A.84.E6.B8.85.E5.8D.95"><span class="tocnumber">3.4</span> <span class="toctext">添加你的清单</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#.E8.AF.95.E8.AF.95.E4.BD.A0.E7.9A.84.E6.A8.A1.E7.BB.84"><span class="tocnumber">3.5</span> <span class="toctext">试试你的模组</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94"><span class="tocnumber">3.6</span> <span class="toctext">疑难解答</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98"><span class="tocnumber">4</span> <span class="toctext">常见问题</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#SMAPI_.E7.9A.84.E6.96.87.E6.A1.A3.E5.9C.A8.E5.93.AA.E9.87.8C.EF.BC.9F"><span class="tocnumber">4.1</span> <span class="toctext">SMAPI 的文档在哪里？</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#.E6.88.91.E5.8F.AF.E4.BB.A5.E7.9C.8B.E7.9C.8B.E5.85.B6.E4.BB.96.E6.A8.A1.E7.BB.84.E7.9A.84.E4.BB.A3.E7.A0.81.E5.90.97.EF.BC.9F"><span class="tocnumber">4.2</span> <span class="toctext">我可以看看其他模组的代码吗？</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#.E6.88.91.E5.A6.82.E4.BD.95.E4.BD.BF.E6.88.91.E7.9A.84.E6.A8.A1.E7.BB.84.E8.B7.A8.E5.B9.B3.E5.8F.B0.E5.B7.A5.E4.BD.9C.EF.BC.9F"><span class="tocnumber">4.3</span> <span class="toctext">我如何使我的模组跨平台工作？</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#.E5.A6.82.E4.BD.95.E5.8F.8D.E7.BC.96.E8.AF.91.E6.B8.B8.E6.88.8F.E4.BB.A3.E7.A0.81.EF.BC.9F"><span class="tocnumber">4.4</span> <span class="toctext">如何反编译游戏代码？</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#.E2.80.9C.E7.9B.AE.E6.A0.87_.NET_6.0.E2.80.9D.E6.98.AF.E4.BB.80.E4.B9.88.E6.84.8F.E6.80.9D.EF.BC.9F"><span class="tocnumber">4.5</span> <span class="toctext">“目标 .NET 6.0”是什么意思？</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span id="介绍"></span><span class="mw-headline" id=".E4.BB.8B.E7.BB.8D">介绍</span></h2>
+<h3><span id="什么是_SMAPI_模组？"></span><span class="mw-headline" id=".E4.BB.80.E4.B9.88.E6.98.AF_SMAPI_.E6.A8.A1.E7.BB.84.EF.BC.9F">什么是 SMAPI 模组？</span></h3>
+<p>SMAPI 模组使用 <a rel="nofollow" class="external text" href="https://smapi.io/">SMAPI</a> 编辑接口来扩展游戏逻辑。当游戏中发生某些事情时（例如当一个对象被放置在世界中时），该模组可以做出响应，定期运行代码（例如每个更新周期运行一次），更改游戏的资源和数据等。SMAPI 模组是使用 .NET 的 C# 编写的，游戏使用 MonoGame 运行逻辑（绘制到屏幕、用户输入等）。
+</p><p>.NET 的另一种语言 Visual Basic 也可以用于编写模组，如果您了解该语言的对应语法即可使用它。得益于 .NET 新版本的特性，从游戏版本 1.5.5 开始使用该语言编写模组也可以直接跨平台运行，社区中已经存在使用该语言的模组并且运行正常，也许您正在运行它们。本文中会提及一些代码示例。
+</p>
+<h3><span id="为什么模组使用_SMAPI？"></span><span class="mw-headline" id=".E4.B8.BA.E4.BB.80.E4.B9.88.E6.A8.A1.E7.BB.84.E4.BD.BF.E7.94.A8_SMAPI.EF.BC.9F">为什么模组使用 SMAPI？</span></h3>
+<p>SMAPI 可以做许多事情，例如：
+</p>
+<ol><li>将你的模组加载到游戏中。如果没有 SMAPI 来加载代码模组，则不可能实现它们。</li>
+<li>提供接口和事件，以原本无法实现的方式与游戏进行交互。例如游戏资源或数据更改、玩家配置、翻译、反射等的简化接口。这些内容将在指南后面介绍。</li>
+<li>加载时重写模组以实现跨平台兼容性。这让您而不必担心游戏在 Linux/Mac/Windows 版本之间的差异。</li>
+<li>重写模组来更新它。SMAPI 可检测并修复常见情况下因游戏更新而损坏的模组代码。</li>
+<li>拦截错误。如果模组崩溃或导致错误，SMAPI 将拦截错误，在控制台窗口中显示错误详细信息，并在大多数情况下自动恢复游戏。这意味着模组不会意外导致游戏崩溃，并且可以更轻松地排除错误。</li>
+<li>提供更新检查。当模组有新版本可用时，SMAPI 会自动提醒玩家。</li>
+<li>提供兼容性检查。SMAPI 会自动检测模组何时不兼容，并在导致问题之前将其禁用，这样玩家就不会遇到损坏的游戏。</li></ol>
+<h3><span id="我能制作一个模组吗？"></span><span class="mw-headline" id=".E6.88.91.E8.83.BD.E5.88.B6.E4.BD.9C.E4.B8.80.E4.B8.AA.E6.A8.A1.E7.BB.84.E5.90.97.EF.BC.9F">我能制作一个模组吗？</span></h3>
+<p>是的！本指南将帮助你逐步创建一个简单的模组。然后你可以继续学习，让它做您想做的事即可。
+</p><p>如果你是编程新手，许多模组开发人员开始时几乎没有或完全没有编程经验。如果你下定决心，当然可以沿途学习，但是您应该为陡峭的学习曲线做好准备。刚开始时不要太过于自信，弄清楚它的时候，最好从一个小的模组开始。一开始很容易变得不知所措并放弃。模组社区非常热情，所以不要害怕问问题！
+</p><p>如果你已经具备编程经验，那应该没问题。具有 C＃ 或 Java 的编程经验将使事情变得容易，但这并不重要。如果不熟悉 C＃，则可以浏览下面的“学习C＃”参考资料以填补所有空白。
+</p>
+<h3><span id="我可以不使用_SMAPI_来制作模组吗？"></span><span class="mw-headline" id=".E6.88.91.E5.8F.AF.E4.BB.A5.E4.B8.8D.E4.BD.BF.E7.94.A8_SMAPI_.E6.9D.A5.E5.88.B6.E4.BD.9C.E6.A8.A1.E7.BB.84.E5.90.97.EF.BC.9F">我可以不使用 SMAPI 来制作模组吗？</span></h3>
+<p>当然。许多的 SMAPI 模组支持 <a href="/%E6%A8%A1%E7%BB%84:%E5%86%85%E5%AE%B9%E5%8C%85" title="模组:内容包">内容包</a>，可以让你提供它们所使用的 JSON 文本文件、图像等。例如，你可以 <a href="/%E6%A8%A1%E7%BB%84:Content_Patcher" title="模组:Content Patcher">使用 Content Patcher</a> 来编辑游戏的贴图并且不需要任何编程技术。本指南的其余部分是关于创建新的 SMAPI 模组的。有关内容包，请参阅 <a href="/%E6%A8%A1%E7%BB%84:Content_Patcher" title="模组:Content Patcher">模组:Content Patcher</a> (或模组的文档（如果为其他模组创建内容包）).
+</p>
+<h3><span id="我在哪里可以得到帮助？"></span><span class="mw-headline" id=".E6.88.91.E5.9C.A8.E5.93.AA.E9.87.8C.E5.8F.AF.E4.BB.A5.E5.BE.97.E5.88.B0.E5.B8.AE.E5.8A.A9.EF.BC.9F">我在哪里可以得到帮助？</span></h3>
+<p><span id="help"></span>星露谷官方聊天室欢迎你的到来：<a rel="nofollow" class="external text" href="https://stardewvalleywiki.com/Modding:Community#Discord">Stardew Valley Discord</a>
+</p>
+<h2><span id="开始"></span><span class="mw-headline" id=".E5.BC.80.E5.A7.8B">开始</span></h2>
+<h3><span id="学习_C#"></span><span class="mw-headline" id=".E5.AD.A6.E4.B9.A0_C.23">学习 C#</span></h3>
+<p>由于模组是用 C＃ 编写的，因此最好先熟悉它。无需记住所有内容，但是掌握基础知识（例如字段、方法、变量和类）将使其他所有内容都变得更加容易。
+</p><p>一些有用的资源：
+</p>
+<ul><li><a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/"><i>C# 快速开始</i></a> 通过交互式学习 C# 基础知识。</li>
+<li><a rel="nofollow" class="external text" href="https://mva.microsoft.com/en-us/training-courses/c-fundamentals-for-absolute-beginners-16169"><i>C# Fundamentals for Absolute Beginners</i></a> 是一个视频指南，将引导您完成 C#，从基本概念到事件驱动编程（这是 SMAPI 模组最常用的）。</li>
+<li>已经知道如何编程？ 请访问 <a rel="nofollow" class="external text" href="https://learnxinyminutes.com/docs/csharp/">LearnXinYMinutes</a> 快速了解 C# 语法和概念。</li></ul>
+<p>SMAPI 经常使用的几个概念
+</p>
+<ul><li><a rel="nofollow" class="external text" href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics"><i>泛型</i></a></li>
+<li><a rel="nofollow" class="external text" href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/events/"><i>基于事件的编程</i></a></li>
+<li>对于序列化，SMAPI 通常使用 <a rel="nofollow" class="external text" href="https://www.newtonsoft.com/json"><i>NewtonSoft</i></a></li></ul>
+<h3><span id="要求"></span><span class="mw-headline" id=".E8.A6.81.E6.B1.82">要求</span></h3>
+<p>在你开始之前：
+</p>
+<ol><li>熟悉 <a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8" title="模组:使用指南/入门">模组的使用</a>，本指南的其余部分假定你已经熟悉使用模组。</li>
+<li>安装游戏</li>
+<li>安装 <a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E5.AE.89.E8.A3.85SMAPI" title="模组:使用指南/入门">SMAPI</a></li>
+<li>安装 <a rel="nofollow" class="external text" href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">.NET 6 SDK</a>。<br /><small>游戏使用的版本为 .NET 6，因此您需要安装此版本。Windows 用户可能需要下载 x64 版本。而对于 macOS 系统，Intel 芯片用户需要安装 x64 版本，而 Apple Silicon 芯片用户需要安装 Arm64 版本。</small></li>
+<li>安装 IDE（集成开发环境），以便编辑和编译模组代码：
+<ul><li>Windows：<a rel="nofollow" class="external text" href="https://visualstudio.microsoft.com/vs/community/">Visual Studio Community</a>（免费）或 <a rel="nofollow" class="external text" href="https://www.jetbrains.com/rider/">JetBrains Rider</a>（免费）。</li>
+<li>Linux/macOS：<a rel="nofollow" class="external text" href="https://www.jetbrains.com/rider/">JetBrains Rider</a>（免费）或 <a rel="nofollow" class="external text" href="https://code.visualstudio.com/">Visual Studio Code</a>（免费）。</li></ul></li></ol>
+<p>如果不熟悉 Visual Studio（Windows），<a href="/%E6%A8%A1%E7%BB%84:IDE_%E5%8F%82%E8%80%83" title="模组:IDE 参考">模组:IDE 参考</a> 页面解释了如何完成本指南所需的重要工作。
+</p>
+<h2><span id="创建一个基本模组"></span><span class="mw-headline" id=".E5.88.9B.E5.BB.BA.E4.B8.80.E4.B8.AA.E5.9F.BA.E6.9C.AC.E6.A8.A1.E7.BB.84">创建一个基本模组</span></h2>
+<h3><span id="快速启动"></span><span class="mw-headline" id=".E5.BF.AB.E9.80.9F.E5.90.AF.E5.8A.A8">快速启动</span></h3>
+<p>如果您有足够的经验可以跳过本教程，以下是本节的摘要：
+</p>
+<table class="mw-collapsible mw-collapsed" style="">
+<tbody><tr>
+<th style="text-align: left;"><b>展开以查看快速开始</b>&#160;
+</th></tr>
+<tr>
+<td>&#32;
+<ol><li>创建一个 C＃类库 项目（注意不要选择成 .NET Framework 的那个，或者你可以使用另一种语言）</li>
+<li>目标框架选择 .NET 6.0</li>
+<li>添加 <a rel="nofollow" class="external text" href="https://smapi.io/package/readme"><samp>Pathoschild.Stardew.ModBuildConfig</samp></a> NuGet 包</li>
+<li>创建一个 <samp>ModEntry</samp> 类，将它继承自 <samp>StardewModdingAPI.Mod</samp></li>
+<li>覆写 <samp>Entry</samp> 方法，并使用 <a href="#Mod_APIs">SMAPI 事件和 API</a> 编写代码</li>
+<li>创建一个 <a href="#Add_your_manifest"><samp>manifest.json</samp></a> 文件来描述你的模组</li>
+<li>创建 <a href="#.E5.8F.91.E5.B8.83.E4.BD.A0.E7.9A.84.E6.A8.A1.E7.BB.84">一个包含模组文件的zip压缩包</a> 来发布</li></ol>
+</td></tr></tbody></table>
+<h3><span id="创建解决方案"></span><span class="mw-headline" id=".E5.88.9B.E5.BB.BA.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88">创建解决方案</span></h3>
+<p>SMAPI 模组是一个动态链接库（DLL），具有由 SMAPI 调用的入口方法
+</p>
+<ol><li>打开 Visual Studio 或 MonoDevelop</li>
+<li>使用“类库”项目创建解决方案（请参阅<a href="/%E6%A8%A1%E7%BB%84:IDE_%E5%8F%82%E8%80%83#.E5.88.9B.E5.BB.BA.E9.A1.B9.E7.9B.AE" title="模组:IDE 参考">如何创建项目</a>）（不要选择“类库（.NET Framework）”！那是在游戏 1.5.4 以及之前版本中所使用的）</li>
+<li>目标框架设置为 .NET 6（请参阅 <a href="/%E6%A8%A1%E7%BB%84:IDE_%E5%8F%82%E8%80%83#.E9.80.89.E6.8B.A9.E7.9B.AE.E6.A0.87.E6.A1.86.E6.9E.B6" title="模组:IDE 参考">如何更改目标框架</a>）您可能需要 <a rel="nofollow" class="external text" href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">安装 SDK</a>。这是游戏安装和使用的版本</li>
+<li>添加 <a rel="nofollow" class="external text" href="https://www.nuget.org/packages/Pathoschild.Stardew.ModBuildConfig"><samp>Pathoschild.Stardew.ModBuildConfig</samp> NuGet 包</a>（请参阅 <a href="/%E6%A8%A1%E7%BB%84:IDE_%E5%8F%82%E8%80%83#.E6.B7.BB.E5.8A.A0_NuGet_.E5.8C.85" title="模组:IDE 参考"> 如何添加 NuGet 包</a>）
+<ul><li>如果报错“找不到类型或命名空间名称“StardewModdingAPI””，则可能没有检测到游戏路径，需要将 GamePath 属性设置为游戏的目录。这可以通过将“GamePath”属性添加到项目文件（“.csproj”或“.vbproj”）中的“PropertyGroup”节点下来完成</li></ul></li>
+<li>之后重新启动 Visual Studio 或者 MonoDevelop</li></ol>
+<h3><span id="添加代码"></span><span class="mw-headline" id=".E6.B7.BB.E5.8A.A0.E4.BB.A3.E7.A0.81">添加代码</span></h3>
+<p>接下来添加代码
+</p>
+<ol>
+<li>删除 <samp>Class1.cs</samp> 或者 <samp>MyClass.cs</samp> 文件 (参阅 <a href="/%E6%A8%A1%E7%BB%84:IDE_%E5%8F%82%E8%80%83#.E5.88.A0.E9.99.A4.E6.96.87.E4.BB.B6" title="模组:IDE 参考">如何删除文件</a>).</li>
+<li>在项目中添加一个 C# 类文件，取名为 <samp>ModEntry.cs</samp> (参阅 <a href="/%E6%A8%A1%E7%BB%84:IDE_%E5%8F%82%E8%80%83#.E6.B7.BB.E5.8A.A0.E6.96.87.E4.BB.B6" title="模组:IDE 参考">如何添加文件</a>).</li>
+<li>在此文件中输入代码 (把 <samp>YourProjectName</samp> 换成你的解决方案的名字):
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Xna.Framework</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">StardewModdingAPI</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">StardewModdingAPI.Events</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">StardewModdingAPI.Utilities</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">StardewValley</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">YourProjectName</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;模组入口点&lt;/summary&gt;</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+    <span class="p">{</span>
+        <span class="cm">/*********</span>
+<span class="cm">        ** 公共方法</span>
+<span class="cm">        *********/</span>
+        <span class="c1">/// &lt;summary&gt;模组的入口点，在首次加载模组后自动调用&lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name=&quot;helper&quot;&gt;对象 helper 提供用于编写模组的简化接口&lt;/param&gt;</span>
+        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">ButtonPressed</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnButtonPressed</span><span class="p">;</span>
+            <span class="c1">//意思是将 OnButtonPressed 方法绑定到 SMAPI 的 ButtonPressed 按钮按下事件</span>
+            <span class="c1">//this 表示本对象，也就是当前的 ModEntry 类</span>
+        <span class="p">}</span>
+
+        <span class="cm">/*********</span>
+<span class="cm">        ** 私有方法</span>
+<span class="cm">        *********/</span>
+        <span class="c1">/// &lt;summary&gt;在玩家按下键盘、控制器或鼠标上的按钮后引发&lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name=&quot;sender&quot;&gt;对象 sender 表示调用此方法的对象&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name=&quot;e&quot;&gt;对象 e 表示事件数据&lt;/param&gt;</span>
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">OnButtonPressed</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">ButtonPressedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// 如果玩家还没有进入存档，则取消执行</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">Context</span><span class="p">.</span><span class="n">IsWorldReady</span><span class="p">)</span>
+                <span class="k">return</span><span class="p">;</span>
+
+            <span class="c1">// 向控制台输出按下了什么按钮</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">Monitor</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{Game1.player.Name} 按下了 {e.Button}.&quot;</span><span class="p">,</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></li>
+</ol>
+<p>以下是该代码的功能细分：
+</p>
+<ol><li><code>using X</code> (参阅 <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive">using directive</a>) 使该命名空间中的类在你的代码中可用</li>
+<li><code>namespace YourProjectName</code>（参阅 <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/namespace">namespace keyword</a>）定义命名空间，入门时不必担心，因为在新建类文件时 Visual Studio 或 MonoDevelop 会自动添加它</li>
+<li><code>public class ModEntry&#160;: Mod</code> (参阅 <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/class">class keyword</a>) 创建你的模组的主类文件，并继承 SMAPI 的 <samp>Mod</samp> 类。SMAPI 将自动检测你的 <samp>Mod</samp> 子类，而 <samp>Mod</samp> 对象使你可访问 SMAPI 的接口</li>
+<li><code>public override void Entry(IModHelper helper)</code> 是将模组加载到游戏中时 SMAPI 将调用的方法。这里的 <code>helper</code> 对象提供了对许多 SMAPI 接口的便捷访问</li>
+<li><code>helper.Events.Input.ButtonPressed += this.OnButtonPressed</code> 添加了一个事件绑定到当按下按钮的事件发生时。换句话说，当一个按钮被按下 (也就是 <samp>helper.Events.Input.ButtonPressed</samp> 事件触发了), SMAPI 会调用你的 <samp>this.OnButtonPressed</samp> 方法。参阅 <a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Events" title="模组:制作指南/APIs/Events">事件接口</a> 获取更多信息</li></ol>
+<p>如果您使用的是 Visual Basic 语言，以下是使用该语言的 Entry 示例，实现了和上面的 C# 代码相同的步骤和功能
+</p>
+<ol><div class="mw-highlight mw-highlight-lang-vbnet mw-content-ltr" dir="ltr"><pre><span></span><span class="k">Imports</span> <span class="nn">StardewModdingAPI</span>
+<span class="k">Imports</span> <span class="nn">StardewModdingAPI.Events</span>
+<span class="k">Imports</span> <span class="nn">StardewValley</span>
+
+<span class="k">Namespace</span> <span class="nn">YourProjectName</span>
+<span class="k">Public</span> <span class="k">Class</span> <span class="nc">ModEntry</span>
+    <span class="k">Inherits</span> <span class="o">[</span><span class="ow">Mod</span><span class="o">]</span>
+
+    <span class="k">Public</span> <span class="k">Overrides</span> <span class="k">Sub</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">helper</span> <span class="ow">As</span> <span class="n">IModHelper</span><span class="p">)</span>
+        <span class="k">AddHandler</span> <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Input</span><span class="p">.</span><span class="n">ButtonPressed</span><span class="p">,</span> <span class="ow">AddressOf</span> <span class="n">OnButtonPressed</span>
+    <span class="k">End</span> <span class="k">Sub</span>
+
+    <span class="k">Public</span> <span class="k">Sub</span> <span class="nf">OnButtonPressed</span><span class="p">(</span><span class="n">sender</span> <span class="ow">As</span> <span class="kt">Object</span><span class="p">,</span> <span class="n">e</span> <span class="ow">As</span> <span class="n">ButtonPressedEventArgs</span><span class="p">)</span>
+        <span class="k">If</span> <span class="k">Not</span> <span class="n">Context</span><span class="p">.</span><span class="n">IsWorldReady</span> <span class="k">Then</span> <span class="k">Exit</span> <span class="k">Sub</span>
+        <span class="nf">Monitor</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{Game1.player.Name} 按下了 {e.Button}.&quot;</span><span class="p">,</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Debug</span><span class="p">)</span>
+    <span class="k">End</span> <span class="k">Sub</span>
+<span class="k">End</span> <span class="k">Class</span>
+<span class="k">End</span> <span class="k">Namespace</span>
+</pre></div></ol>
+<h3><span id="添加你的清单"></span><span class="mw-headline" id=".E6.B7.BB.E5.8A.A0.E4.BD.A0.E7.9A.84.E6.B8.85.E5.8D.95">添加你的清单</span></h3>
+<p>模组的清单为 SMAPI 提供模组的信息
+</p>
+<ol>
+<li>向你的解决方案添加一个名为 <samp>manifest.json</samp> 的文本文件</li>
+<li>将这些代码复制到文件中：（注意要区分键值的大小写，避免出现意外情况）
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;模组的名字&gt;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;Author&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;你的名字&gt;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;一句话简单描述你的模组是干什么的&gt;&quot;</span><span class="p">,</span> <span class="err">//（可选）</span>
+  <span class="nt">&quot;UniqueID&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;你的名字&gt;.&lt;模组的名字&gt;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;EntryDll&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;你的解决方案的名字&gt;.dll&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;MinimumApiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;4.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;UpdateKeys&quot;</span><span class="p">:</span> <span class="p">[]</span> <span class="err">//（可选）常用的更新键：</span><span class="s2">&quot;Nexus:???&quot;</span><span class="p">,</span> <span class="nt">&quot;Gtihub:user/repository&quot;</span><span class="p">,</span> <span class="nt">&quot;Moddrop:???&quot;</span>
+<span class="p">}</span>
+</pre></div></li>
+<li>正确填写其中的信息，不要留着空信息</li>
+</ol>
+<p>当游戏启动时，它将在控制台中输出。更多信息请参阅 <a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Manifest" title="模组:制作指南/APIs/Manifest">清单文档</a>
+</p>
+<h3><span id="试试你的模组"></span><span class="mw-headline" id=".E8.AF.95.E8.AF.95.E4.BD.A0.E7.9A.84.E6.A8.A1.E7.BB.84">试试你的模组</span></h3>
+<ol><li>构建项目。<br /><small>如果正确执行了“<a href="#.E5.88.9B.E5.BB.BA.E9.A1.B9.E7.9B.AE">创建项目</a>”步骤，这会自动将模组添加到游戏的 <samp>Mods&lt;/ samp&gt; 文件夹。</samp></small></li>
+<li>通过 SMAPI 运行游戏。</li></ol>
+<p>到目前为止，只要您在游戏中按下某个键时该模组就会向控制台窗口发送一条消息。
+</p><p><b>更改控制台文本颜色</b>
+</p><p>控制台中默认文本颜色的设置方式可能会导致它们不可读。 要更改文本颜色：
+</p>
+<ul><li><b>Steam</b>：打开 Steam 并右键单击库中的游戏。单击“管理”下的“浏览本地文件”，然后打开“/Stardew Valley/smapi-internal/”文件夹中的 <samp>config.json</samp> 文件，搜索“ConsoleColors”，然后编辑“Trace”和“Debug”颜色，以便它们在控制台中可见。</li></ul>
+<ul><li><b>Linux</b>：linux上的默认路径是 <samp>~/.local/share/Steam/steamapps/common/Stardew Valley/smapi-internal/config.json</samp>，除非你已经安装 您的游戏位于不同的驱动器或者标准 Steam 库文件夹之外。</li></ul>
+<ul><li><b>Windows</b>：Windows 上的默认路径应为“C:\Program files (x86)\Steam\steamapps\common\Stardew Valley\smapi-internal\config.json”，除非游戏在不同的驱动器或 Steam 库文件夹之外。</li></ul>
+<h3><span id="疑难解答"></span><span class="mw-headline" id=".E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94">疑难解答</span></h3>
+<p>如果上述教程创建的模组不能正常运行：
+</p>
+<ol><li>重复查看以上步骤，以确保你没有跳过任何内容</li>
+<li>检查是否有任何的错误消息，也许可以解释为什么它不起作用：
+<ul><li>在 Visual Studio 中尝试重新构建解决方案，查看 <b>输出</b> 面板 或者 <b>错误列表</b></li>
+<li>在 MonoDevelop 中点击 <i>Build &gt; Rebuild All</i> 等待处理完毕。然后点击 "Build: XX errors, XX warnings" 在顶部的条，点击 <i>XX Errors</i> 和 <i>Build Output</i> 选项卡</li></ul></li>
+<li>参阅 <a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94" title="模组:使用指南/疑难解答">疑难解答</a>.</li>
+<li>如果其他所有方法均失败，请到 Stardew Valley Discord 寻求帮助&#160;:)</li></ol>
+<h2><span id="常见问题"></span><span class="mw-headline" id=".E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98">常见问题</span></h2>
+<h3><span id="SMAPI_的文档在哪里？"></span><span class="mw-headline" id="SMAPI_.E7.9A.84.E6.96.87.E6.A1.A3.E5.9C.A8.E5.93.AA.E9.87.8C.EF.BC.9F">SMAPI 的文档在哪里？</span></h3>
+<p>这只是“入门”教程。更多信息请参阅 <a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs" title="模组:制作指南/APIs">SMAPI 接口说明</a>
+</p>
+<h3><span id="我可以看看其他模组的代码吗？"></span><span class="mw-headline" id=".E6.88.91.E5.8F.AF.E4.BB.A5.E7.9C.8B.E7.9C.8B.E5.85.B6.E4.BB.96.E6.A8.A1.E7.BB.84.E7.9A.84.E4.BB.A3.E7.A0.81.E5.90.97.EF.BC.9F">我可以看看其他模组的代码吗？</span></h3>
+<p>是的，近 70% 的 SMAPI 模组都是开源的。要找到他们的代码：
+</p>
+<ol><li>打开 <a rel="nofollow" class="external text" href="https://smapi.io/mods/">模组兼容性页面</a></li>
+<li>单击搜索框下方的“show advanced info”</li>
+<li>在“code”列中查找链接</li></ol>
+<h3><span id="我如何使我的模组跨平台工作？"></span><span class="mw-headline" id=".E6.88.91.E5.A6.82.E4.BD.95.E4.BD.BF.E6.88.91.E7.9A.84.E6.A8.A1.E7.BB.84.E8.B7.A8.E5.B9.B3.E5.8F.B0.E5.B7.A5.E4.BD.9C.EF.BC.9F">我如何使我的模组跨平台工作？</span></h3>
+<p>SMAPI 将自动调整模组使其可以在 Linux、MacOS 和 Windows 上运行。但是你也应该采取一些措施来避免出现问题：
+</p>
+<ol>
+<li>使用 <a rel="nofollow" class="external text" href="https://smapi.io/package/readme">跨平台构建配置</a> 包以自动设置您的项目引用，这使跨平台兼容性变得更容易，并使代码可以在任何平台上进行编译。（如果遵循上述指南，那么就没问题了)</li>
+
+<li>使用 <samp>Path.Combine</samp> 方法来拼接路径，而不是使用斜杠或者除号，因为不同的操作系统所使用的分隔符是不一样的
+
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// ✘ 不要这样做！这在 Linux 和 Mac 上不会起作用</span>
+<span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">DirectoryPath</span> <span class="p">+</span> <span class="s">&quot;\assets\image.png&quot;</span><span class="p">;</span>
+
+<span class="c1">// ✓ 这样才是对的</span>
+<span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">DirectoryPath</span><span class="p">,</span> <span class="s">&quot;assets&quot;</span><span class="p">,</span> <span class="s">&quot;image.png&quot;</span><span class="p">);</span>
+</pre></div></li>
+<li>使用 <samp>this.Helper.DirectoryPath</samp> 来获取当前模组文件夹路径，请勿尝试自行确定模组路径
+
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// ✘ 不要这样做！如果 SMAPI 重写了程序集（例如对其进行了更新或跨平台），它将崩溃</span>
+<span class="kt">string</span> <span class="n">modFolder</span> <span class="p">=</span> <span class="n">Assembly</span><span class="p">.</span><span class="n">GetCallingAssembly</span><span class="p">().</span><span class="n">Location</span><span class="p">;</span>
+
+<span class="c1">// ✓ 这样就没问题</span>
+<span class="kt">string</span> <span class="n">modFolder</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">DirectoryPath</span><span class="p">;</span>
+</pre></div></li>
+<li>“资源名称”标识可以通过 <code>Game1.content.Load&lt;T&gt;("asset name")</code> 等内容 API 加载的资产。这“不是”文件路径，并且资源名称并不总是与文件路径匹配。比较资源名称时，请确保使用 <code>PathUtilities.NormalizeAssetName("some/path")</code> 而不是 path helpers
+
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// ✘ 不要这样做！ 它不适用于 Windows。</span>
+<span class="kt">bool</span> <span class="n">isAbigail</span> <span class="p">=</span> <span class="p">(</span><span class="n">asset</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="s">&quot;Characters&quot;</span><span class="p">,</span> <span class="s">&quot;Abigail&quot;</span><span class="p">));</span>
+<span class="kt">bool</span> <span class="n">isAbigail2</span> <span class="p">=</span> <span class="p">(</span><span class="n">asset</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="n">PathUtilities</span><span class="p">.</span><span class="n">NormalizePath</span><span class="p">(</span><span class="s">&quot;Characters&quot;</span><span class="p">,</span> <span class="s">&quot;Abigail&quot;</span><span class="p">));</span>
+
+<span class="c1">// ✓ 这样就可以了</span>
+<span class="kt">bool</span> <span class="n">isAbigail</span> <span class="p">=</span> <span class="p">(</span><span class="n">asset</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="n">PathUtilities</span><span class="p">.</span><span class="n">NormalizeAssetName</span><span class="p">(</span><span class="s">&quot;Characters&quot;</span><span class="p">,</span> <span class="s">&quot;Abigail&quot;</span><span class="p">));</span>
+</pre></div>
+<p>请注意，无需标准化传递给 SMAPI API 的资源名称，SMAPI API 会自动标准化它们（尽管这样做也没什么坏处）：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// ✓ 这样就可以了</span>
+<span class="n">helper</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Texture2D</span><span class="p">&gt;(</span><span class="s">&quot;Characters/Abigail&quot;</span><span class="p">);</span>
+<span class="n">helper</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Texture2D</span><span class="p">&gt;(</span><span class="s">@&quot;Characters\Abigail&quot;</span><span class="p">);</span>
+</pre></div>
+</li>
+</ol>
+<h3><span id="如何反编译游戏代码？"></span><span class="mw-headline" id=".E5.A6.82.E4.BD.95.E5.8F.8D.E7.BC.96.E8.AF.91.E6.B8.B8.E6.88.8F.E4.BB.A3.E7.A0.81.EF.BC.9F">如何反编译游戏代码？</span></h3>
+<p>观察游戏代码的工作方式通常对开发很有用。游戏的代码都编译在 <samp>StardewValley.dll</samp> 文件中，可以对其进行反编译以获得原始代码的近似可读性。（由于反编译和生成优化的问题，可能无法准确还原逻辑，但已经足够看到它在做什么。）
+</p><p>要反编译游戏代码：
+</p>
+<dl><dd><ol><li>首次步骤：
+<ol><li>在 Windows 上安装 <a rel="nofollow" class="external text" href="https://github.com/icsharpcode/ILSpy/releases">ILSpy</a>（在 Release 的 Assets 下获取“ILSpy_binaries”文件），或在 Linux 和 macOS 上安装 <a rel="nofollow" class="external text" href="https://github.com/icsharpcode/AvaloniaILSpy/releases">Avalonia ILSpy</a></li>
+<li>打开 ILSpy</li>
+<li>单击“视图 &gt; 选项”，滚动到底部的“Other”部分，然后启用“始终限定成员引用”</li></ol></li>
+<li>在 ILSpy 中打开 <samp>Stardew Valley.dll</samp></li>
+<li>确保在语言下拉列表中选择“C#”（不是 IL、IL with C# 或 ReadyToRun）</li>
+<li>右键单击“Stardew Valley”并选择“保存代码”以创建可以在 Visual Studio 中打开的反编译项目
+<ol><li>如果您使用 Avalonia ILSpy，请确保将 <samp>.csproj</samp> 文件扩展名添加到保存对话框中的文件名中，如下所示：<samp>Stardew-Valley.csproj</samp> （否则该项目将无法正确反编译）</li></ol></li></ol></dd></dl>
+<p>另外有一个很不错的反编译工具但已经不再维护了：<a rel="nofollow" class="external text" href="https://github.com/dnSpy/dnSpy/releases">dnSpy</a>
+</p><p>要解包 XNB 数据或图像文件，请参阅 <a href="/%E6%A8%A1%E7%BB%84:%E7%BC%96%E8%BE%91_XNB_%E6%96%87%E4%BB%B6" title="模组:编辑 XNB 文件">模组:编辑 XNB 文件</a>
+</p>
+<h3><span id="“目标_.NET_6.0”是什么意思？"></span><span class="mw-headline" id=".E2.80.9C.E7.9B.AE.E6.A0.87_.NET_6.0.E2.80.9D.E6.98.AF.E4.BB.80.E4.B9.88.E6.84.8F.E6.80.9D.EF.BC.9F">“目标 .NET 6.0”是什么意思？</span></h3>
+<p>这里有多种不同的东西
+</p>
+<ul><li>目标版本：这是编译二进制文件所针对的 .NET 版本，最新版本的游戏必须以 .NET 6.0 为目标</li>
+<li>SDK 版本：这是安装的 .NET 版本，可以定位低于 SDK 版本的任何版本。如果在 VS 2022 中安装了 .NET 7.0，仍然可以使用 .NET 6.0</li>
+<li>C# 版本：语言的版本与 .NET 版本分开（尽管存在对应关系），可以在项目中使用 <code>&lt;langversion&gt;</code> 属性来指定语言版本</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20250321053341
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.104 seconds
+Real time usage: 2.419 seconds
+Preprocessor visited node count: 165/1000000
+Post‐expand include size: 2729/2097152 bytes
+Template argument size: 717/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 12768/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 2193.414      1 -total
+  0.07%    1.504      2 Template:Github
+  0.07%    1.472      1 模组:制作指南/header
+  0.05%    1.017      1 Template:Collapse
+-->
+
+<!-- Saved in parser cache with key zhwiki:pcache:idhash:1797-0!canonical!zh and timestamp 20250321053338 and revision id 51142
+ -->
+</div></div><div class="printfooter">取自“<a dir="ltr" href="https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:创建_SMAPI_模组&amp;oldid=51142">https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:创建_SMAPI_模组&amp;oldid=51142</a>”</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="Special:页面分类">分类</a>：<ul><li><a href="/Category:%E6%A8%A1%E7%BB%84" title="Category:模组">模组</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>导航菜单</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>个人工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/mediawiki/index.php?title=Special:%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E5%88%9B%E5%BB%BA+SMAPI+%E6%A8%A1%E7%BB%84" title="建议您创建一个账户并登录，但这不是强制的">创建账户</a></li><li id="pt-login"><a href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E5%88%9B%E5%BB%BA+SMAPI+%E6%A8%A1%E7%BB%84" title="我们鼓励您登录；然而，这不是强制性的[o]" accesskey="o">登录</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>名字空间</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-模组" class="selected"><a href="/%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84">模组</a></li><li id="ca-talk" class="new"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84_talk:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;action=edit&amp;redlink=1" rel="discussion" title="关于内容页面的讨论（页面不存在）[t]" accesskey="t">讨论</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>不转换</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"><li id="ca-varlang-0" class="selected"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh" lang="zh" hreflang="zh">不转换</a></li><li id="ca-varlang-1"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-hans" lang="zh-Hans" hreflang="zh-Hans">简体</a></li><li id="ca-varlang-2"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-hant" lang="zh-Hant" hreflang="zh-Hant">繁體</a></li><li id="ca-varlang-3"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-cn" lang="zh-Hans-CN" hreflang="zh-Hans-CN">大陆简体</a></li><li id="ca-varlang-4"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-hk" lang="zh-Hant-HK" hreflang="zh-Hant-HK">香港繁體</a></li><li id="ca-varlang-5"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-mo" lang="zh-Hant-MO" hreflang="zh-Hant-MO">澳門繁體</a></li><li id="ca-varlang-6"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-my" lang="zh-Hans-MY" hreflang="zh-Hans-MY">大马简体</a></li><li id="ca-varlang-7"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-sg" lang="zh-Hans-SG" hreflang="zh-Hans-SG">新加坡简体</a></li><li id="ca-varlang-8"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;variant=zh-tw" lang="zh-Hant-TW" hreflang="zh-Hant-TW">台灣正體</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>视图</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84">阅读</a></li><li id="ca-viewsource" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;action=edit" title="本页面受到保护。您可以查看其源代码[e]" accesskey="e">查看源代码</a></li><li id="ca-history" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;action=history" title="本页面过去的版本[h]" accesskey="h">查看历史</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>更多</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">搜索</label>
+	</h3>
+	<form action="/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="搜索Stardew Valley Wiki" title="搜索Stardew Valley Wiki[f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:搜索">
+			<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="前往" title="若相同标题存在，则直接前往该页面" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="访问首页" class="mw-wiki-logo" href="/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>导航</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/Stardew_Valley_Wiki" title="访问首页[z]" accesskey="z">首页</a></li><li id="n-recentchanges"><a href="/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki最近更改的列表[r]" accesskey="r">最近更改</a></li><li id="n-.E6.9C.AA.E7.BF.BB.E8.AF.91.E7.9A.84.E9.A1.B5.E9.9D.A2"><a href="/Category:%E6%9C%AA%E7%BF%BB%E8%AF%91%E7%9A%84%E9%A1%B5%E9%9D%A2">未翻译的页面</a></li><li id="n-.E5.B8.AE.E5.8A.A9:.E7.BC.96.E8.BE.91.E5.85.A5.E9.97.A8"><a href="/Help:%E7%BC%96%E8%BE%91%E5%85%A5%E9%97%A8">帮助:编辑入门</a></li><li id="n-randompage"><a href="/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面[x]" accesskey="x">随机页面</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-链接" class="vector-menu vector-menu-portal portal" aria-labelledby="p-链接-label" role="navigation" 
+	 >
+	<h3 id="p-链接-label">
+		<span>链接</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-.E5.AE.98.E6.96.B9.E7.BD.91.E7.AB.99"><a href="https://stardewvalley.net" rel="nofollow">官方网站</a></li><li id="n-.E5.AE.98.E6.96.B9.E8.AE.BA.E5.9D.9B"><a href="https://forums.stardewvalley.net/" rel="nofollow">官方论坛</a></li><li id="n-.E5.AE.98.E6.96.B9.E5.95.86.E5.93.81"><a href="https://www.stardewvalley.net/shop/" rel="nofollow">官方商品</a></li><li id="n-.E7.A4.BE.E4.BA.A4.E5.AA.92.E4.BD.93"><a href="https://www.stardewvalley.net/links/" rel="nofollow">社交媒体</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84" title="所有链接至本页面的wiki页面的列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="//stardewvalleywiki.com/Special:Upload" title="上传文件[u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;oldid=51142" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;action=info" title="关于此页面的更多信息">页面信息</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>其他语言</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-en"><a href="https://stardewvalleywiki.com/Modding:Modder_Guide/Get_Started" title="Modding:Modder Guide/Get Started – English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.stardewvalleywiki.com/Modding:Gu%C3%ADa_del_Modder/Introducci%C3%B3n" title="Modding:Guía del Modder/Introducción – español" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.stardewvalleywiki.com/Modding:Guide_du_Moddeur/Commencer" title="Modding:Guide du Moddeur/Commencer – français" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.stardewvalleywiki.com/Modifica%C3%A7%C3%B5es:Guia_do_Modder/Come%C3%A7ando" title="Modificações:Guia do Modder/Começando – português" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.stardewvalleywiki.com/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/%D0%9F%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%BF%D0%B0%D1%8F_%D0%BA_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5" title="Модификации:Руководство мододела/Приступая к работе – русский" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.stardewvalleywiki.com/Modlama:Mod_Rehberi/Ba%C5%9Flang%C4%B1%C3%A7_K%C4%B1lavuzu" title="Modlama:Mod Rehberi/Başlangıç Kılavuzu – Türkçe" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li></ul>
+		
+	</div>
+</nav>
+
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> 此页面最后编辑于2025年3月10日 (星期一) 03:35。</li>
+		<li id="footer-info-copyright">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Stardew Valley Wiki:隐私政策">隐私政策</a></li>
+		<li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" title="Stardew Valley Wiki:关于">关于Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Stardew Valley Wiki:免责声明">免责声明</a></li>
+		<li id="footer-places-mobileview"><a href="//zh.stardewvalleywiki.com/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%88%9B%E5%BB%BA_SMAPI_%E6%A8%A1%E7%BB%84&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">手机版视图</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.104","walltime":"2.419","ppvisitednodes":{"value":165,"limit":1000000},"postexpandincludesize":{"value":2729,"limit":2097152},"templateargumentsize":{"value":717,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":12768,"limit":5000000},"timingprofile":["100.00% 2193.414      1 -total","  0.07%    1.504      2 Template:Github","  0.07%    1.472      1 模组:制作指南/header","  0.05%    1.017      1 Template:Collapse"]},"cachereport":{"timestamp":"20250321053341","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":2675});});</script></body></html>
+

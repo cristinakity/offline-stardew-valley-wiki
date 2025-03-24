@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Модификации:Руководство мододела/API/Content — Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"9b1cfde02db524cc13a52eca","wgCSPNonce":!1,"wgCanonicalNamespace":"Модификации","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Модификации:Руководство_мододела/API/Content","wgTitle":"Руководство мододела/API/Content","wgCurRevisionId":24542,"wgRevisionId":24542,"wgArticleId":2228,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":
+"Модификации:Руководство_мододела/API/Content","wgRelevantArticleId":2228,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready",
+"mediawiki.page.gallery.styles":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"ru"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=ru&amp;modules=ext.pygments%7Cmediawiki.hlist%7Cmediawiki.page.gallery.styles%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="/mediawiki/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="Создание SMAPI-модов"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (ru)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//ru.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Модификации:Руководство мододела/API/Content — Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://ru.stardewvalleywiki.com/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Content"/>
+<meta property="og:description" content="Создание SMAPI-модов"/>
+<meta property="og:image" content="https://ru.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2024-12-03T23:35:27Z"/>
+<meta property="article:published_time" content="2024-12-03T23:35:27Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Модификации:Руководство мододела/API/Content — Stardew Valley Wiki"/>
+<meta property="twitter:description" content="Создание SMAPI-модов"/>
+<meta property="twitter:image" content="https://ru.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u041c\u043e\u0434\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438:\u0420\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u043c\u043e\u0434\u043e\u0434\u0435\u043b\u0430\/API\/Content \u2014 Stardew Valley Wiki","headline":"\u041c\u043e\u0434\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438:\u0420\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u043c\u043e\u0434\u043e\u0434\u0435\u043b\u0430\/API\/Content \u2014 Stardew Valley Wiki","mainEntityOfPage":"\u041c\u043e\u0434\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438:\u0420\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u043c\u043e\u0434\u043e\u0434\u0435\u043b\u0430\/API\/Content","identifier":"https:\/\/ru.stardewvalleywiki.com\/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0\/API\/Content","url":"https:\/\/ru.stardewvalleywiki.com\/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0\/API\/Content","description":"\u0421\u043e\u0437\u0434\u0430\u043d\u0438\u0435 SMAPI-\u043c\u043e\u0434\u043e\u0432","dateModified":"2024-12-03T23:35:27Z","datePublished":"2024-12-03T23:35:27Z","image":{"@type":"ImageObject","url":"https:\/\/ru.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/ru.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/ru.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/ru.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/ru.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/ru.stardewvalleywiki.com\/mediawiki\/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Модификации_Руководство_мододела_API_Content rootpage-Модификации_Руководство_мододела stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Открыть главное меню" data-event-name="ui.mainmenu">Открыть главное меню</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Главная</span></a>
+			</li>
+			<li class="">
+			    <a href="/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Случайная</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="/mediawiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%3A%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE+%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0%2FAPI%2FContent" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Войти</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="/mediawiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8_%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8&amp;returnto=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%3A%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE+%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0%2FAPI%2FContent" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Настройки</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" class="" data-event-name=""><span>О Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" class="" data-event-name=""><span>Отказ от ответственности</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Искать в Stardew Valley Wiki" aria-label="Искать в Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="Пользовательская навигация">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Найти</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Модификации:Руководство мододела/API/Content</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:MobileLanguages/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Content" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="Язык">Язык</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="/mediawiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%3A%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE+%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0%2FAPI%2FContent" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="Следить">Следить</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Content&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="Редактировать ведущий раздел этой страницы">Править</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="ru" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><table class="alert" id="construction">
+
+<tbody><tr>
+<td style="padding-right: 12px;"><a href="/%D0%A4%D0%B0%D0%B9%D0%BB:Robin_building.png" class="image"><img alt="Robin building.png" src="https://stardewvalleywiki.com/mediawiki/images/2/22/Robin_building.png" decoding="async" width="90" height="131"></a>
+</td>
+<td><style data-mw-deduplicate="TemplateStyles:r26502">.mw-parser-output .decorativequotemark{font-family:"Georgia","Times New Roman","Times",serif;font-size:3em;line-height:0.9;font-weight:bold;color:rgb(41,129,178);border-right:1px solid rgb(47,148,204);padding:0 0.1em 0.1em 0.2em}.mw-parser-output .quotetext{font-family:"Georgia","Times New Roman","Times",serif;font-size:1.1em;font-style:italic;line-height:1.5em;padding-left:12px}.mw-parser-output .quotesource{text-align:left;font-size:0.9em;font-style:italic;margin-top:0;padding-left:120px}</style>
+<table>
+
+<tbody><tr>
+<td rowspan="2" class="decorativequotemark">«
+</td>
+<td class="quotetext">«Предстоит ещё много работы...»
+</td></tr>
+<tr>
+<td class="quotesource">— Робин
+</td></tr>
+</tbody></table>
+<p><span style="font-size: larger;"><b>Неполный перевод</b></span>
+</p><p>Эта статья или её часть до сих пор не переведены на русский язык.
+Вы можете оказать помощь в переводе путем ее <a rel="nofollow" class="external text" href="//ru.stardewvalleywiki.com/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Content&amp;action=edit">редактирования</a>.<br>
+<span style="font-size: smaller;">Последний раз редактировалось <a href="/mediawiki/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Quicksilver&amp;action=edit&amp;redlink=1" class="new" title="Участник:Quicksilver (страница не существует)">Quicksilver</a> в 2024-12-03 23:35:27.</span>
+</p>
+</td></tr></tbody></table>
+<div style="float: right; border: 2px solid rgb(0, 116, 72); background: #A1DEE2; padding: 0.75em; padding-top: 0.5em; margin: 0 0 2em 2em;">
+<p><span style="font-size: larger;"><b>Создание SMAPI-модов</b> <a href="/%D0%A4%D0%B0%D0%B9%D0%BB:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25"></a></span>
+</p>
+<hr>
+<ul><li><a href="/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/%D0%9F%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%BF%D0%B0%D1%8F_%D0%BA_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5" title="Модификации:Руководство мододела/Приступая к работе">Приступая к работе</a></li>
+<li><a href="/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B_%D0%B8%D0%B3%D1%80%D1%8B" title="Модификации:Руководство мододела/Основы игры">Основы игры</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/%D0%A2%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/Тестирование и отладка (страница не существует)">Тестирование и отладка</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/Публикация (страница не существует)">Публикация</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API (страница не существует)">Применение API</a>
+<dl><dd>Базовые API SMAPI:
+<ul><li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Mod_structure&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Mod structure (страница не существует)">Структура мода</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Manifest&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Manifest (страница не существует)">Манифест</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Events&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Events (страница не существует)">События</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Config&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Config (страница не существует)">Конфигурация</a></li>
+<li><a class="mw-selflink selflink">Загрузка и правка контента</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Data&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Data (страница не существует)">Данные</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Input&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Input (страница не существует)">Инструменты ввода</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Logging&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Logging (страница не существует)">Ведение журнала</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Reflection&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Reflection (страница не существует)">Рефлексия</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Multiplayer&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Multiplayer (страница не существует)">Мультиплеер</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Translation&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Translation (страница не существует)">Перевод</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Update_checks&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Update checks (страница не существует)">Проверка обновлений</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Utilities&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Utilities (страница не существует)">Утилиты</a></li></ul></dd>
+<dd>Расширенные API SMAPI:
+<ul><li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Content_Packs&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Content Packs (страница не существует)">Контент-паки</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Console&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Console (страница не существует)">Консольные команды модов</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Integrations&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Integrations (страница не существует)">Интеграции модов</a></li>
+<li><a href="/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Harmony&amp;action=edit&amp;redlink=1" class="new" title="Модификации:Руководство мододела/API/Harmony (страница не существует)">Патчер Harmony</a></li></ul></dd></dl></li>
+<li><a href="/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F#.D0.9F.D1.80.D0.BE.D0.B4.D0.B2.D0.B8.D0.BD.D1.83.D1.82.D1.8B.D0.B5_.D1.82.D0.B5.D0.BC.D1.8B" title="Модификации:Главная">Специализированные гайды</a></li></ul>
+</div><p>← <span style="font-size: smaller;"><a href="/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F" title="Модификации:Главная">Модификации:Главная</a></span>
+</p><p>The content API lets you read custom assets, or read/edit/replace game assets.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Intro"><span class="tocnumber">1</span> <span class="toctext">Intro</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What.27s_an_.27asset.27.3F"><span class="tocnumber">1.1</span> <span class="toctext">What's an 'asset'?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#What.27s_an_.27asset_name.27.3F"><span class="tocnumber">1.2</span> <span class="toctext">What's an 'asset name'?</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#What_does_the_content_API_do.3F"><span class="tocnumber">1.3</span> <span class="toctext">What does the content API do?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Read_assets"><span class="tocnumber">2</span> <span class="toctext">Read assets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Read_mod_assets"><span class="tocnumber">2.1</span> <span class="toctext">Read mod assets</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Get_actual_mod_asset_keys"><span class="tocnumber">2.2</span> <span class="toctext">Get actual mod asset keys</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Read_content_assets"><span class="tocnumber">2.3</span> <span class="toctext">Read content assets</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Replace_a_game_asset"><span class="tocnumber">3</span> <span class="toctext">Replace a game asset</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Basics"><span class="tocnumber">3.1</span> <span class="toctext">Basics</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Replace_an_image_file"><span class="tocnumber">3.2</span> <span class="toctext">Replace an image file</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Replace_a_map_file"><span class="tocnumber">3.3</span> <span class="toctext">Replace a map file</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Add_a_new_asset"><span class="tocnumber">3.4</span> <span class="toctext">Add a new asset</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Edit_a_game_asset"><span class="tocnumber">4</span> <span class="toctext">Edit a game asset</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Basics_2"><span class="tocnumber">4.1</span> <span class="toctext">Basics</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Example_data_edit"><span class="tocnumber">4.2</span> <span class="toctext">Example data edit</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Edit_any_file"><span class="tocnumber">4.3</span> <span class="toctext">Edit any file</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Edit_a_dictionary"><span class="tocnumber">4.4</span> <span class="toctext">Edit a dictionary</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Edit_an_image"><span class="tocnumber">4.5</span> <span class="toctext">Edit an image</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Edit_a_map"><span class="tocnumber">4.6</span> <span class="toctext">Edit a map</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Advanced"><span class="tocnumber">5</span> <span class="toctext">Advanced</span></a>
+<ul>
+<li class="toclevel-2 tocsection-22"><a href="#Use_IRawTextureData"><span class="tocnumber">5.1</span> <span class="toctext">Use IRawTextureData</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Compare_asset_names"><span class="tocnumber">5.2</span> <span class="toctext">Compare asset names</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Cache_invalidation"><span class="tocnumber">5.3</span> <span class="toctext">Cache invalidation</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Patch_helper_for_custom_assets"><span class="tocnumber">5.4</span> <span class="toctext">Patch helper for custom assets</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Let_other_mods_edit_your_internal_assets"><span class="tocnumber">5.5</span> <span class="toctext">Let other mods edit your internal assets</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Intro">Intro</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<h3 class="in-block"><span id="What's_an_'asset'?"></span><span class="mw-headline" id="What.27s_an_.27asset.27.3F">What's an 'asset'?</span></h3>
+<p>An <i>asset</i> is one image, map, or data structure provided to the game. The game stores its default assets in its <samp>Content</samp> folder, though mods can have custom assets too. For example, all of Abigail's portraits are stored in one asset inside <samp>Content\Portraits\Abigail.xnb</samp>. If you <a href="/mediawiki/index.php?title=Modding:Editing_XNB_files&amp;action=edit&amp;redlink=1" class="new" title="Modding:Editing XNB files (страница не существует)">unpack that file</a>, you'll see it contains an image file:
+</p><p><a href="/%D0%A4%D0%B0%D0%B9%D0%BB:Modding_-_creating_an_XNB_mod_-_example_portraits.png" class="image"><noscript><img alt="Modding - creating an XNB mod - example portraits.png" src="https://stardewvalleywiki.com/mediawiki/images/a/a9/Modding_-_creating_an_XNB_mod_-_example_portraits.png" decoding="async" width="128" height="320"></noscript><span class="lazy-image-placeholder" style="width: 128px;height: 320px;" data-src="https://stardewvalleywiki.com/mediawiki/images/a/a9/Modding_-_creating_an_XNB_mod_-_example_portraits.png" data-alt="Modding - creating an XNB mod - example portraits.png" data-width="128" data-height="320"> </span></a>
+</p><p>See <a href="/mediawiki/index.php?title=Modding:Editing_XNB_files&amp;action=edit&amp;redlink=1" class="new" title="Modding:Editing XNB files (страница не существует)">Editing XNB files</a> for more info about asset files.
+</p>
+<h3 class="in-block"><span id="What's_an_'asset_name'?"></span><span class="mw-headline" id="What.27s_an_.27asset_name.27.3F">What's an 'asset name'?</span></h3>
+<p>An <i>asset name</i> identifies an asset. For a game asset, this is the file path relative to the game's <samp>Content</samp> folder <i>without</i> the <samp>.xnb</samp> extension. For example:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>content file
+</th>
+<th>asset name
+</th></tr>
+<tr>
+<td><samp>Content\Portraits\Abigail.xnb</samp>
+</td>
+<td><samp>Portraits/Abigail</samp>
+</td></tr>
+<tr>
+<td><samp>Content\Maps\Desert.ja-JA.xnb</samp>
+</td>
+<td><samp>Maps/Desert.ja-JA</samp>
+</td></tr></tbody></table>
+<p>Note that in <a href="/mediawiki/index.php?title=Modding:Content_Patcher&amp;action=edit&amp;redlink=1" class="new" title="Modding:Content Patcher (страница не существует)">Content Patcher packs</a>, the asset name <i>doesn't</i> include the language code. For example, the Content Patcher asset name in the second row above is <samp>Maps/Desert</samp>.
+</p>
+<h3 class="in-block"><span id="What_does_the_content_API_do?"></span><span class="mw-headline" id="What_does_the_content_API_do.3F">What does the content API do?</span></h3>
+<p>SMAPI handles content loading for the game. This lets you...
+</p>
+<ul><li>read data, images, or maps from your mod folder (with support for <samp>.json</samp>, <samp>.png</samp>, <samp>.tbin</samp>, <samp>.tmx</samp>, and <samp>.xnb</samp> files);</li>
+<li>read assets from the game's <samp>Content</samp> folder;</li>
+<li>make changes to game assets (without changing the actual files);</li>
+<li>provide new assets to the game.</li></ul>
+<p>The rest of this page explains each one in more detail.
+</p>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Read_assets">Read assets</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<h3 class="in-block"><span class="mw-headline" id="Read_mod_assets">Read mod assets</span></h3>
+<p>You can read custom assets from your mod folder by specifying its path (relative to your mod folder) and type. For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// read an image file</span>
+<span class="n">Texture2D</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Texture2D</span><span class="p">&gt;(</span><span class="s">"assets/texture.png"</span><span class="p">);</span>
+<span class="c1">// alternatively</span>
+<span class="n">IRawTextureData</span> <span class="n">texture</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">IRawTextureData</span><span class="p">&gt;(</span><span class="s">"assets/texture.png"</span><span class="p">);</span>
+
+<span class="c1">// read a map file</span>
+<span class="n">Map</span> <span class="n">map</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Map</span><span class="p">&gt;(</span><span class="s">"assets/map.tmx"</span><span class="p">);</span>
+
+<span class="c1">// read a data file</span>
+<span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">data</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;&gt;(</span><span class="s">"assets/data.json"</span><span class="p">);</span>
+</pre></div>
+<p>The supported file types are...
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>file extension
+</th>
+<th>in-game type
+</th>
+<th>notes
+</th></tr>
+<tr>
+<td><samp>.xnb</samp>
+</td>
+<td><i>any</i>
+</td>
+<td>A packed file, like those in the game's <samp>Content</samp> folder. Not recommended since it's harder to edit and maintain.
+</td></tr>
+<tr>
+<td><samp>.json</samp>
+</td>
+<td><samp><i>any</i></samp>
+</td>
+<td>A data file, typically used to store <samp>Dictionary&lt;int, string&gt;</samp> or <samp>Dictionary&lt;string, string&gt;</samp> data.
+</td></tr>
+<tr>
+<td><samp>.png</samp>
+</td>
+<td><samp><a rel="nofollow" class="external text" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Texture2D.html">Texture2D</a></samp>
+</td>
+<td>An image file. You can use this to load textures, spritesheets, tilesheets, etc.
+</td></tr>
+<tr>
+<td><samp>.tbin</samp> or <samp>.tmx</samp>
+</td>
+<td><samp>xTile.Map</samp>
+</td>
+<td>A map file, which can be used to create or modify an in-game location. SMAPI will automatically match tilesheets to image files in the same folder as the map if they exist; otherwise the game will check the <samp>Content</samp> folders for them.
+</td></tr></tbody></table>
+<p>Some usage notes:
+</p>
+<ul><li>The normal convention is to have them in an <samp>assets</samp> subfolder, though that's not required.</li>
+<li>Don't worry about which path separators you use; SMAPI will normalize them automatically.</li>
+<li>To avoid performance issues, don't call <samp>content.Load&lt;T&gt;</samp> repeatedly in draw code. Instead, load your asset once and reuse it.</li></ul>
+<h3 class="in-block"><span class="mw-headline" id="Get_actual_mod_asset_keys">Get actual mod asset keys</span></h3>
+<p>When you load an asset from your mod folder, SMAPI stores it with an asset name that uniquely identifies it. If you need to pass the asset name to game code, you can retrieve the actual asset name:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">tilesheet</span><span class="p">.</span><span class="n">ImageSource</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">GetActualAssetKey</span><span class="p">(</span><span class="s">"assets/tilesheet.png"</span><span class="p">);</span>
+</pre></div>
+<h3 class="in-block"><span class="mw-headline" id="Read_content_assets">Read content assets</span></h3>
+<p>You can also read assets from the game folder:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Texture2D</span> <span class="n">portraits</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">GameContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Texture2D</span><span class="p">&gt;(</span><span class="s">"Portraits/Abigail"</span><span class="p">);</span>
+</pre></div>
+<p>Note that this requires the <a href="#What.27s_an_.27asset.27.3F">asset name</a>, <i>not</i> a filename.
+</p>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Replace_a_game_asset">Replace a game asset</span></h2><section class="mf-section-3 collapsible-block" id="mf-section-3">
+<h3 class="in-block"><span class="mw-headline" id="Basics">Basics</span></h3>
+<p>You can replace an asset entirely by providing the asset through the <a href="/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Events&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/APIs/Events (страница не существует)"><samp>AssetRequested</samp> event</a> (see <a href="/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Events&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/APIs/Events (страница не существует)">how to use events</a>). SMAPI will raise the event every time an asset is loaded (which may happen multiple times per asset), so you can replace the asset. If any mod provides the asset, the original file won't be read at all and won't be changed.
+</p><p>There are two important concepts when replacing assets:
+</p>
+<dl><dd><dl><dt>Load priority</dt>
+<dd>Logically there's only one initial version of an asset. If multiple mods want to load the same asset, SMAPI will use the load priority you specify in the load methods to choose one (like <samp>AssetLoadPriority.Medium</samp> in <code>e.LoadFromModFile&lt;Map&gt;("assets/Farm.tmx", AssetLoadPriority.Medium)</code>). If multiple mods have the same high priority, SMAPI will choose the one that was registered first. You can use one of the preset levels like <samp>AssetLoadPriority.Medium</samp>, or add arbitrary offsets like <samp>AssetLoadPriority.Medium + 1</samp> (which is higher-priority than <samp>AssetLoadPriority.Medium</samp> but lower than <samp>AssetLoadPriority.High</samp>.</dd></dl></dd></dl>
+<dl><dd><dl><dd><samp>AssetLoadPriority.Exclusive</samp> is a special case. This declares that your load operation is mandatory and shouldn't be skipped if another mod loads it too. This is discouraged since it reduces mod compatibility. If multiple mods specify <samp>AssetLoadPriority.Exclusive</samp>, SMAPI will log an error and apply <i>none</i> of them.</dd></dl></dd></dl>
+<dl><dd><dl><dt>Deferred loads</dt>
+<dd>The load doesn't happen right away. When you call <samp>e.LoadFrom</samp> or <samp>e.LoadFromModFile</samp>, you're telling SMAPI how to load the asset when it's ready to do that. SMAPI will call every mod listening to the event first, then use the information provided to check if the asset exists or provide the asset (depending on which method the game called).</dd></dl></dd></dl>
+<h3 class="in-block"><span class="mw-headline" id="Replace_an_image_file">Replace an image file</span></h3>
+<p>For example, here's a mod which replaces Abigail's portraits with a custom version from its mod folder:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">internal</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;inheritdoc/&gt;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// &lt;inheritdoc cref="IContentEvents.AssetRequested"/&gt;</span>
+    <span class="c1">/// &lt;param name="sender"&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name="e"&gt;The event data.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Portraits/Abigail"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">LoadFromModFile</span><span class="p">&lt;</span><span class="n">Texture2D</span><span class="p">&gt;(</span><span class="s">"assets/abigail-portraits.png"</span><span class="p">,</span> <span class="n">AssetLoadPriority</span><span class="p">.</span><span class="n">Medium</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>See IntelliSense on the <samp>e</samp> parameter for all the available options and usage.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Replace_a_map_file">Replace a map file</span></h3>
+<p>You can use the <samp>AssetRequested</samp> event to load custom maps too. When you load a map file, and an unpacked tilesheet is present in the mod folder (relative to the map file), SMAPI will automatically link the map to that file and handle loading it too. If the tilesheet filename starts with a season and underscore, the game will apply its normal seasonal logic to it too.
+</p><p>For example, let's say you have a mod with this structure:
+</p>
+<pre>📁 ExampleMod/
+    🗎 ExampleMapMod.dll
+    🗎 manifest.json
+    📁 assets/
+        🗎 Farm.tmx
+        🗎 fall_customTilesheet.png
+        🗎 spring_customTilesheet.png
+        🗎 summer_customTilesheet.png
+        🗎 winter_customTilesheet.png
+</pre>
+<p>You can load the custom map like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">internal</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;inheritdoc/&gt;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// &lt;inheritdoc cref="IContentEvents.AssetRequested"/&gt;</span>
+    <span class="c1">/// &lt;param name="sender"&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name="e"&gt;The event data.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Maps/Farm"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">LoadFromModFile</span><span class="p">&lt;</span><span class="n">Map</span><span class="p">&gt;(</span><span class="s">"assets/Farm.tmx"</span><span class="p">,</span> <span class="n">AssetLoadPriority</span><span class="p">.</span><span class="n">Medium</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>That's it! SMAPI will detect a reference to <samp>spring_customTilesheet.png</samp>, find the file relative to the map file, and load it too. When the season changes in-game, SMAPI will automatically switch it to <samp>summer_customTilesheet.png</samp>, etc. The other tilesheet references will be left untouched (since there's no local file), and use the game asset files.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Add_a_new_asset">Add a new asset</span></h3>
+<p>Providing a new asset is exactly like replacing an existing one (see previous sections). For example, this code adds a new dialogue file for a custom NPC:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">internal</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;inheritdoc/&gt;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// &lt;inheritdoc cref="IContentEvents.AssetRequested"/&gt;</span>
+    <span class="c1">/// &lt;param name="sender"&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name="e"&gt;The event data.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Characters/Dialogue/John"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">LoadFrom</span><span class="p">(</span>
+                <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span>
+                    <span class="p">{</span>
+<span class="na">                        ["Introduction"]</span> <span class="p">=</span> <span class="s">"Hi there! My name is Jonathan."</span>
+                    <span class="p">};</span>
+                <span class="p">},</span>
+                <span class="n">AssetLoadPriority</span><span class="p">.</span><span class="n">Medium</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(4)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Edit_a_game_asset">Edit a game asset</span></h2><section class="mf-section-4 collapsible-block" id="mf-section-4">
+<h3 class="in-block"><span class="mw-headline" id="Basics_2">Basics</span></h3>
+<p>You can edit any game asset after it's loaded (but before it's provided to the game), without changing the original files. You do this by adding your edits in the <a href="/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Events&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/APIs/Events (страница не существует)"><samp>AssetRequested</samp> event</a> (see <a href="/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Events&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/APIs/Events (страница не существует)">how to use events</a>). SMAPI will raise the event every time an asset is loaded (which may happen multiple times per asset), so you can edit the asset.
+</p><p>There are two important concepts when replacing assets:
+</p>
+<dl><dd><dl><dt>Edit order</dt>
+<dd>When mods apply multiple edits to the same asset, they're applied sequentially in the order they were registered. You can optionally provide an edit priority when you call the <samp>e.Edit</samp> method, to apply your edit before or after other edits. You can use one of the preset levels like <samp>AssetEditPriority.Default</samp>, or add arbitrary offsets like <samp>AssetEditPriority.Default + 1</samp> (which is higher-priority than <samp>AssetEditPriority.Default</samp> but lower than <samp>AssetEditPriority.Late</samp>).</dd></dl></dd></dl>
+<dl><dd><dl><dt>Deferred edits</dt>
+<dd>The edit doesn't happen right away. When you call <samp>e.Edit</samp>, you're telling SMAPI how to apply your edit when it's ready to do that. SMAPI will call every mod listening to the event first, then use all the information provided to edit the asset when it's loaded.</dd></dl></dd></dl>
+<h3 class="in-block"><span class="mw-headline" id="Example_data_edit">Example data edit</span></h3>
+<p>For example, here's a mod which doubles the sale price of all items:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">internal</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;inheritdoc/&gt;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// &lt;inheritdoc cref="IContentEvents.AssetRequested"/&gt;</span>
+    <span class="c1">/// &lt;param name="sender"&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name="e"&gt;The event data.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">NameWithoutLocale</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Data/Objects"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="n">asset</span><span class="p">.</span><span class="n">AsDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ObjectData</span><span class="p">&gt;().</span><span class="n">Data</span><span class="p">;</span>
+
+                <span class="k">foreach</span> <span class="p">((</span><span class="kt">string</span> <span class="n">itemID</span><span class="p">,</span> <span class="n">ObjectData</span> <span class="n">itemData</span><span class="p">)</span> <span class="k">in</span> <span class="n">data</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">itemData</span><span class="p">.</span><span class="n">Price</span> <span class="p">*=</span> <span class="m">2</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>The <samp>IAssetData asset</samp> argument from the <samp>Edit</samp> method has some helpers to make editing data easier, documented below. (See IntelliSense for more info.)
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Edit_any_file">Edit any file</span></h3>
+<p>These fields/methods are available directly on the <samp>asset</samp> from the <samp>Edit</samp> method for any asset type, and also available through the helpers listed below.
+</p>
+<dl><dd><dl><dt>Data</dt>
+<dd>A reference to the loaded asset data.</dd></dl></dd></dl>
+<dl><dd><dl><dt>ReplaceWith</dt>
+<dd>Replace the entire asset with a new version. You shouldn't do that in most cases though; see <i><a href="#Replace_a_game_asset">replace a game asset</a></i> instead, or use one of the helpers below.</dd></dl></dd></dl>
+<h3 class="in-block"><span class="mw-headline" id="Edit_a_dictionary">Edit a dictionary</span></h3>
+<p>A <i>dictionary</i> is a key/value data structure, represented like this in JSON exports:
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+   <span class="nt">"key A"</span><span class="p">:</span> <span class="s2">"value A"</span><span class="p">,</span>
+   <span class="nt">"key B"</span><span class="p">:</span> <span class="s2">"value B"</span><span class="p">,</span>
+   <span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+<p>You can get a dictionary helper using <samp>asset.AsDictionary&lt;TKey, string&gt;()</samp>, where <samp>TKey</samp> is replaced with the key type (usually <samp>int</samp> or <samp>string</samp>).
+</p>
+<dl><dd><dl><dt>Data</dt>
+<dd>A reference to the loaded data. For example, here's how to add or replace a specific entry to the above example:</dd>
+<dd><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>    <span class="c1">/// &lt;inheritdoc cref="IContentEvents.AssetRequested"/&gt;</span>
+    <span class="c1">/// &lt;param name="sender"&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name="e"&gt;The event data.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">NameWithoutLocale</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Location/Of/The/Asset"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                 <span class="kt">var</span> <span class="n">editor</span> <span class="p">=</span> <span class="n">asset</span><span class="p">.</span><span class="n">AsDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;();</span>
+                 <span class="n">editor</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="s">"Key C"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"Value C"</span><span class="p">;</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div></dd></dl></dd></dl>
+<h3 class="in-block"><span class="mw-headline" id="Edit_an_image">Edit an image</span></h3>
+<p>When editing an image file, you can get a helper using <samp>asset.AsImage()</samp>.
+</p>
+<dl><dd><dl><dt>Data</dt>
+<dd>A reference to the loaded image. You can directly edit each pixel in the image through this field, though that's rarely needed.</dd></dl></dd></dl>
+<dl><dd><dl><dt>PatchImage</dt>
+<dd>Edit or replace part of the image. This is basically a copy &amp; paste operation, so the source texture is applied over the loaded texture. For example:</dd>
+<dd><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>    <span class="c1">/// &lt;inheritdoc cref="IContentEvents.AssetRequested"/&gt;</span>
+    <span class="c1">/// &lt;param name="sender"&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name="e"&gt;The event data.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">NameWithoutLocale</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Location/Of/The/Asset"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                  <span class="kt">var</span> <span class="n">editor</span> <span class="p">=</span> <span class="n">asset</span><span class="p">.</span><span class="n">AsImage</span><span class="p">();</span>
+                  <span class="n">IRawTextureData</span> <span class="n">sourceImage</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">IRawTextureData</span><span class="p">&gt;(</span><span class="s">"custom-texture.png"</span><span class="p">);</span>
+                  <span class="n">editor</span><span class="p">.</span><span class="n">PatchImage</span><span class="p">(</span><span class="n">sourceImage</span><span class="p">,</span> <span class="n">targetArea</span><span class="p">:</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="m">300</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">));</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div></dd></dl></dd></dl>
+<dl><dd><dl><dd>Available method arguments:</dd></dl></dd></dl>
+<dl><dd><dl><dd><table class="wikitable">
+
+<tbody><tr>
+<th>argument
+</th>
+<th>usage
+</th></tr>
+<tr>
+<td><samp>source</samp>
+</td>
+<td>The source image to copy &amp; paste onto the loaded image. May be a <samp>Texture2D</samp> or a <samp>IRawTextureData</samp>
+</td></tr>
+<tr>
+<td><samp>sourceArea</samp>
+</td>
+<td><i>(optional)</i> The pixel area within the source image to copy (or omit to use the entire source image). This must fit within the target image.
+</td></tr>
+<tr>
+<td><samp>targetArea</samp>
+</td>
+<td><i>(optional)</i> The pixel area within the loaded image to replace (or omit to replace starting from the top-left corner up to the full source size).
+</td></tr>
+<tr>
+<td><samp>patchMode</samp>
+</td>
+<td><i>(optional)</i> How the image should be patched. The possible values...
+<ul><li><samp>PatchMode.Replace</samp> (default): erase the original content within the area before pasting in the new content;</li>
+<li><samp>PatchMode.Overlay</samp>: draw the new content over the original content, so the original content shows through transparent or semi-transparent pixels.</li></ul>
+</td></tr></tbody></table></dd></dl></dd></dl>
+<dl><dd><dl><dt>ExtendImage</dt>
+<dd>Extend the image if needed to fit the given size. Note that <b>resizing the image is an expensive operation</b>, creates a new texture instance, and extending a spritesheet horizontally may cause game errors or bugs. For example:</dd>
+<dd><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+   <span class="kt">var</span> <span class="n">editor</span> <span class="p">=</span> <span class="n">asset</span><span class="p">.</span><span class="n">AsImage</span><span class="p">();</span>
+
+   <span class="c1">// make sure the image is at least 1000px high</span>
+   <span class="n">editor</span><span class="p">.</span><span class="n">ExtendImage</span><span class="p">(</span><span class="n">minWidth</span><span class="p">:</span> <span class="n">editor</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span> <span class="n">minHeight</span><span class="p">:</span> <span class="m">1000</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div></dd>
+<dd>Available method arguments:</dd></dl></dd></dl>
+<dl><dd><dl><dd><table class="wikitable">
+
+<tbody><tr>
+<th>argument
+</th>
+<th>usage
+</th></tr>
+<tr>
+<td><samp>minWidth</samp>
+</td>
+<td>The minimum desired width. If the image width is less than this value, it'll be extended on the right up to that size.
+</td></tr>
+<tr>
+<td><samp>minHeight</samp>
+</td>
+<td>The minimum desired height. If the image height is less than this value, it'll be extended from the bottom up to that size.
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h3 class="in-block"><span class="mw-headline" id="Edit_a_map">Edit a map</span></h3>
+<p>When editing a map file, you can get a helper using <samp>asset.AsMap()</samp>.
+</p>
+<dl><dd><dl><dt>Data</dt>
+<dd>A reference to the loaded map. You can directly edit the map or tiles through this field.</dd></dl></dd></dl>
+<dl><dd><dl><dt>PatchMap</dt>
+<dd>Edit or replace part of the map. This is basically a copy &amp; paste operation, so the source map is applied over the loaded map. For example:</dd>
+<dd><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+   <span class="kt">var</span> <span class="n">editor</span> <span class="p">=</span> <span class="n">asset</span><span class="p">.</span><span class="n">AsMap</span><span class="p">();</span>
+   
+   <span class="n">Map</span> <span class="n">sourceMap</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Map</span><span class="p">&gt;(</span><span class="s">"custom-map.tmx"</span><span class="p">);</span>
+   <span class="n">editor</span><span class="p">.</span><span class="n">PatchMap</span><span class="p">(</span><span class="n">sourceMap</span><span class="p">,</span> <span class="n">targetArea</span><span class="p">:</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="m">30</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">20</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div></dd></dl></dd></dl>
+<dl><dd><dl><dd>Available method arguments:</dd></dl></dd></dl>
+<dl><dd><dl><dd><table class="wikitable">
+
+<tbody><tr>
+<th>argument
+</th>
+<th>usage
+</th></tr>
+<tr>
+<td><samp>source</samp>
+</td>
+<td>The source map to copy &amp; paste onto the loaded map.
+</td></tr>
+<tr>
+<td><samp>sourceArea</samp>
+</td>
+<td><i>(optional)</i> The tile area within the source map to copy (or omit to use the entire source map). This must fit within the target map.
+</td></tr>
+<tr>
+<td><samp>targetArea</samp>
+</td>
+<td><i>(optional)</i> The tile area within the loaded map to replace (or omit to replace starting from the top-left corner up to the full source size).
+</td></tr>
+<tr>
+<td><samp>patchMode</samp>
+</td>
+<td><i>(optional)</i> How to merge tiles into the target map. The default is <code>ReplaceByLayer</code>.
+<p>For example, assume a mostly empty source map with two layers: <samp>Back</samp> (red) and <samp>Buildings</samp> (blue):<br><a href="/%D0%A4%D0%B0%D0%B9%D0%BB:SMAPI_content_API_-_map_patch_mode_-_source.png" class="image"><noscript><img alt="SMAPI content API - map patch mode - source.png" src="https://stardewvalleywiki.com/mediawiki/images/6/6a/SMAPI_content_API_-_map_patch_mode_-_source.png" decoding="async" width="193" height="193"></noscript><span class="lazy-image-placeholder" style="width: 193px;height: 193px;" data-src="https://stardewvalleywiki.com/mediawiki/images/6/6a/SMAPI_content_API_-_map_patch_mode_-_source.png" data-alt="SMAPI content API - map patch mode - source.png" data-width="193" data-height="193"> </span></a>
+</p><p>Here's how that would be merged with each patch mode (black areas are the empty void under the map):
+</p>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="/%D0%A4%D0%B0%D0%B9%D0%BB:SMAPI_content_API_-_map_patch_mode_-_overlay.png" class="image"><noscript><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/60/SMAPI_content_API_-_map_patch_mode_-_overlay.png/120px-SMAPI_content_API_-_map_patch_mode_-_overlay.png" decoding="async" width="120" height="120"></noscript><span class="lazy-image-placeholder" style="width: 120px;height: 120px;" data-src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/60/SMAPI_content_API_-_map_patch_mode_-_overlay.png/120px-SMAPI_content_API_-_map_patch_mode_-_overlay.png" data-alt="" data-width="120" data-height="120"> </span></a></div></div>
+			<div class="gallerytext">
+<p><code>Overlay</code>: only matching tiles are replaced. The red tile replaces the ground on the <samp>Back</samp> layer, but the ground is visible under the blue <samp>Buildings</samp> tile.
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="/%D0%A4%D0%B0%D0%B9%D0%BB:SMAPI_content_API_-_map_patch_mode_-_replace_by_layer.png" class="image"><noscript><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/c/cc/SMAPI_content_API_-_map_patch_mode_-_replace_by_layer.png/120px-SMAPI_content_API_-_map_patch_mode_-_replace_by_layer.png" decoding="async" width="120" height="120"></noscript><span class="lazy-image-placeholder" style="width: 120px;height: 120px;" data-src="https://stardewvalleywiki.com/mediawiki/images/thumb/c/cc/SMAPI_content_API_-_map_patch_mode_-_replace_by_layer.png/120px-SMAPI_content_API_-_map_patch_mode_-_replace_by_layer.png" data-alt="" data-width="120" data-height="120"> </span></a></div></div>
+			<div class="gallerytext">
+<p><code>ReplaceByLayer</code> <i>(default)</i>: all tiles are replaced, but only on layers that exist in the source map.
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="/%D0%A4%D0%B0%D0%B9%D0%BB:SMAPI_content_API_-_map_patch_mode_-_replace.png" class="image"><noscript><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/8/80/SMAPI_content_API_-_map_patch_mode_-_replace.png/120px-SMAPI_content_API_-_map_patch_mode_-_replace.png" decoding="async" width="120" height="120"></noscript><span class="lazy-image-placeholder" style="width: 120px;height: 120px;" data-src="https://stardewvalleywiki.com/mediawiki/images/thumb/8/80/SMAPI_content_API_-_map_patch_mode_-_replace.png/120px-SMAPI_content_API_-_map_patch_mode_-_replace.png" data-alt="" data-width="120" data-height="120"> </span></a></div></div>
+			<div class="gallerytext">
+<p><code>Replace</code>: all tiles are replaced.
+</p>
+			</div>
+		</div></li>
+</ul>
+</td></tr></tbody></table></dd></dl></dd></dl>
+<dl><dd><dl><dt>ExtendMap</dt>
+<dd>Extend the map if needed to fit the given size. Note that <b>this is an expensive operation</b> and resizes the map in-place. For example:</dd>
+<dd><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+   <span class="kt">var</span> <span class="n">editor</span> <span class="p">=</span> <span class="n">asset</span><span class="p">.</span><span class="n">AsMap</span><span class="p">();</span>
+
+   <span class="c1">// make sure the map is at least 256 tiles high</span>
+   <span class="n">editor</span><span class="p">.</span><span class="n">ExtendMap</span><span class="p">(</span><span class="n">minHeight</span><span class="p">:</span> <span class="m">256</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div></dd>
+<dd>Available method arguments:</dd></dl></dd></dl>
+<dl><dd><dl><dd><table class="wikitable">
+
+<tbody><tr>
+<th>argument
+</th>
+<th>usage
+</th></tr>
+<tr>
+<td><samp>minWidth</samp>
+</td>
+<td>The minimum desired width in tiles. If the map width is less than this value, it'll be extended on the right up to that size.
+</td></tr>
+<tr>
+<td><samp>minHeight</samp>
+</td>
+<td>The minimum desired height in tiles. If the map height is less than this value, it'll be extended from the bottom up to that size.
+</td></tr></tbody></table></dd></dl></dd></dl>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(5)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Advanced">Advanced</span></h2><section class="mf-section-5 collapsible-block" id="mf-section-5">
+<h3 class="in-block"><span class="mw-headline" id="Use_IRawTextureData">Use <samp>IRawTextureData</samp></span></h3>
+<p>When loading image data, creating a <samp>Texture2D</samp> instance or calling its <samp>GetData</samp>/<samp>SetData</samp> methods is very expensive and involves GPU calls. You can avoid that by loading images as SMAPI's <samp>IRawTextureData</samp> instead, which returns the data directly with no GPU calls. You can then pass it directly to other SMAPI APIs like <a href="/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Content&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/APIs/Content (страница не существует)"><samp>PatchImage</samp></a>.
+</p><p>For example, this mod applies an image overlay to Abigail's portrait without loading the overlay as a <samp>Texture2D</samp> instance:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">NameWithoutLocale</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Portraits/Abigail"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">editor</span> <span class="p">=</span> <span class="n">asset</span><span class="p">.</span><span class="n">AsImage</span><span class="p">();</span>
+   
+                <span class="n">IRawTextureData</span> <span class="n">overlay</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">IRawTextureData</span><span class="p">&gt;(</span><span class="s">"assets/overlay.png"</span><span class="p">);</span>
+                <span class="n">editor</span><span class="p">.</span><span class="n">PatchImage</span><span class="p">(</span><span class="n">overlay</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>You can also edit the <samp>IRawTextureData</samp> data directly before passing it to other methods. For example, this converts the texture to grayscale:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">IRawTextureData</span> <span class="n">image</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">IRawTextureData</span><span class="p">&gt;(</span><span class="s">"assets/image.png"</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="n">pixelCount</span> <span class="p">=</span> <span class="n">image</span><span class="p">.</span><span class="n">Width</span> <span class="p">*</span> <span class="n">image</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">pixelCount</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="n">Color</span> <span class="n">color</span> <span class="p">=</span> <span class="n">image</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">A</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span> <span class="c1">// ignore transparent color</span>
+
+    <span class="kt">int</span> <span class="n">grayscale</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)((</span><span class="n">color</span><span class="p">.</span><span class="n">R</span> <span class="p">*</span> <span class="m">0.3</span><span class="p">)</span> <span class="p">+</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">G</span> <span class="p">*</span> <span class="m">0.59</span><span class="p">)</span> <span class="p">+</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">B</span> <span class="p">*</span> <span class="m">0.11</span><span class="p">));</span> <span class="c1">// https://stackoverflow.com/a/596282/262123</span>
+    <span class="n">image</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">grayscale</span><span class="p">,</span> <span class="n">grayscale</span><span class="p">,</span> <span class="n">grayscale</span><span class="p">,</span> <span class="n">color</span><span class="p">.</span><span class="n">A</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>(Note: while SMAPI's implementation of IRawTextureData is exactly as long as it needs to be, this may not be the case for implementations of IRawTextureData from mods.)
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Compare_asset_names">Compare asset names</span></h3>
+<p>You can't use normal string comparison with asset names. For example, <samp>Characters/Abigail</samp> and <samp>CHARACTERS\ABIGAIL</samp> are the same asset name, but comparing them with C#'s <code>==</code> operator will return false.
+</p><p>You can use SMAPI's <samp>IAssetName</samp> type to compare asset names instead. For example, <code>assetName.IsEquivalentTo("Characters/Abigail")</code> will return true for both of the above names. There are two ways to get an <samp>IAssetName</samp> value:
+</p>
+<ul>
+<li>In content events like <samp>AssetRequested</samp>, use the <samp>e.Name</samp> or <samp>e.NameWithoutLocale</samp> property.</li>
+<li>You can parse a custom asset name string into an <samp>IAssetName</samp>:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">IAssetName</span> <span class="n">assetName</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">GameContent</span><span class="p">.</span><span class="n">ParseAssetName</span><span class="p">(</span><span class="s">"CHARACTERS/Abigail"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">assetName</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">"Characters/"</span><span class="p">))</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">assetName</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Characters/Abigail"</span><span class="p">))</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</pre></div></li>
+</ul>
+<p>If you <i>really</i> need to compare strings manually, you should normalize the asset names using <a href="/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Utilities&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/APIs/Utilities (страница не существует)"><samp>PathUtilities</samp></a> and compare case-insensitively. For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">string</span> <span class="n">assetName</span> <span class="p">=</span> <span class="s">"Characters/Dialogue/Abigail"</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">dialoguePrefix</span> <span class="p">=</span> <span class="n">PathUtilities</span><span class="p">.</span><span class="n">NormalizeAssetName</span><span class="p">(</span><span class="s">"Characters/Dialogue/"</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">isDialogue</span> <span class="p">=</span> <span class="n">assetName</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="n">dialoguePrefix</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">);</span>
+</pre></div>
+<h3 class="in-block"><span class="mw-headline" id="Cache_invalidation">Cache invalidation</span></h3>
+<p>You can reload an asset by invalidating it from the cache. It will be reloaded next time the game requests it (and mods will have another chance to intercept it), and SMAPI will automatically update references to the asset in many cases. For example, this lets you change what clothes an NPC is wearing (by invalidating their cached sprites or portraits).
+</p><p>Please be aware that in some cases a localized version of the asset will be cached and simply invalidating the default asset will not work for any language other than english.
+</p><p>Reloading assets is fairly expensive, so use this API judiciously to avoid impacting game performance. Definitely don't do this every update tick.
+</p><p>Typically you'll invalidate a specific asset key:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">helper</span><span class="p">.</span><span class="n">GameContent</span><span class="p">.</span><span class="n">InvalidateCache</span><span class="p">(</span><span class="s">"Data/ObjectInformation"</span><span class="p">);</span>
+</pre></div>
+<p>You can also invalidate assets matching a lambda:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">helper</span><span class="p">.</span><span class="n">GameContent</span><span class="p">.</span><span class="n">InvalidateCache</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span> <span class="n">asset</span><span class="p">.</span><span class="n">DataType</span> <span class="p">==</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Texture2D</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">asset</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Data/ObjectInformation"</span><span class="p">));</span>
+</pre></div>
+<h3 class="in-block"><span class="mw-headline" id="Patch_helper_for_custom_assets">Patch helper for custom assets</span></h3>
+<p>A patch helper provides utility methods for editing a given asset (<i>e.g.,</i> to merge maps or resize an image).
+</p><p>You can get a patch helper for arbitrary data. For example, this loads two map files and merges them:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Map</span> <span class="n">farm</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Map</span><span class="p">&gt;(</span><span class="s">"assets/farm.tmx"</span><span class="p">);</span>
+<span class="n">Map</span> <span class="n">islands</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Map</span><span class="p">&gt;(</span><span class="s">"assets/islands.tmx"</span><span class="p">);</span>
+
+<span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span>
+   <span class="p">.</span><span class="n">GetPatchHelper</span><span class="p">(</span><span class="n">farm</span><span class="p">)</span>
+   <span class="p">.</span><span class="n">AsMap</span><span class="p">()</span>
+   <span class="p">.</span><span class="n">PatchMap</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">islands</span><span class="p">,</span> <span class="n">targetArea</span><span class="p">:</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">26</span><span class="p">,</span> <span class="m">56</span><span class="p">,</span> <span class="m">49</span><span class="p">));</span>
+</pre></div>
+<p>See <a href="#Edit_a_game_asset"><i>edit a game asset</i></a> for a description of the available patch helpers.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Let_other_mods_edit_your_internal_assets">Let other mods edit your internal assets</span></h3>
+<p>Other mods can't edit your internal mod files (including data or texture files), but they <i>can</i> edit custom assets you provide through the content pipeline. This technique consists of three steps:
+</p>
+<ol><li>Define a custom asset based on the internal file using the <a href="/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Events&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/APIs/Events (страница не существует)"><samp>AssetRequested</samp> event</a>.</li>
+<li>Detect when it's loaded/changed using the <a href="/mediawiki/index.php?title=Modding:Modder_Guide/APIs/Events&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/APIs/Events (страница не существует)"><samp>AssetReady</samp> event</a>.</li>
+<li>Load it through the content pipeline when you need it.</li></ol>
+<p>For example, this mod just loads a data asset (a dictionary of model entries):
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;The loaded data.&lt;/summary&gt;</span>
+    <span class="k">private</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ExampleModel</span><span class="p">&gt;</span> <span class="n">Data</span><span class="p">;</span>
+
+    <span class="c1">/// &lt;inheritdoc/&gt;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+        <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetReady</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetReady</span><span class="p">;</span>
+        <span class="n">helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">GameLoop</span><span class="p">.</span><span class="n">GameLaunched</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnGameLaunched</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//</span>
+        <span class="c1">// 1. define the custom asset based on the internal file</span>
+        <span class="c1">//</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Mods/Your.ModId/Data"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">LoadFromModFile</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ExampleModel</span><span class="p">&gt;&gt;(</span><span class="s">"assets/default-data.json"</span><span class="p">,</span> <span class="n">AssetLoadPriority</span><span class="p">.</span><span class="n">Medium</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetReady</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetReadyEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//</span>
+        <span class="c1">// 2. update the data when it's reloaded</span>
+        <span class="c1">//</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">"Mods/Your.ModId/Data"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">Data</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">content</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ExampleModel</span><span class="p">&gt;&gt;(</span><span class="s">"Mods/Your.ModId/Data"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnGameLaunched</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">GameLaunchedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//</span>
+        <span class="c1">// 3. load the data</span>
+        <span class="c1">//    (This doesn't need to be in OnGameLaunched, you can load it later depending on your mod logic.)</span>
+        <span class="c1">//</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">Data</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">content</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ExampleModel</span><span class="p">&gt;&gt;(</span><span class="s">"Mods/Your.ModId/Data"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>This works for any asset type (e.g. maps or textures), and you can do this even without an internal file (e.g. using <code>e.LoadFrom(() =&gt; new Dictionary&lt;string, ExampleModel&gt;(), AssetLoadPriority.Medium)</code>).
+</p>
+
+
+
+
+</section></div></div><div class="printfooter">
+Источник — <a dir="ltr" href="https://ru.stardewvalleywiki.com/mediawiki/index.php?title=Модификации:Руководство_мододела/API/Content&amp;oldid=24542">https://ru.stardewvalleywiki.com/mediawiki/index.php?title=Модификации:Руководство_мододела/API/Content&amp;oldid=24542</a></div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:History/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Content"
+				data-user-name="Quicksilver"
+				data-user-gender="unknown"
+				data-timestamp="1733268927">
+				<span>Последний раз редактировалась 3 декабря 2024 в 23:35</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> (если не указано иное).</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 3 декабря 2024 в 23:35.</li><li id="footer-info-copyright">Содержание доступно по лицензии <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> (если не указано иное).</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Stardew Valley Wiki:Политика конфиденциальности">Политика конфиденциальности</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" title="Stardew Valley Wiki:Описание">О Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Stardew Valley Wiki:Отказ от ответственности">Отказ от ответственности</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//ru.stardewvalleywiki.com/mediawiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/API/Content&amp;mobileaction=toggle_view_desktop">Настольная версия</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.093","walltime":"0.392","ppvisitednodes":{"value":246,"limit":1000000},"postexpandincludesize":{"value":4948,"limit":2097152},"templateargumentsize":{"value":72,"limit":2097152},"expansiondepth":{"value":5,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":43447,"limit":5000000},"timingprofile":["100.00%   10.685      1 -total"," 87.56%    9.356      1 Шаблон:Переведите"," 71.83%    7.675      1 Шаблон:Quote"," 11.81%    1.262      1 Модификации:Руководство_мододела/header"]},"cachereport":{"timestamp":"20250320221128","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":63});});</script>		</body>
+		</html>
+		

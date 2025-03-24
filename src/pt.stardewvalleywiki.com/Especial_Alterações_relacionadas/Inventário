@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="pt" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Alterações relacionadas - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],"wgRequestId":"56b92960cda69413c4a60a92","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"Recentchangeslinked","wgNamespaceNumber":-1,"wgPageName":"Especial:Alterações_relacionadas/Inventário","wgTitle":"Alterações relacionadas/Inventário","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"pt","wgPageContentModel":"wikitext","wgRelevantPageName":"Inventário","wgRelevantArticleId":1330,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgMFMode":"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":
+!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgStructuredChangeFilters":[{"name":"userExpLevel","type":"string_options","fullCoverage":!0,"filters":[{"name":"unregistered","label":"rcfilters-filter-user-experience-level-unregistered-label","description":"rcfilters-filter-user-experience-level-unregistered-description","cssClass":"mw-changeslist-user-unregistered","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"registered","label":"rcfilters-filter-user-experience-level-registered-label","description":"rcfilters-filter-user-experience-level-registered-description","cssClass":"mw-changeslist-user-registered","priority":-3,"subset":[{"group":"userExpLevel","filter":"newcomer"},{"group":"userExpLevel","filter":"learner"},{"group":"userExpLevel","filter":"experienced"}],"conflicts":[],
+"defaultHighlightColor":null},{"name":"newcomer","label":"rcfilters-filter-user-experience-level-newcomer-label","description":"rcfilters-filter-user-experience-level-newcomer-description","cssClass":"mw-changeslist-user-newcomer","priority":-4,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"learner","label":"rcfilters-filter-user-experience-level-learner-label","description":"rcfilters-filter-user-experience-level-learner-description","cssClass":"mw-changeslist-user-learner","priority":-5,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"experienced","label":"rcfilters-filter-user-experience-level-experienced-label","description":"rcfilters-filter-user-experience-level-experienced-description","cssClass":"mw-changeslist-user-experienced","priority":-6,"subset":[],"conflicts":[],"defaultHighlightColor":null}],"priority":-2,"conflicts":[],"title":"rcfilters-filtergroup-user-experience-level","separator":";","default":""},{"name":"authorship","type":
+"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidemyself","label":"rcfilters-filter-editsbyself-label","description":"rcfilters-filter-editsbyself-description","cssClass":"mw-changeslist-self","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidebyothers","label":"rcfilters-filter-editsbyother-label","description":"rcfilters-filter-editsbyother-description","cssClass":"mw-changeslist-others","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-3,"conflicts":[],"title":"rcfilters-filtergroup-authorship"},{"name":"automated","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidebots","label":"rcfilters-filter-bots-label","description":"rcfilters-filter-bots-description","cssClass":"mw-changeslist-bot","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!0},{"name":"hidehumans","label":"rcfilters-filter-humans-label",
+"description":"rcfilters-filter-humans-description","cssClass":"mw-changeslist-human","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-4,"conflicts":[],"title":"rcfilters-filtergroup-automated"},{"name":"significance","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hideminor","label":"rcfilters-filter-minor-label","description":"rcfilters-filter-minor-description","cssClass":"mw-changeslist-minor","priority":-2,"subset":[],"conflicts":[{"group":"changeType","filter":"hidelog","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-hideminor-conflicts-typeofchange"},{"group":"changeType","filter":"hidenewpages","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-hideminor-conflicts-typeofchange"}],"defaultHighlightColor":null,"default":!1},{"name":"hidemajor","label":"rcfilters-filter-major-label","description":
+"rcfilters-filter-major-description","cssClass":"mw-changeslist-major","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-6,"conflicts":[],"title":"rcfilters-filtergroup-significance"},{"name":"lastRevision","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidelastrevision","label":"rcfilters-filter-lastrevision-label","description":"rcfilters-filter-lastrevision-description","cssClass":"mw-changeslist-last","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidepreviousrevisions","label":"rcfilters-filter-previousrevision-label","description":"rcfilters-filter-previousrevision-description","cssClass":"mw-changeslist-previous","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-7,"conflicts":[],"title":"rcfilters-filtergroup-lastrevision"},{"name":"changeType","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{
+"name":"hidepageedits","label":"rcfilters-filter-pageedits-label","description":"rcfilters-filter-pageedits-description","cssClass":"mw-changeslist-src-mw-edit","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidenewpages","label":"rcfilters-filter-newpages-label","description":"rcfilters-filter-newpages-description","cssClass":"mw-changeslist-src-mw-new","priority":-3,"subset":[],"conflicts":[{"group":"significance","filter":"hideminor","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-typeofchange-conflicts-hideminor"}],"defaultHighlightColor":null,"default":!1},{"name":"hidelog","label":"rcfilters-filter-logactions-label","description":"rcfilters-filter-logactions-description","cssClass":"mw-changeslist-src-mw-log","priority":-5,"subset":[],"conflicts":[{"group":"significance","filter":"hideminor","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global",
+"contextDescription":"rcfilters-typeofchange-conflicts-hideminor"}],"defaultHighlightColor":null,"default":!1}],"priority":-8,"conflicts":[],"title":"rcfilters-filtergroup-changetype"}],"wgStructuredChangeFiltersMessages":{"rcfilters-filtergroup-user-experience-level":"Registo de utilizadores e experiência","rcfilters-filter-user-experience-level-unregistered-label":"Não registados","rcfilters-filter-user-experience-level-unregistered-description":"Editores que não estão autenticados.","rcfilters-filter-user-experience-level-registered-label":"Registados","rcfilters-filter-user-experience-level-registered-description":"Editores autenticados.","rcfilters-filter-user-experience-level-newcomer-label":"Novatos","rcfilters-filter-user-experience-level-newcomer-description":"Editores registados, que têm menos de 10 edições ou de 4 dias de atividade.","rcfilters-filter-user-experience-level-learner-label":"Aprendizes","rcfilters-filter-user-experience-level-learner-description":
+"Editores registados, com mais experiência do que \"Novatos\", mas menos do que \"Utilizadores experientes\".","rcfilters-filter-user-experience-level-experienced-label":"Utilizadores experientes","rcfilters-filter-user-experience-level-experienced-description":"Editores registados, com mais de 500 edições e de 30 dias de atividade.","rcfilters-filtergroup-authorship":"Autoria da contribuição","rcfilters-filter-editsbyself-label":"Mudanças feitas por si","rcfilters-filter-editsbyself-description":"As suas edições.","rcfilters-filter-editsbyother-label":"Mudanças feitas por outros","rcfilters-filter-editsbyother-description":"Todas as mudanças, exceto as feitas por si.","rcfilters-filtergroup-automated":"Contribuições automatizadas","rcfilters-filter-bots-label":"Robô","rcfilters-filter-bots-description":"Edições efetuadas por ferramentas automatizadas.","rcfilters-filter-humans-label":"Ser humano (não robô)","rcfilters-filter-humans-description":
+"Edições efetuadas por pessoas.","rcfilters-filtergroup-significance":"Significado","rcfilters-filter-minor-label":"Edições menores","rcfilters-filter-minor-description":"Edições marcadas pelo autor como menores.","rcfilters-hideminor-conflicts-typeofchange-global":"O filtro \"Edições menores\" entra em conflito com um ou mais filtros de Tipo de Modificação, porque certos tipos de modificações não podem ser classificados como \"menores\". Os filtros em conflito estão marcados na área Filtros Ativos, acima.","rcfilters-hideminor-conflicts-typeofchange":"Certos tipos de modificações não podem ser classificados como \"menores\", portanto este filtro entra em conflito com os seguintes filtros de Tipo de Modificação: $1","rcfilters-filter-major-label":"Edições não-menores","rcfilters-filter-major-description":"Edições não marcadas como menores.","rcfilters-filtergroup-lastrevision":"Últimas revisões","rcfilters-filter-lastrevision-label":"Última revisão",
+"rcfilters-filter-lastrevision-description":"Só a mudança mais recente de uma página.","rcfilters-filter-previousrevision-label":"Excepto a última revisão","rcfilters-filter-previousrevision-description":"Todas as mudanças que não sejam a \"Última revisão\".","rcfilters-filtergroup-changetype":"Tipo de alteração","rcfilters-filter-pageedits-label":"Edições de páginas","rcfilters-filter-pageedits-description":"Edições do conteúdo da wiki, de discussões, de descrições de categorias…","rcfilters-filter-newpages-label":"Criações de páginas","rcfilters-filter-newpages-description":"Edições que criam novas páginas.","rcfilters-typeofchange-conflicts-hideminor":"Este filtro de Tipo de Modificação entra em conflito com o filtro \"Edições menores\". Certos tipos de modificações não podem ser classificados como \"menores\".","rcfilters-filter-logactions-label":"Ações registadas","rcfilters-filter-logactions-description":
+"Ações administrativas, criação de contas, eliminação de páginas, carregamentos…"},"wgStructuredChangeFiltersCollapsedState":!1,"StructuredChangeFiltersDisplayConfig":{"maxDays":90,"limitArray":[50,100,250,500],"limitDefault":50,"daysArray":[1,3,7,14,30],"daysDefault":7},"wgStructuredChangeFiltersSavedQueriesPreferenceName":"rcfilters-saved-queries","wgStructuredChangeFiltersLimitPreferenceName":"rcfilters-limit","wgStructuredChangeFiltersDaysPreferenceName":"rcdays","wgStructuredChangeFiltersCollapsedPreferenceName":"rcfilters-rc-collapsed","wgMinervaPermissions":{"watch":!1,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!1},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":
+"ready","user.options":"loading","mobile.special.styles":"ready","mobile.messageBox.styles":"ready","mediawiki.helplink":"ready","mediawiki.ui.input":"ready","mediawiki.ui.radio":"ready","mediawiki.ui.checkbox":"ready","mediawiki.interface.helpers.styles":"ready","mediawiki.special.changeslist.legend":"ready","mediawiki.special.changeslist":"ready","mediawiki.rcfilters.filters.base.styles":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["mediawiki.special.changeslist.legend.js","mediawiki.rcfilters.filters.ui","mediawiki.special.recentchanges","site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"pt"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=pt&amp;modules=mediawiki.helplink%2Chlist%7Cmediawiki.interface.helpers.styles%7Cmediawiki.rcfilters.filters.base.styles%7Cmediawiki.special.changeslist%7Cmediawiki.special.changeslist.legend%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%2Cradio%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cmobile.special.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="/mediawiki/load.php?lang=pt&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=pt&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="Introduza o nome de uma página para ver as mudanças a todas as páginas que contêm hiperligações para ela ou para as quais a página fornecida contém hiperligações (para ver as que pertencem a uma categoria, introduza Categoria:Nome da categoria). As mudanças às suas páginas vigiadas aparecem a negrito."/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (pt)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//pt.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Alterações relacionadas - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://pt.stardewvalleywiki.com/Especial:Altera%C3%A7%C3%B5es_relacionadas/Invent%C3%A1rio"/>
+<meta property="og:image" content="https://pt.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2025-03-20T21:18:15Z"/>
+<meta property="article:published_time" content="2025-03-20T21:18:15Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Alterações relacionadas - Stardew Valley Wiki"/>
+<meta property="twitter:image" content="https://pt.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Altera\u00e7\u00f5es relacionadas - Stardew Valley Wiki","headline":"Altera\u00e7\u00f5es relacionadas - Stardew Valley Wiki","mainEntityOfPage":"Altera\u00e7\u00f5es relacionadas","identifier":"https:\/\/pt.stardewvalleywiki.com\/Especial:Altera%C3%A7%C3%B5es_relacionadas\/Invent%C3%A1rio","url":"https:\/\/pt.stardewvalleywiki.com\/Especial:Altera%C3%A7%C3%B5es_relacionadas\/Invent%C3%A1rio","dateModified":"2025-03-20T21:18:15Z","datePublished":"2025-03-20T21:18:15Z","image":{"@type":"ImageObject","url":"https:\/\/pt.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/pt.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/pt.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/pt.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/pt.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/pt.stardewvalleywiki.com\/mediawiki\/index.php?title=Especial:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mw-rcfilters-enabled mediawiki ltr sitedir-ltr mw-hide-empty-elt ns--1 ns-special mw-special-Recentchangeslinked page-Especial_Alterações_relacionadas_Inventário rootpage-Especial_Alterações_relacionadas_Inventário stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Abrir menu principal" data-event-name="ui.mainmenu">Abrir menu principal</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Início</span></a>
+			</li>
+			<li class="">
+			    <a href="/Especial:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Aleatório</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="/mediawiki/index.php?title=Especial:Entrar&amp;returnto=Especial%3AAltera%C3%A7%C3%B5es+relacionadas%2FInvent%C3%A1rio" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Entrar</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="/mediawiki/index.php?title=Especial:MobileOptions&amp;returnto=Especial%3AAltera%C3%A7%C3%B5es+relacionadas%2FInvent%C3%A1rio" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Definições</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:Sobre" class="" data-event-name=""><span>Sobre a wiki Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:Aviso_geral" class="" data-event-name=""><span>Exoneração de responsabilidade</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Pesquisar na wiki Stardew Valley Wiki" aria-label="Pesquisar na wiki Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="Navegação do utilizador">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Pesquisar</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Alterações relacionadas</h1>
+					<div class="tagline"></div>
+				</div>
+				
+				
+				
+				<div class="minerva__subtitle">← <a href="/Invent%C3%A1rio" title="Inventário">Inventário</a></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text"><div class="mw-specialpage-summary">
+<p>Introduza o nome de uma página para ver as mudanças a todas as páginas que contêm hiperligações para ela ou para as quais a página fornecida contém hiperligações (para ver as que pertencem a uma categoria, introduza Categoria:Nome da categoria). As mudanças às suas <a href="/Especial:P%C3%A1ginas_vigiadas" title="Especial:Páginas vigiadas">páginas vigiadas</a> aparecem a <strong>negrito</strong>.
+</p>
+</div><div class="rcfilters-head mw-rcfilters-head"><div class="rcfilters-container mw-rcfilters-container"></div><fieldset class="rcoptions cloptions">
+<legend>Opções das mudanças recentes</legend>
+<span class="rclinks">Mostrar as últimas <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;limit=50&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;limit&quot;:50}" data-keys="limit"><strong>50</strong></a> | <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;limit=100&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;limit&quot;:100}" data-keys="limit">100</a> | <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;limit=250&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;limit&quot;:250}" data-keys="limit">250</a> | <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;limit=500&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;limit&quot;:500}" data-keys="limit">500</a> mudanças nos últimos <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;days=1&amp;from=&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;days&quot;:1,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">1</a> | <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;days=3&amp;from=&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;days&quot;:3,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">3</a> | <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;days=7&amp;from=&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;days&quot;:7,&quot;from&quot;:&quot;&quot;}" data-keys="days,from"><strong>7</strong></a> | <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;days=14&amp;from=&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;days&quot;:14,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">14</a> | <a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;days=30&amp;from=&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;days&quot;:30,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">30</a> dias</span><br /><span class="rcshowhide"><span class="rcshowhideliu rcshowhideoption clshowhideoption" data-filter-name="hideliu" data-feature-in-structured-ui="1"><a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;hideliu=1&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;hideliu&quot;:1}" data-keys="hideliu">Ocultar</a> utilizadores registados</span> | <span class="rcshowhideanons rcshowhideoption clshowhideoption" data-filter-name="hideanons" data-feature-in-structured-ui="1"><a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;hideanons=1&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;hideanons&quot;:1}" data-keys="hideanons">Ocultar</a> utilizadores anónimos</span> | <span class="rcshowhidemine rcshowhideoption clshowhideoption" data-filter-name="hidemyself" data-feature-in-structured-ui="1"><a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;hidemyself=1&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;hidemyself&quot;:1}" data-keys="hidemyself">Ocultar</a> as minhas edições</span> | <span class="rcshowhidebots rcshowhideoption clshowhideoption" data-filter-name="hidebots" data-feature-in-structured-ui="1"><a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;hidebots=0&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;hidebots&quot;:0}" data-keys="hidebots">Mostrar</a> robôs</span> | <span class="rcshowhideminor rcshowhideoption clshowhideoption" data-filter-name="hideminor" data-feature-in-structured-ui="1"><a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;hideminor=1&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;hideminor&quot;:1}" data-keys="hideminor">Ocultar</a> edições menores</span></span><br /><span class="rclistfrom"><a href="/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas&amp;from=20250320211815&amp;fromFormatted=21h18min+de+20+de+mar%C3%A7o+de+2025&amp;target=Invent%C3%A1rio" title="Especial:Alterações relacionadas" data-params="{&quot;from&quot;:&quot;20250320211815&quot;,&quot;fromFormatted&quot;:&quot;21h18min de 20 de mar\u00e7o de 2025&quot;}" data-keys="from,fromFormatted">Mostrar as novas mudanças a partir das 21h18min de 20 de março de 2025</a></span>
+<hr />
+<form action="/mediawiki/index.php"><table class="mw-recentchanges-table"><tr class="namespaceForm"><td class="mw-label mw-namespace-label"><label for="namespace">Espaço nominal:</label></td><td class="mw-input"><select id="namespace" name="namespace">
+<option value="" selected="">todos</option>
+<option value="0">(Principal)</option>
+<option value="1">Discussão</option>
+<option value="2">Utilizador</option>
+<option value="3">Utilizador Discussão</option>
+<option value="4">Stardew Valley Wiki</option>
+<option value="5">Stardew Valley Wiki Discussão</option>
+<option value="6">Ficheiro</option>
+<option value="7">Ficheiro Discussão</option>
+<option value="8">MediaWiki</option>
+<option value="9">MediaWiki Discussão</option>
+<option value="10">Predefinição</option>
+<option value="11">Predefinição Discussão</option>
+<option value="12">Ajuda</option>
+<option value="13">Ajuda Discussão</option>
+<option value="14">Categoria</option>
+<option value="15">Categoria Discussão</option>
+<option value="274">Widget</option>
+<option value="275">Widget talk</option>
+<option value="570">Modificações</option>
+<option value="571">Modificações Discussão</option>
+<option value="828">Módulo</option>
+<option value="829">Módulo Discussão</option>
+</select> <span class="mw-input-with-label mw-input-hidden"><div class="mw-ui-checkbox"><input name="invert" type="checkbox" value="1" id="nsinvert" title="Marque esta caixa para esconder as alterações a páginas no espaço nominal/domínio selecionado (e no espaço nominal/domínio associado, se escolheu fazê-lo)" /> <label for="nsinvert" title="Marque esta caixa para esconder as alterações a páginas no espaço nominal/domínio selecionado (e no espaço nominal/domínio associado, se escolheu fazê-lo)">Inverter seleção</label></div></span> <span class="mw-input-with-label mw-input-hidden"><div class="mw-ui-checkbox"><input name="associated" type="checkbox" value="1" id="nsassociated" title="Marque esta caixa para incluir também o domínio de conteúdo ou de discussão associado à sua seleção" /> <label for="nsassociated" title="Marque esta caixa para incluir também o domínio de conteúdo ou de discussão associado à sua seleção">Espaço nominal associado</label></div></span></td></tr><tr class="tagfilterForm"><td class="mw-label mw-tagfilter-label"><label for="tagfilter">Filtro de <a href="/Especial:Etiquetas" title="Especial:Etiquetas">etiquetas</a>:</label></td><td class="mw-input"><input name="tagfilter" size="20" value="" class="mw-tagfilter-input mw-ui-input mw-ui-input-inline mw-ui-input" id="tagfilter" /></td></tr><tr class="targetForm"><td class="mw-label mw-target-label">Nome da página:</td><td class="mw-input"><input name="target" size="40" value="Inventário" class="mw-ui-input" /><input name="showlinkedto" type="checkbox" value="1" id="showlinkedto" /> <label for="showlinkedto">Inversamente, mostrar mudanças às páginas que contêm hiperligações para esta</label> <input type="submit" value="Mostrar" class="mw-ui-button mw-ui-progressive"/></td></tr></table><input type="hidden" value="Especial:Alterações relacionadas" name="title"/></form>
+</fieldset>
+</div><div class="mw-rcfilters-spinner"><div class="mw-rcfilters-spinner-bounce"></div></div><div class="mw-changeslist-empty">Não foi realizada nenhuma alteração que corresponda a estes critérios durante o período especificado.</div></div><div class="printfooter">
+Obtida de "<a dir="ltr" href="https://pt.stardewvalleywiki.com/Especial:Alterações_relacionadas/Inventário">https://pt.stardewvalleywiki.com/Especial:Alterações_relacionadas/Inventário</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Conteúdo disponibilizado nos termos da <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>, salvo indicação em contrário.</div>
+			<ul class="footer-info hlist hlist-separated">
+				
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:Pol%C3%ADtica_de_privacidade" title="Stardew Valley Wiki:Política de privacidade">Política de privacidade</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:Sobre" title="Stardew Valley Wiki:Sobre">Sobre a wiki Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:Aviso_geral" title="Stardew Valley Wiki:Aviso geral">Exoneração de responsabilidade</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//pt.stardewvalleywiki.com/mediawiki/index.php?title=Especial:Altera%C3%A7%C3%B5es_relacionadas/Invent%C3%A1rio&amp;mobileaction=toggle_view_desktop">Versão desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":79});});</script>		</body>
+		</html>
+		

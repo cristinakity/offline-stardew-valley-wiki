@@ -1,0 +1,1328 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>模组:游戏状态查询 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"e0fd3a638b2f51746bd05916","wgCSPNonce":!1,"wgCanonicalNamespace":"模组","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"模组:游戏状态查询","wgTitle":"游戏状态查询","wgCurRevisionId":49619,"wgRevisionId":49619,"wgArticleId":3288,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["模组"],"wgPageContentLanguage":"zh","wgPageContentModel":"wikitext","wgRelevantPageName":"模组:游戏状态查询","wgRelevantArticleId":3288,"wgUserVariant":"zh","wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{
+"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=ext.pygments%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/mediawiki/load.php?lang=zh&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="← 目录"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (zh)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//zh.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="alternate" hreflang="zh" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh"/>
+<link rel="alternate" hreflang="zh-Hans" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-hans"/>
+<link rel="alternate" hreflang="zh-Hant" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-hant"/>
+<link rel="alternate" hreflang="zh-Hans-CN" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-cn"/>
+<link rel="alternate" hreflang="zh-Hant-HK" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-hk"/>
+<link rel="alternate" hreflang="zh-Hant-MO" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-mo"/>
+<link rel="alternate" hreflang="zh-Hans-MY" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-my"/>
+<link rel="alternate" hreflang="zh-Hans-SG" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-sg"/>
+<link rel="alternate" hreflang="zh-Hant-TW" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-tw"/>
+<link rel="alternate" hreflang="x-default" href="/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki的Atom feed" href="/mediawiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+<meta property="og:title" content="模组:游戏状态查询 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2"/>
+<meta property="og:description" content="← 目录"/>
+<meta property="og:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2024-10-26T09:11:02Z"/>
+<meta property="article:published_time" content="2024-10-26T09:11:02Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="模组:游戏状态查询 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="← 目录"/>
+<meta property="twitter:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u6a21\u7ec4:\u6e38\u620f\u72b6\u6001\u67e5\u8be2 - Stardew Valley Wiki","headline":"\u6a21\u7ec4:\u6e38\u620f\u72b6\u6001\u67e5\u8be2 - Stardew Valley Wiki","mainEntityOfPage":"\u6a21\u7ec4:\u6e38\u620f\u72b6\u6001\u67e5\u8be2","identifier":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2","url":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2","description":"\u2190 \u76ee\u5f55","dateModified":"2024-10-26T09:11:02Z","datePublished":"2024-10-26T09:11:02Z","image":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-模组_游戏状态查询 rootpage-模组_游戏状态查询 skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="zh">模组:游戏状态查询</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">来自Stardew Valley Wiki</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">跳到导航</a>
+		<a class="mw-jump-link" href="#searchInput">跳到搜索</a>
+		<div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>← <a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95" title="模组:目录">目录</a>
+</p><p>此页面为<b>游戏状态查询</b>（game state queries）的文档。游戏状态查询是某些游戏数据素材中指定条件的内建方式，其受到<a href="/%E6%A8%A1%E7%BB%84:Content_Patcher" title="模组:Content Patcher">Content Patcher</a>中条件的启发。
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="zh" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.A6.82.E8.A7.88"><span class="tocnumber">1</span> <span class="toctext">概览</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E6.9F.A5.E8.AF.A2.E6.A0.BC.E5.BC.8F"><span class="tocnumber">1.1</span> <span class="toctext">查询格式</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E5.8F.82.E6.95.B0.E6.A0.BC.E5.BC.8F"><span class="tocnumber">1.2</span> <span class="toctext">参数格式</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E6.9F.A5.E8.AF.A2_vs_Content_Patcher.E6.9D.A1.E4.BB.B6"><span class="tocnumber">1.3</span> <span class="toctext">查询 vs Content Patcher条件</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#.E5.86.85.E5.BB.BA.E6.9F.A5.E8.AF.A2"><span class="tocnumber">2</span> <span class="toctext">内建查询</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#.E5.85.83.E6.9F.A5.E8.AF.A2"><span class="tocnumber">2.1</span> <span class="toctext">元查询</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E6.97.A5.E6.9C.9F_.26_.E6.97.B6.E9.97.B4"><span class="tocnumber">2.2</span> <span class="toctext">日期 &amp; 时间</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E4.BA.8B.E4.BB.B6"><span class="tocnumber">2.3</span> <span class="toctext">事件</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E4.B8.96.E7.95.8C"><span class="tocnumber">2.4</span> <span class="toctext">世界</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E7.8E.A9.E5.AE.B6.E4.BF.A1.E6.81.AF_.26_.E8.BF.9B.E5.BA.A6"><span class="tocnumber">2.5</span> <span class="toctext">玩家信息 &amp; 进度</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E7.8E.A9.E5.AE.B6.E5.85.B3.E7.B3.BB"><span class="tocnumber">2.6</span> <span class="toctext">玩家关系</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.E9.9A.8F.E6.9C.BA.E5.8C.96"><span class="tocnumber">2.7</span> <span class="toctext">随机化</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.E4.BB.85.E7.94.A8.E4.BA.8E.E7.89.A9.E5.93.81"><span class="tocnumber">2.8</span> <span class="toctext">仅用于物品</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#.E4.B8.8D.E5.8F.AF.E5.8F.98"><span class="tocnumber">2.9</span> <span class="toctext">不可变</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#.E9.80.9A.E7.94.A8.E5.80.BC"><span class="tocnumber">3</span> <span class="toctext">通用值</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9"><span class="tocnumber">3.1</span> <span class="toctext">目标地点</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6"><span class="tocnumber">3.2</span> <span class="toctext">目标玩家</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#.E5.85.B3.E4.BA.8EC.23.E6.A8.A1.E7.BB.84.E4.BD.9C.E8.80.85"><span class="tocnumber">4</span> <span class="toctext">关于C#模组作者</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#.E5.9C.A8.E5.85.B6.E4.BB.96.E5.9C.B0.E6.96.B9.E4.BD.BF.E7.94.A8.E6.9F.A5.E8.AF.A2"><span class="tocnumber">4.1</span> <span class="toctext">在其他地方使用查询</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#.E6.89.A9.E5.B1.95.E6.80.A7"><span class="tocnumber">4.2</span> <span class="toctext">扩展性</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span id="概览"></span><span class="mw-headline" id=".E6.A6.82.E8.A7.88">概览</span></h2>
+<h3><span id="查询格式"></span><span class="mw-headline" id=".E6.9F.A5.E8.AF.A2.E6.A0.BC.E5.BC.8F">查询格式</span></h3>
+<p>一个查询也就是一个逗号分隔的条件列表，每个条件有如下格式：<code title="必需字段 &#39;类型&#39;">&lt;类型&gt;</code> <code title="可选字段 &#39;参数&#39;">[参数]</code>。其中类型可以添加<code>!</code>前缀以代表反向匹配。若查询为空/空白，则必然返回true。当查询列表中所有条件均成功匹配，也返回true。例如，<code>!SEASON Spring, WEATHER Here Sun</code>为true当且仅当游戏状态为非<a href="/%E6%98%A5%E5%AD%A3" title="春季">春季</a>的晴天。
+</p><p><b>⚠</b>游戏状态查询是部分大小写敏感的。尽管某些数值是大小写不敏感的（例如，<code>SEASON Spring</code>和<code>SEASON spring</code>都可用），但并非所有数值都如此。推荐使用精确的大小写以规避问题。
+</p>
+<h3><span id="参数格式"></span><span class="mw-headline" id=".E5.8F.82.E6.95.B0.E6.A0.BC.E5.BC.8F">参数格式</span></h3>
+<p>游戏状态查询可以接收空格分隔的参数列表。例如，<code>BUILDINGS_CONSTRUCTED Here Cabins</code>有两个参数：<code>Here</code>和<code>Cabins</code>。
+</p><p>若某个参数包含空格，则需添加双引号以表示这是一整个参数。例如， <code>BUILDINGS_CONSTRUCTED Here "Junimo Hut"</code> 会将<code>Junimo Hut</code>作为一整个参数来传入。在需要嵌套双引号时，可以使用反斜杠来转义内层双引号，例如<code>ANY "BUILDINGS_CONSTRUCTED Here \"Junimo Hut\""</code>。
+</p><p>请记住JSON字符串中的双引号和反斜杠也需要转义。例如，<code>"Condition": "BUILDINGS_CONSTRUCTED Here \"Junimo Hut\""</code>会向游戏代码发送<code>BUILDINGS_CONSTRUCTED Here "Junimo Hut"</code>。但是，也可以在JSON字符串中使使用单引号，例如<code>"Condition": 'BUILDINGS_CONSTRUCTED Here "Junimo Hut"'</code>。
+</p>
+<h3><span id="查询_vs_Content_Patcher条件"></span><span class="mw-headline" id=".E6.9F.A5.E8.AF.A2_vs_Content_Patcher.E6.9D.A1.E4.BB.B6">查询 vs Content Patcher条件</span></h3>
+<p>当制作<a href="/%E6%A8%A1%E7%BB%84:Content_Patcher" title="模组:Content Patcher">Content Patcher包</a>使，为达成同一个目的，可能存在<samp>When</samp>条件和游戏状态查询两种不同的方法（殊途同归）。
+</p><p>具体使用哪个，主要是性能的权衡：
+</p>
+<ul><li>Content Patcher的<samp>When</samp>做好了充分的优化和缓存，因此上千个补丁可以检查统一个条件而不会影响性能，相应的更改会一次性写入素材。因此，在编辑素材后不会产生性能影响。但是，在添加/移除补丁时，素材会被重新载入，因此在某些情况下频繁改变素材可能影响性能（例如重新加载地图或村民出现在室内/室外）。</li>
+<li>游戏状态查询并没有缓存，因此经常检查时有可能显著地影响性能。例如，每个更新时刻检查一千个游戏状态查询，就意味着每秒需要检查六万个游戏状态查询。而另一方面，游戏状态查询在查询频率较低的情况下常常更快，并且不会重新加载贴图或地图（例如<samp>Data/Characters</samp>中的<samp>Appearance</samp>或<samp>Data/Locations</samp>中的<samp>Music</samp>）。</li></ul>
+<h2><span id="内建查询"></span><span class="mw-headline" id=".E5.86.85.E5.BB.BA.E6.9F.A5.E8.AF.A2">内建查询</span></h2>
+<h3><span id="元查询"></span><span class="mw-headline" id=".E5.85.83.E6.9F.A5.E8.AF.A2">元查询</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>ANY <code title="必需字段 &#39;query&#39;">&lt;query&gt;</code>+</samp>
+</td>
+<td>获取是否列出的游戏查询中至少有一个匹配成功，其中每个参数都是一个查询。例如，<code>ANY "SEASON Winter" "SEASON Spring, DAY_OF_WEEK Friday"</code>当且仅当冬季或春季周五时返回true。您可以列出任意数量的查询。
+</td></tr></tbody></table>
+<p>您可以在<i>任何</i>查询内部嵌套<i>任何</i>查询，但是如果嵌套层数太多，处理转义双引号将极为棘手。因此，推荐使用<a href="https://en.wikipedia.org/wiki/Canonical_normal_form" class="extiw" title="wikipedia:Canonical normal form">SOP规范形式</a>。
+</p><p>下面是一个例子：
+</p>
+<pre> "ANY \"LOCATION_NAME Here BathHouse_Pool\" \"LOCATION_NAME Here BathHouse_MensLocker\" \"LOCATION_NAME Here BathHouse_WomensLocker\" \"LOCATION_NAME Here Beach, WEATHER Here Sun Wind, SEASON Summer\" \"IS_EVENT festival_summer5, {{HasMod|contains=spacechase0.SurfingFestival}}\""</pre>
+<p>拆解开来，这意味着检查是否满足下列条件之一：
+</p>
+<ul><li>下列地点之一：BathHouse_Pool、BathHouse_MensLocker、BathHouse_WomensLocker。</li>
+<li>夏季晴天或风天的海滩</li>
+<li>夏5日事件（此例子中为节日）正在进行，且已安装spacechase0.SurfingFestival。注意，<samp>{{HasMod|contains=spacechase0.SurfingFestival}}</samp>会被自动解析为true或false，因为它是一个有效的标记符。</li></ul>
+<p>请注意：您可以在游戏状态查询中使用像上面那样的标记符！
+</p>
+<h3><span id="日期_&amp;_时间"></span><span class="mw-headline" id=".E6.97.A5.E6.9C.9F_.26_.E6.97.B6.E9.97.B4">日期 &amp; 时间</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>DAY_OF_MONTH <code title="必需字段 &#39;day&#39;">&lt;day&gt;</code>+</samp>
+</td>
+<td>当月日期。可以为1至28之间 整数，或者<samp>odd</samp>/<samp>even</samp>来匹配奇偶天。可以指定多个值，代表匹配其中任一个。
+</td></tr>
+<tr>
+<td><samp>DAY_OF_WEEK <code title="必需字段 &#39;day&#39;">&lt;day&gt;</code>+</samp>
+</td>
+<td>当周日期。可以为 0（星期日）至 6（星期六）之间的整数，三字母英文名（例如<samp>Fri</samp>）或完整英文名（例如<samp>Friday</samp>）。可以指定多个值，代表匹配其中任一个（例如<samp>DAY_OF_WEEK Monday Tuesday</samp>匹配星期一<b>或</b>星期二）。
+</td></tr>
+<tr>
+<td><samp>DAYS_PLAYED <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>该存档是否至少玩了<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>，至多玩了<code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷大）天。此查询会与原版游戏内的游戏同步。但如果模组改变了游戏内的日期，则此查询值可能不会同步更新。
+</td></tr>
+<tr>
+<td><samp>IS_FESTIVAL_DAY <code title="可选字段 &#39;location context&#39;">[location context]</code> <code title="可选字段 &#39;day offset&#39;">[day offset]</code></samp>
+</td>
+<td>是否当天有节日，<code title="可选字段 &#39;day offset&#39;">[day offset]</code>为日期偏移（例如1代表明天是否有节日）。
+<p>其中<code title="可选字段 &#39;location context&#39;">[location context]</code>（默认<samp>Any</samp>）必须为下列取值之一：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>值
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Any</samp>
+</td>
+<td>检查任意地点的节日。
+</td></tr>
+<tr>
+<td><samp>Here</samp>
+</td>
+<td>检查玩家所在地点的节日。
+</td></tr>
+<tr>
+<td><samp>Target</samp>
+</td>
+<td>检查包含<a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">目标地点</a>的地点是否有节日
+</td></tr>
+<tr>
+<td><b>其他</b>
+</td>
+<td>检查指定地点ID处是否有节日。
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>IS_PASSIVE_FESTIVAL_OPEN <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td>当天是否有给定ID的<a href="/mediawiki/index.php?title=Modding:Migrate_to_Stardew_Valley_1.6&amp;action=edit&amp;redlink=1" class="new" title="Modding:Migrate to Stardew Valley 1.6（页面不存在）">被动节日</a>，且在当前时段正在进行。
+</td></tr>
+<tr>
+<td><samp>IS_PASSIVE_FESTIVAL_TODAY <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td>当天是否安排有给定ID的<a href="/mediawiki/index.php?title=Modding:Migrate_to_Stardew_Valley_1.6&amp;action=edit&amp;redlink=1" class="new" title="Modding:Migrate to Stardew Valley 1.6（页面不存在）">被动节日</a>。
+</td></tr>
+<tr>
+<td><samp>SEASON <code title="必需字段 &#39;season&#39;">&lt;season&gt;</code>+</samp>
+</td>
+<td>季节（为<samp>spring</samp>、<samp>summer</samp>、<samp>fall</samp> 或 <samp>winter</samp>之一）。可以指定多个值，代表匹配其中任一个（例如<samp>SEASON spring summer</samp>匹配春季<b>或</b>夏季）。
+</td></tr>
+<tr>
+<td><samp>SEASON_DAY [<code title="必需字段 &#39;season&#39;">&lt;season&gt;</code> <code title="必需字段 &#39;day&#39;">&lt;day&gt;</code>]+</samp>
+</td>
+<td>季节（与<samp>SEASON</samp>格式相同）和日期（1至28的整数）。可以指定多个值，代表匹配其中任一个（例如<samp>SEASON_DAY fall 15 winter 20</samp>匹配秋15日<b>或</b>冬20日）。
+</td></tr>
+<tr>
+<td><samp>TIME <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>是否当前时间在<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>和<code title="可选字段 &#39;max&#39;">[max]</code>之间（默认为无穷大），包含端点值。时间为<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/%E6%B8%B8%E6%88%8F%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84#.E6.97.B6.E9.97.B4.E6.A0.BC.E5.BC.8F" title="模组:制作指南/游戏基本架构">26小时制</a>。
+</td></tr>
+<tr>
+<td><samp>YEAR <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>是否年份在<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>和<code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷大）之间，包含端点值。
+</td></tr></tbody></table>
+<h3><span id="事件"></span><span class="mw-headline" id=".E4.BA.8B.E4.BB.B6">事件</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>IS_EVENT</samp>
+</td>
+<td>玩家是否正在观看<a href="/%E6%A8%A1%E7%BB%84:%E4%BA%8B%E4%BB%B6%E6%95%B0%E6%8D%AE" title="模组:事件数据">事件</a>或参加主动节日。不包括诸如<a href="/%E5%A4%9C%E5%B8%82" title="夜市">夜市</a>的被动节日。
+</td></tr>
+<tr>
+<td><samp>IS_EVENT <code title="必需字段 &#39;event ID&#39;">&lt;event ID&gt;</code>+</samp>
+</td>
+<td>玩家是否正在观看<a href="/%E6%A8%A1%E7%BB%84:%E4%BA%8B%E4%BB%B6%E6%95%B0%E6%8D%AE" title="模组:事件数据">事件</a>或参加主动节日。要求事件或节日匹配指定的<code title="必需字段 &#39;event ID&#39;">&lt;event ID&gt;</code>之一。节日ID的格式为<samp>festival_<code title="必需字段 &#39;season&#39;">&lt;season&gt;</code><code title="必需字段 &#39;day&#39;">&lt;day&gt;</code></samp>（例如<a href="/%E5%A4%8D%E6%B4%BB%E8%8A%82" title="复活节">复活节</a>为<samp>festival_spring13</samp>）。
+</td></tr></tbody></table>
+<h3><span id="世界"></span><span class="mw-headline" id=".E4.B8.96.E7.95.8C">世界</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>BUILDINGS_CONSTRUCTED <code title="必需字段 &#39;locations&#39;">&lt;locations&gt;</code> <code title="可选字段 &#39;building type&#39;">[building type]</code> <code title="可选字段 &#39;min&#39;">[min]</code> <code title="可选字段 &#39;max&#39;">[max]</code> <code title="可选字段 &#39;count unbuilt&#39;">[count unbuilt]</code></samp>
+</td>
+<td>是否指定的建筑数量在一定区间内。
+<p>例如：
+</p>
+<ul><li><code>BUILDINGS_CONSTRUCTED Here</code>检查当前位置是否有建造的建筑</li>
+<li><code>BUILDINGS_CONSTRUCTED Target Cabin</code>检查<a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">目标地点</a>是否有至少一栋联机小屋。</li>
+<li><code>BUILDINGS_CONSTRUCTED All "Junimo Hut" 3 5</code>检查世界上某处是否有3到5间（含5间）祝尼魔屋。</li></ul>
+<p>参数：
+</p>
+<ul><li><code title="必需字段 &#39;locations&#39;">&lt;locations&gt;</code>：一个<a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">目标地点</a>，或设为<samp>All</samp>来统计所有地点的建筑。</li>
+<li><code title="可选字段 &#39;building type&#39;">[building type]</code>：<samp>Data/Buildings</samp>中的建筑ID，或设为<samp>All</samp>来统计所有类型的建筑。注意<samp>All</samp>包含默认建筑，例如农舍。</li>
+<li><code title="可选字段 &#39;min&#39;">[min]</code>/<code title="可选字段 &#39;max&#39;">[max]</code>：最小值（默认为1）、最大值（默认为无穷）。</li>
+<li><code title="可选字段 &#39;count unbuilt&#39;">[count unbuilt]</code>：是否统计建造中的建筑。</li></ul>
+</td></tr>
+<tr>
+<td><samp>CAN_BUILD_CABIN</samp>
+</td>
+<td>玩家是否可以再建造<a href="/%E8%81%94%E6%9C%BA%E5%B0%8F%E5%B1%8B" title="联机小屋">联机小屋</a>（即，联机小屋是否尚未超过玩家数）。
+</td></tr>
+<tr>
+<td><samp>CAN_BUILD_FOR_CABINS <code title="必需字段 &#39;building ID&#39;">&lt;building ID&gt;</code></samp>
+</td>
+<td>指定类型的建筑数量是否小于联机小屋数。
+</td></tr>
+<tr>
+<td><samp>FARM_CAVE <code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>+</samp>
+</td>
+<td>当前的<a href="/%E5%B1%B1%E6%B4%9E" title="山洞">农场山洞</a>（为<samp>Bats</samp>、<samp>Mushrooms</samp> 或 <samp>None</samp>其中之一。）
+</td></tr>
+<tr>
+<td><samp>FARM_NAME <code title="必需字段 &#39;name&#39;">&lt;name&gt;</code></samp>
+</td>
+<td>农场名称。
+</td></tr>
+<tr>
+<td><samp>FARM_TYPE <code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>+</samp>
+</td>
+<td><a href="/%E5%86%9C%E5%9C%BA%E5%9C%B0%E5%9B%BE" title="农场地图">农场类型</a>。其中<code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>取下列值之一：
+<ul><li>原版农场类型的数字ID：<samp>1</samp>（标准）、<samp>2</samp>（河边）、<samp>3</samp>（森林）、<samp>4</samp>（山顶）、<samp>5</samp>（荒野）、<samp>6</samp> （四角）或 <samp>7</samp>（海滩）；</li>
+<li>原版农场类型的可读键名：<samp>Standard</samp>, <samp>Beach</samp>, <samp>Forest</samp>, <samp>FourCorners</samp>, <samp>Hilltop</samp>, <samp>Riverland</samp>, or <samp>Wilderness</samp>；</li>
+<li>自定义农场类型ID。</li></ul>
+</td></tr>
+<tr>
+<td><samp>FOUND_ALL_LOST_BOOKS</samp>
+</td>
+<td>是否<a href="/%E5%8D%9A%E7%89%A9%E9%A6%86" title="博物馆">博物馆</a>的所有<a href="/%E9%81%97%E5%A4%B1%E4%B9%8B%E4%B9%A6" title="遗失之书">遗失之书</a>已被找到。
+</td></tr>
+<tr>
+<td><samp>HAS_TARGET_LOCATION</samp>
+</td>
+<td>当前上下文中是否显式指定了<a href="#.E7.9B.AE.E6.A0.87.E4.BD.8D.E7.BD.AE">'<samp>Target</samp>'位置</a>（即，忽略目标位置使用默认值的情况）。
+</td></tr>
+<tr>
+<td><samp>IS_COMMUNITY_CENTER_COMPLETE</samp>
+</td>
+<td>是否已修复<a href="/%E7%A4%BE%E5%8C%BA%E4%B8%AD%E5%BF%83" title="社区中心">社区中心</a>。
+</td></tr>
+<tr>
+<td><samp>IS_CUSTOM_FARM_TYPE</samp>
+</td>
+<td>是否<a href="/%E5%86%9C%E5%9C%BA%E5%9C%B0%E5%9B%BE" title="农场地图">农场类型</a>为模组自定义类型。（对于取代原版农场类型的模组，返回false）。
+</td></tr>
+<tr>
+<td><samp>IS_HOST</samp>
+</td>
+<td>当前玩家是否为房主。
+</td></tr>
+<tr>
+<td><samp>IS_ISLAND_NORTH_BRIDGE_FIXED</samp>
+</td>
+<td>通往姜岛挖掘场的<a href="/%E5%A7%9C%E5%B2%9B#.E5.B2.9B.E5.B1.BF.E5.8C.97.E9.83.A8" title="姜岛">桥梁</a>是否已修复。
+</td></tr>
+<tr>
+<td><samp>IS_JOJA_MART_COMPLETE</samp>
+</td>
+<td>是否建造了<a href="/Joja%E4%BB%93%E5%BA%93" title="Joja仓库">Joja仓库</a>。
+</td></tr>
+<tr>
+<td><samp>IS_MULTIPLAYER</samp>
+</td>
+<td>是否为多人游戏（无论是否有多人玩家连入）。
+</td></tr>
+<tr>
+<td><samp>IS_VISITING_ISLAND <code title="必需字段 &#39;name&#39;">&lt;name&gt;</code></samp>
+</td>
+<td>是否指定名字的村民当天前往<a href="/%E5%A7%9C%E5%B2%9B" title="姜岛">姜岛</a>。
+</td></tr>
+<tr>
+<td><samp>LOCATION_ACCESSIBLE <code title="必需字段 &#39;name&#39;">&lt;name&gt;</code></samp>
+</td>
+<td>是否可用<a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">给定地点</a>。对于原版地点，这仅对<samp>CommunityCenter</samp>、<samp>JojaMart</samp>、<samp>Railroad</samp>或<samp>Desert</samp>有效；任何其他位置总会返回true，除非模组自定义了此查询。
+</td></tr>
+<tr>
+<td><samp>LOCATION_CONTEXT <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code> <code title="必需字段 &#39;context ID&#39;">&lt;context ID&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">给定地点</a>的上下文ID。
+</td></tr>
+<tr>
+<td><samp>LOCATION_HAS_CUSTOM_FIELD <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code> <code title="必需字段 &#39;key&#39;">&lt;key&gt;</code> <code title="可选字段 &#39;value&#39;">[value]</code></samp>
+</td>
+<td>检查是否给定地点的CustomFields包含指定值。若缺省<code title="可选字段 &#39;value&#39;">[value]</code>，则检查是否存在<code title="必需字段 &#39;key&#39;">&lt;key&gt;</code>。
+</td></tr>
+<tr>
+<td><samp>LOCATION_IS_INDOORS <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code></samp><br /><samp>LOCATION_IS_OUTDOORS <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code></samp><br /><samp>LOCATION_IS_MINES <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code></samp><br /><samp>LOCATION_IS_SKULL_CAVE <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">给定地点</a>是否在室内，在<a href="/%E7%9F%BF%E4%BA%95" title="矿井">矿井</a>中或在<a href="/%E9%AA%B7%E9%AB%85%E6%B4%9E%E7%A9%B4" title="骷髅洞穴">骷髅洞穴</a>。
+</td></tr>
+<tr>
+<td><samp>LOCATION_NAME <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code> <code title="必需字段 &#39;name&#39;">&lt;name&gt;</code>+</samp><br /><samp>LOCATION_UNIQUE_NAME <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code> <code title="必需字段 &#39;name&#39;">&lt;name&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">给定地点</a>是否具有指定名称或唯一实例名称的其中之一（这两种名称都可以使用<a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/679">Debug Mode</a>模组查看）。
+</td></tr>
+<tr>
+<td><samp>LOCATION_SEASON <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code> [<code title="必需字段 &#39;season&#39;">&lt;season&gt;</code>]+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">给定地点</a>是否在指定季节之一中（季节为<samp>spring</samp>、<samp>summer</samp>、<samp>fall</samp> 或 <samp>winter</samp>）。主要用于处理<a href="/mediawiki/index.php?title=Modding:Migrate_to_Stardew_Valley_1.6&amp;action=edit&amp;redlink=1" class="new" title="Modding:Migrate to Stardew Valley 1.6（页面不存在）">地点上下文中</a>的<samp>SeasonOverride</samp>字段。
+<p>例如，如下查询匹配春季<b>或</b>夏季：<code>LOCATION_SEASON Here spring summer</code>.
+</p>
+</td></tr>
+<tr>
+<td><samp>MUSEUM_DONATIONS <code title="必需字段 &#39;min count&#39;">&lt;min count&gt;</code> <code title="可选字段 &#39;max count&#39;">[max count]</code> <code title="可选字段 &#39;object type&#39;">[object type]</code>+</samp>
+</td>
+<td>是否所有玩家一共向<a href="/%E5%8D%9A%E7%89%A9%E9%A6%86" title="博物馆">博物馆</a>捐献了最小<code title="必需字段 &#39;min count&#39;">&lt;min count&gt;</code>件、最多<code title="可选字段 &#39;max count&#39;">[max count]</code>（默认为无穷）件物品，包含端点值。可以使用物品类型<code title="可选字段 &#39;object type&#39;">[object type]</code>过滤器，例如<samp>MUSEUM_DONATIONS 40 Arch Minerals</samp>要求古物或矿物共计40件。缺省<code title="可选字段 &#39;max count&#39;">[max count]</code>的情况下，仍可使用过滤器。
+</td></tr>
+<tr>
+<td><samp>WEATHER <code title="必需字段 &#39;location&#39;">&lt;location&gt;</code> <code title="必需字段 &#39;weather&#39;">&lt;weather&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">给定地点</a>的天气ID。其中<code title="必需字段 &#39;weather&#39;">&lt;weather&gt;</code>为<samp>Festival</samp>、<samp>Rain</samp>、<samp>Snow</samp>、<samp>Storm</samp>、<samp>Sun</samp>、<samp>Wind</samp>或<a href="/mediawiki/index.php?title=Modding:Migrate_to_Stardew_Valley_1.6&amp;action=edit&amp;redlink=1" class="new" title="Modding:Migrate to Stardew Valley 1.6（页面不存在）">自定义天气ID</a>。
+</td></tr>
+<tr>
+<td><samp>WORLD_STATE_FIELD <code title="必需字段 &#39;name&#39;">&lt;name&gt;</code> <code title="必需字段 &#39;value&#39;">&lt;value&gt;</code></samp>
+</td>
+<td>是否<samp>Game1.netWorldState</samp>中的指定属性具有指定值。若属性为数值类型，则<code title="必需字段 &#39;value&#39;">&lt;value&gt;</code>代表<b>最小</b>值。以下是某些没有被对应类别查询覆盖到的值：
+<table class="wikitable">
+
+<tbody><tr>
+<th>名称
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>GoldenCoconutCracked</samp>
+</td>
+<td>玩家是否打开过<a href="/%E9%87%91%E8%89%B2%E6%A4%B0%E5%AD%90" title="金色椰子">金色椰子</a>（<samp>true</samp>或<samp>false</samp>）。
+</td></tr>
+<tr>
+<td><samp>GoldenWalnutsFound</samp><br /><samp>GoldenWalnuts</samp>
+</td>
+<td>玩家找到或持有的<a href="/%E9%87%91%E8%89%B2%E6%A0%B8%E6%A1%83" title="金色核桃">金色核桃</a>总数。若需检查某玩家当前持有的金色核桃数量，请使用<samp>PLAYER_HAS_ITEM</samp>查询。
+</td></tr>
+<tr>
+<td><samp>IsGoblinRemoved</samp>
+</td>
+<td>是否<a href="/%E4%BB%86%E4%BB%8E" title="仆从">仆从</a>已移除，以使玩家进入<a href="/%E5%A5%B3%E5%B7%AB%E5%B0%8F%E5%B1%8B" title="女巫小屋">女巫小屋</a>。（<samp>true</samp>或<samp>false</samp>）。
+</td></tr>
+<tr>
+<td><samp>IsSubmarineLocked</samp>
+</td>
+<td>是否某玩家正在使用<a href="/%E5%A4%9C%E5%B8%82" title="夜市">夜市</a>潜水艇。（<samp>true</samp>或<samp>false</samp>）。
+</td></tr>
+<tr>
+<td><samp>LostBooksFound</samp>
+</td>
+<td>玩家找到或持有的<a href="/%E9%81%97%E5%A4%B1%E4%B9%8B%E4%B9%A6" title="遗失之书">遗失之书</a>总数。
+</td></tr>
+<tr>
+<td><samp>MinesDifficulty</samp><br /><samp>SkullCavesDifficulty</samp>
+</td>
+<td>当前<a href="/%E7%9F%BF%E4%BA%95" title="矿井">矿井</a>或<a href="/%E9%AA%B7%E9%AB%85%E6%B4%9E%E7%A9%B4" title="骷髅洞穴">骷髅洞穴</a>的<a href="/%E7%9F%BF%E4%BA%95#.E6.8C.91.E6.88.98.E4.B9.8B.E7.A5.9E.E5.BA.99" title="矿井">挑战之神庙</a>难度等级（为一个数值，其中 <samp>0</samp>为神庙未激活时的默认难度。）
+</td></tr>
+<tr>
+<td><samp>MiniShippingBinsObtained</samp>
+</td>
+<td>玩家获得<a href="/%E8%BF%B7%E4%BD%A0%E5%87%BA%E8%B4%A7%E7%AE%B1" title="迷你出货箱">迷你出货箱</a>的次数。
+</td></tr>
+<tr>
+<td><samp>ParrotPlatformsUnlocked</samp>
+</td>
+<td>玩家是否解锁了<a href="/%E5%A7%9C%E5%B2%9B" title="姜岛">姜岛</a>的鹦鹉任务，无需玩家完成所有的鹦鹉任务。（<samp>true</samp>或<samp>false</samp>）。
+</td></tr>
+<tr>
+<td><samp>ServerPrivacy</samp>
+</td>
+<td><a href="/%E5%90%88%E4%BD%9C" title="合作">合作</a>模式的链接隐私选项（<samp>InviteOnly</samp>或<samp>FriendsOnly</samp>）。
+</td></tr>
+<tr>
+<td><samp>ShuffleMineChests</samp>
+</td>
+<td>“矿井掉落”<a href="/%E9%80%89%E9%A1%B9" title="选项">游戏选项的</a>的值（<samp>Default</samp>或<samp>Remixed</samp>）。
+</td></tr>
+<tr>
+<td><samp>WeatherForTomorrow</samp>
+</td>
+<td>星露谷地区明日天气ID。
+</td></tr>
+<tr>
+<td><samp>VisitsUntilY1Guarantee</samp>
+</td>
+<td><a href="/%E6%97%85%E8%A1%8C%E8%B4%A7%E8%BD%A6" title="旅行货车">旅行货车</a>中出现<a href="/%E7%BA%A2%E5%8F%B6%E5%8D%B7%E5%BF%83%E8%8F%9C" title="红叶卷心菜">红叶卷心菜</a>至多所需次数。
+</td></tr></tbody></table>
+<p>例如，<a href="/%E6%97%85%E8%A1%8C%E8%B4%A7%E8%BD%A6" title="旅行货车">旅行货车</a>使用<code>WORLD_STATE_FIELD VisitsUntilY1Guarantee 0</code>条件来检查其是否应当保底给出<a href="/%E7%BA%A2%E5%8F%B6%E5%8D%B7%E5%BF%83%E8%8F%9C" title="红叶卷心菜">红叶卷心菜</a>物品。
+</p>
+</td></tr>
+<tr>
+<td><samp>WORLD_STATE_FIELD <code title="必需字段 &#39;name&#39;">&lt;name&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>仅用于数值属性。判断<samp>Game1.netWorldState</samp>某一属性是否在<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>到<code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）之间。若缺省<code title="可选字段 &#39;max&#39;">[max]</code>或该属性不是数值型，则使用之前给出的语法。参见前一条<samp>WORLD_STATE_FIELD</samp>说明以获得某些实用属性的列表。
+</td></tr>
+<tr>
+<td><samp>WORLD_STATE_ID <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code>+</samp>
+</td>
+<td>是否具有给定<code title="必需字段 &#39;id&#39;">&lt;id&gt;</code>值的世界状态标识已被设置。
+</td></tr></tbody></table>
+<h3><span id="玩家信息_&amp;_进度"></span><span class="mw-headline" id=".E7.8E.A9.E5.AE.B6.E4.BF.A1.E6.81.AF_.26_.E8.BF.9B.E5.BA.A6">玩家信息 &amp; 进度</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>MINE_LOWEST_LEVEL_REACHED <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>玩家是否到达了<a href="/%E7%9F%BF%E4%BA%95" title="矿井">矿井</a><code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>层到<code title="可选字段 &#39;max&#39;">[max]</code>层（默认为无穷），包含端点值。
+</td></tr>
+<tr>
+<td><samp>PLAYER_COMBAT_LEVEL <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp><br /><samp>PLAYER_FARMING_LEVEL <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp><br /><samp>PLAYER_FISHING_LEVEL <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp><br /><samp>PLAYER_FORAGING_LEVEL <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp><br /><samp>PLAYER_LUCK_LEVEL <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp><br /><samp>PLAYER_MINING_LEVEL <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有介于<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>和<code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）之间的<a href="/%E6%8A%80%E8%83%BD" title="技能">技能等级</a>，包含端点值。技能加成的等级也计入。
+</td></tr>
+<tr>
+<td><samp>PLAYER_CURRENT_MONEY <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>至<code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）金。
+</td></tr>
+<tr>
+<td><samp>PLAYER_FARMHOUSE_UPGRADE <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否升级了其<a href="/%E5%86%9C%E8%88%8D" title="农舍">农舍</a>或<a href="/%E8%81%94%E6%9C%BA%E5%B0%8F%E5%B1%8B" title="联机小屋">联机小屋</a>至<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>级到<code title="可选字段 &#39;max&#39;">[max]</code>级（默认为无穷）之间。包含端点值。参见<a rel="nofollow" class="external text" href="https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide/tokens.md#FarmhouseUpgrade">可用的等级</a>.
+</td></tr>
+<tr>
+<td><samp>PLAYER_GENDER <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;gender&#39;">&lt;gender&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>性别是否为<samp>Male</samp>或<samp>Female</samp>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_ACHIEVEMENT <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;achievement id&#39;">&lt;achievement id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否已解锁指定的成就ID。可用的ID位于<a href="/%E6%A8%A1%E7%BB%84:%E6%88%90%E5%B0%B1%E6%95%B0%E6%8D%AE" title="模组:成就数据"><samp>Data/Achievements</samp></a>，以及一些没有列出的Steam专属成就ID。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_ALL_ACHIEVEMENTS <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否已解锁了<a href="/%E6%A8%A1%E7%BB%84:%E6%88%90%E5%B0%B1%E6%95%B0%E6%8D%AE" title="模组:成就数据"><samp>Data/Achievements</samp></a>中的全部成就。不计入Steam专属成就。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_BUFF <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>当前是否具有指定<a href="/%E5%A2%9E%E7%9B%8A%E6%95%88%E6%9E%9C" title="增益效果">效果</a>ID。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_CAUGHT_FISH <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否已抓住一条指定ID的鱼。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_CONVERSATION_TOPIC <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有指定ID的<a href="/%E6%A8%A1%E7%BB%84:%E5%AF%B9%E8%AF%9D#.E5.AF.B9.E8.AF.9D.E4.B8.BB.E9.A2.98" title="模组:对话">对话主题</a>正在活跃状态。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_COOKING_RECIPE <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;recipe name&#39;">&lt;recipe name&gt;</code></samp><br /><samp>PLAYER_HAS_CRAFTING_RECIPE <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;recipe name&#39;">&lt;recipe name&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否学会指定的烹饪/打造配方。配方为内部名称（允许空格）。例如，<code>PLAYER_HAS_CRAFTING_RECIPE Current Field Snack</code>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_DIALOGUE_ANSWER <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否在先前的对话中选择了指定的对话回答。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_HEARD_SONG <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否听过某个音乐的<a href="/%E6%A8%A1%E7%BB%84:%E9%9F%B3%E9%A2%91" title="模组:音频">声音提示名称</a>（也就是<a href="/mediawiki/index.php?title=%E7%82%B9%E5%94%B1%E6%9C%BA&amp;action=edit&amp;redlink=1" class="new" title="点唱机（页面不存在）">点唱机</a>列出的音乐名称）。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_ITEM <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;item&#39;">&lt;item&gt;</code> <code title="可选字段 &#39;min&#39;">[min]</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>背包中是否有<code title="可选字段 &#39;min&#39;">[min]</code>到<code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）之间那么多件的指定物品，包含端点值。其中物品ID <code title="必需字段 &#39;item&#39;">&lt;item&gt;</code> 可以为<samp>858</samp>或<samp>(O)858</samp>（齐钻），<samp>73</samp>或<samp>(O)73</samp>（核桃），或<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E7.89.A9.E5.93.81ID" title="模组:公共数据字段">限定性或非限定性物品ID</a>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_MAIL <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;mail id&#39;">&lt;mail id&gt;</code> <code title="可选字段 &#39;type&#39;">[type]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有设置了指定的<a href="/%E6%A8%A1%E7%BB%84:%E4%BF%A1%E4%BB%B6%E6%95%B0%E6%8D%AE" title="模组:信件数据">信件标识</a>。
+<p>其中类型<code title="可选字段 &#39;type&#39;">[type]</code>（默认为<samp>Any</samp>）为下列取值之一：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>类型
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Any</samp>
+</td>
+<td><a href="/%E5%86%9C%E5%9C%BA#.E9.82.AE.E7.AE.B1" title="农场">邮箱</a>中的信件，即将在明天收到的信件，或已读的信件。
+</td></tr>
+<tr>
+<td><samp>Mailbox</samp>
+</td>
+<td>邮箱中的信件。
+</td></tr>
+<tr>
+<td><samp>Tomorrow</samp>
+</td>
+<td>即将在明天收到的信件
+</td></tr>
+<tr>
+<td><samp>Received</samp>
+</td>
+<td>满足下列任一条的信件：
+<ul><li>在邮箱中或已读。</li>
+<li>或在<samp>Data/mail</samp>中没有对应信件，因此会被直接添加到已读列表。</li></ul>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_PROFESSION <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;profession id&#39;">&lt;profession id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否具有指定的<a href="/%E6%8A%80%E8%83%BD" title="技能">职业</a>ID。参见<a href="/%E6%A8%A1%E7%BB%84:%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%91%BD%E4%BB%A4#.E6.8A.80.E8.83.BD.E5.92.8C.E7.BB.8F.E9.AA.8C" title="模组:控制台命令">技能和经验调试指令</a>以获取ID列表。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_RUN_TRIGGER_ACTION <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否应用了具有指定ID <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code> 的<a href="/%E6%A8%A1%E7%BB%84:%E8%A7%A6%E5%8F%91%E5%8A%A8%E4%BD%9C" title="模组:触发动作">触发动作</a>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_SECRET_NOTE <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否已经阅读了指定秘密纸条，其中<code title="必需字段 &#39;id&#39;">&lt;id&gt;</code>为纸条的整数ID。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_SEEN_EVENT <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;id&#39;">&lt;id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否已经观看了给定<code title="必需字段 &#39;id&#39;">&lt;id&gt;</code>的事件。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_TOWN_KEY <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否已获得<a href="/%E5%B0%8F%E9%95%87%E9%92%A5%E5%8C%99" title="小镇钥匙">小镇钥匙</a>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_TRASH_CAN_LEVEL <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>的<a href="/%E5%9E%83%E5%9C%BE%E6%A1%B6" title="垃圾桶">垃圾桶</a>等级是否介于<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>和<code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）之间。包含端点值。<code title="必需字段 &#39;level&#39;">&lt;level&gt;</code>可以为<samp>0</samp>（基础）、 <samp>1</samp>（铜）、<samp>2</samp>（钢）、<samp>3</samp>（金）或 <samp>4</samp>（铱）。
+</td></tr>
+<tr>
+<td><samp>PLAYER_LOCATION_CONTEXT <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;location context&#39;">&lt;location context&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否处于指定的<a href="/mediawiki/index.php?title=Modding:Migrate_to_Stardew_Valley_1.6&amp;action=edit&amp;redlink=1" class="new" title="Modding:Migrate to Stardew Valley 1.6（页面不存在）">地点上下文</a>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_LOCATION_NAME <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;location name&#39;">&lt;location name&gt;</code>+</samp><br /><samp>PLAYER_LOCATION_UNIQUE_NAME <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;location name&#39;">&lt;location name&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否在指定位置，使用游戏名称或唯一实例名称（两种名称都可以使用<a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/679">Debug Mode</a>模组获得）。其中<code title="必需字段 &#39;location name&#39;">&lt;location name&gt;</code>无法识别<a href="#.E7.9B.AE.E6.A0.87.E4.BD.8D.E7.BD.AE">目标位置关键词</a>例如<samp>Here</samp>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_MOD_DATA <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;key&#39;">&lt;key&gt;</code> <code title="必需字段 &#39;value&#39;">&lt;value&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有模组添加的、具有指定<code title="必需字段 &#39;key&#39;">&lt;key&gt;</code>和<code title="必需字段 &#39;value&#39;">&lt;value&gt;</code>的<samp>player.modData</samp>条目。
+</td></tr>
+<tr>
+<td><samp>PLAYER_MONEY_EARNED <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否赚了介于<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>和<code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）金。包含端点值。
+</td></tr>
+<tr>
+<td><samp>PLAYER_KILLED_MONSTERS <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;monster name&#39;">&lt;monster name&gt;</code>+ <code title="可选字段 &#39;min count&#39;">[min count]</code> <code title="可选字段 &#39;max count&#39;">[max count]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否杀了介于 <code title="可选字段 &#39;min count&#39;">[min count]</code>（默认为1）到 <code title="可选字段 &#39;max count&#39;">[max count]</code> （默认为无穷）只给定怪物。包含端点值。若指定多只怪物，则检查击杀总数。
+<p>例如
+</p>
+<div class="mw-highlight mw-highlight-lang-js mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// killed 50+ slimes, skeletons, and bugs combined</span>
+<span class="nx">PLAYER_KILLED_MONSTERS</span> <span class="nx">Current</span> <span class="s2">&quot;Green Slime&quot;</span> <span class="nx">Skeleton</span> <span class="nx">Bug</span> <span class="mi">50</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><samp>PLAYER_SHIPPED_BASIC_ITEM <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;item ID&#39;">&lt;item ID&gt;</code> <code title="可选字段 &#39;min count&#39;">[min count]</code> <code title="可选字段 &#39;max count&#39;">[max count]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否售出了 <code title="可选字段 &#39;min count&#39;">[min count]</code>（默认为1）至 {{o|max count}（默认为无穷）件指定商品。仅对被游戏出货统计数据跟踪的物品有效（也就是<a href="/%E5%94%AE%E5%8D%96#.E6.94.B6.E9.9B.86.E5.93.81" title="售卖">收集品</a>菜单中列出的物品）。
+</td></tr>
+<tr>
+<td><samp>PLAYER_SPECIAL_ORDER_ACTIVE <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;order id&#39;">&lt;order id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否正在进行指定的<a href="/mediawiki/index.php?title=%E7%89%B9%E6%AE%8A%E4%BB%BB%E5%8A%A1&amp;action=edit&amp;redlink=1" class="new" title="特殊任务（页面不存在）">特殊任务</a>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_SPECIAL_ORDER_COMPLETE <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;order id&#39;">&lt;order id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否已完成指定的<a href="/mediawiki/index.php?title=%E7%89%B9%E6%AE%8A%E4%BB%BB%E5%8A%A1&amp;action=edit&amp;redlink=1" class="new" title="特殊任务（页面不存在）">特殊任务</a>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_SPECIAL_ORDER_RULE_ACTIVE <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;rule id&#39;">&lt;rule id&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有处于活跃状态的<a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E7%89%B9%E6%AE%8A%E4%BB%BB%E5%8A%A1&amp;action=edit&amp;redlink=1" class="new" title="模组:特殊任务（页面不存在）">特殊任务规则</a>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_STAT <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;stat name&#39;">&lt;stat name&gt;</code> <code title="必需字段 &#39;min value&#39;">&lt;min value&gt;</code> <code title="可选字段 &#39;max value&#39;">[max value]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>的指定统计项是否有介于<code title="必需字段 &#39;min value&#39;">&lt;min value&gt;</code>和<code title="可选字段 &#39;max value&#39;">[max value]</code>（默认为无穷）之间的值。包含端点值。
+<p><b>⚠ 注意</b>：在多人游戏中，统计项并不是同步的。因此农场助手并不能获取房主或其他农场助手的统计项。
+</p><p>可用的统计项名称为：
+</p>
+<ul><li><samp>averageBedtime</samp>;</li>
+<li><samp>beachFarmSpawns</samp>;</li>
+<li><samp>beveragesMade</samp>;</li>
+<li><samp>boatRidesToIsland</samp>;</li>
+<li><samp>bouldersCracked</samp>;</li>
+<li><samp>caveCarrotsFound</samp>;</li>
+<li><samp>cheeseMade</samp>;</li>
+<li><samp>chickenEggsLayed</samp>;</li>
+<li><samp>childrenTurnedToDoves</samp>;</li>
+<li><samp>coalFound</samp>;</li>
+<li><samp>coinsFound</samp>;</li>
+<li><samp>copperFound</samp>;</li>
+<li><samp>cowMilkProduced</samp>;</li>
+<li><samp>cropsShipped</samp>;</li>
+<li><samp>daysPlayed</samp>;</li>
+<li><samp>diamondsFound</samp>;</li>
+<li><samp>dirtHoed</samp>;</li>
+<li><samp>duckEggsLayed</samp>;</li>
+<li><samp>exMemoriesWiped</samp>;</li>
+<li><samp>fishCaught</samp>;</li>
+<li><samp>geodesCracked</samp>;</li>
+<li><samp>giftsGiven</samp>;</li>
+<li><samp>goatCheeseMade</samp>;</li>
+<li><samp>goatMilkProduced</samp>;</li>
+<li><samp>goldFound</samp>;</li>
+<li><samp>goodFriends</samp>;</li>
+<li><samp>hardModeMonstersKilled</samp>;</li>
+<li><samp>individualMoneyEarned</samp>;</li>
+<li><samp>iridiumFound</samp>;</li>
+<li><samp>ironFound</samp>;</li>
+<li><samp>itemsCooked</samp>;</li>
+<li><samp>itemsCrafted</samp>;</li>
+<li><samp>itemsForaged</samp>;</li>
+<li><samp>itemsShipped</samp>;</li>
+<li><samp>monstersKilled</samp>;</li>
+<li><samp>mysticStonesCrushed</samp>;</li>
+<li><samp>notesFound</samp>;</li>
+<li><samp>otherPreciousGemsFound</samp>;</li>
+<li><samp>piecesOfTrashRecycled</samp>;</li>
+<li><samp>preservesMade</samp>;</li>
+<li><samp>prismaticShardsFound</samp>;</li>
+<li><samp>questsCompleted</samp>;</li>
+<li><samp>rabbitWoolProduced</samp>;</li>
+<li><samp>rocksCrushed</samp>;</li>
+<li><samp>seedsSown</samp>;</li>
+<li><samp>sheepWoolProduced</samp>;</li>
+<li><samp>slimesKilled</samp>;</li>
+<li><samp>starLevelCropsShipped</samp>;</li>
+<li><samp>stepsTaken</samp>;</li>
+<li><samp>sticksChopped</samp>;</li>
+<li><samp>stoneGathered</samp>;</li>
+<li><samp>stumpsChopped</samp>;</li>
+<li><samp>timesEnchanted</samp>;</li>
+<li><samp>timesFished</samp>;</li>
+<li><samp>timesUnconscious</samp>;</li>
+<li><samp>totalMoneyGifted</samp>;</li>
+<li><samp>trashCansChecked</samp>;</li>
+<li><samp>trufflesFound</samp>;</li>
+<li><samp>walnutsFound</samp>;</li>
+<li><samp>weedsEliminated</samp>.</li></ul>
+</td></tr>
+<tr>
+<td><samp>PLAYER_VISITED_LOCATION <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;location name&#39;">&lt;location name&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否已造访指定地点的其中之一。例如， <code>PLAYER_VISITED_LOCATION Current IslandWest</code>检查玩家是否造访过<a href="/%E5%A7%9C%E5%B2%9B#.E5.B2.9B.E5.B1.BF.E8.A5.BF.E9.83.A8" title="姜岛">岛屿西部</a>。
+<p>注意：
+</p>
+<ul><li>某些地点同时具有通用名称（例如<samp>Barn</samp>）和唯一名称（<samp>Barn{unique ID}</samp>）。此命令使用通用名称。</li>
+<li>生成的矿井和火山地牢层数不会被追踪。</li></ul>
+</td></tr></tbody></table>
+<h3><span id="玩家关系"></span><span class="mw-headline" id=".E7.8E.A9.E5.AE.B6.E5.85.B3.E7.B3.BB">玩家关系</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>PLAYER_FRIENDSHIP_POINTS <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;npc&#39;">&lt;npc&gt;</code> <code title="必需字段 &#39;min points&#39;">&lt;min points&gt;</code> <code title="可选字段 &#39;max points&#39;">[max points]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否具有介于<code title="必需字段 &#39;min points&#39;">&lt;min points&gt;</code>和<code title="可选字段 &#39;max points&#39;">[max points]</code>（默认为无穷）之间的<a href="/%E5%8F%8B%E8%B0%8A" title="友谊">友谊值</a>。包含端点值。其中<code title="必需字段 &#39;npc&#39;">&lt;npc&gt;</code>为村民的内部名称，亦可为<samp>Any</samp>（检查所有村民）或 <samp>AnyDateable</samp>（检查所有可约会村民）。
+<p>例如，下述查询会检查当前玩家与阿比盖尔是否有大于等于750点友谊（即3+心）：
+</p>
+<pre>PLAYER_FRIENDSHIP_POINTS Current Abigail 750</pre>
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_CHILDREN <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="可选字段 &#39;min&#39;">[min]</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有介于<code title="可选字段 &#39;min&#39;">[min]</code>（默认为1）和 <code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）之间个孩子。包含端点值。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_PET <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有<a href="/%E5%8A%A8%E7%89%A9#.E5.AE.A0.E7.89.A9" title="动物">宠物</a>。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HEARTS <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;npc&#39;">&lt;npc&gt;</code> <code title="必需字段 &#39;min hearts&#39;">&lt;min hearts&gt;</code> <code title="可选字段 &#39;max hearts&#39;">[max hearts]</code></samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否有一个友谊值介于 <code title="必需字段 &#39;min hearts&#39;">&lt;min hearts&gt;</code> 和 <code title="可选字段 &#39;max hearts&#39;">[max hearts]</code>（默认为无穷）之间的朋友。其中<code title="必需字段 &#39;npc&#39;">&lt;npc&gt;</code>为村民的内部名称，亦可为<samp>Any</samp> （检查所有村民）或 <samp>AnyDateable</samp>（检查所有可约会村民）。
+<p>例如，下述例子检查当前玩家是否与阿比盖尔有3+心的友谊值：
+</p>
+<pre>PLAYER_HEARTS Current Abigail 3</pre>
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_MET <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;npc&#39;">&lt;npc&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否与指定村民之一交谈至少以此。其中<code title="必需字段 &#39;npc&#39;">&lt;npc&gt;</code>为村民内部名称。
+</td></tr>
+<tr>
+<td><samp>PLAYER_NPC_RELATIONSHIP <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;npc&#39;">&lt;npc&gt;</code> <code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否与指定村民有指定关系之一。其中<code title="必需字段 &#39;npc&#39;">&lt;npc&gt;</code>为NPC的内部名称或 <samp>Any</samp>（检查所有村民）。
+<p>关系类型<code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>为下述取值之一：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>类型
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Friendly</samp>
+</td>
+<td>仅见过，而无其他状态。
+</td></tr>
+<tr>
+<td><samp>Roommate</samp>
+</td>
+<td>村民与玩家为室友。
+</td></tr>
+<tr>
+<td><samp>Dating</samp>
+</td>
+<td>玩家赠与村民<a href="/%E8%8A%B1%E6%9D%9F" title="花束">花束</a>，但没有给<a href="/%E7%BE%8E%E4%BA%BA%E9%B1%BC%E5%90%8A%E5%9D%A0" title="美人鱼吊坠">美人鱼吊坠</a>。
+</td></tr>
+<tr>
+<td><samp>Engaged</samp>
+</td>
+<td>玩家赠与村民<a href="/%E7%BE%8E%E4%BA%BA%E9%B1%BC%E5%90%8A%E5%9D%A0" title="美人鱼吊坠">美人鱼吊坠</a>，但尚未举办婚礼。
+</td></tr>
+<tr>
+<td><samp>Married</samp>
+</td>
+<td>村民为玩家的配偶。
+</td></tr>
+<tr>
+<td><samp>Divorced</samp>
+</td>
+<td>玩家与村民离婚。
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>PLAYER_PLAYER_RELATIONSHIP <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;other player&#39;">&lt;other player&gt;</code> <code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>是否与指定玩家有指定关系之一。其中<code title="必需字段 &#39;other player&#39;">&lt;other player&gt;</code>可以为<a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">目标玩家</a>或<samp>Any</samp>（检查所有玩家）。
+<p>关系类型<code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>可以为下列取值之一：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>类型
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Friendly</samp>
+</td>
+<td>无其他状态。
+</td></tr>
+<tr>
+<td><samp>Engaged</samp>
+</td>
+<td>玩家之一向另一个玩家赠与了<a href="/%E7%BB%93%E5%A9%9A%E6%88%92%E6%8C%87" title="结婚戒指">结婚戒指</a>，但尚未举办婚礼。
+</td></tr>
+<tr>
+<td><samp>Married</samp>
+</td>
+<td>已婚。
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>PLAYER_PREFERRED_PET <code title="必需字段 &#39;player&#39;">&lt;player&gt;</code> <code title="必需字段 &#39;pet type&#39;">&lt;pet type&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">指定玩家</a>的宠物喜好是否为指定类型之一。原版宠物类型为<samp>Cat</samp> 和<samp>Dog</samp>。
+</td></tr></tbody></table>
+<h3><span id="随机化"></span><span class="mw-headline" id=".E9.9A.8F.E6.9C.BA.E5.8C.96">随机化</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>RANDOM <code title="必需字段 &#39;chance&#39;">&lt;chance&gt;</code> <code title="可选字段 &#39;@addDailyLuck&#39;">[@addDailyLuck]</code></samp>
+</td>
+<td>随机概率检查。每次调用，结果都会更新。例如<code>RANDOM 0.4</code>每次有40%的概率返回true。
+<p>若指定了<samp>@addDailyLuck</samp>参数，则玩家的每日<a href="/%E8%BF%90%E6%B0%94" title="运气">运气</a>会加到概率上。
+</p>
+</td></tr>
+<tr>
+<td><samp>SYNCED_CHOICE <code title="必需字段 &#39;interval&#39;">&lt;interval&gt;</code> <code title="必需字段 &#39;key&#39;">&lt;key&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="必需字段 &#39;max&#39;">&lt;max&gt;</code> <code title="必需字段 &#39;choices&#39;">&lt;choices&gt;</code>+</samp>
+</td>
+<td>选取介于<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>和<code title="必需字段 &#39;max&#39;">&lt;max&gt;</code>之间的随机整数，包括端点值，并检查其是否匹配<code title="必需字段 &#39;choices&#39;">&lt;choices&gt;</code>其中之一。在相同的时间区间 <code title="必需字段 &#39;interval&#39;">&lt;interval&gt;</code>（取<samp>tick</samp>、<samp>day</samp>、<samp>season</samp> 或 <samp>year</samp> 之一），相同<code title="必需字段 &#39;key&#39;">&lt;key&gt;</code>产生的随机数的结果保持不变，即使在不同玩家间也如此。
+<p>例如，<samp>SYNCED_CHOICE day example_key 1 5 1 2</samp>在1至5之间取值，并检查是否为1或2.
+</p><p>主要用于需要在离散分类中随机取值的情形。常规概率检查请使用<samp>SYNCED_RANDOM</samp>。
+</p>
+</td></tr>
+<tr>
+<td><samp>SYNCED_RANDOM <code title="必需字段 &#39;interval&#39;">&lt;interval&gt;</code> <code title="必需字段 &#39;key&#39;">&lt;key&gt;</code> <code title="必需字段 &#39;chance&#39;">&lt;chance&gt;</code> <code title="可选字段 &#39;@addDailyLuck&#39;">[@addDailyLuck]</code></samp>
+</td>
+<td>随机概率检查。在相同的时间区间 <code title="必需字段 &#39;interval&#39;">&lt;interval&gt;</code>（取<samp>tick</samp>、<samp>day</samp>、<samp>season</samp> 或 <samp>year</samp> 之一），相同<code title="必需字段 &#39;key&#39;">&lt;key&gt;</code>产生的随机数的结果保持不变，即使在不同玩家间也如此。
+<p>例如，<samp>SYNCED_RANDOM day cart_rare_seed 0.4</samp>在当天第一次调用时有40%概率返回true，当天再次使用cart_rare_seed调用时返回值不变。
+</p><p>若指定<samp>@addDailyLuck</samp>参数，则将玩家的每日<a href="/%E8%BF%90%E6%B0%94" title="运气">运气</a>加到概率上。
+</p>
+</td></tr>
+<tr>
+<td><samp>SYNCED_SUMMER_RAIN_RANDOM <code title="必需字段 &#39;base chance&#39;">&lt;base chance&gt;</code> <code title="必需字段 &#39;day multiplier&#39;">&lt;day multiplier&gt;</code></samp>
+</td>
+<td><samp>SYNCED_DAY_RANDOM</samp>的专用变体，用于计算夏季下雨的概率，后者随夏季天数增加。
+</td></tr></tbody></table>
+<h3><span id="仅用于物品"></span><span class="mw-headline" id=".E4.BB.85.E7.94.A8.E4.BA.8E.E7.89.A9.E5.93.81">仅用于物品</span></h3>
+<p>如下查询仅用于需要查询物品的情形（例如打造配方、商店等都常常需要检查物品）；若用在其他情形，则返回false。此类查询需要<code title="必需字段 &#39;target&#39;">&lt;target&gt;</code>参数，为输入物品 <samp>Input</samp>（放入机器的物品）或 目标物品<samp>Target</samp>（机器输出的物品、果树水果、商店物品等）。仅对原版上下文适用。模组可以自由选择希望向<samp>Input</samp>或<samp>Target</samp>传入的物品。
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>ITEM_CATEGORY <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code></samp>
+</td>
+<td>物品是否具有非0的<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%95%B0%E6%8D%AE#.E7.B1.BB.E5.88.AB" title="模组:物品数据">类别</a>。
+</td></tr>
+<tr>
+<td><samp>ITEM_CATEGORY <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="可选字段 &#39;category&#39;">[category]</code>+</samp>
+</td>
+<td>物品是否具有匹配给定值的<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%95%B0%E6%8D%AE#.E7.B1.BB.E5.88.AB" title="模组:物品数据">类别</a>。
+</td></tr>
+<tr>
+<td><samp>ITEM_CONTEXT_TAG <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="必需字段 &#39;tags&#39;">&lt;tags&gt;</code></samp>
+</td>
+<td>物品是否具有全部标签，标签用空格分隔。例如<code>ITEM_CONTEXT_TAG Target bone_item marine_item</code>仅匹配同时具有给出的两个标签的物品。
+</td></tr>
+<tr>
+<td><samp>ITEM_EDIBILITY <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="可选字段 &#39;min&#39;">[min]</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>物品的可食性是否介于 <code title="可选字段 &#39;min&#39;">[min]</code>（默认为-299）至 <code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）之间。包含端点值。可食性-300的物品不可使用，因此不指定<code title="可选字段 &#39;min&#39;">[min]</code>和<code title="可选字段 &#39;max&#39;">[max]</code>参数的<samp>ITEM_EDIBILITY <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code></samp>查询会检查物品是否可食。
+</td></tr>
+<tr>
+<td><samp>ITEM_ID <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="必需字段 &#39;item ID&#39;">&lt;item ID&gt;</code>+</samp>
+</td>
+<td>物品是否具有指定<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E7.89.A9.E5.93.81ID" title="模组:公共数据字段">限定性或非限定性物品ID</a>。
+</td></tr>
+<tr>
+<td><samp>ITEM_ID_PREFIX <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="必需字段 &#39;prefix&#39;">&lt;prefix&gt;</code></samp>
+</td>
+<td>物品的<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E7.89.A9.E5.93.81ID" title="模组:公共数据字段">限定性或非限定性物品ID</a>是否具有指定前缀。
+</td></tr>
+<tr>
+<td><samp>ITEM_NUMERIC_ID <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="可选字段 &#39;min&#39;">[min]</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>物品是否具有介于<code title="可选字段 &#39;min&#39;">[min]</code>和<code title="可选字段 &#39;max&#39;">[max]</code>之间的数字物品ID（二者分别默认为可能的最低/最高值）。
+</td></tr>
+<tr>
+<td><samp>ITEM_OBJECT_TYPE <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>+</samp>
+</td>
+<td>物品是否具有指定的<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%95%B0%E6%8D%AE#.E7.89.A9.E4.BD.93" title="模组:物品数据">物体类型</a>。
+</td></tr>
+<tr>
+<td><samp>ITEM_PRICE <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>物品是否具有介于<code title="必需字段 &#39;min&#39;">&lt;min&gt;</code>和<code title="可选字段 &#39;max&#39;">[max]</code>（默认为最大可能值）之间的、从商店购入的价格。此查询会检查基础售价（包括<a href="/%E5%90%88%E4%BD%9C#.E5.88.A9.E6.B6.A6.E7.8E.87" title="合作">利润率</a>，但不包括自定义商店数据，例如自定义价格、自定义价格修饰器、反季价格等）。
+</td></tr>
+<tr>
+<td><samp>ITEM_QUALITY <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>物品品质是否介于 <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> 和 <code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）之间。包含端点值。可能的取值为：<samp>0</samp>（普通）<samp>1</samp>（银星）<samp>2</samp>（金星）或 <samp>4</samp>（铱星）。
+</td></tr>
+<tr>
+<td><samp>ITEM_STACK <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> <code title="可选字段 &#39;max&#39;">[max]</code></samp>
+</td>
+<td>物品堆叠数量是否介于 <code title="必需字段 &#39;min&#39;">&lt;min&gt;</code> 和 <code title="可选字段 &#39;max&#39;">[max]</code>（默认为无穷）之间。包含端点值。注意仅适用于<code title="必需字段 &#39;target&#39;">&lt;target&gt;</code>给出的物品。不包括背包内的其他物品。
+</td></tr>
+<tr>
+<td><samp>ITEM_TYPE <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code> <code title="必需字段 &#39;type&#39;">&lt;type&gt;</code>+</samp>
+</td>
+<td><a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E7.89.A9.E5.93.81ID" title="模组:公共数据字段">物品的类型定义ID</a>是否匹配指定值之一。例如<samp>ITEM_TYPE Target (BC)</samp>匹配大型打造品。
+</td></tr>
+<tr>
+<td><samp>ITEM_HAS_EXPLICIT_OBJECT_CATEGORY <code title="必需字段 &#39;target&#39;">&lt;target&gt;</code></samp>
+</td>
+<td><b>（专用）</b> 物品是否在<samp>Data/Objects</samp>指定了显式类别，而忽略代码中动态分配的类别（例如，戒指）。无显式类别的物品往往是（但不都是）像<a href="/%E7%A7%98%E5%AF%86%E7%BA%B8%E6%9D%A1" title="秘密纸条">秘密纸条</a>或未实装物品的特殊物品。
+</td></tr></tbody></table>
+<h3><span id="不可变"></span><span class="mw-headline" id=".E4.B8.8D.E5.8F.AF.E5.8F.98">不可变</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>TRUE</samp>
+</td>
+<td>总匹配成功。
+</td></tr>
+<tr>
+<td><samp>FALSE</samp>
+</td>
+<td>总匹配失败。
+</td></tr></tbody></table>
+<h2><span id="通用值"></span><span class="mw-headline" id=".E9.80.9A.E7.94.A8.E5.80.BC">通用值</span></h2>
+<h3><span id="目标地点"></span><span class="mw-headline" id=".E7.9B.AE.E6.A0.87.E5.9C.B0.E7.82.B9">目标地点</span></h3>
+<p>某些条件需要<code title="必需字段 &#39;location&#39;">&lt;location&gt;</code>参数。可以为如下之一：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>值
+</th>
+<th>结果
+</th></tr>
+<tr>
+<td><samp>Here</samp>
+</td>
+<td>当前玩家所在地点（不受<a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">目标玩家</a>影响）。
+</td></tr>
+<tr>
+<td><samp>Target</samp>
+</td>
+<td>包含待编辑实体的地点（例如<samp>Data/Machines</samp>的机器或<samp>Data/FruitTrees</samp>的果树）。
+<p>若待编辑素材并不属于某个地点，则采用<a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">目标玩家</a>所在地（若设置了此参数），否则默认为<samp>Here</samp>。
+</p>
+</td></tr>
+<tr>
+<td><b>其他</b>
+</td>
+<td>待检查地点的<a href="/mediawiki/index.php?title=Modding:Migrate_to_Stardew_Valley_1.6&amp;action=edit&amp;redlink=1" class="new" title="Modding:Migrate to Stardew Valley 1.6（页面不存在）">地点ID</a> （即内部名称）。
+</td></tr></tbody></table>
+<h3><span id="目标玩家"></span><span class="mw-headline" id=".E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">目标玩家</span></h3>
+<p>某些条件需要<code title="必需字段 &#39;player&#39;">&lt;player&gt;</code>参数。可以为下列之一：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>值
+</th>
+<th>结果
+</th></tr>
+<tr>
+<td><samp>Any</samp>
+</td>
+<td>至少一个玩家必须匹配此条件，无论其是否在线。
+</td></tr>
+<tr>
+<td><samp>All</samp>
+</td>
+<td>每个玩家必须匹配此条件，无论其是否在线。
+</td></tr>
+<tr>
+<td><samp>Current</samp>
+</td>
+<td>当前玩家。
+</td></tr>
+<tr>
+<td><samp>Host</samp>
+</td>
+<td>房主。
+</td></tr>
+<tr>
+<td><samp>Target</samp>
+</td>
+<td>依赖于上下文：
+<table class="wikitable">
+
+<tbody><tr>
+<th>上下文
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Data/LocationContexts</samp>
+</td>
+<td>仅用于<samp>PassOutLocations</samp>字段, 待获取其晕倒位置的玩家。
+</td></tr>
+<tr>
+<td><samp>Data/Weddings</samp>
+</td>
+<td>仅用于<samp>Attendees</samp>字段，婚礼的出席玩家（若出席者是玩家）。
+</td></tr>
+<tr>
+<td><samp>Data/WildTrees</samp>
+</td>
+<td>仅用于<samp>AdditionalChopDrops</samp>字段，最后砍此树的玩家。
+</td></tr>
+<tr>
+<td><b>自定义查询</b>
+</td>
+<td>C#模组在调用<samp>GameStateQuery.CheckConditions</samp>时，可以指定<samp>target_farmer</samp>参数。
+</td></tr>
+<tr>
+<td><b>其他</b>
+</td>
+<td>相当于<samp>Current</samp>.
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><b>其他</b>
+</td>
+<td>待检查玩家在多人游戏中的唯一ID。
+</td></tr></tbody></table>
+<h2><span id="关于C#模组作者"></span><span class="mw-headline" id=".E5.85.B3.E4.BA.8EC.23.E6.A8.A1.E7.BB.84.E4.BD.9C.E8.80.85">关于C#模组作者</span></h2>
+<h3><span id="在其他地方使用查询"></span><span class="mw-headline" id=".E5.9C.A8.E5.85.B6.E4.BB.96.E5.9C.B0.E6.96.B9.E4.BD.BF.E7.94.A8.E6.9F.A5.E8.AF.A2">在其他地方使用查询</span></h3>
+<p>C#代码可以使用<samp>GameStateQuery</samp>类进行查询，此类提供了一些工具方法，比如
+<code>GameStateQuery.CheckConditions(query)</code>或<code>GameStateQuery.IsImmutablyTrue(query)</code>。
+</p><p>亦可使用<a href="/%E6%A8%A1%E7%BB%84:%E4%BA%8B%E4%BB%B6%E6%95%B0%E6%8D%AE" title="模组:事件数据">事件前提</a>中的游戏状态查询，这种查询使用最新的前提标识，例如<code>some_event_id/gameStateQuery !SEASON Spring, WEATHER Here Sun</code>。
+</p>
+<h3><span id="扩展性"></span><span class="mw-headline" id=".E6.89.A9.E5.B1.95.E6.80.A7">扩展性</span></h3>
+<p>C#模组能够：
+</p>
+<ul><li>使用<code>GameStateQuery.Exists("Example.ModId_ConditionName")</code>检查某一查询是否存在；</li>
+<li>使用<code>GameStateQuery.Register("Example.ModId_ConditionName", handleQueryMethod)</code>自定义查询（查询名称为<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E5.94.AF.E4.B8.80.E5.AD.97.E7.AC.A6.E4.B8.B2ID" title="模组:公共数据字段">唯一字符串ID</a>）。</li>
+<li>使用<code>GameStateQuery.RegisterAlias("Example.ModId_AliasName", "Example.ModId_ConditionName")</code>以添加查询别名（推荐使用<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E5.94.AF.E4.B8.80.E5.AD.97.E7.AC.A6.E4.B8.B2ID" title="模组:公共数据字段">唯一字符串ID</a>作为别名）。</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20250320074208
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.256 seconds
+Real time usage: 0.438 seconds
+Preprocessor visited node count: 6438/1000000
+Post‐expand include size: 17156/2097152 bytes
+Template argument size: 3536/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 830/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  162.683      1 -total
+ 55.79%   90.761    222 Template:T
+ 19.09%   31.055     88 Template:O
+  1.46%    2.368      2 Template:Nexus_mod
+-->
+
+<!-- Saved in parser cache with key zhwiki:pcache:idhash:3288-0!canonical!zh and timestamp 20250320074207 and revision id 49619
+ -->
+</div></div><div class="printfooter">取自“<a dir="ltr" href="https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:游戏状态查询&amp;oldid=49619">https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:游戏状态查询&amp;oldid=49619</a>”</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="Special:页面分类">分类</a>：<ul><li><a href="/Category:%E6%A8%A1%E7%BB%84" title="Category:模组">模组</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>导航菜单</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>个人工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/mediawiki/index.php?title=Special:%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" title="建议您创建一个账户并登录，但这不是强制的">创建账户</a></li><li id="pt-login"><a href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" title="我们鼓励您登录；然而，这不是强制性的[o]" accesskey="o">登录</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>名字空间</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-模组" class="selected"><a href="/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2">模组</a></li><li id="ca-talk" class="new"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84_talk:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;action=edit&amp;redlink=1" rel="discussion" title="关于内容页面的讨论（页面不存在）[t]" accesskey="t">讨论</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>不转换</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"><li id="ca-varlang-0" class="selected"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh" lang="zh" hreflang="zh">不转换</a></li><li id="ca-varlang-1"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-hans" lang="zh-Hans" hreflang="zh-Hans">简体</a></li><li id="ca-varlang-2"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-hant" lang="zh-Hant" hreflang="zh-Hant">繁體</a></li><li id="ca-varlang-3"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-cn" lang="zh-Hans-CN" hreflang="zh-Hans-CN">大陆简体</a></li><li id="ca-varlang-4"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-hk" lang="zh-Hant-HK" hreflang="zh-Hant-HK">香港繁體</a></li><li id="ca-varlang-5"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-mo" lang="zh-Hant-MO" hreflang="zh-Hant-MO">澳門繁體</a></li><li id="ca-varlang-6"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-my" lang="zh-Hans-MY" hreflang="zh-Hans-MY">大马简体</a></li><li id="ca-varlang-7"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-sg" lang="zh-Hans-SG" hreflang="zh-Hans-SG">新加坡简体</a></li><li id="ca-varlang-8"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;variant=zh-tw" lang="zh-Hant-TW" hreflang="zh-Hant-TW">台灣正體</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>视图</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2">阅读</a></li><li id="ca-viewsource" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;action=edit" title="本页面受到保护。您可以查看其源代码[e]" accesskey="e">查看源代码</a></li><li id="ca-history" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;action=history" title="本页面过去的版本[h]" accesskey="h">查看历史</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>更多</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">搜索</label>
+	</h3>
+	<form action="/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="搜索Stardew Valley Wiki" title="搜索Stardew Valley Wiki[f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:搜索">
+			<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="前往" title="若相同标题存在，则直接前往该页面" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="访问首页" class="mw-wiki-logo" href="/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>导航</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/Stardew_Valley_Wiki" title="访问首页[z]" accesskey="z">首页</a></li><li id="n-recentchanges"><a href="/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki最近更改的列表[r]" accesskey="r">最近更改</a></li><li id="n-.E6.9C.AA.E7.BF.BB.E8.AF.91.E7.9A.84.E9.A1.B5.E9.9D.A2"><a href="/Category:%E6%9C%AA%E7%BF%BB%E8%AF%91%E7%9A%84%E9%A1%B5%E9%9D%A2">未翻译的页面</a></li><li id="n-.E5.B8.AE.E5.8A.A9:.E7.BC.96.E8.BE.91.E5.85.A5.E9.97.A8"><a href="/Help:%E7%BC%96%E8%BE%91%E5%85%A5%E9%97%A8">帮助:编辑入门</a></li><li id="n-randompage"><a href="/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面[x]" accesskey="x">随机页面</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-链接" class="vector-menu vector-menu-portal portal" aria-labelledby="p-链接-label" role="navigation" 
+	 >
+	<h3 id="p-链接-label">
+		<span>链接</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-.E5.AE.98.E6.96.B9.E7.BD.91.E7.AB.99"><a href="https://stardewvalley.net" rel="nofollow">官方网站</a></li><li id="n-.E5.AE.98.E6.96.B9.E8.AE.BA.E5.9D.9B"><a href="https://forums.stardewvalley.net/" rel="nofollow">官方论坛</a></li><li id="n-.E5.AE.98.E6.96.B9.E5.95.86.E5.93.81"><a href="https://www.stardewvalley.net/shop/" rel="nofollow">官方商品</a></li><li id="n-.E7.A4.BE.E4.BA.A4.E5.AA.92.E4.BD.93"><a href="https://www.stardewvalley.net/links/" rel="nofollow">社交媒体</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" title="所有链接至本页面的wiki页面的列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="//stardewvalleywiki.com/Special:Upload" title="上传文件[u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;oldid=49619" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;action=info" title="关于此页面的更多信息">页面信息</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>其他语言</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-en"><a href="https://stardewvalleywiki.com/Modding:Game_state_queries" title="Modding:Game state queries – English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li></ul>
+		
+	</div>
+</nav>
+
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> 此页面最后编辑于2024年10月26日 (星期六) 09:11。</li>
+		<li id="footer-info-copyright">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Stardew Valley Wiki:隐私政策">隐私政策</a></li>
+		<li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" title="Stardew Valley Wiki:关于">关于Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Stardew Valley Wiki:免责声明">免责声明</a></li>
+		<li id="footer-places-mobileview"><a href="//zh.stardewvalleywiki.com/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">手机版视图</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.256","walltime":"0.438","ppvisitednodes":{"value":6438,"limit":1000000},"postexpandincludesize":{"value":17156,"limit":2097152},"templateargumentsize":{"value":3536,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":830,"limit":5000000},"timingprofile":["100.00%  162.683      1 -total"," 55.79%   90.761    222 Template:T"," 19.09%   31.055     88 Template:O","  1.46%    2.368      2 Template:Nexus_mod"]},"cachereport":{"timestamp":"20250320074208","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":268});});</script></body></html>
+

@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>模组:天气数据 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"937b610cd50e9d56d3b2e9c7","wgCSPNonce":!1,"wgCanonicalNamespace":"模组","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"模组:天气数据","wgTitle":"天气数据","wgCurRevisionId":50942,"wgRevisionId":50942,"wgArticleId":3358,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["模组"],"wgPageContentLanguage":"zh","wgPageContentModel":"wikitext","wgRelevantPageName":"模组:天气数据","wgRelevantArticleId":3358,"wgUserVariant":"zh","wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search":!1,
+"nearby":!1,"watchlist":!1,"tagline":!1}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=mediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/mediawiki/load.php?lang=zh&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="← 目录"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (zh)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//zh.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="alternate" hreflang="zh" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh"/>
+<link rel="alternate" hreflang="zh-Hans" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-hans"/>
+<link rel="alternate" hreflang="zh-Hant" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-hant"/>
+<link rel="alternate" hreflang="zh-Hans-CN" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-cn"/>
+<link rel="alternate" hreflang="zh-Hant-HK" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-hk"/>
+<link rel="alternate" hreflang="zh-Hant-MO" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-mo"/>
+<link rel="alternate" hreflang="zh-Hans-MY" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-my"/>
+<link rel="alternate" hreflang="zh-Hans-SG" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-sg"/>
+<link rel="alternate" hreflang="zh-Hant-TW" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-tw"/>
+<link rel="alternate" hreflang="x-default" href="/%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki的Atom feed" href="/mediawiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+<meta property="og:title" content="模组:天气数据 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE"/>
+<meta property="og:description" content="← 目录"/>
+<meta property="og:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2025-01-10T15:33:35Z"/>
+<meta property="article:published_time" content="2025-01-10T15:33:35Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="模组:天气数据 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="← 目录"/>
+<meta property="twitter:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u6a21\u7ec4:\u5929\u6c14\u6570\u636e - Stardew Valley Wiki","headline":"\u6a21\u7ec4:\u5929\u6c14\u6570\u636e - Stardew Valley Wiki","mainEntityOfPage":"\u6a21\u7ec4:\u5929\u6c14\u6570\u636e","identifier":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE","url":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE","description":"\u2190 \u76ee\u5f55","dateModified":"2025-01-10T15:33:35Z","datePublished":"2025-01-10T15:33:35Z","image":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-模组_天气数据 rootpage-模组_天气数据 skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="zh">模组:天气数据</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">来自Stardew Valley Wiki</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">跳到导航</a>
+		<a class="mw-jump-link" href="#searchInput">跳到搜索</a>
+		<div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>← <a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95" title="模组:目录">目录</a>
+</p><p>此页面记录了游戏如何生成<a href="/%E5%A4%A9%E6%B0%94" title="天气">天气</a>。
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="zh" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.95.B0.E6.8D.AE"><span class="tocnumber">1</span> <span class="toctext">数据</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.AE.97.E6.B3.95"><span class="tocnumber">2</span> <span class="toctext">算法</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#.E5.BC.BA.E5.88.B6.E5.A4.A9.E6.B0.94"><span class="tocnumber">2.1</span> <span class="toctext">强制天气</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E7.94.9F.E6.88.90.E5.A4.A9.E6.B0.94"><span class="tocnumber">2.2</span> <span class="toctext">生成天气</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E7.94.B5.E8.A7.86.E9.A2.91.E9.81.93"><span class="tocnumber">2.3</span> <span class="toctext">电视频道</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E5.A4.A9.E6.B0.94.E5.9B.BE.E6.A0.87"><span class="tocnumber">2.4</span> <span class="toctext">天气图标</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E9.9B.A8.E6.B0.B4.E5.9B.BE.E8.85.BE"><span class="tocnumber">2.5</span> <span class="toctext">雨水图腾</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#.E4.B8.8D.E5.90.8C.E7.A7.8D.E7.B1.BB.E5.A4.A9.E6.B0.94.E6.A6.82.E7.8E.87"><span class="tocnumber">3</span> <span class="toctext">不同种类天气概率</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#.E6.99.B4.E5.A4.A9"><span class="tocnumber">3.1</span> <span class="toctext">晴天</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E4.B8.8B.E9.9B.A8"><span class="tocnumber">3.2</span> <span class="toctext">下雨</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E9.A3.8E.E5.A4.A9"><span class="tocnumber">3.3</span> <span class="toctext">风天</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.E6.9A.B4.E9.A3.8E.E9.9B.A8.E5.A4.A9.E6.B0.94"><span class="tocnumber">3.4</span> <span class="toctext">暴风雨天气</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.E4.B8.8B.E9.9B.AA.E5.A4.A9.E6.B0.94"><span class="tocnumber">3.5</span> <span class="toctext">下雪天气</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#.E5.AD.98.E6.A1.A3.E6.96.87.E4.BB.B6"><span class="tocnumber">4</span> <span class="toctext">存档文件</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#.E8.AF.B4.E6.98.8E.2F.E9.97.AE.E7.AD.94"><span class="tocnumber">5</span> <span class="toctext">说明/问答</span></a></li>
+</ul>
+</div>
+
+<h2><span id="数据"></span><span class="mw-headline" id=".E6.95.B0.E6.8D.AE">数据</span></h2>
+<p>字符串字段 <samp>Game1::weatherForTomorrow</samp> 决定了天气类型。可用的取值为：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>取值
+</th>
+<th>常量
+</th>
+<th>天气
+</th></tr>
+<tr>
+<td><samp>Sun</samp>
+</td>
+<td><samp>weather_sunny</samp>
+</td>
+<td>晴天
+</td></tr>
+<tr>
+<td><samp>Rain</samp>
+</td>
+<td><samp>weather_rain</samp>
+</td>
+<td>雨天
+</td></tr>
+<tr>
+<td><samp>GreenRain</samp>
+</td>
+<td><samp>weather_green_rain</samp>
+</td>
+<td>绿雨
+</td></tr>
+<tr>
+<td><samp>Wind</samp>
+</td>
+<td><samp>weather_debris</samp>
+</td>
+<td>风天
+</td></tr>
+<tr>
+<td><samp>Storm</samp>
+</td>
+<td><samp>weather_lightning</samp>
+</td>
+<td>暴风雨
+</td></tr>
+<tr>
+<td><samp>Festival</samp>
+</td>
+<td><samp>weather_festival</samp>
+</td>
+<td>节日
+</td></tr>
+<tr>
+<td><samp>Snow</samp>
+</td>
+<td><samp>weather_snow</samp>
+</td>
+<td>雪天
+</td></tr>
+<tr>
+<td><samp>Wedding</samp>
+</td>
+<td><samp>weather_wedding</samp>
+</td>
+<td>婚礼
+</td></tr></tbody></table>
+<h2><span id="算法"></span><span class="mw-headline" id=".E7.AE.97.E6.B3.95">算法</span></h2>
+<p>现在您可以通过编辑 <a href="https://stardewvalleywiki.com/Modding:Migrate_to_Stardew_Valley_1.6#Custom_location_contexts" class="extiw" title="en:Modding:Migrate to Stardew Valley 1.6">地点上下文数据</a> 来更改天气算法，也可以（使用 C# 模组）自定义天气。
+</p><p><samp>Game1.weather</samp> 和 <samp>Game1.weatherForTomorrow</samp> 等字段现在都是字符串型的，且可以支持自定义模组天气 ID。原版天气的变化对于 Content Patcher 内容包并无影响，因为新的天气 ID 能够自动匹配 Content Patcher 使用的旧版天气 ID（例如 <samp>Sun</samp>、<samp>Rain</samp>、<samp>Snow</samp>、<samp>Storm</samp> 和 <samp>Wind</samp>）。C# 模组也可以使用 <samp>Festival</samp> 天气，而 Content Patcher 只能对此使用 <samp>Sun</samp>。<samp>Game1.weather_sunny</samp> 等常量现在有了新的字符串值（<samp>Game1.legacy_weather_sunny</samp> 等常量用于旧版数值）。
+</p><p>游戏本体会将无效天气视作晴天。C# 模组可以通过 <samp>UpdateTicked</samp> 等 <a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Events" title="模组:制作指南/APIs/Events">正常的 SMAPI 时间</a>来实现自定义天气效果，也可通过<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Harmony" title="模组:制作指南/APIs/Harmony">修改</a> <samp>Game1.ApplyWeatherForNewDay</samp> 或 <samp>Game1.populateDebrisWeatherArray</samp> 等方法来达成目的。
+</p>
+<h3><span id="强制天气"></span><span class="mw-headline" id=".E5.BC.BA.E5.88.B6.E5.A4.A9.E6.B0.94">强制天气</span></h3>
+<p>特定日期总是有特定天气：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>日期
+</th>
+<th>天气
+</th></tr>
+<tr>
+<td>春 1 日
+</td>
+<td><samp>weather_sunny</samp>
+</td></tr>
+<tr>
+<td>第 1 年春 2 日
+</td>
+<td><samp>weather_sunny</samp>
+</td></tr>
+<tr>
+<td>第 1 年春 3 日
+</td>
+<td><samp>weather_rain</samp>
+</td></tr>
+<tr>
+<td>第 1 年春 4 日
+</td>
+<td><samp>weather_sunny</samp>
+</td></tr>
+<tr>
+<td>夏 1 日
+</td>
+<td><samp>weather_sunny</samp>
+</td></tr>
+<tr>
+<td>夏 13 日
+</td>
+<td><samp>weather_lightning</samp>
+</td></tr>
+<tr>
+<td>夏 26 日
+</td>
+<td><samp>weather_lightning</samp>
+</td></tr>
+<tr>
+<td>秋 1 日
+</td>
+<td><samp>weather_sunny</samp>
+</td></tr>
+<tr>
+<td>冬 1 日
+</td>
+<td><samp>weather_sunny</samp>
+</td></tr></tbody></table>
+<p>绿雨只可能出现在夏 5、6、7、14、16、18、23 日。
+</p><p>主动节日（<samp>Data/Festivals</samp> 中的节日）的天气总是为 <samp>Festival</samp>，而被动节日（<samp>Data/PassiveFestivals</samp> 中的节日）的天气总是为 <samp>Sun</samp>。
+</p>
+<h3><span id="生成天气"></span><span class="mw-headline" id=".E7.94.9F.E6.88.90.E5.A4.A9.E6.B0.94">生成天气</span></h3>
+<p>星露谷物语中的 <samp>Game1::newDayAfterFade()</samp> 负责设置天气（在变更日期代码后，但在 <samp>SaveEvents.BeforeSave</samp> 事件前）。
+</p><p>游戏遵循如下步骤来决定次日的天气和落花/落叶：
+</p>
+<ol><li>对于每个地点，加载新的一天可能天气。该值早在当天开始时就已经被设置了。</li>
+<li>检查<a href="#.E5.BC.BA.E5.88.B6.E5.A4.A9.E6.B0.94">强制天气</a>。</li>
+<li>若新的一天为婚礼，则将天气设为 <samp>Wedding</samp>。</li>
+<li>同步每个地点的 <samp>WeatherForTomorrow</samp> 字段。</li>
+<li>基于是否有雨设置 <samp>Game1::wasRainingYesterday</samp>。</li>
+<li>清空落花落叶数组。</li>
+<li>重置所有天气标识，并按如下方法重新设置：
+<ol><li>若即将下雨，将下雨标识设为 true（不包括绿雨）。</li>
+<li>若即将绿雨，将绿雨标识设为 true。</li>
+<li>若即将暴风雨，将下雨和暴风雨标识设为 true。</li>
+<li>若即将刮风，将刮风标识设为 true。</li>
+<li>若即将下雪，将下雪标识设为 true。</li></ol></li>
+<li>准备新的一天的下一天的可能天气：
+<ol><li>默认为 <samp>Sun</samp></li>
+<li>若新的一天的下一天为主动节日，则将天气设为 <samp>Festival</samp> 并返回；</li>
+<li>若新的一天的下一天为被动节日，则将天气设为 <samp>Sunny</samp> 并返回；</li>
+<li>应用地点上下文数据中随机化的<a href="/mediawiki/index.php?title=Modding:Migrate_to_Stardew_Valley_1.6&amp;action=edit&amp;redlink=1" class="new" title="Modding:Migrate to Stardew Valley 1.6（页面不存在）">天气条件</a>来获取一个可能的天气。</li></ol></li>
+<li>对指定了 <a href="/mediawiki/index.php?title=Modding:Migrate_to_Stardew_Valley_1.6&amp;action=edit&amp;redlink=1" class="new" title="Modding:Migrate to Stardew Valley 1.6（页面不存在）"><samp>CopyWeatherFromLocation</samp></a> 的地点复制源地点的天气。</li>
+<li>同步天气。</li>
+<li>将所有天气标识应用于星露谷地区。</li>
+<li>若为风天，填充落花落叶数组。</li>
+<li>重置（每月第 1 天）或增加每个地点的 <samp>monthlyNonRainyDayCount</samp>。</li>
+<li>应用绿雨反应逻辑（例如，显示全局消息、送信等）。</li></ol>
+<p>此时设置天气的主函数已经运行完毕。
+</p>
+<h3><span id="电视频道"></span><span class="mw-headline" id=".E7.94.B5.E8.A7.86.E9.A2.91.E9.81.93">电视频道</span></h3>
+<p>电视会检查天气并显示如下信息：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>天气
+</th>
+<th>消息
+</th></tr>
+<tr>
+<td><samp>Festival</samp>
+</td>
+<td>"明天将是个大晴天……对节日来说将是完美的天气！活动将在地点举行，将于时间之间开始。别迟到了！"
+<p>获取数据失败："嗯……奇怪啊。我的信息表显示为“空”。真尴尬……"
+</p>
+</td></tr>
+<tr>
+<td><samp>Snow</samp>
+</td>
+<td>等概率：
+<ul><li>"都多穿点，各位，明天将会下雪！"</li>
+<li>"明天的降雪可能会达到几英尺。"</li></ul>
+</td></tr>
+<tr>
+<td><samp>Rain</samp>
+</td>
+<td>"明天全天有雨。"
+</td></tr>
+<tr>
+<td><samp>GreenRain</samp>
+</td>
+<td>"呃……读数好像有点……异常……我……我不知道是什么意思……"
+</td></tr>
+<tr>
+<td><samp>Storm</samp>
+</td>
+<td>"好像有场风暴正在接近。预计将会有雷电。"
+</td></tr>
+<tr>
+<td><samp>Wind</samp>
+</td>
+<td>根据条件：
+<ul><li>春季："部分地区多云，并伴有微风。空气中会有大量花粉！"</li>
+<li>秋季："今天多云，一整天都会狂风大作。"</li>
+<li>默认："一整天都要下雪。一定要多穿些，伙计们！"</li></ul>
+</td></tr>
+<tr>
+<td>默认
+</td>
+<td>等概率：
+<ul><li>"明天天气晴朗，风和日丽！"</li>
+<li>"全天都会风和日丽，万里无云。",</li></ul>
+</td></tr></tbody></table>
+<p><b>注意：</b>除非节日、每月 1 日和春季 3 日外，电视在其他任何日子都不一定准确，这是由 <samp>Game1::newDayAfterFade</samp> 方法强制设置的。农场帮手（而不是房主）甚至可能无法准确获得每月 1 日和春 3 日的信息。
+</p><p><b>注 2：</b>夜市等被动节日不被视为“节日”天气。实际上，所有被动节日都是“晴朗”天气。
+</p><p><br />
+</p>
+<h3><span id="天气图标"></span><span class="mw-headline" id=".E5.A4.A9.E6.B0.94.E5.9B.BE.E6.A0.87">天气图标</span></h3>
+<p><samp>Game1::updateWeatherIcon</samp> 设置天气图标，该方法设置 <samp>LooseSprite/Cursors.xnb</samp> 中的索引：
+</p>
+<ol><li>下雪：7</li>
+<li>晴天：2</li>
+<li>婚礼：0</li>
+<li>节日：1</li>
+<li>下雨：4</li>
+<li>暴风雨：5</li>
+<li>春季风天：3</li>
+<li>秋季风天：3</li>
+<li>夏季：未定义（默认为晴天）</li>
+<li>秋季：6</li>
+<li>冬季：7（和下雪相同）</li>
+<li>绿雨：999</li></ol>
+<h3><span id="雨水图腾"></span><span class="mw-headline" id=".E9.9B.A8.E6.B0.B4.E5.9B.BE.E8.85.BE">雨水图腾</span></h3>
+<p>雨水图腾（物品 #681）受控于 <samp>Object::rainTotem</samp>，此方法被 <samp>Object::performUseAction</samp> 调用。若明天为节日，则会消耗一个图腾但是什么也不会发生。否则，会消耗图腾并将明天天气设为 <samp>weather_rain</samp> 以及显示消息。
+</p>
+<h2><span id="不同种类天气概率"></span><span class="mw-headline" id=".E4.B8.8D.E5.90.8C.E7.A7.8D.E7.B1.BB.E5.A4.A9.E6.B0.94.E6.A6.82.E7.8E.87">不同种类天气概率</span></h2>
+<p>本节介绍各种天气类型的概率。仅适用于非<a href="#.E5.BC.BA.E5.88.B6.E5.A4.A9.E6.B0.94">强制天气</a>的日子。
+</p>
+<h3><span id="晴天"></span><span class="mw-headline" id=".E6.99.B4.E5.A4.A9">晴天</span></h3>
+<p>晴朗天气涵盖了天气变量 0、4 和 6。
+</p>
+<ul><li>春季：下雨的基础概率为 18.3%（其他天气剩余概率为 81.7%）。如果不下雨，有 80% 的概率保持晴朗（除了春季第 3 天，这一天总是下雨）。这意味着春季晴朗天气的概率为 66.4%。</li>
+<li>夏季：从夏季第 1 天的 87.4% 逐渐减少到夏季第 28 天的 79.9%，晴朗天气的概率每天稳步下降。每天的确切概率为 1 - [12% +（0.3% × 当月日期）]，第 1 天的概率为 0%。</li>
+<li>秋季：与春季相同，不考虑强制天气。</li>
+<li>冬季：降水概率为 63%，因此晴朗天气的概率只有 37%。</li></ul>
+<h3><span id="下雨"></span><span class="mw-headline" id=".E4.B8.8B.E9.9B.A8">下雨</span></h3>
+<ul><li>春季：下雨的基础概率为 18.3%。如果下雨，除了第 1 年外，有 25% 的概率出现暴风雨。所以春季第 1 年下雨的概率为 18.3%，第 2 年或之后下雨的概率为 13.725%。春季第 3 天（第 1 年）总是下雨。</li>
+<li>夏季：下雨天气的概率从夏季第 2 天的 12.6% 逐渐增加到夏季第 27 天的 20.1%。下雨变成暴风雨的概率为 85%。因此，你可以通过 [12% +（0.3% × 当月日期）] × 0.15 这个公式来确定下雨的概率。</li>
+<li>秋季：与春季相同，但第 1 年的秋季可能会出现暴风雨，所以概率为 13.725%。</li>
+<li>冬季：从不下雨。</li></ul>
+<h3><span id="风天"></span><span class="mw-headline" id=".E9.A3.8E.E5.A4.A9">风天</span></h3>
+<p>风天涵盖了天气变量 2。
+</p>
+<ul><li>春季：下雨后有 20% 的概率出现风天，所以风天的大致概率为 16.6%。</li>
+<li>夏季：没有风天。</li>
+<li>秋季：下雨后有 60% 的概率出现风天，所以风天的大致概率为 49.8%。</li>
+<li>冬季：没有风天。</li></ul>
+<h3><span id="暴风雨天气"></span><span class="mw-headline" id=".E6.9A.B4.E9.A3.8E.E9.9B.A8.E5.A4.A9.E6.B0.94">暴风雨天气</span></h3>
+<p>暴风雨天气涵盖了天气变量 3。
+</p>
+<ul><li>春季：出现暴风雨的概率为 4.57%。</li>
+<li>夏季：暴风雨的概率是变化的；从 10.71% 开始，增加到 17.085%。</li>
+<li>秋季：出现暴风雨的概率为 4.57%。</li>
+<li>冬季：没有暴风雨天气。</li></ul>
+<h3><span id="下雪天气"></span><span class="mw-headline" id=".E4.B8.8B.E9.9B.AA.E5.A4.A9.E6.B0.94">下雪天气</span></h3>
+<p>在冬季，有 63% 的概率下雪。其他季节没有雪。
+</p>
+<h2><span id="存档文件"></span><span class="mw-headline" id=".E5.AD.98.E6.A1.A3.E6.96.87.E4.BB.B6">存档文件</span></h2>
+<p>存档文件是第二天早上 0600 时这一天的快照。<samp>WeatherForTommorow</samp> 字段用于计算天气，但更改它对天气没有影响，因为此时天气标识已经设置好了。要改变天气，您需要设置如下标识的组合：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>天气
+</th>
+<th><samp>isRaining</samp>
+</th>
+<th><samp>isDebrisWeather</samp>
+</th>
+<th><samp>isLightning</samp>
+</th>
+<th><samp>isSnowing</samp>
+</th>
+<th><samp>isGreenRain</samp>
+</th></tr>
+<tr>
+<td>晴天
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td></tr>
+<tr>
+<td>雨天
+</td>
+<td>☑
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td></tr>
+<tr>
+<td>暴风雨
+</td>
+<td>☑
+</td>
+<td>☐
+</td>
+<td>☑
+</td>
+<td>☐
+</td>
+<td>☐
+</td></tr>
+<tr>
+<td>风天
+</td>
+<td>☐
+</td>
+<td>☑
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td></tr>
+<tr>
+<td>雪天
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☑
+</td>
+<td>☐
+</td></tr>
+<tr>
+<td>节日
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td></tr>
+<tr>
+<td>婚礼
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td></tr>
+<tr>
+<td>绿雨
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☐
+</td>
+<td>☑
+</td></tr></tbody></table>
+<p><b>注意：</b> changing <samp>isDebrisWeather</samp> during an active game will not create the array. You'll need to call <samp>Game1::populateDebrisWeatherArray</samp> to get the debris populated. Correspondingly, if you're removing the debris weather flag, remember to call <samp>Game1::debrisWeather::Clear</samp>.
+</p>
+<h2><span id="说明/问答"></span><span class="mw-headline" id=".E8.AF.B4.E6.98.8E.2F.E9.97.AE.E7.AD.94">说明/问答</span></h2>
+<ul><li>可以通过重写来修复电视，或者直接使用 Entoroax's Framework。</li>
+<li>您可以随时设置雪天和风天，只是游戏不会这样做。</li>
+<li>不能同时设置风天和雨天。</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20250320140207
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.040 seconds
+Real time usage: 0.045 seconds
+Preprocessor visited node count: 54/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key zhwiki:pcache:idhash:3358-0!canonical!zh and timestamp 20250320140207 and revision id 50942
+ -->
+</div></div><div class="printfooter">取自“<a dir="ltr" href="https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:天气数据&amp;oldid=50942">https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:天气数据&amp;oldid=50942</a>”</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="Special:页面分类">分类</a>：<ul><li><a href="/Category:%E6%A8%A1%E7%BB%84" title="Category:模组">模组</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>导航菜单</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>个人工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/mediawiki/index.php?title=Special:%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE" title="建议您创建一个账户并登录，但这不是强制的">创建账户</a></li><li id="pt-login"><a href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE" title="我们鼓励您登录；然而，这不是强制性的[o]" accesskey="o">登录</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>名字空间</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-模组" class="selected"><a href="/%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE">模组</a></li><li id="ca-talk" class="new"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84_talk:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;action=edit&amp;redlink=1" rel="discussion" title="关于内容页面的讨论（页面不存在）[t]" accesskey="t">讨论</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>不转换</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"><li id="ca-varlang-0" class="selected"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh" lang="zh" hreflang="zh">不转换</a></li><li id="ca-varlang-1"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-hans" lang="zh-Hans" hreflang="zh-Hans">简体</a></li><li id="ca-varlang-2"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-hant" lang="zh-Hant" hreflang="zh-Hant">繁體</a></li><li id="ca-varlang-3"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-cn" lang="zh-Hans-CN" hreflang="zh-Hans-CN">大陆简体</a></li><li id="ca-varlang-4"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-hk" lang="zh-Hant-HK" hreflang="zh-Hant-HK">香港繁體</a></li><li id="ca-varlang-5"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-mo" lang="zh-Hant-MO" hreflang="zh-Hant-MO">澳門繁體</a></li><li id="ca-varlang-6"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-my" lang="zh-Hans-MY" hreflang="zh-Hans-MY">大马简体</a></li><li id="ca-varlang-7"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-sg" lang="zh-Hans-SG" hreflang="zh-Hans-SG">新加坡简体</a></li><li id="ca-varlang-8"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;variant=zh-tw" lang="zh-Hant-TW" hreflang="zh-Hant-TW">台灣正體</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>视图</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE">阅读</a></li><li id="ca-viewsource" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;action=edit" title="本页面受到保护。您可以查看其源代码[e]" accesskey="e">查看源代码</a></li><li id="ca-history" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;action=history" title="本页面过去的版本[h]" accesskey="h">查看历史</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>更多</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">搜索</label>
+	</h3>
+	<form action="/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="搜索Stardew Valley Wiki" title="搜索Stardew Valley Wiki[f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:搜索">
+			<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="前往" title="若相同标题存在，则直接前往该页面" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="访问首页" class="mw-wiki-logo" href="/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>导航</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/Stardew_Valley_Wiki" title="访问首页[z]" accesskey="z">首页</a></li><li id="n-recentchanges"><a href="/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki最近更改的列表[r]" accesskey="r">最近更改</a></li><li id="n-.E6.9C.AA.E7.BF.BB.E8.AF.91.E7.9A.84.E9.A1.B5.E9.9D.A2"><a href="/Category:%E6%9C%AA%E7%BF%BB%E8%AF%91%E7%9A%84%E9%A1%B5%E9%9D%A2">未翻译的页面</a></li><li id="n-.E5.B8.AE.E5.8A.A9:.E7.BC.96.E8.BE.91.E5.85.A5.E9.97.A8"><a href="/Help:%E7%BC%96%E8%BE%91%E5%85%A5%E9%97%A8">帮助:编辑入门</a></li><li id="n-randompage"><a href="/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面[x]" accesskey="x">随机页面</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-链接" class="vector-menu vector-menu-portal portal" aria-labelledby="p-链接-label" role="navigation" 
+	 >
+	<h3 id="p-链接-label">
+		<span>链接</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-.E5.AE.98.E6.96.B9.E7.BD.91.E7.AB.99"><a href="https://stardewvalley.net" rel="nofollow">官方网站</a></li><li id="n-.E5.AE.98.E6.96.B9.E8.AE.BA.E5.9D.9B"><a href="https://forums.stardewvalley.net/" rel="nofollow">官方论坛</a></li><li id="n-.E5.AE.98.E6.96.B9.E5.95.86.E5.93.81"><a href="https://www.stardewvalley.net/shop/" rel="nofollow">官方商品</a></li><li id="n-.E7.A4.BE.E4.BA.A4.E5.AA.92.E4.BD.93"><a href="https://www.stardewvalley.net/links/" rel="nofollow">社交媒体</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE" title="所有链接至本页面的wiki页面的列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="//stardewvalleywiki.com/Special:Upload" title="上传文件[u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;oldid=50942" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;action=info" title="关于此页面的更多信息">页面信息</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>其他语言</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-en"><a href="https://stardewvalleywiki.com/Modding:Weather_data" title="Modding:Weather data – English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.stardewvalleywiki.com/Modifica%C3%A7%C3%B5es:Dados_clim%C3%A1ticos" title="Modificações:Dados climáticos – português" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.stardewvalleywiki.com/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%9F%D0%BE%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5_%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Модификации:Погодные явления – русский" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li></ul>
+		
+	</div>
+</nav>
+
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> 此页面最后编辑于2025年1月10日 (星期五) 15:33。</li>
+		<li id="footer-info-copyright">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Stardew Valley Wiki:隐私政策">隐私政策</a></li>
+		<li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" title="Stardew Valley Wiki:关于">关于Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Stardew Valley Wiki:免责声明">免责声明</a></li>
+		<li id="footer-places-mobileview"><a href="//zh.stardewvalleywiki.com/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">手机版视图</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.040","walltime":"0.045","ppvisitednodes":{"value":54,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20250320140207","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":177});});</script></body></html>
+
