@@ -119,8 +119,11 @@
 			}
 		}
 
+		// search file by language
+		const searchFile = lang == 'en' ? './search.json' : `./${lang}.search.json`; ;
+
 		// Perform search and display results
-		fetch('./search.json')
+		fetch(searchFile)
 			.then(response => response.json())
 			.then(data => {
 				const searchJson = data;
