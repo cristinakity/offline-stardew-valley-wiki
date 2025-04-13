@@ -1,116 +1,58 @@
+
 <!DOCTYPE html>
 <html class="client-nojs" lang="tr" dir="ltr">
 <head>
 <meta charset="UTF-8"/>
 <title>"Stardew Valley Wiki:Gizlilik politikası" sayfasına bağlantı veren sayfalar - Stardew Valley Wiki</title>
-<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"],"wgRequestId":"aae84418119384e597b13d9c","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"Whatlinkshere","wgNamespaceNumber":-1,"wgPageName":"Özel:SayfayaBağlantılar/Stardew_Valley_Wiki:Gizlilik_politikası","wgTitle":"SayfayaBağlantılar/Stardew Valley Wiki:Gizlilik politikası","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"tr","wgPageContentModel":"wikitext","wgRelevantPageName":"Stardew_Valley_Wiki:Gizlilik_politikası","wgRelevantArticleId":783,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,
-"wgMFMode":"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgMinervaPermissions":{"watch":!1,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!1},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mobile.special.styles":"ready","mobile.messageBox.styles":"ready","mediawiki.ui.input":"ready","mediawiki.ui.radio":"ready","mediawiki.ui.checkbox":"ready","mediawiki.helplink":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready",
-"skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"],"wgRequestId":"6f0e1cdad0ecef0ae485412c","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"Whatlinkshere","wgNamespaceNumber":-1,"wgPageName":"Özel:SayfayaBağlantılar/Stardew_Valley_Wiki:Gizlilik_politikası","wgTitle":"SayfayaBağlantılar/Stardew Valley Wiki:Gizlilik politikası","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"tr","wgPageContentModel":"wikitext","wgRelevantPageName":"Stardew_Valley_Wiki:Gizlilik_politikası","wgRelevantArticleId":783,"wgIsProbablyEditable":!1,
+"wgRelevantPageIsProbablyEditable":!1,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.helplink":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","skins.vector.legacy.js"];</script>
 <script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"tr"});
 });});</script>
-<link rel="stylesheet" href="/mediawiki/load.php?lang=tr&amp;modules=mediawiki.helplink%2Chlist%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%2Cradio%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cmobile.special.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
-<script async="" src="/mediawiki/load.php?lang=tr&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=tr&amp;modules=mediawiki.helplink%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/mediawiki/load.php?lang=tr&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
 <meta name="ResourceLoaderDynamicStyles" content=""/>
-<link rel="stylesheet" href="/mediawiki/load.php?lang=tr&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=tr&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
 <meta name="generator" content="MediaWiki 1.35.1"/>
 <meta name="robots" content="noindex,nofollow"/>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
-<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
 <link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
 <link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (tr)"/>
 <link rel="EditURI" type="application/rsd+xml" href="//tr.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
 <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki Atom beslemesi" href="/mediawiki/index.php?title=%C3%96zel:SonDe%C4%9Fi%C5%9Fiklikler&amp;feed=atom"/>
 <meta property="og:title" content="&quot;Stardew Valley Wiki:Gizlilik politikası&quot; sayfasına bağlantı veren sayfalar - Stardew Valley Wiki"/>
 <meta property="og:site_name" content="Stardew Valley Wiki"/>
 <meta property="og:url" content="https://tr.stardewvalleywiki.com/%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1"/>
 <meta property="og:image" content="https://tr.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
-<meta property="article:modified_time" content="2025-03-21T04:42:31Z"/>
-<meta property="article:published_time" content="2025-03-21T04:42:31Z"/>
+<meta property="article:modified_time" content="2025-03-30T06:45:29Z"/>
+<meta property="article:published_time" content="2025-03-30T06:45:29Z"/>
 <meta property="twitter:site" content="@stardewwiki"/>
 <meta property="twitter:title" content="&quot;Stardew Valley Wiki:Gizlilik politikası&quot; sayfasına bağlantı veren sayfalar - Stardew Valley Wiki"/>
 <meta property="twitter:image" content="https://tr.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
 <meta property="twitter:card" content="summary_large_image"/>
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\"Stardew Valley Wiki:Gizlilik politikas\u0131\" sayfas\u0131na ba\u011flant\u0131 veren sayfalar - Stardew Valley Wiki","headline":"\"Stardew Valley Wiki:Gizlilik politikas\u0131\" sayfas\u0131na ba\u011flant\u0131 veren sayfalar - Stardew Valley Wiki","mainEntityOfPage":"\"Stardew Valley Wiki:Gizlilik politikas\u0131\" sayfas\u0131na ba\u011flant\u0131 veren sayfalar","identifier":"https:\/\/tr.stardewvalleywiki.com\/%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar\/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1","url":"https:\/\/tr.stardewvalleywiki.com\/%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar\/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1","dateModified":"2025-03-21T04:42:31Z","datePublished":"2025-03-21T04:42:31Z","image":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/tr.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/tr.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/index.php?title=%C3%96zel:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\"Stardew Valley Wiki:Gizlilik politikas\u0131\" sayfas\u0131na ba\u011flant\u0131 veren sayfalar - Stardew Valley Wiki","headline":"\"Stardew Valley Wiki:Gizlilik politikas\u0131\" sayfas\u0131na ba\u011flant\u0131 veren sayfalar - Stardew Valley Wiki","mainEntityOfPage":"\"Stardew Valley Wiki:Gizlilik politikas\u0131\" sayfas\u0131na ba\u011flant\u0131 veren sayfalar","identifier":"https:\/\/tr.stardewvalleywiki.com\/%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar\/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1","url":"https:\/\/tr.stardewvalleywiki.com\/%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar\/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1","dateModified":"2025-03-30T06:45:29Z","datePublished":"2025-03-30T06:45:29Z","image":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/tr.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/tr.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/index.php?title=%C3%96zel:Search&search={search_term}","query-input":"required name=search_term"}}</script>
 <!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
 </head>
-<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns--1 ns-special mw-special-Whatlinkshere page-Özel_SayfayaBağlantılar_Stardew_Valley_Wiki_Gizlilik_politikası rootpage-Özel_SayfayaBağlantılar_Stardew_Valley_Wiki_Gizlilik_politikası stable skin-minerva action-view skin-vector-legacy">
-<div id="mw-mf-viewport">
-	<div id="mw-mf-page-center">
-		<a class="mw-mf-page-center__mask" href="#"></a>
-		<header class="header-container header-chrome">
-			<form class="header" action="/mediawiki/index.php" method="get">
-				<nav class="navigation-drawer toggle-list view-border-box">
-					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
-					<label for="main-menu-input" id="mw-mf-main-menu-button"
-						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
-						title="Ana menüyü aç" data-event-name="ui.mainmenu">Ana menüyü aç</label>
-					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
-	<ul id="p-navigation">
-			<li class="">
-			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Anasayfa</span></a>
-			</li>
-			<li class="">
-			    <a href="/%C3%96zel:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Rastgele</span></a>
-			</li>
-	</ul>
-	<ul id="p-personal">
-			<li class="">
-			    <a href="/mediawiki/index.php?title=%C3%96zel:Kullan%C4%B1c%C4%B1OturumuA%C3%A7ma&amp;returnto=%C3%96zel%3ASayfayaBa%C4%9Flant%C4%B1lar%2FStardew+Valley+Wiki%3AGizlilik+politikas%C4%B1" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Oturum aç</span></a>
-			</li>
-	</ul>
-	<ul id="pt-preferences">
-			<li class="jsonly">
-			    <a href="/mediawiki/index.php?title=%C3%96zel:MobileOptions&amp;returnto=%C3%96zel%3ASayfayaBa%C4%9Flant%C4%B1lar%2FStardew+Valley+Wiki%3AGizlilik+politikas%C4%B1" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Ayarlar</span></a>
-			</li>
-	</ul>
-	<ul class="hlist">
-			<li class="">
-			    <a href="/Stardew_Valley_Wiki:Hakk%C4%B1nda" class="" data-event-name=""><span>Stardew Valley Wiki hakkında</span></a>
-			</li>
-			<li class="">
-			    <a href="/Stardew_Valley_Wiki:Genel_sorumluluk_reddi" class="" data-event-name=""><span>Sorumluluk reddi</span></a>
-			</li>
-	</ul>
-</div>
-
-					<label class="main-menu-mask" for="main-menu-input"></label>
-				</nav>
-				<div class="branding-box">
-					<a href="/Stardew_Valley_Wiki">
-						<span>Stardew Valley Wiki</span>
-						
-					</a>
-				</div>
-				<div class="search-box">
-					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
-						autocomplete="off" placeholder="Stardew Valley Wiki üzerinde ara" aria-label="Stardew Valley Wiki üzerinde ara"
-						value="">
-				</div>
-				<nav class="minerva-user-navigation" aria-label="Kullanıcı gezintisi">
-					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Ara</button></div>
-					
-				</nav>
-			</form>
-		</header>
-		<main id="content" class="mw-body">
-			<div class="banner-container">
-			<div id="siteNotice"></div>
-			</div>
-			
-			<div class="pre-content heading-holder">
-				<div class="page-heading">
-					<h1 id="section_0">"Stardew Valley Wiki:Gizlilik politikası" sayfasına bağlantı veren sayfalar</h1>
-					<div class="tagline"></div>
-				</div>
-				
-				
-				
-				<div class="minerva__subtitle">←<a href="/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1" title="Stardew Valley Wiki:Gizlilik politikası">Stardew Valley Wiki:Gizlilik politikası</a></div>
-			</div>
-			
-			<div id="bodyContent" class="content"><div id="mw-content-text"><form action="/mediawiki/index.php"><input type="hidden" value="Özel:SayfayaBağlantılar" name="title"/><fieldset>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns--1 ns-special mw-special-Whatlinkshere page-Özel_SayfayaBağlantılar_Stardew_Valley_Wiki_Gizlilik_politikası rootpage-Özel_SayfayaBağlantılar_Stardew_Valley_Wiki_Gizlilik_politikası skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	<div id="mw-indicator-mw-helplink" class="mw-indicator"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:What_links_here" target="_blank" class="mw-helplink">Yardım</a></div>
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="tr">"Stardew Valley Wiki:Gizlilik politikası" sayfasına bağlantı veren sayfalar</h1>
+	<div id="bodyContent" class="mw-body-content">
+		
+		<div id="contentSub">←<a href="/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1" title="Stardew Valley Wiki:Gizlilik politikası">Stardew Valley Wiki:Gizlilik politikası</a></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Gezinti kısmına atla</a>
+		<a class="mw-jump-link" href="#searchInput">Arama kısmına atla</a>
+		<div id="mw-content-text"><form action="/mediawiki/index.php"><input type="hidden" value="Özel:SayfayaBağlantılar" name="title"/><fieldset>
 <legend>Sayfaya bağlantılar</legend>
-<label for="mw-whatlinkshere-target" class="mw-searchInput">Sayfa:</label> <input name="target" size="40" value="Stardew Valley Wiki:Gizlilik politikası" id="mw-whatlinkshere-target" class="mw-searchInput mw-ui-input" /> <label for="namespace">Ad alanı:</label> <select class="namespaceselector" id="namespace" name="namespace">
+<label for="mw-whatlinkshere-target" class="mw-searchInput">Sayfa:</label> <input name="target" size="40" value="Stardew Valley Wiki:Gizlilik politikası" id="mw-whatlinkshere-target" class="mw-searchInput" /> <label for="namespace">Ad alanı:</label> <select class="namespaceselector" id="namespace" name="namespace">
 <option value="" selected="">hepsi</option>
 <option value="0">(Ana)</option>
 <option value="1">Tartışma</option>
@@ -134,37 +76,185 @@
 <option value="571">Modlama tartışma</option>
 <option value="828">Modül</option>
 <option value="829">Modül tartışma</option>
-</select> <div class="mw-ui-checkbox"><input name="invert" type="checkbox" value="1" id="nsinvert" title="Seçili ad alanlarında bulunan sayfalardaki bağlantıları gizlemek için bu kutucuğu işaretleyin." /> <label for="nsinvert" title="Seçili ad alanlarında bulunan sayfalardaki bağlantıları gizlemek için bu kutucuğu işaretleyin.">Seçimi ters çevir</label></div> <input type="submit" value="Git" class="mw-ui-button mw-ui-progressive"/></fieldset></form>
+</select> <input name="invert" type="checkbox" value="1" id="nsinvert" title="Seçili ad alanlarında bulunan sayfalardaki bağlantıları gizlemek için bu kutucuğu işaretleyin." /> <label for="nsinvert" title="Seçili ad alanlarında bulunan sayfalardaki bağlantıları gizlemek için bu kutucuğu işaretleyin.">Seçimi ters çevir</label> <input type="submit" value="Git"/></fieldset></form>
 <fieldset>
 <legend>Süzgeçler</legend>
 Dönüştürmeleri <a href="/mediawiki/index.php?title=%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1&amp;hidetrans=1" title="Özel:SayfayaBağlantılar/Stardew Valley Wiki:Gizlilik politikası">Gizle</a> | Bağlantıları <a href="/mediawiki/index.php?title=%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1&amp;hidelinks=1" title="Özel:SayfayaBağlantılar/Stardew Valley Wiki:Gizlilik politikası">Gizle</a> | Yönlendirmeleri <a href="/mediawiki/index.php?title=%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1&amp;hideredirs=1" title="Özel:SayfayaBağlantılar/Stardew Valley Wiki:Gizlilik politikası">Gizle</a>
 </fieldset>
 <p><strong><a href="/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1" title="Stardew Valley Wiki:Gizlilik politikası">Stardew Valley Wiki:Gizlilik politikası</a></strong> sayfasına bağlantı veren sayfa yok.
-</p></div><div class="printfooter">
-"<a dir="ltr" href="https://tr.stardewvalleywiki.com/Özel:SayfayaBağlantılar/Stardew_Valley_Wiki:Gizlilik_politikası">https://tr.stardewvalleywiki.com/Özel:SayfayaBağlantılar/Stardew_Valley_Wiki:Gizlilik_politikası</a>" adresinden alınmıştır.</div>
-</div>
-			<div class="post-content" id="page-secondary-actions">
-			
-			</div>
-		</main>
-		<footer class="mw-footer minerva-footer">
-		
-		<div class="post-content footer-content">
-			
-			<h2>Stardew Valley Wiki</h2>
-			<div class="license">Aksi belirtilmedikçe içerik <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> lisansı altındadır.</div>
-			<ul class="footer-info hlist hlist-separated">
-				
-			</ul>
-			<ul class="footer-places hlist hlist-separated">
-				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1" title="Stardew Valley Wiki:Gizlilik politikası">Gizlilik politikası</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:Hakk%C4%B1nda" title="Stardew Valley Wiki:Hakkında">Stardew Valley Wiki hakkında</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:Genel_sorumluluk_reddi" title="Stardew Valley Wiki:Genel sorumluluk reddi">Sorumluluk reddi</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//tr.stardewvalleywiki.com/mediawiki/index.php?title=%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1&amp;mobileaction=toggle_view_desktop">Masaüstü</a></li>
-			</ul>
-		</div>
-		</footer>
+</p></div><div class="printfooter">"<a dir="ltr" href="https://tr.stardewvalleywiki.com/Özel:SayfayaBağlantılar/Stardew_Valley_Wiki:Gizlilik_politikası">https://tr.stardewvalleywiki.com/Özel:SayfayaBağlantılar/Stardew_Valley_Wiki:Gizlilik_politikası</a>" adresinden alınmıştır.</div>
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
 	</div>
 </div>
-<div class="mw-notification-area" data-mw="interface"></div>
-<!-- v:8.3.0 -->
+
+<div id="mw-navigation">
+	<h2>Gezinti menüsü</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Kişisel araçlar</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/mediawiki/index.php?title=%C3%96zel:HesapOlu%C5%9Ftur&amp;returnto=%C3%96zel%3ASayfayaBa%C4%9Flant%C4%B1lar%2FStardew+Valley+Wiki%3AGizlilik+politikas%C4%B1" title="Bir hesap oluşturup oturum açmanız tavsiye edilmektedir ancak bu zorunlu değildir">Hesap oluştur</a></li><li id="pt-login"><a href="/mediawiki/index.php?title=%C3%96zel:Kullan%C4%B1c%C4%B1OturumuA%C3%A7ma&amp;returnto=%C3%96zel%3ASayfayaBa%C4%9Flant%C4%B1lar%2FStardew+Valley+Wiki%3AGizlilik+politikas%C4%B1" title="Oturum açmanız tavsiye edilmektedir; ancak bu zorunlu değildir [o]" accesskey="o">Oturum aç</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Ad alanları</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-project" class="selected"><a href="/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1" title="Proje sayfasını göster [a]" accesskey="a">Proje sayfası</a></li><li id="ca-talk" class="new"><a href="/mediawiki/index.php?title=Stardew_Valley_Wiki_tart%C4%B1%C5%9Fma:Gizlilik_politikas%C4%B1&amp;action=edit&amp;redlink=1" rel="discussion" title="İçerik ile ilgili tartışma (sayfa mevcut değil) [t]" accesskey="t">Tartışma</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Türevler</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Görüntülenme</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible"><a href="/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1">Oku</a></li><li id="ca-viewsource" class="collapsible"><a href="/mediawiki/index.php?title=Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1&amp;action=edit" title="Bu sayfa koruma altında.&#10;Kaynağını görebilirsiniz [e]" accesskey="e">Kaynağı gör</a></li><li id="ca-history" class="collapsible"><a href="/mediawiki/index.php?title=Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1&amp;action=history" title="Bu sayfanın geçmiş sürümleri [h]" accesskey="h">Geçmişi gör</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>Daha fazla</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Ara</label>
+	</h3>
+	<form action="/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Stardew Valley Wiki üzerinde ara" title="Stardew Valley Wiki üzerinde ara [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Özel:Ara">
+			<input type="submit" name="fulltext" value="Ara" title="Sayfalarda bu metni ara" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Git" title="Eğer varsa, aynı isimli sayfaya gidin" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Anasayfayı ziyaret et" class="mw-wiki-logo" href="/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Gezinti</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/Stardew_Valley_Wiki" title="Anasayfayı ziyaret et [z]" accesskey="z">Anasayfa</a></li><li id="n-recentchanges"><a href="/%C3%96zel:SonDe%C4%9Fi%C5%9Fiklikler" title="Vikide yapılmış son değişikliklerin listesi [r]" accesskey="r">Son değişiklikler</a></li><li id="n-.C3.87evrilmemi.C5.9F-Sayfalar"><a href="/Kategori:%C3%87evrilmemi%C5%9F_Sayfalar">Çevrilmemiş Sayfalar</a></li><li id="n-Yard.C4.B1m:D.C3.BCzenleme"><a href="/Yard%C4%B1m:D%C3%BCzenleme">Yardım:Düzenleme</a></li><li id="n-randompage"><a href="/%C3%96zel:Rastgele" title="Rastgele bir sayfaya gidin [x]" accesskey="x">Rastgele sayfa</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Linkler" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Linkler-label" role="navigation" 
+	 >
+	<h3 id="p-Linkler-label">
+		<span>Linkler</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Resm.C3.AE-site"><a href="https://stardewvalley.net" rel="nofollow">Resmî site</a></li><li id="n-Resm.C3.AE-forumlar"><a href="https://forums.stardewvalley.net/" rel="nofollow">Resmî forumlar</a></li><li id="n-Resm.C3.AE-mal"><a href="https://www.stardewvalley.net/shop/" rel="nofollow">Resmî mal</a></li><li id="n-Sosyal-medya"><a href="https://www.stardewvalley.net/links/" rel="nofollow">Sosyal medya</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Araçlar</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-upload"><a href="//stardewvalleywiki.com/Special:Upload" title="Dosya yükle [u]" accesskey="u">Dosya yükle</a></li><li id="t-specialpages"><a href="/%C3%96zel:%C3%96zelSayfalar" title="Tüm özel sayfaların listesi [q]" accesskey="q">Özel sayfalar</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Bu sayfanın basılmaya uygun sürümü [p]" accesskey="p">Yazdırılabilir sürüm</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1" title="Stardew Valley Wiki:Gizlilik politikası">Gizlilik politikası</a></li>
+		<li id="footer-places-about"><a href="/Stardew_Valley_Wiki:Hakk%C4%B1nda" title="Stardew Valley Wiki:Hakkında">Stardew Valley Wiki hakkında</a></li>
+		<li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:Genel_sorumluluk_reddi" title="Stardew Valley Wiki:Genel sorumluluk reddi">Sorumluluk reddi</a></li>
+		<li id="footer-places-mobileview"><a href="//tr.stardewvalleywiki.com/mediawiki/index.php?title=%C3%96zel:SayfayaBa%C4%9Flant%C4%B1lar/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobil görünüm</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
 
 <script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
 window.dataLayer = window.dataLayer || [];
@@ -173,7 +263,4 @@ gtag('js', new Date());
 gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
 </script>
 
-<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
-<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":53});});</script>		</body>
-		</html>
-		
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":38});});</script></body></html>
