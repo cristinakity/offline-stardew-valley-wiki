@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Offline - Stardew Valley Wiki - Search Results</title>
 	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -7,53 +8,60 @@
 
 	<style>
 		/* Add your custom CSS styles here */
-		html
-		{
+		html {
 			height: 100%;
 		}
+
 		body {
 			background: #0A0523 url(./stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/stardewbackground.png) no-repeat fixed center center / cover;
 			height: 100%;
-			color: #C6DBFF!important;
+			color: #C6DBFF !important;
 			font-family: Arial, Helvetica, sans-serif;
 		}
-		#iFrameDiv
-		{			
+
+		#iFrameDiv {
 			height: calc(100% - 50px);
 		}
+
 		iframe {
 			height: 100%;
 			width: 100%;
 		}
+
 		#search {
 			min-width: 300px;
 		}
-		.navbar-brand
-		{
-			color: #C6DBFF!important;
+
+		.navbar-brand {
+			color: #C6DBFF !important;
 		}
-		.nav-link
-		{
-			color: #C6DBFF!important;
+
+		.nav-link {
+			color: #C6DBFF !important;
 		}
+
 		.mw-body {
 			border: 1px solid #A7D7F9;
 			border-radius: 10px;
-			background-color: rgba(209,248,255,0.67);
+			background-color: rgba(209, 248, 255, 0.67);
 		}
+
 		.highlight {
 			background-color: yellow;
 		}
+
 		.text-small {
 			font-size: 0.8em;
 		}
+
 		.description {
 			color: gray;
 		}
 	</style>
 </head>
+
 <body>
-	<h1>Search Results</h1>
+	<h1 id="titleSearchResults">Search Results</h1>
 
 	<div class="container">
 		<div class="row">
@@ -61,13 +69,13 @@
 				<div class="card" style="background-color: transparent;">
 					<div class="card-body mw-body">
 						<h5 class="card-title">
-						<h5 class="card-title">Searching for text:</h5>
+							<h5 class="card-title" id="titleSearchingForText">Searching for text:</h5>
 							<div id="searchResults"></div>
 						</h5>
 						<table id="tableResults">
 							<thead>
 								<tr>
-									<th>Results</th>
+									<th id="tableResultsTitle">Results</th>
 								</tr>
 							</thead>
 							<tbody id="tableBody">
@@ -86,74 +94,104 @@
 		const urlParams = new URLSearchParams(queryString);
 		const searchText = urlParams.get('search');
 
+		// Load translations based on the user's language preference
+		// get language from html lang attribute 
+		const lang = window.parent.document.documentElement.lang || 'en'; // Default to English if not set
+		updateTranslations(lang); // Default to English, you can change this based on user preference
+
+		// Function to load translations and update UI
+		async function updateTranslations(lang) {
+			console.log("Loading translations for language:", lang);
+			try {
+				const response = await fetch('./lang/translations.json');
+				const translations = await response.json();
+				const langData = translations[lang] || translations["en"]; // Fallback to English
+
+				// if exists update the searchResult.html page
+				// "tableResultsTitle": "Résultats",
+				// "titleSearchingForText": "Recherche de texte :",
+				// "titleSearchResults": "Résultats de recherche"
+				document.getElementById("tableResultsTitle").textContent = langData.tableResultsTitle;
+				document.getElementById("titleSearchingForText").textContent = langData.titleSearchingForText;
+				document.getElementById("titleSearchResults").textContent = langData.titleSearchResults;
+			} catch (error) {
+				console.error("Error loading translations:", error);
+			}
+		}
+
+		// search file by language
+		const searchFile = lang == 'en' ? './search.json' : `./${lang}.search.json`; ;
+
 		// Perform search and display results
-		fetch('./search.json')
-		.then(response => response.json())
-		.then(data => {
-			const searchJson = data;
-			console.log(searchJson);
+		fetch(searchFile)
+			.then(response => response.json())
+			.then(data => {
+				const searchJson = data;
+				// console.log(searchJson);
 
-			// Perform search logic using the data from the JSON file
-			// const searchResults = searchJson.filter(item => typeof item.Keywords === 'string' && item.Keywords.toLowerCase().includes(searchText.toLowerCase()));
-			// console.log(searchResults);
-			const searchResults = searchJson.filter(item => Array.isArray(item.Keywords) && item.Keywords.join().toLowerCase().includes(searchText.toLowerCase()));
-			console.log(searchResults);
+				// Perform search logic using the data from the JSON file
+				// const searchResults = searchJson.filter(item => typeof item.Keywords === 'string' && item.Keywords.toLowerCase().includes(searchText.toLowerCase()));
+				// console.log(searchResults);
+				const searchResults = searchJson.filter(item => Array.isArray(item.Keywords) && item.Keywords.join().toLowerCase().includes(searchText.toLowerCase()));
+				// console.log(searchResults);
 
-			// Create a table element
-			const tableBody = document.getElementById('tableBody');
-			tableBody.innerHTML = '';		
+				// Create a table element
+				const tableBody = document.getElementById('tableBody');
+				tableBody.innerHTML = '';
 
-			// Add search results to the table
-			searchResults.forEach(result => {
-				const row = document.createElement('tr');
-				const titleCell = document.createElement('td');
-				const link = document.createElement('a');
-				link.href = result.UrlPath;
-				link.title = result.UrlPath;
-				const linkInnerHtml = result.Title.replace(new RegExp(searchText, 'gi'), match => `<span class="highlight">${match}</span>`);
-				link.innerHTML = linkInnerHtml;
-				titleCell.appendChild(link);
+				// Add search results to the table
+				searchResults.forEach(result => {
+					const row = document.createElement('tr');
+					const titleCell = document.createElement('td');
+					const link = document.createElement('a');
+					link.href = result.UrlPath;
+					link.title = result.UrlPath;
+					const linkInnerHtml = result.Title.replace(new RegExp(searchText, 'gi'), match => `<span class="highlight">${match}</span>`);
+					link.innerHTML = linkInnerHtml;
+					titleCell.appendChild(link);
 
-				// validate is Description is not empty
-				if (result.Description) {
-					// Add <br> to titleCell
-					titleCell.appendChild(document.createElement('br'));
-					// Add an span element to titleCell, which contains the Description
-					const descriptionDiv = document.createElement('div');
-					descriptionDiv.classList.add("text-small");
-					descriptionDiv.classList.add("description");
-					descriptionDiv.innerHTML = result.Description.replace(new RegExp(searchText, 'gi'), match => `<span class="highlight">${match}</span>`);
-					titleCell.appendChild(descriptionDiv);
+					// validate is Description is not empty
+					if (result.Description) {
+						// Add <br> to titleCell
+						titleCell.appendChild(document.createElement('br'));
+						// Add an span element to titleCell, which contains the Description
+						const descriptionDiv = document.createElement('div');
+						descriptionDiv.classList.add("text-small");
+						descriptionDiv.classList.add("description");
+						descriptionDiv.innerHTML = result.Description.replace(new RegExp(searchText, 'gi'), match => `<span class="highlight">${match}</span>`);
+						titleCell.appendChild(descriptionDiv);
+					}
+
+					row.appendChild(titleCell);
+					tableBody.appendChild(row);
+				});
+
+				// if search results are empty
+				if (searchResults.length === 0) {
+					(async () => {
+						const row = document.createElement('tr');
+						const titleCell = document.createElement('td');
+						
+						const response = await fetch('./lang/translations.json');
+						const translations = await response.json();
+						const langData = translations[lang] || translations["en"]; // Fallback to English
+
+						const noResultsText = langData.noResultsText || "No results found";
+						titleCell.textContent = noResultsText;
+						row.appendChild(titleCell);
+						tableBody.appendChild(row);
+					})();
 				}
-
-				row.appendChild(titleCell);
-				tableBody.appendChild(row);
+			})
+			.catch(error => {
+				console.error('Error loading JSON file:', error);
 			});
 
-			// if search results are empty
-			if (searchResults.length === 0) {
-				const row = document.createElement('tr');
-				const titleCell = document.createElement('td');
-				titleCell.textContent = 'No results found';
-				row.appendChild(titleCell);
-				tableBody.appendChild(row);
-			}
-
-		})
-		.catch(error => {
-			console.error('Error loading JSON file:', error);
-		});
-		
 
 		// Example: Display the search text on the page
 		const searchResultsDiv = document.getElementById('searchResults');
 		searchResultsDiv.innerHTML = `<span class="highlight">${searchText}</span>`;
 	</script>
 </body>
+
 </html>
-
-
-
-
-
-

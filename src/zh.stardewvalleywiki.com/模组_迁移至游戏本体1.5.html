@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>模组:迁移至游戏本体1.5.5 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"模组","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"模组:迁移至游戏本体1.5.5","wgTitle":"迁移至游戏本体1.5.5","wgCurRevisionId":51310,"wgRevisionId":51310,"wgArticleId":2367,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"zh","wgPageContentModel":"wikitext","wgRelevantPageName":"模组:迁移至游戏本体1.5.5","wgRelevantArticleId":2367,"wgUserVariant":"zh","wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,
+"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":
+"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=ext.pygments%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="/mediawiki/load.php?lang=zh&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="←目录"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (zh)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//zh.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="alternate" hreflang="zh" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh"/>
+<link rel="alternate" hreflang="zh-Hans" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh-hans"/>
+<link rel="alternate" hreflang="zh-Hant" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh-hant"/>
+<link rel="alternate" hreflang="zh-Hans-CN" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh-cn"/>
+<link rel="alternate" hreflang="zh-Hant-HK" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh-hk"/>
+<link rel="alternate" hreflang="zh-Hant-MO" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh-mo"/>
+<link rel="alternate" hreflang="zh-Hans-MY" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh-my"/>
+<link rel="alternate" hreflang="zh-Hans-SG" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh-sg"/>
+<link rel="alternate" hreflang="zh-Hant-TW" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;variant=zh-tw"/>
+<link rel="alternate" hreflang="x-default" href="/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="模组:迁移至游戏本体1.5.5 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5"/>
+<meta property="og:description" content="←目录"/>
+<meta property="og:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="模组:迁移至游戏本体1.5.5 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←目录"/>
+<meta property="twitter:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3\u6e38\u620f\u672c\u4f531.5.5 - Stardew Valley Wiki","headline":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3\u6e38\u620f\u672c\u4f531.5.5 - Stardew Valley Wiki","mainEntityOfPage":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3\u6e38\u620f\u672c\u4f531.5.5","identifier":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5","url":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5","description":"\u2190\u76ee\u5f55","dateModified":"2025-03-29T01:32:42Z","datePublished":"2025-03-29T01:32:42Z","image":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-模组_迁移至游戏本体1_5_5 rootpage-模组_迁移至游戏本体1_5_5 stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="打开主菜单" data-event-name="ui.mainmenu">打开主菜单</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>首页</span></a>
+			</li>
+			<li class="">
+			    <a href="/Special:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>随机</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>登录</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="/mediawiki/index.php?title=Special:%E7%A7%BB%E5%8A%A8%E7%89%88%E9%80%89%E9%A1%B9&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>设置</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" class="" data-event-name=""><span>关于Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" class="" data-event-name=""><span>免责声明</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="搜索Stardew Valley Wiki" aria-label="搜索Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="用户导航">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">搜索</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">模组:迁移至游戏本体1.5.5</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="/Special:%E7%A7%BB%E5%8A%A8%E7%89%88%E8%AF%AD%E8%A8%80/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="语言">语言</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="监视">监视</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="编辑此页面的序言章节">编辑</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><p>←<a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95" title="模组:目录">目录</a>
+</p><p><br>
+</p>
+<div style="border: 1px solid orange; border-left: 1em solid orange; padding: 0.5em 1em; border-radius: 5px;">
+<p><b>本页面仅面向模组开发者。模组玩家请参见<a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E7%BB%84%E5%85%BC%E5%AE%B9%E6%80%A7" title="模组:模组兼容性">模组:模组兼容性</a>。</b>
+</p>
+</div>
+<p><br>
+</p><p>本页面介绍了如何更新您的模组以兼容 <a href="/%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2#1.5.5" title="版本历史">Stardew Valley 1.5.5</a>，并记录了一些变化和新功能。
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="zh" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#SMAPI.E6.A8.A1.E7.BB.84.E7.9A.84.E7.A0.B4.E5.9D.8F.E6.80.A7.E6.9B.B4.E6.94.B9"><span class="tocnumber">1</span> <span class="toctext">SMAPI模组的破坏性更改</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#64.E4.BD.8DMonoGame.E5.92.8C.NET_5"><span class="tocnumber">1.1</span> <span class="toctext">64位MonoGame和.NET 5</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E7.B4.A0.E6.9D.90.E5.90.8D.E7.A7.B0.E6.A0.BC.E5.BC.8F.E6.9B.B4.E6.94.B9"><span class="tocnumber">1.2</span> <span class="toctext">素材名称格式更改</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E6.B8.B8.E6.88.8F.E5.85.BC.E5.AE.B9.E6.80.A7.E5.88.86.E6.94.AF"><span class="tocnumber">1.3</span> <span class="toctext">游戏兼容性分支</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E6.B8.B8.E6.88.8F.E7.A8.8B.E5.BA.8F.E9.9B.86.E5.90.8D.E7.A7.B0"><span class="tocnumber">1.4</span> <span class="toctext">游戏程序集名称</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E6.96.B0.E7.9A.84.E7.A8.8B.E5.BA.8F.E9.9B.86.E5.BC.95.E7.94.A8.E6.A8.A1.E5.9E.8B"><span class="tocnumber">1.5</span> <span class="toctext">新的程序集引用模型</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Content_Patcher.E5.8C.85.E7.9A.84.E7.A0.B4.E5.9D.8F.E6.80.A7.E6.9B.B4.E6.94.B9"><span class="tocnumber">2</span> <span class="toctext">Content Patcher包的破坏性更改</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#XNB.E5.BD.B1.E5.93.8D"><span class="tocnumber">2.1</span> <span class="toctext">XNB影响</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#SMAPI.E6.A8.A1.E7.BB.84.E7.9A.84.E6.96.B0.E5.8A.9F.E8.83.BD"><span class="tocnumber">3</span> <span class="toctext">SMAPI模组的新功能</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#.E7.A8.BB.E8.8D.89.E4.BA.BA.E6.9B.B4.E6.94.B9"><span class="tocnumber">3.1</span> <span class="toctext">稻草人更改</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E9.A9.AC.E8.B9.84.E5.A3.B0.E6.9B.B4.E6.94.B9"><span class="tocnumber">3.2</span> <span class="toctext">马蹄声更改</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Content_Patcher.E5.8C.85.E7.9A.84.E6.96.B0.E5.8A.9F.E8.83.BD"><span class="tocnumber">4</span> <span class="toctext">Content Patcher包的新功能</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.9C.E5.9C.BA.E7.B1.BB.E5.9E.8B"><span class="tocnumber">4.1</span> <span class="toctext">自定义农场类型</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.AF.AD.E8.A8.80"><span class="tocnumber">4.2</span> <span class="toctext">自定义语言</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.8A.82.E6.97.A5.E5.9C.B0.E7.82.B9.E5.90.8D.E7.A7.B0"><span class="tocnumber">4.3</span> <span class="toctext">自定义节日地点名称</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E9.85.8D.E5.81.B6.E6.88.BF.E9.97.B4"><span class="tocnumber">4.4</span> <span class="toctext">自定义配偶房间</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E9.85.8D.E5.81.B6.E5.A4.96.E9.83.A8.E5.8C.BA.E5.9F.9F"><span class="tocnumber">4.5</span> <span class="toctext">自定义配偶外部区域</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.9C.E8.88.8D.E5.8D.87.E7.BA.A7"><span class="tocnumber">4.6</span> <span class="toctext">自定义农舍升级</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.9C.B0.E6.9D.BF.2F.E5.A2.99.E7.BA.B8"><span class="tocnumber">4.7</span> <span class="toctext">自定义地板/墙纸</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="#.E5.9C.A8.E5.8F.AF.E8.A3.85.E9.A5.B0.E5.9C.B0.E7.82.B9"><span class="tocnumber">4.7.1</span> <span class="toctext">在可装饰地点</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#.E5.9C.A8.E5.AE.B6.E5.85.B7.E7.9B.AE.E5.BD.95"><span class="tocnumber">4.7.2</span> <span class="toctext">在家具目录</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-22"><a href="#.E5.9C.B0.E5.9B.BE.E5.B1.9E.E6.80.A7.E6.9B.B4.E6.94.B9"><span class="tocnumber">4.8</span> <span class="toctext">地图属性更改</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#.E9.9D.9E.E7.A7.91.E7.BD.97.E5.B8.83.E6.96.AF.E5.AE.A4.E5.8F.8B"><span class="tocnumber">4.9</span> <span class="toctext">非科罗布斯室友</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E4.BF.A1.E4.BB.B6.E6.A0.BC.E5.BC.8F"><span class="tocnumber">4.10</span> <span class="toctext">自定义信件格式</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A8.BB.E8.8D.89.E4.BA.BA"><span class="tocnumber">4.11</span> <span class="toctext">自定义稻草人</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#.E6.94.B9.E8.BF.9B.E7.9A.84.E5.9C.B0.E5.9B.BE.E5.BA.A7.E6.A4.85"><span class="tocnumber">4.12</span> <span class="toctext">改进的地图座椅</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#.E5.8F.A6.E8.A7.81"><span class="tocnumber">5</span> <span class="toctext">另见</span></a></li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="SMAPI模组的破坏性更改"></span><span class="mw-headline" id="SMAPI.E6.A8.A1.E7.BB.84.E7.9A.84.E7.A0.B4.E5.9D.8F.E6.80.A7.E6.9B.B4.E6.94.B9">SMAPI模组的破坏性更改</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<h3 class="in-block"><span id="64位MonoGame和.NET_5"></span><span class="mw-headline" id="64.E4.BD.8DMonoGame.E5.92.8C.NET_5">64位MonoGame和.NET 5</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8" class="mw-redirect" title="模组:制作指南/入门">模组:制作指南/入门</a>。此小节主要用于叙述更新内容。</div>
+<p>Stardew Valley 1.5.5 在所有平台上迁移到了 64 位的 MonoGame 和 .NET 5。SMAPI 会重写模组，因此大多模组仍能正常工作，但强烈建议为每个 C# 模组发布更新以避免边缘情况。
+</p><p>要更新您的 C# 模组代码：
+</p>
+<ol>
+<li>如果尚未迁移，请将您的 <samp>.csproj</samp> 文件迁移到新格式：<ol>
+<li>将您的模组的 <samp>.csproj</samp> 文件替换为以下内容：
+<div class="mw-highlight mw-highlight-lang-xml mw-content-ltr" dir="ltr"><pre><span></span><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;AssemblyName&gt;</span>EXAMPLE_MOD_NAME<span class="nt">&lt;/AssemblyName&gt;</span>
+    <span class="nt">&lt;RootNamespace&gt;</span>EXAMPLE_MOD_NAME<span class="nt">&lt;/RootNamespace&gt;</span>
+    <span class="nt">&lt;Version&gt;</span>1.0.0<span class="nt">&lt;/Version&gt;</span>
+    <span class="nt">&lt;TargetFramework&gt;</span>net5.0<span class="nt">&lt;/TargetFramework&gt;</span>
+    <span class="nt">&lt;LangVersion&gt;</span>Latest<span class="nt">&lt;/LangVersion&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+
+  <span class="nt">&lt;ItemGroup&gt;</span>
+    <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">"Pathoschild.Stardew.ModBuildConfig"</span> <span class="na">Version=</span><span class="s">"4.1.1"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/ItemGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</pre></div>
+</li>
+<li>如果模组使用 <a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Harmony" title="模组:制作指南/APIs/Harmony">Harmony</a>，请在属性组中添加<code>&lt;EnableHarmony&gt;true&lt;/EnableHarmony&gt;</code>。</li>
+<li>更新 <samp>AssemblyName</samp>、<samp>RootNamespace</samp> 和 <samp>Version</samp>标签。（如果它们与项目名称匹配，可以删除 <samp>AssemblyName</samp> 和 <samp>RootNamespace</samp> 标签。）</li>
+<li>添加您使用的其他 NuGet 包（如果有）。</li>
+</ol>
+<p>如果您已经在使用简化格式，只需更新 .csproj 文件中的版本号：
+</p>
+<ol>
+<li>将 <code>&lt;TargetFramework&gt;net452&lt;/TargetFramework&gt;</code> 替换为 <code>&lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;</code>。</li>
+<li>将 <code>&lt;PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="3.3.0" /&gt;</code> 替换为<code>&lt;PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" /&gt;</code></li>
+</ol>
+</li>
+<li>删除 <samp>Properties/AssemblyInfo.cs</samp> 文件、<samp>packages</samp> 文件夹和 <samp>packages.config</samp> 文件（如果存在）。</li>
+<li>退出 Visual Studio。</li>
+<li>删除解决方案的隐藏 <samp>.vs</samp> 文件夹，以及每个项目的 <samp>bin</samp> 和 <samp>obj</samp> 文件夹。</li>
+<li>在 Visual Studio 中重新打开解决方案，点击“生成 &gt; 重新生成解决方案”，修复所有错误，并在游戏中测试模组。</li>
+</ol>
+<p>需要特别注意的事项：
+</p>
+<ul><li><a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Utilities#Constants" title="模组:制作指南/APIs/Utilities"><code>Constants.GameFramework</code></a>现在始终返回 <samp>MonoGame</samp>。任何检查 <samp>Xna</samp> 的代码都可以删除或重写。</li></ul>
+<p>如果您需要帮助，请随时在 <a href="/%E6%A8%A1%E7%BB%84:%E7%A4%BE%E5%8C%BA#Discord" title="模组:社区">Stardew Valley Discord 的 #making-mods 频道</a>中提问！
+</p>
+<h3 class="in-block"><span id="素材名称格式更改"></span><span class="mw-headline" id=".E7.B4.A0.E6.9D.90.E5.90.8D.E7.A7.B0.E6.A0.BC.E5.BC.8F.E6.9B.B4.E6.94.B9">素材名称格式更改</span></h3>
+<p>首先是一些背景知识：
+</p>
+<ul><li>“素材名称”（asset name）标识了您可以通过内容 API 加载的素材，例如<code>Game1.content.Load&lt;T&gt;("素材名称")</code>。例如：<code>Characters/Abigail</code>。</li>
+<li>“文件路径”标识了计算机上的物理文件。例如：<code>C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\Characters\Abigail.xnb</code>。</li></ul>
+<p>Stardew Valley 1.5.5 使得这一区别更加重要，因为 MonoGame 在所有平台上都使用 Linux 风格的分隔符来表示素材名称。这意味着**素材名称不再与 Windows 的路径格式相同**。
+</p><p>您应该检查模组中所有创建/比较路径的代码，如果此代码实际上是在创建/比较素材名称，请将其迁移到等效的方法：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>用于文件路径的代码
+</th>
+<th>用于素材名称的代码
+</th></tr>
+<tr>
+<td><code>PathUtilities.NormalizePath("a/b")</code>
+</td>
+<td><code>PathUtilities.NormalizeAssetName("a/b")</code>
+</td></tr>
+<tr>
+<td><code>Path.Combine("a", "b")</code>
+</td>
+<td><code>PathUtilities.NormalizeAssetName("a/b")</code>
+</td></tr>
+<tr>
+<td><code>Path.DirectorySeparatorChar</code>
+</td>
+<td><code>PathUtilities.AssetDirectorySeparator</code>
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="游戏兼容性分支"></span><span class="mw-headline" id=".E6.B8.B8.E6.88.8F.E5.85.BC.E5.AE.B9.E6.80.A7.E5.88.86.E6.94.AF">游戏兼容性分支</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94#.E6.97.A0.E6.B3.95.E5.9C.A8.E5.85.BC.E5.AE.B9.E6.80.A7.E5.88.86.E6.94.AF.E4.B8.8A.E8.BF.90.E8.A1.8CSMAPI" title="模组:使用指南/疑难解答">模组:使用指南/疑难解答#无法在兼容性分支上运行SMAPI</a>。此小节主要用于叙述更新内容。</div>
+<p>Stardew Valley 1.5.5 在每个操作系统上有两个分支：默认安装的<b>主分支</b>，以及为旧系统提供的可选<a rel="nofollow" class="external text" href="https://www.stardewvalley.net/compatibility"><b>兼容性分支</b></a>。这两个分支对玩家来说内容相同，但使用的框架不同：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>分支
+</th>
+<th>操作系统
+</th>
+<th>游戏框架
+</th>
+<th>运行时
+</th></tr>
+<tr style="color: #090;">
+<td rowspan="2">主分支
+</td>
+<td>Linux/macOS
+</td>
+<td>MonoGame 3.8
+</td>
+<td>64位 .NET 5
+</td></tr>
+<tr style="color: #090;">
+<td>Windows
+</td>
+<td>MonoGame 3.8
+</td>
+<td>64位 .NET 5
+</td></tr>
+<tr style="color: #900;">
+<td rowspan="2">兼容分支
+</td>
+<td>Linux/macOS
+</td>
+<td>MonoGame 3.5.1
+</td>
+<td>64位 Mono 4.5
+</td></tr>
+<tr style="color: #900;">
+<td>Windows
+</td>
+<td>XNA Framework 4.0
+</td>
+<td>32位 .NET Framework 4.5
+</td></tr></tbody></table>
+<p>不幸的是，<b>SMAPI 目前仅支持主分支</b>。在所有模组中支持所有三种变体存在巨大的困难，32 位对模组的功能有显著限制，而<a rel="nofollow" class="external text" href="https://store.steampowered.com/hwsurvey">Steam 硬件统计</a>显示 ≈99.69% 的玩家拥有 64 位系统。
+</p><p>分设两个版本的 SMAPI（就像我们为 Linux/macOS 和 Windows 兼容性所做的那样）在这种情况下是不够的。因为每个 C# 模组作者都需要手动为每个模组的每个更新移植两个版本，所以这是不可行的。未来我们可能会找到让 SMAPI 自动为兼容性分支重写模组的方法，或者一些模组作者可能会将 SMAPI 和个别模组移植到兼容性分支。
+</p>
+<h3 class="in-block"><span id="游戏程序集名称"></span><span class="mw-headline" id=".E6.B8.B8.E6.88.8F.E7.A8.8B.E5.BA.8F.E9.9B.86.E5.90.8D.E7.A7.B0">游戏程序集名称</span></h3>
+<p>以前，游戏程序集在 Windows 上为 <code>Stardew Valley</code>，在 Linux 和 macOS 上为 <code>StardewValley</code>。现在所有平台上的程序集名称均为 <code>Stardew Valley</code>。一旦您更新了模组构建包，大多数模组不应受到影响。
+</p>
+<h3 class="in-block"><span id="新的程序集引用模型"></span><span class="mw-headline" id=".E6.96.B0.E7.9A.84.E7.A8.8B.E5.BA.8F.E9.9B.86.E5.BC.95.E7.94.A8.E6.A8.A1.E5.9E.8B">新的程序集引用模型</span></h3>
+<p>如果您的模组手动引用了 <samp>.dll</samp> 文件，请注意在 .NET 5 中程序集引用的处理方式有所不同。默认情况下，自定义程序集不再复制到您的模组文件夹中，这可能会导致模组崩溃。在这种情况下，您需要在项目文件中显式启用程序集捆绑；有关详细信息，请参阅<a rel="nofollow" class="external text" href="https://smapi.io/package">模组构建包</a>文档中的<code>BundleExtraAssemblies</code>。
+</p>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="Content_Patcher包的破坏性更改"></span><span class="mw-headline" id="Content_Patcher.E5.8C.85.E7.9A.84.E7.A0.B4.E5.9D.8F.E6.80.A7.E6.9B.B4.E6.94.B9">Content Patcher包的破坏性更改</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<h3 class="in-block"><span id="XNB影响"></span><span class="mw-headline" id="XNB.E5.BD.B1.E5.93.8D">XNB影响</span></h3>
+<p>以下是 Stardew Valley 1.5.5 中更改的 XNB 文件的摘要。
+</p><p>注意事项：
+</p>
+<ul><li>为简化起见，忽略了非英语文件中的文本更改。</li>
+<li>未列出新内容文件，因为它们不会影响现有模组。</li>
+<li>XNB 模组受到的影响尤为严重，因为它们替换了整个文件。Content Patcher 包通常不受影响，除非它们替换了整个文件（在这种情况下，请参阅XNB模组列）。</li></ul>
+<p>简写：
+</p>
+<ul><li>“<b>✘ 已损坏</b>”意味着旧版模组会删除新内容或潜在的重要更改，或可能导致严重的显示错误。游戏可能会在缺失这些内容的情况下正常工作或崩溃，具体取决于游戏如何使用该特定内容。</li>
+<li>“✘ 影响更新”：旧版模组会删除 1.6 中的小更改（例如，错误修复）。</li>
+<li>“几乎无影响”意味着模组仅在编辑特定条目或字段时才会受到影响。</li>
+<li>空白表示对绝大多数模组没有预期影响。</li></ul>
+<table class="wikitable">
+
+<tbody><tr>
+<th>内容文件
+</th>
+<th>更改
+</th>
+<th>XNB
+</th>
+<th>Content Patcher
+</th></tr>
+<tr>
+<td><samp>Data/TV/TipChannel</samp>
+</td>
+<td>修复了拼写错误
+</td>
+<td>✘ 影响更新
+</td>
+<td>✓ 几乎无影响
+</td></tr>
+<tr>
+<td><samp>Effects/BloomCombine</samp><br><samp>Effects/BloomExtract</samp><br><samp>Effects/GaussianBlur</samp>
+</td>
+<td>已删除
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><samp>Fonts/*</samp>
+</td>
+<td>无更改<br>（由于 <a href="#64.E4.BD.8DMonoGame.E5.92.8C.NET_5">MonoGame</a>，Windows 上的<a href="/%E6%A8%A1%E7%BB%84:%E7%BC%96%E8%BE%91_XNB_%E6%96%87%E4%BB%B6#.E8.A7.A3.E5.8C.85" title="模组:编辑 XNB 文件">解包格式</a>可能有所不同）
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><samp>LooseSprites/Cursors2</samp>
+</td>
+<td>在空白区域添加了新贴图
+</td>
+<td><b>✘ 已损坏</b>
+</td>
+<td>✓ 几乎无影响
+</td></tr>
+<tr>
+<td><samp>Maps/Desert</samp>
+</td>
+<td>修复了外观问题
+</td>
+<td>✘ 影响更新
+</td>
+<td>✓ 几乎无影响
+</td></tr>
+<tr>
+<td><samp>Maps/ElliottHouse</samp>
+</td>
+<td>小修复
+</td>
+<td>✘ 影响更新
+</td>
+<td>✓ 几乎无影响
+</td></tr>
+<tr>
+<td><samp>Maps/Farm</samp><br><samp>Maps/Farm_Combat</samp><br><samp>Maps/Farm_Fishing</samp><br><samp>Maps/Farm_Foraging</samp><br><samp>Maps/Farm_FourCorners</samp><br><samp>Maps/Farm_Island</samp><br><samp>Maps/Farm_Mining</samp>
+</td>
+<td>农场山洞和出货箱区域现在使用地块属性（不再是硬编码）来禁止建造建筑。
+</td>
+<td>✘ 将删除这些建筑限制
+</td>
+<td>✘ 可能会删除这些建筑限制
+</td></tr>
+<tr>
+<td><samp>Maps/FarmHouse</samp><br><samp>Maps/FarmHouse1</samp><br><samp>Maps/FarmHouse1_marriage</samp><br><samp>Maps/FarmHouse2</samp><br><samp>Maps/FarmHouse2_marriage</samp><br><samp>Maps/Farmhouse_*</samp> 翻新地图<br><samp>Maps/IslandFarmHouse</samp><br><samp>Maps/Shed</samp><br><samp>Maps/Shed2</samp>
+</td>
+<td>添加了新的<a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.9C.B0.E6.9D.BF.2F.E5.A2.99.E7.BA.B8">墙纸/地板属性</a>
+</td>
+<td><b>✘ 已损坏</b>（在应用翻新时将禁用大多数地板/墙纸）
+</td>
+<td>✘ 在应用翻新时可能会禁用一些地板/墙纸
+</td></tr>
+<tr>
+<td><samp>Maps/spouseRooms</samp>
+</td>
+<td>添加了<a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E9.85.8D.E5.81.B6.E6.88.BF.E9.97.B4">配偶站立点</a>（如果未设置，则默认为旧偏移量）
+</td>
+<td>✓ 几乎无影响
+</td>
+<td>✓ 几乎无影响
+</td></tr>
+<tr>
+<td><samp>Strings/Locations</samp>
+</td>
+<td>更改了 <samp>ManorHouse_DivorceBook_*</samp> 条目以支持<a href="#.E9.9D.9E.E7.A7.91.E7.BD.97.E5.B8.83.E6.96.AF.E5.AE.A4.E5.8F.8B">非科罗布斯室友</a>
+</td>
+<td><b>✘ 已损坏</b>
+</td>
+<td>✓ 几乎无影响
+</td></tr></tbody></table>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="SMAPI模组的新功能"></span><span class="mw-headline" id="SMAPI.E6.A8.A1.E7.BB.84.E7.9A.84.E6.96.B0.E5.8A.9F.E8.83.BD">SMAPI模组的新功能</span></h2><section class="mf-section-3 collapsible-block" id="mf-section-3">
+<dl><dd>另请参阅 <a href="#Contenter_Patcher.E5.8C.85.E7.9A.84.E6.96.B0.E5.8A.9F.E8.83.BD">Content Patcher 包的新功能</a>，这些功能也适用于 C# 模组。</dd></dl>
+<h3 class="in-block"><span id="稻草人更改"></span><span class="mw-headline" id=".E7.A8.BB.E8.8D.89.E4.BA.BA.E6.9B.B4.E6.94.B9">稻草人更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E4%BD%93" title="模组:物体">模组:物体</a> 和 <a href="/%E6%A8%A1%E7%BB%84:%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%87%E7%AD%BE" title="模组:上下文标签">模组:上下文标签</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>您现在可以修改 <code>Object.IsScarecrow()</code> 和/或 <code>Object.GetRadiusForScarecrow()</code>（或添加<a href="#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A8.BB.E8.8D.89.E4.BA.BA">上下文标签</a>）以支持自定义稻草人或自定义范围。
+</p>
+<h3 class="in-block"><span id="马蹄声更改"></span><span class="mw-headline" id=".E9.A9.AC.E8.B9.84.E5.A3.B0.E6.9B.B4.E6.94.B9">马蹄声更改</span></h3>
+<p>您现在可以通过设置 <samp>onFootstepAction</samp> 字段来覆盖马匹的脚步声逻辑。例如：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Horse</span> <span class="n">horse</span> <span class="p">=</span> <span class="p">...;</span> <span class="c1">// 获取您想要更改的马匹实例</span>
+<span class="n">horse</span><span class="p">.</span><span class="n">onFootstepAction</span> <span class="p">=</span> <span class="p">(</span><span class="kt">string</span> <span class="n">tileType</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+   <span class="c1">// 播放自定义音频等</span>
+<span class="p">};</span>
+</pre></div>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(4)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="Content_Patcher包的新功能"></span><span class="mw-headline" id="Content_Patcher.E5.8C.85.E7.9A.84.E6.96.B0.E5.8A.9F.E8.83.BD">Content Patcher包的新功能</span></h2><section class="mf-section-4 collapsible-block" id="mf-section-4">
+<p>Stardew Valley 1.5.5 对内容包没有已知的破坏性更改。一旦加载它们的框架模组更新，所有内容包都应该可以正常工作。
+</p>
+<h3 class="in-block"><span id="自定义农场类型"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.9C.E5.9C.BA.E7.B1.BB.E5.9E.8B">自定义农场类型</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E5%86%9C%E5%9C%BA%E6%95%B0%E6%8D%AE" title="模组:农场数据">模组:农场数据</a>。此小节主要用于叙述更新内容。</div>
+<p>您现在可以通过编辑 <samp>Data/AdditionalFarms</samp> 素材来添加自定义农场类型。每个条目由具有以下字段的对象组成：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>描述
+</th></tr>
+<tr>
+<td><samp>ID</samp>
+</td>
+<td>唯一的 ID 值。这必须在所有模组中<b>全局</b>唯一，因此您应当向 ID 添加您的模组 ID 作为前缀（例如，<samp>Example.PineapplesAnywhere/PineappleFarm</samp>）。您应避免使用逗号以兼容那些检查 <samp>{{FarmType}}</samp> 标记的 Content Patcher 包。此 ID 不会在游戏中显示。
+</td></tr>
+<tr>
+<td><samp>TooltipStringPath</samp>
+</td>
+<td>获取可翻译的农场名称和描述。这必须是 <samp><code title="必需字段 '资源名称'">&lt;资源名称&gt;</code>:<code title="必需字段 '键'">&lt;键&gt;</code></samp> 形式的键；例如，<samp>Strings/UI:Farm_Description</samp> 将从<samp>Strings/UI</samp> 文件中的 <samp>Farm_Description</samp> 条目获取翻译文本。翻译文本必须为 “<samp><code title="必需字段 'name'">&lt;name&gt;</code>_<code title="必需字段 'description'">&lt;description&gt;</code></samp>” 形式，例如 “菠萝农场_一个形状像菠萝的农场”。
+</td></tr>
+<tr>
+<td><samp>MapName</samp>
+</td>
+<td>相对于 <samp>Maps</samp> 文件夹的地图素材名称。例如，<samp>Farm_Pineapple</samp> 将加载 <samp>Maps/Farm_Pineapple</samp> 素材。
+</td></tr>
+<tr>
+<td><samp>IconTexture</samp>
+</td>
+<td>（可选） 22x20 像素的图标贴图的素材名称。该图标显示在“新建”和“合作”界面上。
+</td></tr>
+<tr>
+<td><samp>WorldMapTexture</samp>
+</td>
+<td>（可选） 131x61 像素的世界地图贴图的资源名称，该贴图将用于世界地图上的农场区域。
+</td></tr>
+<tr>
+<td><samp>ModData</samp>
+</td>
+<td>（可选） 农场的模组特定元数据的“字符串→字符串”字典，在 C# 代码中可以通过 <samp>Game1.GetFarmTypeModData(key)</samp> 访问。
+</td></tr></tbody></table>
+<p>例如，下面的 Content Patcher 包将创建一个“菠萝”农场：
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+    <span class="nt">"Format"</span><span class="p">:</span> <span class="s2">"2.5.0"</span><span class="p">,</span>
+    <span class="nt">"Changes"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="err">//</span> <span class="err">添加农场类型</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"EditData"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Data/AdditionalFarms"</span><span class="p">,</span>
+            <span class="nt">"Entries"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">"{{ModId}}_PineappleFarm"</span><span class="p">:</span> <span class="p">{</span> <span class="err">//</span> <span class="err">出于技术原因，您需要在此处*和*“ID”字段中指定ID</span>
+                    <span class="nt">"ID"</span><span class="p">:</span> <span class="s2">"{{ModId}}_PineappleFarm"</span><span class="p">,</span>
+                    <span class="nt">"TooltipStringPath"</span><span class="p">:</span> <span class="s2">"Strings/UI:{{ModId}}_PineappleFarm"</span><span class="p">,</span>
+                    <span class="nt">"MapName"</span><span class="p">:</span> <span class="s2">"{{ModId}}/PineappleFarm"</span><span class="p">,</span>
+                    <span class="nt">"IconTexture"</span><span class="p">:</span> <span class="s2">"Mods/{{ModId}}/FarmIcon"</span><span class="p">,</span>
+                    <span class="nt">"WorldMapTexture"</span><span class="p">:</span> <span class="s2">"Mods/{{ModId}}/FarmMap"</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="err">//</span> <span class="err">添加农场名称</span> <span class="err">+</span> <span class="err">描述</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"EditData"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Strings/UI"</span><span class="p">,</span>
+            <span class="nt">"Entries"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">"{{ModId}}_PineappleFarm"</span><span class="p">:</span> <span class="s2">"Pineapple Farm_A farm shaped like a pineapple!"</span> <span class="err">//</span> <span class="err">提示：使用</span><span class="p">{</span><span class="err">{i18n</span><span class="p">}}</span><span class="err">进行翻译</span>
+            <span class="p">}</span>
+        <span class="err">}</span><span class="p">,</span>
+
+        <span class="err">//</span> <span class="err">加载地图</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"Load"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Maps/{{ModId}}/PineappleFarm"</span><span class="p">,</span>
+            <span class="nt">"FromFile"</span><span class="p">:</span> <span class="s2">"assets/map.tmx"</span>
+        <span class="p">},</span>
+
+        <span class="err">//</span> <span class="err">加载图标</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"Load"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Mods/{{ModId}}/FarmIcon, Mods/{{ModId}}/FarmMap"</span><span class="p">,</span>
+            <span class="nt">"FromFile"</span><span class="p">:</span> <span class="s2">"assets/{{TargetWithoutPath}}.png"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<h3 class="in-block"><span id="自定义语言"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E8.AF.AD.E8.A8.80">自定义语言</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80" title="模组:自定义语言">模组:自定义语言</a>。此小节主要用于叙述更新内容。</div>
+<p>您现在可以通过编辑 <samp>Data/AdditionalLanguages</samp> 素材来添加自定义语言。每个条目由具有以下字段的对象组成：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>描述
+</th></tr>
+<tr>
+<td><samp>ID</samp>
+</td>
+<td>唯一的 ID 值。这不会在游戏中显示。
+</td></tr>
+<tr>
+<td><samp>LanguageCode</samp>
+</td>
+<td>此本地化的语言代码。这应该是<a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" class="extiw" title="wikipedia:List of ISO 639-1 codes">ISO 639-1代码</a>。您应避免使用逗号以兼容那些检查 <samp>{{Language}}</samp> 标记的 Content Patcher 包。
+</td></tr>
+<tr>
+<td><samp>ButtonTexture</samp>
+</td>
+<td>174x78 像素的按钮贴图的素材名称，此贴图应当包含语言选择菜单中的语言按钮。贴图的上一半应当是按钮在默认状态下的贴图，下一半应当是悬停状态下的贴图。
+</td></tr>
+<tr>
+<td><samp>UseLatinFont</samp>
+</td>
+<td>该语言是否使用与英语相同的拉丁字符字体。如果设置为 <samp>false</samp>，则必须设置 <samp>FontFile</samp> 字段。
+</td></tr>
+<tr>
+<td><samp>TimeFormat</samp>
+</td>
+<td>描述游戏内时间格式的字符串，其中的标记在游戏中将被替换为具体的值。例如，<code>[HOURS_12]:[MINUTES] [AM_PM]</code> 将在中午显示为 <code>12:00 PM</code>。
+<p>有效标记包括：
+</p>
+<ul><li><code>[HOURS_12]</code>：12小时制的小时，午夜和中午均为“12”。</li>
+<li><code>[HOURS_12_0]</code>：12小时制的小时，午夜和中午均为“0”。</li>
+<li><code>[HOURS_24]</code>：24小时制的小时，午夜为“0”，中午为“12”。</li>
+<li><code>[HOURS_24_00]</code>：24小时制的小时，前面补 0，午夜为“00”，中午为“12”。</li>
+<li><code>[MINUTES]</code>：分钟数，前面补 0。</li>
+<li><code>[AM_PM]</code>：本地化的 "am" 或 "pm"文本（取自<code>Strings\\StringsFromCSFiles:DayTimeMoneyBox.cs.10370</code>和<code>DayTimeMoneyBox.cs.10371</code>）。游戏在中午至 11:59pm 之间显示 "pm"；否则显示 "am"。</li></ul>
+</td></tr>
+<tr>
+<td><samp>ClockTimeFormat</samp>
+</td>
+<td>描述游戏内时间格式的字符串。与 <samp>TimeFormat</samp> 等效，但用于游戏内的时钟。
+</td></tr>
+<tr>
+<td><samp>ClockDateFormat</samp>
+</td>
+<td>描述游戏内日期格式的字符串，将显示在游戏内的时钟上，其中的标记将被替换为游戏内的值。例如，<code>[DAY_OF_WEEK]. [DAY_OF_MONTH]</code>将显示<code>Mon. 1</code>。
+<p>有效标记包括：
+</p>
+<ul><li><code>[DAY_OF_WEEK]</code>：由 <code>Game1.shortDayDisplayNameFromDayOfSeason</code> 返回的星期缩写（例如，星期一缩写为 <samp>Mon</samp>）。</li>
+<li><code>[DAY_OF_MONTH]</code>：当天是当季的第几天。</li></ul>
+</td></tr>
+<tr>
+<td><samp>FontFile</samp>
+</td>
+<td>（可选）字体文件的素材名称（如果<samp>UseLatinFont</samp>为<samp>false</samp>）。
+</td></tr>
+<tr>
+<td><samp>FontPixelZoom</samp>
+</td>
+<td>（可选）字体大小的缩放因子。
+</td></tr>
+<tr>
+<td><samp>FontApplyYOffset</samp>
+</td>
+<td>（可选）是否将字体向上移动四个像素（乘以 <samp>FontPixelZoom</samp>），以更好地对齐具有较大字符的语言（如中文和日文）。
+</td></tr>
+<tr>
+<td><samp>NumberComma</samp>
+</td>
+<td>（可选） 用作千位分隔符的字符串（例如，<code>","</code>表示<code>5,000,000</code>）。默认为逗号。
+</td></tr>
+<tr>
+<td><samp>SmallFontLineSpacing</samp>
+</td>
+<td>（可选） <samp>smallFont</samp> 使用的行间距值。默认为26。
+</td></tr>
+<tr>
+<td><samp>UseGenderedCharacterTranslations</samp>
+</td>
+<td>（可选） 社交标签和礼物日志是否使用基于性别的翻译（如原版的葡萄牙语）。默认为 false。
+<p>具体来说，这会影响 <samp>Strings\StringsFromCSFiles:SocialPage.cs.11635</samp> 翻译（例如"(Single)"，意为“单身”，英语中不区分性别）。启用后，该字符串素材可以包含由 <code>/</code> 分隔的翻译，分隔符前为男性、分隔符后为女性。如原版葡萄牙语翻译："(solteiro)/(solteira)"（意为“男性单身”和“女性单身”，区分阴阳性）。
+</p>
+</td></tr></tbody></table>
+<p>例如，如下 Content Patcher 包将向游戏添加世界语：
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+    <span class="nt">"Format"</span><span class="p">:</span> <span class="s2">"2.5.0"</span><span class="p">,</span>
+    <span class="nt">"Changes"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="err">//</span> <span class="err">定义语言</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"EditData"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Data/AdditionalLanguages"</span><span class="p">,</span>
+            <span class="nt">"Entries"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">"{{ModId}}_Esperanto"</span><span class="p">:</span> <span class="p">{</span> <span class="err">//</span> <span class="err">出于技术原因，您需要在此处*和*“ID”字段中指定ID</span>
+                    <span class="nt">"ID"</span><span class="p">:</span> <span class="s2">"{{ModId}}_Esperanto"</span><span class="p">,</span>
+                    <span class="nt">"LanguageCode"</span><span class="p">:</span> <span class="s2">"eo"</span><span class="p">,</span>
+                    <span class="nt">"ButtonTexture"</span><span class="p">:</span> <span class="s2">"Mods/{{ModId}}/EsperantoButton"</span><span class="p">,</span>
+                    <span class="nt">"UseLatinFont"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nt">"TimeFormat"</span><span class="p">:</span> <span class="s2">"[HOURS_24_00]:[MINUTES]"</span><span class="p">,</span>
+                    <span class="nt">"ClockTimeFormat"</span><span class="p">:</span> <span class="s2">"[HOURS_24_00]:[MINUTES]"</span><span class="p">,</span>
+                    <span class="nt">"ClockDateFormat"</span><span class="p">:</span> <span class="s2">"[DAY_OF_WEEK] [DAY_OF_MONTH]"</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="err">//</span> <span class="err">加载按钮贴图</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"Load"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Mods/{{ModId}}/EsperantoButton"</span><span class="p">,</span>
+            <span class="nt">"FromFile"</span><span class="p">:</span> <span class="s2">"assets/button.png"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<p>一旦定义了语言，您就可以像往常一样通过修改游戏素材来添加翻译，并使用上面指定的语言代码。例如：
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+    <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"EditData"</span><span class="p">,</span>
+    <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Strings/StringsFromCSFiles"</span><span class="p">,</span>
+    <span class="nt">"Entries"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"Game1.cs.3043"</span><span class="p">:</span> <span class="s2">"Lundo"</span><span class="p">,</span>
+        <span class="nt">"Game1.cs.3044"</span><span class="p">:</span> <span class="s2">"Mardo"</span><span class="p">,</span>
+        <span class="err">...</span>
+    <span class="p">},</span>
+    <span class="nt">"When"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"Language"</span><span class="p">:</span> <span class="s2">"eo"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 class="in-block"><span id="自定义节日地点名称"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E8.8A.82.E6.97.A5.E5.9C.B0.E7.82.B9.E5.90.8D.E7.A7.B0">自定义节日地点名称</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E8%8A%82%E6%97%A5%E6%95%B0%E6%8D%AE" title="模组:节日数据">模组:节日数据</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>节日开始消息中的地点名称（例如，“<i>The Luau has begun on the beach</i>”）以前是硬编码的，因此对于非原版节日地点，它将始终显示内部名称。您现在可以在 <samp>Data/Festivals/*</samp> 文件中添加 <samp>locationDisplayName</samp> 字段来设置节日显示名称。
+</p>
+<h3 class="in-block"><span id="自定义配偶房间"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E9.85.8D.E5.81.B6.E6.88.BF.E9.97.B4">自定义配偶房间</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:NPC%E6%95%B0%E6%8D%AE" title="模组:NPC数据">模组:NPC数据</a>。此小节主要用于叙述更新内容。</div>
+<p>为自定义 NPC 添加配偶房间现在变得更加容易。
+</p>
+<ul>
+<li>您可以编辑 <samp>Data/SpouseRooms</samp> 素材，以如下格式添加配偶房间信息：<code>"<code title="必需字段 'NPC name'">&lt;NPC name&gt;</code>": "<code title="必需字段 'map name'">&lt;map name&gt;</code>/<code title="必需字段 'map index'">&lt;map index&gt;</code>"</code>。
+
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><code><code title="必需字段 'NPC name'">&lt;NPC name&gt;</code></code>
+</td>
+<td>NPC 的内部名称（即，其在 <samp>Data/NPCDispositions</samp> 中的键名）。
+</td></tr>
+<tr>
+<td><code><code title="必需字段 'map name'">&lt;map name&gt;</code></code>
+</td>
+<td>游戏 <samp>Content/Maps</samp> 文件夹中地图的素材名称。地图可以是通过 Content Patcher 的 <samp>Load</samp> 或 SMAPI 的 <samp>IAssetLoader</samp> API 加载的自定义地图。
+</td></tr>
+<tr>
+<td><code><code title="必需字段 'map index'">&lt;map index&gt;</code></code>
+</td>
+<td>地图文件中配偶房间的索引，以允许在同一文件中包含多个配偶房间。每个配偶房间为 6 格宽 × 9 格高，索引从左上角的 0 开始。您可以拥有任意数量的行和列（索引将在行尾换行），只要它们对应于整数个配偶房间。
+</td></tr></tbody></table></li>
+<li>您可以通过在 <a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE#.E9.81.93.E8.B7.AF.E5.B1.82" title="模组:地图"><samp>Paths</samp> 图层</a>上放置红色圆圈路径地块（地块索引 7）来标记配偶在其配偶房间中的站立位置。</li>
+<li>现在游戏使用新的地图覆盖系统来实现配偶房间，因此配偶房间地图中的地块属性和自定义地块集会被自动复制过去。</li>
+<li>游戏的一些配偶房间代码（例如，塞巴斯蒂安的 14 心青蛙缸的位置）已更新，以为（未来版本）移动配偶房间做准备。然而，某些功能（如事件未知）仍然是硬编码的，需要修复才能完全支持移动配偶房间。</li>
+</ul>
+<p>例如，如下 Content Patcher 包将为新的名为 Akila 的 NPC 添加配偶房间：
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+    <span class="nt">"Format"</span><span class="p">:</span> <span class="s2">"2.5.0"</span><span class="p">,</span>
+    <span class="nt">"Changes"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="err">//</span> <span class="err">注册配偶房间</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"EditData"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Data/SpouseRooms"</span><span class="p">,</span>
+            <span class="nt">"Entries"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">"Akila"</span><span class="p">:</span> <span class="s2">"{{ModId}}_SpouseRoom/0"</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="err">//</span> <span class="err">加载配偶房间地图</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"Load"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Maps/{{ModId}}_SpouseRoom"</span><span class="p">,</span>
+            <span class="nt">"FromFile"</span><span class="p">:</span> <span class="s2">"assets/spouse-room.tmx"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+
+<span class="p">}</span>
+</pre></div>
+<h3 class="in-block"><span id="自定义配偶外部区域"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E9.85.8D.E5.81.B6.E5.A4.96.E9.83.A8.E5.8C.BA.E5.9F.9F">自定义配偶外部区域</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:NPC%E6%95%B0%E6%8D%AE" title="模组:NPC数据">模组:NPC数据</a>。此小节主要用于叙述更新内容。</div>
+<p>您现在可以通过编辑 <samp>Data/SpousePatios</samp> 来自定义任何 NPC 的<a href="/%E5%A9%9A%E5%A7%BB#.E9.85.8D.E5.81.B6.E7.9A.84.E6.88.B7.E5.A4.96.E6.B4.BB.E5.8A.A8.E5.8C.BA" title="婚姻">配偶的户外活动区</a>，该文件包含四个斜杠分隔的字段：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>map asset name</samp>
+</td>
+<td>相对于 <samp>Content/Maps</samp> 文件夹的地图素材名称，其中包含配偶区域地图。地图必须包含一个或多个 4x4 地块区域，行列数量不限。
+</td></tr>
+<tr>
+<td><samp>index</samp>
+</td>
+<td>地图中用作户外区域的 4x4 区域的索引（从 0 开始）。
+</td></tr>
+<tr>
+<td><samp>NPC animation frames</samp>
+</td>
+<td>（可选）配偶的动画帧，作为其贴图集中帧索引的序列，每个帧持续 100 毫秒。如果未设置，原版配偶将使用其硬编码的动画，自定义配偶将不会有动画。
+</td></tr>
+<tr>
+<td><samp><code title="必需字段 'NPC offset X'">&lt;NPC offset X&gt;</code> <code title="必需字段 'NPC offset Y'">&lt;NPC offset Y&gt;</code></samp>
+</td>
+<td>（可选） 当配偶在其户外区域时，应用于其位置的 X 和 Y 方向像素偏移。
+</td></tr></tbody></table>
+<p>您可以通过在 <a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE#.E9.81.93.E8.B7.AF.E5.B1.82" title="模组:地图"><samp>Paths</samp> 图层</a>上放置红色圆圈路径地块（地块索引 7）来标记配偶在其户外区域中的站立位置。
+</p><p>例如，如下 Content Patcher 包将为新的 Akila NPC 添加户外区域。当在户外区域时，其贴图将在贴图集索引 16 ~ 19 之间循环，每帧持续 300 毫秒，并向右偏移 1 像素，向下偏移 5 像素。
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+    <span class="nt">"Format"</span><span class="p">:</span> <span class="s2">"2.5.0"</span><span class="p">,</span>
+    <span class="nt">"Changes"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="err">//</span> <span class="err">注册户外区域</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"EditData"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Data/SpousePatios"</span><span class="p">,</span>
+            <span class="nt">"Entries"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">"Akila"</span><span class="p">:</span> <span class="s2">"{{ModId}}_OutsideArea/0/16 16 16 17 17 17 18 18 18 19 19 19/1 5"</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="err">//</span> <span class="err">加载配偶地图</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"Load"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Maps/{{ModId}}_OutsideArea"</span><span class="p">,</span>
+            <span class="nt">"FromFile"</span><span class="p">:</span> <span class="s2">"assets/outside-area.tmx"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<h3 class="in-block"><span id="自定义农舍升级"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.9C.E8.88.8D.E5.8D.87.E7.BA.A7">自定义农舍升级</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E5%86%9C%E8%88%8D%E5%8D%87%E7%BA%A7" title="模组:农舍升级">模组:农舍升级</a>。此小节主要用于叙述更新内容。</div>
+<p>您现在可以添加自定义的<a href="/%E5%86%9C%E8%88%8D#.E5.8D.87.E7.BA.A7" title="农舍">农舍升级</a>。当您设置指定的<a href="/%E6%A8%A1%E7%BB%84:%E4%BF%A1%E4%BB%B6%E6%95%B0%E6%8D%AE#.E4.BF.A1.E4.BB.B6.E6.A0.87.E8.AF.86" title="模组:信件数据">信件标识</a>时，游戏将自动升级农舍。您可以在农舍地图中的添加如下的新地图属性来添加农舍升级：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>适用场景
+</th>
+<th>地图属性
+</th>
+<th>用法
+</th></tr>
+<tr>
+<td>农舍
+</td>
+<td><samp>AdditionalRenovations <code title="必需字段 'renovation'">&lt;renovation&gt;</code>+</samp>
+</td>
+<td>农舍升级的列表，用逗号分隔。每个升级的格式为 <samp><code title="必需字段 'map patch ID'">&lt;map patch ID&gt;</code> <code title="必需字段 'required mail flag'">&lt;required mail flag&gt;</code> <code title="必需字段 'map asset if active'">&lt;map asset if active&gt;</code> <code title="必需字段 'map asset if inactive'">&lt;map asset if inactive&gt;</code> <code title="可选字段 'area rectangle'">[area rectangle]</code></samp>。字段如下：
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>map patch ID</samp>
+</td>
+<td>此地图补丁的唯一 ID。通常与升级名称相似，但可以是任何值，只要没有重名即可。如果一个升级包括多个地图补丁，则每个补丁必须具有不重名的 ID。
+</td></tr>
+<tr>
+<td><samp>required mail flag</samp>
+</td>
+<td>检查屋主的<a href="/%E6%A8%A1%E7%BB%84:%E4%BF%A1%E4%BB%B6%E6%95%B0%E6%8D%AE#.E4.BF.A1.E4.BB.B6.E6.A0.87.E8.AF.86" title="模组:信件数据">信件标识</a>，以决定是否应用该补丁。
+</td></tr>
+<tr>
+<td><samp>map asset if active</samp>
+</td>
+<td>当信件标识被设置时应用的地图素材名称，相对于<samp>Maps</samp>文件夹。
+</td></tr>
+<tr>
+<td><samp>map asset if inactive</samp>
+</td>
+<td>当信件标识未设置时应用的地图素材名称，相对于<samp>Maps</samp>文件夹。
+</td></tr>
+<tr>
+<td><samp>area rectangle</samp>
+</td>
+<td>（可选）要打补丁的地图区域，格式为 <samp><code title="必需字段 'X'">&lt;X&gt;</code> <code title="必需字段 'Y'">&lt;Y&gt;</code> <code title="必需字段 'width'">&lt;width&gt;</code> <code title="必需字段 'height'">&lt;height&gt;</code></samp>。如果未设置 <code title="必需字段 'X'">&lt;X&gt;</code>，则默认为地图的左上角。如果设置了，则必须指定所有四个值。
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p>例如，下面的 Content Patcher包将根据自定义的 <samp>ExampleAuthor_PineapplesEverywhere_HasRenovation</samp> 标识来升级原版中的顶级农舍。注意，<samp>TextOperations</samp> 用于避免覆盖其他模组添加的升级，<code>{{ModId}}</code> 标识会自动被 Content Patcher 替换为您的模组 ID，以避免与其他模组冲突。
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+    <span class="nt">"Format"</span><span class="p">:</span> <span class="s2">"2.5.0"</span><span class="p">,</span>
+    <span class="nt">"Changes"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="err">//</span> <span class="err">添加翻新</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"EditMap"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Maps/FarmHouse2, Maps/FarmHouse2_marriage"</span><span class="p">,</span>
+            <span class="nt">"TextOperations"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">"Operation"</span><span class="p">:</span> <span class="s2">"Append"</span><span class="p">,</span>
+                    <span class="nt">"Target"</span><span class="p">:</span> <span class="p">[</span> <span class="s2">"MapProperties"</span><span class="p">,</span> <span class="s2">"AdditionalRenovations"</span> <span class="p">],</span>
+                    <span class="nt">"Value"</span><span class="p">:</span> <span class="s2">"{{ModId}}_KitchenUpgrade {{ModId}}_HasRenovation {{ModId}}_Kitchen {{ModId}}_Empty 0 19 3 3"</span><span class="p">,</span>
+                    <span class="nt">"Delimiter"</span><span class="p">:</span> <span class="s2">","</span> <span class="err">//</span> <span class="err">如果已经有翻新，在此翻新前添加逗号</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+
+        <span class="err">//</span> <span class="err">加载翻新地图补丁</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"Load"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Maps/{{ModId}}_Kitchen"</span><span class="p">,</span>
+            <span class="nt">"FromFile"</span><span class="p">:</span> <span class="s2">"assets/kitchen-upgrade.tmx"</span>
+        <span class="p">},</span>
+
+        <span class="err">//</span> <span class="err">加载空地图（未激活翻新时应用）</span>
+        <span class="p">{</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"Load"</span><span class="p">,</span>
+            <span class="nt">"Target"</span><span class="p">:</span> <span class="s2">"Maps/{{ModId}}_Empty"</span><span class="p">,</span>
+            <span class="nt">"FromFile"</span><span class="p">:</span> <span class="s2">"assets/kitchen-upgrade-empty.tmx"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<h3 class="in-block"><span id="自定义地板/墙纸"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E5.9C.B0.E6.9D.BF.2F.E5.A2.99.E7.BA.B8">自定义地板/墙纸</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E5%A2%99%E7%BA%B8%E5%92%8C%E5%9C%B0%E6%9D%BF" title="模组:墙纸和地板">模组:墙纸和地板</a> 和 <a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE" title="模组:地图">模组:地图</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<h4 class="in-block"><span id="在可装饰地点"></span><span class="mw-headline" id=".E5.9C.A8.E5.8F.AF.E8.A3.85.E9.A5.B0.E5.9C.B0.E7.82.B9">在可装饰地点</span></h4>
+<p>现在您可以更改可装饰地板/画作/墙纸的地点的墙纸/地板（例如农舍、联机小屋、小屋），只需通过编辑地图/地块属性。
+</p><p>首先，您可以使用下面的两个地图属性来定义不同区域：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>适用于
+</th>
+<th>地图属性
+</th>
+<th>使用方法
+</th></tr>
+<tr>
+<td>可装饰地点
+</td>
+<td><samp>FloorIDs <code title="可选字段 'area'">[area]</code>+</samp><br><samp>WallIDs <code title="可选字段 'area'">[area]</code>+</samp><br>
+</td>
+<td>一个逗号分隔的，地板/墙纸区域的列表。其中 <samp>FloorIDs</samp> 和 <samp>WallIDs</samp> 无需相同。每个区域都形如 <code><code title="必需字段 'area ID'">&lt;area ID&gt;</code> <code title="可选字段 'default flooring/wallpaper ID'">[default flooring/wallpaper ID]</code></code>，其中：
+<ul><li><samp><code title="必需字段 'area ID'">&lt;area ID&gt;</code></samp> 唯一地确定了区域或房间。</li>
+<li><samp><code title="可选字段 'default flooring/wallpaper ID'">[default flooring/wallpaper ID]</code></samp>（可选）设置了区域的初始地板/墙纸 ID，如果尚未被玩家个性化。可以有三种格式：
+<ul><li><code><code title="必需字段 'index'">&lt;index&gt;</code></code>：获取原版 <samp>Maps/walls_and_floors</samp> 地块集中的相应地板/墙纸</li>
+<li><code><code title="必需字段 'tilesheet'">&lt;tilesheet&gt;</code>:<code title="必需字段 'index'">&lt;index&gt;</code></code>：将 <samp>Maps/<code title="必需字段 'tilesheet'">&lt;tilesheet&gt;</code></samp> 添加到地图，并匹配该地块表中的指定索引。</li>
+<li><code><code title="必需字段 'area ID'">&lt;area ID&gt;</code></code>：从指定区域继承默认地板/墙纸。例如，<samp>Hallway_Bedroom Bedroom</samp> 会在农舍第一次升级后，对连接卧室和起居室的廊道应用卧室的墙纸。</li>
+<li>若忽略，默认的地板/墙纸为 #0.</li></ul></li></ul>
+示例：<pre>FloorIDs: Kitchen 22, LivingRoom Bedroom, Hallway_Bedroom Bedroom, Bedroom
+WallIDs: LivingRoom, Hallway_Bedroom Bedroom, Bedroom</pre>
+<p><br>
+您无需将每一个区域都添加到 <samp>FloorIDs</samp> / <samp>WallIDs</samp> 列表中；系统会自动为未列出的值分配地板或墙纸。只有当您需要设置默认的地板/墙纸时，或是在墙纸/地板的顺序很重要时（例如，您需要兼容那些通过整型房间索引来设置壁纸/地板的代码，就像原版农舍），您才真正需要将一个区域添加到 <samp>FloorIDs</samp> / <samp>WallIDs</samp> 列表中。
+</p>
+</td></tr></tbody></table>
+<p>然后，您可以向每个区域添加独立的地块，每个地块可以添加如下属性：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>图层
+</th>
+<th>属性
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Back</samp>
+</td>
+<td><samp>WallID <code title="必需字段 'area ID'">&lt;area ID&gt;</code></samp><br><samp>FloorID <code title="必需字段 'area ID'">&lt;area ID&gt;</code></samp>
+</td>
+<td>将此地块添加到指定的地板/墙纸区域。每个地板地块都应当具有 <samp>FloorID</samp> 属性，但只有墙壁的顶沿才应当具有 <samp>WallID</samp> 属性。
+</td></tr></tbody></table>
+<h4 class="in-block"><span id="在家具目录"></span><span class="mw-headline" id=".E5.9C.A8.E5.AE.B6.E5.85.B7.E7.9B.AE.E5.BD.95">在家具目录</span></h4>
+<p>您可以通过将地板/墙纸添加到 <samp>Data/AdditionalWallpaperFlooring</samp> 中来在家具目录中添加相应炫目。每个项目都是如下字段组成的数据模型：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>描述
+</th></tr>
+<tr>
+<td><samp>ID</samp>
+</td>
+<td>一个唯一 ID。游戏中不会显示。
+</td></tr>
+<tr>
+<td><samp>Texture</samp>
+</td>
+<td>包含 32x32 像素贴图（地板）或 16x48 像素贴图（墙纸）的素材名称。此地块集必须宽 256 像素，但高度只需是地板/墙纸高度的整倍数即可。
+</td></tr>
+<tr>
+<td><samp>IsFlooring</samp>
+</td>
+<td>这是否为地板地块集；若不是，则为墙纸地块集。
+</td></tr>
+<tr>
+<td><samp>Count</samp>
+</td>
+<td>地块集中的地板或墙纸贴图数量。
+</td></tr></tbody></table>
+<p>例如，下面的 Content Patcher 内容包会像游戏添加三种新墙纸：
+</p>
+<div class="mw-highlight mw-highlight-lang-javascript mw-content-ltr" dir="ltr"><pre><span></span><span class="p">{</span>
+    <span class="s2">"Format"</span><span class="o">:</span> <span class="s2">"2.5.0"</span><span class="p">,</span>
+    <span class="s2">"Changes"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="c1">// define wallpaper</span>
+        <span class="p">{</span>
+            <span class="s2">"Action"</span><span class="o">:</span> <span class="s2">"EditData"</span><span class="p">,</span>
+            <span class="s2">"Target"</span><span class="o">:</span> <span class="s2">"Data/AdditionalWallpaperFlooring"</span><span class="p">,</span>
+            <span class="s2">"Entries"</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">"ExampleAuthor.CustomWallpapers"</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// for technical reasons, you need to specify the ID here *and* in the "ID" field</span>
+                    <span class="s2">"ID"</span><span class="o">:</span> <span class="s2">"ExampleAuthor.CustomWallpapers"</span><span class="p">,</span>
+                    <span class="s2">"Texture"</span><span class="o">:</span> <span class="s2">"Mods/ExampleAuthor.CustomWallpapers/Wallpapers"</span><span class="p">,</span>
+                    <span class="s2">"IsFlooring"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="s2">"Count"</span><span class="o">:</span> <span class="mi">3</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="c1">// load wallpaper tilesheet</span>
+        <span class="p">{</span>
+            <span class="s2">"Action"</span><span class="o">:</span> <span class="s2">"Load"</span><span class="p">,</span>
+            <span class="s2">"Target"</span><span class="o">:</span> <span class="s2">"Mods/ExampleAuthor.CustomWallpapers/Wallpapers"</span><span class="p">,</span>
+            <span class="s2">"FromFile"</span><span class="o">:</span> <span class="s2">"assets/wallpapers.png"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<h3 class="in-block"><span id="地图属性更改"></span><span class="mw-headline" id=".E5.9C.B0.E5.9B.BE.E5.B1.9E.E6.80.A7.E6.9B.B4.E6.94.B9">地图属性更改</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE#.E5.B7.B2.E7.9F.A5.E5.9C.B0.E5.9B.BE.E5.B1.9E.E6.80.A7" title="模组:地图">模组:地图#已知地图属性</a>。此小节主要用于叙述更新内容。</div>
+<p>Stardew Valley 1.5.5 添加了多个地图属性（除了在其各自部分中列出的属性外）：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>适用场景
+</th>
+<th>地图属性
+</th>
+<th>用法
+</th></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>AllowGrassGrowInWinter T</samp>
+</td>
+<td>允许<a href="/%E8%8D%89" title="草">草</a>在冬季生长。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>AllowGrassSurviveInWinter T</samp>
+</td>
+<td>允许在秋季最后一天存活的<a href="/%E8%8D%89" title="草">草</a>存活到冬季。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>ClearEmptyDirtOnNewMonth T</samp>
+</td>
+<td>在新的一年开始时，删除大多数不含作物的耕地。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>EnableGrassSpread T</samp>
+</td>
+<td>该位置的<a href="/%E8%8D%89" title="草">草</a>每天有一定几率扩散。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>ForceAllowTreePlanting T</samp>
+</td>
+<td>允许在该位置种植树木（包括野树和果树），无论正常情况下是否允许种植。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>IsFarm T</samp>
+</td>
+<td>将该位置标记为农场。这仅影响检查代码中 <code>location.IsFarm</code> 属性的通用位置/交互逻辑；游戏 <code>Farm</code> 类中的硬编码逻辑（例如，农场动物、宠物、乌鸦/稻草人、温室、农场建筑等）仍然仅限于实际农场。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>IsGreenhouse T</samp>
+</td>
+<td>将该位置标记为温室。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>SpawnGrassFromPathsOnNewYear T</samp>
+</td>
+<td>在新的一年开始时，在 <samp>Paths</samp> 图层上索引为 22 的每个地块上生成草。另见 <samp>SpawnRandomGrassOnNewYear</samp>。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>SpawnDebrisOnNewMonth T</samp><br><samp>SpawnDebrisOnNewYear T</samp>
+</td>
+<td>在新季/新年开始时，在随机位置生成杂草、石头或树枝（遵循其通常的生成规则）。
+</td></tr>
+<tr>
+<td>任意
+</td>
+<td><samp>SpawnRandomGrassOnNewYear T</samp>
+</td>
+<td>在新的一年开始时，在随机位置生成草（遵循其通常的生成规则）。另见<samp>SpawnGrassFromPathsOnNewYear</samp>。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>FarmFishLocationOverride <code title="必需字段 'location name'">&lt;location name&gt;</code> <code title="必需字段 'chance'">&lt;chance&gt;</code></samp>
+</td>
+<td>添加另一个地点的名称。在此钓鱼时，会有 <code title="必需字段 'chance'">&lt;chance&gt;</code> 的几率钓到 <code title="必需字段 'location name'">&lt;location name&gt;</code> 地点的鱼，这里 <code title="必需字段 'chance'">&lt;chance&gt;</code> 介于 0（从不）到 1（总是）。例如，<samp>FarmFishLocationOverride Mountain 0.5</samp> 使玩家有 50% 的几率捕获山鱼，而不是该地点的鱼。地点名称区分大小写，并与<a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/679">Debug Mode mod</a> 显示的名称相同。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>FarmHouseFurniture [<code title="必需字段 '家具ID'">&lt;家具ID&gt;</code> <code title="必需字段 '地块X'">&lt;地块X&gt;</code> <code title="必需字段 '地块Y'">&lt;地块Y&gt;</code> <code title="必需字段 '旋转'">&lt;旋转&gt;</code>]+</samp>
+</td>
+<td>在创建新存档时，在农舍中生成初始家具。如果您将多个家具添加到同一地块，第一个家具将放置在地面上，最后一个家具将放置在第一个家具上。<br>这也是启用 <samp>FarmHouseWallpaper</samp>、<samp>FarmHouseFlooring</samp> 和 <samp>FarmHouseStarterSeedsPosition</samp> 属性的必要条件。可以通过 <samp>FarmHouseFurniture -1 0 0 0</samp> 在不生成任何家具的情况下启用它。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>FarmHouseFlooring <code title="必需字段 '地板ID'">&lt;地板ID&gt;</code></samp>
+</td>
+<td>在创建新存档时，将农舍的初始地板设置为给定的 ID。这些 ID 映射到<samp>Maps/walls_and_floors</samp> 地块表中从地块索引 336 开始的 4x4 地块区域（索引 0 映射到 336 地块）。<br>只有在设置了 <samp>FarmHouseFurniture</samp> 时此属性才有效。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>FarmHouseWallpaper <code title="必需字段 '壁纸ID'">&lt;壁纸ID&gt;</code></samp>
+</td>
+<td>在创建新存档时，将农舍的初始壁纸设置为给定的 ID。这些 ID 映射到 <samp>Maps/walls_and_floors</samp> 地块表中从左上角开始的 1x4 地块区域。<br>只有在设置了 <samp>FarmHouseFurniture</samp> 时此属性才有效。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>FarmHouseStarterSeedsPosition <code title="必需字段 '地块X'">&lt;地块X&gt;</code> <code title="必需字段 '地块Y'">&lt;地块Y&gt;</code></samp>
+</td>
+<td>设置创建新存档时种子包放置在农舍中的地块位置。<br>只有在设置了 <samp>FarmHouseFurniture</samp> 时此属性才有效。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>FarmOceanCrabPotOverride T</samp>
+</td>
+<td>使农场上的蟹笼捕获海洋鱼。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>SpawnBeachFarmForage T</samp>
+</td>
+<td>在农场上随机生成海滩采集品和<a href="/%E8%A1%A5%E7%BB%99%E7%AE%B1" title="补给箱">补给箱</a>（如<a href="/%E5%86%9C%E5%9C%BA%E5%9C%B0%E5%9B%BE" title="农场地图">原版海滩农场</a>）。采集品和箱子只会出现在 <samp>Back</samp> 图层上，且所在地块需具有 <samp>BeachSpawn T</samp> 属性、可放置物品、且它的 <samp>AlwaysFront</samp> 图层为空。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>SpawnForestFarmForage T</samp>
+</td>
+<td>在农场上随机生成森林采集品（如<a href="/%E5%86%9C%E5%9C%BA%E5%9C%B0%E5%9B%BE" title="农场地图">原版森林农场</a>）。如果地块可能出现采集品，则它必须有 <samp>Type Grass</samp> 地块属性、可放置物品且它的 <samp>AlwaysFront</samp> 图层为空。
+</td></tr>
+<tr>
+<td>农场
+</td>
+<td><samp>SpawnMountainFarmOreRect <code title="必需字段 'tile X'">&lt;tile X&gt;</code> <code title="必需字段 'tile Y'">&lt;tile Y&gt;</code> <code title="必需字段 'tile width'">&lt;tile width&gt;</code> <code title="必需字段 'tile height'">&lt;tile height&gt;</code></samp>
+</td>
+<td>农场上随机生成矿石的地块区域（如<a href="/%E5%86%9C%E5%9C%BA%E5%9C%B0%E5%9B%BE" title="农场地图">原版山顶农场</a>）。矿石只会出现在具有 <samp>Type Dirt</samp> 地块属性且可放置物体的地块上。
+</td></tr>
+<tr>
+<td>农舍
+</td>
+<td><samp>EntryLocation <code title="必需字段 'tile X'">&lt;tile X&gt;</code> <code title="必需字段 'tile Y'">&lt;tile Y&gt;</code></samp>
+</td>
+<td>设置玩家传送到农舍时出现的地块位置。
+</td></tr></tbody></table>
+<p>以及一个新的地块属性：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>图层
+</th>
+<th>属性
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Back</samp>
+</td>
+<td><samp>TouchAction Warp <code title="必需字段 'area'">&lt;area&gt;</code> <code title="必需字段 'x'">&lt;x&gt;</code> <code title="必需字段 'y'">&lt;y&gt;</code> <code title="可选字段 'string prerequisite'">[string prerequisite]</code></samp>
+</td>
+<td>在地块上添加一个仅限玩家的传送点，传送到指定的地点和坐标。这与 <samp>TouchAction MagicWarp</samp> 完全相同，但没有魔法音效/视觉效果。
+</td></tr></tbody></table>
+<p>它还更改了一个地块属性：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>图层
+</th>
+<th>属性
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Back</samp>
+</td>
+<td><samp>Water</samp>
+</td>
+<td>将值设置为 <samp>I</samp>（大写i）将使地块变成水体地块，但不会为其渲染水波纹覆盖层。
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="非科罗布斯室友"></span><span class="mw-headline" id=".E9.9D.9E.E7.A7.91.E7.BD.97.E5.B8.83.E6.96.AF.E5.AE.A4.E5.8F.8B">非科罗布斯室友</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:NPC%E6%95%B0%E6%8D%AE" title="模组:NPC数据">模组:NPC数据</a>和<a href="/%E6%A8%A1%E7%BB%84:%E5%AF%B9%E8%AF%9D" title="模组:对话">模组:对话</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>在旧版中，游戏的<a href="/%E5%A9%9A%E5%A7%BB" title="婚姻">婚姻</a>逻辑采用硬编码方式将<a href="/%E7%A7%91%E7%BD%97%E5%B8%83%E6%96%AF" title="科罗布斯">科罗布斯</a>列为室友。现在此逻辑已被更新，允许您将其他 NPC 设为室友（包括自定义 NPC）。
+</p><p>特别地：
+</p>
+<ul>
+<li>具有 "<samp>propose_roommate_<code title="必需字段 'NPC name'">&lt;NPC name&gt;</code></samp>" <a href="/%E6%A8%A1%E7%BB%84:%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%87%E7%AD%BE" title="模组:上下文标签">上下文标签</a>的物品在被送给指定 NPC 时会触发室友邀请。此 NPC 的名字必需全小写，且用下划线替换空格（例如 <samp>propose_roommate_dwarf</samp>）。
+</li>
+<li>搬进农舍之前会使用如下<a href="/%E6%A8%A1%E7%BB%84:%E5%AF%B9%E8%AF%9D" title="模组:对话">对话键</a>：
+<table class="wikitable">
+
+<tbody><tr>
+<th>素材文件
+</th>
+<th>键
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Strings/StringsFromCSFiles</samp>
+</td>
+<td><samp><code title="必需字段 'NPC name'">&lt;NPC name&gt;</code>_EngagedRoommate</samp>
+</td>
+<td>NPC 接受室友邀请的对话。<br>⚠ 如果您没有指定 <samp>Data/EngagementDialogue:<code title="必需字段 'NPC name'">&lt;NPC name&gt;</code>Roommate0</samp>，则会被忽略。<br>示例："虚空幽灵吊坠！你是怎么……？$3#$b#哦，不得了。$7#$b#@……嗯，只要你愿意，我可以和你一起住。但我们得对所有人保密。#$b#过几天我就去你家……可以吗？$h"
+</td></tr>
+<tr>
+<td><samp>Strings/Characters</samp>
+</td>
+<td><samp>MovieInvite_NoTheater</samp>
+</td>
+<td>当您不满足要求（即，最低友谊 + 农舍等级 + 未婚且没有室友）时，此 NPC 拒绝室友邀请的对话。这与您不能邀请某个 NPC 去电影院的对话相同。
+</td></tr>
+<tr>
+<td><samp>Data/EngagementDialogue</samp>
+</td>
+<td><samp><code title="必需字段 'NPC name'">&lt;NPC name&gt;</code>Roommate0</samp><br><samp><code title="必需字段 'NPC name'">&lt;NPC name&gt;</code>Roommate1</samp>
+</td>
+<td>此 NPC 接受邀请后的正常对话，但仅限于尚未搬家时。其中 <samp>Roommate0</samp> 变体总是会在 NPC 接受邀请的当天被应用，随后每天会随机选取 <samp>Roommate0</samp> 或 <samp>Roommate1</samp>。若 <samp>Roommate0</samp> 变体尚未定义，则此 NPC 会使用通常的 <samp><code title="必需字段 'NPC Name'">&lt;NPC Name&gt;</code>0</samp> 和 <samp><code title="必需字段 'NPC Name'">&lt;NPC Name&gt;</code>1</samp> 对话键。若指定了 <samp>Roommate0</samp> 变体，则也必须同时指定 <samp>Roommate1</samp> 以避免出错。<br>例如："@……恐怕我们必须得保密……我和你的同族人都不会接受我们住在一起。"
+</td></tr></tbody></table>
+<p>正式成为室友后：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>素材文件
+</th>
+<th>键
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Characters/Dialogue/MarriageDialogue<code title="必需字段 'NPC name'">&lt;NPC name&gt;</code>Roommate</samp>
+</td>
+<td>所有键
+</td>
+<td>等价于 <samp>Characters/Dialogue/MarriageDialogue<code title="必需字段 'NPC name'">&lt;NPC name&gt;</code></samp>，但仅当此 NPC 为室友时使用。若相应文件存在，则会完全覆盖配偶版本的文件；否则，默认使用配偶版本的文件。
+</td></tr>
+<tr>
+<td><samp>Characters/Dialogue/MarriageDialogue</samp>
+</td>
+<td><samp>*Roommate</samp>
+</td>
+<td>包含 <samp>Roommate</samp> 后缀的键若存在，则有更高优先级（仅限于此文件，而非 <samp>MarriageDialogue<code title="必需字段 'NPC name'">&lt;NPC name&gt;</code></samp> 文件）。
+</td></tr>
+<tr>
+<td><samp>Data/Festivals/*</samp>
+</td>
+<td><samp><code title="必需字段 'NPC name'">&lt;NPC name&gt;</code>_roommate</samp>
+</td>
+<td>此 NPC 成为室友后节日期间的正常对话。若没有定义此键，则会转而使用  <samp><code title="必需字段 'NPC name'">&lt;NPC name&gt;</code>_spouse</samp> 。d.
+</td></tr></tbody></table>
+<p>对于其他 NPC：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>素材文件
+</th>
+<th>键
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Characters/Dialogue/*</samp>
+</td>
+<td><samp>*_roommate_*</samp>
+</td>
+<td>等价于<a href="/%E6%A8%A1%E7%BB%84:%E5%AF%B9%E8%AF%9D#.E9.80.9A.E7.94.A8.E5.AF.B9.E8.AF.9D" title="模组:对话">通用对话</a>中的 <samp>*_inlaw_*</samp> 中缀，适用于您与此 NPC 为室友的情况。如果没有定义，则游戏会默认使用无中缀的对话（而不会使用 <samp>*_inlaw_*</samp> 变体）。
+</td></tr></tbody></table></li>
+<li>如果房间中有空闲的<a href="/%E5%8D%95%E4%BA%BA%E5%BA%8A" class="mw-redirect" title="单人床">单人床</a>，则室友会睡在单人床上；否则会睡在双人床上，就像正常的配偶那样。（科罗布斯是个例外，他不用在床上睡觉）。</li>
+<li>添加了一个<a href="/%E6%A8%A1%E7%BB%84:%E4%BA%8B%E4%BB%B6%E6%95%B0%E6%8D%AE#.E4.BA.8B.E4.BB.B6.E5.89.8D.E6.8F.90" title="模组:事件数据">事件前提</a>以检查本地玩家是否有室友（<samp>R</samp>）或无室友（<samp>Rf</samp>）。这可以与 <samp>O <code title="必需字段 'NPC name'">&lt;NPC name&gt;</code></samp> 混搭，以检查是否有特定室友，例如 <samp>R/O Abigail</samp>。</li>
+</ul>
+<p><br>
+</p>
+<h3 class="in-block"><span id="自定义信件格式"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E4.BF.A1.E4.BB.B6.E6.A0.BC.E5.BC.8F">自定义信件格式</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E4%BF%A1%E4%BB%B6%E6%95%B0%E6%8D%AE" title="模组:信件数据">模组:信件数据</a>。此小节主要用于叙述更新内容。</div>
+<p>您现在可以通过在信件文本中插入三个自定义命令（包括 <samp>[]</samp> 字符）来自定义<a href="/%E6%A8%A1%E7%BB%84:%E4%BF%A1%E4%BB%B6%E6%95%B0%E6%8D%AE" title="模组:信件数据">信件</a>和<a href="/%E7%A7%98%E5%AF%86%E7%BA%B8%E6%9D%A1" title="秘密纸条">秘密纸条</a>：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>命令
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>[letterbg <code title="必需字段 'index'">&lt;index&gt;</code>]</samp>
+</td>
+<td>将默认信件背景更改为 <samp>LooseSprites/letterBG</samp> 中的原版背景。索引可以是 0（默认信件）、1（桑迪的横线纸）、2（巫师风格）或3（科罗布斯风格）。会自动使用该样式的默认文本颜色，除非您在 <samp>textcolor</samp> 另行指定了文本颜色。
+</td></tr>
+<tr>
+<td><samp>[letterbg <code title="必需字段 'asset name'">&lt;asset name&gt;</code> <code title="必需字段 'index'">&lt;index&gt;</code>]</samp>
+</td>
+<td>将默认信件背景更改为给定的贴图。素材名称应匹配包含两行的贴图：一行包含 320x180 像素的信件背景图像，另一行包含 24x24 像素的按钮背景图像（用于显示在随信物品后面）。索引是贴图在其所在行中的索引，从 0 开始计数。
+<p>每行只有前 4 个信件背景图像会正确显示。
+按钮背景只能有一行。
+见下图
+</p>
+</td></tr>
+<tr>
+<td><samp>[textcolor <code title="必需字段 '颜色'">&lt;颜色&gt;</code>]</samp>
+</td>
+<td>更改信件文本颜色。有效颜色为 <samp>black</samp>、<samp>blue</samp>、<samp>cyan</samp>、<samp>gray</samp>、<samp>green</samp>、<samp>orange</samp>、<samp>purple</samp>、<samp>red</samp> 和 <samp>white</samp>。
+</td></tr></tbody></table>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:302px;"><a href="/File:Lettersbglayers.png" class="image"><noscript><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/4/45/Lettersbglayers.png/300px-Lettersbglayers.png" decoding="async" width="300" height="88" class="thumbimage"></noscript><span class="lazy-image-placeholder" style="width: 300px;height: 88px;" data-src="https://stardewvalleywiki.com/mediawiki/images/thumb/4/45/Lettersbglayers.png/300px-Lettersbglayers.png" data-alt="" data-width="300" data-height="88" data-class="thumbimage"> </span></a>  <div class="thumbcaption"><div class="magnify"><a href="/File:Lettersbglayers.png" class="internal" title="放大"></a></div>示例：信件背景图像可以放在浅粉色、粉色和紫色区域，而按钮只能放在橙色线上。</div></div></div></div>
+<h3 class="in-block"><span id="自定义稻草人"></span><span class="mw-headline" id=".E8.87.AA.E5.AE.9A.E4.B9.89.E7.A8.BB.E8.8D.89.E4.BA.BA">自定义稻草人</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%87%E7%AD%BE" title="模组:上下文标签">模组:上下文标签</a>。此小节主要用于叙述更新内容。</div>
+<p>您现在可以通过两个新的<a href="/%E6%A8%A1%E7%BB%84:%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%87%E7%AD%BE" title="模组:上下文标签">上下文标签</a>将任何可放置物品标记为<a href="/%E7%A8%BB%E8%8D%89%E4%BA%BA" title="稻草人">稻草人</a>：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>上下文标签
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>crow_scare</samp>
+</td>
+<td>将物品设置为可放置的稻草人。如果未设置，物品的默认名称中包含子字符串<code>arecrow</code>（如之前一样）时也会被视为稻草人。
+</td></tr>
+<tr>
+<td><samp>crow_scare_radius_<code title="必需字段 '半径'">&lt;半径&gt;</code></samp>
+</td>
+<td>如果物品是稻草人，则此字段设置其有效半径。如果未设置，且默认名称中包含 <code>Deluxe</code>（“豪华”），则覆盖 17 格；否则，覆盖 9 格。
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="改进的地图座椅"></span><span class="mw-headline" id=".E6.94.B9.E8.BF.9B.E7.9A.84.E5.9C.B0.E5.9B.BE.E5.BA.A7.E6.A4.85">改进的地图座椅</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE#.E8.90.BD.E5.BA.A7.E9.9D.9E.E5.AE.B6.E5.85.B7.E7.9A.84.E6.A4.85.E5.AD.90" title="模组:地图">模组:地图#落座非家具的椅子</a>。此小节主要用于叙述更新内容。</div>
+<p>当通过 <samp>Data\ChairTiles</samp> 定义地图座椅时（参见 <a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%93_1.5&amp;action=edit&amp;redlink=1" class="new" title="模组:迁移至游戏本体 1.5（页面不存在）">1.5 迁移指南中的文档</a>），您现在可以将类型字段设置为 <samp>custom <code title="必需字段 'offset_x'">&lt;offset_x&gt;</code> <code title="必需字段 'offset_y'">&lt;offset_y&gt;</code> <code title="必需字段 'extra_height'">&lt;extra_height&gt;</code></samp> 以覆盖代码中的硬编码偏移和高度值。这三个值以地块为单位（例如，X 偏移值为 0.5 将使落座位置偏移半个地块）。
+</p>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(5)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="另见"></span><span class="mw-headline" id=".E5.8F.A6.E8.A7.81">另见</span></h2><section class="mf-section-5 collapsible-block" id="mf-section-5">
+<ul><li><a href="https://stardewvalleywiki.com/User:Pathoschild/Modding_wishlist/Completed#Done_in_Stardew_Valley_1.5.5" class="extiw" title="en:User:Pathoschild/Modding wishlist/Completed">Stardew Valley 1.5.5 中完成的模组愿望清单</a></li></ul>
+
+
+
+
+</section></div></div><div class="printfooter">
+取自“<a dir="ltr" href="https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:迁移至游戏本体1.5.5&amp;oldid=51310">https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:迁移至游戏本体1.5.5&amp;oldid=51310</a>”</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="/Special:%E5%8E%86%E5%8F%B2/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5"
+				data-user-name="VulpesLucida"
+				data-user-gender="unknown"
+				data-timestamp="1743211962">
+				<span>最后编辑于2025年3月29日 (星期六) 01:32</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> 此页面最后编辑于2025年3月29日 (星期六) 01:32。</li><li id="footer-info-copyright">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Stardew Valley Wiki:隐私政策">隐私政策</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" title="Stardew Valley Wiki:关于">关于Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Stardew Valley Wiki:免责声明">免责声明</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//zh.stardewvalleywiki.com/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.5.5&amp;mobileaction=toggle_view_desktop">桌面版</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.174","walltime":"1.159","ppvisitednodes":{"value":2274,"limit":1000000},"postexpandincludesize":{"value":11068,"limit":2097152},"templateargumentsize":{"value":2306,"limit":2097152},"expansiondepth":{"value":6,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":24901,"limit":5000000},"timingprofile":["100.00% 1023.485      1 -total"," 68.86%  704.752      5 Template:Content_Patcher_example","  3.32%   34.015     15 Template:Migration_guide_doc_status","  1.51%   15.460     74 Template:T","  0.31%    3.178      6 Template:O","  0.19%    1.966      1 Template:Modder_compatibility_header","  0.19%    1.955      1 Template:Version","  0.18%    1.796      1 Template:Nexus_mod","  0.09%    0.911      6 Template:Content_Patcher_version"]},"cachereport":{"timestamp":"20250330022544","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":127});});</script>		</body>
+		</html>
+		
+

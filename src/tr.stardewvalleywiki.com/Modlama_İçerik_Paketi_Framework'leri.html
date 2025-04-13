@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Modlama:İçerik Paketi Framework'leri - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"Modlama","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modlama:İçerik_Paketi_Framework'leri","wgTitle":"İçerik Paketi Framework'leri","wgCurRevisionId":17746,"wgRevisionId":17746,"wgArticleId":2575,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"tr","wgPageContentModel":"wikitext","wgRelevantPageName":"Modlama:İçerik_Paketi_Framework'leri","wgRelevantArticleId":2575,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":
+"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready",
+"skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"tr"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=tr&amp;modules=mediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="/mediawiki/load.php?lang=tr&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=tr&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="İçerik paketi framework&#039;leri, Stardew Valley için içerik paketi oluşturma sürecini basitleştirme amacı güden SMAPI modlarıdır. Sahip olunması gereken programlama deneyimini minimuma indirirken kodlama konseptleri ile olan bazı benzerlikler yardımcı olabilir. SMAPI için direkt olarak C# ile mod oluşturmak, oyunun çalışma şekline girişi sağlar. İçerik paketleri ve direkt olarak SMAPI için C# modları oluşturma, Stardew Valley&#039;i modlamanın iki ana yolundan biridir."/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (tr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//tr.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Modlama:İçerik Paketi Framework&#039;leri - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://tr.stardewvalleywiki.com/Modlama:%C4%B0%C3%A7erik_Paketi_Framework%27leri"/>
+<meta property="og:description" content="İçerik paketi framework&#039;leri, Stardew Valley için içerik paketi oluşturma sürecini basitleştirme amacı güden SMAPI modlarıdır. Sahip olunması gereken programlama deneyimini minimuma indirirken kodlama konseptleri ile olan bazı benzerlikler yardımcı olabilir. SMAPI için direkt olarak C# ile mod oluşturmak, oyunun çalışma şekline girişi sağlar. İçerik paketleri ve direkt olarak SMAPI için C# modları oluşturma, Stardew Valley&#039;i modlamanın iki ana yolundan biridir."/>
+<meta property="og:image" content="https://tr.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modlama:İçerik Paketi Framework&#039;leri - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="İçerik paketi framework&#039;leri, Stardew Valley için içerik paketi oluşturma sürecini basitleştirme amacı güden SMAPI modlarıdır. Sahip olunması gereken programlama deneyimini minimuma indirirken kodlama konseptleri ile olan bazı benzerlikler yardımcı olabilir. SMAPI için direkt olarak C# ile mod oluşturmak, oyunun çalışma şekline girişi sağlar. İçerik paketleri ve direkt olarak SMAPI için C# modları oluşturma, Stardew Valley&#039;i modlamanın iki ana yolundan biridir."/>
+<meta property="twitter:image" content="https://tr.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modlama:\u0130\u00e7erik Paketi Framework'leri - Stardew Valley Wiki","headline":"Modlama:\u0130\u00e7erik Paketi Framework'leri - Stardew Valley Wiki","mainEntityOfPage":"Modlama:\u0130\u00e7erik Paketi Framework'leri","identifier":"https:\/\/tr.stardewvalleywiki.com\/Modlama:%C4%B0%C3%A7erik_Paketi_Framework%27leri","url":"https:\/\/tr.stardewvalleywiki.com\/Modlama:%C4%B0%C3%A7erik_Paketi_Framework%27leri","description":"\u0130\u00e7erik paketi framework'leri, Stardew Valley i\u00e7in i\u00e7erik paketi olu\u015fturma s\u00fcrecini basitle\u015ftirme amac\u0131 g\u00fcden SMAPI modlar\u0131d\u0131r. Sahip olunmas\u0131 gereken programlama deneyimini minimuma indirirken kodlama konseptleri ile olan baz\u0131 benzerlikler yard\u0131mc\u0131 olabilir. SMAPI i\u00e7in direkt olarak C# ile mod olu\u015fturmak, oyunun \u00e7al\u0131\u015fma \u015fekline giri\u015fi sa\u011flar. \u0130\u00e7erik paketleri ve direkt olarak SMAPI i\u00e7in C# modlar\u0131 olu\u015fturma, Stardew Valley'i modlaman\u0131n iki ana yolundan biridir.","dateModified":"2024-07-26T12:06:56Z","datePublished":"2024-07-26T12:06:56Z","image":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/tr.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/tr.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/tr.stardewvalleywiki.com\/mediawiki\/index.php?title=%C3%96zel:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modlama_İçerik_Paketi_Framework_leri rootpage-Modlama_İçerik_Paketi_Framework_leri stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Ana menüyü aç" data-event-name="ui.mainmenu">Ana menüyü aç</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Anasayfa</span></a>
+			</li>
+			<li class="">
+			    <a href="/%C3%96zel:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Rastgele</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="/mediawiki/index.php?title=%C3%96zel:Kullan%C4%B1c%C4%B1OturumuA%C3%A7ma&amp;returnto=Modlama%3A%C4%B0%C3%A7erik+Paketi+Framework%27leri" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Oturum aç</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="/mediawiki/index.php?title=%C3%96zel:MobileOptions&amp;returnto=Modlama%3A%C4%B0%C3%A7erik+Paketi+Framework%27leri" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Ayarlar</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:Hakk%C4%B1nda" class="" data-event-name=""><span>Stardew Valley Wiki hakkında</span></a>
+			</li>
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:Genel_sorumluluk_reddi" class="" data-event-name=""><span>Sorumluluk reddi</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Stardew Valley Wiki üzerinde ara" aria-label="Stardew Valley Wiki üzerinde ara"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="Kullanıcı gezintisi">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Ara</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Modlama:İçerik Paketi Framework'leri</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="/%C3%96zel:MobileLanguages/Modlama:%C4%B0%C3%A7erik_Paketi_Framework%27leri" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="Dil">Dil</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="/mediawiki/index.php?title=%C3%96zel:Kullan%C4%B1c%C4%B1OturumuA%C3%A7ma&amp;returnto=Modlama%3A%C4%B0%C3%A7erik+Paketi+Framework%27leri" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="İzle">İzle</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="/mediawiki/index.php?title=Modlama:%C4%B0%C3%A7erik_Paketi_Framework%27leri&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="Bu sayfanın baş bölümünü düzenleyin">Düzenle</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="tr" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><p><b>İçerik paketi framework'leri</b>, Stardew Valley için içerik paketi oluşturma sürecini basitleştirme amacı güden SMAPI modlarıdır. Sahip olunması gereken programlama deneyimini minimuma indirirken kodlama konseptleri ile olan bazı benzerlikler yardımcı olabilir. SMAPI için direkt olarak C# ile mod oluşturmak, oyunun çalışma şekline girişi sağlar. <a href="/mediawiki/index.php?title=Modlama:%C4%B0%C3%A7erik_Paketleri&amp;action=edit&amp;redlink=1" class="new" title="Modlama:İçerik Paketleri (sayfa mevcut değil)">İçerik paketleri</a> ve <a href="/Modlama:Mod_Rehberi/Ba%C5%9Flang%C4%B1%C3%A7_K%C4%B1lavuzu" title="Modlama:Mod Rehberi/Başlangıç Kılavuzu">direkt olarak SMAPI için C# modları oluşturma</a>, Stardew Valley'i modlamanın iki ana yolundan biridir.
+</p><p><br>
+</p><p>Her framework modunun kendi içerik paketi formatı vardır. Kullanımları için modların sayfalarını inceleyin.
+</p><p>İşte önerdiğimiz pixel art ve JSON metin editörleri <a rel="nofollow" class="external text" href="https://gist.github.com/ishanjalan/c8efb21afa21f74a052293176db107f7">yazılımlarının bir listesi</a>. VS Code ve Sublime gibi yazılımlar ile bir schema kurarak modunuzu yazarken JSON dosyanızın formatlamasını kontrol etmesini sağlayabilirsiniz. Tıpkı uygulamanın içinde bir [<a rel="nofollow" class="external text" href="https://smapi.io/json/">JSON doğrulayıcı</a> varmış gibi. Schema kurmak için daha fazla detay <a rel="nofollow" class="external text" href="https://github.com/Pathoschild/SMAPI/blob/stable/docs/technical/web.md#using-a-schema-file-directly">burada</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="tr" dir="ltr"><h2 id="mw-toc-heading">İçindekiler</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Pop.C3.BCler_Framework.27ler"><span class="tocnumber">1</span> <span class="toctext">Popüler Framework'ler</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#K.C3.B6k_.28.2B1000_i.C3.A7erik_paketi.29"><span class="tocnumber">1.1</span> <span class="toctext">Kök (+1000 içerik paketi)</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Pop.C3.BCler_.28.2B400.29"><span class="tocnumber">1.2</span> <span class="toctext">Popüler (+400)</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Yayg.C4.B1n_.28100.2B.29"><span class="tocnumber">1.3</span> <span class="toctext">Yaygın (100+)</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.C3.96zelle.C5.9Ftirilmi.C5.9F_Framework.27ler"><span class="tocnumber">1.4</span> <span class="toctext">Özelleştirilmiş Framework'ler</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Ayr.C4.B1ca_Bak.C4.B1n.C4.B1z"><span class="tocnumber">2</span> <span class="toctext">Ayrıca Bakınız</span></a></li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="Popüler_Framework'ler"></span><span class="mw-headline" id="Pop.C3.BCler_Framework.27ler">Popüler Framework'ler</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<p>İşte içerik paketleri oluşturmak için sıkla kullanılan framework modları. <small>(Her ismin yanındaki parantezler, <a href="/mediawiki/index.php?title=Modlama:%C4%B0%C3%A7erik_Paketleri&amp;action=edit&amp;redlink=1" class="new" title="Modlama:İçerik Paketleri (sayfa mevcut değil)">klasör isimlendirmede kullanılan geleneksel kısaltmalardır</a>.)</small>
+</p>
+<h3 class="in-block"><span id="Kök_(+1000_içerik_paketi)"></span><span class="mw-headline" id="K.C3.B6k_.28.2B1000_i.C3.A7erik_paketi.29">Kök (+1000 içerik paketi)</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Mod
+</th>
+<th>İşlev
+</th></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/1915">Content Patcher</a> <small>(CP)</small>
+</td>
+<td>Oyunda var olan herhangi bir içerik eklemeye/düzenlemeye/yeniden yapmaya yarar (<i>baka bir deyişle,</i> veriler normalde <a href="/Modlama:Oyuncu_Rehberi/Ba%C5%9Flang%C4%B1%C3%A7_K%C4%B1lavuzu#Oyun_Klas.C3.B6r.C3.BCn.C3.BCz.C3.BC_Bulma" title="Modlama:Oyuncu Rehberi/Başlangıç Kılavuzu">oyununuzun <samp>Content</samp> klasöründen</a> bilgi alır). Veri/görsel/harita dosyalarını destekler, kısmi yamalar ve sıralama gibi işlevlere sahiptir ve çokça farklı şartı ve tokeni destekler (<i>örn.</i> mevsimsel dokular, günün saati ile değişen veriler vs. yapabilme). Basit portre yerleştirmelerinden yepyeni bir NPC oluşturmaya kadar bir çok mod türü, Content Patcher ile oluşturulur.
+<p>Başlama kılavuzu olarak <a href="/mediawiki/index.php?title=Modlama:Content_Patcher&amp;action=edit&amp;redlink=1" class="new" title="Modlama:Content Patcher (sayfa mevcut değil)">Modlama:Content Patcher</a> sayfasını inceleyin.
+</p>
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/1720">Json Assets</a> <small>(JA)</small>
+</td>
+<td>Her öge türüne özel işlev desteği ile belirli öge türleri oluşturmaya yarar (<i>örn.</i> oluşturma/pişirme/tarifler oluşturma veya yeni ögeler için hediye zevkleri belirleme). Şu anda nesneler, büyük oluşturulabilir nesneler, ekinler, meyve ağaçları, şapkalar, silahlar, kıyafetler, pantolonlar ve ayakkabılar oluşturmaya yarar. Json Assets ile eklenilen içerikler ve görseller, Content Patcher ile de düzenlenebilir.
+<p>Dokümantasyon için <a rel="nofollow" class="external text" href="https://github.com/spacechase0/JsonAssets#readme">GitHub sayfasını</a> inceleyin.
+</p>
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="Popüler_(+400)"></span><span class="mw-headline" id="Pop.C3.BCler_.28.2B400.29">Popüler (+400)</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Mod
+</th>
+<th>İşlev
+</th></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/9246">Alternative Textures</a> <small>(AT)</small>
+</td>
+<td>Yerleştirilebilir nesneler, yapılar ve canlılar için doku varyantları sağlar. Ağaçlar, hayvanlar, evcil hayvanlar, çiftlik yapıları, bitkiler ve daha fazlasını barındırır.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/4970">Producer Framework Mod</a> <small>(PFM)</small>
+</td>
+<td>Oyundaki herhangi bir makinenin girdisini/çıktısını/davranışını ekleyebilmeye/değiştirebilmeye yarar. Normal makineler (<i>örn.</i> <a href="/F%C4%B1%C3%A7%C4%B1" title="Fıçı">fıçılar</a>), diğer modlar tarafından eklenilen makineler ve herhangi bir oluşturulabilir nesneye makine mantığı ekleme için çalışır.
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="Yaygın_(100+)"></span><span class="mw-headline" id="Yayg.C4.B1n_.28100.2B.29">Yaygın (100+)</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Mod
+</th>
+<th>İşlev
+</th></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/2080">Better Artisan Good Icons</a> <small>(BAGI)</small>
+</td>
+<td>Üretirken kullanılan öge veya çiçeğe bağlı olarak <a href="/Bal" title="Bal">bal</a> veya <a href="/%C5%9Earap" title="Şarap">şarap</a> gibi zanaat ürünlerine özel ikon eklemeye yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://smapi.io/mods/#Paritee.27s_Better_Farm_Animal_Variety">Better Farm Animal Variety</a> <small>(BFAV)</small>
+</td>
+<td>Yeni çiftlik hayvanları eklemeye yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/1254">Custom Furniture</a> <small>(CF)</small>
+</td>
+<td>Yeni <a href="/Mobilya" title="Mobilya">mobilyalar</a> eklemeye yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/3043">Custom Music</a> <small>(CM)</small>
+</td>
+<td>Müzikleri ve ses efektlerini düzenlemeye veya eklemeye yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/9365">Dynamic Game Assets</a> <small>(DGA)</small>
+</td>
+<td>Her öge türüne özel işlev desteği ile belirli öge türleri oluşturmaya yarar (<i>örn.</i> oluşturma/pişirme/tarifler oluşturma veya yeni ögeler için hediye zevkleri belirleme). Şu anda nesneler, büyük oluşturulabilir nesneler, , ayakkabılar, ekinler, çitler, demir ocağı tarifleri, meyve ağaçları, şapkalar, makine tarifleri, yakın dövüş silahları, nesneler, hediye zevkleri, pantolonlar, kıyafetler, dükkan girdileri, terzilik tarifleri ve doku oluşturmaya yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/3231">Farm Type Manager</a> <small>(FTM)</small>
+</td>
+<td>Herhangi bir haritaya çiftlikteki nesne belirme mantığını eklemeye yarar. Kütük, yabani otlar, toplanılabilir öge, meteor, canavar, cevher çıkarma gibi şeylerdir.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/9969">Fashion Sense</a> <small>(FS)</small>
+</td>
+<td>Daha büyük aksesuarlar, saç stilleri, şapkalar, kıyafetler, gömlekler, pantolonlar, animasyon desteği ve daha fazlasını yapmaya yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/1536">Mail Framework Mod</a> <small>(MFM)</small>
+</td>
+<td>Özel arka plan, tekrarlanan mektup, daha geniş bir mektup ekleri sistemi ve birden fazla mektup eki gibi yeni mektup işlevlerini sağlar. (Özel işlevi olmayan basit mektuplar, Content Patcher ile de eklenebilir.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/5005">Shop Tile Framework</a> <small>(STF)</small>
+</td>
+<td>Geniş bir şart havuzu ile yeni dükkanlar ekleyin veya mevcut dükkanların envanterlerini düzenleyin.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/1820">TMXL Map Toolkit</a> <small>(TMXL)</small>
+</td>
+<td>Oyun içi lokasyonların ve haritaların eklenmesine/düzenlenmesine yarar. Ekin katmanları, su rengi, kare faaliyetleri ve Lua yazılımı gibi geniş bir özelleştirilmiş harita işlevi barındırır.
+<p>bkz. <a rel="nofollow" class="external text" href="https://gist.github.com/notevenamouse/6339a7975ae5d13802488d88a8b10a64#file-wip-passive-features-md">ekstra TMXL dokümantasyonu</a>
+</p>
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="Özelleştirilmiş_Framework'ler"></span><span class="mw-headline" id=".C3.96zelle.C5.9Ftirilmi.C5.9F_Framework.27ler">Özelleştirilmiş Framework'ler</span></h3>
+<p>Bunlar, 100'den az içerik paketlerine sahiptir ancak belirli durumlar için kullanışlı işlevler sağlarlar.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Mod
+</th>
+<th>İşlev
+</th></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/11115">Better Crafting</a> <small>(BC)</small>
+</td>
+<td><a href="/mediawiki/index.php?title=Modlama:Oyun_Durumu_Sorgular%C4%B1&amp;action=edit&amp;redlink=1" class="new" title="Modlama:Oyun Durumu Sorguları (sayfa mevcut değil)">Oyun durumu sorguları</a>, oyuncu tarif oluşturunca <a href="/mediawiki/index.php?title=Modlama:Olay_Tetikleme&amp;action=edit&amp;redlink=1" class="new" title="Modlama:Olay Tetikleme (sayfa mevcut değil)">olay tetikleme</a> ve birden fazla olası malzeme veya çıktıya izin veren <a href="/mediawiki/index.php?title=Modlama:%C3%96ge_Sorgular%C4%B1&amp;action=edit&amp;redlink=1" class="new" title="Modlama:Öge Sorguları (sayfa mevcut değil)">öge sorguları ve çıkarma alanları</a> ile erişilebilirlik ve malzemeler için destek dahil temel oyun tarafından desteklenenlerden daha gelişmiş özel tarifler oluşturmaya yarar.
+<p>İsteğe bağlı olarak nesne oluşturma menülerinden çıkarılabilen, kısıtlı seçimli tarifler ile özel oluşturma istasyonları oluşturmaya yarar. Bu oluşturma istasyonları, harita kare faaliyetleri ve olay tetikleme faaliyetleri ile açılabilir. Büyük oluşturulabilir nesnelere harita kare faaliyetleri atayarak özel oluşturma istasyonları olarak kullanılmasını sağlar. <b>Yalnızca 1.6 için.</b>
+</p>
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/3853">Content Patcher Animations</a> <small>(CP-A)</small>
+</td>
+<td>Content Patcher ile yüklenmiş normalde animasyonlu olmayan (<i>örn.</i> öge dokuları) dokular dahil herhangi bir dokuyu animasyonlu yapmaya yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/8626">Custom Companions</a> <small>(CC)</small>
+</td>
+<td>Haritada çıkarılabilen veya oyuncuyu takip edebilen özel canlılar oluşturmaya yarar. Dünyadaki canlılar veya dolaşan NPCler olabilir.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/6293">Custom Crafting Stations</a> <small>(CCS)</small>
+</td>
+<td>Normal nesne oluşturma menüsü yerine sınırlı sayıda tarifi gösterebilen özelleştirilmiş özel oluşturma istasyonları oluşturmaya yarar. Bu istasyonlar, normal oyunda bulunan veya Json Assets (JA) ile eklenmiş <a href="/mediawiki/index.php?title=Modlama:%C3%96geler&amp;action=edit&amp;redlink=1" class="new" title="Modlama:Ögeler (sayfa mevcut değil)">büyük oluşturulabilir nesneler</a> olabilir. İstasyonlar, haritaya eklenmiş kare verileri ile de eklenebilir.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/1255">Custom Critters</a> <small>(CC)</small>
+</td>
+<td>Dünyaya kelebekler veya arılar gibi rastgele küçük çevre canlıları ekler.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/13804">Custom Farm Loader</a> <small>(CFL)</small>
+</td>
+<td>Özel çiftlik eklemek için basit bir yol. Öge/yabani ekin/kaynaklar/sahil ganimetleri ve özel balıkçılık sistemi belirme gibi şeyleri de destekler.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/10202">Custom Obelisks</a> <small>(CO)</small>
+</td>
+<td>Çiftlikten herhangi bir lokasyona ışınlanmayı sağlayan özel dikilitaşlar ve totemler eklemeye yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/5966">Custom Ore Nodes</a> <small>(CON)</small>
+</td>
+<td>Öge toplamak için kırılabilecek taş/mineral türleri ekler. Özel veya normal oyundan olabilir. (1.5)
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/6669">Custom Resource Clumps</a> <small>(CRC)</small>
+</td>
+<td>Öge toplamak için kırılabilecek kaya boyutunda kaynak türleri ekler. Özel veya normal oyundan olabilir. (1.5)
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/10024">Custom Winter Star Gifts</a> <small>(CWSG)</small>
+</td>
+<td>Birçok ekleme ve yerleştirme talimatları ile karakterlerin Kış Yıldızı Şöleni festivalinde verdikleri hediyeleri değiştirmeye yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/7431">Expanded Storage</a> <small>(XS)</small>
+</td>
+<td>Normal seviyedeki veya daha fazla kapasiteleri destekleyen özel depolar (sandıklar, şifonyerler vs.) oluşturmaya yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/23458">Furniture Framework</a> <small>(FF)</small>
+</td>
+<td>Mobilya paketlerin daha fazla özgürlüğe sahip olmasını sağlayan bir framework: bununla oturaklar, masa yuvaları, katmanlar, dükkanlar ve daha fazlası belirlenebilir.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/22612">More Nightly Events</a> <small>(MNE)</small>
+</td>
+<td>Özel gece zamanı olayları ekler. Daha önce yapılmış ve ayarlanabilir olaylar ile veya <a href="/mediawiki/index.php?title=Modlama:Olay_Verisi&amp;action=edit&amp;redlink=1" class="new" title="Modlama:Olay Verisi (sayfa mevcut değil)">olay yazılımı</a> ile kendinizin yaptığı bir olay kullanarak yapılabilir. <b>Yalnızca 1.6 için.</b>
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/6414">Quest Framework</a> <small>(QF)</small>
+</td>
+<td>Mod yapımcılarına özel görevler oluşturabilme, özel görev türleri ekleyebilme ve çalıştırabilme sağlar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/6183">Train Station</a> <small>(TS)</small>
+</td>
+<td><a href="/Demiryolu" title="Demiryolu">Demiryolu</a> tren istasyonu aracılığıyla erişilebilir yeni lokasyonlar ekler. Böylece var olan haritalara ışınlayıcılar/geçitler yerleştirmeye gerek kalmaz.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/17265">Unlockable Bundles</a> <small>(UB)</small>
+</td>
+<td>Özel yığın oluşturmaya yarar.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/20357">Item Extensions</a> <small>(IE)</small>
+</td>
+<td>Mod yapımcılarına özel kaynaklar, özel karışık tohumlar ve menülerde nesneler arası etkileşim sağlar. '<i>Yalnızca 1.6 için.</i>
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/20537">Personal Indoor Farm</a> <small>(PIF)</small>
+</td>
+<td>Kişisel çiftlik evi odaları ekler. Mod yapımcıları, oda tasarımları ekleyebilir.
+</td></tr></tbody></table>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="Ayrıca_Bakınız"></span><span class="mw-headline" id="Ayr.C4.B1ca_Bak.C4.B1n.C4.B1z">Ayrıca Bakınız</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<ul><li>Mod oluşturmak için farklı yollar ve daha detaylı bir dokümantasyon için <a href="/Modlama:%C4%B0ndeks" title="Modlama:İndeks">Modlama:İndeks</a> sayfasını inceleyin.</li></ul>
+
+
+
+
+</section></div></div><div class="printfooter">
+"<a dir="ltr" href="https://tr.stardewvalleywiki.com/mediawiki/index.php?title=Modlama:İçerik_Paketi_Framework%27leri&amp;oldid=17746">https://tr.stardewvalleywiki.com/mediawiki/index.php?title=Modlama:İçerik_Paketi_Framework%27leri&amp;oldid=17746</a>" adresinden alınmıştır.</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="/%C3%96zel:History/Modlama:%C4%B0%C3%A7erik_Paketi_Framework%27leri"
+				data-user-name="Peaw"
+				data-user-gender="unknown"
+				data-timestamp="1721995616">
+				<span>Son düzenleme 26 Temmuz 2024, 12.06 tarihinde yapıldı</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Aksi belirtilmedikçe içerik <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> lisansı altındadır.</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> Bu sayfa son olarak 26 Temmuz 2024 tarihinde ve 12.06 saatinde düzenlenmiştir.</li><li id="footer-info-copyright">Aksi belirtilmedikçe içeriğin kullanımı <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> lisansı kapsamında uygundur.</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:Gizlilik_politikas%C4%B1" title="Stardew Valley Wiki:Gizlilik politikası">Gizlilik politikası</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:Hakk%C4%B1nda" title="Stardew Valley Wiki:Hakkında">Stardew Valley Wiki hakkında</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:Genel_sorumluluk_reddi" title="Stardew Valley Wiki:Genel sorumluluk reddi">Sorumluluk reddi</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//tr.stardewvalleywiki.com/mediawiki/index.php?title=Modlama:%C4%B0%C3%A7erik_Paketi_Framework%27leri&amp;mobileaction=toggle_view_desktop">Masaüstü</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.018","ppvisitednodes":{"value":373,"limit":1000000},"postexpandincludesize":{"value":4480,"limit":2097152},"templateargumentsize":{"value":1298,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    5.539      1 -total"," 51.66%    2.861     31 Şablon:Nexus_mod"," 26.56%    1.471      1 Şablon:Github"]},"cachereport":{"timestamp":"20250330062716","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":127});});</script>		</body>
+		</html>
+		
+

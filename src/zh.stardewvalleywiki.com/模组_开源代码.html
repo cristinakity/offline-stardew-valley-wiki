@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>模组:开源代码 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"模组","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"模组:开源代码","wgTitle":"开源代码","wgCurRevisionId":50830,"wgRevisionId":50830,"wgArticleId":3318,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["模组"],"wgPageContentLanguage":"zh","wgPageContentModel":"wikitext","wgRelevantPageName":"模组:开源代码","wgRelevantArticleId":3318,"wgUserVariant":"zh","wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search":!1,
+"nearby":!1,"watchlist":!1,"tagline":!1}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=mediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/mediawiki/load.php?lang=zh&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="←目录"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (zh)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//zh.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="alternate" hreflang="zh" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh"/>
+<link rel="alternate" hreflang="zh-Hans" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-hans"/>
+<link rel="alternate" hreflang="zh-Hant" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-hant"/>
+<link rel="alternate" hreflang="zh-Hans-CN" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-cn"/>
+<link rel="alternate" hreflang="zh-Hant-HK" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-hk"/>
+<link rel="alternate" hreflang="zh-Hant-MO" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-mo"/>
+<link rel="alternate" hreflang="zh-Hans-MY" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-my"/>
+<link rel="alternate" hreflang="zh-Hans-SG" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-sg"/>
+<link rel="alternate" hreflang="zh-Hant-TW" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-tw"/>
+<link rel="alternate" hreflang="x-default" href="/%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki的Atom feed" href="/mediawiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+<meta property="og:title" content="模组:开源代码 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81"/>
+<meta property="og:description" content="←目录"/>
+<meta property="og:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="模组:开源代码 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←目录"/>
+<meta property="twitter:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u6a21\u7ec4:\u5f00\u6e90\u4ee3\u7801 - Stardew Valley Wiki","headline":"\u6a21\u7ec4:\u5f00\u6e90\u4ee3\u7801 - Stardew Valley Wiki","mainEntityOfPage":"\u6a21\u7ec4:\u5f00\u6e90\u4ee3\u7801","identifier":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81","url":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81","description":"\u2190\u76ee\u5f55","dateModified":"2024-12-26T01:36:50Z","datePublished":"2024-12-26T01:36:50Z","image":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-模组_开源代码 rootpage-模组_开源代码 skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="zh">模组:开源代码</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">来自Stardew Valley Wiki</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">跳到导航</a>
+		<a class="mw-jump-link" href="#searchInput">跳到搜索</a>
+		<div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>←<a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95" title="模组:目录">目录</a>
+</p><p><b>开源</b>模组是指源代码公开且使用<a rel="nofollow" class="external text" href="https://choosealicense.com/">开源协议</a>的模组。强烈建议模组作者开源其模组和内容包。
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="zh" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.B8.BA.E4.BB.80.E4.B9.88.E5.BC.80.E6.BA.90.E5.BE.88.E9.87.8D.E8.A6.81.EF.BC.9F"><span class="tocnumber">1</span> <span class="toctext">为什么开源很重要？</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98"><span class="tocnumber">2</span> <span class="toctext">常见问题</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E5.BC.80.E6.BA.90.E6.82.A8.E7.9A.84.E4.BB.A3.E7.A0.81"><span class="tocnumber">3</span> <span class="toctext">开源您的代码</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#.E8.8B.A5.E6.82.A8.E7.9A.84.E4.BB.A3.E7.A0.81.E5.B7.B2.E6.89.98.E7.AE.A1.E4.BA.8EGitHub"><span class="tocnumber">3.1</span> <span class="toctext">若您的代码已托管于GitHub</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E8.8B.A5.E6.82.A8.E7.9A.84.E4.BB.A3.E7.A0.81.E6.9C.AA.E6.89.98.E7.AE.A1.E4.BA.8EGitHub"><span class="tocnumber">3.2</span> <span class="toctext">若您的代码未托管于GitHub</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#.E9.80.9A.E8.BF.87Visual_Studio"><span class="tocnumber">3.2.1</span> <span class="toctext">通过Visual Studio</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#.E9.80.9A.E8.BF.87SourceTree"><span class="tocnumber">3.2.2</span> <span class="toctext">通过SourceTree</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85"><span class="tocnumber">4</span> <span class="toctext">另请参阅</span></a></li>
+</ul>
+</div>
+
+<h2><span id="为什么开源很重要？"></span><span class="mw-headline" id=".E4.B8.BA.E4.BB.80.E4.B9.88.E5.BC.80.E6.BA.90.E5.BE.88.E9.87.8D.E8.A6.81.EF.BC.9F">为什么开源很重要？</span></h2>
+<p>开源对于模组社区的长期健康发展有重要意义，且有助于玩家获得更顺滑的游戏体验。
+</p>
+<dl><dt>开源如何利益他人？</dt>
+<dd>这具体取决于您使用的开源协议。一般来说，其他人能够：</dd></dl>
+<dl><dd><ul><li>阅读您的代码；</li>
+<li>修改您代码的副本；</li>
+<li>向您发送提请的(proposed)更新、改进和修复；</li>
+<li>进行非官方更新；</li>
+<li>通过查看代码，更好地帮助用户解决问题</li></ul></dd></dl>
+<dl><dd>开源的效益是显著的：在SMAPI 3.0发布后，仅有1%的开源模组发生了崩溃，相比之下，高达<b>51%</b>的闭源模组发生了崩溃（且未计入从未更新的古旧模组）。</dd></dl>
+<dl><dt>开源如何利益您自己？</dt>
+<dd>除了上述益处之外，开源协议有助于您接受来自他人的贡献。</dd>
+<dd><b>没有</b>开源协议的情况下，他人对您的模组所作出的贡献（例如代码、翻译或内容更改）享有版权。他人对您的模组作出贡献，实际上是默许了您使用他们的内容和改进。但是，您将不再拥有整个模组；未经每个贡献者授权，您无法更改他人发布的内容（例如，将模组分裂为小部件、将代码复制到另一个模组等）。一旦您无法联系上某位贡献者，情况就会变得麻烦，除非您将其贡献的内容彻底移出模组。</dd>
+<dd><b>有</b>开源协议的情况下，任何贡献会自动受此协议约束。这意味着您可以对他人的贡献作出协议允许的任何更改。</dd></dl>
+<h2><span id="常见问题"></span><span class="mw-headline" id=".E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98">常见问题</span></h2>
+<dl><dt>如果我不喜欢他人提请的更改应当怎样做？</dt>
+<dd>您仍然拥有您的源代码和模组页面的完全控制权；未经您同意，任何人都不能更改模组内容！您可以自由地拒绝他人对您的模组提请的更改。</dd></dl>
+<dl><dt>这适用于内容包吗？</dt>
+<dd>是的！尽管内容包并未经过编译，但没有许可协议，其他模组开发者无法合法地作出修改。请注意，Nexus等网站的 "permissions" 选项在法律上是模糊的（例如，哪些人对于衍生品有版权？衍生品是否可以重新授权？）。因此，建议您为内容包也添加许可协议。这也使得其他模组开发者能够拉取请求(pull request)和更新。当此页面提及“代码”一词时，它也指您的内容包下的所有内容，包括JSON文件、图像、地图等。</dd></dl>
+<dl><dt>我可以禁止商用吗？</dt>
+<dd>非商用开源协议禁止他人利用您的内容牟利或重新售卖您的内容。这当然优于完全没有许可协议，但这并<b>不是</b>真正的开源。这可能会产生意外的副作用，例如禁止网络主播展示您的模组，因为他们的视频是盈利性质的。强烈建议您<b>不要</b>使用非商用协议。</dd></dl>
+<dl><dt>我没有添加开源协议，但已经发布了模组。现在还可以添加协议吗？</dt>
+<dd>当然。如果您独自开发了整个模组，您可以随时添加或更改协议。但如果其他人对模组作出了贡献（包括代码、翻译或图像），您则需要取得他们所有人的同意，除非您将其贡献的内容彻底移出模组。</dd></dl>
+<dl><dt>什么是Git仓库？</dt>
+<dd>Git是一个帮助您追踪代码改动的软件，仓库是指Git追踪的模组文件夹。如果您希望了解更多，可以查看Git教程，但不必担心：您不必了解Git如何工作，就能够使用它！</dd></dl>
+<h2><span id="开源您的代码"></span><span class="mw-headline" id=".E5.BC.80.E6.BA.90.E6.82.A8.E7.9A.84.E4.BB.A3.E7.A0.81">开源您的代码</span></h2>
+<h3><span id="若您的代码已托管于GitHub"></span><span class="mw-headline" id=".E8.8B.A5.E6.82.A8.E7.9A.84.E4.BB.A3.E7.A0.81.E5.B7.B2.E6.89.98.E7.AE.A1.E4.BA.8EGitHub">若您的代码已托管于GitHub</span></h3>
+<p>您几乎已经成功了！您只需要<a rel="nofollow" class="external text" href="https://choosealicense.com/">选择一个协议</a>（若您犹豫不决，则 MIT License 是不错的选择），<a rel="nofollow" class="external text" href="https://help.github.com/en/github/building-a-strong-community/adding-a-license-to-a-repository">并向仓库添加<samp>LICENSE</samp>文件</a>。
+</p>
+<h3><span id="若您的代码未托管于GitHub"></span><span class="mw-headline" id=".E8.8B.A5.E6.82.A8.E7.9A.84.E4.BB.A3.E7.A0.81.E6.9C.AA.E6.89.98.E7.AE.A1.E4.BA.8EGitHub">若您的代码未托管于GitHub</span></h3>
+<p>这看起来需要很多步，但不必担心：这些步骤非常简单直接，而且您只需要做一次就够了。若需要帮助，欢迎在<a href="/%E6%A8%A1%E7%BB%84:%E7%A4%BE%E5%8C%BA#Discord" title="模组:社区">星露谷Discord的#making-mods版块</a>下提问。:)
+</p>
+<h4><span id="通过Visual_Studio"></span><span class="mw-headline" id=".E9.80.9A.E8.BF.87Visual_Studio">通过Visual Studio</span></h4>
+<p>Visual Studio很好地整合了Git，其文档见此处：<a rel="nofollow" class="external free" href="https://learn.microsoft.com/en-us/visualstudio/version-control/git-create-repository?view=vs-2022">https://learn.microsoft.com/en-us/visualstudio/version-control/git-create-repository?view=vs-2022</a>
+</p>
+<h4><span id="通过SourceTree"></span><span class="mw-headline" id=".E9.80.9A.E8.BF.87SourceTree">通过SourceTree</span></h4>
+<dl>
+<dt>创建一个Git仓库</dt>
+<dd>首先，创建包含您代码的公共仓库。
+
+<ol>
+<li>创建一个<a rel="nofollow" class="external text" href="https://github.com/">GitHub</a>账户。</li>
+<li>安装<a rel="nofollow" class="external text" href="https://www.sourcetreeapp.com/">SourceTree</a>（Mac/Windows）或<a rel="nofollow" class="external text" href="https://www.gitkraken.com/">GitKraken</a>（Linux）。当软件询问是否连接到GitHub账户时，选择连接。</li>
+<li><a rel="nofollow" class="external text" href="https://help.github.com/articles/create-a-repo/">在GitHub上创建仓库</a>。
+
+推荐的设置（参见<a href="/File:Modding_-_create_GitHub_repo.png" title="File:Modding - create GitHub repo.png">screenshot</a>）：
+<ol><li>Repository name：若您会将所有模组放在同一个仓库，则推荐使用 <i>StardewMods</i> 。否则使用您的模组名称。</li>
+<li>Description：建议使用 <i>Mods for Stardew Valley</i>。</li>
+<li>Initialize ... with a README：启用该选项。</li>
+<li>Add <samp>.gitignore</samp>：将此选项留空；稍后我们会自定义它。</li>
+<li>Add a license：<a rel="nofollow" class="external text" href="https://choosealicense.com/">选择一个协议</a>（若您犹豫不决，则 MIT License 是不错的选择）。</li>
+<li>点击 'Create repository'。</li></ol>
+</li>
+<li>在仓库页面中，点击绿色的 "Clone or download" 按钮并复制URL：<br /><a href="/File:Modding_-_copy_GitHub_repo_URL.png" class="image"><img alt="Modding - copy GitHub repo URL.png" src="https://stardewvalleywiki.com/mediawiki/images/3/35/Modding_-_copy_GitHub_repo_URL.png" decoding="async" width="395" height="214" /></a></li>
+<li>在 SourceTree 中，点击 <i>File &gt; Clone</i> 并粘贴URL。选择一个便于使用的目标路径（例如<samp>C:\source\StardewMods</samp>），并点击 'Clone'。</li>
+<li>克隆结束后，进入仓库设置界面（点击右上角的齿轮图标）。</li>
+<li>点击 "Remotes"</li>
+<li>选中Git路径</li>
+<li>点击 "edit" </li>
+<li>点击URL/路径右侧的地球图标。</li>
+<li>选中您的项目名称。</li>
+<li>点击 "edit accounts" 按钮</li>
+<li>双击Github账户，此时会弹出一个验证窗口。</li>
+<li>默认授权方式为OAuth，需要您更改为 "Personal Access Token"。</li>
+<li>输入用户名和令牌（personal access token）</li>
+<li>若此时还未成功，请确保将Protocol设为 "HTTPS" 并保存。</li>
+</ol>
+这就做完了最困难的部分！现在，您已经在GitHub上拥有了一个仓库，它会和您计算机上的文件夹同步。</dd>
+
+<dt>添加模组文件</dt>
+<dd>下一步，需要把文件添加到仓库中。
+
+<ol><li>打开仓库文件夹（上面第五步中输入的目标路径）。</li>
+<li>在文件夹中解压<a rel="nofollow" class="external text" href="https://github.com/StardewModders/Files/raw/master/template%20repo/gitattributes%20and%20gitignore.zip">此ZIP文件</a>。这会在您的仓库文件夹根目录下添加两个文件：<samp>.gitattributes</samp>（用于对齐Linux/Max/Windows的换行符）和<samp>.gitignore</samp>（用于隐藏不应该被提交到Git的文件）。您不必更改这两个文件，只需确保它们在仓库根目录下即可。</li>
+<li>将您的模组文件（包括<samp>.sln</samp>文件）复制到此文件夹。</li>
+<li>在SourceTree中提交您的修改：
+<ol><li>点击顶部的 Commit 。</li>
+<li>点击 Stage All 以准备提交您的文件。</li>
+<li>在文本框中输入对您的更改的描述。具体格式由您决定。但是，鉴于这是初次操作，建议使用 "add initial mod files" 作为描述。</li>
+<li>确保您勾选了 "Push changes immediately" 。</li>
+<li>点击 "Commit".</li></ol></li></ol>
+
+大功告成：您所有的文件都会出现在GitHub上。现在您的模组开源了！</dd>
+
+<dt>进行修改</dt>
+<dd>上述步骤仅用于配置环境，因此只需要做一次。如果您需要作出修改，则会简单很多：
+
+<ol><li>编辑位于仓库文件夹中的代码。</li>
+<li>在 SourceTree 中，提交（commit）并推送（push）您的更改（参见上一节的步骤4）。</li></ol>
+</dd>
+</dl>
+<h2><span id="另请参阅"></span><span class="mw-headline" id=".E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85">另请参阅</span></h2>
+<ul><li><a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E7%BB%84%E5%85%BC%E5%AE%B9%E6%80%A7" title="模组:模组兼容性">模组:模组兼容性</a>具有每个开源SMAPI模组源代码的链接。</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20250330070121
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.028 seconds
+Real time usage: 0.042 seconds
+Preprocessor visited node count: 29/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key zhwiki:pcache:idhash:3318-0!canonical!zh and timestamp 20250330070121 and revision id 50830
+ -->
+</div></div><div class="printfooter">取自“<a dir="ltr" href="https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:开源代码&amp;oldid=50830">https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:开源代码&amp;oldid=50830</a>”</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="Special:页面分类">分类</a>：<ul><li><a href="/Category:%E6%A8%A1%E7%BB%84" title="Category:模组">模组</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>导航菜单</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>个人工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/mediawiki/index.php?title=Special:%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81" title="建议您创建一个账户并登录，但这不是强制的">创建账户</a></li><li id="pt-login"><a href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81" title="我们鼓励您登录；然而，这不是强制性的[o]" accesskey="o">登录</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>名字空间</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-模组" class="selected"><a href="/%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81">模组</a></li><li id="ca-talk" class="new"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84_talk:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;action=edit&amp;redlink=1" rel="discussion" title="关于内容页面的讨论（页面不存在）[t]" accesskey="t">讨论</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>不转换</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"><li id="ca-varlang-0" class="selected"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh" lang="zh" hreflang="zh">不转换</a></li><li id="ca-varlang-1"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-hans" lang="zh-Hans" hreflang="zh-Hans">简体</a></li><li id="ca-varlang-2"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-hant" lang="zh-Hant" hreflang="zh-Hant">繁體</a></li><li id="ca-varlang-3"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-cn" lang="zh-Hans-CN" hreflang="zh-Hans-CN">大陆简体</a></li><li id="ca-varlang-4"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-hk" lang="zh-Hant-HK" hreflang="zh-Hant-HK">香港繁體</a></li><li id="ca-varlang-5"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-mo" lang="zh-Hant-MO" hreflang="zh-Hant-MO">澳門繁體</a></li><li id="ca-varlang-6"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-my" lang="zh-Hans-MY" hreflang="zh-Hans-MY">大马简体</a></li><li id="ca-varlang-7"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-sg" lang="zh-Hans-SG" hreflang="zh-Hans-SG">新加坡简体</a></li><li id="ca-varlang-8"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;variant=zh-tw" lang="zh-Hant-TW" hreflang="zh-Hant-TW">台灣正體</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>视图</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81">阅读</a></li><li id="ca-viewsource" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;action=edit" title="本页面受到保护。您可以查看其源代码[e]" accesskey="e">查看源代码</a></li><li id="ca-history" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;action=history" title="本页面过去的版本[h]" accesskey="h">查看历史</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>更多</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">搜索</label>
+	</h3>
+	<form action="/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="搜索Stardew Valley Wiki" title="搜索Stardew Valley Wiki[f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:搜索">
+			<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="前往" title="若相同标题存在，则直接前往该页面" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="访问首页" class="mw-wiki-logo" href="/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>导航</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/Stardew_Valley_Wiki" title="访问首页[z]" accesskey="z">首页</a></li><li id="n-recentchanges"><a href="/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki最近更改的列表[r]" accesskey="r">最近更改</a></li><li id="n-.E6.9C.AA.E7.BF.BB.E8.AF.91.E7.9A.84.E9.A1.B5.E9.9D.A2"><a href="/Category:%E6%9C%AA%E7%BF%BB%E8%AF%91%E7%9A%84%E9%A1%B5%E9%9D%A2">未翻译的页面</a></li><li id="n-.E5.B8.AE.E5.8A.A9:.E7.BC.96.E8.BE.91.E5.85.A5.E9.97.A8"><a href="/Help:%E7%BC%96%E8%BE%91%E5%85%A5%E9%97%A8">帮助:编辑入门</a></li><li id="n-randompage"><a href="/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面[x]" accesskey="x">随机页面</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-链接" class="vector-menu vector-menu-portal portal" aria-labelledby="p-链接-label" role="navigation" 
+	 >
+	<h3 id="p-链接-label">
+		<span>链接</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-.E5.AE.98.E6.96.B9.E7.BD.91.E7.AB.99"><a href="https://stardewvalley.net" rel="nofollow">官方网站</a></li><li id="n-.E5.AE.98.E6.96.B9.E8.AE.BA.E5.9D.9B"><a href="https://forums.stardewvalley.net/" rel="nofollow">官方论坛</a></li><li id="n-.E5.AE.98.E6.96.B9.E5.95.86.E5.93.81"><a href="https://www.stardewvalley.net/shop/" rel="nofollow">官方商品</a></li><li id="n-.E7.A4.BE.E4.BA.A4.E5.AA.92.E4.BD.93"><a href="https://www.stardewvalley.net/links/" rel="nofollow">社交媒体</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81" title="所有链接至本页面的wiki页面的列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="//stardewvalleywiki.com/Special:Upload" title="上传文件[u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;oldid=50830" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;action=info" title="关于此页面的更多信息">页面信息</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>其他语言</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-en"><a href="https://stardewvalleywiki.com/Modding:Open_source" title="Modding:Open source – English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.stardewvalleywiki.com/Modding:C%C3%B3digo_abierto" title="Modding:Código abierto – español" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.stardewvalleywiki.com/Modifica%C3%A7%C3%B5es:Open_Source" title="Modificações:Open Source – português" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.stardewvalleywiki.com/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:Open_source" title="Модификации:Open source – русский" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.stardewvalleywiki.com/Modlama:A%C3%A7%C4%B1k_Kaynak" title="Modlama:Açık Kaynak – Türkçe" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li></ul>
+		
+	</div>
+</nav>
+
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> 此页面最后编辑于2024年12月26日 (星期四) 01:36。</li>
+		<li id="footer-info-copyright">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Stardew Valley Wiki:隐私政策">隐私政策</a></li>
+		<li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" title="Stardew Valley Wiki:关于">关于Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Stardew Valley Wiki:免责声明">免责声明</a></li>
+		<li id="footer-places-mobileview"><a href="//zh.stardewvalleywiki.com/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">手机版视图</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.028","walltime":"0.042","ppvisitednodes":{"value":29,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20250330070121","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":127});});</script></body></html>
+
+

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="pt" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Modificações:Guia do Modder/Teste e Solução de Problemas - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"Modificações","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modificações:Guia_do_Modder/Teste_e_Solução_de_Problemas","wgTitle":"Guia do Modder/Teste e Solução de Problemas","wgCurRevisionId":32079,"wgRevisionId":32079,"wgArticleId":2551,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"pt","wgPageContentModel":"wikitext","wgRelevantPageName":"Modificações:Guia_do_Modder/Teste_e_Solução_de_Problemas","wgRelevantArticleId":2551,"wgIsProbablyEditable":!1,
+"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready",
+"mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"pt"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=pt&amp;modules=ext.pygments%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="/mediawiki/load.php?lang=pt&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=pt&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="Creating SMAPI mods"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (pt)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//pt.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Modificações:Guia do Modder/Teste e Solução de Problemas - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://pt.stardewvalleywiki.com/Modifica%C3%A7%C3%B5es:Guia_do_Modder/Teste_e_Solu%C3%A7%C3%A3o_de_Problemas"/>
+<meta property="og:description" content="Creating SMAPI mods"/>
+<meta property="og:image" content="https://pt.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modificações:Guia do Modder/Teste e Solução de Problemas - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="Creating SMAPI mods"/>
+<meta property="twitter:image" content="https://pt.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modifica\u00e7\u00f5es:Guia do Modder\/Teste e Solu\u00e7\u00e3o de Problemas - Stardew Valley Wiki","headline":"Modifica\u00e7\u00f5es:Guia do Modder\/Teste e Solu\u00e7\u00e3o de Problemas - Stardew Valley Wiki","mainEntityOfPage":"Modifica\u00e7\u00f5es:Guia do Modder\/Teste e Solu\u00e7\u00e3o de Problemas","identifier":"https:\/\/pt.stardewvalleywiki.com\/Modifica%C3%A7%C3%B5es:Guia_do_Modder\/Teste_e_Solu%C3%A7%C3%A3o_de_Problemas","url":"https:\/\/pt.stardewvalleywiki.com\/Modifica%C3%A7%C3%B5es:Guia_do_Modder\/Teste_e_Solu%C3%A7%C3%A3o_de_Problemas","description":"Creating SMAPI mods","dateModified":"2024-04-27T14:20:21Z","datePublished":"2024-04-27T14:20:21Z","image":{"@type":"ImageObject","url":"https:\/\/pt.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/pt.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/pt.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/pt.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/pt.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/pt.stardewvalleywiki.com\/mediawiki\/index.php?title=Especial:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modificações_Guia_do_Modder_Teste_e_Solução_de_Problemas rootpage-Modificações_Guia_do_Modder stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Abrir menu principal" data-event-name="ui.mainmenu">Abrir menu principal</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Início</span></a>
+			</li>
+			<li class="">
+			    <a href="/Especial:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Aleatório</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="/mediawiki/index.php?title=Especial:Entrar&amp;returnto=Modifica%C3%A7%C3%B5es%3AGuia+do+Modder%2FTeste+e+Solu%C3%A7%C3%A3o+de+Problemas" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Entrar</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="/mediawiki/index.php?title=Especial:MobileOptions&amp;returnto=Modifica%C3%A7%C3%B5es%3AGuia+do+Modder%2FTeste+e+Solu%C3%A7%C3%A3o+de+Problemas" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Definições</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:Sobre" class="" data-event-name=""><span>Sobre a wiki Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:Aviso_geral" class="" data-event-name=""><span>Exoneração de responsabilidade</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Pesquisar na wiki Stardew Valley Wiki" aria-label="Pesquisar na wiki Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="Navegação do utilizador">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Pesquisar</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Modificações:Guia do Modder/Teste e Solução de Problemas</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="/Especial:MobileLanguages/Modifica%C3%A7%C3%B5es:Guia_do_Modder/Teste_e_Solu%C3%A7%C3%A3o_de_Problemas" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="Língua">Língua</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="/mediawiki/index.php?title=Especial:Entrar&amp;returnto=Modifica%C3%A7%C3%B5es%3AGuia+do+Modder%2FTeste+e+Solu%C3%A7%C3%A3o+de+Problemas" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="Vigiar">Vigiar</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/Teste_e_Solu%C3%A7%C3%A3o_de_Problemas&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="Editar a introdução desta página">Editar</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="pt" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><table class="alert" id="construction">
+
+<tbody><tr>
+<td style="padding-right: 12px;"><a href="/Ficheiro:Robin_building.png" class="image"><img alt="Robin building.png" src="https://stardewvalleywiki.com/mediawiki/images/2/22/Robin_building.png" decoding="async" width="90" height="131"></a>
+</td>
+<td><style data-mw-deduplicate="TemplateStyles:r24451">.mw-parser-output .decorativequotemark{font-family:"Georgia","Times New Roman","Times",serif;font-size:5em;line-height:0.02em;font-weight:bold;color:rgb(41,129,178);border-right:1px solid rgb(47,148,204);padding:25px 0.06em 0em 0.2em}.mw-parser-output .quotetext{font-family:"Georgia","Times New Roman","Times",serif;font-size:1.1em;font-style:italic;line-height:1.5em;padding-left:15px}.mw-parser-output .quotesource{text-align:left;font-size:0.9em;font-style:italic;margin-top:0;padding-left:120px}</style>
+<table>
+
+<tbody><tr>
+<td rowspan="2" class="decorativequotemark">“
+</td>
+<td class="quotetext">“Ainda tenho muito trabalho a fazer”
+</td></tr>
+<tr>
+<td class="quotesource">— Robin
+</td></tr>
+</tbody></table>
+<p><span style="font-size: larger;"><b>Tradução incompleta</b></span>
+</p><p>Este artigo ou seção não foi completamente traduzido para o português.
+Você está convidado a ajudar na sua construção <a rel="nofollow" class="external text" href="//pt.stardewvalleywiki.com/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/Teste_e_Solu%C3%A7%C3%A3o_de_Problemas&amp;action=edit">editando-o</a><br>
+<span style="font-size: smaller;">Última edição por <a href="/mediawiki/index.php?title=Utilizador:MrsCupc4ke&amp;action=edit&amp;redlink=1" class="new" title="Utilizador:MrsCupc4ke (página não existe)">MrsCupc4ke</a> em 2024-04-27 14:20:21.</span>
+</p>
+</td></tr></tbody></table>
+<div style="float: right; border: 2px solid rgb(0, 116, 72); background: #A1DEE2; padding: 0.75em; padding-top: 0.5em; margin: 0 0 2em 2em;">
+<p><span style="font-size: larger;"><b>Creating SMAPI mods</b> <a href="/Ficheiro:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25"></a></span>
+</p>
+<hr>
+<ul><li><a href="/Modifica%C3%A7%C3%B5es:Guia_do_Modder/Come%C3%A7ando" title="Modificações:Guia do Modder/Começando">Começando</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/Game_Fundamentals&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/Game Fundamentals (página não existe)">Game fundamentals</a></li>
+<li><a class="mw-selflink selflink">Teste e Solução de Problemas</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/Release&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/Release (página não existe)">Release</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs (página não existe)">API reference</a>
+<dl><dd>Basic SMAPI APIs:
+<ul><li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Mod_structure&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Mod structure (página não existe)">Mod structure</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Manifest&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Manifest (página não existe)">Manifest</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Events&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Events (página não existe)">Events</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Config&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Config (página não existe)">Configuration</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Content&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Content (página não existe)">Load &amp; edit content</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Data&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Data (página não existe)">Data</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Input&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Input (página não existe)">Input</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Logging&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Logging (página não existe)">Logging</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Reflection&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Reflection (página não existe)">Reflection</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Multiplayer&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Multiplayer (página não existe)">Multiplayer</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Translation&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Translation (página não existe)">Translation</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Update_checks&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Update checks (página não existe)">Update checks</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Utilities&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Utilities (página não existe)">Utilities</a></li></ul></dd>
+<dd>Advanced SMAPI APIs:
+<ul><li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Content_Packs&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Content Packs (página não existe)">Content packs</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Console&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Console (página não existe)">Mod console commands</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Integrations&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Integrations (página não existe)">Mod integrations</a></li>
+<li><a href="/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/APIs/Harmony&amp;action=edit&amp;redlink=1" class="new" title="Modificações:Guia do Modder/APIs/Harmony (página não existe)">Harmony patching</a></li></ul></dd></dl></li>
+<li><a href="/Modifica%C3%A7%C3%B5es:%C3%8Dndice#T.C3.B3picos_Avan.C3.A7ados" title="Modificações:Índice">Specific guides</a></li></ul>
+</div><p>← <span style="font-size: smaller;"><a href="/Modifica%C3%A7%C3%B5es:%C3%8Dndice" title="Modificações:Índice">Modificações:Índice</a></span>
+</p><p>Essa página te ajudará a testar seus mods e resolver problemas comuns. <b>Já para problemas ao <i>usar</i> mods, veja <a href="/mediawiki/index.php?title=Modding:Player_Guide/Troubleshooting&amp;action=edit&amp;redlink=1" class="new" title="Modding:Player Guide/Troubleshooting (página não existe)">Modding:Player Guide/Troubleshooting</a>.</b>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="pt" dir="ltr"><h2 id="mw-toc-heading">Índice</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Teste_o_mod"><span class="tocnumber">1</span> <span class="toctext">Teste o mod</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Teste_b.C3.A1sico"><span class="tocnumber">1.1</span> <span class="toctext">Teste básico</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Testando_no_Multijogador"><span class="tocnumber">1.2</span> <span class="toctext">Testando no Multijogador</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Testando_em_todas_as_plataformas"><span class="tocnumber">1.3</span> <span class="toctext">Testando em todas as plataformas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Consertando_alertas_de_compila.C3.A7.C3.A3o_comums"><span class="tocnumber">2</span> <span class="toctext">Consertando alertas de compilação comums</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#This_implicitly_converts..."><span class="tocnumber">2.1</span> <span class="toctext">This implicitly converts...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#FieldName_is_a_Net.2A_field..."><span class="tocnumber">2.2</span> <span class="toctext">FieldName is a Net* field...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#The_FieldName_field_is_obsolete..."><span class="tocnumber">2.3</span> <span class="toctext">The FieldName field is obsolete...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#An_instance_of_analyzer_..._cannot_be_created"><span class="tocnumber">2.4</span> <span class="toctext">An instance of analyzer ... cannot be created</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Outros_problemas"><span class="tocnumber">3</span> <span class="toctext">Outros problemas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#N.C3.A3o_consigo_definir_.NET_5"><span class="tocnumber">3.1</span> <span class="toctext">Não consigo definir .NET 5</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Visual_Studio_n.C3.A3o_consegue_detectar_o_jogo.2FSMAPI.2FMonoGame_DLLs"><span class="tocnumber">3.2</span> <span class="toctext">Visual Studio não consegue detectar o jogo/SMAPI/MonoGame DLLs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Solicitar_ajuda"><span class="tocnumber">4</span> <span class="toctext">Solicitar ajuda</span></a></li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Teste_o_mod">Teste o mod</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<h3 class="in-block"><span id="Teste_básico"></span><span class="mw-headline" id="Teste_b.C3.A1sico">Teste básico</span></h3>
+<p>Fazer um teste é bem simples pra maioria dos mods:
+</p>
+<ol><li>Clique em <i>Compilação &gt; Recompilar solução</i> (Visual Studio) ou <i>Compilação &gt; Compilar tudo</i> (MonoDevelop).</li>
+<li>Certifique-se de não ter erros de compilação, e seu mod será copiado para sua pasta <samp>Mods</samp>.</li>
+<li>Teste o mod dentro do jogo.</li>
+<li>Certifique-se de que não há erros ou avisos para seu mod no console do SMAPI.</li></ol>
+<p>No geral, se um mod funciona em uma plataforma então ele irá se sair bem em outras.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Testando_no_Multijogador">Testando no Multijogador</span></h3>
+<p>Você pode testar mods multijogador no mesmo computador, ao iniciar duas instacias do jogo:
+</p>
+<ol><li>Prepare o jogador um:
+<ol><li>Inicie o SMAPI normalmente</li>
+<li>Na tela de titulo: clique em <i>coop</i>, e então em <i>host</i>.</li>
+<li>Inicie uma nova fazenda (a menos que você já tenha criado uma). Certifique-se de ajustar as 'cabanas iniciais' para ao menos uma (you precisará de uma cabana extra por jogador)</li></ol></li>
+<li>Prepare o jogador dois:
+<ol><li>Inicie o SMAPI novamente (Isso irá automaticamente criar uma instancia separada)</li>
+<li>Na tela de titulo: clique em <i>coop</i>, e então em <i>entrar em jogo LAN</i></li>
+<li>Deixe a caixa <i>Insira o IP...' vazia e clique em OK.</i></li></ol></li></ol>
+<h3 class="in-block"><span class="mw-headline" id="Testando_em_todas_as_plataformas">Testando em todas as plataformas</span></h3>
+<p>Para mods complexos, você talvez precise testar seu mod em todas as plataformas. O jogo é quase o mesmo no Linux/Mac, sendo assim, você terá de testar seu mod apenas duas vezes: uma vez no Windows, e a outra no Linux ou Mac. Você pode fazer isso testando uma versão no seu computador, e a outra em uma maquina virtual.
+</p>
+<dl>
+<dt>Se o seu computador é Windows 11:</dt>
+<dd>
+<ol>
+<li><a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/windows/wsl/install">Instale o Windows Subsystem for Linux (WSL)</a>.</li>
+<li>Instale o software necessário no WSL:</li>
+<ol>
+<li><a rel="nofollow" class="external text" href="https://linuxconfig.org/how-to-install-steam-on-ubuntu-20-04-focal-fossa-linux">Instale o Steam</a>.</li>
+<li>Inicialize <code>export TERM=xterm &amp;&amp; steam</code>,e então install &amp; launch Stardew Valley através de sua interface. Isso também irá instalar suas dependências.</li>
+<li><i>(opcional)</i> Baixe e instale sua IDE preferida, se você planeja compilar seu código no linux. para a <a rel="nofollow" class="external text" href="https://www.jetbrains.com/help/rider/Installation_guide.html#prerequisites">ultima versão do standalone Rider</a> (Pago):
+<div class="mw-highlight mw-highlight-lang-sh mw-content-ltr" dir="ltr"><pre><span></span>wget <span class="s2">"&lt;download url here&gt;"</span> -O rider-install.tar.gz
+sudo tar -xzvf rider-install.tar.gz -C /opt
+ln -s <span class="s2">"/opt/JetBrains Rider-&lt;version&gt;/bin/rider.sh"</span>
+./rider.sh
+</pre></div></li>
+<li><a href="/mediawiki/index.php?title=Modding:Installing_SMAPI_on_Linux&amp;action=edit&amp;redlink=1" class="new" title="Modding:Installing SMAPI on Linux (página não existe)">Instale SMAPI</a>.</li>
+</ol>
+<li>Para iniciar o jogo, inicie o <code>steam</code> e rode o jogo através de sua interface </li>
+</ol>
+
+</dd>
+</dl>
+<dl><dt>Se o seu computador for Windows 10 ou anterior:</dt>
+<dd>
+<ol><li>Instale a <a rel="nofollow" class="external text" href="https://www.virtualbox.org/">VirtualBox</a>.</li>
+<li>Crie uma <a rel="nofollow" class="external text" href="https://zorinos.com/">ZorinOS Core</a> VM na VirtualBox.
+<ul><li><i>Veja <a rel="nofollow" class="external text" href="https://extr3metech.wordpress.com/2013/09/05/installing-zorin-os-7-in-virtual-box-screenshots">esse guia de instalação</a> para mais detalhes. O instalador do ZorinOS pode ser um pouco diferente que o mostrado, mas deve continuar a ser bem intuitivo.</i></li>
+<li><i>Se você não ver qualquer opção para sistemas operacionais de 64-bits na VirtualBox, veja <a rel="nofollow" class="external text" href="https://superuser.com/a/866963">como habilita-lo</a>.</i></li>
+<li><i>Quando criar o disco virtual, pelo menos 20GB é recomendado.</i></li></ul></li>
+<li><a rel="nofollow" class="external text" href="https://store.steampowered.com/about">Baixe o instalador do Steam</a> no VM e execute-o.</li>
+<li>Inicie o Steam para finalizar a instalação. Se nada acontecer, veja <a rel="nofollow" class="external text" href="https://askubuntu.com/questions/771032/steam-not-opening-in-ubuntu-16-04-lts">essas etapas extras</a> para conserta-lo.</li>
+<li>Instale o Stardew Valley pelo Steam.</li>
+<li><a href="/mediawiki/index.php?title=Modding:Player_Guide/Getting_Started&amp;action=edit&amp;redlink=1" class="new" title="Modding:Player Guide/Getting Started (página não existe)">Instale SMAPI</a>.</li>
+<li><i>(opcional)</i> Instale o <a rel="nofollow" class="external text" href="https://www.mono-project.com/"><samp>mono-complete</samp></a> e o <a rel="nofollow" class="external text" href="http://www.monodevelop.com/download/">MonoDevelop</a> na sua VM. Isso só é necessário se você quiser compilar separadamente para Linux/Mac. Ao instalar os arquivos <samp>.deb</samp>, use as instruções para <a rel="nofollow" class="external text" href="https://zorinos.com/help/install-apps/#deb-files">a versão Ubuntu mostrada aqui</a>. Se você encontrar erros, que o Linux tenha piedade da sua alma.</li>
+<li><i>(opcional)</i> Para desbloquear apenas o Mac OS: <a rel="nofollow" class="external text" href="https://www.insanelymac.com/forum/files/file/838-unlocker/">Virtual Machine Unlocker 2.1.1</a> para VmWare Workstation 11/12/14, VmWare Player 7/12/14, ou Fusion 7/8/10.  <b> Isso é necessário para inicializar o Mac OS em uma Maquina virtual (Virtual Machine).</b></li></ol></dd></dl>
+<dl><dt>Se o seu computador principal for Linux ou macOS:</dt>
+<dd>
+<ol><li>Instale <a rel="nofollow" class="external text" href="https://www.virtualbox.org/">VirtualBox</a>.</li>
+<li><a rel="nofollow" class="external text" href="http://www.macworld.co.uk/how-to/mac-software/run-windows-10-on-your-mac-using-virtualbox-3621650/">Crie uma VM com o windows</a>.</li>
+<li>Instale o Stardew Valley na sua VM (Virtual machine).</li>
+<li><a href="/mediawiki/index.php?title=Modding:Player_Guide/Getting_Started&amp;action=edit&amp;redlink=1" class="new" title="Modding:Player Guide/Getting Started (página não existe)">Instale o SMAPI</a>.</li>
+<li><i>(opcional)</i> Instale o <a rel="nofollow" class="external text" href="https://visualstudio.microsoft.com/vs/community/">Visual Studio Community</a> na sua VM. Isso só é necessário se você quiser compilar separadamente pelo windows.</li></ol></dd></dl>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="Consertando_alertas_de_compilação_comums"></span><span class="mw-headline" id="Consertando_alertas_de_compila.C3.A7.C3.A3o_comums">Consertando alertas de compilação comums</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<p>Após montar seu projeto, você pode ver avisos de compilação no <i>Visual Studio &gt; View &gt; Error List</i> ou <i>MonoDevelop &gt; View &gt; Pads &gt; Errors'. Aqui estão alguns deles.</i>
+</p>
+<h3 class="in-block"><span class="mw-headline" id="This_implicitly_converts...">This implicitly converts...</span></h3>
+<p>Exemplo do alerta: "<i>This implicitly converts '{0}' from Net{1} to {2}, but Net{1} has unintuitive implicit conversion rules. Consider comparing against the actual value instead to avoid bugs. See <a rel="nofollow" class="external free" href="https://smapi.io/buildmsg/avoid-implicit-net-field-cast">https://smapi.io/buildmsg/avoid-implicit-net-field-cast</a> for details.</i>"
+</p><p>Seu código está referenciando um <a href="/mediawiki/index.php?title=Modding:Modder_Guide/Game_Fundamentals&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/Game Fundamentals (página não existe)">net field</a>, na qual pode causar alguns bugs sutis. Esse campo tem uma propriedade não-net equivalente, Como <samp>monster.Health</samp> (<samp>int</samp>) Ao invés de <samp>monster.health</samp> (<samp>NetBool</samp>). Altere seu código para usar a propriedade sugerida ao invés disso.
+</p>
+<h3 class="in-block"><span id="FieldName_is_a_Net*_field..."></span><span class="mw-headline" id="FieldName_is_a_Net.2A_field...">FieldName is a Net* field...</span></h3>
+<p>Exemplo do alerta: "'<i>{0}' is a Net{1} field; consider using the {2} property instead. See <a rel="nofollow" class="external free" href="https://smapi.io/buildmsg/avoid-net-field">https://smapi.io/buildmsg/avoid-net-field</a> for details.</i>"
+</p><p>Seu código está referenciando um <a href="/mediawiki/index.php?title=Modding:Modder_Guide/Game_Fundamentals&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modder Guide/Game Fundamentals (página não existe)">net field</a>, na qual pode causar alguns bugs sutis. Você deveria acessar o valor base ao invés.
+</p>
+<ul>
+<li>Para um tipo de referencia (<i>ex.,</i> aquele que pode conter <samp>null</samp>), você pode usar a propriedade <samp>.Value</samp> (ou <samp>.FieldDict</samp> para um <samp>NetDictionary</samp>):
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">building</span><span class="p">.</span><span class="n">indoors</span><span class="p">.</span><span class="n">Value</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</pre></div>
+<p>Ou converta o valor antes da comparação:
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">GameLocation</span> <span class="n">indoors</span> <span class="p">=</span> <span class="n">building</span><span class="p">.</span><span class="n">indoors</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">indoors</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+   <span class="c1">// ...</span>
+</pre></div></li>
+<li>Para um tipo value (<i>i.e.,</i> aquele que não pode conter <samp>null</samp>), verifique se o pai é nulo (se necessário) e compare com <samp>.Value</samp>:
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">item</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">item</span><span class="p">.</span><span class="n">category</span><span class="p">.</span><span class="n">Value</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</pre></div></li>
+</ul>
+<h3 class="in-block"><span class="mw-headline" id="The_FieldName_field_is_obsolete...">The FieldName field is obsolete...</span></h3>
+<p>Exemplo de alerta: "<i>The 'Character.friendships' field is obsolete and should be replaced with 'friendshipData'. See <a rel="nofollow" class="external free" href="https://smapi.io/buildmsg/avoid-obsolete-field">https://smapi.io/buildmsg/avoid-obsolete-field</a> for details.</i>"
+</p><p>Você está referenciando um campo que não deverá mais ser usado. Use o nome do campo sugerido ao invés para conserta-lo.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="An_instance_of_analyzer_..._cannot_be_created">An instance of analyzer ... cannot be created</span></h3>
+<p>Atualize para o último <a rel="nofollow" class="external text" href="https://visualstudio.microsoft.com/vs/community/">Visual Studio</a>; o pacote NuGet usa um recurso recente que não está disponível em versões antigas.
+</p>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Outros_problemas">Outros problemas</span></h2><section class="mf-section-3 collapsible-block" id="mf-section-3">
+<h3 class="in-block"><span id="Não_consigo_definir_.NET_5"></span><span class="mw-headline" id="N.C3.A3o_consigo_definir_.NET_5">Não consigo definir .NET 5</span></h3>
+<p>Se a lista de frameworks tiver opções começando com...
+</p>
+<ul><li><i>.NET Framework</i>: você criou o tipo de projeto errado. Certifique-se de criar um projeto .NET 5 ao invés disso. (A nomenclatura é um pouco confusa.)</li>
+<li><i>.NET Core</i>, <i>.NET Standard</i>, ou <i>.NET 5+</i>: use .NET 5 para compatibilidade com o jogo. Se você não tiver essa opção, você poderá instalar o <a rel="nofollow" class="external text" href="https://dotnet.microsoft.com/en-us/download/dotnet/5.0">.NET 5 SDK</a> para adiciona-lo.</li></ul>
+<h3 class="in-block"><span id="Visual_Studio_não_consegue_detectar_o_jogo/SMAPI/MonoGame_DLLs"></span><span class="mw-headline" id="Visual_Studio_n.C3.A3o_consegue_detectar_o_jogo.2FSMAPI.2FMonoGame_DLLs">Visual Studio não consegue detectar o jogo/SMAPI/MonoGame DLLs</span></h3>
+<p><span id="Visual_Studio_can.27t_find_the_game.2FSMAPI.2FXNA_DLLs"></span>
+Soluções comuns:
+</p>
+<ul><li>Reinicie o Visual Studio.</li>
+<li>Certifique-se de que o jogo e o SMAPI estão instalados e funcionando corretamente.</li>
+<li>Verifique se há um erro tipo "<i>Failed to find game install path/Falha ao encontrar o caminho de instalação do jogo</i>". Se isso aparecer, Você precisa <a rel="nofollow" class="external text" href="https://smapi.io/package/custom-game-path">especificar o diretório do jogo</a>.</li>
+<li>Certifique-se de ter criado um projeto .NET 5, e <b>Não</b> um .NET Framework. (Veja <a href="/mediawiki/index.php?title=Modding:IDE_reference&amp;action=edit&amp;redlink=1" class="new" title="Modding:IDE reference (página não existe)">Como definir o framework alvo</a>; Se você ver as opções começando com .NET Framework, delete o projeto e crie um .NET 5 ao invés disso.)</li>
+<li>Tenha certeza de que selecionou .NET 5 (veja <a href="/mediawiki/index.php?title=Modding:IDE_reference&amp;action=edit&amp;redlink=1" class="new" title="Modding:IDE reference (página não existe)">como fazer</a>).</li></ul>
+<p>Se isso não o consertar:
+</p>
+<ol><li>Clique <i>Compilação &gt; Recompilar solução</i> (Visual Studio) ou <i>Build &gt; Rebuild All</i> (MonoDevelop).</li>
+<li>Verifique o painel de <i>Saída/Output</i> ou a lista de erros (Visual Studio), ou a aba de<i>Errors</i> (MonoDevelop).</li>
+<li>Se você não encontrou nada relevante, poste a <i>Saída/Output</i> na <a rel="nofollow" class="external text" href="https://hastebin.com">hastebin</a>, <a href="#Ask_for_help">peça por ajuda no discord</a>, e inclua o link da sua hastebin.</li></ol>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(4)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span class="mw-headline" id="Solicitar_ajuda">Solicitar ajuda</span></h2><section class="mf-section-4 collapsible-block" id="mf-section-4">
+<p>Veja a página <a href="/Modifica%C3%A7%C3%B5es:Ajuda" title="Modificações:Ajuda">Modificações:Ajuda</a> para saber como solicitar ajuda!
+</p>
+
+
+
+
+</section></div></div><div class="printfooter">
+Obtida de "<a dir="ltr" href="https://pt.stardewvalleywiki.com/mediawiki/index.php?title=Modificações:Guia_do_Modder/Teste_e_Solução_de_Problemas&amp;oldid=32079">https://pt.stardewvalleywiki.com/mediawiki/index.php?title=Modificações:Guia_do_Modder/Teste_e_Solução_de_Problemas&amp;oldid=32079</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="/Especial:History/Modifica%C3%A7%C3%B5es:Guia_do_Modder/Teste_e_Solu%C3%A7%C3%A3o_de_Problemas"
+				data-user-name="MrsCupc4ke"
+				data-user-gender="unknown"
+				data-timestamp="1714227621">
+				<span>Última edição a 27 de abril de 2024, às 14h20min</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Conteúdo disponibilizado nos termos da <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>, salvo indicação em contrário.</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> Esta página foi editada pela última vez às 14h20min de 27 de abril de 2024.</li><li id="footer-info-copyright">Conteúdo disponibilizado nos termos da <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>, salvo indicação em contrário.</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:Pol%C3%ADtica_de_privacidade" title="Stardew Valley Wiki:Política de privacidade">Política de privacidade</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:Sobre" title="Stardew Valley Wiki:Sobre">Sobre a wiki Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:Aviso_geral" title="Stardew Valley Wiki:Aviso geral">Exoneração de responsabilidade</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//pt.stardewvalleywiki.com/mediawiki/index.php?title=Modifica%C3%A7%C3%B5es:Guia_do_Modder/Teste_e_Solu%C3%A7%C3%A3o_de_Problemas&amp;mobileaction=toggle_view_desktop">Versão desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.040","walltime":"0.047","ppvisitednodes":{"value":108,"limit":1000000},"postexpandincludesize":{"value":3327,"limit":2097152},"templateargumentsize":{"value":44,"limit":2097152},"expansiondepth":{"value":5,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":2527,"limit":5000000},"timingprofile":["100.00%   14.023      1 -total"," 85.74%   12.023      1 Predefinição:Traduzir"," 68.80%    9.648      1 Predefinição:Quote"," 13.77%    1.931      1 Modificações:Guia_do_Modder/cabeçalho"]},"cachereport":{"timestamp":"20250329201306","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":127});});</script>		</body>
+		</html>
+		
+

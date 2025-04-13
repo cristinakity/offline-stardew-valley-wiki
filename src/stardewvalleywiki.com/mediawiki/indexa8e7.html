@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8"/>
 <title>Module:Calcsellprice - Stardew Valley Wiki</title>
-<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"fc6fe538cd6eb584b0412d8c","wgCSPNonce":!1,"wgCanonicalNamespace":"Module","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":828,"wgPageName":"Module:Calcsellprice","wgTitle":"Calcsellprice","wgCurRevisionId":171001,"wgRevisionId":171001,"wgArticleId":14190,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Modules"],"wgPageContentLanguage":"en","wgPageContentModel":"Scribunto","wgRelevantPageName":"Module:Calcsellprice","wgRelevantArticleId":14190,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search"
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"Module","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":828,"wgPageName":"Module:Calcsellprice","wgTitle":"Calcsellprice","wgCurRevisionId":171001,"wgRevisionId":171001,"wgArticleId":14190,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Modules"],"wgPageContentLanguage":"en","wgPageContentModel":"Scribunto","wgRelevantPageName":"Module:Calcsellprice","wgRelevantArticleId":14190,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search"
 :!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgCargoMapClusteringMinimum":80,"wgCargoMonthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgCargoWeekDays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"wgCargoWeekDaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","skins.vector.legacy.js"];</script>
 <script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
 });});</script>
@@ -28,8 +28,6 @@
 <meta property="og:url" content="https://stardewvalleywiki.com/Module:Calcsellprice"/>
 <meta property="og:description" content="This module calculates the sell price(s) for a sellable item. It can return a raw, unformatted number to be used as the data-sort-value in a table, or a number formatted appropriately for the language where it&#039;s used, including the letter(s) / character(s) for &quot;gold&quot;, as used in the game."/>
 <meta property="og:image" content="https://stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
-<meta property="article:modified_time" content="2024-05-18T18:34:04Z"/>
-<meta property="article:published_time" content="2024-05-18T18:34:04Z"/>
 <meta property="twitter:site" content="@stardewwiki"/>
 <meta property="twitter:title" content="Module:Calcsellprice - Stardew Valley Wiki"/>
 <meta property="twitter:description" content="This module calculates the sell price(s) for a sellable item. It can return a raw, unformatted number to be used as the data-sort-value in a table, or a number formatted appropriately for the language where it&#039;s used, including the letter(s) / character(s) for &quot;gold&quot;, as used in the game."/>
@@ -66,12 +64,12 @@
 </div>
 <!-- 
 NewPP limit report
-Cached time: 20240607211304
+Cached time: 20240610111039
 Cache expiry: 86400
 Dynamic content: false
 Complications: []
-CPU time usage: 0.005 seconds
-Real time usage: 0.007 seconds
+CPU time usage: 0.003 seconds
+Real time usage: 0.005 seconds
 Preprocessor visited node count: 17/1000000
 Post‐expand include size: 1280/2097152 bytes
 Template argument size: 0/2097152 bytes
@@ -82,8 +80,8 @@ Unstrip post‐expand size: 0/5000000 bytes
 -->
 <!--
 Transclusion expansion time report (%,ms,calls,template)
-100.00%    2.205      1 Module:Calcsellprice/doc
-100.00%    2.205      1 -total
+100.00%    1.177      1 Module:Calcsellprice/doc
+100.00%    1.177      1 -total
 -->
 <div class="mw-highlight"><pre><span></span><span class="c1">--Assumes baseprice is always an integer</span>
 <span class="c1">--Adds the language-appropriate letters/characters for &#39;gold&#39;</span>
@@ -381,7 +379,7 @@ gtag('js', new Date());
 gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
 </script>
 
-<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.005","walltime":"0.007","ppvisitednodes":{"value":17,"limit":1000000},"postexpandincludesize":{"value":1280,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":3,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    2.205      1 Module:Calcsellprice/doc","100.00%    2.205      1 -total"]},"cachereport":{"timestamp":"20240607211304","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":162});});</script></body>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.003","walltime":"0.005","ppvisitednodes":{"value":17,"limit":1000000},"postexpandincludesize":{"value":1280,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":3,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    1.177      1 Module:Calcsellprice/doc","100.00%    1.177      1 -total"]},"cachereport":{"timestamp":"20240610111039","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":127});});</script></body>
 
 </html>
 

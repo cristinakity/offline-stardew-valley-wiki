@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>模组:迁移至游戏本体1.6.9 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"模组","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"模组:迁移至游戏本体1.6.9","wgTitle":"迁移至游戏本体1.6.9","wgCurRevisionId":51268,"wgRevisionId":51268,"wgArticleId":3404,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"zh","wgPageContentModel":"wikitext","wgRelevantPageName":"模组:迁移至游戏本体1.6.9","wgRelevantArticleId":3404,"wgUserVariant":"zh","wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFMode":"stable","wgMFAmc":!1,
+"wgMFAmcOutreachActive":!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgMinervaPermissions":{"watch":!0,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!0},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":
+"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","skins.minerva.options","skins.minerva.scripts","mobile.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=ext.pygments%7Cmediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="/mediawiki/load.php?lang=zh&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="←目录"/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (zh)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//zh.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="alternate" hreflang="zh" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh"/>
+<link rel="alternate" hreflang="zh-Hans" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh-hans"/>
+<link rel="alternate" hreflang="zh-Hant" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh-hant"/>
+<link rel="alternate" hreflang="zh-Hans-CN" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh-cn"/>
+<link rel="alternate" hreflang="zh-Hant-HK" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh-hk"/>
+<link rel="alternate" hreflang="zh-Hant-MO" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh-mo"/>
+<link rel="alternate" hreflang="zh-Hans-MY" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh-my"/>
+<link rel="alternate" hreflang="zh-Hans-SG" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh-sg"/>
+<link rel="alternate" hreflang="zh-Hant-TW" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;variant=zh-tw"/>
+<link rel="alternate" hreflang="x-default" href="/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="模组:迁移至游戏本体1.6.9 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9"/>
+<meta property="og:description" content="←目录"/>
+<meta property="og:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="模组:迁移至游戏本体1.6.9 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←目录"/>
+<meta property="twitter:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3\u6e38\u620f\u672c\u4f531.6.9 - Stardew Valley Wiki","headline":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3\u6e38\u620f\u672c\u4f531.6.9 - Stardew Valley Wiki","mainEntityOfPage":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3\u6e38\u620f\u672c\u4f531.6.9","identifier":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9","url":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9","description":"\u2190\u76ee\u5f55","dateModified":"2025-03-23T14:41:14Z","datePublished":"2025-03-23T14:41:14Z","image":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-模组_迁移至游戏本体1_6_9 rootpage-模组_迁移至游戏本体1_6_9 stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="打开主菜单" data-event-name="ui.mainmenu">打开主菜单</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>首页</span></a>
+			</li>
+			<li class="">
+			    <a href="/Special:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>随机</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>登录</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="/mediawiki/index.php?title=Special:%E7%A7%BB%E5%8A%A8%E7%89%88%E9%80%89%E9%A1%B9&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>设置</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" class="" data-event-name=""><span>关于Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" class="" data-event-name=""><span>免责声明</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="搜索Stardew Valley Wiki" aria-label="搜索Stardew Valley Wiki"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="用户导航">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">搜索</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">模组:迁移至游戏本体1.6.9</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="/Special:%E7%A7%BB%E5%8A%A8%E7%89%88%E8%AF%AD%E8%A8%80/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-language-base20 mw-ui-icon-with-label-desktop language-selector"
+					data-mw="interface"
+					data-event-name="menu.languages" role="button" title="语言">语言</a>
+		</li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch"
+					data-mw="interface"
+					data-event-name="menu.watch" role="button" title="监视">监视</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-editLock-base20 mw-ui-icon-with-label-desktop"
+					data-mw="interface"
+					data-event-name="menu.edit" role="button" title="编辑此页面的序言章节">编辑</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0"><p>←<a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95" title="模组:目录">目录</a>
+</p><p><br>
+</p>
+<div style="border: 1px solid orange; border-left: 1em solid orange; padding: 0.5em 1em; border-radius: 5px;">
+<p><b>本页面仅面向模组开发者。模组玩家请参见<a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E7%BB%84%E5%85%BC%E5%AE%B9%E6%80%A7" title="模组:模组兼容性">模组:模组兼容性</a>。</b>
+</p>
+</div>
+<p><br>
+</p><p>此页面解释如何升级您的模组以与<a href="/%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2#1.6.9" title="版本历史">星露谷物语 1.6.9</a>兼容，并记录一些更改和新功能。另请参阅<a href="/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6" title="模组:迁移至游戏本体1.6"><b>迁移至游戏本体 1.6</b></a>。
+</p><p><br>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="zh" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E9.97.AE.E7.AD.94"><span class="tocnumber">1</span> <span class="toctext">问答</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E8.AF.A5.E7.89.88.E6.9C.AC.E6.9C.89.E4.BD.95.E5.8F.98.E5.8C.96"><span class="tocnumber">1.1</span> <span class="toctext">该版本有何变化</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E8.BF.99.E6.98.AF.E4.B8.80.E6.AC.A1.E5.B7.A8.E5.8F.98.E5.90.97"><span class="tocnumber">1.2</span> <span class="toctext">这是一次巨变吗</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E5.A6.82.E4.BD.95.E5.8D.87.E7.BA.A7.E6.82.A8.E7.9A.84.E6.A8.A1.E7.BB.84"><span class="tocnumber">1.3</span> <span class="toctext">如何升级您的模组</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#.E9.92.88.E5.AF.B9.E6.89.80.E6.9C.89.E6.A8.A1.E7.BB.84.E7.9A.84.E6.9B.B4.E6.94.B9"><span class="tocnumber">2</span> <span class="toctext">针对所有模组的更改</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#.E9.81.97.E5.A4.B1.E7.89.A9.E5.93.81.E5.95.86.E5.BA.97"><span class="tocnumber">2.1</span> <span class="toctext">遗失物品商店</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E5.AF.B9.E8.AF.9D.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.2</span> <span class="toctext">对话更改</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E6.B8.B8.E6.88.8F.E7.8A.B6.E6.80.81.E6.9F.A5.E8.AF.A2.E5.8F.98.E5.8C.96"><span class="tocnumber">2.3</span> <span class="toctext">游戏状态查询变化</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E8.B0.83.E8.AF.95.E5.91.BD.E4.BB.A4.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.4</span> <span class="toctext">调试命令更改</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E7.BF.BB.E8.AF.91.E5.8F.98.E5.8C.96"><span class="tocnumber">2.5</span> <span class="toctext">翻译变化</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E5.BB.BA.E7.AD.91.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.6</span> <span class="toctext">建筑数据更改</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.E5.8A.A8.E7.89.A9.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.7</span> <span class="toctext">动物数据更改</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.E9.B1.BC.E5.A1.98.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.8</span> <span class="toctext">鱼塘数据更改</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#.E7.89.A9.E5.93.81.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.9</span> <span class="toctext">物品数据更改</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Data.2FObject"><span class="tocnumber">2.9.1</span> <span class="toctext">Data/Object</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#.E7.89.A9.E5.93.81.E7.94.9F.E6.88.90.E5.AD.97.E6.AE.B5"><span class="tocnumber">2.9.2</span> <span class="toctext">物品生成字段</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#.E5.85.B6.E4.BB.96"><span class="tocnumber">2.9.3</span> <span class="toctext">其他</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#.E6.9C.BA.E5.99.A8.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.10</span> <span class="toctext">机器数据更改</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#.E5.9C.B0.E5.9B.BE.E5.B1.9E.E6.80.A7.E5.8F.98.E5.8C.96"><span class="tocnumber">2.11</span> <span class="toctext">地图属性变化</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#.E5.9C.B0.E5.9B.BE.E5.B1.9E.E6.80.A7.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.12</span> <span class="toctext">地图属性更改</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#.E5.9C.B0.E5.9B.BE.E5.9C.B0.E5.9D.97.E7.B4.A2.E5.BC.95.E9.80.BB.E8.BE.91.E7.8E.B0.E5.9C.A8.E6.9B.B4.E5.AE.89.E5.85.A8"><span class="tocnumber">2.13</span> <span class="toctext">地图地块索引逻辑现在更安全</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#.E5.AE.A0.E7.89.A9.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.14</span> <span class="toctext">宠物数据更改</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#.E6.A8.A1.E6.9D.BF.E5.AD.97.E7.AC.A6.E4.B8.B2.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.15</span> <span class="toctext">模板字符串更改</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#.E5.B7.A5.E5.85.B7.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.16</span> <span class="toctext">工具数据更改</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#.E8.A7.A6.E5.8F.91.E5.8A.A8.E4.BD.9C.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.17</span> <span class="toctext">触发动作更改</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#.E5.85.B6.E4.BB.96.E5.8F.98.E5.8C.96"><span class="tocnumber">2.18</span> <span class="toctext">其他变化</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#C.23.E6.A8.A1.E7.BB.84.E6.9B.B4.E6.94.B9"><span class="tocnumber">3</span> <span class="toctext">C#模组更改</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#.E7.8E.A9.E5.AE.B6.E6.9B.B4.E6.94.B9"><span class="tocnumber">3.1</span> <span class="toctext">玩家更改</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#.E8.81.8A.E5.A4.A9.E5.91.BD.E4.BB.A4API"><span class="tocnumber">3.2</span> <span class="toctext">聊天命令API</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#.E5.B1.8F.E5.B9.95.E9.98.85.E8.AF.BB.E5.99.A8.E5.8F.98.E5.8C.96"><span class="tocnumber">3.3</span> <span class="toctext">屏幕阅读器变化</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#.E5.85.89.E6.BA.90.E7.B3.BB.E7.BB.9F.E6.9B.B4.E6.96.B0"><span class="tocnumber">3.4</span> <span class="toctext">光源系统更新</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#.E4.BB.BB.E5.8A.A1.E4.BA.8B.E4.BB.B6.E6.9B.B4.E6.96.B0"><span class="tocnumber">3.5</span> <span class="toctext">任务事件更新</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#.E6.96.B0.E7.9A.84.E6.89.A9.E5.B1.95.E6.96.B9.E6.B3.95"><span class="tocnumber">3.6</span> <span class="toctext">新的扩展方法</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#SyntaxAbstractor"><span class="tocnumber">3.7</span> <span class="toctext">SyntaxAbstractor</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#TranslationValidator"><span class="tocnumber">3.8</span> <span class="toctext">TranslationValidator</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#.E5.B7.A5.E5.85.B7.E5.AD.97.E6.AE.B5.E5.92.8C.E6.96.B9.E6.B3.95"><span class="tocnumber">3.9</span> <span class="toctext">工具字段和方法</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#.E6.96.B0.E5.B8.B8.E9.87.8F"><span class="tocnumber">3.10</span> <span class="toctext">新常量</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#ForEachItem.E6.9B.B4.E6.94.B9"><span class="tocnumber">3.11</span> <span class="toctext">ForEachItem更改</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#OutputMethod.E5.9C.A8Data.2FMachines.E4.B8.AD.E7.9A.84.E6.9B.B4.E6.94.B9"><span class="tocnumber">3.12</span> <span class="toctext">OutputMethod在Data/Machines中的更改</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#.E5.85.B6.E4.BB.96.E6.9B.B4.E6.94.B9"><span class="tocnumber">3.13</span> <span class="toctext">其他更改</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-41"><a href="#SMAPI.E5.92.8C.E5.A4.96.E9.83.A8.E5.B7.A5.E5.85.B7.E7.9A.84.E6.9B.B4.E6.94.B9"><span class="tocnumber">4</span> <span class="toctext">SMAPI和外部工具的更改</span></a>
+<ul>
+<li class="toclevel-2 tocsection-42"><a href="#.E5.86.85.E5.AE.B9.E5.93.88.E5.B8.8C"><span class="tocnumber">4.1</span> <span class="toctext">内容哈希</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-43"><a href="#.E8.AF.91.E5.90.8D.E6.9B.B4.E6.94.B9"><span class="tocnumber">5</span> <span class="toctext">译名更改</span></a>
+<ul>
+<li class="toclevel-2 tocsection-44"><a href="#.E5.AF.B9XNB.E7.9A.84.E5.BD.B1.E5.93.8D"><span class="tocnumber">5.1</span> <span class="toctext">对XNB的影响</span></a>
+<ul>
+<li class="toclevel-3 tocsection-45"><a href="#.E6.A6.82.E8.A7.88"><span class="tocnumber">5.1.1</span> <span class="toctext">概览</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-46"><a href="#.E7.B4.A0.E6.9D.90.E6.9B.B4.E6.94.B9"><span class="tocnumber">5.2</span> <span class="toctext">素材更改</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#.E7.A7.BB.E9.99.A4.E6.97.A0.E7.94.A8.E7.B4.A0.E6.9D.90"><span class="tocnumber">5.3</span> <span class="toctext">移除无用素材</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-48"><a href="#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85"><span class="tocnumber">6</span> <span class="toctext">另请参阅</span></a></li>
+</ul>
+</div>
+
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="问答"></span><span class="mw-headline" id=".E9.97.AE.E7.AD.94">问答</span></h2><section class="mf-section-1 collapsible-block" id="mf-section-1">
+<h3 class="in-block"><span id="该版本有何变化"></span><span class="mw-headline" id=".E8.AF.A5.E7.89.88.E6.9C.AC.E6.9C.89.E4.BD.95.E5.8F.98.E5.8C.96">该版本有何变化</span></h3>
+<p>星露谷 1.6.9 包括了许多 1.6 更新后的小更改。
+</p>
+<h3 class="in-block"><span id="这是一次巨变吗"></span><span class="mw-headline" id=".E8.BF.99.E6.98.AF.E4.B8.80.E6.AC.A1.E5.B7.A8.E5.8F.98.E5.90.97">这是一次巨变吗</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="/File:SMAPI_compatibility.png" class="image"><noscript><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/300px-SMAPI_compatibility.png" decoding="async" width="300" height="186" class="thumbimage"></noscript><span class="lazy-image-placeholder" style="width: 300px;height: 186px;" data-src="https://stardewvalleywiki.com/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/300px-SMAPI_compatibility.png" data-alt="" data-width="300" data-height="186" data-class="thumbimage"> </span></a>  <div class="thumbcaption"><div class="magnify"><a href="/File:SMAPI_compatibility.png" class="internal" title="放大"></a></div>SMAPI 兼容性走势图。星露谷 1.6.9 的发布在图中体现为一个较小的下降。</div></div></div>
+<p>不是。大部分模组应该不受 1.6.9 变化的影响，且 SMAPI 会自动进行相应的重写。
+</p>
+<h3 class="in-block"><span id="如何升级您的模组"></span><span class="mw-headline" id=".E5.A6.82.E4.BD.95.E5.8D.87.E7.BA.A7.E6.82.A8.E7.9A.84.E6.A8.A1.E7.BB.84">如何升级您的模组</span></h3>
+<p>大多数模组不需要任何更改。下面是一个将模组升级到 1.6.9 的“快速上手”指南：
+</p>
+<dl><dt>对于 C# 模组：</dt>
+<dd>
+<ol><li>若您尚未迁移到游戏本体 1.6 版本，请先<a href="/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6" title="模组:迁移至游戏本体1.6">升级到 1.6.0 版本</a>。</li>
+<li>重新构建解决方案。</li>
+<li>修复任何构建错误。您可以在此页面中搜索相关信息。</li>
+<li>测试，以确保您的模组工作正常。</li>
+<li>快速浏览下方介绍的更改，并查阅那些可能涉及您的模组的章节。</li></ol></dd></dl>
+<dl><dt>对于 <a href="/%E6%A8%A1%E7%BB%84:Content_Patcher" title="模组:Content Patcher">Content Patcher</a> 内容包</dt>
+<dd>
+<ol><li>若您还没有升级，请先按照 <a rel="nofollow" class="external text" href="https://smapi.io/cp-migrate">Content Patcher migration guide</a> 将您的内容包升级到 <code>"Format": "2.5.0"</code>。<br><small><b>不要跳过这步！</b> 如果您没有更新清单文件，Content Patcher 会假定您的内容包是早于 1.6 版本的，如果您已经升级，这就会导致令人困惑的错误。</small></li>
+<li>快速浏览下方介绍的更改，并查阅那些可能设计您的模组的章节。</li></ol></dd></dl>
+<dl><dt>对于使用其他框架的内容包：</dt>
+<dd>参见相应框架模组的文档。如果框架模组自身更新了，您往往不需要升级相应内容包。</dd></dl>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="针对所有模组的更改"></span><span class="mw-headline" id=".E9.92.88.E5.AF.B9.E6.89.80.E6.9C.89.E6.A8.A1.E7.BB.84.E7.9A.84.E6.9B.B4.E6.94.B9">针对所有模组的更改</span></h2><section class="mf-section-2 collapsible-block" id="mf-section-2">
+<h3 class="in-block"><span id="遗失物品商店"></span><span class="mw-headline" id=".E9.81.97.E5.A4.B1.E7.89.A9.E5.93.81.E5.95.86.E5.BA.97">遗失物品商店</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E9%81%97%E5%A4%B1%E7%89%A9%E5%93%81%E5%95%86%E5%BA%97" title="模组:遗失物品商店">模组:遗失物品商店</a>。此小节主要用于叙述更新内容。</div>
+<p>1.6.9 在秘密森林中添加了一个隐藏商店，出售您已经解锁但不再拥有的特殊物品。例如，<a href="/%E6%B1%BD%E6%B0%B4%E6%9C%BA" title="汽水机">汽水机</a>是从 Joja 超市竣工事件中获得的；如果您丢失了它，它将永远消失。所有物品都以固定的 <span style="display: none;">data-sort-value="10000"&gt;</span><span class="no-wrap"><noscript><img alt="Gold.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" decoding="async" width="18" height="18"></noscript><span class="lazy-image-placeholder" style="width: 18px;height: 18px;" data-src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" data-alt="Gold.png" data-width="18" data-height="18"> </span>10,000金</span> 价格出售。
+</p><p>商店中可能出现的物品列在新的 <samp>Data/LostItemsShop</samp> 素材中，该素材是包含如下字段的数据模型所组成的列表：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Id</samp>
+</td>
+<td>此条目的<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E5.94.AF.E4.B8.80.E5.AD.97.E7.AC.A6.E4.B8.B2ID" title="模组:公共数据字段">唯一字符串ID</a>。
+</td></tr>
+<tr>
+<td><samp>ItemId</samp>
+</td>
+<td>要添加到商店的物品的限定性物品 ID。
+</td></tr>
+<tr>
+<td><samp>RequireMailReceived</samp><br><samp>RequireEventSeen</samp>
+</td>
+<td>将此物品添加到商店的要求。
+<p>您可以指定 <samp>RequireMailReceived</samp>（玩家已收到的<a href="/%E6%A8%A1%E7%BB%84:%E4%BF%A1%E4%BB%B6%E6%95%B0%E6%8D%AE#.E4.BF.A1.E4.BB.B6.E6.A0.87.E8.AF.86" title="模组:信件数据">信件标识</a>）或 <samp>RequireEventSeen</samp>（玩家已看到的<a href="/%E6%A8%A1%E7%BB%84:%E4%BA%8B%E4%BB%B6%E6%95%B0%E6%8D%AE" title="模组:事件数据">事件 ID</a>）。如果您同时指定两者，则仅使用<samp>RequireMailReceived</samp>。
+</p><p>添加到商店的物品数量是匹配此字段的玩家数量减去世界中存在的物品数量。例如，如果三个玩家曾经找到过<a href="/%E3%80%8A%E5%B0%8F%E8%88%B9%E3%80%8B" title="《小船》">《小船》</a>，但世界上只存在一幅《小船》，则商店将出售两幅《小船》。
+</p>
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="对话更改"></span><span class="mw-headline" id=".E5.AF.B9.E8.AF.9D.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E5%AF%B9%E8%AF%9D" title="模组:对话">对话</a>更改</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E5%AF%B9%E8%AF%9D" title="模组:对话">模组:对话</a>。此小节主要用于叙述更新内容。</div>
+<ul>
+<li>1.6.9 添加了几个新的对话键：
+<table class="wikitable">
+
+<tbody><tr>
+<th>素材
+</th>
+<th>键格式
+</th>
+<th>描述
+</th></tr>
+<tr>
+<td rowspan="8"><samp>Characters/Dialogue/&lt;name&gt;</samp>
+</td>
+<td><samp>AcceptBirthdayGift_<code title="必需字段 'taste'">&lt;taste&gt;</code>_<code title="必需字段 'context tag'">&lt;context tag&gt;</code></samp>
+</td>
+<td>（可选）当 NPC 收到具有指定礼物喜好和<a href="/%E6%A8%A1%E7%BB%84:%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%87%E7%AD%BE" title="模组:上下文标签">上下文标签</a>的生日礼物时显示此对话。请参阅 <samp>AcceptGift_<code title="必需字段 'taste'">&lt;taste&gt;</code></samp> 以获取可用的礼物喜好。
+<p>此对话键的优先级高于 <samp>AcceptBirthdayGift_<code title="必需字段 'context tag'">&lt;context tag&gt;</code></samp>。
+</p>
+</td></tr>
+<tr>
+<td><samp>AcceptGift_<code title="必需字段 'taste'">&lt;taste&gt;</code>_<code title="必需字段 'context tag'">&lt;context tag&gt;</code></samp>
+</td>
+<td>（可选）当 NPC 收到具有指定礼物喜好和<a href="/%E6%A8%A1%E7%BB%84:%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%87%E7%AD%BE" title="模组:上下文标签">上下文标签</a>的非生日礼物时显示此对话。请参阅 <samp>AcceptGift_<code title="必需字段 'taste'">&lt;taste&gt;</code></samp> 以获取可用的礼物喜好。
+<p>此对话键的优先级高于 <samp>AcceptBirthdayGift_<code title="必需字段 'context tag'">&lt;context tag&gt;</code></samp>。
+</p>
+</td></tr>
+<tr>
+<td><samp>AcceptGift_<code title="必需字段 'taste'">&lt;taste&gt;</code></samp>
+</td>
+<td>（可选）当 NPC 收到具有指定礼物喜好的礼物时显示此对话。<code title="必需字段 'taste'">&lt;taste&gt;</code> 可以是特定的喜好等级（<samp>Loved</samp>、<samp>Liked</samp>、<samp>Neutral</samp>、<samp>Disliked</samp> 或 <samp>Hated</samp>），<samp>Positive</samp>（普通/喜欢/最爱）或<samp>Negative</samp>（不喜欢/讨厌）。
+<p>此对话键的优先级低于所有的 <samp>AcceptGift_*</samp> 键。
+</p>
+</td></tr>
+<tr>
+<td><samp>AcceptGift</samp>
+</td>
+<td>（可选）当 NPC 收到非生日礼物时显示此对话（如果没有找到其他 <samp>AcceptGift_*</samp> 对话键）。
+</td></tr>
+<tr>
+<td><samp>RejectBouquet_AlreadyAccepted_Engaged</samp><br><samp>RejectBouquet_AlreadyAccepted_Married</samp><br><samp>RejectBouquet_AlreadyAccepted</samp>
+</td>
+<td>（可选）当玩家向已经接受过花束的 NPC 赠送花束时显示。
+</td></tr>
+<tr>
+<td><samp>RejectMermaidPendant_AlreadyAccepted_Engaged</samp><br><samp>RejectMermaidPendant_AlreadyAccepted_Married</samp><br><samp>RejectMermaidPendant_AlreadyAccepted</samp>
+</td>
+<td>（可选）当玩家向已经接受过美人鱼吊坠的 NPC 赠送美人鱼吊坠时显示。
+</td></tr>
+<tr>
+<td><samp>RejectRoommateProposal_AlreadyAccepted</samp><br><samp>RejectRoommateProposal_NpcWithSomeoneElse</samp><br><samp>RejectRoommateProposal_PlayerWithSomeoneElse</samp><br><samp>RejectRoommateProposal_LowFriendship</samp><br><samp>RejectRoommateProposal_SmallHouse</samp>
+</td>
+<td>（可选）当 NPC 拒绝室友提议时显示，因为玩家不满足特定要求：
+<ul><li><samp>AlreadyAccepted</samp>：NPC已经是该玩家的室友。</li>
+<li><samp>NpcWithSomeoneElse</samp>：NPC已经是其他玩家的室友。</li>
+<li><samp>PlayerWithSomeoneElse</samp>：提出提议的玩家已经有室友。</li>
+<li><samp>LowFriendship</samp>：玩家与NPC的<a href="/%E5%8F%8B%E8%B0%8A" title="友谊">好感度</a>未达到 10+ 心。</li>
+<li><samp>SmallHouse</samp>：玩家尚未升级房屋。</li></ul>
+</td></tr>
+<tr>
+<td><samp>RejectRoommateProposal</samp>
+</td>
+<td>（可选）当 NPC 拒绝室友提议时显示（如果没有找到更具体的 <samp>RejectRoommateProposal_*</samp> 对话）。
+</td></tr></tbody></table></li>
+<li>现在使用 <samp>$y</samp> 对话命令时可以转义星号。例如， <samp>A*B</samp> 将像以前一样将 <samp>A</samp> 和 <samp>B</samp> 分成单独的对话框，但 <samp>A**B</samp> 将显示为单个星号。</li>
+</ul>
+<h3 class="in-block"><span id="游戏状态查询变化"></span><span class="mw-headline" id=".E6.B8.B8.E6.88.8F.E7.8A.B6.E6.80.81.E6.9F.A5.E8.AF.A2.E5.8F.98.E5.8C.96"><a href="/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" title="模组:游戏状态查询">游戏状态查询</a>变化</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" title="模组:游戏状态查询">模组:游戏状态查询</a>。此小节主要用于叙述更新内容。</div>
+<ul>
+<li>1.6.9 添加了一些新的游戏状态查询：
+<table class="wikitable">
+
+<tbody><tr>
+<th>条件
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>DATE_RANGE <code title="必需字段 'min season'">&lt;min season&gt;</code> <code title="必需字段 'min day'">&lt;min day&gt;</code> <code title="必需字段 'min year'">&lt;min year&gt;</code> <code title="可选字段 'max season'">[max season]</code> <code title="可选字段 'max day'">[max day]</code> <code title="可选字段 'max year'">[max year]</code></samp>
+</td>
+<td>日历日期是否在指定范围内（含端点）。如果省略最大值，则默认为冬季（季节）、28（天）和无限（年）。
+<p>例如，判断当前事件是否为第一年的夏季 15 日到冬季 15 日：
+</p>
+<pre>DATE_RANGE Summer 15 1 Winter 15 1</pre>
+<p>或秋季 15 日及以后：
+</p>
+<pre>DATE_RANGE Fall 15 1</pre>
+</td></tr>
+<tr>
+<td><samp>PLAYER_BASE_COMBAT_LEVEL</samp><br><samp>PLAYER_BASE_FARMING_LEVEL</samp><br><samp>PLAYER_BASE_FISHING_LEVEL</samp><br><samp>PLAYER_BASE_FORAGING_LEVEL</samp><br><samp>PLAYER_BASE_LUCK_LEVEL</samp><br><samp>PLAYER_BASE_MINING_LEVEL</samp>
+</td>
+<td>与非 <samp>BASE</samp> 查询相同，但忽略改变技能等级的增益效果。
+</td></tr>
+<tr>
+<td><samp>PLAYER_HAS_TRINKET <code title="必需字段 'player'">&lt;player&gt;</code>+ <code title="必需字段 'trinket ID'">&lt;trinket ID&gt;</code>+</samp>
+</td>
+<td><a href="#.E7.9B.AE.E6.A0.87.E7.8E.A9.E5.AE.B6">目标玩家</a>是否装备了列出的<a href="/%E9%A5%B0%E5%93%81" title="饰品">饰品</a>之一。每个 ID 可以是限定性或非限定性的物品ID。
+</td></tr></tbody></table></li>
+<li>现在更多查询支持多个值，例如<code>PLAYER_HAS_CAUGHT_FISH Current 128 139</code>表示“玩家是否抓到了河豚<b>或</b>鲑鱼”。此更改涉及 <samp>PLAYER_HAS_BUFF</samp>、<samp>PLAYER_HAS_CAUGHT_FISH</samp>、<samp>PLAYER_HAS_CONVERSATION_TOPIC</samp>、<samp>PLAYER_HAS_DIALOGUE_ANSWER</samp>、<samp>PLAYER_HAS_HEARD_SONG</samp>、<samp>PLAYER_HAS_RUN_TRIGGER_ACTION</samp>、<samp>PLAYER_HAS_SEEN_EVENT</samp>、<samp>PLAYER_SPECIAL_ORDER_ACTIVE</samp>、<samp>PLAYER_SPECIAL_ORDER_RULE_ACTIVE</samp> 和 <samp>PLAYER_SPECIAL_ORDER_COMPLETE</samp>。</li>
+</ul>
+<h3 class="in-block"><span id="调试命令更改"></span><span class="mw-headline" id=".E8.B0.83.E8.AF.95.E5.91.BD.E4.BB.A4.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%91%BD%E4%BB%A4" title="模组:控制台命令">调试命令</a>更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%91%BD%E4%BB%A4" title="模组:控制台命令">模组:控制台命令</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<ul>
+<li>现在所有调试命令都会验证其参数。</li>
+<li>优化了很多情况下的异常处理。</li>
+<li>1.6.9 新增了一些调试命令：
+<table class="wikitable">
+
+<tbody><tr>
+<th>命令
+</th>
+<th>描述
+</th></tr>
+<tr>
+<td><samp>listLights</samp>
+</td>
+<td>显示所有当前活跃的光源的调试信息。
+</td></tr>
+<tr>
+<td><samp>logWallAndFloorWarnings</samp>
+</td>
+<td>在将墙纸和地板应用到农舍或其他可装饰地点时开启调试日志，以便于排查故障。您通常应当在加载存档前使用此命令。
+</td></tr>
+<tr>
+<td><samp>netJoin <code title="必需字段 'IP'">&lt;IP&gt;</code></samp>
+</td>
+<td>连接到指定 IP 地址。
+<p>这取代了旧版的 <samp>netJoin</samp> 命令（旧版中只能打开联机菜单）。
+</p>
+</td></tr>
+<tr>
+<td><samp>performTitleAction <code title="必需字段 'button'">&lt;button&gt;</code></samp><br><samp>pta <code title="必需字段 'button'">&lt;button&gt;</code></samp>
+</td>
+<td>在标题界面时，跳转到指定的子菜单。
+</td></tr>
+<tr>
+<td><samp>toggleNetCompression</samp>
+</td>
+<td>禁用（或重新启用）多人游戏压缩。
+</td></tr>
+<tr>
+<td><samp>toggleTimingOverlay</samp><br><samp>tto</samp>
+</td>
+<td>在屏幕上显示一个基本计时信息框（例如，帧率），以便于分析性能表现。
+</td></tr>
+<tr>
+<td><samp>whereIsItem</samp>,<br><samp>whereItem</samp>
+</td>
+<td>列出当前存档中符合指定 ID 或名称的所有物品。
+<p>示例：
+</p>
+<pre>&gt; debug whereItem "Watering Can"
+
+Found 1 item matching name 'Watering Can':
+- Farm &gt; Shed at 50, 14 &gt; Shed149bae63-2add-4ab6-a5aa-b3bd76372004 &gt; Chest at 4, 4 &gt; Watering Can ((T)CopperWateringCan)
+</pre>
+</td></tr>
+<tr>
+<td><samp>worldMapPosition <code title="可选字段 'includeLog'">[includeLog]</code></samp>
+</td>
+<td>显示<a href="/%E6%A8%A1%E7%BB%84:%E4%B8%96%E7%95%8C%E5%9C%B0%E5%9B%BE" title="模组:世界地图">世界地图定位数据</a>的详细信息，以便排查故障。若 <code title="可选字段 'includeLog'">[includeLog]</code> 为 <samp>true</samp>，则会打印一条详细的日志，以说明当前定位是如何根据 <samp>Data/WorldMap</samp> 数据确定的。
+</td></tr></tbody></table></li>
+<li>移除了如下命令：
+<table class="wikitable">
+
+<tbody><tr>
+<th>命令
+</th>
+<th>说明
+</th></tr>
+<tr>
+<td><samp>buildCoop</samp>
+</td>
+<td>替换为了 <samp>debug build coop</samp>。
+</td></tr></tbody></table></li>
+<li>优化了如下命令：
+<table class="wikitable">
+
+<tbody><tr>
+<th>命令
+</th>
+<th>改进
+</th></tr>
+<tr>
+<td><samp>achieve</samp>
+</td>
+<td>现在在主机上运行此命令可以解锁相关的奖杯。
+</td></tr>
+<tr>
+<td><samp>build</samp>
+</td>
+<td>现在建筑类型对大小写不敏感，且可以使用模糊匹配。
+</td></tr>
+<tr>
+<td><samp>event</samp>
+</td>
+<td><samp>dontClearEvent</samp> 选项（默认为 false）已被 <samp>clearEventsSeen</samp>（默认为 true）替换了，且不再将所有值都认为是 true。
+</td></tr>
+<tr>
+<td><samp>furniture</samp>
+</td>
+<td>现在允许非数字家具 ID。
+</td></tr>
+<tr>
+<td><samp>growCrops</samp>
+</td>
+<td>现在适用于花盆作物。
+</td></tr>
+<tr>
+<td><samp>holdItem</samp>
+</td>
+<td>添加了一个可选的 <code title="可选字段 'showMessage'">[showMessage]</code> 布尔参数，用于在播放举起物品动画后显示该物品的信息。
+</td></tr>
+<tr>
+<td><samp>item</samp>
+</td>
+<td>现在要求提供物品 ID 参数。
+</td></tr>
+<tr>
+<td><samp>mineLevel</samp>
+</td>
+<td>添加了一个可选的 <code title="可选字段 'layout'">[layout]</code> 参数，可以设为 <samp>Content/Maps/Mines</samp> 中的布局参数。例如，<code>debug mineLevel 101 47</code> 将玩家传送到矿井 101 层，并使用布局 47。
+</td></tr>
+<tr>
+<td><samp>setUpFarm</samp>
+</td>
+<td><samp>clearMore</samp> 参数不再将非空值都认为是 true。
+</td></tr>
+<tr>
+<td><samp>spreadSeeds</samp>
+</td>
+<td>现在适用于花盆作物。
+</td></tr>
+<tr>
+<td><samp>warpCharacterTo</samp>
+</td>
+<td>添加了一个 NPC 面部朝向的独立参数，而非使用 Y 参数。
+</td></tr>
+<tr>
+<td><samp>water</samp>
+</td>
+<td>现在适用于花盆作物。
+</td></tr></tbody></table></li>
+</ul>
+<h3 class="in-block"><span id="翻译变化"></span><span class="mw-headline" id=".E7.BF.BB.E8.AF.91.E5.8F.98.E5.8C.96">翻译变化</span></h3>
+<ul><li>1.6 中的许多翻译从 <samp>Strings/1_6_Strings</samp> 移到了<samp>Strings/BigCraftables</samp>、<samp>Strings/Objects</samp> 和 <samp>Strings/Tools</samp>。</li>
+<li>工具名称/描述从 <samp>Strings/StringsFromCSFiles</samp> 移到了一个新的 <samp>Strings/Tools</samp> 素材中。动态工具名称（如“Gold {0}”）也被替换为专门名称（如“Gold Axe”），以修复翻译中的不自然之处。</li></ul>
+<h3 class="in-block"><span id="建筑数据更改"></span><span class="mw-headline" id=".E5.BB.BA.E7.AD.91.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E5%BB%BA%E7%AD%91" title="模组:建筑">建筑数据</a>更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E5%BB%BA%E7%AD%91" title="模组:建筑">模组:建筑</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>1.6.9 在 <samp>Data/Buildings</samp> 中新增了如下字段：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>NameForGeneralType</samp><br><small>（星露谷 1.6.15）</small>
+</td>
+<td>（可选）一个模板字符串，用于显示建筑大概类型的名称，例如“豪华鸡舍”的大概类型为“鸡舍”
+<p>。举例而言，此字段可能出现在罗宾的“开始建造”对话中。若忽略，则默认为 <samp>Name</samp> 字段。
+</p>
+</td></tr>
+<tr>
+<td><samp>IndoorItems</samp>
+</td>
+<td>此字段在 1.6.9 之前就存在，但现在新增了一些子字段：
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>ClearTile</samp>
+</td>
+<td>（可选）是否移除目标地块上的所有物品，除非其符合此条目的 <samp>ItemId</samp>。若可用，则地块上之前存在的物品会被放到失物招领处。默认为 true。
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="动物数据更改"></span><span class="mw-headline" id=".E5.8A.A8.E7.89.A9.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E5%8A%A8%E7%89%A9%E6%95%B0%E6%8D%AE" title="模组:动物数据">动物数据</a>更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E5%8A%A8%E7%89%A9%E6%95%B0%E6%8D%AE" title="模组:动物数据">模组:动物数据</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<ul>
+<li>1.6.9 在 <samp>Data/FarmAnimals</samp> 中新增了如下字段：
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Shadow</samp>
+</td>
+<td>（可选）在农场动物下方绘制的阴影，如果更具体的字段（例如 <samp>ShadowWhenAdult</samp>）为空。默认为空。
+</td></tr></tbody></table></li>
+<li>先前硬编码的统计数据（<samp>cowMilkProduced</samp>、<samp>goatMilkProduced</samp> 和 <samp>sheepWoolProduced</samp>）现在可以通过 <samp>StatToIncrementOnproduce</samp> 数据字段调整。</li>
+</ul>
+<h3 class="in-block"><span id="鱼塘数据更改"></span><span class="mw-headline" id=".E9.B1.BC.E5.A1.98.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E9%B1%BC%E5%A1%98%E6%95%B0%E6%8D%AE" title="模组:鱼塘数据">鱼塘数据</a>更改</span></h3>
+<div style="border: 1px solid #0C0; background: #CFC; padding: 0.5em; border-radius: 2px;">参见更新后的文档：<a href="/%E6%A8%A1%E7%BB%84:%E9%B1%BC%E5%A1%98%E6%95%B0%E6%8D%AE" title="模组:鱼塘数据">模组:鱼塘数据</a>。此小节主要用于叙述更新内容。</div>
+<p>添加了新字段：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>MaxPopulation</samp>
+</td>
+<td>（可选）可以生活在该鱼塘中的最大鱼的数量，无论是手动添加还是自然繁殖。这不能超过硬编码的最大值 10。如果省略，则默认为 <samp>PopulationGates</samp> 的最大值。
+</td></tr>
+<tr>
+<td><samp>WaterColor</samp>
+</td>
+<td>（可选）当游戏应用此列表项时，鱼塘水体的色调。如果指定了多个条目，则应用第一个匹配的条目。如果没有匹配项，则使用默认颜色。
+<p>此字段为包含如下字段的数据模型所组成的列表：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Id</samp>
+</td>
+<td>此条目的<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E5.94.AF.E4.B8.80.E5.AD.97.E7.AC.A6.E4.B8.B2ID" title="模组:公共数据字段">唯一字符串ID</a>。
+</td></tr>
+<tr>
+<td><samp>Color</samp>
+</td>
+<td>（可选）水体颜色。这可以是<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E9.A2.9C.E8.89.B2" title="模组:公共数据字段">标准颜色值</a>，或<samp>CopyFromInput</samp>（与鱼的颜色相同）。默认为空。
+</td></tr>
+<tr>
+<td><samp>MinPopulation</samp>
+</td>
+<td>（可选）解锁此颜色所需的最小鱼数。默认为 1。
+</td></tr>
+<tr>
+<td><samp>MinUnlockedPopulationGate</samp>
+</td>
+<td>（可选）解锁此颜色所需的最低<a href="/%E6%A8%A1%E7%BB%84:%E9%B1%BC%E5%A1%98%E6%95%B0%E6%8D%AE#PopulationGates" title="模组:鱼塘数据">关卡数</a>，若设为 0 则表示不限。默认为 0。
+</td></tr>
+<tr>
+<td><samp>Condition</samp>
+</td>
+<td>（可选）一个<a href="/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" title="模组:游戏状态查询">游戏状态查询</a>，指示此列表项是否可用。默认为总是可用。
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td><samp>ProducedItems</samp>
+</td>
+<td>旧版中已有此字段，但现在此字段的数据模型新增了 <a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%9F%A5%E8%AF%A2" title="模组:物品查询">物品生成字段</a>、<a href="/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" title="模组:游戏状态查询">条件</a> 和 <samp>Id</samp>：
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Id</samp>
+</td>
+<td>此列表项的<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E5.94.AF.E4.B8.80.E5.AD.97.E7.AC.A6.E4.B8.B2ID" title="模组:公共数据字段">唯一字符串ID</a>。
+</td></tr>
+<tr>
+<td>通用字段
+</td>
+<td>请参阅<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%9F%A5%E8%AF%A2#.E7.89.A9.E5.93.81.E7.94.9F.E6.88.90.E5.AD.97.E6.AE.B5" title="模组:物品查询">物品生成字段</a>以了解鱼塘奖励支持的通用物品字段。
+<p>注意：
+</p>
+<ul><li>如果 <samp>ItemId</samp> 或 <samp>RandomItemId</samp> 是返回多个物品的<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%9F%A5%E8%AF%A2" title="模组:物品查询">物品查询</a>，则会从中随机选择一个物品。</li>
+<li>如果 <samp>ItemId</samp> 和 <samp>RandomItemId</samp> 设置为字符串 <code>(O)812</code>（<a href="/%E9%B1%BC%E7%B1%BD" title="鱼籽">鱼籽</a>），则会生成当前鱼对应的鱼籽。</li>
+<li><samp>Condition</samp> 用于判断鱼塘中的鱼是否符合条件。</li></ul>
+</td></tr></tbody></table>
+<p>旧版的 <samp>MinQuantity</samp>/<samp>MaxQuantity</samp> 字段现已过时，并被标准的 <samp>MinStack</samp>/<samp>MaxStack</samp> 物品生成字段取代。如果内容包设置了旧字段，其值将自动应用于新字段。
+</p>
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="物品数据更改"></span><span class="mw-headline" id=".E7.89.A9.E5.93.81.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%95%B0%E6%8D%AE" title="模组:物品数据">物品数据</a>更改</span></h3>
+<h4 class="in-block"><span id="Data/Object"></span><span class="mw-headline" id="Data.2FObject">Data/Object</span></h4>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E4%BD%93" title="模组:物体">模组:物体</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<ul>
+<li>新增了一个字段：
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>ColorOverlayFromNextIndex</samp>
+</td>
+<td>（可选）在将此物体作为颜色物体绘制时，是否将颜色应用于贴图集中的下一张贴图，并将后者绘制在主贴图上。若为 false，则颜色会被应用于主贴图。默认为 false。
+</td></tr></tbody></table></li>
+<li>现在物体增益效果可以设置如下属性：<samp>CombatLevel</samp>、<samp>AttackMultiplier</samp>、<samp>CriticalChanceMultiplier</samp>、<samp>CriticalPowerMultiplier</samp>、<samp>Immunity</samp>、<samp>KnockbackMultiplier</samp>、<samp>WeaponPrecisionMultiplier</samp> 和  <samp>WeaponSpeedMultiplier</samp>。</li>
+<li>风味名称翻译类似于 <code>Wine_Flavored_Name</code> 可以使用新增的 <samp>{1}</samp> 标识以代表小写名称。</li>
+<li>您现在可以自定义特定风味物品的显示名称。例如，<code>Wine_Flavored_(O)282_Name</code> 翻译（"Cranberry Wine"）覆盖了 <code>Wine_Flavored_Name</code> ("{0} Wine").</li>
+</ul>
+<h4 class="in-block"><span id="物品生成字段"></span><span class="mw-headline" id=".E7.89.A9.E5.93.81.E7.94.9F.E6.88.90.E5.AD.97.E6.AE.B5">物品生成字段</span></h4>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%9F%A5%E8%AF%A2#.E7.89.A9.E5.93.81.E7.94.9F.E6.88.90.E5.AD.97.E6.AE.B5" title="模组:物品查询">模组:物品查询#物品生成字段</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>1.6.9 为所有<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%9F%A5%E8%AF%A2#.E7.89.A9.E5.93.81.E7.94.9F.E6.88.90.E5.AD.97.E6.AE.B5" title="模组:物品查询">物品生成字段</a>新增了一个字段：
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>Color</samp>
+</td>
+<td>（可选）应用于产出物品的颜色。默认为空。
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h4 class="in-block"><span id="其他"></span><span class="mw-headline" id=".E5.85.B6.E4.BB.96">其他</span></h4>
+<ul><li>对于 C# 模组，<samp>Object.displayNameFormat</samp> 字段现在可以使用两个新标记：<samp>%DISPLAY_NAME_LOWERCASE</samp> 和 <samp>%PRESERVED_DISPLAY_NAME_LOWERCASE</samp>。</li></ul>
+<h3 class="in-block"><span id="机器数据更改"></span><span class="mw-headline" id=".E6.9C.BA.E5.99.A8.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E6%9C%BA%E5%99%A8" title="模组:机器">机器数据</a>更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E6%9C%BA%E5%99%A8" title="模组:机器">模组:机器</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>1.6.9 修复了 <samp>Data/Machines</samp> 的一些问题：
+</p>
+<ul><li>现在 <samp>PreserveId</samp> 字段支持 <samp>DROP_IN_PRESERVE</samp> 标识。</li>
+<li>现在 <samp>CopyColor</samp> 字段适用于任何输入物品，即使其并非 <samp>ColoredObject</samp>（这种情况下，会使用上下文标签的颜色）。</li>
+<li>现在 <samp>CopyQuality</samp> 字段不再禁用 <samp>QualityModifiers</samp>；后者会应用于复制的结果。</li></ul>
+<h3 class="in-block"><span id="地图属性变化"></span><span class="mw-headline" id=".E5.9C.B0.E5.9B.BE.E5.B1.9E.E6.80.A7.E5.8F.98.E5.8C.96"><a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE" title="模组:地图">地图</a>属性变化</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE" title="模组:地图">模组:地图</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>1.6.9添加了新的地图属性：
+</p>
+<h3 class="in-block"><span id="地图属性更改"></span><span class="mw-headline" id=".E5.9C.B0.E5.9B.BE.E5.B1.9E.E6.80.A7.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE" title="模组:地图">地图</a>属性更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE" title="模组:地图">模组:地图</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>1.6.9 新增了一些地图属性：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>属性
+</th>
+<th>解释
+</th></tr>
+<tr>
+<td><samp>AllowBeds <code title="必需字段 'allowed'">&lt;allowed&gt;</code></samp><br><samp>AllowMiniFridges <code title="必需字段 'allowed'">&lt;allowed&gt;</code></samp>
+</td>
+<td><a href="/%E5%AE%B6%E5%85%B7#.E5.BA.8A" title="家具">床</a>或<a href="/%E8%BF%B7%E4%BD%A0%E5%86%B0%E7%AE%B1" title="迷你冰箱">迷你冰箱</a>可否放在此地点。可以为 <samp>true</samp> 或 <samp>false</samp>。若指定此参数，则会绕过通常的特殊要求（例如农舍等级），但是通用家具限制仍会生效（例如 <samp>Data/Furniture</samp> 中的“放置限制”字段）。
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="地图地块索引逻辑现在更安全"></span><span class="mw-headline" id=".E5.9C.B0.E5.9B.BE.E5.9C.B0.E5.9D.97.E7.B4.A2.E5.BC.95.E9.80.BB.E8.BE.91.E7.8E.B0.E5.9C.A8.E6.9B.B4.E5.AE.89.E5.85.A8">地图地块索引逻辑现在更安全</span></h3>
+<p>现在游戏能够更准确地处理地块表 ID（不区分大小写），这消除了地块索引冲突引发的错误。（但不适用于 <samp>Paths</samp> 层，以免破坏模组。您不应自定义 <samp>Paths</samp> 层地块表。）
+</p><p>如下代码片段反映了 1.6.8 中的海滩逻辑：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">getTileIndexAt</span><span class="p">(</span><span class="n">tileLocation</span><span class="p">,</span> <span class="s">"Buildings"</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="m">284</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">who</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">ContainsId</span><span class="p">(</span><span class="s">"(O)388"</span><span class="p">,</span> <span class="m">300</span><span class="p">))</span>
+            <span class="n">createQuestionDialogue</span><span class="p">(</span><span class="n">Game1</span><span class="p">.</span><span class="n">content</span><span class="p">.</span><span class="n">LoadString</span><span class="p">(</span><span class="s">"Strings\\Locations:Beach_FixBridge_Question"</span><span class="p">),</span> <span class="n">createYesNoResponses</span><span class="p">(),</span> <span class="s">"BeachBridge"</span><span class="p">);</span>
+        <span class="k">else</span>
+            <span class="n">Game1</span><span class="p">.</span><span class="n">drawObjectDialogue</span><span class="p">(</span><span class="n">Game1</span><span class="p">.</span><span class="n">content</span><span class="p">.</span><span class="n">LoadString</span><span class="p">(</span><span class="s">"Strings\\Locations:Beach_FixBridge_Hint"</span><span class="p">));</span>
+        <span class="k">break</span><span class="p">;</span>
+</pre></div>
+<p>这会导致任何索引为 284 的地块显示该消息，即使它属于自定义地块表。
+</p><p>在 1.6.9 中不再发生这种情况，因为游戏可以指定地块表 ID：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">getTileIndexAt</span><span class="p">(</span><span class="n">tileLocation</span><span class="p">,</span> <span class="s">"Buildings"</span><span class="p">,</span> <span class="s">"untitled tile sheet"</span><span class="p">))</span> <span class="c1">// 地块表 ID 必须为 "untitled tile sheet"</span>
+</pre></div>
+<h3 class="in-block"><span id="宠物数据更改"></span><span class="mw-headline" id=".E5.AE.A0.E7.89.A9.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E5%AE%A0%E7%89%A9" title="模组:宠物">宠物数据</a>更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E5%AE%A0%E7%89%A9" title="模组:宠物">模组:宠物</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>在 <samp>Data/Pets</samp> 中，<samp>Gifts</samp> 字段现在使用<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%9F%A5%E8%AF%A2#.E7.89.A9.E5.93.81.E7.94.9F.E6.88.90.E5.AD.97.E6.AE.B5" title="模组:物品查询">物品生成字段</a>（包括条件和物品品质/颜色/名称/其他）。旧版的 <samp>QualifiedItemID</samp> 和 <samp>Stack</samp> 字段已被淘汰，但设置它们的内容包应当仍能正常工作。
+</p><p><br>
+</p>
+<h3 class="in-block"><span id="模板字符串更改"></span><span class="mw-headline" id=".E6.A8.A1.E6.9D.BF.E5.AD.97.E7.AC.A6.E4.B8.B2.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2" title="模组:模板字符串">模板字符串</a>更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2" title="模组:模板字符串">模组:模板字符串</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<ul>
+<li>添加了新标记：
+<table class="wikitable">
+
+<tbody><tr>
+<th>标记格式
+</th>
+<th>输出
+</th></tr>
+<tr>
+<td><samp>[CapitalizeFirstLetter <code title="必需字段 'text'">&lt;text&gt;</code>]</samp>
+</td>
+<td>输入文本，首字母大写。
+</td></tr>
+<tr>
+<td><samp>[ItemNameWithFlavor <code title="必需字段 'flavor type'">&lt;flavor type&gt;</code> <code title="必需字段 'flavor ID'">&lt;flavor ID&gt;</code>]</samp>
+</td>
+<td>风味物品名称的译名，其中...
+<ul><li><code title="必需字段 'flavor type'">&lt;flavor type&gt;</code> 取 <samp>AgedRoe</samp>、<samp>Bait</samp>、<samp>DriedFruit</samp>、<samp>DriedMushroom</samp>、<samp>Honey</samp>、<samp>Jelly</samp>、<samp>Juice</samp>、<samp>Pickle</samp>、<samp>Roe</samp>、<samp>SmokedFish</samp> 或 <samp>Wine</samp> 之一；</li>
+<li><code title="必需字段 'flavor ID'">&lt;flavor ID&gt;</code> 是原材料的<a href="/%E6%A8%A1%E7%BB%84:%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5#.E7.89.A9.E5.93.81ID" title="模组:公共数据字段">限定性或非限定性物品 ID</a>（例如蓝莓果酒的原料是蓝莓）。</li></ul>
+</td></tr></tbody></table></li>
+<li>对于具有自定义标记的 C# 模组，解析器（parser）将去除参数的 <samp>[EscapedText]</samp> 中的任何转义字符。</li>
+</ul>
+<h3 class="in-block"><span id="工具数据更改"></span><span class="mw-headline" id=".E5.B7.A5.E5.85.B7.E6.95.B0.E6.8D.AE.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E5%B7%A5%E5%85%B7" title="模组:工具">工具数据</a>更改</span></h3>
+<p>在<samp>Data/Tools</samp>中， <samp>ApplyUpgradeLevelToDisplayName</samp> 字段不再存在。每个工具现在都有自己的名称（请参阅<a href="#.E7.BF.BB.E8.AF.91.E6.9B.B4.E6.94.B9">翻译更改</a>）。
+</p>
+<h3 class="in-block"><span id="触发动作更改"></span><span class="mw-headline" id=".E8.A7.A6.E5.8F.91.E5.8A.A8.E4.BD.9C.E6.9B.B4.E6.94.B9"><a href="/%E6%A8%A1%E7%BB%84:%E8%A7%A6%E5%8F%91%E5%8A%A8%E4%BD%9C" title="模组:触发动作">触发动作</a>更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E8%A7%A6%E5%8F%91%E5%8A%A8%E4%BD%9C" title="模组:触发动作">模组:触发动作</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>1.6.9 在 <samp>Data/TriggerActions</samp> 中添加了一个新字段：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>效果
+</th></tr>
+<tr>
+<td><samp>SkipPermanentlyCondition</samp>
+</td>
+<td>（可选）此字段为一个<a href="/%E6%A8%A1%E7%BB%84:%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2" title="模组:游戏状态查询">游戏状态查询</a>，满足此条件时，游戏会将此触发动作标记为已触发。此字段优先级高于 <samp>Condition</samp>、<samp>Action</samp> 和 <samp>Actions</samp>。
+<p>此字段主要用于跳过那些不会再次触发的动作，以免每次都需要解析  <samp>Condition</samp>。
+</p>
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="其他变化"></span><span class="mw-headline" id=".E5.85.B6.E4.BB.96.E5.8F.98.E5.8C.96">其他变化</span></h3>
+<dl>
+<dt>在 Stardew Valley 1.6.9 中：</dt>
+<dd>
+<ul><li>游戏现在始终通过 ID 查找地图地块表，从而消除了模组重排地块表导致的错误。然而，在某些情况下，游戏仍优先尝试通过索引获取地块表（因为这样更快），因此仍应避免更改地块表顺序，以免回退到 ID 查找影响性能。</li>
+<li>《海之宝石》技能书（鱼籽书）现在只适用于那些有 <samp>fish_has_roe</samp> 上下文标签的鱼。如果需要，请考虑在 <samp>Data/Objects</samp> 中为自定义鱼添加此标签。</li>
+<li>支持从任何地方获取配方物品。</li>
+<li>新增了一些统计项，以跟踪玩家完成祝尼魔赛车（<samp>completedJunimoKart</samp>）和草原之王（<samp>completedPrairieKing</samp>和<samp>completedPrairieKingWithoutDying</samp>）的次数。对于 1.6.9 之前的存档，如果玩家至少完成过一次，则这两个统计项将被设为 <samp>1</samp>。</li>
+<li>与参数解析相关的错误消息（例如在调试命令、对话、事件命令、地图属性等中）现在会显示人类可读的参数名称。例如，"required index 0 not found" 现在会显示为 "required index 0 (string itemId) not found"。</li>
+<li>现在可以出售任何类型的物品，具体取决于其 <samp>item.canBeShipped()</samp> 方法。</li>
+<li>对于事件：
+<ul><li>修复了 <samp>move</samp> 命令在找不到 NPC 时忽略其他所有 NPC 的问题。</li>
+<li>修复了 <samp>speak</samp> 命令在找不到 NPC 时结束事件的问题。</li>
+<li>修复了 <samp>GameStateQuery</samp>/<samp>G</samp> 事件前提未正确处理带引号的参数的问题。</li></ul></li>
+<li>对于物品：
+<ul><li>现在上下文标签几乎总是不区分大小写。</li>
+<li>将 <samp>Strings/1_6_Strings</samp> + <samp>Strings/StringsFromCSFiles</samp> 中的物品译名合并到 <samp>Strings/BigCraftables</samp>、&lt;sampStrings/Objects 和 <samp>Strings/Weapons</samp> 中。</li>
+<li>修复了古代玩偶没有 <samp>doll_item</samp> 上下文标签的问题。</li>
+<li>修复了购买/拆分灵魂火把和自定义火把物品堆叠时，贴图变成默认贴图的问题。</li>
+<li>修复了物品名称可能设置为 null 的情况。现在尝试这样做时，名称将默认为“错误物品”。</li></ul></li>
+<li>对于<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%9F%A5%E8%AF%A2#.E7.89.A9.E5.93.81.E7.94.9F.E6.88.90.E5.AD.97.E6.AE.B5" title="模组:物品查询">物品生成字段</a>：
+<ul><li>添加了 <samp>Color</samp> 以设置色调。</li>
+<li>修复了生成 null 物品 ID 时的错误。</li></ul></li>
+<li>对于工具：
+<ul><li>将 <samp>Strings/StringsFromCSFiles</samp> + <samp>Strings/1_6_Strings</samp> 中的工具名称/描述统一到一个新的 <samp>Strings/Tools</samp> 素材中，其键名可读性更高，如 <samp>Axe_Description</samp>。</li>
+<li>每个工具升级现在都有独立的翻译（如“金斧头”），而不是像“金{0}”这样的通用翻译（这种旧版格式难以翻译）。这移除了 <samp>Data/Tools</samp> 中的 <samp>ApplyUpgradeLevelToDisplayName</samp> 字段。</li>
+<li>修复了 <samp>tool.getOne()</samp> 未复制某些工具字段的问题。</li></ul></li>
+<li>对于饰品：
+<ul><li>添加了 <samp>CustomFields</samp> 和 <samp>ModData</samp> 数据字段供模组使用。这些取代了以前的 <samp>TrinketMetadata</samp> 字段。</li>
+<li>添加了数据字段以配置魔法箭袋忽略的地面/怪物。</li>
+<li>添加了处理某些无效数据的机制。</li></ul></li>
+<li>对于游戏状态查询：
+<ul><li>修复了 <samp>HAS_TARGET_LOCATION</samp> 始终返回 true 的问题。</li>
+<li>修复了 <samp>PLAYER_HAS_ITEM</samp> 计算房主而非目标玩家的齐币的问题。</li></ul></li>
+<li>对于机器：
+<ul><li>现在晶球破开器可以正确处理神秘盒（前提是模组允许晶球破开器打开神秘盒）。</li>
+<li>修复了如下问题：某些机器效果必须等到机器启动后下一次时间变化时才能生效。</li>
+<li>修复了 <samp>Data/Machines</samp> 中的 <samp>DROP_IN_PRESERVE</samp> 在 <samp>PreserveId</samp> 字段中不起作用的问题。</li>
+<li>修复了 <samp>Data/Machines</samp> 中的 <samp>CopyColor</samp> 字段在输入不是 <samp>ColoredObject</samp> 时不起作用的问题；现在默认为其上下文标签中的颜色。</li>
+<li>修复了 <samp>Data/Machines</samp> 中的数量修饰器在具有 <samp>CopyQuality</samp> 的条目中被忽略的问题。</li>
+<li>修复了 <samp>Object.OutputAnvil</samp> 忽略其 <samp>probe</samp> 参数的问题。</li>
+<li>修复了野蜂蜜在使用 <samp>DROP_IN_PRESERVE</samp> 或 <samp>%PRESERVED_DISPLAY_NAME</samp> 标记时生成无效物品名称的问题。</li></ul></li>
+<li>对于地图：
+<ul><li>地形声音（如脚步声）现在可用于具有 <samp>TreatAsOutdoors</samp> 地图属性的地点。</li>
+<li>壁纸和地板现在可以应用于自定义地图地块（需要其地块表 ID 包含<samp>walls_and_floors</samp>）。</li>
+<li><samp>TouchAction ConditionalDoor</samp> 地块属性现在能够正确地从 <samp>Back</samp> 层获取其 <samp>LockedDoorMessage</samp>（而不是旧版中的 <samp>Buildings</samp> 层）。</li>
+<li>修复了与模组更改地块表顺序相关的错误。</li>
+<li><a href="#.E5.9C.B0.E5.9B.BE.E5.9C.B0.E5.9D.97.E7.B4.A2.E5.BC.95.E9.80.BB.E8.BE.91.E7.8E.B0.E5.9C.A8.E6.9B.B4.E5.AE.89.E5.85.A8">修复了地块索引冲突</a>。现在游戏检查地块表 ID（不区分大小写），从而消除了与地块索引冲突相关的错误（例如自定义地块被意外地视为光照）。</li>
+<li>修复了不同平台地块表排序不一致的问题。</li></ul></li>
+<li>对于 NPC 和对话：
+<ul><li>加载存档时，如果 NPC 不再位于存档前的所在地，则会被传送到 <samp>Data/Characters</samp> 中的家。（这也适用于使用 <samp>FormerCharacterNames</samp> 字段中列出的 NPC 曾用名。）</li>
+<li>使用 <samp>$y</samp> 对话命令时，可以转义星号（<samp>*</samp> 仍然是对话分隔符，但 <samp>**</samp> 为单个星号文本）。</li>
+<li>现在可以根据与 NPC 的关系重写日程/度假对话。例如，如果您与该NPC结婚，则 <samp>rain.000_Married</samp> 会重写 <samp>rain.000</samp>。可用的关系是 <samp>Friendly</samp>、<samp>Dating</samp>、<samp>Engaged</samp>、<samp>Married</samp> 和 <samp>Divorced</samp>。</li>
+<li>改进了NPC找不到合适对话时的错误处理机制。</li>
+<li>修复了 <samp>$action</samp> 对话命令在 <samp>#$b#</samp> 分隔符后不起作用的问题。</li>
+<li>修复了命令在 <samp>#$b#</samp> 分隔符之间时显示空对话框的问题。</li>
+<li>修复了 NPC 不再应用 <samp>AcceptGift_&lt;id&gt;</samp> 对话键的问题。</li>
+<li>修复了 <samp>Data/Characters</samp> 外观选项默认权重不正确的问题。</li>
+<li>修复了一些友谊逻辑仍然检查 <samp>Data/NPCGiftTastes</samp> 条目而不是 <samp>Data/Characters</samp> 中的 <samp>CanSocialize</samp> 字段的问题。</li></ul></li>
+<li>对于宠物：
+<ul><li><samp>Data/Pets</samp> 中的 <samp>Gifts</samp> 列表现在支持<a href="/%E6%A8%A1%E7%BB%84:%E7%89%A9%E5%93%81%E6%9F%A5%E8%AF%A2#.E7.89.A9.E5.93.81.E7.94.9F.E6.88.90.E5.AD.97.E6.AE.B5" title="模组:物品查询">物品生成字段</a>（包括条件、物品质量/颜色/名称等）。以前的 <samp>QualifiedItemID</samp> 和 <samp>Stack</samp> 字段现已过时，但设置了这些字段的内容包仍应正常工作。</li>
+<li>修复了 <samp>Data/Pets</samp> 中海龟礼物 ID 与实际礼物不匹配的问题（<samp>Radish</samp> -&gt; <samp>SeafoamPudding</samp>）。</li></ul></li>
+<li>对于沙漠节变装：
+<ul><li>您现在可以为服装中指定性别变体。</li>
+<li><samp>Gender</samp> 字段现在使用 1.6 中添加的三元性别枚举。</li>
+<li>每个服装现在都有一个描述性的 <samp>Id</samp>。</li></ul></li>
+<li>对于烹饪/打造配方：
+<ul><li>技能等级条件的格式为 <samp>s <code title="必需字段 'skill'">&lt;skill&gt;</code> <code title="必需字段 'level'">&lt;level&gt;</code></samp> 或<samp><code title="必需字段 'skill'">&lt;skill&gt;</code> <code title="必需字段 'level'">&lt;level&gt;</code></samp>。由于实现方式的问题，在旧版中任何包含技能名称和等级的字符串都有效（如<samp>10boopFarming</samp>）；新版会强制验证格式。</li>
+<li>修复了 <samp>Data/CraftingRecipes</samp> 输出字段中限定性物品 ID 的处理。</li>
+<li>修复了技能等级 10 的配方在等级 1 时解锁的问题。</li></ul></li>
+<li>移除了未使用的素材和翻译。</li>
+<li>现在野生种子被种下时就会确定其产出，因此模组可以预测其收获。</li>
+<li>修复了对晕倒邮件文本中性别文本的支持。</li>
+<li>修复了当玩家的每日运气远超出正常范围时的崩溃问题。每日运气现在被限制在合理范围内。</li>
+<li>修复了鱼塘忽略 <samp>Data/Buildings</samp> 中的 <samp>DrawShadow</samp> 字段的问题。</li>
+<li>修复了机器和农场动物数据中的 <samp>StatIncrement</samp> 字段未使用指定 ID 的问题。</li>
+<li>修复了 <samp>AllowWakeUpWithoutBed</samp> 地图属性不协调的问题。</li></ul>
+</dd>
+<dt id="1.6.15">在 Stardew Valley 1.6.15 中：</dt>
+<dd>
+<ul><li>改进了<a href="/%E6%A8%A1%E7%BB%84:%E5%BB%BA%E7%AD%91" title="模组:建筑">建筑数据</a>：
+<ul><li>添加了一个新的 <samp>NameForGeneralType</samp> 字段。这取代了以前尝试从 <samp>Name</samp> 中解析它的硬编码逻辑。</li></ul></li>
+<li>改进了<a href="/%E6%A8%A1%E7%BB%84:%E9%B1%BC%E5%A1%98%E6%95%B0%E6%8D%AE" title="模组:鱼塘数据">鱼塘数据</a>：
+<ul><li>您现在可以通过 <samp>BaseMinProduceChance</samp> 和 <samp>BaseMaxProduceChance</samp> 覆盖鱼塘的基础产出几率。</li>
+<li>您现在可以通过 <samp>Precedence</samp> 字段设置产出物品的优先级。</li>
+<li>游戏不再尝试自动平衡鱼塘中的自定义传说鱼类。如果模组希望覆盖静态默认值，则可以添加自己的输出规则。</li></ul></li>
+<li>改进了<a href="/%E6%A8%A1%E7%BB%84:%E5%81%87%E4%BA%BA%E6%A8%A1%E7%89%B9" title="模组:假人模特">假人模特数据</a>：
+<ul><li>移除了 <samp>ID</samp> 字段（与键名重复）。</li>
+<li><samp>CustomFields</samp> 字段现在默认为 null（与其他素材相同）。</li></ul></li>
+<li>改进了<a href="/%E6%A8%A1%E7%BB%84:%E9%A5%B0%E5%93%81" title="模组:饰品">饰品数据</a>：
+<ul><li>移除了 <samp>Id</samp> 字段（与键名重复）。</li></ul></li>
+<li>针对 C# 模组的更改：
+<ul><li>将更多代码标记为 public 或 virtual 以供模组使用。</li>
+<li>冰箱的 <samp>chest.sourceItem</samp> 字段不再为 null。</li>
+<li>添加了 <samp>Game1.ResetGameStateOnTitleScreen()</samp> 方法，该方法分割自 <samp>Game1.CleanupReturningToTitle()</samp>。这些方法太过专门化，大多数模组不应调用它们。</li>
+<li>修复了 <samp>NPC.CanSocializePerData</samp> 不使用给定地点的问题。</li>
+<li>修复了 <samp>farmhand.hasOrWillReceiveMail</samp> 在某些情况下检查房主玩家（而非目标玩家）邮箱的问题。</li>
+<li>修复了物品的上下文标签不随其状态更改更新的问题（例如，避免出现带 <samp>quality_none</samp> 标签的金星品质物品）。</li></ul></li>
+<li>罗宾的施工开始对话中新增了一个标记，用于支持非小写建筑名称。</li>
+<li>添加了 <samp>[GenderedText]</samp> 和 <samp>[SpouseGenderedText]</samp> <a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2" title="模组:模板字符串">标记</a> 的可选参数，用于非二元性别文本。</li>
+<li>添加了锁门消息<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%B0%E5%9B%BE" title="模组:地图">地块属性</a>的两个变体：<samp>DoorUnlock_NotFriend_{npcName}</samp>（用于指定 NPC）和<samp>DoorUnlock_NotFriend_Undefined</samp>（用于非二元性别 NPC）。</li>
+<li>游戏的动态贴图现在设置了 <samp>Name</samp> 字段以简化故障排除。这些名称会显示于错误消息（如对象丢失错误）。</li>
+<li><samp>itemAboveHead</samp> <a href="/%E6%A8%A1%E7%BB%84:%E4%BA%8B%E4%BB%B6%E6%95%B0%E6%8D%AE" title="模组:事件数据">事件命令</a>现在有一个可选参数，以设置是否显示“你收到了”消息。默认为 true（旧版中，自定义物品无法使用此参数）。</li>
+<li>移除了某些冗余的、针对游戏平台的翻译。</li>
+<li>您现在可以自定义收集品选项卡中的任何物品名称/描述（通过 <samp>Strings/Objects:&lt;item id&gt;_CollectionsTabName</samp> 和 <samp>&lt;item id&gt;_CollectionsTabDescription</samp>）。</li></ul>
+</dd>
+</dl>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="C#模组更改"></span><span class="mw-headline" id="C.23.E6.A8.A1.E7.BB.84.E6.9B.B4.E6.94.B9">C#模组更改</span></h2><section class="mf-section-3 collapsible-block" id="mf-section-3">
+<h3 class="in-block"><span id="玩家更改"></span><span class="mw-headline" id=".E7.8E.A9.E5.AE.B6.E6.9B.B4.E6.94.B9">玩家更改</span></h3>
+<ul>
+<li>
+<samp>Game1.getFarmer</samp> 和 <samp>Game1.getFarmerMaybeOffline</samp> 方法现已过时，不应再使用。它们已被统一的 <samp>Game1.GetPlayer</samp> 方法取代。
+
+旧方法可能存在不协调且反直觉的行为。例如，<samp>getFarmer(id)</samp>在目标玩家离线时返回主玩家，这通常不符预期。<samp>getFarmer</samp> 在玩家 ID 无效时也返回主玩家，而 <samp>getFarmerMaybeOffline</samp> 在这种情况下返回 null。新方法默认匹配离线玩家，如果未找到 ID 则返回 null （因此您可以自定义默认行为），并具有完整的代码文档和可空性注释。
+
+迁移现有代码：
+<table class="wikitable">
+
+<tbody><tr>
+<th>旧代码
+</th>
+<th>迁移方法
+</th></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Farmer</span> <span class="n">player</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">getFarmer</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</pre></div>
+</td>
+<td>旧版代码在逻辑上等价于如下代码：
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Farmer</span> <span class="n">player</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">GetPlayer</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">onlyOnline</span><span class="p">:</span> <span class="k">true</span><span class="p">)</span> <span class="p">??</span> <span class="n">Game1</span><span class="p">.</span><span class="n">MasterPlayer</span><span class="p">;</span>
+</pre></div>
+<p>但大多数模组可能并不希望这样做。或许您可以这样写：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Farmer</span><span class="p">?</span> <span class="n">player</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">GetPlayer</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Farmer</span><span class="p">?</span> <span class="n">player</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">getFarmerMaybeOffline</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</pre></div>
+</td>
+<td>这直接等效于：
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Farmer</span><span class="p">?</span> <span class="n">player</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">GetPlayer</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</pre></div>
+</td></tr></tbody></table>
+</li>
+<li><samp>Game1.player</samp> 的 setter 现在是内部的。这是因为设置它会导致模组作者意想不到的副作用，故频繁引发错误和崩溃。这些在其新的代码文档中有说明。如果您坚持要直接设置它，可以使用反射。</li>
+</ul>
+<h3 class="in-block"><span id="聊天命令API"></span><span class="mw-headline" id=".E8.81.8A.E5.A4.A9.E5.91.BD.E4.BB.A4API">聊天命令API</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%91%BD%E4%BB%A4" title="模组:控制台命令">模组:控制台命令</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>
+<p>聊天命令在 1.6.9 中是模块化和可扩展的。游戏提供了新的 <samp>ChatCommands</samp> API 来管理它们。
+</p><p>例如，您可以像这样添加自定义聊天命令：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">string</span> <span class="n">modId</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">ModManifest</span><span class="p">.</span><span class="n">UniqueId</span><span class="p">;</span>
+<span class="n">ChatCommands</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="err">$</span><span class="s">"{modId}_echo"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">Echo</span><span class="p">,</span> <span class="n">name</span> <span class="p">=&gt;</span> <span class="err">$</span><span class="s">"{name} [message]: 在聊天框中显示给定的消息。"</span><span class="p">);</span>
+
+<span class="p">...</span>
+
+<span class="c1">/// &lt;inheritdoc cref="ChatCommandHandlerDelegate" /&gt;</span>
+<span class="k">private</span> <span class="k">void</span> <span class="nf">Echo</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">command</span><span class="p">,</span> <span class="n">ChatBox</span> <span class="n">chat</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="n">message</span> <span class="p">=</span> <span class="n">ArgUtility</span><span class="p">.</span><span class="n">GetRemainder</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+
+    <span class="n">chat</span><span class="p">.</span><span class="n">addInfoMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 class="in-block"><span id="屏幕阅读器变化"></span><span class="mw-headline" id=".E5.B1.8F.E5.B9.95.E9.98.85.E8.AF.BB.E5.99.A8.E5.8F.98.E5.8C.96">屏幕阅读器变化</span></h3>
+<p>1.6.9 添加了字段以支持<a rel="nofollow" class="external text" href="https://www.afb.org/blindness-and-low-vision/using-technology/assistive-technology-products/screen-readers">屏幕阅读器</a>模组。这样一来，有自定义 UI 元素的模组就可以添加针对盲人玩家的信息，而无需再为每种读屏模组单独设置集成。
+</p><p>主要变化是一个新的接口：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">/// &lt;summary&gt;为屏幕阅读器提供信息的UI元素。&lt;/summary&gt;</span>
+<span class="c1">/// &lt;remarks&gt;这些值不由游戏显示；它们提供用于实现屏幕阅读器模组。&lt;/remarks&gt;</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IScreenReadable</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;如果设置，表示此组件的翻译文本，供屏幕阅读器使用。这可能是显示的文本（对于文本组件），或等效表示（例如“退出”表示“X”按钮）。&lt;/summary&gt;</span>
+    <span class="kt">string</span> <span class="n">ScreenReaderText</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">/// &lt;summary&gt;如果设置，此组件的翻译工具提示式描述，供屏幕阅读器显示，除了&lt;samp&gt;ScreenReaderText&lt;/samp&gt;。&lt;/summary&gt;</span>
+    <span class="kt">string</span> <span class="n">ScreenReaderDescription</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">/// &lt;summary&gt;这是否是纯视觉组件，应被屏幕阅读器忽略。&lt;/summary&gt;</span>
+    <span class="kt">bool</span> <span class="n">ScreenReaderIgnore</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>这由 <samp>ClickableComponent</samp> 和 <samp>OptionsElement</samp> 实现，因此您可以为大多数 UI 元素添加屏幕阅读器数据。
+</p>
+<h3 class="in-block"><span id="光源系统更新"></span><span class="mw-headline" id=".E5.85.89.E6.BA.90.E7.B3.BB.E7.BB.9F.E6.9B.B4.E6.96.B0">光源系统更新</span></h3>
+<p>1.6.9 版本对光源的跟踪方式进行了改进：  
+</p>
+<ul><li><samp>LightSource</samp> 现在需要一个字符串 ID (<samp>LightSource.Id</samp>)，而不是之前可选的数字 ID (<samp>LightSource.Identifier</samp>)。</li>
+<li><samp>Game1.currentLightSources</samp> 现在是一个按 ID 索引的字典。（如果您添加了 <samp>using StardewValley.Extensions</samp>，仍然可以像以前一样使用 <samp>Game1.currentLightSources.Add(light)</samp>。）</li>
+<li>为每个原版光源添加了唯一的 ID。</li>
+<li>添加了针对某些问题的验证警告和自动恢复功能。</li>
+<li>在相关的辅助函数中添加了空值处理。例如，您可以将类似 <code>if (light != null) Utility.repositionLightSource(light.Id, position)</code> 的逻辑替换为 <code>Utility.repositionLightSource(light?.Id, position)</code>。</li>
+<li>添加了可选的 <samp>LightSource.onlyLocation</samp> 字段，确保光源仅在查看该地点时显示。</li>
+<li>添加了代码文档。</li>
+<li>移除了 <samp>TemporaryAnimatedSprite.light</samp> 布尔字段；现在通过设置 <samp>lightId</samp> 字段来启用光源。</li></ul>
+<h3 class="in-block"><span id="任务事件更新"></span><span class="mw-headline" id=".E4.BB.BB.E5.8A.A1.E4.BA.8B.E4.BB.B6.E6.9B.B4.E6.96.B0">任务事件更新</span></h3>
+<p>旧版中，游戏会调用 <samp>Game1.player.checkForQuestComplete</samp> 并传入各种参数，如 <code>string str</code> 和 <code>int number2</code>，这些参数的行为因任务类型而异。
+</p><p>这些方法已被更具体的方法取代，如 <samp>Quest.OnMonsterSlain</samp>，这些方法...  
+</p>
+<ul><li>更直观易用；</li>
+<li>接收更详细的信息（例如，怪物被击败时的伤害类型）；</li>
+<li>允许自定义任务处理多种事件类型（例如，物品制作和物品接收）。</li></ul>
+<p><samp>Farmer</samp> 方法已被替换为单一的 <samp>NotifyQuests</samp> 方法，该方法依次处理每个任务，并返回是否有任务被更新。
+</p><p>以下是旧的 <samp>Quest</samp> 方法与新方法的对应关系。（<samp>Farmer</samp> 方法与此相同，只需在它们周围添加 <samp>Game1.player.NotifyQuests(quest =&gt; ...)</samp>。）  
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>旧代码
+</th>
+<th>新代码
+</th></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">checkForQuestComplete</span><span class="p">(</span><span class="n">npc</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="n">Quests</span><span class="p">.</span><span class="n">Quest</span><span class="p">.</span><span class="n">type_socialize</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">OnNpcSocialized</span><span class="p">(</span><span class="n">npc</span><span class="p">)</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">checkForQuestComplete</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="n">buildingType</span><span class="p">,</span> <span class="n">Quests</span><span class="p">.</span><span class="n">Quest</span><span class="p">.</span><span class="n">type_building</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">OnBuildingExists</span><span class="p">(</span><span class="n">buildingType</span><span class="p">)</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">checkForQuestComplete</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="n">numberCaught</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="n">itemId</span><span class="p">,</span> <span class="n">Quest</span><span class="p">.</span><span class="n">type_fishing</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">OnFishCaught</span><span class="p">(</span><span class="n">itemId</span><span class="p">,</span> <span class="n">numberCaught</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">checkForQuestComplete</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="n">countAdded</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="n">Quest</span><span class="p">.</span><span class="n">type_harvest</span><span class="p">)</span>  
+<span class="n">quest</span><span class="p">.</span><span class="n">checkForQuestComplete</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="n">countAdded</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="n">Quest</span><span class="p">.</span><span class="n">type_resource</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">OnItemReceived</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">countAdded</span><span class="p">)</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">checkForQuestComplete</span><span class="p">(</span><span class="n">npc</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="n">Quests</span><span class="p">.</span><span class="n">Quest</span><span class="p">.</span><span class="n">type_harvest</span><span class="p">,</span> <span class="n">Quests</span><span class="p">.</span><span class="n">Quest</span><span class="p">.</span><span class="n">type_itemDelivery</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">OnItemOfferedToNpc</span><span class="p">(</span><span class="n">npc</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">checkForQuestComplete</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="n">monster</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">Quests</span><span class="p">.</span><span class="n">Quest</span><span class="p">.</span><span class="n">type_monster</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">OnMonsterSlain</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">monster</span><span class="p">,</span> <span class="n">killedByBomb</span><span class="p">,</span> <span class="n">isHutchSlime</span><span class="p">)</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">checkForQuestComplete</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="n">crafted</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="n">Quests</span><span class="p">.</span><span class="n">Quest</span><span class="p">.</span><span class="n">type_crafting</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">OnRecipeCrafted</span><span class="p">(</span><span class="n">recipe</span><span class="p">,</span> <span class="n">crafted</span><span class="p">)</span>
+</pre></div>
+</td></tr>
+<tr>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">checkIfComplete</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">2</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="n">location</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">quest</span><span class="p">.</span><span class="n">OnWarped</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+</pre></div>
+</td></tr></tbody></table>
+<p>两个相关的变化：  
+</p>
+<ul><li>建筑任务现在表示为 <samp>HaveBuildingQuest</samp> ，该类型使用上述事件。</li>
+<li><samp>completionString</samp> 字段现已过时且不再使用；您应该使用上述方法代替。</li></ul>
+<h3 class="in-block"><span id="新的扩展方法"></span><span class="mw-headline" id=".E6.96.B0.E7.9A.84.E6.89.A9.E5.B1.95.E6.96.B9.E6.B3.95">新的扩展方法</span></h3>
+<p>游戏在 <samp>StardewValley.Extensions</samp> 命名空间中添加了 <a rel="nofollow" class="external text" href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods">扩展方法</a>。这些方法为字符串等更通用的类型添加了工具方法。
+</p><p>1.6.9 添加了一些新的扩展方法：  
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>方法
+</th>
+<th>用法
+</th></tr>
+<tr>
+<td><samp>Dictionary&lt;TKey, TValue&gt;.TryAddMany</samp>
+</td>
+<td>将另一个字典中的所有键/值对添加到此字典中，除了已存在的键。
+<p>例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="c1">// 1.6.9 之前  </span>
+<span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">fields</span> <span class="p">=</span> <span class="k">new</span><span class="p">();</span>  
+<span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">customFields</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="k">foreach</span> <span class="p">((</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">string</span> <span class="k">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">obj</span><span class="p">.</span><span class="n">customFields</span><span class="p">)</span>  
+        <span class="n">fields</span><span class="p">.</span><span class="n">TryAdd</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>  
+<span class="p">}</span>  
+
+<span class="c1">// 1.6.9 之后  </span>
+<span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">fields</span> <span class="p">=</span> <span class="k">new</span><span class="p">();</span>  
+<span class="n">fields</span><span class="p">.</span><span class="n">TryAddMany</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">customFields</span><span class="p">);</span>
+</pre></div>  
+</td></tr>
+<tr>
+<td><samp>IList&lt;T&gt;.RemoveWhere</samp>
+</td>
+<td>从任意列表中删除所有符合条件的元素。这与 1.6 中添加的 <samp>RemoveWhere</samp> 方法等效，但适用于任何列表类型。
+</td></tr>
+<tr>
+<td><samp>Layer.HasTileAt(…)</samp><br><samp>Map.HasTileAt(…)</samp>
+</td>
+<td>获取地图图层上特定位置是否有地块。这与现有的 <code>location.GetTileIndexAt(…) != -1</code> 等效。
+</td></tr>
+<tr>
+<td><samp>Map.AddTileSheet(…)</samp>`
+</td>
+<td>将任意贴图集添加为地块表。
+</td></tr>
+<tr>
+<td><samp>Map.RequireTileSheet(…)</samp>
+</td>
+<td>通过 ID 获取地块表，如果不存在则抛出异常。
+</td></tr>
+<tr>
+<td><samp>string.ContainsIgnoreCase</samp><br><samp>string.EqualsIgnoreCase</samp><br><samp>string.IndexOfIgnoreCase</samp><br><samp>string.StartsWithIgnoreCase</samp><br><samp>string.EndsWithIgnoreCase</samp>
+</td>
+<td>以不区分大小写的方式比较两个字符串。
+<p>例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="c1">// 1.6.9 之前  </span>
+<span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">))</span>  
+   <span class="p">...</span>  
+
+<span class="c1">// 1.6.9 之后  </span>
+<span class="k">if</span> <span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">EqualsIgnoreCase</span><span class="p">(</span><span class="n">right</span><span class="p">))</span>  
+   <span class="p">...</span>
+</pre></div>  
+<p>新方法还按预期处理空值。例如，如果两者都为空，<samp>left.EqualsIgnoreCase(right)</samp> 将为 true。  
+</p>
+</td></tr></tbody></table>
+<h3 class="in-block"><span class="mw-headline" id="SyntaxAbstractor">SyntaxAbstractor</span></h3>
+<p><b>⚠ 这是高度专业化的。</b> 它用于原版单元测试，因此可能无法正确处理非原版文本，并且可能随时更改。
+</p><p>新的 <samp>SyntaxAbstractor</samp> 类将内容素材中的任意文本转换为与语言无关的句法表示。可以比较不同语言中的同一表示，以确保各翻译文本具有相同的命令序列、肖像、未本地化的元数据和分隔符等。这支持对话、事件/节日、信件和特定数据格式。
+</p><p>例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="n">SyntaxAbstractor</span> <span class="n">abstractor</span> <span class="p">=</span> <span class="k">new</span><span class="p">();</span>  
+
+<span class="c1">// 对于素材</span>
+<span class="kt">string</span> <span class="n">syntax</span> <span class="p">=</span> <span class="n">abstractor</span><span class="p">.</span><span class="n">ExtractSyntaxFor</span><span class="p">(</span><span class="s">"Characters/Dialogue/Abigail"</span><span class="p">,</span> <span class="s">"Sun_old"</span><span class="p">,</span> <span class="s">"$p 17#I guess you think nothing would happen, right?$u|Maybe a wicked ghost would appear!"</span><span class="p">);</span> <span class="c1">// $p 17#text$u|text  </span>
+
+<span class="c1">// 对于格式  </span>
+<span class="kt">string</span> <span class="n">syntax</span> <span class="p">=</span> <span class="n">abstractor</span><span class="p">.</span><span class="n">ExtractMailSyntax</span><span class="p">(</span><span class="s">"Hey there!^I had some extra wood lying around... I thought maybe you could use it. Take care!  ^   -Robin %item id (O)388 50 %%[#]A Gift From Robin"</span><span class="p">);</span> <span class="c1">// text%item id (O)388 50%%[#]text  </span>
+
+<span class="c1">// 对于任意分隔数据  </span>
+<span class="kt">string</span> <span class="n">customData</span> <span class="p">=</span> <span class="s">"SomeKey/Example Title/An example description./Robin (O)788 Forest 110 81/-1/true/Hey, nice to see you!$h"</span><span class="p">;</span>  
+<span class="kt">int</span><span class="p">[]</span> <span class="n">textFields</span> <span class="p">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">];</span>  
+<span class="kt">int</span><span class="p">[]</span> <span class="n">dialogueFields</span> <span class="p">=</span> <span class="p">[</span><span class="m">6</span><span class="p">];</span>  
+<span class="kt">string</span> <span class="n">syntax</span> <span class="p">=</span> <span class="n">abstractor</span><span class="p">.</span><span class="n">ExtractDelimitedDataSyntax</span><span class="p">(</span><span class="n">customData</span><span class="p">,</span> <span class="sc">'/'</span><span class="p">,</span> <span class="n">textFields</span><span class="p">,</span> <span class="n">dialogueFields</span><span class="p">);</span> <span class="c1">// SomeKey/text/text/Robin (O)788 Forest 110 81/-1/true/text$h</span>
+</pre></div>  
+<p>这用于单元测试，比较翻译与基础文本，以确保基本格式相同。对于单元测试，您通常通过 <a href="#TranslationValidator"><samp>TranslationValidator</samp></a> 使用它，而不是直接使用。
+</p>
+<h3 class="in-block"><span class="mw-headline" id="TranslationValidator">TranslationValidator</span></h3>
+<p>新的 <samp>TranslationValidator</samp> 类将翻译与原始数据进行比较，并返回检测到的问题列表，如缺失或未知的键、<a href="#SyntaxAbstractor">语法不匹配</a> 或语法格式错误（例如无效的性别切换块）。
+</p><p>例如，验证 C# 模组的翻译：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="c1">// 获取翻译  </span>
+<span class="kt">var</span> <span class="n">translatedData</span> <span class="p">=</span> <span class="n">helper</span><span class="p">.</span><span class="n">Translation</span><span class="p">.</span><span class="n">GetTranslations</span><span class="p">().</span><span class="n">ToDictionary</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Key</span><span class="p">);</span>  
+
+<span class="c1">// 获取基础文本  </span>
+<span class="kt">var</span> <span class="n">baseData</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">Translation</span><span class="p">&gt;();</span>  
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">string</span> <span class="n">key</span> <span class="k">in</span> <span class="n">translatedData</span><span class="p">.</span><span class="n">Keys</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="k">if</span> <span class="p">(</span><span class="n">helper</span><span class="p">.</span><span class="n">Translation</span><span class="p">.</span><span class="n">GetInAllLocales</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="n">TryGetValue</span><span class="p">(</span><span class="s">"default"</span><span class="p">,</span> <span class="k">out</span> <span class="n">Translation</span><span class="p">?</span> <span class="n">baseText</span><span class="p">))</span>  
+        <span class="n">baseData</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="p">=</span> <span class="n">baseText</span><span class="p">;</span>  
+<span class="p">}</span>  
+
+<span class="c1">// 断言所有测试成功  </span>
+<span class="n">SyntaxAbstractor</span> <span class="n">abstractor</span> <span class="p">=</span> <span class="k">new</span><span class="p">();</span>  
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">issue</span> <span class="k">in</span> <span class="n">TranslationValidator</span><span class="p">.</span><span class="n">Compare</span><span class="p">(</span><span class="n">baseData</span><span class="p">,</span> <span class="n">translatedData</span><span class="p">,</span> <span class="n">element</span> <span class="p">=&gt;</span> <span class="n">element</span><span class="p">.</span><span class="n">Value</span><span class="p">,</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">abstractor</span><span class="p">.</span><span class="n">ExtractDialogueSyntax</span><span class="p">(</span><span class="k">value</span><span class="p">)))</span>  
+    <span class="n">Assert</span><span class="p">.</span><span class="n">Fail</span><span class="p">(</span><span class="err">$</span><span class="s">"验证失败：'{issue.Key}'：{issue.SuggestedError}。"</span><span class="p">);</span>
+</pre></div>  
+<h3 class="in-block"><span id="工具字段和方法"></span><span class="mw-headline" id=".E5.B7.A5.E5.85.B7.E5.AD.97.E6.AE.B5.E5.92.8C.E6.96.B9.E6.B3.95">工具字段和方法</span></h3>
+<ul>  
+<li>1.6.9 添加了许多新的工具方法和字段。例如：  
+<table class="wikitable">
+
+<tbody><tr>
+<th>成员
+</th>
+<th>用法
+</th></tr>
+<tr>
+<td>对象字典 → <samp>GetValueOrDefault(…)</samp>
+</td>
+<td>对象字典（如 <samp>GameLocation.objects&lt;/samp）现在实现了 .NET 的 <samp>GetValueOrDefault</samp> 方法，可以简化常见代码：
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="c1">// 1.6.9 之前  </span>
+<span class="kt">string?</span> <span class="n">itemId</span> <span class="p">=</span> <span class="n">location</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="k">out</span> <span class="n">Object</span><span class="p">?</span> <span class="n">obj</span><span class="p">)</span>  
+    <span class="p">?</span> <span class="n">obj</span><span class="p">.</span><span class="n">ItemId</span>  
+    <span class="p">:</span> <span class="k">null</span><span class="p">;</span>  
+
+<span class="c1">// 1.6.9 之后  </span>
+<span class="kt">string?</span> <span class="n">itemId</span> <span class="p">=</span> <span class="n">location</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">GetValueOrDefault</span><span class="p">(</span><span class="n">tile</span><span class="p">)?.</span><span class="n">ItemId</span><span class="p">;</span>
+</pre></div>  
+</samp></td></tr>
+<tr>
+<td><samp>Buff.customFields</samp>
+</td>
+<td>用于创建增益效果的 <samp>Data/Buffs</samp> 和/或 <samp>Data/Objects</samp> 条目中的自定义字段（如果有）。
+</td></tr>
+<tr>
+<td><samp>Bush.readyForHarvest()</samp>
+</td>
+<td>获取此灌木是否有果实可供收获。
+</td></tr>
+<tr>
+<td><samp>ClickableTextureComponent.drawLabel</samp>
+</td>
+<td>是否应绘制标签。这允许您添加一个不会自动渲染的标签。
+</td></tr>
+<tr>
+<td><samp>ColoredObject.TrySetColor(…)</samp>
+</td>
+<td>为任意物品应用色调。如果输入物品是 <samp>ColoredObject</samp>，则会直接更改该物品，否则会创建一个新的 <samp>ColoredObject</samp> 实例。
+<p>例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="n">Item</span> <span class="n">inputItem</span> <span class="p">=</span> <span class="n">ItemRegistry</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s">"(O)128"</span><span class="p">);</span> <span class="c1">// 河豚  </span>
+<span class="k">if</span> <span class="p">(</span><span class="n">ColoredObject</span><span class="p">.</span><span class="n">TrySetColor</span><span class="p">(</span><span class="n">inputItem</span><span class="p">,</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">,</span> <span class="k">out</span> <span class="n">ColoredObject</span><span class="p">?</span> <span class="n">coloredObj</span><span class="p">))</span> <span class="c1">// coloredObj = 红色河豚  </span>
+   <span class="p">...;</span>
+</pre></div>  
+</td></tr>
+<tr>
+<td><samp>CrabPot.NeedsBait(player)</samp>
+</td>
+<td>根据玩家职业，判断<a href="/%E8%9F%B9%E7%AC%BC" title="蟹笼">蟹笼</a>是否需要鱼饵才能捕获东西。
+</td></tr>
+<tr>
+<td><samp>CraftingRecipe.TryParseLevelRequirement(…)</samp>
+</td>
+<td>尝试从烹饪/打造配方原始数据中解析技能等级要求（如果适用）。
+</td></tr>
+<tr>
+<td><samp>Crop.replaceWithObjectOnFullGrown</samp>
+</td>
+<td>（可选）作物完全成熟时在作物地块上的生成物体的限定性 ID。生成物体时，作物将被移除。
+</td></tr>
+<tr>
+<td><samp>Dialogue.GetFallbackForError(npc)</samp><br><samp>Dialogue.GetFallbackTextForError()</samp>
+</td>
+<td>获取翻译后的默认“...”对话，在无法加载有效对话时显示。
+</td></tr>
+<tr>
+<td><samp>Event.TryResolveCommandName(…)</samp>
+</td>
+<td>获取输入命令对应的实际命令名称。这可以用于解析别名（如 <samp>mailReceived</samp> → <samp>AddMailReceived</samp>）或规范化大小写（如 <samp>itemnamed</samp> →`<samp>ItemNamed</samp>）。
+<p>例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="k">if</span> <span class="p">(</span><span class="n">Event</span><span class="p">.</span><span class="n">TryResolveCommandName</span><span class="p">(</span><span class="s">"mailRECEIVED"</span><span class="p">,</span> <span class="k">out</span> <span class="kt">string</span> <span class="n">commandName</span><span class="p">))</span>  
+    <span class="p">...;</span> <span class="c1">// commandName = AddMailReceived</span>
+</pre></div>  
+</td></tr>
+<tr>
+<td><samp>FarmAnimal.homeInterior</samp>
+</td>
+<td>动物建筑的内部地点。
+</td></tr>
+<tr>
+<td><samp>FarmHouse.GetFridgePositionFromMap()</samp>
+</td>
+<td>通过扫描地块获取冰箱的位置。（大多数代码应使用缓存的 <samp>fridgePosition</samp> 字段代替。）
+</td></tr>
+<tr>
+<td><samp>FruitTree.GetCosmeticSeason()</samp>`
+</td>
+<td>获取当前果树贴图对应的实际季节（不一定是其产果的季节。一般情况下返回所在地点的季节，若所在地点忽略季节则返回夏季）。这主要用于让模组重写逻辑。
+</td></tr>
+<tr>
+<td><samp>Game1.IsHudDrawn</samp>
+</td>
+<td>用户界面元素（如工具栏）当前是否可见。
+</td></tr>
+<tr>
+<td><samp>Game1.locationData</samp>
+</td>
+<td><samp>Data/Locations</samp> 素材的缓存视图。
+</td></tr>
+<tr>
+<td><samp>GameLocation.CanWakeUpHere()</samp>
+</td>
+<td>判断玩家是否可以在此地点醒来，而不是被传送回家。
+</td></tr>
+<tr>
+<td><samp>GameLocation.ForEachDirt(…)</samp>
+</td>
+<td>对地点中的每个耕地执行操作。您可以选择排除<a href="/%E8%8A%B1%E7%9B%86" title="花盆">花盆</a>中的耕地。
+<p>例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="n">Game1</span><span class="p">.</span><span class="n">currentLocation</span><span class="p">.</span><span class="n">ForEachDirt</span><span class="p">(</span><span class="n">dirt</span> <span class="p">=&gt;</span>  
+<span class="p">{</span>  
+    <span class="n">dirt</span><span class="p">.</span><span class="n">Pot</span><span class="p">?.</span><span class="n">Water</span><span class="p">();</span>  
+    <span class="n">dirt</span><span class="p">.</span><span class="n">state</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="n">HoeDirt</span><span class="p">.</span><span class="n">watered</span><span class="p">;</span>  
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>  
+<span class="p">});</span>
+</pre></div>  
+</td></tr>
+<tr>
+<td><samp>GameLocation.GetHarvestSpawnedObjectQuality(…)</samp>
+</td>
+<td>获取收获生成物品（如采集品）时的质量。
+</td></tr>
+<tr>
+<td><samp>GameLocation.GetAddedMapOverrideTilesheetId(…)</samp>`
+</td>
+<td>获取通过 <samp>location.ApplyMapOverride(…)</samp> 添加的地块表的动态 ID。
+</td></tr>
+<tr>
+<td>`<samp>GameLocation.removeMapTile(…)</samp>`
+</td>
+<td>移除给定图层和位置上的地块。
+</td></tr>
+<tr>
+<td><samp>GameLocation.setMapTile(…)</samp>
+</td>
+<td>添加或覆盖给定图层和位置上的地块。可以同时设置 <samp>Action</samp> 地块属性。除非您指定了 <samp>copyProperties: false</samp>，否则游戏会自动复制任何先前的地块属性。
+<p>这统一了以前的 <samp>setMapTile</samp> 和 <samp>setMapTileIndex</samp> 方法。请注意，将索引设置为 -1 并不会删除地块；如需删除地块，请使用 <samp>removeMapTile</samp>。  
+</p>
+</td></tr>
+<tr>
+<td><samp>GameLocation.hasTileAt(…)</samp>
+</td>
+<td>获取地图图层上特定位置是否有地块。这与现有的 <code>GetTileIndexAt(…) != -1</code> 等效。
+</td></tr>
+<tr>
+<td><samp>GameLocation.OnHarvestedForage(…)</samp>
+</td>
+<td>当玩家收获采集品时，授予采集或耕种经验值，以及执行模组定义的其他行为。
+</td></tr>
+<tr>
+<td><samp>GameLocation.ParentBuilding</samp>
+</td>
+<td>包含此地点的建筑（如果适用）。这取代了以前的 <samp>GetContainingBuilding()</samp> 方法，以避免每次调用时遍历父地点的建筑列表。
+</td></tr>
+<tr>
+<td><samp>HoeDirt.Pot</samp>
+</td>
+<td>有耕地的<a href="/%E8%8A%B1%E7%9B%86" title="花盆">花盆</a>（如果适用）。这由游戏自动设置。
+</td></tr>
+<tr>
+<td><samp>Inventory.IsLocalPlayerInventory</samp>
+</td>
+<td>这是否为 <samp>Game1.player</samp> 的主背包。
+</td></tr>
+<tr>
+<td><samp>Inventory.Reduce(…)</samp>
+</td>
+<td>从背包的指定物品堆叠扣除指定数量的物品。如果该物品堆叠被清空，您可以指定是否继续扣除背包中具有相同 ID 的其他物品，直到扣除数量达到指定数量，或无法继续扣除。如果某一堆叠的堆叠数被扣除至零，则会清空相应槽位。
+<p>这与 <samp>player.reduceActiveItemByOne()</samp> 类似，但它并不要求玩家选中物品堆叠，并且允许减少任意数量。例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="n">Item</span> <span class="n">item</span> <span class="p">=</span> <span class="p">...;</span>  
+<span class="kt">int</span> <span class="n">countRemoved</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">Reduce</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="n">reduceRemainderFromInventory</span><span class="p">:</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>  
+</td></tr>
+<tr>
+<td><samp>Item.BaseName</samp>
+</td>
+<td>如果物品的 <samp>Name</samp> 包含临时动态更改（如配方后缀），则返回未经更改的物品名称。
+</td></tr>
+<tr>
+<td><samp>Item.canBeShipped()</samp>
+</td>
+<td>判断此物品是否可以放入出货箱。这取代了以前的 <samp>Object.canBeShipped()</samp>，现在返回 true 适用于任何物品类型。
+</td></tr>
+<tr>
+<td><samp>Item.CopyFieldsFrom(otherItem)</samp>
+</td>
+<td>将另一个物品的所有字段复制到当前物品中。这与 <samp>item.getOne()</samp> 等效，只不过更新的是现有物品。
+</td></tr>
+<tr>
+<td><samp>LocalizedContentManager.LoadBaseStringOrNull(…)</samp>
+</td>
+<td>获取翻译路径的默认英文文本，如果未找到则返回 <samp>null</samp>。
+</td></tr>
+<tr>
+<td><samp>Item.LearnRecipe()</samp>
+</td>
+<td>学习此物品的配方（无论配方是在 <samp>Data/CookingRecipes</samp> 还是 <samp>Data/CraftingRecipes</samp> 中）。
+</td></tr>
+<tr>
+<td><samp>NPC.CanSocializePerData(…)</samp>
+</td>
+<td>根据 NPC 在 <samp>Data/Characters</samp> 中的条目，获取是否应启用社交功能（如生日、送礼、友谊和社交标签中的条目）。这与 <samp>npc.CanSocialize</samp> 等效，但不需要 NPC 的实例。
+</td></tr>
+<tr>
+<td><samp>Object.GetPreservedItemId()</samp>
+</td>
+<td>获取此风味物品的原料 ID（例如，郁金香蜂蜜的原料为郁金香），如果适用。这与 <samp>item.preservedParentSheetIndex</samp> 等效，但在特殊情况下（如野蜂蜜，其中 <samp>preservedParentSheetIndex</samp> 设置为非物品值，如 <samp>-1</samp>）除外。
+</td></tr>
+<tr>
+<td><samp>Object.IsTextSign()</samp>
+</td>
+<td>获取物品是否可以具有可编辑的悬停文本，如<a href="/%E6%96%87%E5%AD%97%E6%A0%87%E7%89%8C" title="文字标牌">文字标牌</a>。
+</td></tr>
+<tr>
+<td><samp>Object.GetObjectDisplayName(…)</samp>
+</td>
+<td>获取物品的显示名称，而无需创建物品实例。
+</td></tr>
+<tr>
+<td><samp>Raccoon.GetBundle()</samp><br><samp>Raccoon.GetBundle(timesFed)</samp>
+</td>
+<td>获取当前或将完成给定数量的收集包后显示的 <a href="/%E5%A4%A7%E6%A0%91%E6%A1%A9" title="大树桩">浣熊收集包</a>。
+</td></tr>
+<tr>
+<td><samp>Utility.fuzzySearchAll(…)</samp>
+</td>
+<td>根据模糊比较规则查找搜索词的所有匹配项。
+<p>例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">coopNames</span> <span class="p">=</span> <span class="n">Utility</span><span class="p">.</span><span class="n">FuzzySearchAll</span><span class="p">(</span><span class="s">"coop"</span><span class="p">,</span> <span class="n">Game1</span><span class="p">.</span><span class="n">buildingData</span><span class="p">.</span><span class="n">Keys</span><span class="p">);</span> <span class="c1">// [ "Coop", "Big Coop", "Deluxe Coop" ]</span>
+</pre></div>  
+</td></tr>
+<tr>
+<td><samp>WorldDate.GetDaysPlayed(…)</samp>
+</td>
+<td>获取从游戏开始到给定日期的总天数，以便进行高效的日期比较。
+<p>例如：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="kt">int</span> <span class="n">minDaysPlayed</span> <span class="p">=</span> <span class="n">WorldDate</span><span class="p">.</span><span class="n">GetDaysPlayed</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">dayOfMonth</span><span class="p">);</span>  
+<span class="kt">int</span> <span class="n">actualDaysPlayed</span> <span class="p">=</span> <span class="n">Game1</span><span class="p">.</span><span class="n">Date</span><span class="p">.</span><span class="n">TotalDays</span><span class="p">;</span>  
+<span class="k">if</span> <span class="p">(</span><span class="n">actualDaysPlayed</span> <span class="p">&gt;=</span> <span class="n">minDaysPlayed</span><span class="p">)</span>  
+   <span class="p">...;</span>
+</pre></div>  
+</td></tr></tbody></table></li>
+<li>改进了许多现有字段和方法。例如：  
+<table class="wikitable">
+
+<tbody><tr>
+<th>成员
+</th>
+<th>更改
+</th></tr>
+<tr>
+<td><samp>ArgUtility.UnsplitQuoteAware</samp>
+</td>
+<td> 
+<ul><li>您现在可以设置可选的起始索引和最大数量，故无需在合并所需参数前复制数组。</li>
+<li>当给定空数组时，它现在返回空字符串而不是 null，以匹配其他 <samp>ArgUtility</samp> 方法。</li></ul>
+</td></tr>
+<tr>
+<td><samp>GameLocation.getTileIndexAt(…)</samp><br><samp>Layer.GetTileIndexAt(…)</samp><br><samp>Map.GetTileIndexAt(…)</samp>
+</td>
+<td>添加了 <code>string tilesheetId = null</code> 参数，如果设置，则检查指定地块表中的地块索引。
+</td></tr>
+<tr>
+<td><samp>LocalizedContentManager.LoadStringReturnNullIfNotFound(…)</samp>
+</td>
+<td>添加了可选的替换参数和可选的 <samp>localeFallback</samp> 参数。
+</td></tr>
+<tr>
+<td><samp>MineShaft.IsGeneratedLevel(…)</samp><br><samp>VolcanoDungeon.IsGeneratedLevel(…)</samp>
+</td>
+<td>添加了不带 <samp>out</samp> 参数的重载，以简化常见逻辑。例如：
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="k">if</span> <span class="p">(</span><span class="n">MineShaft</span><span class="p">.</span><span class="n">IsGeneratedLevel</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>  
+   <span class="p">...;</span>
+</pre></div>  
+</td></tr>
+<tr>
+<td><samp>ResourceClump.IsGreenRainBush()</samp>
+</td>
+<td>判断此资源团块否为特殊的绿雨灌木（看起来像巨型杂草）。
+</td></tr>
+<tr>
+<td><samp>Utility.consolidateStacks(…)</samp>
+</td>
+<td>当物品堆叠被移除时，它会将该索引设置为 null 而不是删除索引，因此可以安全地用于玩家背包。
+<p>如果您的代码不期望列表中有空条目，则可以在合并后移除它们：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="n">Utility</span><span class="p">.</span><span class="n">consolidateStacks</span><span class="p">(</span><span class="n">itemList</span><span class="p">);</span>  
+<span class="n">itemList</span><span class="p">.</span><span class="n">RemoveWhere</span><span class="p">(</span><span class="n">slot</span> <span class="p">=&gt;</span> <span class="n">slot</span> <span class="k">is</span> <span class="k">null</span><span class="p">);</span>
+</pre></div>  
+</td></tr></tbody></table>
+</li>  
+<li>并移除了各种方法，包括...  
+<table class="wikitable">
+
+<tbody><tr>
+<th>成员
+</th>
+<th>替代方案
+</th></tr>
+<tr>
+<td><samp>GameLocation.refurbishMapPortion(…)</samp>
+</td>
+<td>使用 <samp>location.ApplyMapOverride</samp> 代替。
+</td></tr>
+<tr>
+<td><samp>GameLocation.setMapTileIndex(…)</samp>
+</td>
+<td>使用 <samp>location.setMapTile</samp> 代替。
+</td></tr></tbody></table>
+</li></ul>  
+<h3 class="in-block"><span id="新常量"></span><span class="mw-headline" id=".E6.96.B0.E5.B8.B8.E9.87.8F">新常量</span></h3>
+<p>1.6.9 添加了新的常量：  
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>常量
+</th>
+<th>用法
+</th></tr>
+<tr>
+<td><samp>AchievementIds.*</samp>
+</td>
+<td><samp>Data/Achievements</samp> 中成就的 ID。例如：
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="c1">// 1.6.9 之前  </span>
+<span class="k">if</span> <span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">achievements</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="m">34</span><span class="p">))</span>  
+   <span class="p">...;</span>  
+
+<span class="c1">// 1.6.9 之后  </span>
+<span class="k">if</span> <span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">achievements</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">AchievementIds</span><span class="p">.</span><span class="n">FullShipment</span><span class="p">))</span>  
+   <span class="p">...;</span>
+</pre></div>  
+</td></tr>
+<tr>
+<td><samp>GameLocation.DefaultTileSheetId</samp><br><samp>MineShaft.MainTileSheetId</samp><br><samp>MovieTheater.MainTileSheetId</samp><br><samp>Submarine.MainTileSheetId</samp><br><samp>VolcanoDungeon.MainTileSheetId</samp>
+</td>
+<td>每个位置的主地块表 ID：默认（<samp>untitled tile sheet</samp>）、矿井（<samp>mine</samp>）、电影院（<samp>movieTheater_tileSheet</samp>）、潜艇（<samp>submarine tiles</samp>）和火山地牢（<samp>dungeon</samp>）。
+</td></tr>
+<tr>
+<td><samp>Item.ErrorItemName</samp>
+</td>
+<td>无效物品显示的“错误物品”名称。
+</td></tr>
+<tr>
+<td><samp>SpecialCurrencyDisplay.currency_qiGems</samp><br><samp>SpecialCurrencyDisplay.currency_walnuts</samp>
+</td>
+<td>该货币界面支持的货币类型（例如获得<a href="/%E9%BD%90%E9%92%BB" title="齐钻">齐钻</a>或<a href="/%E9%87%91%E8%89%B2%E6%A0%B8%E6%A1%83" title="金色核桃">金色核桃</a>在左上角显示的界面）。
+</td></tr></tbody></table>
+<h3 class="in-block"><span id="ForEachItem更改"></span><span class="mw-headline" id="ForEachItem.E6.9B.B4.E6.94.B9"><samp>ForEachItem</samp>更改</span></h3>
+<p>1.6.9 中对 <samp>ForEachItem</samp> 方法进行了一些更改。（这些方法遍历世界中的每个物品，并选择移除/替换实例。）  
+</p><p>大多数模组不受影响。这影响使用 <samp>ForEachItem</samp> 的高级形式（如 <code>Utility.ForEachItem((item, remove, replaceWith) =&gt; ...)</code>）的模组，或实现自定义物品类型的模组。使用简单形式（如 <code>Utility.ForEachItem(item =&gt; ...)</code>）的模组不需要任何更改。  
+</p><p>主要更改包括：  
+</p>
+<ul>  
+<li>高级形式现在使用上下文对象，该对象还提供物品的“路径”。例如，箱子内的物品将具有由地点和箱子组成的路径：  
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="n">Utility</span><span class="p">.</span><span class="n">ForEachItemContext</span><span class="p">(</span><span class="k">delegate</span><span class="p">(</span><span class="k">in</span> <span class="n">ForEachItemContext</span> <span class="n">context</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="c1">// 移除箱子内的河豚  </span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">QualifiedItemId</span> <span class="p">==</span> <span class="s">"(O)128"</span> <span class="p">&amp;&amp;</span> <span class="n">context</span><span class="p">.</span><span class="n">GetPath</span><span class="p">().</span><span class="n">Last</span><span class="p">()</span> <span class="k">is</span> <span class="n">Chest</span><span class="p">)</span>  
+        <span class="n">context</span><span class="p">.</span><span class="n">RemoveItem</span><span class="p">();</span>  
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>  
+<span class="p">});</span>
+</pre></div>  
+<p>必须使用 <samp>in</samp> 关键字通过引用传递上下文。这不适用于 lambda 表达式，因此您需要调整格式：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="c1">// ✘ lambda 不能使用 'in'  </span>
+<span class="n">Utility</span><span class="p">.</span><span class="n">ForEachItemContext</span><span class="p">(</span><span class="k">in</span> <span class="n">context</span> <span class="p">=&gt;</span>  
+<span class="p">{</span>  
+    <span class="n">context</span><span class="p">.</span><span class="n">RemoveItem</span><span class="p">();</span>  
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>  
+<span class="p">});</span>  
+
+<span class="c1">// ✓ 使用方法或局部函数  </span>
+<span class="kt">bool</span> <span class="nf">HandleItem</span><span class="p">(</span><span class="k">in</span> <span class="n">ForEachItemContext</span> <span class="n">context</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="n">context</span><span class="p">.</span><span class="n">RemoveItem</span><span class="p">();</span>  
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>  
+<span class="p">}</span>  
+<span class="n">Utility</span><span class="p">.</span><span class="n">ForEachItemContext</span><span class="p">(</span><span class="n">HandleItem</span><span class="p">);</span>  
+
+<span class="c1">// ✓ 使用委托  </span>
+<span class="n">Utility</span><span class="p">.</span><span class="n">ForEachItemContext</span><span class="p">(</span><span class="k">delegate</span><span class="p">(</span><span class="k">in</span> <span class="n">ForEachItemContext</span> <span class="n">context</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="n">context</span><span class="p">.</span><span class="n">RemoveItem</span><span class="p">();</span>  
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>  
+<span class="p">});</span>
+</pre></div></li>  
+<li>对于重写 <samp>Item.ForEachItem</samp> 的自定义物品，旧版方法签名为
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="c1">/// &lt;summary&gt;对此物品中包含的每个物品执行操作（例如，存储在箱子中的物品、放在桌子上的物品等）。这不包括物品本身。&lt;/summary&gt;  </span>
+<span class="c1">/// &lt;param name="handler"&gt;对每个物品执行的操作。&lt;/param&gt;  </span>
+<span class="c1">/// &lt;returns&gt;返回是否继续迭代。&lt;/returns&gt;  </span>
+<span class="kt">bool</span> <span class="nf">ForEachItem</span><span class="p">(</span><span class="n">ForEachItemDelegate</span> <span class="n">handler</span><span class="p">);</span>
+</pre></div>  
+<p>新版方法签名为： 
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span>  
+<span class="c1">/// &lt;summary&gt;对此物品中包含的每个物品执行操作（例如，存储在箱子中的物品、放在桌子上的物品等）。这不包括物品本身。&lt;/summary&gt;  </span>
+<span class="c1">/// &lt;param name="handler"&gt;对每个物品执行的操作。&lt;/param&gt;  </span>
+<span class="c1">/// &lt;param name="getPath"&gt;导致此物品的上下文路径（包括物品），或 &lt;c&gt;null&lt;/c&gt; 以将此视为根。&lt;/param&gt;  </span>
+<span class="c1">/// &lt;returns&gt;返回是否继续迭代。&lt;/returns&gt;  </span>
+<span class="kt">bool</span> <span class="nf">ForEachItem</span><span class="p">(</span><span class="n">ForEachItemDelegate</span> <span class="n">handler</span><span class="p">,</span> <span class="n">GetForEachItemPathDelegate</span> <span class="n">getPath</span><span class="p">);</span>
+</pre></div>  
+您应当将 <samp>getPath</samp> 值传递给 <samp>ForEachItemHelper</samp> 方法。</li>  
+</ul>  
+<h3 class="in-block"><span id="OutputMethod在Data/Machines中的更改"></span><span class="mw-headline" id="OutputMethod.E5.9C.A8Data.2FMachines.E4.B8.AD.E7.9A.84.E6.9B.B4.E6.94.B9"><samp>OutputMethod</samp>在<samp>Data/Machines</samp>中的更改</span></h3>
+<div style="border: 1px solid #C00; background: #FCC; padding: 0.5em; border-radius: 2px;">此部分文档应当迁移至<a href="/%E6%A8%A1%E7%BB%84:%E6%9C%BA%E5%99%A8" title="模组:机器">模组:机器</a>。当您复制内容时， <b>请确保您署名了原作者</b>。</div>  
+<p>如果您为 <a href="/%E6%A8%A1%E7%BB%84:%E6%9C%BA%E5%99%A8" title="模组:机器"><samp>Data/Machines</samp></a> 中的 <samp>OutputMethod</samp> 字段指定了自定义方法，则在 1.6.9 中须更改其方法签名。您需要将新的 <samp>Farmer player</samp> 参数添加到方法中：  
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">/// &lt;summary&gt;The method signature for a custom &lt;see cref="MachineItemOutput.OutputMethod"/&gt; method.&lt;/summary&gt;</span>
+<span class="c1">/// &lt;param name="machine"&gt;The machine instance for which to produce output.&lt;/param&gt;</span>
+<span class="c1">/// &lt;param name="inputItem"&gt;The item being dropped into the machine, if applicable.&lt;/param&gt;</span>
+<span class="c1">/// &lt;param name="probe"&gt;Whether the machine is only checking the output that would be produced. If so, the input/machine shouldn't be changed and no animations/sounds should play.&lt;/param&gt;</span>
+<span class="c1">/// &lt;param name="outputData"&gt;The item output data from &lt;c&gt;Data/Machines&lt;/c&gt; for which output is being created, if applicable.&lt;/param&gt;</span>
+<span class="c1">/// &lt;param name="player"&gt;The player interacting with the machine, if any.&lt;/param&gt;</span>
+<span class="c1">/// &lt;param name="overrideMinutesUntilReady"&gt;The in-game minutes until the item will be ready to collect, if set. This overrides the equivalent fields in the machine data if set.&lt;/param&gt;</span>
+<span class="c1">/// &lt;returns&gt;Returns the item to produce, or &lt;c&gt;null&lt;/c&gt; if none should be produced.&lt;/returns&gt;</span>
+<span class="k">public</span> <span class="k">delegate</span> <span class="n">Item</span> <span class="nf">MachineOutputDelegate</span><span class="p">(</span><span class="n">Object</span> <span class="n">machine</span><span class="p">,</span> <span class="n">Item</span> <span class="n">inputItem</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">probe</span><span class="p">,</span> <span class="n">MachineItemOutput</span> <span class="n">outputData</span><span class="p">,</span> <span class="n">Farmer</span> <span class="n">player</span><span class="p">,</span> <span class="k">out</span> <span class="kt">int?</span> <span class="n">overrideMinutesUntilReady</span><span class="p">);</span>
+</pre></div>  
+<h3 class="in-block"><span id="其他更改"></span><span class="mw-headline" id=".E5.85.B6.E4.BB.96.E6.9B.B4.E6.94.B9">其他更改</span></h3>
+<ul><li>对于物品：
+<ul><li><samp>Object.signText</samp> 现在可以使用 <a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2" title="模组:模板字符串">模板字符串</a>。新的 <samp>SignText</samp> 属性用于存储解析后的显示文本。</li></ul></li>
+<li>对于饰品：
+<ul><li><samp>trinket.OnDamageMonster</samp> 方法现在接收 <samp>isBomb</samp> 和 <samp>isCriticalHit</samp> 参数。</li>
+<li>对于 C# 模组，添加了新的命名空间和代码文档，使更多代码公开，重命名字段以提高清晰度等。</li>
+<li>修复了 <samp>Trinket.getOne()</samp> 未复制饰品字段的问题。</li>
+<li>修复了 <samp>TrinketEffect.GenerateRandomStats()</samp> 调用构造函数后再次调用就不能正确更新描述的问题。</li></ul></li>
+<li>UI 更改：
+<ul><li>添加了 [屏幕阅读器字段](<a rel="nofollow" class="external free" href="https://stardewvalleywiki.com/Modding:Migrate_to_Stardew_Valley_1.6.9#Screen_reader_changes)%E3%80%82">https://stardewvalleywiki.com/Modding:Migrate_to_Stardew_Valley_1.6.9#Screen_reader_changes)。</a></li>
+<li>添加了 <samp>ItemGrabMenu</samp> 构造函数以复制现有菜单（例如，需要重新打开菜单）。</li>
+<li>重写了 <samp>Game1.specialCurrencyDisplay</samp>。它现在可以同时处理和显示多种货币，具有常量和完整的代码文档，并且无需手动管理持久显示（例如在菜单打开时）。</li>
+<li>菜单中的默认手柄导航已经自动检测到公共 <samp>List&lt;T&gt;</samp> 和一些 <samp>Dictionary&lt;TKey, TValue&gt;</samp> 字段中的 <samp>ClickableComponent</samp> 值。现在它适用于任何 <samp>ClickableComponent</samp> 子类和任何字典键/值类型的组合。</li>
+<li>修复了库存 UI 中的整理按钮重置各种菜单选项的问题。</li></ul></li>
+<li>添加了 <a href="#.E7.8E.A9.E5.AE.B6.E6.9B.B4.E6.94.B9">新的 <samp>Game1.GetPlayer</samp> 方法</a>，弃用了旧的 <samp>getFarmer</samp> 和 <samp>getFarmerMaybeOffline</samp> 方法。</li>
+<li>添加了对 <samp>Game1.multiplayer.broadcastGlobalMessage</samp> 参数中模板字符串的支持。</li>
+<li>在 <samp>Data/Machines</samp> 中，<samp>OutputMethod</samp> C# 方法现在也会获取与机器交互的玩家（如果有）。不幸的是，这对于具有自定义 <samp>OutputMethod</samp> 方法的 C# 模组来说是一个破坏性更改。</li>
+<li>物品数据现在加载得更早，因此模组可以在加载其他素材时使用它（例如在生成地点鱼类时检查物品上下文标签）。</li>
+<li><samp>Object.displayNameFormat</samp> 字段现在在多人游戏中同步，以允许模组创建自定义的非临时物品。</li>
+<li>更改了 <code>IClickableMenu.draw(SpriteBatch b, int red = -1, int green = -1, int blue = -1)&lt;/cide&gt; 的签名，使参数不再是可选的，这修复了与 <samp>draw(SpriteBatch b)</samp></code> 的冲突。</li>
+<li>现在可以使用 <samp>Game1.enterMine</samp> 或 <samp>MineShaft.GetLevelName</samp> 的 <samp>forceLayout</samp> 参数强制传送到特定的矿井布局。</li>
+<li><samp>ItemStockInformation</samp> 现在是一个类而不是结构体，这避免了在编辑商店库存时出现反直觉的行为。</li>
+<li><samp>LanguageSelectionMenu</samp> 被重写以稍微去硬编码语言支持。</li>
+<li><samp>ShopMenu</samp> 的 <samp>onPurchase</samp> 回调现在接收库存信息，并使用文档化的委托。</li>
+<li>任务和特殊订单现在可以选择计算在农场杀死的野生怪物（默认 false）。您可以配置 <samp>Data/Quests</samp> 中的击杀任务目标字段的第四个参数，以及在 <samp>Data/SpecialOrders</samp> 中的击杀目标的 <samp>Data</samp> 字段中的 <samp>IgnoreFarmMonsters</samp>。</li>
+<li>修复了沙漠节换装无法调用帽子/服装的 <samp>onEquip</samp>/<samp>onUnEquip</samp> 方法的问题。</li>
+<li>修复了 <samp>location.playTerrainSound</samp> 根据玩家当前地点而不是调用它的地点改变声音的问题。</li>
+<li>修复了 <samp>Utility.tryToPlaceItem</samp> 接受 <samp>Item</samp> 参数而不是 <samp>Object</samp> 的问题，尽管它在接受非 <samp>Object</samp> 值时会抛出异常。</li>
+<li>修复了以非默认比例绘制农民时渲染错误的问题。</li>
+<li>修复了在某些情况下可以在 <samp>TriggerActionManager</samp> 完全初始化之前调用它的问题。</li>
+<li>修复了在销毁或未放置的灌木上调用某些 <samp>Bush</samp> 方法时的错误。</li>
+<li>修复了如下问题：调用 <samp>TriggerActionManager.RegisterAction</samp> 注册两个名称相同的触发动作时，出现一则警告文本，该文本错误地声称游戏将使用较新值。</li>
+<li>添加了更多代码文档。</li>
+<li>为模组公开了更多代码。</li>
+<li>移除了最后的 Net 字段隐式转换运算符（用于 <samp>NetBool</samp>、<samp>NetInt</samp> 和 <samp>NetString</samp>）。</li>
+<li>移除了未使用的类型、字段/属性和方法。</li>
+<li>调整了能力选项卡的代码，以便模组可以获取某一槽位的对应的能力 ID。</li></ul>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(4)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="SMAPI和外部工具的更改"></span><span class="mw-headline" id="SMAPI.E5.92.8C.E5.A4.96.E9.83.A8.E5.B7.A5.E5.85.B7.E7.9A.84.E6.9B.B4.E6.94.B9">SMAPI和外部工具的更改</span></h2><section class="mf-section-4 collapsible-block" id="mf-section-4">
+<h3 class="in-block"><span id="内容哈希"></span><span class="mw-headline" id=".E5.86.85.E5.AE.B9.E5.93.88.E5.B8.8C">内容哈希</span></h3>
+<p>游戏现在有一个 <samp>Content/ContentHashes.json</samp> 文件，其中包含每个原版内容素材的 MD5 哈希值。这使得 SMAPI、模组管理器和其他工具可以自动检测过时、损坏、丢失或被<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8_XNB_%E6%A8%A1%E7%BB%84" title="模组:使用 XNB 模组">XNB 模组</a> 替换的内容文件。
+</p>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(5)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="译名更改"></span><span class="mw-headline" id=".E8.AF.91.E5.90.8D.E6.9B.B4.E6.94.B9">译名更改</span></h2><section class="mf-section-5 collapsible-block" id="mf-section-5">
+<p>此节主要介绍各语言的译名更改，用于辅助维基编辑者更新相应页面。详见<a href="https://stardewvalleywiki.com/Modding:Migrate_to_Stardew_Valley_1.6.9" class="extiw" title="en:Modding:Migrate to Stardew Valley 1.6.9">英语页面</a>。
+</p>
+<h3 class="in-block"><span id="对XNB的影响"></span><span class="mw-headline" id=".E5.AF.B9XNB.E7.9A.84.E5.BD.B1.E5.93.8D">对XNB的影响</span></h3>
+<h4 class="in-block"><span id="概览"></span><span class="mw-headline" id=".E6.A6.82.E8.A7.88">概览</span></h4>
+<p>本节提供了《星露谷物语 1.6》中 XNB 文件更改的摘要。这不包括新文件（因为它们不会影响旧版模组），也不包括非英文文件中的文本更改。
+</p><p><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8_XNB_%E6%A8%A1%E7%BB%84" title="模组:使用 XNB 模组">XNB 模组</a>会受到不成比例的影响，因为...
+</p>
+<ol><li>它们会替换整个文件；</li>
+<li>它们通过 MonoGame 内容管道加载，该管道对格式变化的容忍度较低；</li>
+<li>它们无法受益于<a href="/%E6%A8%A1%E7%BB%84:Content_Patcher" title="模组:Content Patcher">Content Patcher</a>为其内容包提供的兼容性重写。</li></ol>
+<p>Content Patcher 包通常不受影响（Content Patcher 会尝试自动重写内容包）。不过，如果内容包直接替换素材而非编辑素材，则更有可能像 XNB 模组一样受到影响。
+</p>
+<h3 class="in-block"><span id="素材更改"></span><span class="mw-headline" id=".E7.B4.A0.E6.9D.90.E6.9B.B4.E6.94.B9">素材更改</span></h3>
+<p>TODO
+</p>
+<h3 class="in-block"><span id="移除无用素材"></span><span class="mw-headline" id=".E7.A7.BB.E9.99.A4.E6.97.A0.E7.94.A8.E7.B4.A0.E6.9D.90">移除无用素材</span></h3>
+<p>Stardew Valley 1.6.9 删除了游戏未使用的素材。模组通常不受此影响。
+</p><p>移除的素材：
+</p>
+<ul><li><samp>LooseSprites/buildingPlacementTiles</samp></li>
+<li><samp>LooseSprites/DialogBoxGreen</samp></li>
+<li><samp>LooseSprites/hoverBox</samp></li>
+<li><samp>LooseSprites/robinAtWork</samp></li>
+<li><samp>LooseSprites/skillTitles</samp></li>
+<li><samp>Maps/cavedarker</samp></li>
+<li><samp>Maps/FarmhouseTiles</samp></li>
+<li><samp>Maps/GreenhouseInterior</samp></li>
+<li><samp>Maps/spring_BusStop</samp></li>
+<li><samp>Maps/TownIndoors</samp></li>
+<li><samp>Maps/WizardHouseTiles</samp></li>
+<li><samp>Maps/WoodBuildings</samp></li>
+<li><samp>TerrainFeatures/BuffsIcons</samp></li></ul>
+</section><h2 class="section-heading" onclick="javascript:mfTempOpenSection(6)"><div class="mw-ui-icon mw-ui-icon-element indicator mw-ui-icon-small mw-ui-icon-flush-left"></div><span id="另请参阅"></span><span class="mw-headline" id=".E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85">另请参阅</span></h2><section class="mf-section-6 collapsible-block" id="mf-section-6">
+<ul><li><a href="/%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2#1.6.9" title="版本历史">1.6.9 发布说明</a>列出了许多此页面未提及的技术性更改。</li></ul>
+
+
+
+
+</section></div></div><div class="printfooter">
+取自“<a dir="ltr" href="https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:迁移至游戏本体1.6.9&amp;oldid=51268">https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:迁移至游戏本体1.6.9&amp;oldid=51268</a>”</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-wikimedia-history-base20 "></span>
+		<a class="last-modified-bar__text modified-enhancement" href="/Special:%E5%8E%86%E5%8F%B2/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9"
+				data-user-name="VulpesLucida"
+				data-user-gender="unknown"
+				data-timestamp="1742740874">
+				<span>最后编辑于2025年3月23日 (星期日) 14:41</span>
+		</a>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</div>
+			<ul class="footer-info hlist hlist-separated">
+				<li id="footer-info-lastmod"> 此页面最后编辑于2025年3月23日 (星期日) 14:41。</li><li id="footer-info-copyright">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</li>
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Stardew Valley Wiki:隐私政策">隐私政策</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" title="Stardew Valley Wiki:关于">关于Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Stardew Valley Wiki:免责声明">免责声明</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//zh.stardewvalleywiki.com/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3%E6%B8%B8%E6%88%8F%E6%9C%AC%E4%BD%931.6.9&amp;mobileaction=toggle_view_desktop">桌面版</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.251","walltime":"4.591","ppvisitednodes":{"value":1705,"limit":1000000},"postexpandincludesize":{"value":9283,"limit":2097152},"templateargumentsize":{"value":1282,"limit":2097152},"expansiondepth":{"value":6,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":42422,"limit":5000000},"timingprofile":["100.00% 4478.009      1 -total","  1.26%   56.597     17 Template:Migration_guide_doc_status","  0.13%    5.963     29 Template:T","  0.06%    2.878      7 Template:O","  0.03%    1.504      2 Template:Version","  0.03%    1.480      1 Template:Price","  0.03%    1.349      1 Template:Modder_compatibility_header","  0.02%    0.771      1 Template:Content_Patcher_version"]},"cachereport":{"timestamp":"20250330064636","ttl":86400,"transientcontent":false}}});});</script>
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":127});});</script>		</body>
+		</html>
+		
+

@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>模组:使用指南/疑难解答 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"模组","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"模组:使用指南/疑难解答","wgTitle":"使用指南/疑难解答","wgCurRevisionId":51203,"wgRevisionId":51203,"wgArticleId":1776,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["模组"],"wgPageContentLanguage":"zh","wgPageContentModel":"wikitext","wgRelevantPageName":"模组:使用指南/疑难解答","wgRelevantArticleId":1776,"wgUserVariant":"zh","wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],
+"wgRedirectedFrom":"模组:玩家常见问题","wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgInternalRedirectTargetUrl":"/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94"};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready","jquery.makeCollapsible.styles":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["mediawiki.action.view.redirect","site","mediawiki.page.startup","mediawiki.page.ready","jquery.makeCollapsible","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=jquery.makeCollapsible.styles%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/mediawiki/load.php?lang=zh&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="如果您在进行游戏时遇到了各种错误，那么这个页面就是为您准备的！（此页面不仅仅面向使用Mod的玩家。）"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (zh)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//zh.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="alternate" hreflang="zh" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh"/>
+<link rel="alternate" hreflang="zh-Hans" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-hans"/>
+<link rel="alternate" hreflang="zh-Hant" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-hant"/>
+<link rel="alternate" hreflang="zh-Hans-CN" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-cn"/>
+<link rel="alternate" hreflang="zh-Hant-HK" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-hk"/>
+<link rel="alternate" hreflang="zh-Hant-MO" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-mo"/>
+<link rel="alternate" hreflang="zh-Hans-MY" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-my"/>
+<link rel="alternate" hreflang="zh-Hans-SG" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-sg"/>
+<link rel="alternate" hreflang="zh-Hant-TW" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-tw"/>
+<link rel="alternate" hreflang="x-default" href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki的Atom feed" href="/mediawiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+<link rel="canonical" href="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94"/>
+<meta property="og:title" content="模组:使用指南/疑难解答 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94"/>
+<meta property="og:description" content="如果您在进行游戏时遇到了各种错误，那么这个页面就是为您准备的！（此页面不仅仅面向使用Mod的玩家。）"/>
+<meta property="og:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="模组:使用指南/疑难解答 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="如果您在进行游戏时遇到了各种错误，那么这个页面就是为您准备的！（此页面不仅仅面向使用Mod的玩家。）"/>
+<meta property="twitter:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u6a21\u7ec4:\u4f7f\u7528\u6307\u5357\/\u7591\u96be\u89e3\u7b54 - Stardew Valley Wiki","headline":"\u6a21\u7ec4:\u4f7f\u7528\u6307\u5357\/\u7591\u96be\u89e3\u7b54 - Stardew Valley Wiki","mainEntityOfPage":"\u6a21\u7ec4:\u4f7f\u7528\u6307\u5357\/\u7591\u96be\u89e3\u7b54","identifier":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97\/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94","url":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97\/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94","description":"\u5982\u679c\u60a8\u5728\u8fdb\u884c\u6e38\u620f\u65f6\u9047\u5230\u4e86\u5404\u79cd\u9519\u8bef\uff0c\u90a3\u4e48\u8fd9\u4e2a\u9875\u9762\u5c31\u662f\u4e3a\u60a8\u51c6\u5907\u7684\uff01\uff08\u6b64\u9875\u9762\u4e0d\u4ec5\u4ec5\u9762\u5411\u4f7f\u7528Mod\u7684\u73a9\u5bb6\u3002\uff09","dateModified":"2025-03-13T14:55:07Z","datePublished":"2025-03-13T14:55:07Z","image":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-模组_使用指南_疑难解答 rootpage-模组_使用指南 skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="zh">模组:使用指南/疑难解答</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">来自Stardew Valley Wiki</div>
+		<div id="contentSub"><span class="mw-redirectedfrom">（重定向自<a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E7%8E%A9%E5%AE%B6%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98&amp;redirect=no" class="mw-redirect" title="模组:玩家常见问题">模组:玩家常见问题</a>）</span></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">跳到导航</a>
+		<a class="mw-jump-link" href="#searchInput">跳到搜索</a>
+		<div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><style data-mw-deduplicate="TemplateStyles:r25791">.mw-parser-output .modding-header{position:relative;text-align:center;font-weight:bold;border:2px solid rgb(0,116,72);background:rgba(3,160,7,0.1);padding:1em 0}.mw-parser-output .modding-header .mh-backlink{position:absolute;top:5px;left:5px}.mw-parser-output .modding-header .mh-header{font-size:2em}.mw-parser-output .modding-header li{display:inline-block;padding:0 1em;border-right:1px dotted #000}.mw-parser-output .modding-header li:last-child{border-right:none}.mw-parser-output .modding-error-box{border:1px solid red;background:#FCC;padding:1em}.mw-parser-output h1{margin-bottom:0;padding:1em;border:2px solid rgb(0,116,72);background:rgba(3,160,7,0.1)}.mw-parser-output h1:not(:first-of-type){margin-top:3rem}</style>
+<div class="modding-header">
+<div class="mh-backlink">←<span style="font-size: smaller;"> <a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95" title="模组:目录">模组:目录</a></span></div>
+<div class="mh-header"><b>模组使用指南</b> <a href="/File:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/38px-SMAPI_mascot.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/50px-SMAPI_mascot.png 2x" /></a></div>
+<ul>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8" title="模组:使用指南/入门">入门</a></li>
+<li><a class="mw-selflink selflink">疑难解答</a></li>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%8C%89%E9%94%AE%E7%BB%91%E5%AE%9A" title="模组:使用指南/按键绑定">按键绑定</a></li>
+<li><a rel="nofollow" class="external text" href="https://smapi.io/mods">兼容性</a>（站外）</li>
+</ul>
+</div>
+<p>如果您在进行游戏时遇到了各种错误，那么这个页面就是为您准备的！（此页面不仅仅面向使用Mod的玩家。）
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="zh" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.9F.BA.E6.9C.AC.E7.9F.A5.E8.AF.86"><span class="tocnumber">1</span> <span class="toctext">基本知识</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E5.B8.B8.E7.94.A8.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88"><span class="tocnumber">1.1</span> <span class="toctext">常用解决方案</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E5.9F.BA.E6.9C.AC.E6.AD.A5.E9.AA.A4"><span class="tocnumber">1.2</span> <span class="toctext">基本步骤</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E9.87.8D.E7.BD.AE.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6"><span class="tocnumber">1.3</span> <span class="toctext"><span>重置游戏文件</span></span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E5.9C.A8.E7.8B.AC.E7.AB.8B.E6.98.BE.E5.8D.A1.E4.B8.8A.E8.BF.90.E8.A1.8C.E6.B8.B8.E6.88.8F.EF.BC.88.E4.BB.85_Windows.EF.BC.89"><span class="tocnumber">1.4</span> <span class="toctext"><span>在独立显卡上运行游戏（仅 Windows）</span></span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E5.85.B3.E4.BA.8E.E6.98.9F.E9.9C.B2.E8.B0.B7.E7.89.A9.E8.AF.AD1.6.E7.9A.84.E9.97.AE.E7.AD.94"><span class="tocnumber">1.5</span> <span class="toctext">关于星露谷物语1.6的问答</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E6.B8.B8.E6.88.8F.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8"><span class="tocnumber">1.6</span> <span class="toctext">游戏无法启动</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#.E7.89.B9.E5.AE.9A.E9.94.99.E8.AF.AF.E4.BF.A1.E6.81.AF"><span class="tocnumber">2</span> <span class="toctext">特定错误信息</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#.22Could_not_load_.27Stardew_Valley.27_or_one_of_its_dependencies.22"><span class="tocnumber">2.1</span> <span class="toctext">"Could not load 'Stardew Valley' or one of its dependencies"</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.22The_game_failed_to_launch:_Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException:_Failed_to_create_graphics_device.22"><span class="tocnumber">2.2</span> <span class="toctext">"The game failed to launch: Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException: Failed to create graphics device"</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.22Skipped_.27....27_because_it_doesn.27t_have_a_manifest.json.22"><span class="tocnumber">2.3</span> <span class="toctext">"Skipped '...' because it doesn't have a manifest.json"</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.22missing_executable.22.EF.BC.88.E4.BB.85.E9.80.82.E7.94.A8.E4.BA.8ESteam.EF.BC.89"><span class="tocnumber">2.4</span> <span class="toctext">"missing executable"（仅适用于Steam）</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.22Could_not_load_file_or_assembly.22"><span class="tocnumber">2.5</span> <span class="toctext">"Could not load file or assembly"</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#OutOfMemoryException.E6.8A.A5.E9.94.99"><span class="tocnumber">2.6</span> <span class="toctext">OutOfMemoryException报错</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#SMAPI.E5.8D.A1.E5.9C.A8.E5.8A.A0.E8.BD.BD.E7.95.8C.E9.9D.A2"><span class="tocnumber">2.7</span> <span class="toctext">SMAPI卡在加载界面</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#NoAudioHardwareException:_Audio_has_failed_to_initialize"><span class="tocnumber">2.8</span> <span class="toctext">NoAudioHardwareException: Audio has failed to initialize</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Mac:_Contents.2FMacOS.2FStardewValley_Already_Exists"><span class="tocnumber">2.9</span> <span class="toctext">Mac: Contents/MacOS/StardewValley Already Exists</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#.E5.85.B6.E4.BB.96.E9.97.AE.E9.A2.98"><span class="tocnumber">3</span> <span class="toctext">其他问题</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#.E6.B8.B8.E6.88.8F.E6.97.B6.E5.BB.B6.E8.BF.9F.E6.88.96.E5.8D.A1.E9.A1.BF"><span class="tocnumber">3.1</span> <span class="toctext">游戏时延迟或卡顿</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#.E6.B8.B8.E6.88.8F.E9.9F.B3.E9.A2.91.E6.97.A0.E6.B3.95.E6.92.AD.E6.94.BE.E6.88.96.E8.B5.B0.E8.B0.83.EF.BC.88.E4.BB.85Windows.EF.BC.89"><span class="tocnumber">3.2</span> <span class="toctext">游戏音频无法播放或走调（仅Windows）</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#.E4.BD.BF.E7.94.A8SMAPI.E5.90.AF.E5.8A.A8.E6.B8.B8.E6.88.8F.E6.97.B6.E5.88.86.E8.BE.A8.E7.8E.87.E6.94.B9.E5.8F.98.EF.BC.88.E4.BB.85Windows.EF.BC.89"><span class="tocnumber">3.3</span> <span class="toctext">使用SMAPI启动游戏时分辨率改变（仅Windows）</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#.E5.AD.98.E6.A1.A3.E6.B6.88.E5.A4.B1.E6.88.96.E6.97.A0.E6.B3.95.E5.8A.A0.E8.BD.BD"><span class="tocnumber">3.4</span> <span class="toctext">存档消失或无法加载</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#.E5.A4.9A.E4.BA.BA.E6.B8.B8.E6.88.8F.E4.B8.AD.E6.97.A0.E6.B3.95.E8.81.94.E6.9C.BA"><span class="tocnumber">3.5</span> <span class="toctext">多人游戏中无法联机</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#SMAPI.E6.88.96.E6.A8.A1.E7.BB.84.E6.96.87.E4.BB.B6.E6.B6.88.E5.A4.B1.E4.BA.86.EF.BC.8C.E6.88.96.E8.A2.AB.E6.9D.80.E6.AF.92.E8.BD.AF.E4.BB.B6.2F.E6.B5.8F.E8.A7.88.E5.99.A8.E6.8B.A6.E6.88.AA"><span class="tocnumber">3.6</span> <span class="toctext">SMAPI或模组文件消失了，或被杀毒软件/浏览器拦截</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#SMAPI.E6.97.A0.E6.B3.95.E8.AF.86.E5.88.AB.E6.89.8B.E6.9F.84.EF.BC.88.E4.BB.85Steam.EF.BC.89"><span class="tocnumber">3.7</span> <span class="toctext">SMAPI无法识别手柄（仅Steam）</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#.E5.85.89.E6.A0.87.E5.8D.A1.E5.9C.A8.E5.8D.9A.E7.89.A9.E9.A6.86.E6.88.96.E5.BB.BA.E7.AD.91.E7.95.8C.E9.9D.A2.E4.B8.AD"><span class="tocnumber">3.8</span> <span class="toctext">光标卡在博物馆或建筑界面中</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#.E5.AE.89.E8.A3.85.E6.96.B0.E7.89.88.E5.90.8E.EF.BC.8C.E5.90.AF.E5.8A.A8.E6.B8.B8.E6.88.8F.E6.97.B6.E4.BB.8D.E6.98.BE.E7.A4.BA.E6.97.A7.E7.89.88.E7.9A.84SMAPI.E6.88.96.E6.B8.B8.E6.88.8F"><span class="tocnumber">3.9</span> <span class="toctext">安装新版后，启动游戏时仍显示旧版的SMAPI或游戏</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#SMAPI.E5.AE.89.E8.A3.85.E5.99.A8.E6.89.93.E5.BC.80.E5.90.8E.E9.97.AA.E9.80.80"><span class="tocnumber">3.10</span> <span class="toctext">SMAPI安装器打开后闪退</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#.E4.B8.A4.E4.B8.AA.E5.AD.98.E6.A1.A3.E5.89.AF.E6.9C.AC"><span class="tocnumber">3.11</span> <span class="toctext">两个存档副本</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#.E5.AE.A0.E7.89.A9.E4.BA.8B.E4.BB.B6.E6.97.A0.E9.99.90.E6.92.AD.E6.94.BE"><span class="tocnumber">3.12</span> <span class="toctext">宠物事件无限播放</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#.E4.BD.BF.E7.94.A8SteamLink.E6.88.96.E5.85.B6.E4.BB.96Steam_RemotePlay.E5.90.AF.E5.8A.A8.E6.97.B6.E6.B8.B8.E6.88.8F.E7.94.BB.E9.9D.A2.E5.8D.A1.E4.BD.8F"><span class="tocnumber">3.13</span> <span class="toctext">使用SteamLink或其他Steam RemotePlay启动时游戏画面卡住</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="#.E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98"><span class="tocnumber">4</span> <span class="toctext">已知问题</span></a>
+<ul>
+<li class="toclevel-2 tocsection-33"><a href="#.E6.97.A0.E6.B3.95.E5.9C.A8.E5.85.BC.E5.AE.B9.E6.80.A7.E5.88.86.E6.94.AF.E4.B8.8A.E8.BF.90.E8.A1.8CSMAPI"><span class="tocnumber">4.1</span> <span class="toctext">无法在兼容性分支上运行SMAPI</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-34"><a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9"><span class="tocnumber">5</span> <span class="toctext">寻求帮助</span></a>
+<ul>
+<li class="toclevel-2 tocsection-35"><a href="#.E6.8A.A5.E5.91.8A.E6.BC.8F.E6.B4.9E"><span class="tocnumber">5.1</span> <span class="toctext">报告漏洞</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9_2"><span class="tocnumber">5.2</span> <span class="toctext">寻求帮助</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span id="基本知识"></span><span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E7.9F.A5.E8.AF.86">基本知识</span></h1>
+<h2><span id="常用解决方案"></span><span class="mw-headline" id=".E5.B8.B8.E7.94.A8.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88">常用解决方案</span></h2>
+<h2><span id="基本步骤"></span><span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E6.AD.A5.E9.AA.A4">基本步骤</span></h2>
+<ol><li>重启电脑。</li>
+<li>确保您的游戏已经更新到了 1.6.15 或更高版本。<br />
+<ol><li>在游戏标题界面点击右下角的"?"按钮后，屏幕左下角会显示当前游戏版本。</li>
+<li>在 Steam 中右击游戏名称，然后点击“属性”，查看“测试版”选项卡。如果您希望使用 SMAPI，则<b>不能</b>选择 32-bit 版本。更多信息详见 <a href="#SMAPI.E4.B8.8D.E8.83.BD.E5.9C.A8.E5.85.BC.E5.AE.B9.E6.80.A7.E5.88.86.E6.94.AF.E4.B8.8A.E8.BF.90.E8.A1.8C">SMAPI 不能在兼容性分支上运行</a>。</li></ol></li>
+<li><a href="#.E9.87.8D.E7.BD.AE.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6">重置游戏文件</a>。</li>
+<li>如果您正在使用SMAPI：<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="/File:Modding_-_Player_Guide_-_Troubleshooting_-_SMAPI_Log_Parser_ZH.png" class="image"><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/8/86/Modding_-_Player_Guide_-_Troubleshooting_-_SMAPI_Log_Parser_ZH.png/300px-Modding_-_Player_Guide_-_Troubleshooting_-_SMAPI_Log_Parser_ZH.png" decoding="async" width="300" height="456" class="thumbimage" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/8/86/Modding_-_Player_Guide_-_Troubleshooting_-_SMAPI_Log_Parser_ZH.png/450px-Modding_-_Player_Guide_-_Troubleshooting_-_SMAPI_Log_Parser_ZH.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/8/86/Modding_-_Player_Guide_-_Troubleshooting_-_SMAPI_Log_Parser_ZH.png/600px-Modding_-_Player_Guide_-_Troubleshooting_-_SMAPI_Log_Parser_ZH.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/File:Modding_-_Player_Guide_-_Troubleshooting_-_SMAPI_Log_Parser_ZH.png" class="internal" title="放大"></a></div>SMAPI日志解析器</div></div></div>
+<ol><li>确保您已经安装了<a rel="nofollow" class="external text" href="https://smapi.io/">最新版本的SMAPI</a><br /><small>SMAPI控制台窗口的左上角会显示当前运行的SMAPI版本。</small></li>
+<li>按照<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#SMAPI.E6.97.A5.E5.BF.97" title="模组:使用指南/入门">这里的说明</a>，或是<a rel="nofollow" class="external text" href="https://smapi.io/log">日志解析器的介绍</a>，找到SMAPI在您电脑上储存的日志，并将其上传到<a rel="nofollow" class="external text" href="https://smapi.io/log">日志解析器</a>中进行分析。它可以帮助您分析一些常见错误。右侧的图片将告诉您如何读懂SMAPI的日志。
+<ol><li>如果该网页显示日志文件过大或解析时间过长，请用任意文本编辑器打开该日志，截取日志最顶端到第一个报错结束之间的内容，再上传此内容。</li></ol></li>
+<li>日志靠近最上方的位置显示了需要更新的Mod。您也可以使用<a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/2536">Mod Update Menu</a>来在游戏主菜单内检视已安装Mod的更新情况。<b>当您在使用Mod进行游戏时遇到了任何问题时，第一件事都应当是更新这个列表里的所有Mod（即便有些Mod未更新时看起来也能正常使用）。</b></li>
+<li>如果您已将问题定位到了一个或一系列特定的Mod上，请试着卸载并重新安装这些Mod。
+<ol><li>删除导致问题的Mod的所有相关文件夹，同时确保您已经核查了Mod发布页中提到的所有文件夹。（如果您是从Nexus下载的Mod，您可以点击“Preview File Contents”来查看Mod所包含的文件。在ModDrop上，您可以在侧边栏的“Files”中找到相关信息。）</li>
+<li>重新下载这些Mod，并按照Mod发布页的使用说明重新安装Mod。如果您习惯于使用Mod管理器，重新安装时也请使用手动安装方式，从而排除是Mod管理器没有将文件放到正确位置而造成问题的可能性。</li></ol></li></ol></li>
+<li>如果遵循以上步骤后您仍然遇到了错误，请查看本页面的<a href="#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E8.A7.A3.E7.AD.94">常见问题解答</a>部分，或<a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">寻求帮助</a>。</li></ol>
+<h2><span id="重置游戏文件"></span><span class="mw-headline" id=".E9.87.8D.E7.BD.AE.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6"><span id="reset-content">重置游戏文件</span></span></h2>
+<p>许多问题都是游戏文件损坏导致的（尤其是在您使用 <a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8_XNB_%E6%A8%A1%E7%BB%84" title="模组:使用 XNB 模组">XNB 模组</a>时）。您可以通过验证游戏文件完整性来修复该问题。基于SMAPI的Mod不会在该过程中被影响。
+</p>
+<ol><li>查看针对您的平台的指南：
+<ul><li><a rel="nofollow" class="external text" href="https://help.steampowered.com/zh-cn/faqs/view/0C48-FCBD-DA71-93EB">Steam</a></li>
+<li><a rel="nofollow" class="external text" href="https://support.gog.com/hc/zh-cn/articles/360003930017">GOG Galaxy</a></li>
+<li><a rel="nofollow" class="external text" href="https://support.xbox.com/zh-CN/help/games-apps/troubleshooting/troubleshoot-games-windows-10">Xbox</a>（参见“更新和修复游戏”一栏）</li></ul></li></ol>
+<table class="mw-collapsible mw-collapsed" style="border: 1px solid #666; margin-top: 1em; padding: 0.2em;">
+<tbody><tr>
+<th style="text-align: left;"><b>更多方法</b>&#160;
+</th></tr>
+<tr>
+<td>如果您不想重置所有游戏文件，您可以使用下面提及的其他方法。
+<dl><dt>方法2：获得并备份原版游戏文件，以替换任何损坏的文件</dt>
+<dd>如果您安装了 XNB 模组并造成了游戏损坏，您可以仅重置损坏的文件。如果您在安装模组之前没有备份原版游戏文件，可以按照以下方法获取它们，且保留您已经修改过的游戏文件。
+<ol><li>在游戏目录下新建名为 <code>Content-modded</code> 的文件夹，并将 <code>Content</code> 文件夹内的所有文件复制到 <code>Content-modded</code> 内。</li>
+<li>按照<a rel="nofollow" class="external text" href="https://support.steampowered.com/kb_article.php?ref=2037-QEUH-3335&amp;l=simplified%20chinese">Steam 平台的说明</a>或是<a rel="nofollow" class="external text" href="https://support.gog.com/hc/zh-cn/articles/360003930017">GOG 平台的说明</a>重置游戏文件。</li>
+<li>在游戏目录下新建名为 <code>Content-backup</code> 的文件夹，并将刚刚已恢复原版文件的 <code>Content</code> 文件夹内的所有文件移动到 <code>Content-backup</code> 内。</li>
+<li>将 <code>Content-modded</code> 文件夹中的内容复制回 <code>Content</code> 文件夹。</li></ol></dd>
+<dd>现在您的游戏文件（ <code>Content</code> 文件夹）仍然是修改过的，但您已经获得了原版游戏文件（ <code>Content-backup</code> 文件夹）。只需要替换对应的损坏文件即可。</dd></dl>
+<dl><dt>方法3：XNB 模组导致的问题</dt>
+<dd>如果您安装使用了XNB 模组，但并不确定是哪个模组导致了问题，此外您也不想移除您所有的 XNB 模组，可以按照以下方法来确定是哪个模组导致的问题。
+<ol><li>备份您想保留的所有 XNB 模组。</li>
+<li>按照<a rel="nofollow" class="external text" href="https://support.steampowered.com/kb_article.php?ref=2037-QEUH-3335&amp;l=simplified%20chinese">Steam 平台的说明</a>或是 <a rel="nofollow" class="external text" href="https://support.gog.com/hc/zh-cn/articles/360003930017">GOG 平台的说明</a>重置游戏文件。</li>
+<li>如果您正在 Linux/Mac 上使用SMAPI，需要重新安装 SMAPI 来修复启动器。</li>
+<li>启动游戏来看看先前遇到的问题是否已被修复。如果问题依然出现，请查看<a href="/%E6%A8%A1%E7%BB%84:%E5%B8%AE%E5%8A%A9#.E4.BD.BF.E7.94.A8.E6.A8.A1.E7.BB.84" title="模组:帮助">帮助</a>页面以寻求帮助。</li>
+<li>如果已经修复，请每次只添加一个 XNB 模组，然后打开游戏看看是否出现问题。逐个尝试这些XNB 模组，直到找到有问题的为止（可能并不止一个）。然后将它移除，便可以继续正常游戏了。</li></ol></dd></dl>
+</td></tr></tbody></table>
+<div class="modding-error-box"><b>注意：</b>XNB Mod是直接替换游戏文件的Mod，现在已经<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8_XNB_%E6%A8%A1%E7%BB%84" title="模组:使用 XNB 模组">不再被推荐使用</a>，继续使用XNB Mod可能会导致许多意想不到的问题。重置游戏文件将会移除您所有已安装的XNB Mod。重置完成后，您可以考虑<b><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8_XNB_%E6%A8%A1%E7%BB%84" title="模组:使用 XNB 模组">使用基于Content Pacher的Mod</a></b>来替代这些XNB Mod。</div>
+<h2><span id="在独立显卡上运行游戏（仅_Windows）"></span><span class="mw-headline" id=".E5.9C.A8.E7.8B.AC.E7.AB.8B.E6.98.BE.E5.8D.A1.E4.B8.8A.E8.BF.90.E8.A1.8C.E6.B8.B8.E6.88.8F.EF.BC.88.E4.BB.85_Windows.EF.BC.89"><span id="dedicated-gpu">在独立显卡上运行游戏（仅 Windows）</span></span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="/File:SMAPI_dedicated_GPU_on_Windows.png" class="image"><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/63/SMAPI_dedicated_GPU_on_Windows.png/300px-SMAPI_dedicated_GPU_on_Windows.png" decoding="async" width="300" height="213" class="thumbimage" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/6/63/SMAPI_dedicated_GPU_on_Windows.png/450px-SMAPI_dedicated_GPU_on_Windows.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/6/63/SMAPI_dedicated_GPU_on_Windows.png/600px-SMAPI_dedicated_GPU_on_Windows.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/File:SMAPI_dedicated_GPU_on_Windows.png" class="internal" title="放大"></a></div>左侧步骤中提到的'high performance'选项</div></div></div>
+<p>许多电脑允许用户使用两种不同方式运行游戏：<b>集成显卡</b>（CPU的一部分）和 <b>独立显卡</b>（NVIDIA 或 AMD 生产的独立显卡）。应当使用独立显卡运行星露谷物语，但是这不一定是您电脑的默认选项（尤其是笔记本）。如果您不确定您的游戏是否运行在独立显卡上，可以尝试下述步骤。这是安全的，即使这些步骤不起作用也不会造成任何问题。
+</p><p>使游戏运行在独显上：
+</p>
+<ol><li>在开始菜单中，搜索 <i>Graphics Settings</i> 并打开。</li>
+<li>在打开的窗口中，点击靠近顶部的“浏览”然后选中<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E6.89.BE.E5.88.B0.E4.BD.A0.E7.9A.84.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6.E5.A4.B9" title="模组:使用指南/入门">游戏文件夹</a>下面的 <code><a href="/File:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/20px-SMAPI_mascot.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/30px-SMAPI_mascot.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/40px-SMAPI_mascot.png 2x" /></a>&#160;StardewModdingAPI<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;StardewModdingAPI&#39;。">.exe</span></code> 文件。如果您没有安装SMAPI，则应当选择 <code><a href="/File:Stardew_Valley_executable_icon.png" class="image"><img alt="Stardew Valley executable icon.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/20px-Stardew_Valley_executable_icon.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/30px-Stardew_Valley_executable_icon.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/40px-Stardew_Valley_executable_icon.png 2x" /></a>&#160;Stardew Valley<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;Stardew Valley&#39;。">.exe</span></code>。</li>
+<li>在应用列表中，点击 <samp>StardewModdingAPI</samp> 下面的“选项”。如果您没有安装SMAPI，则应当点击 <samp>Stardew Valley</samp>。</li>
+<li>将图形首选项设为“高性能”。</li>
+<li>保存。</li>
+<li>检查是否成功。</li></ol>
+<h2><span id="关于星露谷物语1.6的问答"></span><span class="mw-headline" id=".E5.85.B3.E4.BA.8E.E6.98.9F.E9.9C.B2.E8.B0.B7.E7.89.A9.E8.AF.AD1.6.E7.9A.84.E9.97.AE.E7.AD.94">关于星露谷物语1.6的问答</span></h2>
+<dl><dt>模组也会更新到 1.6 版本吗？</dt>
+<dd>星露谷物语 1.6 是一次重大更新，因此许多模组需要升级到 1.6 版本。</dd></dl>
+<dl><dd><ul><li>最新版的 <a rel="nofollow" class="external text" href="https://smapi.io/">SMAPI</a> 和 <a rel="nofollow" class="external text" href="https://www.nexusmods.com/stardewvalley/mods/1915">Content Patcher</a> 完全支持星露谷 1.6 版本。确认您将 SMAPI 和所有模组升级到了最新版。</li></ul>
+<ol><li>发布的第一天就有 44% 的 SMAPI 准备就绪，此数量随着模组更新正在稳步增长。您可以查阅<a rel="nofollow" class="external text" href="https://smapi.io/mods/">模组兼容性列表</a>以了解您的模组是否更新，或在 SMAPI 控制台窗口查阅紫色的更新提示。</li>
+<li>大多数内容包应当仍能正常工作，如果加载它们的模组已经更新。</li>
+<li>大多数<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8_XNB_%E6%A8%A1%E7%BB%84" title="模组:使用 XNB 模组">XNB 模组</a>不兼容 1.6 版本。这种模组已经被淘汰许多年了，且其可能会引发贴图损坏或丢失、游戏内容丢失和游戏崩溃等问题。您可以<a href="#.E9.87.8D.E7.BD.AE.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6">重置游戏文件</a>以移除已安装的 XNB 模组。</li></ol></dd></dl>
+<dl><dt>星露谷 1.6 对模组有何变化？</dt>
+<dd>星露谷物语 1.6 有很多用于帮助模组开发者的改进，参见<a href="https://stardewvalleywiki.com/Modding:Migrate_to_Stardew_Valley_1.6" class="extiw" title="en:Modding:Migrate to Stardew Valley 1.6">对应英文文档</a>。对于玩家，该版本有许多<a href="/%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2#1.6" title="版本历史">玩家更改</a>，在未来也会使得模组能做更多事情。</dd></dl>
+<dl><dt>我可以回退到星露谷 1.5.6 直到模组更新好吗？</dt>
+<dd>当然。如果您正在使用 Steam：
+<ol><li>点击客户端中的 "Stardew Valley"。</li>
+<li>点击右上角的齿轮图标，并选择“属性”。</li>
+<li>前往“测试版”选项卡。</li>
+<li>在“参与测试”下拉框中选择 "legacy_1.5.6"。</li></ol></dd></dl>
+<dl><dd>如果您正在使用 GOG：
+<ol><li>启动 GOG Galaxy。</li>
+<li>点击 Stardew Valley。</li>
+<li>在上方的菜单中，点击 "Extras" 以参见早期版本的下载项。</li></ol></dd></dl>
+<h2><span id="游戏无法启动"></span><span class="mw-headline" id=".E6.B8.B8.E6.88.8F.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8">游戏无法启动</span></h2>
+<p>在您试着启动游戏时，游戏无法启动。（如果您正在使用的是Steam，它可能会显示“正在启动”。）下面的方法可能会帮您解决这个问题：
+</p>
+<ol><li>重启电脑。</li>
+<li>确保您已经插入耳机或麦克风。（需要一个可工作的音频设备才能正常运行游戏，您可以将它们设置为静音。）</li>
+<li>如果您正在Windows上运行游戏：
+<ol><li>安装（或是重新安装）<a rel="nofollow" class="external text" href="https://dotnet.microsoft.com/download/dotnet/5.0/runtime">.NET 5</a>（通常情况下安装Windows x64版本即可）。您可能需要预先<a rel="nofollow" class="external text" href="https://knowledge.autodesk.com/zh-hans/support/autocad/learn-explore/caas/sfdcarticles/sfdcarticles/CHS/How-to-remove-and-reinstall-the-Microsoft-NET-Framework.html">卸载 .NET Framework</a>才能进行安装。</li>
+<li>重启电脑。</li>
+<li>运行游戏。</li>
+<li>确保您<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85SMAPI#Steam" title="模组:在Windows上安装SMAPI">在Steam上为星露谷物语设置的启动选项</a>准确无误（如有必要，您可以先尝试删除所有的启动选项）。</li>
+<li>安装并运行<a rel="nofollow" class="external text" href="https://www.microsoft.com/en-us/download/details.aspx?id=30135">.NET 修复程序</a>，依照它显示的步骤进行修复。</li></ol></li>
+<li>如果您正在Linux上运行游戏：
+<ol><li>您默认的终端可能与游戏不兼容，请尝试安装XTERM终端。</li></ol></li>
+<li>如果以上方法均无效，您可以：
+<ol><li><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E5.AE.89.E8.A3.85SMAPI" title="模组:使用指南/入门">安装SMAPI</a>（如果您还未安装）。</li>
+<li>尝试运行游戏。</li>
+<li><a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">附上您的SMAPI日志寻求帮助</a>。</li></ol></li></ol>
+<dl>
+<dt>1. 尝试常见解决方案：</dt>
+<dd><ol>
+<li>重启电脑。</li>
+<li><a href="#.E9.87.8D.E7.BD.AE.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6">重置游戏文件</a>或重装游戏。</li><li class="mw-empty-elt">
+</li><li>删除 <code>startup_preferences</code> 文件（先<a href="/%E5%AD%98%E6%A1%A3#.E6.B8.B8.E6.88.8F.E5.AD.98.E6.A1.A3.E4.BD.8D.E7.BD.AE" title="存档">打开存档文件夹</a>，该文件在存档文件夹的上一级文件夹里）。</li>
+<li>安装显卡软件（<a rel="nofollow" class="external text" href="https://www.nvidia.com/en-us/software/nvidia-app/">NVIDIA App</a> 或 <a rel="nofollow" class="external text" href="https://www.amd.com/en/technologies/software">AMD Software</a>），用它来升级显卡驱动。</li>
+<li>禁用那些可能拦截游戏的程序。</li>
+<li>针对不同平台的解决方案：
+<table class="wikitable">
+
+<tbody><tr>
+<th>系统
+</th>
+<th>常见解决方案
+</th></tr>
+<tr>
+<td>Windows
+</td>
+<td>如果您正在使用 Steam，请再次检查您的<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85SMAPI#Steam" title="模组:在Windows上安装SMAPI">启动选项</a>。
+</td></tr>
+<tr>
+<td>Linux
+</td>
+<td><p>如果您正在使用 Steam，请确保您的 Steam 启动选项为空。</p><p>您的默认终端可能不兼容。可以尝试安装 XTerm 终端）。</p>
+</td></tr>
+<tr>
+<td>macOS
+</td>
+<td>如果您正在使用 Steam，请确保您的 Steam 启动选项为空。
+</td></tr></tbody></table>
+</li>
+<li class="mw-empty-elt"></li>
+</ol></dd>
+<dt>2.（仅适用于 Windows）使用独立显卡启动游戏。</dt>
+<dd>参见<a href="#dedicated-gpu"><i>在独立显卡上运行游戏（仅 Windows）</i></a>。不要跳过这步！它往往能解决问题。</dd>
+
+<dt>3. 检查是否存在报错信息。</dt>
+<dd><ol>
+<li><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E6.89.BE.E5.88.B0.E4.BD.A0.E7.9A.84.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6.E5.A4.B9" title="模组:使用指南/入门">打开游戏文件夹</a>。</li>
+<li>右击文件夹空白处。在 Windows，您需要先按住 <span style="display:inline-block; padding:0px 3px; border-radius:4px; border-style:outset; background:#FFFFFF; background: -webkit-linear-gradient(#FCFCFC, #E0E0E0); background: linear-gradient(#FCFCFC, #E0E0E0);">Shift</span> 再右击。</li>
+<li>选择 "Open in Command Prompt"，"Open in PowerShell"，"Open in Windows Terminal"，"Open In Terminal" 或类似的选项（取决于您的系统类型/配置）。</li>
+<li>输入如下命令：
+<table class="wikitable">
+
+<tbody><tr>
+<th>游戏模式
+</th>
+<th>命令
+</th></tr>
+<tr>
+<td>Windows 有模组
+</td>
+<td><code>.\StardewModdingAPI.exe</code>
+</td></tr>
+<tr>
+<td>Windows 无模组
+</td>
+<td><code>.\"Stardew Valley.exe"</code>
+</td></tr>
+<tr>
+<td>Mac/Linux 有模组
+</td>
+<td><code>./StardewModdingAPI</code>
+</td></tr>
+<tr>
+<td>Max/Linux 无模组
+</td>
+<td><code>./"StardewValley"</code>
+</td></tr></tbody></table></li>
+<li>按回车键运行命令。</li>
+<li>如果报错，请参阅下文<a href="#.E7.89.B9.E5.AE.9A.E9.94.99.E8.AF.AF.E4.BF.A1.E6.81.AF">“特定错误信息”</a>一节。</li>
+</ol></dd>
+<p>（注意：如果您不喜欢默认终端，也可以使用其他终端，包括 WSL 的终端。）
+</p>
+<dt>寻求帮助</dt>
+<dd>如果您还是没能解决问题，欢迎来<a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">寻求帮助</a>！</dd>
+</dl>
+<h1><span id="特定错误信息"></span><span class="mw-headline" id=".E7.89.B9.E5.AE.9A.E9.94.99.E8.AF.AF.E4.BF.A1.E6.81.AF">特定错误信息</span></h1>
+<h2><span id="&quot;Could_not_load_'Stardew_Valley'_or_one_of_its_dependencies&quot;"></span><span class="mw-headline" id=".22Could_not_load_.27Stardew_Valley.27_or_one_of_its_dependencies.22">"Could not load 'Stardew Valley' or one of its dependencies"</span></h2>
+<p>SMAPI 无法加载游戏的可执行文件。您可以尝试如下方法：
+</p>
+<ol><li><a href="#.E9.87.8D.E7.BD.AE.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6">重置游戏文件</a>。</li>
+<li>确保您的星露谷物语为 1.6.15 或更高版本（按步骤 4 关闭 SMAPI、启动游戏，然后点击标题界面的 "?" 按钮，版本号就在左下角）。</li>
+<li>使用<a rel="nofollow" class="external text" href="https://smapi.io/">最新版 SMAPI</a>。</li>
+<li>确保您在无 SMAPI 情况下也能启动游戏：
+<ol><li>打开<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E6.89.BE.E5.88.B0.E4.BD.A0.E7.9A.84.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6.E5.A4.B9" title="模组:使用指南/入门">您的游戏文件夹</a>。</li>
+<li>双击 <code><a href="/File:Stardew_Valley_executable_icon.png" class="image"><img alt="Stardew Valley executable icon.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/20px-Stardew_Valley_executable_icon.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/30px-Stardew_Valley_executable_icon.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/40px-Stardew_Valley_executable_icon.png 2x" /></a>&#160;Stardew Valley<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;Stardew Valley&#39;。">.exe</span></code>（Windows）或 <code>StardewValley-original</code>（Linux/macOS）。</li>
+<li>如果不能启动游戏，参见<a href="#.E6.B8.B8.E6.88.8F.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8">“游戏无法启动”</a>一节。</li></ol></li>
+<li>确保您在 Steam 或 GOG Galaxy 中没有启用 "compatibility branch"（<a href="#.E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98">模组无法在兼容性分支上运行</a>）。</li>
+<li>请确保您在游戏文件夹中运行 <code><a href="/File:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/20px-SMAPI_mascot.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/30px-SMAPI_mascot.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/40px-SMAPI_mascot.png 2x" /></a>&#160;StardewModdingAPI<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;StardewModdingAPI&#39;。">.exe</span></code>（参见<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E5.BF.AB.E9.80.9F.E4.B8.8A.E6.89.8B" title="模组:使用指南/入门">安装指南</a>）。</li>
+<li>您是否没有使用<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E5.AE.89.E8.A3.85SMAPI" title="模组:使用指南/入门">SMAPI 安装器</a>，而是手动安装了它？请确保您的操作遵循了 <samp>README.txt</samp> 文件中的步骤。</li>
+<li>极少数情况下，可能需要彻底卸载并重装游戏。</li></ol>
+<h2><span id="&quot;The_game_failed_to_launch:_Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException:_Failed_to_create_graphics_device&quot;"></span><span class="mw-headline" id=".22The_game_failed_to_launch:_Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException:_Failed_to_create_graphics_device.22">"The game failed to launch: <samp>Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException</samp>: Failed to create graphics device"</span></h2>
+<p>这意味这游戏的底层框架不支持您的显驱。
+</p><p>常见解决方案：
+</p>
+<dl>
+<dt>1. 更新显驱：</dt>
+<dd><ol>
+<li>安装显卡软件（<a rel="nofollow" class="external text" href="https://www.nvidia.com/en-us/software/nvidia-app/">NVIDIA App</a> 或 <a rel="nofollow" class="external text" href="https://www.amd.com/en/technologies/software">AMD Software</a>）。</li>
+<li>打开显卡软件。</li>
+<li>找到显示显卡驱动信息的那一栏。请确保显驱为最新版本，否则请更新。</li>
+</ol></dd>
+<dt>2.（仅适用于 Windows）在独立显卡上运行游戏。</dt>
+<dd>参见<a href="#dedicated-gpu"><i>在独立显卡上运行游戏（仅 Windows）</i></a>。不要跳过这步！它往往能解决问题。</dd>
+
+<dt>3.（仅适用于 Linux）不要强制使用 Wayland 运行 SDL：</dt>
+<dd>您可能设置了 <code>SDL_VIDEODRIVER=wayland</code> 以强制使用 Wayland 运行 SDL 应用（包括星露谷物语）。移除此设置可能有用。此设置可能在 <code>.bashrc</code>、<code>.bash_profile</code> 或类似的位置。</dd>
+
+<dt>4. 使用兼容性分支或较旧版本：</dt>
+<dd>这是不得已的手段。您可以：
+<ul><li>使用<a rel="nofollow" class="external text" href="https://www.stardewvalley.net/compatibility/">兼容性分支</a>（但目前您<a href="#.E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98">不能在其上使用模组</a>）；</li>
+<li><b>或者</b><a href="#.E6.97.A0.E6.B3.95.E5.9C.A8.E5.85.BC.E5.AE.B9.E6.80.A7.E5.88.86.E6.94.AF.E4.B8.8A.E8.BF.90.E8.A1.8CSMAPI">回退到星露谷物语 1.5.4 或更低版本</a>（这使得您可以使用旧版 SMAPI 和模组）。</li></ul>
+</dd>
+</dl>
+<h2><span id="&quot;Skipped_'...'_because_it_doesn't_have_a_manifest.json&quot;"></span><span class="mw-headline" id=".22Skipped_.27....27_because_it_doesn.27t_have_a_manifest.json.22">"Skipped '...' because it doesn't have a manifest.json"</span></h2>
+<p>SMAPI 无法在模组文件夹中找到相应的 <code>manifest.json</code> 文件。这一般表明此模组并非 SMAPI 模组，所以它在 <code>Mods</code> 文件夹中无法运行。请参见此模组的文档，以了解如何正确安装此模组。
+</p>
+<h2><span id="&quot;missing_executable&quot;（仅适用于Steam）"></span><span class="mw-headline" id=".22missing_executable.22.EF.BC.88.E4.BB.85.E9.80.82.E7.94.A8.E4.BA.8ESteam.EF.BC.89">"missing executable"（仅适用于Steam）</span></h2>
+<p>Steam 无法找到游戏启动器，通常是因为您的 Steam 启动选项错误。常见解决方案：
+</p>
+<ul><li>如果您希望使用 SMAPI：<br />请确保您已经安装了 SMAPI 且启动选项正确（参见<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E5.BF.AB.E9.80.9F.E4.B8.8A.E6.89.8B" title="模组:使用指南/入门">安装指南</a>）。</li>
+<li>如果您希望卸载 SMAPI：<br />
+<ol><li>在 Steam 中，右击 "Stardew Valley" 并选择 “属性”。</li>
+<li>查看 “通用 &gt; 启动选项” 一栏。</li>
+<li>确保“启动选项”为空。</li></ol></li></ul>
+<h2><span id="&quot;Could_not_load_file_or_assembly&quot;"></span><span class="mw-headline" id=".22Could_not_load_file_or_assembly.22">"Could not load file or assembly"</span></h2>
+<p>如果提示的 'file or assembly' 以 <samp>Microsoft</samp> 或 <samp>System</samp> 开头（例如 "<i>FileNotFoundException: Could not load file or assembly 'System.[...]' or one of its dependencies</i>"），或者您看到了 "The library '[...].dll' required to execute the application is not found in 'C:\Program Files\dotnet`" 这样的信息（一般为 <samp>hostpolicy.dll</samp>），则游戏依赖的核心框架出错了。
+</p><p>常见解决方案：
+</p>
+<ul><li><a href="#.E9.87.8D.E7.BD.AE.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6">重置游戏文件</a>。</li>
+<li>如果无效，卸载星露谷物语（并彻底删除游戏文件夹），然后重装。</li>
+<li>确保您<a href="#.E5.AE.89.E8.A3.85.E6.96.B0.E7.89.88.E5.90.8E.EF.BC.8C.E5.90.AF.E5.8A.A8.E6.B8.B8.E6.88.8F.E6.97.B6.E4.BB.8D.E6.98.BE.E7.A4.BA.E6.97.A7.E7.89.88.E7.9A.84SMAPI.E6.88.96.E6.B8.B8.E6.88.8F">只有一个游戏副本</a>，而不是有多个游戏副本。</li></ul>
+<p>（现在星露谷物语封装了其所需的依赖，因此您应该无需自行安装它们。）
+</p><p>当您手动安装 SMAPI（即，把 .bat 改为 .zip 并手动移植文件）时，您也可能遇到此问题。此时您也可以尝试使用安装器重装 SMAPI。
+</p>
+<h2><span id="OutOfMemoryException报错"></span><span class="mw-headline" id="OutOfMemoryException.E6.8A.A5.E9.94.99"><samp>OutOfMemoryException</samp>报错</span></h2>
+<p>您的控制台中出现 <samp>OutOfMemoryException</samp> 报错信息，且游戏严重卡顿或崩溃。这意味着您的游戏耗尽了内存。
+</p><p>此问题也可能表现为 <samp>Unable to allocate pixels for the bitmap</samp> 报错。
+</p><p>一些常见修复方法：
+</p>
+<ul><li>确保您拥有最新版的星露谷物语 1.6.15。新版的星露谷是 64 位的，它解决了 32 位内存限制的问题。</li>
+<li>如果您仍能看到此错误，则可能需要移除您不需要的模组（尤其是 Custom Music、SAAT 或 TMXL Map Toolkit 的内容包，它们可能占用很多内存）。</li></ul>
+<h2><span id="SMAPI卡在加载界面"></span><span class="mw-headline" id="SMAPI.E5.8D.A1.E5.9C.A8.E5.8A.A0.E8.BD.BD.E7.95.8C.E9.9D.A2">SMAPI卡在加载界面</span></h2>
+<p>一些常见的原因：
+</p>
+<ul><li>（仅适用于 Windows）<b>请确保 SMAPI 窗口未处于“选取模式”</b>（选取模式下，SMAPI 窗口会在左上角的 "SMAPI" 前面显示 "Select" 字样）。选取模式下，SMAPI 会暂停加载，以便用户查看控制台内容或选取控制台中的文本。您可以点击控制台然后按几次 Enter 键来退出选取模式。<div class="thumb tnone"><div class="thumbinner" style="width:602px;"><a href="/File:Screenshot_2022-01-08_140059.png" class="image"><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/e2/Screenshot_2022-01-08_140059.png/600px-Screenshot_2022-01-08_140059.png" decoding="async" width="600" height="120" class="thumbimage" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/e/e2/Screenshot_2022-01-08_140059.png/900px-Screenshot_2022-01-08_140059.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/e/e2/Screenshot_2022-01-08_140059.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/File:Screenshot_2022-01-08_140059.png" class="internal" title="放大"></a></div>“选取模式”的特征</div></div></div></li>
+<li><b>杀毒软件阻止 SMAPI 加载游戏。</b> 这种情况下，控制台中的日志往往加载非常缓慢（非常简单的任务也需耗费数秒）。您可以尝试暂时关闭杀毒软件以检查是否为此问题。如果关闭杀毒软件能解决此问题，请将 SMAPI 、Stardew Valley 和游戏文件夹都加入杀毒软件白名单。最后重启杀毒软件。
+<ul><li>提示：如果您不确定是否有杀毒软件，Windows 内置了一款称为 Winddows Defender 的杀毒软件。</li></ul></li>
+<li>（仅适用于 Windows）<b>如果您有独立显卡，请使用独立显卡运行游戏</b>，而不要使用集成显卡。参见<a href="#dedicated-gpu">“在独立显卡上运行游戏（仅 Windows）”</a>。</li>
+<li><b>如果您安装了许多模组，则加载可能耗费数分钟。</b> 加载时间很大程度上取决于您所安装的模组和您的电脑配置。如果您安装了一些非常大型的模组（例如一个以上的扩展型模组），则您可能需要等待几分钟，再观察是否确有问题。如果您安装了 PyTK 但不再使用它，请尝试移除它，这可能有助于缩短加载时间。</li></ul>
+<h2><span class="mw-headline" id="NoAudioHardwareException:_Audio_has_failed_to_initialize">NoAudioHardwareException: Audio has failed to initialize</span></h2>
+<p>此异常代表游戏本体或 SMAPI 由于某些原因无法使用电脑音频。对于 Windows，安装 <a rel="nofollow" class="external text" href="https://www.openal.org/downloads/">OpenAl</a> 也许能解决此问题。您也可以试着连接耳机。
+</p>
+<h2><span id="Mac:_Contents/MacOS/StardewValley_Already_Exists"></span><span class="mw-headline" id="Mac:_Contents.2FMacOS.2FStardewValley_Already_Exists">Mac: Contents/MacOS/StardewValley Already Exists</span></h2>
+<p>此报错往往如下所示：
+"An error occurred in the base update loop: IOException: The file '/Users/USERNAME/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS/StardewValley' already exists."
+</p><p>如果您遇到了此问题，可以尝试这些方法：
+</p>
+<ul><li>在“访达”中按下 <code>Command+Shift+.</code> 键来显示隐藏文件，然后前往主目录（它在访达的左边栏中，以您的用户名命名，有一个小房子图标）。其中可能会出现许多隐藏文件夹。</li>
+<li>确保 <code>~/.config/StardewValley/ErrorLogs</code> 文件夹存在。若不存在，请创建此文件夹。</li>
+<li>确保您的截屏按钮工作正常。如果它无法工作，请确保 <code>~/.local/share/StardewValley/Screenshots</code> 文件夹存在。若不存在，请创建此文件夹。</li></ul>
+<p>如果以上方法均无效，您可能需要自行寻找解决方案。
+</p>
+<h1><span id="其他问题"></span><span class="mw-headline" id=".E5.85.B6.E4.BB.96.E9.97.AE.E9.A2.98">其他问题</span></h1>
+<h2><span id="游戏时延迟或卡顿"></span><span class="mw-headline" id=".E6.B8.B8.E6.88.8F.E6.97.B6.E5.BB.B6.E8.BF.9F.E6.88.96.E5.8D.A1.E9.A1.BF">游戏时延迟或卡顿</span></h2>
+<p>您可以尝试如下方法：
+</p>
+<ol><li>如果您正在使用模组：
+<ol><li>将 SMAPI 和您的模组更新到最新版。</li>
+<li>确保 SMAPI 控制台中没有循环报错（若有，请参见<a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">“寻求帮助”</a>）。</li>
+<li>暂时移除 SMAPI 和 Error Handler（SMAPI 自带）<b>以外</b>的全部模组。如果这能解决问题，则可能是您的某个模组导致了延迟。（您也可以继续尝试下面的方法，以观察是否能解决问题。）</li></ol></li>
+<li>仅适用于 Windows：
+<ol><li><a href="#dedicated-gpu">在独立显卡上运行游戏</a>。</li>
+<li>安装您的显卡对应的软件（NVIDIA 显卡为 <a rel="nofollow" class="external text" href="https://www.nvidia.com/en-us/geforce/geforce-experience/">GeForce Experience</a>，AMD 显卡为 <a rel="nofollow" class="external text" href="https://www.amd.com/en/technologies/software">AMD Software</a>），然后使用显卡软件升级显卡驱动至最新版。</li>
+<li>如果您正在使用 GeForce Experience，请确保已禁用 WhisperMode。</li></ol></li>
+<li>对于 Linux/SteamDeck 玩家：
+<ol><li>打开<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E6.89.BE.E5.88.B0.E4.BD.A0.E7.9A.84.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6.E5.A4.B9" title="模组:使用指南/入门">游戏文件夹</a>中的 <samp>smapi-internal/config.json</samp> 并将其中 <samp>ListenForConsoleInput</samp> 设为 false。（请参阅此文件顶部的教程以了解如何创建 <samp>config.user.json</samp> 文件。）</li></ol></li>
+<li>将<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E6.89.BE.E5.88.B0.E4.BD.A0.E7.9A.84.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6.E5.A4.B9" title="模组:使用指南/入门">游戏文件夹</a>添加到杀毒软件白名单中。<br /><b>对 Windows 玩家的提示</b>：如果您没有安装额外的杀毒软件，也会有默认的 Windows Defender 软件，后者<b>可能</b>会导致延迟。这种情况下，请尝试将游戏文件夹<a rel="nofollow" class="external text" href="https://support.microsoft.com/zh-cn/windows/windows-安全中心-应用中的病毒和威胁防护-1362f4cd-d71a-b52a-0b66-c2820032b65e">加入排除项</a>。</li>
+<li>设置处理器相关性（processor affinity，Windows 中一般通过任务管理器设置），一般设为 CPU2 或更高。如果您使用模组，则需设置 <code><a href="/File:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/20px-SMAPI_mascot.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/30px-SMAPI_mascot.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/40px-SMAPI_mascot.png 2x" /></a>&#160;StardewModdingAPI<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;StardewModdingAPI&#39;。">.exe</span></code> 的相关性；如不使用，则需设置 <code><a href="/File:Stardew_Valley_executable_icon.png" class="image"><img alt="Stardew Valley executable icon.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/20px-Stardew_Valley_executable_icon.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/30px-Stardew_Valley_executable_icon.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/40px-Stardew_Valley_executable_icon.png 2x" /></a>&#160;Stardew Valley<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;Stardew Valley&#39;。">.exe</span></code> 的相关性。</li>
+<li>设置处理器优先级为“高”。如果您使用模组，则需设置 <code><a href="/File:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/20px-SMAPI_mascot.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/30px-SMAPI_mascot.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/40px-SMAPI_mascot.png 2x" /></a>&#160;StardewModdingAPI<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;StardewModdingAPI&#39;。">.exe</span></code>；如不使用，则需设置 <code><a href="/File:Stardew_Valley_executable_icon.png" class="image"><img alt="Stardew Valley executable icon.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/20px-Stardew_Valley_executable_icon.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/30px-Stardew_Valley_executable_icon.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/40px-Stardew_Valley_executable_icon.png 2x" /></a>&#160;Stardew Valley<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;Stardew Valley&#39;。">.exe</span></code>。</li>
+<li>如果您使用 Steam 版本，尝试使用 Steam 客户端启动游戏。</li></ol>
+<p>如果进行了上述操作仍不能解决问题，请参见<a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">“寻求帮助”</a>。
+</p>
+<h2><span id="游戏音频无法播放或走调（仅Windows）"></span><span class="mw-headline" id=".E6.B8.B8.E6.88.8F.E9.9F.B3.E9.A2.91.E6.97.A0.E6.B3.95.E6.92.AD.E6.94.BE.E6.88.96.E8.B5.B0.E8.B0.83.EF.BC.88.E4.BB.85Windows.EF.BC.89">游戏音频无法播放或走调（仅Windows）</span></h2>
+<p>浏览器或其他应用程序都能正常播放音频，但游戏无法播放音频。以下是一些常见的修复方法：
+</p>
+<ol><li>重启电脑。</li>
+<li>确保 Windows 音量合成器没有将游戏静音。</li>
+<li>确保游戏内的音量滑块选项没有被设为静音。</li>
+<li><a href="#.E6.B8.B8.E6.88.8F.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8">查看“游戏无法启动”一节下的调试方法</a>。</li>
+<li><a href="#NoAudioHardwareException:_Audio_has_failed_to_initialize">检查是否出现了 NoAudioHardwareException 报错信息，并尝试按相应指南操作</a>。</li></ol>
+<h2><span id="使用SMAPI启动游戏时分辨率改变（仅Windows）"></span><span class="mw-headline" id=".E4.BD.BF.E7.94.A8SMAPI.E5.90.AF.E5.8A.A8.E6.B8.B8.E6.88.8F.E6.97.B6.E5.88.86.E8.BE.A8.E7.8E.87.E6.94.B9.E5.8F.98.EF.BC.88.E4.BB.85Windows.EF.BC.89">使用SMAPI启动游戏时分辨率改变（仅Windows）</span></h2>
+<p>使用 SMAPI 启动游戏时，图像变大/变小。
+</p><p>将 SMAPI 升级到 3.16.0 或更高版本应当能修复此问题。如果不能修复，请<a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">寻求帮助</a>。
+</p>
+<h2><span id="存档消失或无法加载"></span><span class="mw-headline" id=".E5.AD.98.E6.A1.A3.E6.B6.88.E5.A4.B1.E6.88.96.E6.97.A0.E6.B3.95.E5.8A.A0.E8.BD.BD">存档消失或无法加载</span></h2>
+<p>参见<a href="/%E5%AD%98%E6%A1%A3#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94" title="存档">存档#疑难解答</a>。
+</p>
+<h2><span id="多人游戏中无法联机"></span><span class="mw-headline" id=".E5.A4.9A.E4.BA.BA.E6.B8.B8.E6.88.8F.E4.B8.AD.E6.97.A0.E6.B3.95.E8.81.94.E6.9C.BA">多人游戏中无法联机</span></h2>
+<ol><li>检查游戏配置：
+<ol><li>确保您正在使用最新版的星露谷物语（PC 1.6.15）。</li>
+<li>确保房主处于合作模式中。也就是说，房主需要点击标题界面的“合作”按钮，然后点击“主持（农场名字）农场”来开始游戏。如果您通过“加载”菜单加载了联机存档，即使存档内有联机小屋，也只会使用单人模式。</li>
+<li>确保联机小屋数不低于农场帮手人数。</li>
+<li>确保在游戏的“选项”菜单中，“服务器模式”不是“离线”。</li>
+<li><a href="#.E9.87.8D.E7.BD.AE.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6">重置所有玩家的游戏文件</a>。</li>
+<li>删除 <code>startup_preferences</code> 文件（Windows 位于 <code>%appdata%/StardewValley</code>，Linux/Mac 位于 <code>~/.config/StardewValley</code>）。</li></ol></li>
+<li>确保所有玩家都通过 Steam 或 GOG Galaxy 运行游戏（而不是通过其他快捷方式）。对于 Windows 版 SMAPI，参见<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85SMAPI#.E8.AE.BE.E7.BD.AE.E6.B8.B8.E6.88.8F.E5.B9.B3.E5.8F.B0.E5.90.AF.E5.8A.A8.E9.A1.B9" title="模组:在Windows上安装SMAPI">“设置游戏平台启动项”</a>。</li>
+<li>关闭所有玩家的防火墙或杀毒软件。如果您有一个以上的杀毒软件，则很可能引发此问题。不要同时使用多于一款杀毒软件。</li>
+<li>重启所有玩家的电脑。</li>
+<li>重启所有玩家的路由器，并尝试升级您的路由器固件。</li>
+<li>如果您没有看见“输入邀请码”选项，则您的 Steam 用户名可能被识别为包含敏感词。尝试改一个名字，然后重启游戏。</li>
+<li>（仅适用于 Windows）<a href="#.E6.B8.B8.E6.88.8F.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8">检查“游戏无法启动”一节下面的内容</a>。</li>
+<li>如果您正在使用模组，且收到了“版本错配”报错，请检查您的日志文件，其中某一行可能类似于 <code>[19:49:26 TRACE game] Starting server. Protocol version: 1.6.15</code>，检查协议版本是否匹配。</li></ol>
+<p>对于主机玩家，请尝试所有合适的步骤（包括“检查游戏设置”一节下面的前 4 个），以及尝试电源重启主机（关闭主机，拔掉插头，等待半分钟以上，重新开机）。请主机，所有主机都需要付费在线服务才能通过互联网进行游戏。
+</p>
+<h2><span id="SMAPI或模组文件消失了，或被杀毒软件/浏览器拦截"></span><span class="mw-headline" id="SMAPI.E6.88.96.E6.A8.A1.E7.BB.84.E6.96.87.E4.BB.B6.E6.B6.88.E5.A4.B1.E4.BA.86.EF.BC.8C.E6.88.96.E8.A2.AB.E6.9D.80.E6.AF.92.E8.BD.AF.E4.BB.B6.2F.E6.B5.8F.E8.A7.88.E5.99.A8.E6.8B.A6.E6.88.AA">SMAPI或模组文件消失了，或被杀毒软件/浏览器拦截<span id="antivirus"></span><span id="SMAPI_files_disappear_or_antivirus_complains"></span></span></h2>
+<p>您的杀毒软件可能删除、拦截或报告 SMAPI 或模组文件。虽然文件本身可能并不包含病毒，但杀毒软件可能出现误报。
+</p>
+<dl><dd><dl><dt><b>怎样才能知道文件是否安全？</b></dt>
+<dd>来自互联网的内容，其安全性<b>无法</b>得到绝对保证。但是，您可以通过下面的方法来确认一个文件是否<b>大概率</b>是安全的：直接阅读并检查软件的源代码（例如，您可以阅读 <a rel="nofollow" class="external text" href="https://github.com/Pathoschild/SMAPI">SMAPI 的源代码</a>，[反编译]下载的模组文件再检查反编译得到的源代码（请确保反编译是被允许的），或将文件<a rel="nofollow" class="external text" href="https://www.virustotal.com/">上传到 VirusTotal</a>。VirusTotal 会使用六十种以上的杀毒软件扫描上传的文件；如果其中仅有一两个软件检测出问题，则<b>有可能</b>是误报。而 Nexus Mods 上的文件在被下载之前会自动经过 VirusTotal 检测。</dd></dl></dd></dl>
+<dl><dd><dl><dt><b>为什么出现此问题？</b></dt>
+<dd>杀毒软件和浏览器经常误报，因为：
+<ul><li>下载的文件较新。这种情况下，杀毒软件或浏览器可能并没有检测出任何问题，可能只是单纯担心它是一个未知的文件。这种情况杀毒软件常常会显示一个假的病毒名称，例如 <samp>Trojan:Win32/Emali.A!cl</samp>。当有足够多的用户下载了这个文件，杀毒软件可能就不会误报了。但模组每次发布新版，该问题仍会出现。</li>
+<li>杀毒软件可能会检查软件某些特定的行为模式，例如访问文件或重写代码，但 SMAPI 模组在正常情况下往往需要访问文件或重写代码（因为模组的存在就是为了改变游戏功能）。</li></ul></dd></dl></dd></dl>
+<dl><dd><dl><dt><b>我怎样才能下载浏览器认为“可疑”的文件？</b></dt>
+<dd>这取决于您所使用的浏览器。请您在确保文件安全的前提下，自行搜索解决方案或参阅英语页面。</dd></dl></dd></dl>
+<dl><dd><dl><dt><b>如果杀毒软件报毒我该怎么安装SMAPI或其他Mod？</b></dt>
+<dd>这取决于您所使用的杀毒软件。请您在确保文件安全的前提下，自行搜索解决方案或参阅英语页面。</dd></dl></dd></dl>
+<h2><span id="SMAPI无法识别手柄（仅Steam）"></span><span class="mw-headline" id="SMAPI.E6.97.A0.E6.B3.95.E8.AF.86.E5.88.AB.E6.89.8B.E6.9F.84.EF.BC.88.E4.BB.85Steam.EF.BC.89">SMAPI无法识别手柄（仅Steam）</span></h2>
+<p>常见解决方案：
+</p>
+<ol><li>通过 Steam 启动游戏。</li>
+<li>仅适用于 Windows：确保您已经设置了启动项（参见<a href="/%E6%A8%A1%E7%BB%84:%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85SMAPI#.E8.AE.BE.E7.BD.AE.E6.B8.B8.E6.88.8F.E5.B9.B3.E5.8F.B0.E5.90.AF.E5.8A.A8.E9.A1.B9" title="模组:在Windows上安装SMAPI">“设置游戏平台启动项”</a>）。</li>
+<li>如果其他方法均无效，您可以尝试使用第三方软件来支持手柄，例如：
+<ul><li>Linux：<a rel="nofollow" class="external text" href="https://github.com/kozec/sc-controller">SC Controller</a></li>
+<li>Mac：Mac: <a rel="nofollow" class="external text" href="https://github.com/360Controller/360Controller">360Controller</a>。当使用非 Xbox 的手柄时，您应当在 360Controller 中启用 "pretend to be an Xbox 360 controller"。（某些情况下，对于 Xbox 手柄也需启用该选项。）</li>
+<li>Windows：<a rel="nofollow" class="external text" href="https://www.rewasd.com/">reWASD</a>（试用期后收费）或<a rel="nofollow" class="external text" href="https://inputmapper.com/">InputMapper</a>（免费，更复杂），可以将您的手柄映射为 Xbox 手柄。</li></ul></li></ol>
+<table class="mw-collapsible mw-collapsed" style="">
+<tbody><tr>
+<th style="text-align: left;"><b>Linux/Mac 最终手段</b>&#160;
+</th></tr>
+<tr>
+<td>&#32;
+<p>作为 Linux 或 Mac 上的最终手段，您可以禁用 SMAPI 控制台窗口来修复此问题。您将不再收到更新/错误提醒，除非您<a rel="nofollow" class="external text" href="https://log.smapi.io/">查看日志</a>。而且在游戏崩溃后，您必须手动删除 <samp>smapi-internal/StardewModdingAPI.crash.marker</samp> 文件才能再次启动游戏。您必须定期检查日志以保证一切正常。如果您确实希望使用此等下策：
+</p>
+<ul><li>Linux 或 macOS：
+<ol><li><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E6.89.BE.E5.88.B0.E4.BD.A0.E7.9A.84.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6.E5.A4.B9" title="模组:使用指南/入门">找到你的游戏文件夹</a>。</li>
+<li>使用文本编辑器打开 <samp>StardewValley</samp> 文件（没有扩展名）。</li>
+<li>将文件顶部的 <code>SKIP_TERMINAL=false</code> 改为 <code>SKIP_TERMINAL=true</code>。</li></ol></li>
+<li>在 Windows 上无法关闭控制台窗口。</li></ul>
+<p>每次升级 SMAPI 后，您都需要重复这套流程。
+</p>
+</td></tr></tbody></table>
+<h2><span id="光标卡在博物馆或建筑界面中"></span><span class="mw-headline" id=".E5.85.89.E6.A0.87.E5.8D.A1.E5.9C.A8.E5.8D.9A.E7.89.A9.E9.A6.86.E6.88.96.E5.BB.BA.E7.AD.91.E7.95.8C.E9.9D.A2.E4.B8.AD">光标卡在博物馆或建筑界面中</span></h2>
+<p>当把物品放在博物馆或把建筑放在农场上时，光标卡在某处；当您尝试移动它时，它会立即跳回原处。
+</p><p>这是因为游戏没有正确地检测到手柄。修复方法：
+</p>
+<ol><li>加载您的存档。</li>
+<li>打开游戏内的菜单，点击“选项”（游戏手柄图标）。</li>
+<li>在选项菜单中，切换“游戏手柄模式”。如果您使用手柄，应当设为“开启”；如果您使用键盘和鼠标，应当设为“关闭。”</li></ol>
+<h2><span id="安装新版后，启动游戏时仍显示旧版的SMAPI或游戏"></span><span class="mw-headline" id=".E5.AE.89.E8.A3.85.E6.96.B0.E7.89.88.E5.90.8E.EF.BC.8C.E5.90.AF.E5.8A.A8.E6.B8.B8.E6.88.8F.E6.97.B6.E4.BB.8D.E6.98.BE.E7.A4.BA.E6.97.A7.E7.89.88.E7.9A.84SMAPI.E6.88.96.E6.B8.B8.E6.88.8F">安装新版后，启动游戏时仍显示旧版的SMAPI或游戏</span></h2>
+<p>这通常意味着您安装了两个副本：其中一个为您更新的版本，另一个为您实际在玩的版本。
+</p><p>可以按如下步骤检验是否为此问题：
+</p>
+<ol><li>重新运行 SMAPI 安装器，并留意第一个界面出现的 "Game path"：<br /><a href="/File:SMAPI_installer_path.png" class="image"><img alt="SMAPI installer path.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/9e/SMAPI_installer_path.png/500px-SMAPI_installer_path.png" decoding="async" width="500" height="157" srcset="https://stardewvalleywiki.com/mediawiki/images/9/9e/SMAPI_installer_path.png 1.5x" /></a></li>
+<li>使用 SMAPI 启动游戏，并留意输出顶部的 "Mods go here" 路径：<br /><a href="/File:SMAPI_mods_path.png" class="image"><img alt="SMAPI mods path.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/b/b2/SMAPI_mods_path.png/500px-SMAPI_mods_path.png" decoding="async" width="500" height="41" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/b/b2/SMAPI_mods_path.png/750px-SMAPI_mods_path.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/b/b2/SMAPI_mods_path.png 2x" /></a></li>
+<li>通过 Steam，GOG Galaxy 或 Xbox 打开游戏文件夹。如果您不知道怎么做，请参阅<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E6.89.BE.E5.88.B0.E4.BD.A0.E7.9A.84.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6.E5.A4.B9" title="模组:使用指南/入门">“找到你的游戏文件夹”</a>一节下面的“更多方法”（方法3 ~ 方法5）。</li>
+<li>上面 1~3 步提到的 3 条路径应当大致相同，最多相差一个 <code>/Mods</code> 部分。</li></ol>
+<p>如果您有多个游戏文件夹，最好只保留其中一个。为此，您可以这样做：
+</p>
+<ol><li>将 <samp>Mods</samp> 复制一份，备份到别处。</li>
+<li>卸载游戏。</li>
+<li>删除游戏文件夹。</li>
+<li>通过 Steam 或 GOG Galaxy 重装游戏。</li>
+<li>重装 SMAPI，此时 SMAPI 安装器应当只能检测到一个游戏路径。</li>
+<li>将备份的模组放回游戏文件夹。</li></ol>
+<table class="mw-collapsible mw-collapsed" style="border: 1px solid #666; margin-top: 1em; padding: 0.2em;">
+<tbody><tr>
+<th style="text-align: left;"><b>更多方法</b>&#160;
+</th></tr>
+<tr>
+<td>如果您出于某些原因必须有多个游戏副本，且您只希望为其中一个副本安装 SMAPI，您可以将 SMAPI 安装器放在那个副本的<b>子文件夹</b>。当您运行此安装器时，它会自动检测到父文件夹，然后仅安装到此副本。
+</td></tr></tbody></table>
+<h2><span id="SMAPI安装器打开后闪退"></span><span class="mw-headline" id="SMAPI.E5.AE.89.E8.A3.85.E5.99.A8.E6.89.93.E5.BC.80.E5.90.8E.E9.97.AA.E9.80.80">SMAPI安装器打开后闪退</span></h2>
+<p>问：安装器打开一秒后闪退。
+</p><p>答：请确保您正在安装的是 SMAPI 3.13.1 或更高版本，新版本的 SMAPI 修复了一个关于路径名称的问题。如果您确认正在安装的较新版本，尝试将 SMAPI 添加到杀毒软件白名单中，然后重新下载 SMAPI，因为您的 SMAPI 安装器可能被杀毒软件损坏了。如果仍不起作用，可以尝试如下方法：
+</p>
+<ol><li>打开安装器文件夹。</li>
+<li>按住 Shift 键，然后在文件夹空白处右击一下。</li>
+<li>在弹出的菜单中点击 Open in command prompt / PowerShell / Windows Terminal （取决于您的 Windows 设置）。</li>
+<li>如果此时安装器再崩溃，您将能看到报错信息。</li>
+<li>截一张完整的、包含报错信息的屏幕截图，然后在星露谷物语 Discord 上的 #using-mods 频道寻求帮助。</li></ol>
+<h2><span id="两个存档副本"></span><span class="mw-headline" id=".E4.B8.A4.E4.B8.AA.E5.AD.98.E6.A1.A3.E5.89.AF.E6.9C.AC">两个存档副本</span></h2>
+<p>如果您安装了 Get Glam 模组，请尝试卸载它。
+</p>
+<h2><span id="宠物事件无限播放"></span><span class="mw-headline" id=".E5.AE.A0.E7.89.A9.E4.BA.8B.E4.BB.B6.E6.97.A0.E9.99.90.E6.92.AD.E6.94.BE">宠物事件无限播放</span></h2>
+<p>您的宠物可能与游戏中的 NPC 重名（尤其是模组 NPC 。已知的两个问题都是因为与 SVE 的 NPC 重名）。编辑存档来移除宠物可能会起作用，但这很几首。您也可以尝试将宠物改名以避免与 NPC 重名，或直接拒绝收下宠物，并观察是否有效。但您有可能获得多只宠物。
+</p>
+<h2><span id="使用SteamLink或其他Steam_RemotePlay启动时游戏画面卡住"></span><span class="mw-headline" id=".E4.BD.BF.E7.94.A8SteamLink.E6.88.96.E5.85.B6.E4.BB.96Steam_RemotePlay.E5.90.AF.E5.8A.A8.E6.97.B6.E6.B8.B8.E6.88.8F.E7.94.BB.E9.9D.A2.E5.8D.A1.E4.BD.8F">使用SteamLink或其他Steam RemotePlay启动时游戏画面卡住</span></h2>
+<dl><dt>解决方案 - PC</dt></dl>
+<ol><li>使用 SMAPI 的 StardewModdingAPI 运行星露谷物语。</li>
+<li>这会弹出一个控制台窗口，以显示加载信息。加载完成后会启动星露谷物语。</li>
+<li>一旦星露谷物语启动，您需要按下 Alt + Tab 来切换窗口。一般会回到上一步的控制台窗口。如果没回到，只需选择控制台窗口/</li>
+<li>点击控制台的最小化按钮 [-] 以将其最小化。</li>
+<li>现在控制台窗口已被最小火，您可以通过点击窗口上的星露谷物语使其重获焦点，然后就应该能解冻了!</li></ol>
+<dl><dd>解决方案 - 连接到 SteamLink 上的手柄。</dd></dl>
+<ol><li>使用 SMAPI 的 StardewModdingAPI 运行星露谷物语。</li>
+<li>这会弹出一个控制台窗口，以显示加载信息。加载完成后会启动星露谷物语。</li>
+<li>星露谷启动后，界面会显得卡住。按住手柄左边的类似于选项的按钮，以打开 SteamLink 快捷目录。
+<ul><li>在 Xbox 手柄上，您应当按“后”（Back）按钮。</li>
+<li>在 Playstation 手柄上，您应当按 "Share" 按钮。</li>
+<li>在 Steam 手柄上，您应当按左箭头</li></ul></li>
+<li>在此菜单中，选择“虚拟键盘”，以显示一个悬浮在屏幕上的键盘。</li>
+<li>按下 Alt 键，然后按下 Tab 键。这会将您移出卡住的界面并自动设置焦点在控制台窗口上。</li>
+<li>在控制台窗口仍然可见且有焦点的情况下，在“虚拟键盘”上按下 Windows 键，然后按下“下箭头”键。这应当能最小化控制台窗口。</li>
+<li>"Windows" 键处于键盘的左下角。现在窗口应当能自动取回焦点，且解冻了。</li></ol>
+<h1><span id="已知问题"></span><span class="mw-headline" id=".E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98">已知问题</span></h1>
+<h2><span id="无法在兼容性分支上运行SMAPI"></span><span class="mw-headline" id=".E6.97.A0.E6.B3.95.E5.9C.A8.E5.85.BC.E5.AE.B9.E6.80.A7.E5.88.86.E6.94.AF.E4.B8.8A.E8.BF.90.E8.A1.8CSMAPI">无法在兼容性分支上运行SMAPI</span></h2>
+<dl><dt>什么是兼容性分支（compatibility branch）？</dt>
+<dd>星露谷物语 1.6.15 有两个版本：默认安装的是较新的、64 位的“主分支”，旧版系统安装的则是遗留的、 32 位的<a rel="nofollow" class="external text" href="https://www.stardewvalley.net/compatibility">“兼容性分支”</a>。对于玩家而言，其内容相同，但<a href="https://stardewvalleywiki.com/Modding:Migrate_to_Stardew_Valley_1.5.5#Game_compatibility_branch" class="extiw" title="en:Modding:Migrate to Stardew Valley 1.5.5">框架并不相同</a>。</dd></dl>
+<dl><dt>为什么它无法运行模组？</dt>
+<dd>很遗憾，目前 SMAPI 仅支持主分支。使所有模组都能支持全部版本太过困难，而<a rel="nofollow" class="external text" href="https://store.steampowered.com/hwsurvey">统计数据</a>显示 ≈99.69% 的玩家使用 64 位版。</dd></dl>
+<dl><dd>创建多个版本的 SMAPI（例如，当前 SMAPI 有 Linux/macOS/Windows 三个版本）并不能解决问题。即使这样做了，每个 C# 模组作者在每次更新模组使都必须手动迁移，这样做过于繁琐，因而不可行。在未来，SMAPI 也许能自动重构模组代码，使之应用于兼容性分支；某些模组作者也可以尝试将 SMAPI 或个人模组迁移到兼容性分支上。</dd></dl>
+<dl><dt>如果我无法更新，是否仍能游玩？</dt>
+<dd>有几种方法：</dd></dl>
+<ol>
+<li>首先，确保您确实无法更新。超过 99% 的系统应当能兼容主分支；只有那些仅支持 32 位的老旧系统或使用不受支持的显卡才无法兼容。</li>
+<li><b>或者</b>，您也可以不使用模组。尽管目前模组不能在兼容性分支上运行，但仍会接收那些针对旧版系统玩家的、向后移植到旧版框架的内容更新。</li>
+<li><p><b>或者</b>，您也可以回退到先前的星露谷物语 1.5.4 版本，这样您就可以像之前一样继续使用模组。尽管您将无法使用最新版模组，您仍然可以安装 2021 年 11 月 29 日之前的模组。如果在未来我们找到了使模组适用于兼容性分支的方法，您就可以切换到相应的兼容性分支了。</p>
+</li>
+</ol>
+<h1><span id="寻求帮助"></span><span class="mw-headline" id=".E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">寻求帮助</span></h1>
+<h2><span id="报告漏洞"></span><span class="mw-headline" id=".E6.8A.A5.E5.91.8A.E6.BC.8F.E6.B4.9E">报告漏洞</span></h2>
+<dl><dt>如果您没有使用模组：</dt>
+<dd>参见<a rel="nofollow" class="external text" href="https://steamcommunity.com/app/413150/discussions/0/142261352650065356/">此指南</a>以尝试修复游戏。如果仍需帮助，尽管<a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">寻求帮助</a>。</dd></dl>
+<dl><dt>如果您正在使用模组：</dt>
+<dd>首先，检查无模组是否仍会出错：
+<ol><li>打开<a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8#.E6.89.BE.E5.88.B0.E4.BD.A0.E7.9A.84.E6.B8.B8.E6.88.8F.E6.96.87.E4.BB.B6.E5.A4.B9" title="模组:使用指南/入门">游戏文件夹</a>。</li>
+<li>双击 <code><a href="/File:Stardew_Valley_executable_icon.png" class="image"><img alt="Stardew Valley executable icon.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/20px-Stardew_Valley_executable_icon.png" decoding="async" width="20" height="20" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/30px-Stardew_Valley_executable_icon.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/2/23/Stardew_Valley_executable_icon.png/40px-Stardew_Valley_executable_icon.png 2x" /></a>&#160;Stardew Valley<span style="opacity: 0.4; border-bottom: 1px dashed #000; cursor: help;" title="后缀&#39;.exe&#39;的显示与否取决于系统的设置。如果隐藏了后缀，文件名将会显示为&#39;Stardew Valley&#39;。">.exe</span></code>（Windows）或 <code>StardewValley-original</code>（Linux/macOS）以启动游戏。</li></ol></dd>
+<dd>如果仅在启用模组时才会出错，请<a href="#.E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9">寻求帮助</a>。 否则参见上文“<b>如果您没有使用模组</b>”一部分。</dd></dl>
+<h2><span id="寻求帮助_2"></span><span class="mw-headline" id=".E5.AF.BB.E6.B1.82.E5.B8.AE.E5.8A.A9_2">寻求帮助</span></h2>
+<p>参见<a href="/%E6%A8%A1%E7%BB%84:%E5%B8%AE%E5%8A%A9" title="模组:帮助">模组:帮助</a>以了解如何寻求帮助！
+</p>
+<div style="margin-top: 1.5em;">
+<div style="display: inline-block; font-weight: bold; border: 2px solid rgb(0, 116, 72); background: rgba(3, 160, 7, 0.1); padding: 1em;">← <a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%85%A5%E9%97%A8" title="模组:使用指南/入门">入门</a></div>
+<div style="display: inline-block; font-weight: bold; border: 2px solid rgb(0, 116, 72); background: rgba(3, 160, 7, 0.1); padding: 1em;"><a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E7%BB%84%E5%85%BC%E5%AE%B9%E6%80%A7" title="模组:模组兼容性">兼容性</a> →</div>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20250329114414
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.123 seconds
+Real time usage: 0.183 seconds
+Preprocessor visited node count: 663/1000000
+Post‐expand include size: 9669/2097152 bytes
+Template argument size: 4389/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 822/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   32.109      1 -total
+ 48.70%   15.638      1 Template:Modding_player_guide_header
+ 10.89%    3.496      9 Template:Executable_name
+ 10.27%    3.299      7 Template:Version
+  5.24%    1.684      3 Template:Github
+  4.74%    1.523      1 Template:Modding_guide_footer
+  2.84%    0.912      3 Template:Collapse
+  2.81%    0.903      1 Template:Nexus_mod
+  2.64%    0.848      1 Template:Key
+-->
+
+<!-- Saved in parser cache with key zhwiki:pcache:idhash:1776-0!canonical!zh and timestamp 20250329114414 and revision id 51203
+ -->
+</div></div><div class="printfooter">取自“<a dir="ltr" href="https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:使用指南/疑难解答&amp;oldid=51203">https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:使用指南/疑难解答&amp;oldid=51203</a>”</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="Special:页面分类">分类</a>：<ul><li><a href="/Category:%E6%A8%A1%E7%BB%84" title="Category:模组">模组</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>导航菜单</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>个人工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/mediawiki/index.php?title=Special:%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%2F%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94" title="建议您创建一个账户并登录，但这不是强制的">创建账户</a></li><li id="pt-login"><a href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%2F%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94" title="我们鼓励您登录；然而，这不是强制性的[o]" accesskey="o">登录</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>名字空间</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-模组" class="selected"><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94">模组</a></li><li id="ca-talk" class="new"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84_talk:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;action=edit&amp;redlink=1" rel="discussion" title="关于内容页面的讨论（页面不存在）[t]" accesskey="t">讨论</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>不转换</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"><li id="ca-varlang-0" class="selected"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh" lang="zh" hreflang="zh">不转换</a></li><li id="ca-varlang-1"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-hans" lang="zh-Hans" hreflang="zh-Hans">简体</a></li><li id="ca-varlang-2"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-hant" lang="zh-Hant" hreflang="zh-Hant">繁體</a></li><li id="ca-varlang-3"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-cn" lang="zh-Hans-CN" hreflang="zh-Hans-CN">大陆简体</a></li><li id="ca-varlang-4"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-hk" lang="zh-Hant-HK" hreflang="zh-Hant-HK">香港繁體</a></li><li id="ca-varlang-5"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-mo" lang="zh-Hant-MO" hreflang="zh-Hant-MO">澳門繁體</a></li><li id="ca-varlang-6"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-my" lang="zh-Hans-MY" hreflang="zh-Hans-MY">大马简体</a></li><li id="ca-varlang-7"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-sg" lang="zh-Hans-SG" hreflang="zh-Hans-SG">新加坡简体</a></li><li id="ca-varlang-8"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;variant=zh-tw" lang="zh-Hant-TW" hreflang="zh-Hant-TW">台灣正體</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>视图</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94">阅读</a></li><li id="ca-viewsource" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;action=edit" title="本页面受到保护。您可以查看其源代码[e]" accesskey="e">查看源代码</a></li><li id="ca-history" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;action=history" title="本页面过去的版本[h]" accesskey="h">查看历史</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>更多</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">搜索</label>
+	</h3>
+	<form action="/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="搜索Stardew Valley Wiki" title="搜索Stardew Valley Wiki[f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:搜索">
+			<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="前往" title="若相同标题存在，则直接前往该页面" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="访问首页" class="mw-wiki-logo" href="/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>导航</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/Stardew_Valley_Wiki" title="访问首页[z]" accesskey="z">首页</a></li><li id="n-recentchanges"><a href="/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki最近更改的列表[r]" accesskey="r">最近更改</a></li><li id="n-.E6.9C.AA.E7.BF.BB.E8.AF.91.E7.9A.84.E9.A1.B5.E9.9D.A2"><a href="/Category:%E6%9C%AA%E7%BF%BB%E8%AF%91%E7%9A%84%E9%A1%B5%E9%9D%A2">未翻译的页面</a></li><li id="n-.E5.B8.AE.E5.8A.A9:.E7.BC.96.E8.BE.91.E5.85.A5.E9.97.A8"><a href="/Help:%E7%BC%96%E8%BE%91%E5%85%A5%E9%97%A8">帮助:编辑入门</a></li><li id="n-randompage"><a href="/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面[x]" accesskey="x">随机页面</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-链接" class="vector-menu vector-menu-portal portal" aria-labelledby="p-链接-label" role="navigation" 
+	 >
+	<h3 id="p-链接-label">
+		<span>链接</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-.E5.AE.98.E6.96.B9.E7.BD.91.E7.AB.99"><a href="https://stardewvalley.net" rel="nofollow">官方网站</a></li><li id="n-.E5.AE.98.E6.96.B9.E8.AE.BA.E5.9D.9B"><a href="https://forums.stardewvalley.net/" rel="nofollow">官方论坛</a></li><li id="n-.E5.AE.98.E6.96.B9.E5.95.86.E5.93.81"><a href="https://www.stardewvalley.net/shop/" rel="nofollow">官方商品</a></li><li id="n-.E7.A4.BE.E4.BA.A4.E5.AA.92.E4.BD.93"><a href="https://www.stardewvalley.net/links/" rel="nofollow">社交媒体</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94" title="所有链接至本页面的wiki页面的列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="//stardewvalleywiki.com/Special:Upload" title="上传文件[u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;oldid=51203" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;action=info" title="关于此页面的更多信息">页面信息</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>其他语言</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-de"><a href="https://de.stardewvalleywiki.com/Modding:Spieleranleitung/Problembehebung" title="Modding:Spieleranleitung/Problembehebung – Deutsch" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-en"><a href="https://stardewvalleywiki.com/Modding:Player_Guide/Troubleshooting" title="Modding:Player Guide/Troubleshooting – English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.stardewvalleywiki.com/Modding:Gu%C3%ADa_del_jugador/Soluci%C3%B3n_de_problemas" title="Modding:Guía del jugador/Solución de problemas – español" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.stardewvalleywiki.com/Modlama:Oyuncu_Rehberi/Sorun_Giderme" title="Modlama:Oyuncu Rehberi/Sorun Giderme – Türkçe" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li></ul>
+		
+	</div>
+</nav>
+
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> 此页面最后编辑于2025年3月13日 (星期四) 14:55。</li>
+		<li id="footer-info-copyright">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Stardew Valley Wiki:隐私政策">隐私政策</a></li>
+		<li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" title="Stardew Valley Wiki:关于">关于Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Stardew Valley Wiki:免责声明">免责声明</a></li>
+		<li id="footer-places-mobileview"><a href="//zh.stardewvalleywiki.com/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">手机版视图</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.123","walltime":"0.183","ppvisitednodes":{"value":663,"limit":1000000},"postexpandincludesize":{"value":9669,"limit":2097152},"templateargumentsize":{"value":4389,"limit":2097152},"expansiondepth":{"value":6,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":822,"limit":5000000},"timingprofile":["100.00%   32.109      1 -total"," 48.70%   15.638      1 Template:Modding_player_guide_header"," 10.89%    3.496      9 Template:Executable_name"," 10.27%    3.299      7 Template:Version","  5.24%    1.684      3 Template:Github","  4.74%    1.523      1 Template:Modding_guide_footer","  2.84%    0.912      3 Template:Collapse","  2.81%    0.903      1 Template:Nexus_mod","  2.64%    0.848      1 Template:Key"]},"cachereport":{"timestamp":"20250329114414","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":127});});</script></body></html>
+
+

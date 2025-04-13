@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>模组:迁移至SMAPI 4.0 - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"模组","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"模组:迁移至SMAPI_4.0","wgTitle":"迁移至SMAPI 4.0","wgCurRevisionId":51314,"wgRevisionId":51314,"wgArticleId":3408,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["模组"],"wgPageContentLanguage":"zh","wgPageContentModel":"wikitext","wgRelevantPageName":"模组:迁移至SMAPI_4.0","wgRelevantArticleId":3408,"wgUserVariant":"zh","wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{
+"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=ext.pygments%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/mediawiki/load.php?lang=zh&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=zh&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="←目录"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (zh)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//zh.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="alternate" hreflang="zh" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh"/>
+<link rel="alternate" hreflang="zh-Hans" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-hans"/>
+<link rel="alternate" hreflang="zh-Hant" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-hant"/>
+<link rel="alternate" hreflang="zh-Hans-CN" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-cn"/>
+<link rel="alternate" hreflang="zh-Hant-HK" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-hk"/>
+<link rel="alternate" hreflang="zh-Hant-MO" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-mo"/>
+<link rel="alternate" hreflang="zh-Hans-MY" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-my"/>
+<link rel="alternate" hreflang="zh-Hans-SG" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-sg"/>
+<link rel="alternate" hreflang="zh-Hant-TW" href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-tw"/>
+<link rel="alternate" hreflang="x-default" href="/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Stardew Valley Wiki的Atom feed" href="/mediawiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+<meta property="og:title" content="模组:迁移至SMAPI 4.0 - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0"/>
+<meta property="og:description" content="←目录"/>
+<meta property="og:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="模组:迁移至SMAPI 4.0 - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="←目录"/>
+<meta property="twitter:image" content="https://zh.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3SMAPI 4.0 - Stardew Valley Wiki","headline":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3SMAPI 4.0 - Stardew Valley Wiki","mainEntityOfPage":"\u6a21\u7ec4:\u8fc1\u79fb\u81f3SMAPI 4.0","identifier":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0","url":"https:\/\/zh.stardewvalleywiki.com\/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0","description":"\u2190\u76ee\u5f55","dateModified":"2025-03-29T10:22:00Z","datePublished":"2025-03-29T10:22:00Z","image":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/zh.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/zh.stardewvalleywiki.com\/mediawiki\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-模组_迁移至SMAPI_4_0 rootpage-模组_迁移至SMAPI_4_0 skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="zh">模组:迁移至SMAPI 4.0</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">来自Stardew Valley Wiki</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">跳到导航</a>
+		<a class="mw-jump-link" href="#searchInput">跳到搜索</a>
+		<div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>←<a href="/%E6%A8%A1%E7%BB%84:%E7%9B%AE%E5%BD%95" title="模组:目录">目录</a>
+</p><p><br />
+</p>
+<div style="border: 1px solid orange; border-left: 1em solid orange; padding: 0.5em 1em; border-radius: 5px;">
+<p><b>本页面仅面向模组开发者。模组玩家请参见<a href="/%E6%A8%A1%E7%BB%84:%E6%A8%A1%E7%BB%84%E5%85%BC%E5%AE%B9%E6%80%A7" title="模组:模组兼容性">模组:模组兼容性</a>。</b>
+</p>
+</div>
+<p><br />
+</p><p>此页面解释如何升级您的 C# 模组以与 SMAPI 4.0.0 兼容（内容包不受影响）。您现在即可升级模组，无需等待 4.0 发布。
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="zh" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.A6.82.E8.A7.88"><span class="tocnumber">1</span> <span class="toctext">概览</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E8.AF.A5.E7.89.88.E6.9C.AC.E6.9C.89.E4.BD.95.E5.8F.98.E5.8C.96"><span class="tocnumber">1.1</span> <span class="toctext">该版本有何变化</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E8.BF.99.E6.98.AF.E4.B8.80.E6.AC.A1.E5.B7.A8.E5.8F.98.E5.90.97"><span class="tocnumber">1.2</span> <span class="toctext">这是一次巨变吗</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E5.A6.82.E4.BD.95.E5.8D.87.E7.BA.A7.E6.A8.A1.E7.BB.84"><span class="tocnumber">1.3</span> <span class="toctext">如何升级模组</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#.E7.A0.B4.E5.9D.8F.E6.80.A7.E6.9B.B4.E6.94.B9"><span class="tocnumber">2</span> <span class="toctext">破坏性更改</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#.E5.86.85.E5.AE.B9.E6.8B.A6.E6.88.AAAPI"><span class="tocnumber">2.1</span> <span class="toctext">内容拦截API</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E5.86.85.E5.AE.B9.E5.8A.A0.E8.BD.BDAPI"><span class="tocnumber">2.2</span> <span class="toctext">内容加载API</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E5.85.B6.E4.BB.96API.E6.9B.B4.E6.94.B9"><span class="tocnumber">2.3</span> <span class="toctext">其他API更改</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E5.8F.AF.E7.A9.BA.E5.BC.95.E7.94.A8.E7.B1.BB.E5.9E.8B.E6.B3.A8.E8.A7.A3"><span class="tocnumber">2.4</span> <span class="toctext">可空引用类型注解</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E7.A7.BB.E9.99.A4.E4.BE.9D.E8.B5.96"><span class="tocnumber">2.5</span> <span class="toctext">移除依赖</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#.E5.85.B6.E4.BB.96.E6.9B.B4.E6.94.B9"><span class="tocnumber">3</span> <span class="toctext">其他更改</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#.E8.B4.B4.E5.9B.BE.E5.8E.9F.E5.A7.8B.E6.95.B0.E6.8D.AE"><span class="tocnumber">3.1</span> <span class="toctext">贴图原始数据</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span id="概览"></span><span class="mw-headline" id=".E6.A6.82.E8.A7.88">概览</span></h2>
+<h3><span id="该版本有何变化"></span><span class="mw-headline" id=".E8.AF.A5.E7.89.88.E6.9C.AC.E6.9C.89.E4.BD.95.E5.8F.98.E5.8C.96">该版本有何变化</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="/File:SMAPI_compatibility.png" class="image"><img alt="" src="https://stardewvalleywiki.com/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/300px-SMAPI_compatibility.png" decoding="async" width="300" height="186" class="thumbimage" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/450px-SMAPI_compatibility.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/d/db/SMAPI_compatibility.png/600px-SMAPI_compatibility.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/File:SMAPI_compatibility.png" class="internal" title="放大"></a></div>SMAPI 兼容性走势图。2017 年 19 月 SMAPI 2.0 的发布造成了兼容性的小下降。而 SMAPI 3.0 紧随 Stardew Valley 1.4 发布。</div></div></div>
+<p>五年前，<a rel="nofollow" class="external text" href="https://github.com/Pathoschild/SMAPI/blob/develop/docs/release-notes-archived.md#20">SMAPI 2.0.0</a>引入了<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Content" title="模组:制作指南/APIs/Content">内容 API</a>（即 <samp>IAssetLoader</samp> 和 <samp>IAssetEditor</samp>）。自此，它成为了 SMAPI 最重要的部件之一；比如，它是 Content Patcher 的基础，而现在大约有 41.1% 的模组依赖于 Content Patcher。然而，自发布以来，此 API 并没有本质变化；时至今日，它已经无法支持所有用例。
+</p><p>SMAPI 4.0.0 的发布致力于解决此问题。新版本完全翻新了内容 API：
+</p>
+<ul><li>现在可以通过 <samp>helper</samp> 完全发现此 API，与其他 API 保持一致。这更符合模组开发者的直觉。</li>
+<li>加载操作不再总是互斥，以免频繁出现模组冲突。现在可以为每个加载操作指定优先级了。</li>
+<li>API 不再隐式处理本地化：现在 <samp>Data/Bundles</samp> 和 <samp>Data/Bundles.fr-FR</samp> <b>不再</b>被认为是相同文件（尽管仍然可以根据所需进行本地化无关的更改）。</li>
+<li>添加了内容包标签，用于指示正在加载/编辑素材的内容包。这反映于日志消息中，以简化故障排除，避免内容包故障被报告给框架模组作者。</li>
+<li>添加了编辑优先级，可用于微调与其他模组或编辑的兼容性，</li></ul>
+<p>SMAPI 4.0.0 支持 Stardew Valley 1.6 且去除了所有弃用 API。
+</p>
+<h3><span id="这是一次巨变吗"></span><span class="mw-headline" id=".E8.BF.99.E6.98.AF.E4.B8.80.E6.AC.A1.E5.B7.A8.E5.8F.98.E5.90.97">这是一次巨变吗</span></h3>
+<p>不是。尽管这是一次主要更新，我们会极力减小其影响：
+</p>
+<ul><li>旧版的内容 API 会在很长一段时间里继续得到支持，但会在 SMAPI 控制台中引起愈发明显的警告，以提示旧版 API 已过时、应当被移除；</li>
+<li>会提交拉取请求以更新受影响的模组；</li>
+<li>SMAPI 4.0 发布时，会为尚未提供官方更新的模组提供非官方更新；</li>
+<li>会积极沟通和记录更改以帮助开发者。</li></ul>
+<p>上述措施意味着 SMAPI 4.0.0 将会最小程度地影响模组兼容性，尽管其更改范围较大。
+</p>
+<h3><span id="如何升级模组"></span><span class="mw-headline" id=".E5.A6.82.E4.BD.95.E5.8D.87.E7.BA.A7.E6.A8.A1.E7.BB.84">如何升级模组</span></h3>
+<p>您无需手动梳理代码。SMAPI 会自动提示您的代码中的弃用 API。
+</p>
+<ol><li>SMAPI 会在控制台窗口中输出弃用信息（具体格式取决于弃用级别，但您可以搜索您的模组名称）：<br /><a href="/File:Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.png" class="image"><img alt="Modding - updating deprecated SMAPI code - deprecation warnings.png" src="https://stardewvalleywiki.com/mediawiki/images/8/8a/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_warnings.png" decoding="async" width="1121" height="17" /></a></li>
+<li>当您在 Visual Studio 中查看代码时，会看见构建错误，以及相应的修复提示：<br /><a href="/File:Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.png" class="image"><img alt="Modding - updating deprecated SMAPI code - deprecation intellisense.png" src="https://stardewvalleywiki.com/mediawiki/images/2/20/Modding_-_updating_deprecated_SMAPI_code_-_deprecation_intellisense.png" decoding="async" width="709" height="114" /></a></li>
+<li>您可以阅读如下章节以了解如何更新特定的 API。</li></ol>
+<h2><span id="破坏性更改"></span><span class="mw-headline" id=".E7.A0.B4.E5.9D.8F.E6.80.A7.E6.9B.B4.E6.94.B9">破坏性更改</span></h2>
+<h3><span id="内容拦截API"></span><span class="mw-headline" id=".E5.86.85.E5.AE.B9.E6.8B.A6.E6.88.AAAPI">内容拦截API</span></h3>
+<p><samp>IAssetLoader</samp> 和 <samp>IAssetEditor</samp> 接口不再存在。它们已被 <a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Events#Content.AssetRequested" title="模组:制作指南/APIs/Events"><samp>AssetRequested</samp> 事件</a>取代，该事件用法如下：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">ModEntry</span> <span class="p">:</span> <span class="n">Mod</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;inheritdoc /&gt;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Entry</span><span class="p">(</span><span class="n">IModHelper</span> <span class="n">helper</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">AssetRequested</span> <span class="p">+=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnAssetRequested</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="c1">/// &lt;inheritdoc cref=&quot;IContentEvents.AssetRequested&quot; /&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;sender&quot;&gt;The event sender.&lt;/param&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;e&quot;&gt;The event arguments.&lt;/param&gt;</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">&quot;Portraits/Abigail&quot;</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">e</span><span class="p">.</span><span class="n">LoadFromModFile</span><span class="p">&lt;</span><span class="n">Texture2D</span><span class="p">&gt;(</span><span class="s">&quot;assets/portrait.png&quot;</span><span class="p">,</span> <span class="n">AssetLoadPriority</span><span class="p">.</span><span class="n">Medium</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>迁移提示：
+</p>
+<ul><li><b>素材名称不再本地化无关。</b>例如，<samp>Data/Bundles</samp> 和 <samp>Data/Bundles.fr-FR</samp> <b>不再</b>指示同一素材。如果希望应用本地化无关的更改，请查看 <samp>e.NameWithoutLocale</samp> 而非 <samp>e.Name</samp>。</li>
+<li>组合了旧版的 <samp>CanLoad</samp> 和 <samp>CanEdit</samp>/<samp>Edit</samp> 方法，因此您只需检查一次条件逻辑。</li>
+<li>现在加载素材时必须指定 <samp>AssetLoadPriority</samp> 参数以指定加载的优先级。<samp>AssetLoadPriority.Exclusive</samp> 相当于旧版的行为，但可能降低模组兼容性。参见 IntelliSense 文档以了解更多。</li></ul>
+<p>参见<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Events#.E5.86.85.E5.AE.B9" title="模组:制作指南/APIs/Events">内容事件</a>和<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Content" title="模组:制作指南/APIs/Content">内容 API</a> 文档以了解用法。
+</p>
+<h3><span id="内容加载API"></span><span class="mw-headline" id=".E5.86.85.E5.AE.B9.E5.8A.A0.E8.BD.BDAPI">内容加载API</span></h3>
+<p>旧版的 <samp>helper.Content</samp> API 令人困惑，因为它处理原版素材和模组素材的方式并不相同。有些方法接受可选的 <samp>ContentSource</samp> 参数（但很容易遗漏），而有些方法仅支持原版素材或模组素材，而那些希望同时覆盖二者的文档十分抽象。而且旧版 API 加载的素材没有缓存，可能会影响性能，并阻碍某些功能的实现，例如<a href="#.E5.86.85.E5.AE.B9.E6.8B.A6.E6.88.AAAPI">新内容事件</a>。
+</p><p>新版中将其分割为两个 API 以解决此问题：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>字段
+</th>
+<th>说明
+</th></tr>
+<tr>
+<td><samp>helper.ModContent</samp>
+</td>
+<td>加载模组素材，没有缓存（类似于 <samp>helper.Content</samp>），因此每次加载时都会从文件中重新读取。
+</td></tr>
+<tr>
+<td><samp>helper.GameContent</samp>
+</td>
+<td>从 <samp>Content</samp> 文件夹或<a href="#.E5.86.85.E5.AE.B9.E6.8B.A6.E6.88.AAAPI">内容拦截</a>中加载素材，<b>有缓存</b>（<a href="#.E5.86.85.E5.AE.B9.E6.8B.A6.E6.88.AAAPI">新版内容事件</a>需要缓存才能工作）。
+</td></tr></tbody></table>
+<p>下面是迁移旧版方法和属性的教程：
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>旧版代码
+</th>
+<th>迁移方法
+</th></tr>
+<tr>
+<td><samp>helper.Content.AssetEditors</samp><br /><samp>helper.Content.AssetLoaders</samp>
+</td>
+<td>使用<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Events#.E5.86.85.E5.AE.B9" title="模组:制作指南/APIs/Events">内容事件</a>。
+</td></tr>
+<tr>
+<td><samp>helper.Content.CurrentLocale</samp><br /><samp>helper.Content.CurrentLocaleConstant</samp><br /><samp>helper.Content.InvalidateCache</samp>
+</td>
+<td>使用 <samp>helper.GameContent</samp>.
+</td></tr>
+<tr>
+<td><samp>helper.Content.GetActualAssetKey</samp>
+</td>
+<td>使用 <samp>helper.ModContent.GetInternalAssetName</samp>，并移除 <samp>ContentSource</samp> 参数。新版方法会返回 <samp>IAssetName</samp> 类型值；您可以更新代码以使用它，也可使用其 <samp>Name</samp> 属性，相当于旧版的字符串值。
+</td></tr>
+<tr>
+<td><samp>helper.Content.GetPatchHelper</samp>
+</td>
+<td>使用 <samp>helper.GameContent</samp> 或 <samp>helper.ModContent</samp>。
+</td></tr>
+<tr>
+<td><samp>helper.Content.Load</samp>
+</td>
+<td>使用 <samp>helper.GameContent</samp> 或 <samp>helper.ModContent</samp>，并移除 <samp>ContentSource</samp> 参数。
+<p>迁移说明：
+</p>
+<ul><li>使用 <samp>helper.GameContent</samp> 加载素材时，不要附带 <samp>.xnb&lt;/samp 扩展名（例如，使用 <code>"Portraits/Abigail"</code> 而非 <code>"Portraits/Abigail.xnb"</code>）。您请求的是<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Content#.E4.BD.95.E4.B8.BA.E7.B4.A0.E6.9D.90.E5.90.8D.E7.A7.B0.EF.BC.9F" title="模组:制作指南/APIs/Content">素材名称</a>，而非文件路径。</samp></li>
+<li>使用 <samp>helper.ModContent</samp> 加载 XNB 文件时，<b>务必</b>附加 <samp>.xnb</samp> 扩展名。新版中将不再自动添加。</li></ul>
+</td></tr>
+<tr>
+<td><samp>helper.Content.NormalizeAssetName</samp>
+</td>
+<td>使用 <samp>helper.GameContent.ParseAssetName</samp>。新版方法会返回 <samp>IAssetName</samp> 类型值；您可以更新代码以使用它，也可使用其 <samp>Name</samp> 属性，相当于旧版的字符串值。
+</td></tr></tbody></table>
+<h3><span id="其他API更改"></span><span class="mw-headline" id=".E5.85.B6.E4.BB.96API.E6.9B.B4.E6.94.B9">其他API更改</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>旧版代码
+</th>
+<th>迁移方法
+</th></tr>
+<tr>
+<td><samp>Constants.ExecutionPath</samp>
+</td>
+<td>使用 <samp>Constants.GamePath</samp>。
+</td></tr>
+<tr>
+<td><samp>GameFramework.Xna</samp>
+</td>
+<td>XNA 不再用于任何平台；您可以安全地移除任何针对 XNA 的逻辑。
+</td></tr>
+<tr>
+<td><samp>helper.ConsoleCommands.Trigger</samp>
+</td>
+<td>不再支持。您可以使用<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Integrations#.E6.A8.A1.E7.BB.84API" title="模组:制作指南/APIs/Integrations">模组API</a>来与其他模组进行整合。
+</td></tr>
+<tr>
+<td><samp>IAssetInfo.AssetName</samp>
+</td>
+<td>使用 <samp>Name</samp> 代替，新属性有内建的工具方法用于处理素材名称。
+</td></tr>
+<tr>
+<td><samp>IAssetInfo.AssetNameEquals(name)</samp>
+</td>
+<td>使用 <samp>Name.IsEquivalentTo(name)</samp>。
+</td></tr>
+<tr>
+<td><samp>IContentPack.LoadAsset</samp>
+</td>
+<td>使用 <samp>ModContent.Load</samp>。
+</td></tr>
+<tr>
+<td><samp>IContentPack.GetActualAssetKey</samp>
+</td>
+<td>使用 <samp>ModContent.GetInternalAssetName</samp>，并移除 <samp>ContentSource</samp> 参数。新版方法会返回 <samp>IAssetName</samp> 类型值；您可以更新代码以使用它，也可使用其 <samp>Name</samp> 属性，相当于旧版的字符串值。
+</td></tr>
+<tr>
+<td><samp>PerScreen&lt;T&gt;(null)</samp>
+</td>
+<td>向构造函数传入空做法已被弃用。现在应当调用 <code>PerScreen&lt;T&gt;()</code> 以使用默认值。
+</td></tr>
+<tr>
+<td><samp>SDate.Season</samp>
+</td>
+<td><samp>SDate.Season</samp> 现在为 <samp>Season</samp> 枚举，以与游戏保持一致。如果您确实需要使用字符串，请使用 <samp>SDate.SeasonKey</samp>。
+</td></tr></tbody></table>
+<h3><span id="可空引用类型注解"></span><span class="mw-headline" id=".E5.8F.AF.E7.A9.BA.E5.BC.95.E7.94.A8.E7.B1.BB.E5.9E.8B.E6.B3.A8.E8.A7.A3">可空引用类型注解</span></h3>
+<p>现在 SMAPI 提供对 <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references">C# 可空引用类型</a>的完整注解。您需要在模组代码中启用它才能生效。如果您的模组使用了它们，您将从 Visual Studio 获得有用的代码分析警告，以避免在可空/不可空时发生错误。例如：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// warning: dereference of a possibly null reference</span>
+<span class="kt">var</span> <span class="n">api</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModRegistry</span><span class="p">.</span><span class="n">GetApi</span><span class="p">&lt;</span><span class="n">IExampleApi</span><span class="p">&gt;(</span><span class="s">&quot;SomeExample.ModId&quot;</span><span class="p">);</span>
+<span class="n">api</span><span class="p">.</span><span class="n">DoSomething</span><span class="p">();</span>
+
+<span class="c1">// warning: possible null reference argument for parameter &#39;message&#39;</span>
+<span class="kt">string?</span> <span class="n">message</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="n">Monitor</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</pre></div>
+<p>因为 C# 可空引用类型注解的限制，无法覆盖三种边界情况。这些情况也被写进了 IntelliSense 文档。
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>API
+</th>
+<th>边界情况
+</th></tr>
+<tr>
+<td><samp>helper.Reflection</samp>
+</td>
+<td><samp>GetField</samp>、<samp>GetMethod</samp> 和 <samp>GetProperty</samp> 方法被标记为返回不可空值，因为它们在目标不存在时会抛出错误。即使您显式地指定了 <code>required: false</code> ，这一情况也不会改变；因此，请无论如何也要对返回值判空。
+</td></tr>
+<tr>
+<td><samp>helper.Translation</samp>
+</td>
+<td>翻译被标记为不可空，因为可能会回退到 "missing translation: key" 缺省值。即使您显式地调用了 <code>translation.UsePlaceholder(false)</code>，这一情况也不会改变；因此，请无论如何也要对返回值判空（如果需要）。
+</td></tr>
+<tr>
+<td><samp>PerScreen&lt;T&gt;</samp>
+</td>
+<td>其可空性依赖于您的设置。例如，<code>PerScreen&lt;string&gt;</code> 代表不可空字符串，<code>PerScreen&lt;string?&gt;</code> 代表可空字符串。然而，调用不可空引用类型的空构造函数仍然会返回空，因为这是类型默认值。例如：
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">perScreen</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PerScreen</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<span class="kt">string</span> <span class="k">value</span> <span class="p">=</span> <span class="n">perScreen</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span> <span class="c1">// 尽管标记为非空，仍会返回空。</span>
+</pre></div>
+<p>为避免这种情况，可以指定默认的非空值：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">var</span> <span class="n">perScreen</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PerScreen</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(()</span> <span class="p">=&gt;</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+<span class="kt">string</span> <span class="k">value</span> <span class="p">=</span> <span class="n">perScreen</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span> <span class="c1">// 默认返回空字符串。</span>
+</pre></div>
+</td></tr></tbody></table>
+<h3><span id="移除依赖"></span><span class="mw-headline" id=".E7.A7.BB.E9.99.A4.E4.BE.9D.E8.B5.96">移除依赖</span></h3>
+<p>SMAPI 4.0.0 不再使用如下依赖，因此不会再自动加载它们。如果您手动引用了它们之一，请将其复制到您的模组发布文件夹，或参见如下的迁移建议。
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>依赖
+</th>
+<th>建议
+</th></tr>
+<tr>
+<td><samp>System.Configuration.ConfigurationManager.dll</samp>
+</td>
+<td>使用<a href="/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/APIs/Config" title="模组:制作指南/APIs/Config">标准的配置 API</a> 代替之。
+</td></tr>
+<tr>
+<td><samp>System.Runtime.Caching.dll</samp>
+</td>
+<td>避免使用此 DLL 的 <samp>MemoryCache</samp> 或 <samp>ObjectCache</samp>，因为可能影响性能。如果您需要缓存到期（cache expiry），请考虑使用更快速的 <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/dotnet/core/extensions/caching"><samp>Microsoft.Extensions.Caching.Memory</samp></a> 包（但仍然很繁重）。否则，可以考虑直接使用 <samp>Dictionary&lt;TKey, TValue&gt;</samp> 字段。
+</td></tr>
+<tr>
+<td><samp>System.Security.Permissions.dll</samp>
+</td>
+<td>通常只有 <samp>System.Configuration.ConfigurationManager.dll</samp> 或  <samp>System.Runtime.Caching.dll</samp> 才需要它，因此可以删除。
+</td></tr></tbody></table>
+<h2><span id="其他更改"></span><span class="mw-headline" id=".E5.85.B6.E4.BB.96.E6.9B.B4.E6.94.B9">其他更改</span></h2>
+<h3><span id="贴图原始数据"></span><span class="mw-headline" id=".E8.B4.B4.E5.9B.BE.E5.8E.9F.E5.A7.8B.E6.95.B0.E6.8D.AE">贴图原始数据</span></h3>
+<p>创建 <samp>Texture2D</samp> 实例开销较大，且需要调用显卡。现在，如果您不需要加载整张贴图，可以使用 <samp>IRawTextureData</samp> 加载贴图，然后将其传入接收贴图的 SMAPI API 中。 
+</p><p>例如，您无需再创建 <samp>Texture2D</samp> 实例，而可以像这样叠加图像：
+</p>
+<div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">private</span> <span class="k">void</span> <span class="nf">OnAssetRequested</span><span class="p">(</span><span class="kt">object?</span> <span class="n">sender</span><span class="p">,</span> <span class="n">AssetRequestedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">IsEquivalentTo</span><span class="p">(</span><span class="s">&quot;Portraits/Abigail&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">e</span><span class="p">.</span><span class="n">Edit</span><span class="p">(</span><span class="n">asset</span> <span class="p">=&gt;</span>
+        <span class="p">{</span>
+            <span class="n">IRawTextureData</span> <span class="n">ribbon</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Helper</span><span class="p">.</span><span class="n">ModContent</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">IRawTextureData</span><span class="p">&gt;(</span><span class="s">&quot;assets/ribbon.png&quot;</span><span class="p">);</span>
+            <span class="n">asset</span><span class="p">.</span><span class="n">AsImage</span><span class="p">().</span><span class="n">PatchImage</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">ribbon</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<!-- 
+NewPP limit report
+Cached time: 20250330070152
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.058 seconds
+Real time usage: 0.861 seconds
+Preprocessor visited node count: 84/1000000
+Post‐expand include size: 213/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 6985/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.049      1 Template:Modder_compatibility_header
+100.00%    1.049      1 -total
+-->
+
+<!-- Saved in parser cache with key zhwiki:pcache:idhash:3408-0!canonical!zh and timestamp 20250330070151 and revision id 51314
+ -->
+</div></div><div class="printfooter">取自“<a dir="ltr" href="https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:迁移至SMAPI_4.0&amp;oldid=51314">https://zh.stardewvalleywiki.com/mediawiki/index.php?title=模组:迁移至SMAPI_4.0&amp;oldid=51314</a>”</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="Special:页面分类">分类</a>：<ul><li><a href="/Category:%E6%A8%A1%E7%BB%84" title="Category:模组">模组</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>导航菜单</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>个人工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/mediawiki/index.php?title=Special:%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI+4.0" title="建议您创建一个账户并登录，但这不是强制的">创建账户</a></li><li id="pt-login"><a href="/mediawiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A8%A1%E7%BB%84%3A%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI+4.0" title="我们鼓励您登录；然而，这不是强制性的[o]" accesskey="o">登录</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>名字空间</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-模组" class="selected"><a href="/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0">模组</a></li><li id="ca-talk" class="new"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84_talk:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;action=edit&amp;redlink=1" rel="discussion" title="关于内容页面的讨论（页面不存在）[t]" accesskey="t">讨论</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>不转换</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"><li id="ca-varlang-0" class="selected"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh" lang="zh" hreflang="zh">不转换</a></li><li id="ca-varlang-1"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-hans" lang="zh-Hans" hreflang="zh-Hans">简体</a></li><li id="ca-varlang-2"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-hant" lang="zh-Hant" hreflang="zh-Hant">繁體</a></li><li id="ca-varlang-3"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-cn" lang="zh-Hans-CN" hreflang="zh-Hans-CN">大陆简体</a></li><li id="ca-varlang-4"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-hk" lang="zh-Hant-HK" hreflang="zh-Hant-HK">香港繁體</a></li><li id="ca-varlang-5"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-mo" lang="zh-Hant-MO" hreflang="zh-Hant-MO">澳門繁體</a></li><li id="ca-varlang-6"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-my" lang="zh-Hans-MY" hreflang="zh-Hans-MY">大马简体</a></li><li id="ca-varlang-7"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-sg" lang="zh-Hans-SG" hreflang="zh-Hans-SG">新加坡简体</a></li><li id="ca-varlang-8"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;variant=zh-tw" lang="zh-Hant-TW" hreflang="zh-Hant-TW">台灣正體</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>视图</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0">阅读</a></li><li id="ca-viewsource" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;action=edit" title="本页面受到保护。您可以查看其源代码[e]" accesskey="e">查看源代码</a></li><li id="ca-history" class="collapsible"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;action=history" title="本页面过去的版本[h]" accesskey="h">查看历史</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>更多</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">搜索</label>
+	</h3>
+	<form action="/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="搜索Stardew Valley Wiki" title="搜索Stardew Valley Wiki[f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:搜索">
+			<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="前往" title="若相同标题存在，则直接前往该页面" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="访问首页" class="mw-wiki-logo" href="/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>导航</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/Stardew_Valley_Wiki" title="访问首页[z]" accesskey="z">首页</a></li><li id="n-recentchanges"><a href="/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki最近更改的列表[r]" accesskey="r">最近更改</a></li><li id="n-.E6.9C.AA.E7.BF.BB.E8.AF.91.E7.9A.84.E9.A1.B5.E9.9D.A2"><a href="/Category:%E6%9C%AA%E7%BF%BB%E8%AF%91%E7%9A%84%E9%A1%B5%E9%9D%A2">未翻译的页面</a></li><li id="n-.E5.B8.AE.E5.8A.A9:.E7.BC.96.E8.BE.91.E5.85.A5.E9.97.A8"><a href="/Help:%E7%BC%96%E8%BE%91%E5%85%A5%E9%97%A8">帮助:编辑入门</a></li><li id="n-randompage"><a href="/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面[x]" accesskey="x">随机页面</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-链接" class="vector-menu vector-menu-portal portal" aria-labelledby="p-链接-label" role="navigation" 
+	 >
+	<h3 id="p-链接-label">
+		<span>链接</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-.E5.AE.98.E6.96.B9.E7.BD.91.E7.AB.99"><a href="https://stardewvalley.net" rel="nofollow">官方网站</a></li><li id="n-.E5.AE.98.E6.96.B9.E8.AE.BA.E5.9D.9B"><a href="https://forums.stardewvalley.net/" rel="nofollow">官方论坛</a></li><li id="n-.E5.AE.98.E6.96.B9.E5.95.86.E5.93.81"><a href="https://www.stardewvalley.net/shop/" rel="nofollow">官方商品</a></li><li id="n-.E7.A4.BE.E4.BA.A4.E5.AA.92.E4.BD.93"><a href="https://www.stardewvalley.net/links/" rel="nofollow">社交媒体</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>工具</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0" title="所有链接至本页面的wiki页面的列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="//stardewvalleywiki.com/Special:Upload" title="上传文件[u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;oldid=51314" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info"><a href="/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;action=info" title="关于此页面的更多信息">页面信息</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>其他语言</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-en"><a href="https://stardewvalleywiki.com/Modding:Migrate_to_SMAPI_4.0" title="Modding:Migrate to SMAPI 4.0 – English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li></ul>
+		
+	</div>
+</nav>
+
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> 此页面最后编辑于2025年3月29日 (星期六) 10:22。</li>
+		<li id="footer-info-copyright">除非另有声明，本网站内容采用<a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>授权。</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Stardew Valley Wiki:隐私政策">隐私政策</a></li>
+		<li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%E5%85%B3%E4%BA%8E" title="Stardew Valley Wiki:关于">关于Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Stardew Valley Wiki:免责声明">免责声明</a></li>
+		<li id="footer-places-mobileview"><a href="//zh.stardewvalleywiki.com/mediawiki/index.php?title=%E6%A8%A1%E7%BB%84:%E8%BF%81%E7%A7%BB%E8%87%B3SMAPI_4.0&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">手机版视图</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.058","walltime":"0.861","ppvisitednodes":{"value":84,"limit":1000000},"postexpandincludesize":{"value":213,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":6985,"limit":5000000},"timingprofile":["100.00%    1.049      1 Template:Modder_compatibility_header","100.00%    1.049      1 -total"]},"cachereport":{"timestamp":"20250330070152","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":127});});</script></body></html>
+
+

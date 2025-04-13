@@ -110,3 +110,16 @@ hts-cache/
 
 # exclude src\stardewvalleywiki.com\Special_MobileLanguages
 src/stardewvalleywiki.com/Special_MobileLanguages/
+src/de.stardewvalleywiki.com/Special_MobileLanguages/
+src/es.stardewvalleywiki.com/Special_MobileLanguages/
+src/fr.stardewvalleywiki.com/Special_MobileLanguages/
+src/hu.stardewvalleywiki.com/Special_MobileLanguages/
+src/it.stardewvalleywiki.com/Special_MobileLanguages/
+src/ja.stardewvalleywiki.com/Special_MobileLanguages/
+src/ko.stardewvalleywiki.com/Special_MobileLanguages/
+src/pt.stardewvalleywiki.com/Special_MobileLanguages/
+src/ru.stardewvalleywiki.com/Special_MobileLanguages/
+src/tr.stardewvalleywiki.com/Special_MobileLanguages/
+src/zh.stardewvalleywiki.com/Special_MobileLanguages/
+
+.vs
