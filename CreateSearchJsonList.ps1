@@ -4,7 +4,7 @@ $srcFolderPath = "src"
 $partToRemove = (Resolve-Path -Path $srcFolderPath).Path
 
 # create and array with the language codes
-$languageCodes = "en", "es", "fr", "de", "it", "ja", "ko", "pt", "ru", "tr", "zh"
+$languageCodes = "en", "es", "fr", "de", "it", "ja", "ko", "pt", "ru", "tr", "zh","hu"
 
 # For each language code, search inside src/lang_code.stardewvalleywiki.com/ for html files
 # Initialize an empty array to store the URL paths and keywords
@@ -46,7 +46,7 @@ foreach ($lang in $languageCodes) {
     # Get all HTML files inside the source folder
     # $htmlFiles = Get-ChildItem -Path $srcFolderPath -Filter "*.html" -Recurse
     # Get all HTML files inside the source folder except those containing "mediawiki"
-    $htmlFiles = Get-ChildItem -Path $languageFolderPath -Filter "*.html" -Recurse | Where-Object { $_.Name -notlike "*mediawiki*" }
+    $htmlFiles = Get-ChildItem -Path $languageFolderPath -Filter "*.html" -Recurse | Where-Object { $_.FullName -notmatch "\\mediawiki\\" -and $_.Name -notlike "*mediawiki*" }
 
     # Loop through each HTML file
     foreach ($file in $htmlFiles) {

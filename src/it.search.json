@@ -793,6 +793,15 @@
 }
 ,
 {
+  "UrlPath": ".\\it.stardewvalleywiki.com\\Mamma_e_papà.html",
+  "Title": "Mamma e papà - Stardew Valley Wiki",
+  "Keywords": [
+    "La Mamma o il Papà del giocatore mandano delle lettere via posta due giorni dopo che il giocatore ha guadagnato una certa quantità di oro. Se il giocatore è un maschio riceve lettere dalla Mamma. Se il giocatore è una femmina riceve lettere dal Papà."
+  ],
+  "Description": "La Mamma o il Papà del giocatore mandano delle lettere via posta due giorni dopo che il giocatore ha guadagnato una certa quantità di oro. Se il giocatore è un maschio riceve lettere dalla Mamma. Se il giocatore è una femmina riceve lettere dal Papà."
+}
+,
+{
   "UrlPath": ".\\it.stardewvalleywiki.com\\Mappe_della_fattoria.html",
   "Title": "Mappe della fattoria - Stardew Valley Wiki",
   "Keywords": [
@@ -901,6 +910,15 @@
     "La Mobilia si può acquistare da Robin alla Bottega del falegname o alla Carovana del Mercante. Entrambi i negozi offrono una selezione casuale di mobili ogni giorno in cui sono aperti. Il costo dei mobili alla Carovana del Mercante è casuale ma è sempre tra data-sort-value=&quot;furniture&quot;250–2&amp;#160;500o. I prezzi alla Bottega del falegname non variano."
   ],
   "Description": "La Mobilia si può acquistare da Robin alla Bottega del falegname o alla Carovana del Mercante. Entrambi i negozi offrono una selezione casuale di mobili ogni giorno in cui sono aperti. Il costo dei mobili alla Carovana del Mercante è casuale ma è sempre tra data-sort-value=&quot;furniture&quot;250–2&amp;#160;500o. I prezzi alla Bottega del falegname non variano."
+}
+,
+{
+  "UrlPath": ".\\it.stardewvalleywiki.com\\Modellino_di_nave.html",
+  "Title": "Modellino di nave - Stardew Valley Wiki",
+  "Keywords": [
+    "In questo momento la pagina richiesta è vuota. È possibile cercare questo titolo nelle altre pagine del sito o cercare nei registri correlati ma non hai i permessi per creare questa pagina."
+  ],
+  "Description": "In questo momento la pagina richiesta è vuota. È possibile cercare questo titolo nelle altre pagine del sito o cercare nei registri correlati ma non hai i permessi per creare questa pagina."
 }
 ,
 {
@@ -1043,6 +1061,19 @@
     "La Primavera è la stagione con cui i giocatori iniziano il gioco per la prima volta. È seguita dall&#039;Estate e preceduta dall&#039;Inverno."
   ],
   "Description": "La Primavera è la stagione con cui i giocatori iniziano il gioco per la prima volta. È seguita dall&#039;Estate e preceduta dall&#039;Inverno."
+}
+,
+{
+  "UrlPath": ".\\it.stardewvalleywiki.com\\Pugnale_di_cristallo.html",
+  "Title": "Pugnale di cristallo - Stardew Valley Wiki",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " Pugnale di cristallo",
+    " regalo",
+    " Il Pugnale di cristallo è un pugnale che può essere ottenuto dallo scrigno al piano 60 nelle miniere."
+  ],
+  "Description": "Il Pugnale di cristallo è un pugnale che può essere ottenuto dallo scrigno al piano 60 nelle miniere."
 }
 ,
 {
@@ -1327,207 +1358,6 @@
 }
 ,
 {
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\index0dcc.html",
-  "Title": "Impostazioni - Stardew Valley Wiki",
-  "Keywords": [
-    "Impostazioni - Stardew Valley Wiki"
-  ],
-  "Description": "Impostazioni - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\index2bc4.html",
-  "Title": "Stardew Valley Wiki - Italiano",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " italian",
-    " italiano",
-    " villaggio",
-    " &#10;pesce",
-    " regalo",
-    " regali",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Confronto tra versioni: selezionare le caselle corrispondenti alle versioni desiderate e premere Invio o il pulsante in basso."
-  ],
-  "Description": "Confronto tra versioni: selezionare le caselle corrispondenti alle versioni desiderate e premere Invio o il pulsante in basso."
-}
-,
-{
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\index4a2f.html",
-  "Title": "Stardew Valley Wiki - Italiano",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " italian",
-    " italiano",
-    " villaggio",
-    " &#10;pesce",
-    " regalo",
-    " regali",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Non si dispone dei permessi necessari per modificare questa pagina per i seguenti motivi:"
-  ],
-  "Description": "Non si dispone dei permessi necessari per modificare questa pagina per i seguenti motivi:"
-}
-,
-{
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\index4c18.html",
-  "Title": "Stardew Valley Wiki - Italiano",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " italian",
-    " italiano",
-    " villaggio",
-    " &#10;pesce",
-    " regalo",
-    " regali",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki è la risorsa numero 1 per la RPG Stardew Valley che copre gameplay abitanti del villaggio missioni pesca e altro ancora."
-  ],
-  "Description": "Stardew Valley Wiki è la risorsa numero 1 per la RPG Stardew Valley che copre gameplay abitanti del villaggio missioni pesca e altro ancora."
-}
-,
-{
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\index76e3.html",
-  "Title": "Stardew Valley Wiki - Italiano",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " italian",
-    " italiano",
-    " villaggio",
-    " &#10;pesce",
-    " regalo",
-    " regali",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki è la risorsa numero 1 per la RPG Stardew Valley che copre gameplay abitanti del villaggio missioni pesca e altro ancora."
-  ],
-  "Description": "Stardew Valley Wiki è la risorsa numero 1 per la RPG Stardew Valley che copre gameplay abitanti del villaggio missioni pesca e altro ancora."
-}
-,
-{
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\index7bbc.html",
-  "Title": "Entra - Stardew Valley Wiki",
-  "Keywords": [
-    "Entra - Stardew Valley Wiki"
-  ],
-  "Description": "Entra - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\indexa004.html",
-  "Title": "Stardew Valley Wiki - Italiano",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " italian",
-    " italiano",
-    " villaggio",
-    " &#10;pesce",
-    " regalo",
-    " regali",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki è la risorsa numero 1 per la RPG Stardew Valley che copre gameplay abitanti del villaggio missioni pesca e altro ancora."
-  ],
-  "Description": "Stardew Valley Wiki è la risorsa numero 1 per la RPG Stardew Valley che copre gameplay abitanti del villaggio missioni pesca e altro ancora."
-}
-,
-{
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\indexa6b2.html",
-  "Title": "Registrati - Stardew Valley Wiki",
-  "Keywords": [
-    "Registrati - Stardew Valley Wiki"
-  ],
-  "Description": "Registrati - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\it.stardewvalleywiki.com\\mediawiki\\indexd939.html",
-  "Title": "Stardew Valley Wiki - Italiano",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " italian",
-    " italiano",
-    " villaggio",
-    " &#10;pesce",
-    " regalo",
-    " regali",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki è la risorsa numero 1 per la RPG Stardew Valley che copre gameplay abitanti del villaggio missioni pesca e altro ancora."
-  ],
-  "Description": "Stardew Valley Wiki è la risorsa numero 1 per la RPG Stardew Valley che copre gameplay abitanti del villaggio missioni pesca e altro ancora."
-}
-,
-{
   "UrlPath": ".\\it.stardewvalleywiki.com\\Speciale_Cronologia\\Abilità.html",
   "Title": "Cronologia della pagina - Stardew Valley Wiki",
   "Keywords": [
@@ -1547,6 +1377,15 @@
 ,
 {
   "UrlPath": ".\\it.stardewvalleywiki.com\\Speciale_Cronologia\\Immunità.html",
+  "Title": "Cronologia della pagina - Stardew Valley Wiki",
+  "Keywords": [
+    "Cronologia della pagina - Stardew Valley Wiki"
+  ],
+  "Description": "Cronologia della pagina - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\it.stardewvalleywiki.com\\Speciale_Cronologia\\Mamma_e_papà.html",
   "Title": "Cronologia della pagina - Stardew Valley Wiki",
   "Keywords": [
     "Cronologia della pagina - Stardew Valley Wiki"

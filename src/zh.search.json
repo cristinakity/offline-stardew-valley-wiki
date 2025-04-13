@@ -1389,6 +1389,15 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Category_传送图腾.html",
+  "Title": "Category:传送图腾 - Stardew Valley Wiki",
+  "Keywords": [
+    "此处列出的是与传送图腾有关的类别和页面。"
+  ],
+  "Description": "此处列出的是与传送图腾有关的类别和页面。"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Category_农作物.html",
   "Title": "Category:农作物 - Stardew Valley Wiki",
   "Keywords": [
@@ -1692,6 +1701,15 @@
     "此处列出的是与河鱼有关的类别和页面。"
   ],
   "Description": "此处列出的是与河鱼有关的类别和页面。"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Category_法师建筑.html",
+  "Title": "Category:法师建筑 - Stardew Valley Wiki",
+  "Keywords": [
+    "此处列出的是与法师建筑有关的类别和页面。"
+  ],
+  "Description": "此处列出的是与法师建筑有关的类别和页面。"
 }
 ,
 {
@@ -8196,6 +8214,29 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\土之图腾柱-2.html",
+  "Title": "土之图腾柱 - 星露谷物语官方中文维基",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 土之图腾柱",
+    " chinese",
+    " zh",
+    " 星露谷物语",
+    " 星露谷",
+    " 中文",
+    " 维基",
+    " 攻略",
+    " 百科",
+    " 官方",
+    " 送礼",
+    " 礼物",
+    " 土之图腾柱是一种农场建筑，在完成哥布林问题任务后可前往法师塔购买并建造。其类似建筑水之图腾柱、沙漠图腾柱和姜岛图腾柱也可向法师购买。与土之图腾柱交互会将玩家传送至深山的传送图腾处。其功能与可打造物品的传送图腾：山岭一致。当骑马时无法与土之图腾柱交互。"
+  ],
+  "Description": "土之图腾柱是一种农场建筑，在完成哥布林问题任务后可前往法师塔购买并建造。其类似建筑水之图腾柱、沙漠图腾柱和姜岛图腾柱也可向法师购买。与土之图腾柱交互会将玩家传送至深山的传送图腾处。其功能与可打造物品的传送图腾：山岭一致。当骑马时无法与土之图腾柱交互。"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\土之图腾柱.html",
   "Title": "土之图腾柱 - 星露谷物语官方中文维基",
   "Keywords": [
@@ -9029,6 +9070,29 @@
     " 壁挂棕榈树是一种可以挂在墙上的家具。玩家可以在夏威夷宴会期间向皮埃尔的货摊支付data-sort-value=&quot;1000&quot;&amp;gt;1000金购买该家具。"
   ],
   "Description": "壁挂棕榈树是一种可以挂在墙上的家具。玩家可以在夏威夷宴会期间向皮埃尔的货摊支付data-sort-value=&quot;1000&quot;&amp;gt;1000金购买该家具。"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\壁挂灯-2.html",
+  "Title": "壁挂灯 - 星露谷物语官方中文维基",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 壁挂灯",
+    " chinese",
+    " zh",
+    " 星露谷物语",
+    " 星露谷",
+    " 中文",
+    " 维基",
+    " 攻略",
+    " 百科",
+    " 官方",
+    " 送礼",
+    " 礼物",
+    " 壁挂灯是一系列的墙壁挂灯。它们可以挂在农舍内的墙上。"
+  ],
+  "Description": "壁挂灯是一系列的墙壁挂灯。它们可以挂在农舍内的墙上。"
 }
 ,
 {
@@ -19047,6 +19111,15 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_农舍升级.html",
+  "Title": "模组:农舍升级 - Stardew Valley Wiki",
+  "Keywords": [
+    "← 模组:目录"
+  ],
+  "Description": "← 模组:目录"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_创建_SMAPI_模组.html",
   "Title": "模组:创建 SMAPI 模组 - Stardew Valley Wiki",
   "Keywords": [
@@ -19263,6 +19336,15 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_杀怪目标.html",
+  "Title": "模组:杀怪目标 - Stardew Valley Wiki",
+  "Keywords": [
+    "← 目录"
+  ],
+  "Description": "← 目录"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_果树数据.html",
   "Title": "模组:果树数据 - Stardew Valley Wiki",
   "Keywords": [
@@ -19314,6 +19396,15 @@
     "← 目录"
   ],
   "Description": "← 目录"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_玩家常见问题.html",
+  "Title": "模组:使用指南/疑难解答 - Stardew Valley Wiki",
+  "Keywords": [
+    "如果您在进行游戏时遇到了各种错误，那么这个页面就是为您准备的！（此页面不仅仅面向使用Mod的玩家。）"
+  ],
+  "Description": "如果您在进行游戏时遇到了各种错误，那么这个页面就是为您准备的！（此页面不仅仅面向使用Mod的玩家。）"
 }
 ,
 {
@@ -19426,7 +19517,7 @@
 ,
 {
   "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_行程数据.html",
-  "Title": "模组:行程数据 - Stardew Valley Wiki",
+  "Title": "模组:日程数据 - Stardew Valley Wiki",
   "Keywords": [
     "← 目录"
   ],
@@ -19443,6 +19534,15 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_迁移至SMAPI_4.html",
+  "Title": "模组:迁移至SMAPI 4.0 - Stardew Valley Wiki",
+  "Keywords": [
+    "←目录"
+  ],
+  "Description": "←目录"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_迁移至游戏本体1-5.html",
   "Title": "模组:迁移至游戏本体1.6 - Stardew Valley Wiki",
   "Keywords": [
@@ -19454,6 +19554,15 @@
 {
   "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_迁移至游戏本体1.5.html",
   "Title": "模组:迁移至游戏本体1.5.5 - Stardew Valley Wiki",
+  "Keywords": [
+    "←目录"
+  ],
+  "Description": "←目录"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\模组_迁移至游戏本体1.6.html",
+  "Title": "模组:迁移至游戏本体1.6.9 - Stardew Valley Wiki",
   "Keywords": [
     "←目录"
   ],
@@ -28793,6 +28902,29 @@
     " 祝尼魔茶几是一种家具，可以从祝尼魔目录中免费获取。"
   ],
   "Description": "祝尼魔茶几是一种家具，可以从祝尼魔目录中免费获取。"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\祝尼魔落地灯-2.html",
+  "Title": "祝尼魔落地灯 - 星露谷物语官方中文维基",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 祝尼魔落地灯",
+    " chinese",
+    " zh",
+    " 星露谷物语",
+    " 星露谷",
+    " 中文",
+    " 维基",
+    " 攻略",
+    " 百科",
+    " 官方",
+    " 送礼",
+    " 礼物",
+    " 祝尼魔落地灯是一种可以发光的家具，可以从祝尼魔目录中免费获取。"
+  ],
+  "Description": "祝尼魔落地灯是一种可以发光的家具，可以从祝尼魔目录中免费获取。"
 }
 ,
 {
@@ -39669,6 +39801,29 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\铁之刃.html",
+  "Title": "铁之刃 - 星露谷物语官方中文维基",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 铁之刃",
+    " chinese",
+    " zh",
+    " 星露谷物语",
+    " 星露谷",
+    " 中文",
+    " 维基",
+    " 攻略",
+    " 百科",
+    " 官方",
+    " 送礼",
+    " 礼物",
+    " 铁之刃是一种剑类武器，可以通过在矿井 41-59 层中打破木箱和木桶或通过杀死怪物后的掉落物获得。铁之刃也可能作为重新混合后的矿井的 60 层宝箱的奖励，需要在创建存档时在高级游戏设置的矿洞掉落中选择“重新混合”。"
+  ],
+  "Description": "铁之刃是一种剑类武器，可以通过在矿井 41-59 层中打破木箱和木桶或通过杀死怪物后的掉落物获得。铁之刃也可能作为重新混合后的矿井的 60 层宝箱的奖励，需要在创建存档时在高级游戏设置的矿洞掉落中选择“重新混合”。"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\铁刃.html",
   "Title": "铁之刃 - 星露谷物语官方中文维基",
   "Keywords": [
@@ -43346,6 +43501,15 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\鱿鱼节-2.html",
+  "Title": "鱿鱼节 - Stardew Valley Wiki",
+  "Keywords": [
+    "鱿鱼节是每年冬季12日和13日在沙滩举行的迷你钓鱼节日。两天节日都于上午6点10分开始，凌晨2点结束。在节日期间，鱿鱼可以全天被捕获，并可以兑换奖品。"
+  ],
+  "Description": "鱿鱼节是每年冬季12日和13日在沙滩举行的迷你钓鱼节日。两天节日都于上午6点10分开始，凌晨2点结束。在节日期间，鱿鱼可以全天被捕获，并可以兑换奖品。"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\鱿鱼节.html",
   "Title": "鱿鱼节 - Stardew Valley Wiki",
   "Keywords": [
@@ -45291,528 +45455,6 @@
 }
 ,
 {
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index0e02.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index2664.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index2bc4.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 差异选择：选中要对比的版本的单选按钮，按Enter键或下方的按钮。说明：（当前）=与最后版本之间的差异，（之前）=与上一版本之间的差异，小=小编辑。"
-  ],
-  "Description": "差异选择：选中要对比的版本的单选按钮，按Enter键或下方的按钮。说明：（当前）=与最后版本之间的差异，（之前）=与上一版本之间的差异，小=小编辑。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index35a0.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index3f9b.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index4a2f.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 因为以下原因，您没有权限编辑本页："
-  ],
-  "Description": "因为以下原因，您没有权限编辑本页："
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index5453.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index6731.html",
-  "Title": "创建账户 - Stardew Valley Wiki",
-  "Keywords": [
-    "创建账户 - Stardew Valley Wiki"
-  ],
-  "Description": "创建账户 - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index76e3.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index7b49.html",
-  "Title": "设置 - Stardew Valley Wiki",
-  "Keywords": [
-    "设置 - Stardew Valley Wiki"
-  ],
-  "Description": "设置 - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\index9d24.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\indexa004.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\indexb504.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\indexb6f4.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\indexd939.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\indexe07c.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\indexe982.html",
-  "Title": "Stardew Valley 中文维基",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " chinese",
-    " 星露谷物语",
-    " Stardew Valley 中文维基",
-    " 中文",
-    " 星露谷物语维基",
-    " 村民",
-    " 鱼",
-    " 星露谷",
-    " zh",
-    " ConcernedApe",
-    " 阿比盖尔",
-    " 莉亚",
-    " 潘妮",
-    " 亚历克斯",
-    " 艾利欧特",
-    " 哈维",
-    " 山姆",
-    " 塞巴斯蒂安",
-    " 海莉",
-    " 玛鲁",
-    " 谢恩",
-    " 星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-  ],
-  "Description": "星露谷物语维基是乡村生活类RPG游戏《星露谷物语》的最佳百科站点，涵盖了游戏玩法、小镇居民、任务、钓鱼等各种要素的资料和攻略。"
-}
-,
-{
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\mediawiki\\indexf2eb.html",
-  "Title": "登录 - Stardew Valley Wiki",
-  "Keywords": [
-    "登录 - Stardew Valley Wiki"
-  ],
-  "Description": "登录 - Stardew Valley Wiki"
-}
-,
-{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_历史\\Category_未翻译的页面.html",
   "Title": "页面历史 - Stardew Valley Wiki",
   "Keywords": [
@@ -46021,6 +45663,15 @@
 ,
 {
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_历史\\售卖.html",
+  "Title": "页面历史 - Stardew Valley Wiki",
+  "Keywords": [
+    "页面历史 - Stardew Valley Wiki"
+  ],
+  "Description": "页面历史 - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_历史\\土之图腾柱.html",
   "Title": "页面历史 - Stardew Valley Wiki",
   "Keywords": [
     "页面历史 - Stardew Valley Wiki"
@@ -46596,6 +46247,15 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_历史\\祝尼魔落地灯.html",
+  "Title": "页面历史 - Stardew Valley Wiki",
+  "Keywords": [
+    "页面历史 - Stardew Valley Wiki"
+  ],
+  "Description": "页面历史 - Stardew Valley Wiki"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_历史\\秋季.html",
   "Title": "页面历史 - Stardew Valley Wiki",
   "Keywords": [
@@ -46687,6 +46347,15 @@
 ,
 {
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_历史\\赌场.html",
+  "Title": "页面历史 - Stardew Valley Wiki",
+  "Keywords": [
+    "页面历史 - Stardew Valley Wiki"
+  ],
+  "Description": "页面历史 - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_历史\\轮船模型.html",
   "Title": "页面历史 - Stardew Valley Wiki",
   "Keywords": [
     "页面历史 - Stardew Valley Wiki"
@@ -46821,12 +46490,30 @@
 }
 ,
 {
-  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_移动版语言\\Stardew_Valley_Wiki.html",
-  "Title": "Stardew Valley Wiki - 其他语言 - Stardew Valley Wiki",
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_移动版语言\\Stardew_Valley_Wiki_隐私政策.html",
+  "Title": "Stardew Valley Wiki:隐私政策 - 其他语言 - Stardew Valley Wiki",
   "Keywords": [
-    "Stardew Valley Wiki - 其他语言 - Stardew Valley Wiki"
+    "Stardew Valley Wiki:隐私政策 - 其他语言 - Stardew Valley Wiki"
   ],
-  "Description": "Stardew Valley Wiki - 其他语言 - Stardew Valley Wiki"
+  "Description": "Stardew Valley Wiki:隐私政策 - 其他语言 - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_移动版语言\\Stardew_Valley_Wiki.html",
+  "Title": "页面不可用 - Stardew Valley Wiki",
+  "Keywords": [
+    "页面不可用 - Stardew Valley Wiki"
+  ],
+  "Description": "页面不可用 - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_移动版语言\\夏季.html",
+  "Title": "夏季 - 其他语言 - Stardew Valley Wiki",
+  "Keywords": [
+    "夏季 - 其他语言 - Stardew Valley Wiki"
+  ],
+  "Description": "夏季 - 其他语言 - Stardew Valley Wiki"
 }
 ,
 {
@@ -47016,6 +46703,15 @@
     "链接至“售卖”的页面 - Stardew Valley Wiki"
   ],
   "Description": "链接至“售卖”的页面 - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链入页面\\土之图腾柱.html",
+  "Title": "链接至“土之图腾柱”的页面 - Stardew Valley Wiki",
+  "Keywords": [
+    "链接至“土之图腾柱”的页面 - Stardew Valley Wiki"
+  ],
+  "Description": "链接至“土之图腾柱”的页面 - Stardew Valley Wiki"
 }
 ,
 {
@@ -48027,6 +47723,15 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链出更改\\季节.html",
+  "Title": "相关更改 - Stardew Valley Wiki",
+  "Keywords": [
+    "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
+  ],
+  "Description": "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链出更改\\孩子.html",
   "Title": "相关更改 - Stardew Valley Wiki",
   "Keywords": [
@@ -48172,6 +47877,15 @@
 ,
 {
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链出更改\\收集包.html",
+  "Title": "相关更改 - Stardew Valley Wiki",
+  "Keywords": [
+    "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
+  ],
+  "Description": "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链出更改\\新手指南.html",
   "Title": "相关更改 - Stardew Valley Wiki",
   "Keywords": [
     "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
@@ -48342,6 +48056,15 @@
 }
 ,
 {
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链出更改\\游戏内时间.html",
+  "Title": "相关更改 - Stardew Valley Wiki",
+  "Keywords": [
+    "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
+  ],
+  "Description": "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
+}
+,
+{
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链出更改\\火山地牢.html",
   "Title": "相关更改 - Stardew Valley Wiki",
   "Keywords": [
@@ -48370,6 +48093,15 @@
 ,
 {
   "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链出更改\\版本历史.html",
+  "Title": "相关更改 - Stardew Valley Wiki",
+  "Keywords": [
+    "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
+  ],
+  "Description": "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"
+}
+,
+{
+  "UrlPath": ".\\zh.stardewvalleywiki.com\\Special_链出更改\\物品栏.html",
   "Title": "相关更改 - Stardew Valley Wiki",
   "Keywords": [
     "输入页面名称以查看链入（或链自）相关页面的更改。（要查看分类的成员，请输入Category:分类名称）。对您的监视列表上页面的更改以粗体显示。"

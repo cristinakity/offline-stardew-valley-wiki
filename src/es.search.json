@@ -1382,9 +1382,9 @@
     " Español",
     " spanish",
     "es",
-    " El Atún es un pescado que puede ser encontrado en el océano durante el Verano y el Invierno. Aunque no es común puede ser encontrado en cubos de basura."
+    " El Atún es un pescado que puede ser pescado en el océano de La playa o en la Granja de Playa durante el Verano y el Invierno. También se puede pescar en la Isla Jengibre durante cualquier estación en el Oeste de la Isla (océano) Sur Sureste y en la Cueva Pirata. También se puede encontrar al azar en los cubos de basura durante el Verano o Invierno o en el Carro Ambulante por data-sort-value=&quot;100&quot;300 – 1.000o."
   ],
-  "Description": "El Atún es un pescado que puede ser encontrado en el océano durante el Verano y el Invierno. Aunque no es común puede ser encontrado en cubos de basura."
+  "Description": "El Atún es un pescado que puede ser pescado en el océano de La playa o en la Granja de Playa durante el Verano y el Invierno. También se puede pescar en la Isla Jengibre durante cualquier estación en el Oeste de la Isla (océano) Sur Sureste y en la Cueva Pirata. También se puede encontrar al azar en los cubos de basura durante el Verano o Invierno o en el Carro Ambulante por data-sort-value=&quot;100&quot;300 – 1.000o."
 }
 ,
 {
@@ -2965,6 +2965,15 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Categoría_Recetas.html",
+  "Title": "Categoría:Recetas - Stardew Valley Wiki",
+  "Keywords": [
+    "Esta categoría contiene subcategorías y páginas relacionadas con &#10;Recetas. Para añadir un artículo imagen o categoría a esta categoría añade [[Category:Recetas]] o [[Categoría:Recetas]] al final de la página."
+  ],
+  "Description": "Esta categoría contiene subcategorías y páginas relacionadas con &#10;Recetas. Para añadir un artículo imagen o categoría a esta categoría añade [[Category:Recetas]] o [[Categoría:Recetas]] al final de la página."
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Categoría_Recolección.html",
   "Title": "Categoría:Recolección - Stardew Valley Wiki",
   "Keywords": [
@@ -3574,9 +3583,9 @@
     " Español",
     " spanish",
     "es",
-    " La Cueva de la Maestría es un área ubicada en el Bosque Tizón. Esta se desbloquea luego de que El Jugador haya alcanzado el máximo nivel en todas las 5 Habilidades. Si intenta ingresar antes de llegar a esto aparecerá el siguiente mensaje: &quot;Sólo un maestro de las cinco disciplinas puede ingresar ([Número de habilidades a nivel máximo]/5)&quot;.&#10;En su interior el jugador puede encontrar:"
+    " La Cueva de la Maestría es un área ubicada en el Bosque Tizón. Esta se desbloquea luego de que El Jugador haya alcanzado el máximo nivel en todas las 5 Habilidades la mañana cuando se haya desbloqueado la ultima maestría al nivel máximo aparecerá un mensaje en la esquina inferior izquierda con el mensaje: &quot;Sientes que un nuevo camino se ah abierto.&quot;. Si intenta ingresar antes de llegar a esto aparecerá el siguiente mensaje: &quot;Sólo un maestro de las cinco disciplinas puede ingresar ([Número de habilidades a nivel máximo]/5)&quot;.&#10;En su interior el jugador puede encontrar:"
   ],
-  "Description": "La Cueva de la Maestría es un área ubicada en el Bosque Tizón. Esta se desbloquea luego de que El Jugador haya alcanzado el máximo nivel en todas las 5 Habilidades. Si intenta ingresar antes de llegar a esto aparecerá el siguiente mensaje: &quot;Sólo un maestro de las cinco disciplinas puede ingresar ([Número de habilidades a nivel máximo]/5)&quot;.&#10;En su interior el jugador puede encontrar:"
+  "Description": "La Cueva de la Maestría es un área ubicada en el Bosque Tizón. Esta se desbloquea luego de que El Jugador haya alcanzado el máximo nivel en todas las 5 Habilidades la mañana cuando se haya desbloqueado la ultima maestría al nivel máximo aparecerá un mensaje en la esquina inferior izquierda con el mensaje: &quot;Sientes que un nuevo camino se ah abierto.&quot;. Si intenta ingresar antes de llegar a esto aparecerá el siguiente mensaje: &quot;Sólo un maestro de las cinco disciplinas puede ingresar ([Número de habilidades a nivel máximo]/5)&quot;.&#10;En su interior el jugador puede encontrar:"
 }
 ,
 {
@@ -5138,6 +5147,22 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Judía_verde-2.html",
+  "Title": "Judía verde - Stardew Valley Wiki - Español",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " Judía verde",
+    " gift",
+    " Español",
+    " spanish",
+    "es",
+    " La Judía verde es un cultivo en Stardew Valley. Crece a partir de Kit de judías después de 10 días."
+  ],
+  "Description": "La Judía verde es un cultivo en Stardew Valley. Crece a partir de Kit de judías después de 10 días."
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Judía_verde.html",
   "Title": "Judía verde - Stardew Valley Wiki - Español",
   "Keywords": [
@@ -5607,6 +5632,22 @@
     " La Mansión del alcalde es el hogar de Lewis. Está ubicada al este del cementerio y al sur de la caravana de Pam y Penny al lado del puente que encamina hacia el museo y a la herrería. Lewis puede ser encontrado a menudo dentro de su casa en la estufa o en su jardín que está al frente de su casa."
   ],
   "Description": "La Mansión del alcalde es el hogar de Lewis. Está ubicada al este del cementerio y al sur de la caravana de Pam y Penny al lado del puente que encamina hacia el museo y a la herrería. Lewis puede ser encontrado a menudo dentro de su casa en la estufa o en su jardín que está al frente de su casa."
+}
+,
+{
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Maqueta_de_barco.html",
+  "Title": "Maqueta de barco - Stardew Valley Wiki - Español",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " Maqueta de barco",
+    " gift",
+    " Español",
+    " spanish",
+    "es",
+    " La Maqueta de barco es una pieza de mueble. Puede rotar en un stock diario en la Carpintería por data-sort-value=&quot;750&quot;&amp;gt;750o o el Carro Ambulante por data-sort-value=&quot;furniture&quot;250 – 2.500o."
+  ],
+  "Description": "La Maqueta de barco es una pieza de mueble. Puede rotar en un stock diario en la Carpintería por data-sort-value=&quot;750&quot;&amp;gt;750o o el Carro Ambulante por data-sort-value=&quot;furniture&quot;250 – 2.500o."
 }
 ,
 {
@@ -6575,6 +6616,15 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Niños-2.html",
+  "Title": "Niños - Stardew Valley Wiki",
+  "Keywords": [
+    "El jugador puede tener hijos solo si se ha casado y ha mejorado la Casa de campo por segunda vez el cual añade una habitación de niños y una habitación extra. Después de acostarte por la noche es posible que tu cónyuge te pregunte (1/20 de probabilidad) si quieres tener/adoptar un hijo. Puedes responder &quot;sí&quot; o &quot;ahora no&quot;. Las parejas del mismo sexo adoptarán niños y las parejas de distinto sexo tendrán hijos biológicos. Si el jugador retira la cuna mediante una renovación de la casa no podrá tener nuevos hijos (adoptivos o biológicos) a menos que se reponga la cuna."
+  ],
+  "Description": "El jugador puede tener hijos solo si se ha casado y ha mejorado la Casa de campo por segunda vez el cual añade una habitación de niños y una habitación extra. Después de acostarte por la noche es posible que tu cónyuge te pregunte (1/20 de probabilidad) si quieres tener/adoptar un hijo. Puedes responder &quot;sí&quot; o &quot;ahora no&quot;. Las parejas del mismo sexo adoptarán niños y las parejas de distinto sexo tendrán hijos biológicos. Si el jugador retira la cuna mediante una renovación de la casa no podrá tener nuevos hijos (adoptivos o biológicos) a menos que se reponga la cuna."
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Niños.html",
   "Title": "Niños - Stardew Valley Wiki",
   "Keywords": [
@@ -7390,9 +7440,9 @@
     " Español",
     " spanish",
     "es",
-    " El Salmón es un pez que puede ser encontrado en el río durante el Otoño. También se puede encontrar en cubos de basura."
+    " El Salmón es un pescado que puede ser pescado en el río (en el Pueblo Pelícano y en el Bosque Tizón) durante el Otoño. También puede ser regalado por un gato mascota con la amistad al máximo. También se puede encontrar al azar en los cubos de basura durante el otoño o en el Carro Ambulante por data-sort-value=&quot;75&quot;225 – 1.000o."
   ],
-  "Description": "El Salmón es un pez que puede ser encontrado en el río durante el Otoño. También se puede encontrar en cubos de basura."
+  "Description": "El Salmón es un pescado que puede ser pescado en el río (en el Pueblo Pelícano y en el Bosque Tizón) durante el Otoño. También puede ser regalado por un gato mascota con la amistad al máximo. También se puede encontrar al azar en los cubos de basura durante el otoño o en el Carro Ambulante por data-sort-value=&quot;75&quot;225 – 1.000o."
 }
 ,
 {
@@ -8088,6 +8138,22 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Sorpresa_de_carpa.html",
+  "Title": "Sorpresa de carpa - Stardew Valley Wiki - Español",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " Sorpresa de carpa",
+    " gift",
+    " Español",
+    " spanish",
+    "es",
+    " La Sorpresa de carpa es un plato cocinado. Se prepara usando la cocina dentro de una granja mejorada."
+  ],
+  "Description": "La Sorpresa de carpa es un plato cocinado. Se prepara usando la cocina dentro de una granja mejorada."
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Spa.html",
   "Title": "Spa - Stardew Valley Wiki - Español",
   "Keywords": [
@@ -8623,9 +8689,9 @@
     " Español",
     " spanish",
     "es",
-    " La Trucha arcoíris es un pez que puede ser encontrado en el río y en el lago de la montaña durante el Verano."
+    " La Trucha arcoíris es un pescado que puede ser pescado en el río (en el Pueblo Pelícano y en el Bosque Tizón) y en el lago de la montaña durante el Verano con un Clima soleado. También puede ser regalado por un gato mascota con la amistad al máximo. También se puede encontrar a veces en los cubos de basura durante el verano o en el Carro Ambulante por data-sort-value=&quot;65&quot;195 – 1.000o."
   ],
-  "Description": "La Trucha arcoíris es un pez que puede ser encontrado en el río y en el lago de la montaña durante el Verano."
+  "Description": "La Trucha arcoíris es un pescado que puede ser pescado en el río (en el Pueblo Pelícano y en el Bosque Tizón) y en el lago de la montaña durante el Verano con un Clima soleado. También puede ser regalado por un gato mascota con la amistad al máximo. También se puede encontrar a veces en los cubos de basura durante el verano o en el Carro Ambulante por data-sort-value=&quot;65&quot;195 – 1.000o."
 }
 ,
 {
@@ -8836,6 +8902,24 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Cabaña_(Multijugador).html",
+  "Title": "Cambios relacionados - Stardew Valley Wiki",
+  "Keywords": [
+    "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+  ],
+  "Description": "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+}
+,
+{
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Cabaña_de_la_Bruja.html",
+  "Title": "Cambios relacionados - Stardew Valley Wiki",
+  "Keywords": [
+    "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+  ],
+  "Description": "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Carpintería.html",
   "Title": "Cambios relacionados - Stardew Valley Wiki",
   "Keywords": [
@@ -8872,6 +8956,15 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Energía.html",
+  "Title": "Cambios relacionados - Stardew Valley Wiki",
+  "Keywords": [
+    "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+  ],
+  "Description": "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Envíos.html",
   "Title": "Cambios relacionados - Stardew Valley Wiki",
   "Keywords": [
@@ -8882,6 +8975,15 @@
 ,
 {
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Fabricación.html",
+  "Title": "Cambios relacionados - Stardew Valley Wiki",
+  "Keywords": [
+    "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+  ],
+  "Description": "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+}
+,
+{
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Guía_de_Inicio.html",
   "Title": "Cambios relacionados - Stardew Valley Wiki",
   "Keywords": [
     "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
@@ -8908,6 +9010,15 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Historial_de_versiones_móviles.html",
+  "Title": "Cambios relacionados - Stardew Valley Wiki",
+  "Keywords": [
+    "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+  ],
+  "Description": "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\La_montaña.html",
   "Title": "Cambios relacionados - Stardew Valley Wiki",
   "Keywords": [
@@ -8918,6 +9029,15 @@
 ,
 {
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Mazmorra_del_volcán.html",
+  "Title": "Cambios relacionados - Stardew Valley Wiki",
+  "Keywords": [
+    "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+  ],
+  "Description": "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
+}
+,
+{
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_CambiosEnEnlazadas\\Modding_Índice.html",
   "Title": "Cambios relacionados - Stardew Valley Wiki",
   "Keywords": [
     "Introduce el nombre de una página para ver los cambios en las páginas enlazadas. (Para ver miembros de una categoría introduce Categoría:Nombre de la categoría). Los cambios realizados en las páginas que tengas en tu lista de seguimiento se resaltarán en negritas."
@@ -9160,6 +9280,15 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_History\\Judía_verde.html",
+  "Title": "Historial - Stardew Valley Wiki",
+  "Keywords": [
+    "Historial - Stardew Valley Wiki"
+  ],
+  "Description": "Historial - Stardew Valley Wiki"
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_History\\La_montaña.html",
   "Title": "Historial - Stardew Valley Wiki",
   "Keywords": [
@@ -9233,6 +9362,15 @@
 ,
 {
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_History\\Stardew_Valley_Wiki_Política_de_privacidad.html",
+  "Title": "Historial - Stardew Valley Wiki",
+  "Keywords": [
+    "Historial - Stardew Valley Wiki"
+  ],
+  "Description": "Historial - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_History\\Stardew_Valley_Wiki.html",
   "Title": "Historial - Stardew Valley Wiki",
   "Keywords": [
     "Historial - Stardew Valley Wiki"
@@ -9817,6 +9955,15 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_LoQueEnlazaAquí\\Maqueta_de_barco.html",
+  "Title": "Páginas que enlazan con «Maqueta de barco» - Stardew Valley Wiki",
+  "Keywords": [
+    "Páginas que enlazan con «Maqueta de barco» - Stardew Valley Wiki"
+  ],
+  "Description": "Páginas que enlazan con «Maqueta de barco» - Stardew Valley Wiki"
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_LoQueEnlazaAquí\\Matrimonio.html",
   "Title": "Páginas que enlazan con «Matrimonio» - Stardew Valley Wiki",
   "Keywords": [
@@ -10069,6 +10216,15 @@
 }
 ,
 {
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_LoQueEnlazaAquí\\Sorpresa_de_carpa.html",
+  "Title": "Páginas que enlazan con «Sorpresa de carpa» - Stardew Valley Wiki",
+  "Keywords": [
+    "Páginas que enlazan con «Sorpresa de carpa» - Stardew Valley Wiki"
+  ],
+  "Description": "Páginas que enlazan con «Sorpresa de carpa» - Stardew Valley Wiki"
+}
+,
+{
   "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_LoQueEnlazaAquí\\Spa.html",
   "Title": "Páginas que enlazan con «Spa» - Stardew Valley Wiki",
   "Keywords": [
@@ -10159,161 +10315,12 @@
 }
 ,
 {
-  "UrlPath": ".\\es.stardewvalleywiki.com\\mediawiki\\index2bc4.html",
-  "Title": "Stardew Valley Wiki - Español",
+  "UrlPath": ".\\es.stardewvalleywiki.com\\Especial_MobileLanguages\\Stardew_Valley_Wiki.html",
+  "Title": "Stardew Valley Wiki - Otros idiomas - Stardew Valley Wiki",
   "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " Español",
-    " es",
-    " spanish",
-    " aldeanos",
-    " pescados",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Selección de diferencias: marca las casillas correspondientes a las versiones a comparar y pulsa Intro o el botón de abajo.&#10;Leyenda: (act) = diferencias con la versión actual&#10;(ant) = diferencias con la versión anterior m = edición menor."
+    "Stardew Valley Wiki - Otros idiomas - Stardew Valley Wiki"
   ],
-  "Description": "Selección de diferencias: marca las casillas correspondientes a las versiones a comparar y pulsa Intro o el botón de abajo.&#10;Leyenda: (act) = diferencias con la versión actual&#10;(ant) = diferencias con la versión anterior m = edición menor."
-}
-,
-{
-  "UrlPath": ".\\es.stardewvalleywiki.com\\mediawiki\\index4a2f.html",
-  "Title": "Stardew Valley Wiki - Español",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " Español",
-    " es",
-    " spanish",
-    " aldeanos",
-    " pescados",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " No tienes permiso para modificar esta página por los siguientes motivos:"
-  ],
-  "Description": "No tienes permiso para modificar esta página por los siguientes motivos:"
-}
-,
-{
-  "UrlPath": ".\\es.stardewvalleywiki.com\\mediawiki\\index637e.html",
-  "Title": "Stardew Valley Wiki - Español",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " Español",
-    " es",
-    " spanish",
-    " aldeanos",
-    " pescados",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki es el recurso # 1 para el RPG Stardew Valley que cubre el juego aldeanos misiones pesca y mucho más."
-  ],
-  "Description": "Stardew Valley Wiki es el recurso # 1 para el RPG Stardew Valley que cubre el juego aldeanos misiones pesca y mucho más."
-}
-,
-{
-  "UrlPath": ".\\es.stardewvalleywiki.com\\mediawiki\\indexa004.html",
-  "Title": "Stardew Valley Wiki - Español",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " Español",
-    " es",
-    " spanish",
-    " aldeanos",
-    " pescados",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki es el recurso # 1 para el RPG Stardew Valley que cubre el juego aldeanos misiones pesca y mucho más."
-  ],
-  "Description": "Stardew Valley Wiki es el recurso # 1 para el RPG Stardew Valley que cubre el juego aldeanos misiones pesca y mucho más."
-}
-,
-{
-  "UrlPath": ".\\es.stardewvalleywiki.com\\mediawiki\\indexd350.html",
-  "Title": "Acceder - Stardew Valley Wiki",
-  "Keywords": [
-    "Acceder - Stardew Valley Wiki"
-  ],
-  "Description": "Acceder - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\es.stardewvalleywiki.com\\mediawiki\\indexd939.html",
-  "Title": "Stardew Valley Wiki - Español",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " Español",
-    " es",
-    " spanish",
-    " aldeanos",
-    " pescados",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki es el recurso # 1 para el RPG Stardew Valley que cubre el juego aldeanos misiones pesca y mucho más."
-  ],
-  "Description": "Stardew Valley Wiki es el recurso # 1 para el RPG Stardew Valley que cubre el juego aldeanos misiones pesca y mucho más."
-}
-,
-{
-  "UrlPath": ".\\es.stardewvalleywiki.com\\mediawiki\\indexffbb.html",
-  "Title": "Crear una cuenta - Stardew Valley Wiki",
-  "Keywords": [
-    "Crear una cuenta - Stardew Valley Wiki"
-  ],
-  "Description": "Crear una cuenta - Stardew Valley Wiki"
+  "Description": "Stardew Valley Wiki - Otros idiomas - Stardew Valley Wiki"
 }
 ,
 {

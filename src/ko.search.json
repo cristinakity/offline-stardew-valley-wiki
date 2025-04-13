@@ -1205,9 +1205,9 @@
     " 개구리알",
     " gift",
     " 선물",
-    " The Frog Egg is a trinket item obtainable after claiming Combat Mastery. It can be obtained by slaying monsters or breaking crates and barrels in the Mines Skull Cavern or Quarry Mine. Drop chances from both methods are affected by daily luck and luck buffs among other factors. The Burglar&#039;s Ring and Monster Compendium do not impact the chance to obtain it from monsters.&amp;#91;1&amp;#93; There is also a ≈0.6% chance to obtain a Frog Egg from a treasure chest in the Skull Cavern.&amp;#91;2&amp;#93;"
+    " 개구리알은 전투 마스터리를 획득한 후 얻을 수 있는 장신구아이템입니다. 광산이나 해골 동굴 채석장 광산에서 몬스터를 죽이거나 상자와 통을 깼을 때 얻을 수 있습니다. 드롭 확률은 그 날의 행운과 행운 버프 등에 영향을 받습니다. 그러나 도둑의 반지나 몬스터 개요서를 통해 몬스터에게 드랍되는 확률에는 영향이 없습니다.&amp;#91;1&amp;#93; 해골 동굴의 보물 방에서 개구리알을 획득할 확률은 약 0.6%입니다.&amp;#91;2&amp;#93;"
   ],
-  "Description": "The Frog Egg is a trinket item obtainable after claiming Combat Mastery. It can be obtained by slaying monsters or breaking crates and barrels in the Mines Skull Cavern or Quarry Mine. Drop chances from both methods are affected by daily luck and luck buffs among other factors. The Burglar&#039;s Ring and Monster Compendium do not impact the chance to obtain it from monsters.&amp;#91;1&amp;#93; There is also a ≈0.6% chance to obtain a Frog Egg from a treasure chest in the Skull Cavern.&amp;#91;2&amp;#93;"
+  "Description": "개구리알은 전투 마스터리를 획득한 후 얻을 수 있는 장신구아이템입니다. 광산이나 해골 동굴 채석장 광산에서 몬스터를 죽이거나 상자와 통을 깼을 때 얻을 수 있습니다. 드롭 확률은 그 날의 행운과 행운 버프 등에 영향을 받습니다. 그러나 도둑의 반지나 몬스터 개요서를 통해 몬스터에게 드랍되는 확률에는 영향이 없습니다.&amp;#91;1&amp;#93; 해골 동굴의 보물 방에서 개구리알을 획득할 확률은 약 0.6%입니다.&amp;#91;2&amp;#93;"
 }
 ,
 {
@@ -2084,9 +2084,9 @@
     " 곤충 머리",
     " gift",
     " 선물",
-    " 벌레 머리는 몬스터 박멸에서 동굴 벌레 125마리 토벌 보상으로 얻을 수 있는 검 무기입니다. 이 무기를 얻고난 후 말론이 data-sort-value=&quot;10000&quot;&amp;gt;10000골드에 판매합니다."
+    " 벌레 머리는 몬스터 박멸에서 동굴 벌레 80마리 토벌 보상으로 얻을 수 있는 검 무기입니다. 이 무기를 얻고 난 후 말론이 data-sort-value=&quot;10000&quot;&amp;gt;10000골드에 판매합니다."
   ],
-  "Description": "벌레 머리는 몬스터 박멸에서 동굴 벌레 125마리 토벌 보상으로 얻을 수 있는 검 무기입니다. 이 무기를 얻고난 후 말론이 data-sort-value=&quot;10000&quot;&amp;gt;10000골드에 판매합니다."
+  "Description": "벌레 머리는 몬스터 박멸에서 동굴 벌레 80마리 토벌 보상으로 얻을 수 있는 검 무기입니다. 이 무기를 얻고 난 후 말론이 data-sort-value=&quot;10000&quot;&amp;gt;10000골드에 판매합니다."
 }
 ,
 {
@@ -4461,6 +4461,21 @@
     " 다람쥐 조각상은 가구 종류 중 하나인 장식물로 진저 섬 최북단에서 낚시로 얻을 수 있습니다."
   ],
   "Description": "다람쥐 조각상은 가구 종류 중 하나인 장식물로 진저 섬 최북단에서 낚시로 얻을 수 있습니다."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\다이아몬드_사냥꾼-2.html",
+  "Title": "다이아몬드 사냥꾼 - Stardew Valley Wiki",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 위키",
+    " 다이아몬드 사냥꾼",
+    " gift",
+    " 선물",
+    " The Diamond Hunter is a power book that can be traded from the Volcano Dwarf in the Volcano Dungeon for 10 Diamonds."
+  ],
+  "Description": "The Diamond Hunter is a power book that can be traded from the Volcano Dwarf in the Volcano Dungeon for 10 Diamonds."
 }
 ,
 {
@@ -7197,9 +7212,9 @@
     " 말린 과일",
     " gift",
     " 선물",
-    " 말린 과일 is an Artisan Good made from the Dehydrator taking one in-game day. Dried Fruit is always normal quality."
+    " 말린 과일은 과일을 탈수기에 넣어 만든 장인 제작품입니다. 만드는 데에는 게임 내 시간으로 하루가 걸리며 항상 일반 품질로 나옵니다."
   ],
-  "Description": "말린 과일 is an Artisan Good made from the Dehydrator taking one in-game day. Dried Fruit is always normal quality."
+  "Description": "말린 과일은 과일을 탈수기에 넣어 만든 장인 제작품입니다. 만드는 데에는 게임 내 시간으로 하루가 걸리며 항상 일반 품질로 나옵니다."
 }
 ,
 {
@@ -8166,6 +8181,21 @@
     " 미끼는 생선 가게에서 data-sort-value=&quot;5&quot;&amp;gt;5골드에 구매할 수 있고 제작하거나 지렁이 통에서 생산하거나 낚시 보물 상자에서 얻을 수도 있습니다. 여행 카트의 재고에서 data-sort-value=&quot;1&quot;100–1000골드에 확률적으로 판매할 수도 있습니다. 마을 회관 어항의  강 물고기 꾸러미의 완성하면 보상으로 미끼 30개를 받을 수 있습니다."
   ],
   "Description": "미끼는 생선 가게에서 data-sort-value=&quot;5&quot;&amp;gt;5골드에 구매할 수 있고 제작하거나 지렁이 통에서 생산하거나 낚시 보물 상자에서 얻을 수도 있습니다. 여행 카트의 재고에서 data-sort-value=&quot;1&quot;100–1000골드에 확률적으로 판매할 수도 있습니다. 마을 회관 어항의  강 물고기 꾸러미의 완성하면 보상으로 미끼 30개를 받을 수 있습니다."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\미끼_제작기-2.html",
+  "Title": "미끼 제작기 - Stardew Valley Wiki",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 위키",
+    " 미끼 제작기",
+    " gift",
+    " 선물",
+    " 미끼 제작기는 각 생선의 전용 미끼를 제작하는 정제 장비입니다. 생선이 미끼로 변하는 데 .mw-parser-output .durationtemplate{margin:2px 5px 1px 2px;display:block;white-space:nowrap}.mw-parser-output .durationtemplateinline{margin:2px 0 1px 2px;display:inline;white-space:nowrap}.mw-parser-output .durationtemplate img.mw-parser-output .durationtemplateinline img{max-width:none} 10분이 걸립니다. 낚시 레벨이 6이 되면 제작법을 얻고 직접 제작할 수 있습니다."
+  ],
+  "Description": "미끼 제작기는 각 생선의 전용 미끼를 제작하는 정제 장비입니다. 생선이 미끼로 변하는 데 .mw-parser-output .durationtemplate{margin:2px 5px 1px 2px;display:block;white-space:nowrap}.mw-parser-output .durationtemplateinline{margin:2px 0 1px 2px;display:inline;white-space:nowrap}.mw-parser-output .durationtemplate img.mw-parser-output .durationtemplateinline img{max-width:none} 10분이 걸립니다. 낚시 레벨이 6이 되면 제작법을 얻고 직접 제작할 수 있습니다."
 }
 ,
 {
@@ -9606,6 +9636,21 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\별의_책.html",
+  "Title": "별의 책 - Stardew Valley Wiki",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 위키",
+    " 별의 책",
+    " gift",
+    " 선물",
+    " 별의 책은 서적상에게 data-sort-value=&quot;15000&quot;&amp;gt;15000골드에 구매할 수 있는 기술 책입니다 (25% 확률로 등장). 또한 너구리에게서 받는 5번째 이후 퀘스트에 대한 보상으로 얻을 수도 있습니다 (20% 확률). 플레이어가 미스테리의 책을 하나 받은 후에는 미스테리 박스 또는 황금 미스테리 박스를 열 때 별의 책을 무작위로 얻을 수 있습니다."
+  ],
+  "Description": "별의 책은 서적상에게 data-sort-value=&quot;15000&quot;&amp;gt;15000골드에 구매할 수 있는 기술 책입니다 (25% 확률로 등장). 또한 너구리에게서 받는 5번째 이후 퀘스트에 대한 보상으로 얻을 수도 있습니다 (20% 확률). 플레이어가 미스테리의 책을 하나 받은 후에는 미스테리 박스 또는 황금 미스테리 박스를 열 때 별의 책을 무작위로 얻을 수 있습니다."
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\별조각.html",
   "Title": "별조각 - Stardew Valley Wiki",
   "Keywords": [
@@ -10389,6 +10434,15 @@
     "이 카테고리에는 축제와 휴일에 관련된 하위 카테고리와 페이지가 포함됩니다. 이 카테고리에 기사 또는 카테고리를 추가하려면 [[Category:축제]] 또는 [[분류:축제]]를 페이지 끝에 추가하십시오."
   ],
   "Description": "이 카테고리에는 축제와 휴일에 관련된 하위 카테고리와 페이지가 포함됩니다. 이 카테고리에 기사 또는 카테고리를 추가하려면 [[Category:축제]] 또는 [[분류:축제]]를 페이지 끝에 추가하십시오."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\분류_침대.html",
+  "Title": "분류:침대 - Stardew Valley Wiki",
+  "Keywords": [
+    "이 카테고리에는 침대에 관련된 하위 카테고리와 페이지가 포함됩니다. 이 카테고리에 기사 또는 카테고리를 추가하려면 [[Category:침대]] 또는 [[분류:침대]]를 페이지 끝에 추가하십시오."
+  ],
+  "Description": "이 카테고리에는 침대에 관련된 하위 카테고리와 페이지가 포함됩니다. 이 카테고리에 기사 또는 카테고리를 추가하려면 [[Category:침대]] 또는 [[분류:침대]]를 페이지 끝에 추가하십시오."
 }
 ,
 {
@@ -11928,9 +11982,9 @@
     " 생존형 버거",
     " gift",
     " 선물",
-    " 생존형 버거는 조리된 요리입니다. 농가를 업그레이드해서 주방이 있어야 만들 수 있습니다. 스타듀 밸리 품평회 동안 거스가 요리하고 무료로 먹을 수 있습니다."
+    " 생존형 버거는 조리된 요리입니다. 농가를 업그레이드해서 주방이 있어야 만들 수 있습니다. 스타듀 밸리 품평회 동안 거스가 요리하고 무료로 먹을 수 있습니다. 플레이어가 해변 농장의 농가를 아직 업그레이드 하지 않은 경우 가끔 보급 상자에서 나오기도 합니다."
   ],
-  "Description": "생존형 버거는 조리된 요리입니다. 농가를 업그레이드해서 주방이 있어야 만들 수 있습니다. 스타듀 밸리 품평회 동안 거스가 요리하고 무료로 먹을 수 있습니다."
+  "Description": "생존형 버거는 조리된 요리입니다. 농가를 업그레이드해서 주방이 있어야 만들 수 있습니다. 스타듀 밸리 품평회 동안 거스가 요리하고 무료로 먹을 수 있습니다. 플레이어가 해변 농장의 농가를 아직 업그레이드 하지 않은 경우 가끔 보급 상자에서 나오기도 합니다."
 }
 ,
 {
@@ -14685,6 +14739,21 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\양귀비씨_머핀-2.html",
+  "Title": "양귀비씨 머핀 - Stardew Valley Wiki",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 위키",
+    " 양귀비씨 머핀",
+    " gift",
+    " 선물",
+    " 양귀비씨 머핀은 조리된 요리입니다. 농가를 업그레이드해서 주방이 있어야 만들 수 있습니다. 겨울 별의 만찬에서 받을 수도 있고 크로버스와 동거하면 그에게 받을 수도 있고 여행 카트에서 data-sort-value=&quot;250&quot;750–1250골드에 구매할 수도 있습니다."
+  ],
+  "Description": "양귀비씨 머핀은 조리된 요리입니다. 농가를 업그레이드해서 주방이 있어야 만들 수 있습니다. 겨울 별의 만찬에서 받을 수도 있고 크로버스와 동거하면 그에게 받을 수도 있고 여행 카트에서 data-sort-value=&quot;250&quot;750–1250골드에 구매할 수도 있습니다."
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\양귀비씨_머핀.html",
   "Title": "양귀비씨 머핀 - Stardew Valley Wiki",
   "Keywords": [
@@ -15438,6 +15507,21 @@
     " 열대 TV는 가구 종류 중 하나입니다. 보통의 텔레비전들과 같이 TV 채널들을 만날 수 있습니다."
   ],
   "Description": "열대 TV는 가구 종류 중 하나입니다. 보통의 텔레비전들과 같이 TV 채널들을 만날 수 있습니다."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\열대_더블_침대-2.html",
+  "Title": "열대 더블 침대 - Stardew Valley Wiki",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 위키",
+    " 열대 더블 침대",
+    " gift",
+    " 선물",
+    " 열대 더블 침대는 가구로 일요일마다 섬 상인에게서 바나나 5개로 구입 할 수 있습니다.."
+  ],
+  "Description": "열대 더블 침대는 가구로 일요일마다 섬 상인에게서 바나나 5개로 구입 할 수 있습니다.."
 }
 ,
 {
@@ -18012,6 +18096,15 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\장비.html",
+  "Title": "장비 - Stardew Valley Wiki",
+  "Keywords": [
+    "장비는 게임이 아닌 위키에서 스타듀밸리의 유용한 아이템을 의미하는 단어입니다. 스킬 수준을 높임으로써 배우는 제작법에 따라 제작하여 얻을 수 있습니다. 제작하는 대신 가게에서 구입할 수도 있습니다."
+  ],
+  "Description": "장비는 게임이 아닌 위키에서 스타듀밸리의 유용한 아이템을 의미하는 단어입니다. 스킬 수준을 높임으로써 배우는 제작법에 따라 제작하여 얻을 수 있습니다. 제작하는 대신 가게에서 구입할 수도 있습니다."
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\장식용_갑옷.html",
   "Title": "장식용 갑옷 - Stardew Valley Wiki",
   "Keywords": [
@@ -18975,6 +19068,21 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\주간_나무꾼.html",
+  "Title": "주간 나무꾼 - Stardew Valley Wiki",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 위키",
+    " 주간 나무꾼",
+    " gift",
+    " 선물",
+    " 주간 나무꾼은 다음을 통해 얻을 수 있는 기술 책입니다."
+  ],
+  "Description": "주간 나무꾼은 다음을 통해 얻을 수 있는 기술 책입니다."
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\주니모_보관함.html",
   "Title": "주니모 보관함 - Stardew Valley Wiki",
   "Keywords": [
@@ -19143,9 +19251,9 @@
     " 중형 수액 채취기",
     " gift",
     " 선물",
-    " 중형 수액 채취기는 수액 채취기가 한번 생산할 때 2번 생산이 가능한 제작 아이템입니다. 제작법은 진저 섬에 있는 미스터 치의 치의 호두 방에서 data-sort-value=&quot;20&quot;&amp;gt; 20에 구입할 수 있습니다. 이는 나무에 설치하여 메이플 시럽 참나무 수지 소나무 타르 혹은 수액을 생산할 수 있습니다. 버섯 나무에 설치하면 다양한 버섯들이 생산됩니다."
+    " 중형 수액 채취기는 수액 채취기보다 생산 속도가 두 배 빠른 제작 아이템입니다. 제작법은 진저 섬에 있는 미스터 치의 치의 호두 방에서 data-sort-value=&quot;20&quot;&amp;gt; 20에 구입할 수 있습니다. 이는 나무에 설치하여 메이플 시럽 참나무 수지 소나무 타르 신비한 시럽 혹은 수액을 생산할 수 있습니다. 버섯 나무에 설치하면 다양한 버섯들이 생산되나 일반 수액 채취기와 생산 속도는 동일합니다. 녹색 비 나무(유형 3)에 놓으면 청나래고사리를 생산합니다. 다른 유형의 녹색 비 나무로는 수액을 채취할 수 없습니다."
   ],
-  "Description": "중형 수액 채취기는 수액 채취기가 한번 생산할 때 2번 생산이 가능한 제작 아이템입니다. 제작법은 진저 섬에 있는 미스터 치의 치의 호두 방에서 data-sort-value=&quot;20&quot;&amp;gt; 20에 구입할 수 있습니다. 이는 나무에 설치하여 메이플 시럽 참나무 수지 소나무 타르 혹은 수액을 생산할 수 있습니다. 버섯 나무에 설치하면 다양한 버섯들이 생산됩니다."
+  "Description": "중형 수액 채취기는 수액 채취기보다 생산 속도가 두 배 빠른 제작 아이템입니다. 제작법은 진저 섬에 있는 미스터 치의 치의 호두 방에서 data-sort-value=&quot;20&quot;&amp;gt; 20에 구입할 수 있습니다. 이는 나무에 설치하여 메이플 시럽 참나무 수지 소나무 타르 신비한 시럽 혹은 수액을 생산할 수 있습니다. 버섯 나무에 설치하면 다양한 버섯들이 생산되나 일반 수액 채취기와 생산 속도는 동일합니다. 녹색 비 나무(유형 3)에 놓으면 청나래고사리를 생산합니다. 다른 유형의 녹색 비 나무로는 수액을 채취할 수 없습니다."
 }
 ,
 {
@@ -20010,9 +20118,9 @@
     " 축복의 조각상",
     " gift",
     " 선물",
-    " The Statue of Blessings grants a blessing to the Player every day upon touching. It can be crafted after claiming Farming Mastery."
+    " 축복의 조각상은 플레이어가 터치할 때마다 매일 하나의 축복을 부여합니다. 농사 마스터리를 획득한 후 제작할 수 있습니다."
   ],
-  "Description": "The Statue of Blessings grants a blessing to the Player every day upon touching. It can be crafted after claiming Farming Mastery."
+  "Description": "축복의 조각상은 플레이어가 터치할 때마다 매일 하나의 축복을 부여합니다. 농사 마스터리를 획득한 후 제작할 수 있습니다."
 }
 ,
 {
@@ -20355,6 +20463,21 @@
     " 칸막이는 가구 종류 중 하나로 카펫처럼 설치를 할 수 있습니다. 가구 카탈로그에서도 사용할 수 있으며 가격은 data-sort-value=&quot;0&quot;&amp;gt;0골드입니다. 칸막이는 8가지 종류가 있으며 왼쪽 오른쪽 각각 총 16개의 이미지가 존재합니다."
   ],
   "Description": "칸막이는 가구 종류 중 하나로 카펫처럼 설치를 할 수 있습니다. 가구 카탈로그에서도 사용할 수 있으며 가격은 data-sort-value=&quot;0&quot;&amp;gt;0골드입니다. 칸막이는 8가지 종류가 있으며 왼쪽 오른쪽 각각 총 16개의 이미지가 존재합니다."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\칼리코_달걀.html",
+  "Title": "칼리코 달걀 - Stardew Valley Wiki",
+  "Keywords": [
+    "Stardew Valley Wiki",
+    " Stardew Valley",
+    " 위키",
+    " 칼리코 달걀",
+    " gift",
+    " 선물",
+    " 칼리코 달걀은 사막 축제의 화폐입니다. 여러 도전 과제와 게임을 통해 칼리코 달걀을 얻을 수 있으며 이를 사용해 다양한 상점에서 여러 아이템을 구매할 수 있습니다. 또한 피에르의 사막 축제 상점에서는 각각 data-sort-value=&quot;150&quot;&amp;gt;150골드에 최대 200개의 칼리코 달걀을 구매할 수 있습니다. 달걀은 축제 기간 동안 매일 유지되지만 마지막 날 이후에는 상자나 인벤토리에서 사라지며 다음 해로 이어지지 않습니다."
+  ],
+  "Description": "칼리코 달걀은 사막 축제의 화폐입니다. 여러 도전 과제와 게임을 통해 칼리코 달걀을 얻을 수 있으며 이를 사용해 다양한 상점에서 여러 아이템을 구매할 수 있습니다. 또한 피에르의 사막 축제 상점에서는 각각 data-sort-value=&quot;150&quot;&amp;gt;150골드에 최대 200개의 칼리코 달걀을 구매할 수 있습니다. 달걀은 축제 기간 동안 매일 유지되지만 마지막 날 이후에는 상자나 인벤토리에서 사라지며 다음 해로 이어지지 않습니다."
 }
 ,
 {
@@ -31959,6 +32082,15 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\파일_Model_Ship.html",
+  "Title": "파일:Model Ship.png - Stardew Valley Wiki",
+  "Keywords": [
+    "Model_Ship.png &amp;#8206;(48 × 48 픽셀 파일 크기: 645 바이트 MIME 종류: image/png)"
+  ],
+  "Description": "Model_Ship.png &amp;#8206;(48 × 48 픽셀 파일 크기: 645 바이트 MIME 종류: image/png)"
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\파일_Modern_Double_Bed.html",
   "Title": "파일:Modern Double Bed.png - Stardew Valley Wiki",
   "Keywords": [
@@ -35160,6 +35292,15 @@
     "Shirt238.png &amp;#8206;(32 × 32 픽셀 파일 크기: 250 바이트 MIME 종류: image/png)"
   ],
   "Description": "Shirt238.png &amp;#8206;(32 × 32 픽셀 파일 크기: 250 바이트 MIME 종류: image/png)"
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\파일_Shirt273.html",
+  "Title": "파일:Shirt273.png - Stardew Valley Wiki",
+  "Keywords": [
+    "Shirt273.png &amp;#8206;(32 × 32 픽셀 파일 크기: 258 바이트 MIME 종류: image/png)"
+  ],
+  "Description": "Shirt273.png &amp;#8206;(32 × 32 픽셀 파일 크기: 258 바이트 MIME 종류: image/png)"
 }
 ,
 {
@@ -41163,9 +41304,9 @@
     " 폭발성 탄약",
     " gift",
     " 선물",
-    " 폭발성 탄약은 폭발하는 일회성 아이템입니다. 폭발 반경안에 있는 모든 것에 데미지를 주고 다른 폭탄과 다르게 새총 또는 마스터 새총으로 쏴야합니다."
+    " 폭발성 탄약은 폭발하는 일회성 아이템입니다. 폭발 반경 안에 있는 모든 것에 데미지를 주고 다른 폭탄과 다르게 새총 또는 마스터 새총으로 쏴야합니다."
   ],
-  "Description": "폭발성 탄약은 폭발하는 일회성 아이템입니다. 폭발 반경안에 있는 모든 것에 데미지를 주고 다른 폭탄과 다르게 새총 또는 마스터 새총으로 쏴야합니다."
+  "Description": "폭발성 탄약은 폭발하는 일회성 아이템입니다. 폭발 반경 안에 있는 모든 것에 데미지를 주고 다른 폭탄과 다르게 새총 또는 마스터 새총으로 쏴야합니다."
 }
 ,
 {
@@ -43059,9 +43200,9 @@
     " 훈제 생선",
     " gift",
     " 선물",
-    " 훈제 생선 은 아무 생선과 1개의 석탄을 사용해 [[생선 훈제기]로 만드는 장인 제작품이고 50분이 걸립니다. 품질을 유지하면서 생선 판매 가격을 두 배로 높이고 기력 및 체력 회복량을 1.5배로 늘립니다."
+    " 훈제 생선 은 아무 생선과 1개의 석탄을 사용해 생선 훈제기로 만드는 장인 제작품으로 50분이 걸립니다. 품질을 유지하면서 생선 판매 가격을 두 배로 높이고 기력 및 체력 회복량을 1.5배로 늘립니다."
   ],
-  "Description": "훈제 생선 은 아무 생선과 1개의 석탄을 사용해 [[생선 훈제기]로 만드는 장인 제작품이고 50분이 걸립니다. 품질을 유지하면서 생선 판매 가격을 두 배로 높이고 기력 및 체력 회복량을 1.5배로 늘립니다."
+  "Description": "훈제 생선 은 아무 생선과 1개의 석탄을 사용해 생선 훈제기로 만드는 장인 제작품으로 50분이 걸립니다. 품질을 유지하면서 생선 판매 가격을 두 배로 높이고 기력 및 체력 회복량을 1.5배로 늘립니다."
 }
 ,
 {
@@ -43227,207 +43368,6 @@
     " 히터는 겨울동안 동물들을 따뜻하고 행복하게 유지해주는 도구입니다. 히터는 마니에게 data-sort-value=&quot;2000&quot;&amp;gt;2000골드에 구매할 수 있고 게시판의  사료 꾸러미의 보상으로도 얻을 수 있습니다."
   ],
   "Description": "히터는 겨울동안 동물들을 따뜻하고 행복하게 유지해주는 도구입니다. 히터는 마니에게 data-sort-value=&quot;2000&quot;&amp;gt;2000골드에 구매할 수 있고 게시판의  사료 꾸러미의 보상으로도 얻을 수 있습니다."
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\index16d5.html",
-  "Title": "설정 - Stardew Valley Wiki",
-  "Keywords": [
-    "설정 - Stardew Valley Wiki"
-  ],
-  "Description": "설정 - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\index2bc4.html",
-  "Title": "Stardew Valley Wiki - 한국어",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " korean",
-    " 스타듀 밸리",
-    " 스타듀",
-    " 한국어",
-    " 마을 사람들",
-    " 물고기",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " 차이 선택: 비교하려는 판의 라디오 상자를 선택한 다음 엔터나 아래의 버튼을 누르세요.&#10;설명: (최신) = 최신 판과 비교 (이전) = 이전 판과 비교 잔글= 사소한 편집"
-  ],
-  "Description": "차이 선택: 비교하려는 판의 라디오 상자를 선택한 다음 엔터나 아래의 버튼을 누르세요.&#10;설명: (최신) = 최신 판과 비교 (이전) = 이전 판과 비교 잔글= 사소한 편집"
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\index32e7.html",
-  "Title": "계정 만들기 - Stardew Valley Wiki",
-  "Keywords": [
-    "계정 만들기 - Stardew Valley Wiki"
-  ],
-  "Description": "계정 만들기 - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\index4a2f.html",
-  "Title": "Stardew Valley Wiki - 한국어",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " korean",
-    " 스타듀 밸리",
-    " 스타듀",
-    " 한국어",
-    " 마을 사람들",
-    " 물고기",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " 문서 편집 권한이 없습니다. 다음 이유를 확인해주세요:"
-  ],
-  "Description": "문서 편집 권한이 없습니다. 다음 이유를 확인해주세요:"
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\index721e.html",
-  "Title": "로그인 - Stardew Valley Wiki",
-  "Keywords": [
-    "로그인 - Stardew Valley Wiki"
-  ],
-  "Description": "로그인 - Stardew Valley Wiki"
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\index76e3.html",
-  "Title": "Stardew Valley Wiki - 한국어",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " korean",
-    " 스타듀 밸리",
-    " 스타듀",
-    " 한국어",
-    " 마을 사람들",
-    " 물고기",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki는 게임 플레이 마을 주민 퀘스트 낚시 등을 다루는 국가 생활 RPG Stardew Valley의 # 1 리소스입니다."
-  ],
-  "Description": "Stardew Valley Wiki는 게임 플레이 마을 주민 퀘스트 낚시 등을 다루는 국가 생활 RPG Stardew Valley의 # 1 리소스입니다."
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\index85db.html",
-  "Title": "Stardew Valley Wiki - 한국어",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " korean",
-    " 스타듀 밸리",
-    " 스타듀",
-    " 한국어",
-    " 마을 사람들",
-    " 물고기",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki는 게임 플레이 마을 주민 퀘스트 낚시 등을 다루는 국가 생활 RPG Stardew Valley의 # 1 리소스입니다."
-  ],
-  "Description": "Stardew Valley Wiki는 게임 플레이 마을 주민 퀘스트 낚시 등을 다루는 국가 생활 RPG Stardew Valley의 # 1 리소스입니다."
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\indexa004.html",
-  "Title": "Stardew Valley Wiki - 한국어",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " korean",
-    " 스타듀 밸리",
-    " 스타듀",
-    " 한국어",
-    " 마을 사람들",
-    " 물고기",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki는 게임 플레이 마을 주민 퀘스트 낚시 등을 다루는 국가 생활 RPG Stardew Valley의 # 1 리소스입니다."
-  ],
-  "Description": "Stardew Valley Wiki는 게임 플레이 마을 주민 퀘스트 낚시 등을 다루는 국가 생활 RPG Stardew Valley의 # 1 리소스입니다."
-}
-,
-{
-  "UrlPath": ".\\ko.stardewvalleywiki.com\\mediawiki\\indexd939.html",
-  "Title": "Stardew Valley Wiki - 한국어",
-  "Keywords": [
-    "Stardew Valley Wiki",
-    " Stardew Valley",
-    " stardewvalley",
-    " korean",
-    " 스타듀 밸리",
-    " 스타듀",
-    " 한국어",
-    " 마을 사람들",
-    " 물고기",
-    " ConcernedApe",
-    " Abigail",
-    " Leah",
-    " Penny",
-    " Alex",
-    " Elliot",
-    " Harvey",
-    " Sam",
-    " Sebastian",
-    " Haley",
-    " Maru",
-    " Stardew Valley Wiki는 게임 플레이 마을 주민 퀘스트 낚시 등을 다루는 국가 생활 RPG Stardew Valley의 # 1 리소스입니다."
-  ],
-  "Description": "Stardew Valley Wiki는 게임 플레이 마을 주민 퀘스트 낚시 등을 다루는 국가 생활 RPG Stardew Valley의 # 1 리소스입니다."
 }
 ,
 {
@@ -44007,6 +43947,15 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_가리키는문서\\열대_더블_침대.html",
+  "Title": "\"열대 더블 침대\" 문서를 가리키는 문서 목록 - Stardew Valley Wiki",
+  "Keywords": [
+    "\"열대 더블 침대\" 문서를 가리키는 문서 목록 - Stardew Valley Wiki"
+  ],
+  "Description": "\"열대 더블 침대\" 문서를 가리키는 문서 목록 - Stardew Valley Wiki"
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_가리키는문서\\오두막.html",
   "Title": "\"오두막\" 문서를 가리키는 문서 목록 - Stardew Valley Wiki",
   "Keywords": [
@@ -44385,6 +44334,24 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\계절.html",
+  "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
+  "Keywords": [
+    "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+  ],
+  "Description": "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\과일나무.html",
+  "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
+  "Keywords": [
+    "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+  ],
+  "Description": "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\광물.html",
   "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
   "Keywords": [
@@ -44440,6 +44407,15 @@
 ,
 {
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\농장_동굴.html",
+  "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
+  "Keywords": [
+    "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+  ],
+  "Description": "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\농장_지도.html",
   "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
   "Keywords": [
     "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
@@ -44727,6 +44703,15 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\스킬.html",
+  "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
+  "Keywords": [
+    "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+  ],
+  "Description": "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\스타드롭_주점.html",
   "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
   "Keywords": [
@@ -44737,6 +44722,15 @@
 ,
 {
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\스파.html",
+  "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
+  "Keywords": [
+    "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+  ],
+  "Description": "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\시작_안내서.html",
   "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
   "Keywords": [
     "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
@@ -44835,6 +44829,15 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\일주기.html",
+  "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
+  "Keywords": [
+    "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+  ],
+  "Description": "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\작물.html",
   "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
   "Keywords": [
@@ -44881,6 +44884,15 @@
 ,
 {
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\채집.html",
+  "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
+  "Keywords": [
+    "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+  ],
+  "Description": "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_링크최근바뀜\\체력.html",
   "Title": "가리키는 글의 최근 바뀜 - Stardew Valley Wiki",
   "Keywords": [
     "해당 문서에 연결된 문서의 변경사항을 확인하려면 문서 이름을 입력하십시오. (분류에 들어있는 문서를 보려면 분류:분류명으로 입력하십시오). 내 주시문서 목록에 있는 문서의 변경사항은 굵게 나타납니다."
@@ -44998,11 +45010,20 @@
 ,
 {
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_모바일언어\\Stardew_Valley_Wiki.html",
-  "Title": "Stardew Valley Wiki - 다른 언어 - Stardew Valley Wiki",
+  "Title": "페이지를 사용할 수 없음 - Stardew Valley Wiki",
   "Keywords": [
-    "Stardew Valley Wiki - 다른 언어 - Stardew Valley Wiki"
+    "페이지를 사용할 수 없음 - Stardew Valley Wiki"
   ],
-  "Description": "Stardew Valley Wiki - 다른 언어 - Stardew Valley Wiki"
+  "Description": "페이지를 사용할 수 없음 - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_모바일언어\\가을.html",
+  "Title": "가을 - 다른 언어 - Stardew Valley Wiki",
+  "Keywords": [
+    "가을 - 다른 언어 - Stardew Valley Wiki"
+  ],
+  "Description": "가을 - 다른 언어 - Stardew Valley Wiki"
 }
 ,
 {
@@ -45411,6 +45432,15 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_역사\\배_모형.html",
+  "Title": "문서 역사 - Stardew Valley Wiki",
+  "Keywords": [
+    "문서 역사 - Stardew Valley Wiki"
+  ],
+  "Description": "문서 역사 - Stardew Valley Wiki"
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_역사\\배송.html",
   "Title": "문서 역사 - Stardew Valley Wiki",
   "Keywords": [
@@ -45582,6 +45612,15 @@
 }
 ,
 {
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_역사\\양귀비씨_머핀.html",
+  "Title": "문서 역사 - Stardew Valley Wiki",
+  "Keywords": [
+    "문서 역사 - Stardew Valley Wiki"
+  ],
+  "Description": "문서 역사 - Stardew Valley Wiki"
+}
+,
+{
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_역사\\업적.html",
   "Title": "문서 역사 - Stardew Valley Wiki",
   "Keywords": [
@@ -45601,6 +45640,15 @@
 ,
 {
   "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_역사\\여행_카트.html",
+  "Title": "문서 역사 - Stardew Valley Wiki",
+  "Keywords": [
+    "문서 역사 - Stardew Valley Wiki"
+  ],
+  "Description": "문서 역사 - Stardew Valley Wiki"
+}
+,
+{
+  "UrlPath": ".\\ko.stardewvalleywiki.com\\특수_역사\\열대_더블_침대.html",
   "Title": "문서 역사 - Stardew Valley Wiki",
   "Keywords": [
     "문서 역사 - Stardew Valley Wiki"
