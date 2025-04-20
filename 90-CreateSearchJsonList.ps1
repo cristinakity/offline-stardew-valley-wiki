@@ -4,7 +4,8 @@ $srcFolderPath = "src"
 $partToRemove = (Resolve-Path -Path $srcFolderPath).Path
 
 # create and array with the language codes
-$languageCodes = "en", "es", "fr", "de", "it", "ja", "ko", "pt", "ru", "tr", "zh","hu"
+$languageCodes = "en", "es", "fr", "de", "it", "ja", "ko", "pt", "ru", "tr", "zh","hu";
+$languageCodes = "es"; # for testing purposes
 
 # For each language code, search inside src/lang_code.stardewvalleywiki.com/ for html files
 # Initialize an empty array to store the URL paths and keywords
