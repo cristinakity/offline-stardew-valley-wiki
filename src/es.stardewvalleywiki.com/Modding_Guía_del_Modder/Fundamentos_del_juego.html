@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Modding:Guía del Modder/Fundamentos del juego - Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgRequestId":"0a905c927b9ecf60e299227a","wgCSPNonce":!1,"wgCanonicalNamespace":"Modding","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":570,"wgPageName":"Modding:Guía_del_Modder/Fundamentos_del_juego","wgTitle":"Guía del Modder/Fundamentos del juego","wgCurRevisionId":34549,"wgRevisionId":34549,"wgArticleId":5405,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Modding"],"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgRelevantPageName":"Modding:Guía_del_Modder/Fundamentos_del_juego","wgRelevantArticleId":5405,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,
+"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"es"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=es&amp;modules=ext.pygments%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/mediawiki/load.php?lang=es&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=es&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="description" content="Creación de mods SMAPI"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (es)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//es.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de Stardew Valley Wiki" href="/mediawiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom"/>
+<meta property="og:title" content="Modding:Guía del Modder/Fundamentos del juego - Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://es.stardewvalleywiki.com/Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego"/>
+<meta property="og:description" content="Creación de mods SMAPI"/>
+<meta property="og:image" content="https://es.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Modding:Guía del Modder/Fundamentos del juego - Stardew Valley Wiki"/>
+<meta property="twitter:description" content="Creación de mods SMAPI"/>
+<meta property="twitter:image" content="https://es.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Modding:Gu\u00eda del Modder\/Fundamentos del juego - Stardew Valley Wiki","headline":"Modding:Gu\u00eda del Modder\/Fundamentos del juego - Stardew Valley Wiki","mainEntityOfPage":"Modding:Gu\u00eda del Modder\/Fundamentos del juego","identifier":"https:\/\/es.stardewvalleywiki.com\/Modding:Gu%C3%ADa_del_Modder\/Fundamentos_del_juego","url":"https:\/\/es.stardewvalleywiki.com\/Modding:Gu%C3%ADa_del_Modder\/Fundamentos_del_juego","description":"Creaci\u00f3n de mods SMAPI","dateModified":"2024-12-03T22:32:17Z","datePublished":"2024-12-03T22:32:17Z","image":{"@type":"ImageObject","url":"https:\/\/es.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/es.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/es.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/es.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/es.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/es.stardewvalleywiki.com\/mediawiki\/index.php?title=Especial:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-570 ns-subject page-Modding_Guía_del_Modder_Fundamentos_del_juego rootpage-Modding_Guía_del_Modder skin-vector action-view minerva--history-page-action-enabled skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="es">Modding:Guía del Modder/Fundamentos del juego</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">De Stardew Valley Wiki</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Ir a la navegación</a>
+		<a class="mw-jump-link" href="#searchInput">Ir a la búsqueda</a>
+		<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div style="float: right; border: 2px solid rgb(0, 116, 72); background: #A1DEE2; padding: 0.75em; padding-top: 0.5em; margin: 0 0 2em 2em;">
+<p><span style="font-size: larger;"><b>Creación de mods SMAPI</b> <a href="/Archivo:SMAPI_mascot.png" class="image"><img alt="SMAPI mascot.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/25px-SMAPI_mascot.png" decoding="async" width="25" height="25" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/38px-SMAPI_mascot.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/9/96/SMAPI_mascot.png/50px-SMAPI_mascot.png 2x" /></a></span>
+</p>
+<hr />
+<ul><li><a href="/Modding:Gu%C3%ADa_del_Modder/Introducci%C3%B3n" title="Modding:Guía del Modder/Introducción">Introducción</a></li>
+<li><a class="mw-selflink selflink">Fundamentos del juego</a></li>
+<li><a href="/Modding:Gu%C3%ADa_del_Modder/Prueba_y_soluci%C3%B3n_de_problemas" title="Modding:Guía del Modder/Prueba y solución de problemas">Prueba y solución de problemas</a></li>
+<li><a href="/Modding:Gu%C3%ADa_del_Modder/Lanzamiento" title="Modding:Guía del Modder/Lanzamiento">Lanzamiento</a></li>
+<li><a href="/Modding:Gu%C3%ADa_del_Modder/APIs" title="Modding:Guía del Modder/APIs">Referencias API</a>
+<dl><dd>APIs de SMAPI Básicas:
+<ul><li><a href="/Modding:Gu%C3%ADa_del_Modder/APIs/Mod_structure" title="Modding:Guía del Modder/APIs/Mod structure">Estructura del Mod</a></li>
+<li><a href="/Modding:Gu%C3%ADa_del_Modder/APIs/Manifest" title="Modding:Guía del Modder/APIs/Manifest">Manifest</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Eventos&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Eventos (la página no existe)">Eventos</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Config&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Config (la página no existe)">Configuración</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Contenido&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Contenido (la página no existe)">Cargar y editar contenido</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Datos&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Datos (la página no existe)">Datos</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Entrada&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Entrada (la página no existe)">Entrada</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Registro&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Registro (la página no existe)">Registro</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Reflection&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Reflection (la página no existe)">Reflection</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Multijugador&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Multijugador (la página no existe)">Multijugador</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Traducci%C3%B3n&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Traducción (la página no existe)">Traducción</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Utilidades&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Utilidades (la página no existe)">Utilidades</a></li></ul></dd>
+<dd>APIs de SMAPI Avanzadas:
+<ul><li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Paquetes_de_Contenido&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Paquetes de Contenido (la página no existe)">Paquetes de Contenido</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Consola&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Consola (la página no existe)">Comandos de la consola de Mods</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Integraci%C3%B3n&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Integración (la página no existe)">Integración de mods</a></li>
+<li><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Harmony&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Harmony (la página no existe)">Harmony</a></li></ul></dd></dl></li>
+<li><a href="/Modding:%C3%8Dndice#Temas_avanzados" title="Modding:Índice">Guías específicos</a></li></ul>
+</div><p>← <span style="font-size: smaller;"><a href="/Modding:%C3%8Dndice" title="Modding:Índice">Modding:Índice</a></span>
+</p><p>Esta página explica algunos de los fundamentos de Stardew Valley que son útiles para los modders. Ver también <a href="/mediawiki/index.php?title=Modding:Tareas_comunes&amp;action=edit&amp;redlink=1" class="new" title="Modding:Tareas comunes (la página no existe)">Modding:Tareas comunes</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="es" dir="ltr"><h2 id="mw-toc-heading">Sumario</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Conceptos"><span class="tocnumber">1</span> <span class="toctext">Conceptos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Baldosas"><span class="tocnumber">1.1</span> <span class="toctext">Baldosas</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Posiciones"><span class="tocnumber">1.2</span> <span class="toctext">Posiciones</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Campos_de_red"><span class="tocnumber">1.3</span> <span class="toctext">Campos de red</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Nivel_del_zoom"><span class="tocnumber">1.4</span> <span class="toctext">Nivel del zoom</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Escalado_del_IU"><span class="tocnumber">1.5</span> <span class="toctext">Escalado del IU</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Accesos"><span class="tocnumber">2</span> <span class="toctext">Accesos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Llaves_de_cadena"><span class="tocnumber">2.1</span> <span class="toctext">Llaves de cadena</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Clases_principales"><span class="tocnumber">3</span> <span class="toctext">Clases principales</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Game1"><span class="tocnumber">3.1</span> <span class="toctext">Game1</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#GameLocation_y_otros"><span class="tocnumber">3.2</span> <span class="toctext">GameLocation y otros</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Conceptos">Conceptos</span></h2>
+<h3><span class="mw-headline" id="Baldosas">Baldosas</span></h3>
+<p>El mundo se presenta como una cuadrícula de baldosas. Cada baldosa tiene una coordenada (x, y) que representa su posición en el mapa, donde (0, 0) es el mosaico superior izquierdo. El valor de x aumenta hacia la derecha y el de y aumenta hacia abajo. Por ejemplo:
+</p><p><a href="/Archivo:Modding_-_creating_an_XNB_mod_-_tile_coordinates.png" class="image"><img alt="Modding - creating an XNB mod - tile coordinates.png" src="https://stardewvalleywiki.com/mediawiki/images/2/2d/Modding_-_creating_an_XNB_mod_-_tile_coordinates.png" decoding="async" width="318" height="238" /></a>
+</p>
+<h3><span class="mw-headline" id="Posiciones">Posiciones</span></h3>
+<p>El juego utiliza tres sistemas de coordenadas relacionados:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>sistema de coordenadas
+</th>
+<th>relativo a
+</th>
+<th>notas
+</th></tr>
+<tr>
+<td>posición de la baldosa
+</td>
+<td>esquina superior izquierda del mapa
+</td>
+<td>medido en <a href="#Baldosas">baldosas</a>; se utiliza al colocar cosas en el mapap (<i>p.ej.,</i> <samp>location.Objects</samp> utiliza posiciones de la baldosa).
+</td></tr>
+<tr>
+<td>posición absoluta
+</td>
+<td>esquina superior izquierda del mapa
+</td>
+<td>medido en píxeles; se usa cuando se necesitan mediciones más granulares (<i>p.ej.,</i>  movimiento del NPC).
+</td></tr>
+<tr>
+<td>posición de la pantalla
+</td>
+<td>esquina superior izquierda visible de la pantalla
+</td>
+<td>medido en píxeles; se utiliza al dibujar en la pantalla.
+</td></tr></tbody></table>
+<p>He aquí cómo convertir entre ellos:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th colspan="3">conversión
+</th>
+<th>fórmula
+</th></tr>
+<tr>
+<td>absoluta</td>
+<td>→</td>
+<td>pantalla
+</td>
+<td><code>x - Game1.viewport.X, y - Game1.viewport.Y</code>
+</td></tr>
+<tr>
+<td>absoluta</td>
+<td>→</td>
+<td>baldosa
+</td>
+<td><code>x / Game1.tileSize, y / Game1.tileSize</code>
+</td></tr>
+<tr>
+<td>pantalla</td>
+<td>→</td>
+<td>absoluta
+</td>
+<td><code>x + Game1.viewport.X, y + Game1.viewport.Y</code>
+</td></tr>
+<tr>
+<td>pantalla</td>
+<td>→</td>
+<td>baldosa
+</td>
+<td><code>(x + Game1.viewport.X) / Game1.tileSize, (y + Game1.viewport.Y) / Game1.tileSize</code>
+</td></tr>
+<tr>
+<td>baldosa</td>
+<td>→</td>
+<td>absoluta
+</td>
+<td><code>x * Game1.tileSize, y * Game1.tileSize</code>
+</td></tr>
+<tr>
+<td>baldosa</td>
+<td>→</td>
+<td>pantalla
+</td>
+<td><code>(x * Game1.tileSize) - Game1.viewport.X, (y * Game1.tileSize) - Game1.viewport.Y</code>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Campos_de_red">Campos de red</span></h3>
+<p>Un 'tipo de red' es cualquiera de varias clases que Stardew Valley usa para sincronizar datos entre jugadores, y un 'campo de red' es cualquier campo o propiedad de esos tipos. Se nombran por el <code>Net</code> prefijo en sus nombres de tipo. Los tipos de red pueden representar valores simples como <samp>NetBool</samp>,  o valores complejos como <samp>NetFieldDictionary</samp>. El juego recolectará regularmente todos los campos netos accesibles desde <samp>Game1.netWorldState</samp> y sincronizarlos con otros jugadores. Eso significa que muchos cambios de mod se sincronizarán automáticamente en el modo multijugador.
+</p><p>Aunque los campos netos se pueden convertir implícitamente a un tipo de valor equivalente (como <code>bool x = new NetBool(true)</code>), sus reglas de conversión son contrarias a la intuición y propensas a errores (<i>p.ej.,</i> <code>item?.category == null &amp;&amp; item?.category&#160;!= null</code> ambos pueden ser verdaderos a la vez). Para evitar errores, nunca emita implícitamente campos de red; acceda al valor subyacente directamente en su lugar. El paquete NuGet de configuración de compilación debe detectar la mayoría de las conversiones implícitas y mostrar una advertencia de compilación adecuada.
+</p><p>Aquí se explica cómo acceder a los datos en algunos tipos de red comunes:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>tipo de red
+</th>
+<th>descripción
+</th></tr>
+<tr>
+<td><samp>NetBool</samp><br /><samp>NetColor</samp><br /><samp>NetFloat</samp><br /><samp>NetInt</samp><br /><samp>NetPoint</samp><br /><samp>NetString</samp>
+</td>
+<td>Un valor sincronizado simple. Acceda al valor usando <samp>field.Value</samp>.
+</td></tr>
+<tr>
+<td><samp>NetCollection&lt;T&gt;</samp><br /><samp>NetList&lt;T&gt;</samp><br /><samp>NetObjectList&lt;T&gt;</samp>
+</td>
+<td>Una lista de valores <samp>T</samp>. Esto implementa las interfaces estándar como <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1"><samp>IEnumerable&lt;T&gt;</samp></a> y <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1"><samp>IList&lt;T&gt;</samp></a>, por lo que puede iterarlo directamente como el <code>foreach (T el valor en el campo)</code>.
+</td></tr>
+<tr>
+<td><samp>NetLongDictionary&lt;TValue, TNetValue&gt;</samp><br /><samp>NetPointDictionary&lt;TValue, TNetValue&gt;</samp><br /><samp>NetVector2Dictionary&lt;TValue, TNetValue&gt;</samp>
+</td>
+<td>Mapas <samp>Long</samp>, <samp>Point</samp>, o <samp>Vector2</samp>  para instancias de <samp>TValue</samp> (el tipo de valor subyacente) y <samp>TNetValue</samp> (el tipo de red sincronizada). Puede iterar llaves/valor en pares como el <code>foreach (KeyValuePair&lt;Long, TValue&gt; pair in field.Pairs)</code> (reemplazando <samp>Long</samp> con <samp>Point</samp> o <samp>Vector2</samp> si es necesario).
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Nivel_del_zoom">Nivel del zoom</span></h3>
+<p>El jugador puede establecer un nivel de zoom en el juego entre 75% y 200%, que ajusta el tamaño de todos los píxeles que se muestran en la pantalla. Por ejemplo, aquí hay un reproductor con el mismo tamaño de ventana en diferentes niveles de zoom:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>nivel mínimo de zoom (75%)
+</th>
+<th>nivel máximo de zoom (200%)
+</th></tr>
+<tr>
+<td><a href="/Archivo:Zoom_level_75.png" class="image"><img alt="Zoom level 75.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/3/36/Zoom_level_75.png/300px-Zoom_level_75.png" decoding="async" width="300" height="169" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/3/36/Zoom_level_75.png/450px-Zoom_level_75.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/3/36/Zoom_level_75.png/600px-Zoom_level_75.png 2x" /></a>
+</td>
+<td><a href="/Archivo:Zoom_level_200.png" class="image"><img alt="Zoom level 200.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/b/b9/Zoom_level_200.png/300px-Zoom_level_200.png" decoding="async" width="300" height="169" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/b/b9/Zoom_level_200.png/450px-Zoom_level_200.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/b/b9/Zoom_level_200.png/600px-Zoom_level_200.png 2x" /></a>
+</td></tr></tbody></table>
+<dl><dt>Efecto en los mods de SMAPI</dt>
+<dd>En el código del juego, esto está representado por el campo <samp>Game1.options.zoomLevel</samp>. Las coordenadas generalmente se ajustan para el nivel de zoom automáticamente, por lo que rara vez necesita tener esto en cuenta; pero puede convertir una coordenada no ajustada usando <code>position * (1f / Game1.options.zoomLevel)</code> si es necesario.</dd></dl>
+<h3><span class="mw-headline" id="Escalado_del_IU">Escalado del IU</span></h3>
+<p>El jugador puede escalar la interfaz de usuario entre un 75&#160;% y un 150&#160;%, por separado y junto al <a href="#Nivel_del_zoom">nivel del zoom</a>. Eso ajusta el tamaño de los píxeles que se muestran en la pantalla solo para los elementos de la interfaz de usuario. Por ejemplo, aquí hay un reproductor con el mismo tamaño de ventana en diferentes niveles de escala de IU:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>escala mínima de IU (75&#160;%)
+</th>
+<th>escala máxima de IU (150%)
+</th></tr>
+<tr>
+<td><a href="/Archivo:UI_scale_75.png" class="image"><img alt="UI scale 75.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/d/d3/UI_scale_75.png/300px-UI_scale_75.png" decoding="async" width="300" height="169" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/d/d3/UI_scale_75.png/450px-UI_scale_75.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/d/d3/UI_scale_75.png/600px-UI_scale_75.png 2x" /></a>
+</td>
+<td><a href="/Archivo:UI_scale_150.png" class="image"><img alt="UI scale 150.png" src="https://stardewvalleywiki.com/mediawiki/images/thumb/f/f5/UI_scale_150.png/300px-UI_scale_150.png" decoding="async" width="300" height="169" srcset="https://stardewvalleywiki.com/mediawiki/images/thumb/f/f5/UI_scale_150.png/450px-UI_scale_150.png 1.5x, https://stardewvalleywiki.com/mediawiki/images/thumb/f/f5/UI_scale_150.png/600px-UI_scale_150.png 2x" /></a>
+</td></tr></tbody></table>
+<dl><dt>Efecto en los mods de SMAPI</dt>
+<dd>El juego tiene dos modos de escala distintos según el contexto:  <i>modo de interfaz de usuario</i> y <i>modo sin interfaz de usuario</i>. Puedes comprobar <samp>Game1.uiMode</samp> para saber qué modo está activo. Debe tener cuidado de no mezclar coordenadas de IU y no IU para evitar cálculos complicados; por ejemplo, haga todo su trabajo en un sistema de coordenadas y luego conviértalo una vez.</dd></dl>
+<p><br />
+</p>
+<dl><dd>Una referencia rápida de escenarios comunes:</dd></dl>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<th>contexto
+</th>
+<th>modo de la escala que se aplica
+</th></tr>
+<tr>
+<td>menús en los que se puede hacer click
+</td>
+<td>Modo de interfaz de usuario (generalmente)
+</td></tr>
+<tr>
+<td>elementos del HUD
+</td>
+<td>modo de interfaz de usuario
+</td></tr>
+<tr>
+<td><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Eventos&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Eventos (la página no existe)"><samp>RenderingActiveMenu</samp></a><br /><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Eventos&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Eventos (la página no existe)"><samp>RenderedActiveMenu</samp></a>
+</td>
+<td>modo de interfaz de usuario
+</td></tr>
+<tr>
+<td><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Eventos&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Eventos (la página no existe)"><samp>Rendering</samp></a><br /><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Eventos&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Eventos (la página no existe)"><samp>Rendered</samp></a>
+</td>
+<td>depende del contexto; chequear en <samp>Game1.uiMode</samp>
+</td></tr>
+<tr>
+<td><samp>draw</samp> método para objetos del mundo
+</td>
+<td>modo sin interfaz de usuario
+</td></tr>
+<tr>
+<td>coordenadas de la baldosa (sin píxeles)
+</td>
+<td>no se ve afectado por la escala de la interfaz de usuario
+</td></tr></tbody></table></dd></dl>
+<dl><dd>Si necesita dibujar la interfaz de usuario cuando el juego no está en modo de interfaz de usuario, puede establecer explícitamente el modo de escalado de interfaz de usuario:</dd>
+<dd><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Game1</span><span class="p">.</span><span class="n">game1</span><span class="p">.</span><span class="n">InUIMode</span><span class="p">(()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+   <span class="c1">// su código de dibujo de UI aquí</span>
+<span class="p">});</span>
+</pre></div></dd></dl>
+<dl><dd>En el modo de interfaz de usuario, normalmente debe reemplazar <samp>Game1.viewport</samp> con <samp>Game1.uiViewport</samp>. <b>No</b> haga esto si va a ajustar las posiciones para el escalado de la interfaz de usuario por separado, ya que la conversión doble le dará resultados incorrectos. Puede convertir entre coordenadas UI y no UI usando <samp>Utility.ModifyCoordinatesForUIScale</samp> y <samp>Utility.ModifyCoordinatesFromUIScale</samp>.</dd></dl>
+<dl><dd>Puedes probar si tu mod tiene en cuenta esto correctamente ajustando el zoom al máximo y la escala de la interfaz de usuario al mínimo (<i>es decir.,</i> teniéndolos en valores opuestos) o viceversa; en particular, verifique cualquier lógica que maneje las posiciones de los píxeles, como hacer clic en los menús.</dd></dl>
+<h2><span class="mw-headline" id="Accesos">Accesos</span></h2>
+<h3><span class="mw-headline" id="Llaves_de_cadena">Llaves de cadena</span></h3>
+<p>Una <i>llave de cadena</i>  identifica de forma única dónde encontrar texto traducible, en la forma <samp><code title="campo requerido &#39;asset name&#39;">&lt;asset name&gt;</code>:<code title="campo requerido &#39;key&#39;">&lt;key&gt;</code></samp>. Por ejemplo, <code>Game1.content.GetString("Strings\\StringsFromCSFiles:spring")</code> buscará un <samp>spring</samp> llave en <samp>Strings\StringsFromCSFiles</samp> archivo en la carpeta de contenido (que contiene "primavera"). Esto se usa comúnmente en el código del juego (a través de <code>Game1.content.GetString</code> y en los activos de datos que necesitan texto traducible.
+</p>
+<h2><span class="mw-headline" id="Clases_principales">Clases principales</span></h2>
+<h3><span class="mw-headline" id="Game1">Game1</span></h3>
+<p><samp>Game1</samp> es la lógica central del juego. La mayor parte del estado del juego se rastrea a través de esta clase. Estos son algunos de los campos más útiles:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>campo
+</th>
+<th>tipo
+</th>
+<th>propósito
+</th></tr>
+<tr>
+<td><samp>Game1.player</samp>
+</td>
+<td><samp>Farmer</samp>
+</td>
+<td>El jugador actual.
+</td></tr>
+<tr>
+<td><samp>Game1.currentLocation</samp>
+</td>
+<td><samp><a href="#GameLocation">GameLocation</a></samp>
+</td>
+<td>La ubicación del juego que contiene al jugador actual. <b>Para un jugador no principal, puede ser <samp>null</samp> al hacer la transición entre ubicaciones.</b>
+</td></tr>
+<tr>
+<td><samp>Game1.locations</samp>
+</td>
+<td><samp>IList&lt;<a href="#GameLocation">GameLocation</a>&gt;</samp>
+</td>
+<td>Todas las ubicaciones del juego. <b>Para un jugador no principal, use el <a href="/mediawiki/index.php?title=Modding:Modding:Gu%C3%ADa_del_Modder/APIs/Multijugador&amp;action=edit&amp;redlink=1" class="new" title="Modding:Modding:Guía del Modder/APIs/Multijugador (la página no existe)">metodo SMAPI's <samp>GetActiveLocations</samp> </a> en su lugar.</b>
+</td></tr>
+<tr>
+<td><samp>Game1.timeOfDay</samp><br /><samp>Game1.dayOfMonth</samp><br /><samp>Game1.currentSeason</samp><br /><samp>Game1.year</samp>
+</td>
+<td><samp>int</samp><br /><samp>int</samp><br /><samp>string</samp><br /><samp>int</samp>
+</td>
+<td>La hora, el día, la estación y el año actuales. Consulte también <a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/APIs/Utilidades&amp;action=edit&amp;redlink=1" class="new" title="Modding:Guía del Modder/APIs/Utilidades (la página no existe)">la utilidad de fecha de SMAPI</a>.
+</td></tr>
+<tr>
+<td><samp>Game1.itemsToShip</samp>
+</td>
+<td><samp>IList&lt;Item&gt;</samp>
+</td>
+<td>No usar (esto es parte de la lógica de guardado). Ver <samp>Game1.getFarm().getShippingBin(Farmer)</samp> en su lugar.
+</td></tr>
+<tr>
+<td><samp>Game1.activeClickableMenu</samp>
+</td>
+<td><samp>IClickableMenu</samp>
+</td>
+<td>El menú modales que se muestra. Creando un <samp>IClickableMenu</samp> subclase y asignar una instancia a este campo lo mostrará.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="GameLocation_y_otros"><span id="GameLocation"></span>GameLocation y otros</span></h3>
+<ul>
+<li><samp>GameLocation</samp> representa una ubicación en el juego que los jugadores pueden visitar. Cada ubicación tiene un mapa (el diseño de mosaico), objetos, árboles, personajes, etc. Estos son algunos de los campos más útiles para cualquier ubicación:
+
+<table class="wikitable">
+
+<tbody><tr>
+<th>campo
+</th>
+<th>tipo
+</th>
+<th>propósito
+</th></tr>
+<tr>
+<td><samp>Name</samp>
+</td>
+<td><samp>string</samp>
+</td>
+<td>El nombre único para esta ubicación. (Esto no es único para interiores de edificios construidos como cabañas; consulte <samp>uniqueName</samp> en su lugar.)
+</td></tr>
+<tr>
+<td><samp>IsFarm</samp>
+</td>
+<td><samp>bool</samp>
+</td>
+<td>Si se trata de una granja, donde se pueden plantar cultivos.
+</td></tr>
+<tr>
+<td><samp>IsGreenhouse</samp>
+</td>
+<td><samp>bool</samp>
+</td>
+<td>Si se trata de un invernadero, donde se pueden plantar y cultivar cultivos durante todo el año.
+</td></tr>
+<tr>
+<td><samp>IsOutdoors</samp>
+</td>
+<td><samp>bool</samp>
+</td>
+<td>Si la ubicación es al aire libre (a diferencia de un invernadero, edificio, etc.).
+</td></tr>
+<tr>
+<td><samp>characters</samp>
+</td>
+<td><a href="#Campos_de_red"><samp>NetCollection</samp></a> de <samp>NPC</samp>
+</td>
+<td>Los aldeanos, las mascotas, los caballos y los monstruos del lugar.
+</td></tr>
+<tr>
+<td><samp>critters</samp>
+</td>
+<td><samp>List</samp> of <samp>Critter</samp>
+</td>
+<td>Los pájaros, ardillas u otros bichos temporales en el lugar.
+</td></tr>
+<tr>
+<td><samp>debris</samp>
+</td>
+<td><a href="#Campos_de_red"><samp>NetCollection</samp></a> de <samp>Debris</samp>
+</td>
+<td>Los elementos flotantes en la ubicación.
+</td></tr>
+<tr>
+<td><samp>farmers</samp>
+</td>
+<td><samp>FarmerCollection</samp>
+</td>
+<td>Los jugadores en el ubicación.
+</td></tr>
+<tr>
+<td><samp>Objects</samp>
+</td>
+<td><samp>OverlaidDictionary</samp>
+</td>
+<td>Las cercas colocadas, las máquinas de artesanía y otros objetos en la ubicación actual. (<samp>OverlaidDictionary</samp> básicamente un <a href="#Campos_de_red"><samp>NetVector2Dictionary</samp></a> con lógica agregada para mostrar ciertos elementos de búsqueda sobre objetos preexistentes).
+</td></tr>
+<tr>
+<td><samp>terrainFeatures</samp>
+</td>
+<td><a href="#Campos_de_red"><samp>NetVector2Dictionary</samp></a> de <samp>TerrainFeature</samp>
+</td>
+<td>Los árboles, árboles frutales, hierba alta, tierra cultivada (incluyendo cultivos) y pisos en el lugar. Para cada par, la clave es su posición de mosaico y el valor es la instancia de la característica del terreno.
+</td></tr>
+<tr>
+<td><samp>waterTiles</samp>
+</td>
+<td><samp>bool[,]</samp>
+</td>
+<td>Una matriz multidimensional que indica si cada baldosa en el mapa es un baldosas de lago/río. Por ejemplo, <code>if (location.waterTiles[10, 20])</code> comprueba la baldosa en la <a href="#Baldosas">posición</a> (10, 20).
+</td></tr></tbody></table></li>
+<li><samp>BuildableGameLocation</samp> es una subclase de BuildableGame para lugares donde los jugadores pueden construir edificios. En el juego de vainilla, solo la granja es un lugar edificable. Estos son los campos más útiles:
+
+<table class="wikitable">
+
+<tbody><tr>
+<th>campo
+</th>
+<th>tipo
+</th>
+<th>propósito
+</th></tr>
+<tr>
+<td><samp>buildings</samp>
+</td>
+<td><a href="#Campos_de_red"><samp>NetCollection</samp></a> de <samp>Building</samp>
+</td>
+<td>Los edificios en el lugar.
+</td></tr></tbody></table></li>
+<li><samp>Farm</samp> es una subclase de ambos <samp>GameLocation</samp> and <samp>BuildableGameLocation</samp> del juego para construirpara lugares donde el jugador puede tener animales y cultivar. En Vanilla, solo hay una ubicación de granja (a la que se accede mediante <code>Game1.getFarm()</code>). Estas son sus propiedades más útiles:
+
+<table class="wikitable">
+
+<tbody><tr>
+<th>campo
+</th>
+<th>tipo
+</th>
+<th>propósito
+</th></tr>
+<tr>
+<td><samp>animals</samp>
+</td>
+<td><a href="#Campos_de_red"><samp>NetLongDictionary</samp></a> de <samp>FarmAnimal</samp>
+</td>
+<td>os animales de granja actualmente en el lugar.
+</td></tr>
+<tr>
+<td><samp>resourceClumps</samp>
+</td>
+<td><a href="#Campos_de_red"><samp>NetCollection</samp></a> de <samp>ResourceClump</samp>
+</td>
+<td>Los cultivos gigantes, tocones grandes, rocas y meteoritos en el lugar.
+</td></tr>
+<tr>
+<td><samp>piecesOfHay</samp>
+</td>
+<td><a href="#Campos_de_red"><samp>NetInt</samp></a>
+</td>
+<td>La cantidad de heno almacenado en silos.
+</td></tr>
+<tr>
+<td><samp>shippingBin</samp>
+</td>
+<td><a href="#Campos_de_red"><samp>NetCollection</samp></a> de <samp>Item</samp>
+</td>
+<td>Los artículos en el contenedor de envío.
+</td></tr></tbody></table></li>
+<li>Hay una serie de subclases para una ubicación específica (como <samp>AdventureGuild</samp>)  que tienen campos útiles para casos específicos.</li>
+</ul>
+<!-- 
+NewPP limit report
+Cached time: 20250414214942
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.038 seconds
+Real time usage: 0.332 seconds
+Preprocessor visited node count: 118/1000000
+Post‐expand include size: 1917/2097152 bytes
+Template argument size: 26/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 456/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  299.255      1 -total
+  0.85%    2.551      2 Plantilla:T
+  0.47%    1.396      1 Modding:Guía_del_Modder/Encabezado
+-->
+
+<!-- Saved in parser cache with key eswiki:pcache:idhash:5405-0!canonical and timestamp 20250414214941 and revision id 34549
+ -->
+</div></div><div class="printfooter">Obtenido de «<a dir="ltr" href="https://es.stardewvalleywiki.com/mediawiki/index.php?title=Modding:Guía_del_Modder/Fundamentos_del_juego&amp;oldid=34549">https://es.stardewvalleywiki.com/mediawiki/index.php?title=Modding:Guía_del_Modder/Fundamentos_del_juego&amp;oldid=34549</a>»</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Especial:Categor%C3%ADas" title="Especial:Categorías">Categoría</a>: <ul><li><a href="/Categor%C3%ADa:Modding" title="Categoría:Modding">Modding</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Menú de navegación</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Herramientas personales</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/mediawiki/index.php?title=Especial:Crear_una_cuenta&amp;returnto=Modding%3AGu%C3%ADa+del+Modder%2FFundamentos+del+juego" title="Te recomendamos crear una cuenta e iniciar sesión; sin embargo, no es obligatorio">Crear una cuenta</a></li><li id="pt-login"><a href="/mediawiki/index.php?title=Especial:Entrar&amp;returnto=Modding%3AGu%C3%ADa+del+Modder%2FFundamentos+del+juego" title="Te recomendamos iniciar sesión, aunque no es obligatorio [o]" accesskey="o">Acceder</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Espacios de nombres</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-modding" class="selected"><a href="/Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego">Modding</a></li><li id="ca-talk" class="new"><a href="/mediawiki/index.php?title=Modding_talk:Gu%C3%ADa_del_Modder/Fundamentos_del_juego&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página (la página no existe) [t]" accesskey="t">Discusión</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variantes</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Vistas</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego">Leer</a></li><li id="ca-viewsource" class="collapsible"><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego&amp;action=edit" title="Esta página está protegida.&#10;Puedes ver su código fuente [e]" accesskey="e">Ver código</a></li><li id="ca-history" class="collapsible"><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego&amp;action=history" title="Versiones anteriores de esta página [h]" accesskey="h">Ver historial</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>Más</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Buscar</label>
+	</h3>
+	<form action="/mediawiki/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Buscar en Stardew Valley Wiki" title="Buscar en Stardew Valley Wiki [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Especial:Buscar">
+			<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Visitar la página principal" class="mw-wiki-logo" href="/Stardew_Valley_Wiki"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Navegación</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/Stardew_Valley_Wiki" title="Visitar la página principal [z]" accesskey="z">Página principal</a></li><li id="n-recentchanges"><a href="/Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [r]" accesskey="r">Cambios recientes</a></li><li id="n-P.C3.A1ginas-no-traducidas"><a href="/Categor%C3%ADa:P%C3%A1ginas_no_traducidas">Páginas no traducidas</a></li><li id="n-Ayuda:Edici.C3.B3n"><a href="/Ayuda:Edici%C3%B3n">Ayuda:Edición</a></li><li id="n-randompage"><a href="/Especial:Aleatoria" title="Cargar una página al azar [x]" accesskey="x">Página aleatoria</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Enlaces" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Enlaces-label" role="navigation" 
+	 >
+	<h3 id="p-Enlaces-label">
+		<span>Enlaces</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-P.C3.A1gina-oficial"><a href="https://stardewvalley.net" rel="nofollow">Página oficial</a></li><li id="n-Foros-oficiales"><a href="https://forums.stardewvalley.net/" rel="nofollow">Foros oficiales</a></li><li id="n-Mercanc.C3.ADa-oficial"><a href="https://www.stardewvalley.net/shop/" rel="nofollow">Mercancía oficial</a></li><li id="n-Redes-sociales"><a href="https://www.stardewvalley.net/links/" rel="nofollow">Redes sociales</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Herramientas</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Especial:LoQueEnlazaAqu%C3%AD/Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego" title="Lista de todas las páginas del wiki que enlazan aquí [j]" accesskey="j">Lo que enlaza aquí</a></li><li id="t-recentchangeslinked"><a href="/Especial:CambiosEnEnlazadas/Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego" rel="nofollow" title="Cambios recientes en las páginas que enlazan con esta [k]" accesskey="k">Cambios relacionados</a></li><li id="t-upload"><a href="//stardewvalleywiki.com/Special:Upload" title="Subir archivos [u]" accesskey="u">Subir archivo</a></li><li id="t-specialpages"><a href="/Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [q]" accesskey="q">Páginas especiales</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Versión imprimible de esta página [p]" accesskey="p">Versión para imprimir</a></li><li id="t-permalink"><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego&amp;oldid=34549" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li><li id="t-info"><a href="/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego&amp;action=info" title="Más información sobre esta página">Información de la página</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>En otros idiomas</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-en"><a href="https://stardewvalleywiki.com/Modding:Modder_Guide/Game_Fundamentals" title="Modding:Modder Guide/Game Fundamentals (English)" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.stardewvalleywiki.com/%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BC%D0%BE%D0%B4%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B_%D0%B8%D0%B3%D1%80%D1%8B" title="Модификации:Руководство мододела/Основы игры (русский)" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.stardewvalleywiki.com/%E6%A8%A1%E7%BB%84:%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97/%E6%B8%B8%E6%88%8F%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84" title="模组:制作指南/游戏基本架构 (中文)" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li></ul>
+		
+	</div>
+</nav>
+
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> Esta página se editó por última vez el 3 dic 2024 a las 22:32.</li>
+		<li id="footer-info-copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> a menos que se indique lo contrario.</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:Pol%C3%ADtica_de_privacidad" title="Stardew Valley Wiki:Política de privacidad">Política de privacidad</a></li>
+		<li id="footer-places-about"><a href="/Stardew_Valley_Wiki:Acerca_de" title="Stardew Valley Wiki:Acerca de">Acerca de Stardew Valley Wiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:Descargo_general" title="Stardew Valley Wiki:Descargo general">Exoneraciones</a></li>
+		<li id="footer-places-mobileview"><a href="//es.stardewvalleywiki.com/mediawiki/index.php?title=Modding:Gu%C3%ADa_del_Modder/Fundamentos_del_juego&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Versión para móviles</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/mediawiki/resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike" width="88" height="31" loading="lazy"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/mediawiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/mediawiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /mediawiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.038","walltime":"0.332","ppvisitednodes":{"value":118,"limit":1000000},"postexpandincludesize":{"value":1917,"limit":2097152},"templateargumentsize":{"value":26,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":456,"limit":5000000},"timingprofile":["100.00%  299.255      1 -total","  0.85%    2.551      2 Plantilla:T","  0.47%    1.396      1 Modding:Guía_del_Modder/Encabezado"]},"cachereport":{"timestamp":"20250414214942","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":127});});</script></body></html>
