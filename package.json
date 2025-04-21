@@ -1,7 +1,7 @@
 {
   "name": "offline-stardew-valley-wiki",
   "productName": "offline-stardew-valley-wiki",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "My Electron application description",
   "main": "src/index.js",
   "build": {
