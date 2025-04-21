@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Änderungen an verlinkten Seiten – Stardew Valley Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!0,"wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgRequestId":"d98f873e3f1a51f83ca6a34a","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"Recentchangeslinked","wgNamespaceNumber":-1,"wgPageName":"Spezial:Änderungen_an_verlinkten_Seiten/Mohn-Saat","wgTitle":"Änderungen an verlinkten Seiten/Mohn-Saat","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgPageContentLanguage":"de","wgPageContentModel":"wikitext","wgRelevantPageName":"Mohn-Saat","wgRelevantArticleId":613,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgMFMode":"stable","wgMFAmc":!1,"wgMFAmcOutreachActive":
+!1,"wgMFAmcOutreachUserEligible":!1,"wgMFLazyLoadImages":!0,"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgMFIsPageContentModelEditable":!0,"wgStructuredChangeFilters":[{"name":"userExpLevel","type":"string_options","fullCoverage":!0,"filters":[{"name":"unregistered","label":"rcfilters-filter-user-experience-level-unregistered-label","description":"rcfilters-filter-user-experience-level-unregistered-description","cssClass":"mw-changeslist-user-unregistered","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"registered","label":"rcfilters-filter-user-experience-level-registered-label","description":"rcfilters-filter-user-experience-level-registered-description","cssClass":"mw-changeslist-user-registered","priority":-3,"subset":[{"group":"userExpLevel","filter":"newcomer"},{"group":"userExpLevel","filter":"learner"},{"group":"userExpLevel","filter":"experienced"}],"conflicts":[],
+"defaultHighlightColor":null},{"name":"newcomer","label":"rcfilters-filter-user-experience-level-newcomer-label","description":"rcfilters-filter-user-experience-level-newcomer-description","cssClass":"mw-changeslist-user-newcomer","priority":-4,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"learner","label":"rcfilters-filter-user-experience-level-learner-label","description":"rcfilters-filter-user-experience-level-learner-description","cssClass":"mw-changeslist-user-learner","priority":-5,"subset":[],"conflicts":[],"defaultHighlightColor":null},{"name":"experienced","label":"rcfilters-filter-user-experience-level-experienced-label","description":"rcfilters-filter-user-experience-level-experienced-description","cssClass":"mw-changeslist-user-experienced","priority":-6,"subset":[],"conflicts":[],"defaultHighlightColor":null}],"priority":-2,"conflicts":[],"title":"rcfilters-filtergroup-user-experience-level","separator":";","default":""},{"name":"authorship","type":
+"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidemyself","label":"rcfilters-filter-editsbyself-label","description":"rcfilters-filter-editsbyself-description","cssClass":"mw-changeslist-self","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidebyothers","label":"rcfilters-filter-editsbyother-label","description":"rcfilters-filter-editsbyother-description","cssClass":"mw-changeslist-others","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-3,"conflicts":[],"title":"rcfilters-filtergroup-authorship"},{"name":"automated","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidebots","label":"rcfilters-filter-bots-label","description":"rcfilters-filter-bots-description","cssClass":"mw-changeslist-bot","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!0},{"name":"hidehumans","label":"rcfilters-filter-humans-label",
+"description":"rcfilters-filter-humans-description","cssClass":"mw-changeslist-human","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-4,"conflicts":[],"title":"rcfilters-filtergroup-automated"},{"name":"significance","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hideminor","label":"rcfilters-filter-minor-label","description":"rcfilters-filter-minor-description","cssClass":"mw-changeslist-minor","priority":-2,"subset":[],"conflicts":[{"group":"changeType","filter":"hidelog","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-hideminor-conflicts-typeofchange"},{"group":"changeType","filter":"hidenewpages","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-hideminor-conflicts-typeofchange"}],"defaultHighlightColor":null,"default":!1},{"name":"hidemajor","label":"rcfilters-filter-major-label","description":
+"rcfilters-filter-major-description","cssClass":"mw-changeslist-major","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-6,"conflicts":[],"title":"rcfilters-filtergroup-significance"},{"name":"lastRevision","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{"name":"hidelastrevision","label":"rcfilters-filter-lastrevision-label","description":"rcfilters-filter-lastrevision-description","cssClass":"mw-changeslist-last","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidepreviousrevisions","label":"rcfilters-filter-previousrevision-label","description":"rcfilters-filter-previousrevision-description","cssClass":"mw-changeslist-previous","priority":-3,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1}],"priority":-7,"conflicts":[],"title":"rcfilters-filtergroup-lastrevision"},{"name":"changeType","type":"send_unselected_if_any","fullCoverage":!0,"filters":[{
+"name":"hidepageedits","label":"rcfilters-filter-pageedits-label","description":"rcfilters-filter-pageedits-description","cssClass":"mw-changeslist-src-mw-edit","priority":-2,"subset":[],"conflicts":[],"defaultHighlightColor":null,"default":!1},{"name":"hidenewpages","label":"rcfilters-filter-newpages-label","description":"rcfilters-filter-newpages-description","cssClass":"mw-changeslist-src-mw-new","priority":-3,"subset":[],"conflicts":[{"group":"significance","filter":"hideminor","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global","contextDescription":"rcfilters-typeofchange-conflicts-hideminor"}],"defaultHighlightColor":null,"default":!1},{"name":"hidelog","label":"rcfilters-filter-logactions-label","description":"rcfilters-filter-logactions-description","cssClass":"mw-changeslist-src-mw-log","priority":-5,"subset":[],"conflicts":[{"group":"significance","filter":"hideminor","globalDescription":"rcfilters-hideminor-conflicts-typeofchange-global",
+"contextDescription":"rcfilters-typeofchange-conflicts-hideminor"}],"defaultHighlightColor":null,"default":!1}],"priority":-8,"conflicts":[],"title":"rcfilters-filtergroup-changetype"}],"wgStructuredChangeFiltersMessages":{"rcfilters-filtergroup-user-experience-level":"Benutzeranmeldung und -erfahrung","rcfilters-filter-user-experience-level-unregistered-label":"Unangemeldet","rcfilters-filter-user-experience-level-unregistered-description":"Autoren, die nicht angemeldet sind.","rcfilters-filter-user-experience-level-registered-label":"Angemeldet","rcfilters-filter-user-experience-level-registered-description":"Angemeldete Autoren.","rcfilters-filter-user-experience-level-newcomer-label":"Neulinge","rcfilters-filter-user-experience-level-newcomer-description":"Angemeldete Autoren, die weniger als 10 Bearbeitungen oder eine Aktivität von weniger als 4 Tagen haben.","rcfilters-filter-user-experience-level-learner-label":"Anfänger",
+"rcfilters-filter-user-experience-level-learner-description":"Angemeldete Autoren, deren Erfahrung zwischen „Neulinge“ und „Erfahrene Benutzer“ fällt.","rcfilters-filter-user-experience-level-experienced-label":"Erfahrene Benutzer","rcfilters-filter-user-experience-level-experienced-description":"Angemeldete Autoren mit mehr als 500 Bearbeitungen und einer Aktivität von mehr als 30 Tagen.","rcfilters-filtergroup-authorship":"Beitrags-Autorenschaft","rcfilters-filter-editsbyself-label":"Änderungen von dir","rcfilters-filter-editsbyself-description":"Deine eigenen Beiträge.","rcfilters-filter-editsbyother-label":"Änderungen von anderen","rcfilters-filter-editsbyother-description":"Alle Änderungen außer deine eigenen.","rcfilters-filtergroup-automated":"Automatisierte Beiträge","rcfilters-filter-bots-label":"Bot","rcfilters-filter-bots-description":"Bearbeitungen, die von automatisierten Werkzeugen durchgeführt wurden.","rcfilters-filter-humans-label":"Mensch (kein Bot)",
+"rcfilters-filter-humans-description":"Bearbeitungen, die von menschlichen Autoren durchgeführt wurden.","rcfilters-filtergroup-significance":"Bedeutung","rcfilters-filter-minor-label":"Kleine Änderungen","rcfilters-filter-minor-description":"Bearbeitungen, die der Autor als geringfügig markiert hat.","rcfilters-hideminor-conflicts-typeofchange-global":"Der Filter „Kleine Bearbeitungen“ kollidiert mit einem oder mehreren Änderungstypfiltern, da bestimmte Änderungstypen nicht als „klein“ festgelegt werden können. Die kollidierenden Filter sind oben im Bereich der aktiven Filter markiert.","rcfilters-hideminor-conflicts-typeofchange":"Bestimmte Änderungstypen können nicht als „klein“ festgelegt werden, so dass dieser Filter mit den folgenden Änderungstypfiltern kollidiert: $1","rcfilters-filter-major-label":"Nicht-kleine Änderungen","rcfilters-filter-major-description":"Bearbeitungen, die nicht als geringfügig markiert wurden.","rcfilters-filtergroup-lastrevision":
+"Aktuellste Versionen","rcfilters-filter-lastrevision-label":"Aktuellste Version","rcfilters-filter-lastrevision-description":"Nur die aktuellste Änderung an einer Seite.","rcfilters-filter-previousrevision-label":"Nicht die aktuellste Version","rcfilters-filter-previousrevision-description":"Alle Änderungen, die nicht die „aktuellste Version“ sind.","rcfilters-filtergroup-changetype":"Typ der Änderung","rcfilters-filter-pageedits-label":"Seitenbearbeitungen","rcfilters-filter-pageedits-description":"Änderungen am Wikiinhalt oder an Diskussionen, Kategoriebeschreibungen …","rcfilters-filter-newpages-label":"Seitenerstellungen","rcfilters-filter-newpages-description":"Bearbeitungen, die zu neuen Seiten führen.","rcfilters-typeofchange-conflicts-hideminor":"Dieser Änderungstypfilter kollidiert mit dem Filter „Kleine Bearbeitungen“. Bestimmte Änderungstypen können nicht als „klein“ festgelegt werden.","rcfilters-filter-logactions-label":"Logbucheinträge",
+"rcfilters-filter-logactions-description":"Administrative Aktionen, Benutzerkontenerstellungen, Seitenlöschungen, hochgeladene Dateien …"},"wgStructuredChangeFiltersCollapsedState":!1,"StructuredChangeFiltersDisplayConfig":{"maxDays":90,"limitArray":[50,100,250,500],"limitDefault":50,"daysArray":[1,3,7,14,30],"daysDefault":7},"wgStructuredChangeFiltersSavedQueriesPreferenceName":"rcfilters-saved-queries","wgStructuredChangeFiltersLimitPreferenceName":"rcfilters-limit","wgStructuredChangeFiltersDaysPreferenceName":"rcdays","wgStructuredChangeFiltersCollapsedPreferenceName":"rcfilters-rc-collapsed","wgMinervaPermissions":{"watch":!1,"talk":!1},"wgMinervaFeatures":{"beta":!1,"donate":!0,"mobileOptionsLink":!0,"categories":!1,"pageIssues":!0,"talkAtTop":!1,"historyInPageActions":!1,"overflowSubmenu":!1,"tabsOnSpecials":!1,"personalMenu":!1,"mainMenuExpanded":!1,"simplifiedTalk":!1},"wgMinervaDownloadNamespaces":[0]};RLSTATE={"site.styles":
+"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mobile.special.styles":"ready","mobile.messageBox.styles":"ready","mediawiki.helplink":"ready","mediawiki.ui.input":"ready","mediawiki.ui.radio":"ready","mediawiki.ui.checkbox":"ready","mediawiki.interface.helpers.styles":"ready","mediawiki.special.changeslist.legend":"ready","mediawiki.special.changeslist":"ready","mediawiki.rcfilters.filters.base.styles":"ready","skins.minerva.base.styles":"ready","skins.minerva.content.styles":"ready","skins.minerva.content.styles.images":"ready","mediawiki.hlist":"ready","mediawiki.ui.icon":"ready","mediawiki.ui.button":"ready","skins.minerva.icons.wikimedia":"ready","skins.minerva.mainMenu.icons":"ready","skins.minerva.mainMenu.styles":"ready","mobile.init.styles":"ready"};RLPAGEMODULES=["mediawiki.special.changeslist.legend.js","mediawiki.rcfilters.filters.ui","mediawiki.special.recentchanges","site","mediawiki.page.startup","skins.minerva.options",
+"skins.minerva.scripts","mobile.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"de"});
+});});</script>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=de&amp;modules=mediawiki.helplink%2Chlist%7Cmediawiki.interface.helpers.styles%7Cmediawiki.rcfilters.filters.base.styles%7Cmediawiki.special.changeslist%7Cmediawiki.special.changeslist.legend%7Cmediawiki.ui.button%2Ccheckbox%2Cicon%2Cinput%2Cradio%7Cmobile.init.styles%7Cmobile.messageBox.styles%7Cmobile.special.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.wikimedia%7Cskins.minerva.mainMenu.icons%2Cstyles&amp;only=styles&amp;skin=minerva"/>
+<script async="" src="/mediawiki/load.php?lang=de&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/mediawiki/load.php?lang=de&amp;modules=site.styles&amp;only=styles&amp;skin=minerva"/>
+<meta name="generator" content="MediaWiki 1.35.1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="description" content="Gib einen Seitennamen ein, um Änderungen auf Seiten zu sehen, die auf oder von dieser Seite verlinkt sind. Um Mitglieder einer Kategorie zu sehen, gib „Kategorie:Name der Kategorie“ ein. Änderungen an Seiten auf deiner Beobachtungsliste sind fett hervorgehoben."/>
+<meta name="theme-color" content="#eaecf0"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+<link rel="manifest" href="/mediawiki/api.php?action=webapp-manifest"/>
+<link rel="shortcut icon" href="/mediawiki/extensions/StardewValley/images/favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mediawiki/opensearch_desc.php" title="Stardew Valley Wiki (de)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//de.stardewvalleywiki.com/mediawiki/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<meta property="og:title" content="Änderungen an verlinkten Seiten – Stardew Valley Wiki"/>
+<meta property="og:site_name" content="Stardew Valley Wiki"/>
+<meta property="og:url" content="https://de.stardewvalleywiki.com/Spezial:%C3%84nderungen_an_verlinkten_Seiten/Mohn-Saat"/>
+<meta property="og:image" content="https://de.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="article:modified_time" content="2025-04-15T20:06:16Z"/>
+<meta property="article:published_time" content="2025-04-15T20:06:16Z"/>
+<meta property="twitter:site" content="@stardewwiki"/>
+<meta property="twitter:title" content="Änderungen an verlinkten Seiten – Stardew Valley Wiki"/>
+<meta property="twitter:image" content="https://de.stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/site_logo_sm.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"\u00c4nderungen an verlinkten Seiten \u2013 Stardew Valley Wiki","headline":"\u00c4nderungen an verlinkten Seiten \u2013 Stardew Valley Wiki","mainEntityOfPage":"\u00c4nderungen an verlinkten Seiten","identifier":"https:\/\/de.stardewvalleywiki.com\/Spezial:%C3%84nderungen_an_verlinkten_Seiten\/Mohn-Saat","url":"https:\/\/de.stardewvalleywiki.com\/Spezial:%C3%84nderungen_an_verlinkten_Seiten\/Mohn-Saat","dateModified":"2025-04-15T20:06:16Z","datePublished":"2025-04-15T20:06:16Z","image":{"@type":"ImageObject","url":"https:\/\/de.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png"},"author":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/de.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/de.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"publisher":{"@type":"Organization","name":"Stardew Valley Wiki","url":"\/\/de.stardewvalleywiki.com","logo":{"@type":"ImageObject","url":"https:\/\/de.stardewvalleywiki.com\/mediawiki\/extensions\/StardewValley\/images\/site_logo_sm.png","caption":"Stardew Valley Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/de.stardewvalleywiki.com\/mediawiki\/index.php?title=Spezial:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<!--[if lt IE 9]><script src="/mediawiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mw-rcfilters-enabled mediawiki ltr sitedir-ltr capitalize-all-nouns mw-hide-empty-elt ns--1 ns-special mw-special-Recentchangeslinked page-Spezial_Änderungen_an_verlinkten_Seiten_Mohn-Saat rootpage-Spezial_Änderungen_an_verlinkten_Seiten_Mohn-Saat stable skin-minerva action-view skin-vector-legacy">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="/mediawiki/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input type="checkbox" id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button">
+					<label for="main-menu-input" id="mw-mf-main-menu-button"
+						class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-menu-base20 mw-ui-icon-flush-left toggle-list__toggle"
+						title="Hauptmenü öffnen" data-event-name="ui.mainmenu">Hauptmenü öffnen</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Start</span></a>
+			</li>
+			<li class="">
+			    <a href="/Spezial:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Zufall</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="/mediawiki/index.php?title=Spezial:Anmelden&amp;returnto=Spezial%3A%C3%84nderungen+an+verlinkten+Seiten%2FMohn-Saat" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Anmelden</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="/mediawiki/index.php?title=Spezial:Mobile_Optionen&amp;returnto=Spezial%3A%C3%84nderungen+an+verlinkten+Seiten%2FMohn-Saat" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Einstellungen</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:%C3%9Cber_Stardew_Valley_Wiki" class="" data-event-name=""><span>Über Stardew Valley Wiki</span></a>
+			</li>
+			<li class="">
+			    <a href="/Stardew_Valley_Wiki:Impressum" class="" data-event-name=""><span>Haftungsausschluss</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="/Stardew_Valley_Wiki">
+						<span>Stardew Valley Wiki</span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" type="search" name="search" id="searchInput"
+						autocomplete="off" placeholder="Stardew Valley Wiki durchsuchen" aria-label="Stardew Valley Wiki durchsuchen"
+						value="">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Suchen</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0">Änderungen an verlinkten Seiten</h1>
+					<div class="tagline"></div>
+				</div>
+				
+				
+				
+				<div class="minerva__subtitle">← <a href="/Mohn-Saat" title="Mohn-Saat">Mohn-Saat</a></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text"><div class="mw-specialpage-summary">
+<p>Gib einen Seitennamen ein, um Änderungen auf Seiten zu sehen, die auf oder von dieser Seite verlinkt sind. Um Mitglieder einer Kategorie zu sehen, gib „Kategorie:<i>Name der Kategorie</i>“ ein. Änderungen an Seiten auf <a href="/Spezial:Beobachtungsliste" title="Spezial:Beobachtungsliste">deiner Beobachtungsliste</a> sind <strong>fett</strong> hervorgehoben.
+</p>
+</div><div class="rcfilters-head mw-rcfilters-head"><div class="rcfilters-container mw-rcfilters-container"></div><fieldset class="rcoptions cloptions">
+<legend>Anzeigeoptionen</legend>
+<span class="rclinks">Zeige die letzten <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;limit=50&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;limit&quot;:50}" data-keys="limit"><strong>50</strong></a> | <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;limit=100&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;limit&quot;:100}" data-keys="limit">100</a> | <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;limit=250&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;limit&quot;:250}" data-keys="limit">250</a> | <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;limit=500&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;limit&quot;:500}" data-keys="limit">500</a> Änderungen der letzten <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;days=1&amp;from=&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;days&quot;:1,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">1</a> | <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;days=3&amp;from=&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;days&quot;:3,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">3</a> | <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;days=7&amp;from=&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;days&quot;:7,&quot;from&quot;:&quot;&quot;}" data-keys="days,from"><strong>7</strong></a> | <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;days=14&amp;from=&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;days&quot;:14,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">14</a> | <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;days=30&amp;from=&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;days&quot;:30,&quot;from&quot;:&quot;&quot;}" data-keys="days,from">30</a> Tage.</span><br /><span class="rcshowhide"><span class="rcshowhideliu rcshowhideoption clshowhideoption" data-filter-name="hideliu" data-feature-in-structured-ui="1">Registrierte Benutzer <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;hideliu=1&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;hideliu&quot;:1}" data-keys="hideliu">ausblenden</a></span> | <span class="rcshowhideanons rcshowhideoption clshowhideoption" data-filter-name="hideanons" data-feature-in-structured-ui="1">Unangemeldete Benutzer <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;hideanons=1&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;hideanons&quot;:1}" data-keys="hideanons">ausblenden</a></span> | <span class="rcshowhidemine rcshowhideoption clshowhideoption" data-filter-name="hidemyself" data-feature-in-structured-ui="1">Eigene Beiträge <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;hidemyself=1&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;hidemyself&quot;:1}" data-keys="hidemyself">ausblenden</a></span> | <span class="rcshowhidebots rcshowhideoption clshowhideoption" data-filter-name="hidebots" data-feature-in-structured-ui="1">Bots <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;hidebots=0&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;hidebots&quot;:0}" data-keys="hidebots">anzeigen</a></span> | <span class="rcshowhideminor rcshowhideoption clshowhideoption" data-filter-name="hideminor" data-feature-in-structured-ui="1">Kleine Änderungen <a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;hideminor=1&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;hideminor&quot;:1}" data-keys="hideminor">ausblenden</a></span></span><br /><span class="rclistfrom"><a href="/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten&amp;from=20250415200616&amp;fromFormatted=20%3A06%2C+15.+Apr.+2025&amp;target=Mohn-Saat" title="Spezial:Änderungen an verlinkten Seiten" data-params="{&quot;from&quot;:&quot;20250415200616&quot;,&quot;fromFormatted&quot;:&quot;20:06, 15. Apr. 2025&quot;}" data-keys="from,fromFormatted">Nur Änderungen seit 15. April 2025, 20:06 Uhr zeigen.</a></span>
+<hr />
+<form action="/mediawiki/index.php"><table class="mw-recentchanges-table"><tr class="namespaceForm"><td class="mw-label mw-namespace-label"><label for="namespace">Namensraum:</label></td><td class="mw-input"><select id="namespace" name="namespace">
+<option value="" selected="">alle</option>
+<option value="0">(Seiten)</option>
+<option value="1">Diskussion</option>
+<option value="2">Benutzer</option>
+<option value="3">Benutzer Diskussion</option>
+<option value="4">Stardew Valley Wiki</option>
+<option value="5">Stardew Valley Wiki Diskussion</option>
+<option value="6">Datei</option>
+<option value="7">Datei Diskussion</option>
+<option value="8">MediaWiki</option>
+<option value="9">MediaWiki Diskussion</option>
+<option value="10">Vorlage</option>
+<option value="11">Vorlage Diskussion</option>
+<option value="12">Hilfe</option>
+<option value="13">Hilfe Diskussion</option>
+<option value="14">Kategorie</option>
+<option value="15">Kategorie Diskussion</option>
+<option value="274">Widget</option>
+<option value="275">Widget Diskussion</option>
+<option value="570">Modding</option>
+<option value="571">Modding talk</option>
+<option value="828">Modul</option>
+<option value="829">Modul Diskussion</option>
+</select> <span class="mw-input-with-label mw-input-hidden"><div class="mw-ui-checkbox"><input name="invert" type="checkbox" value="1" id="nsinvert" title="Dieses Auswahlfeld anklicken, um Änderungen im gewählten Namensraum und, sofern ausgewählt, dem entsprechenden zugehörigen Namensraum auszublenden" /> <label for="nsinvert" title="Dieses Auswahlfeld anklicken, um Änderungen im gewählten Namensraum und, sofern ausgewählt, dem entsprechenden zugehörigen Namensraum auszublenden">Auswahl umkehren</label></div></span> <span class="mw-input-with-label mw-input-hidden"><div class="mw-ui-checkbox"><input name="associated" type="checkbox" value="1" id="nsassociated" title="Dieses Auswahlfeld anklicken, um den deiner Auswahl zugehörigen Diskussionsnamensraum, oder im umgekehrten Fall, den zugehörigen Namensraum, mit einzubeziehen" /> <label for="nsassociated" title="Dieses Auswahlfeld anklicken, um den deiner Auswahl zugehörigen Diskussionsnamensraum, oder im umgekehrten Fall, den zugehörigen Namensraum, mit einzubeziehen">Zugehöriger Namensraum</label></div></span></td></tr><tr class="tagfilterForm"><td class="mw-label mw-tagfilter-label"><label for="tagfilter"><a href="/Spezial:Markierungen" title="Spezial:Markierungen">Markierungs</a>-Filter:</label></td><td class="mw-input"><input name="tagfilter" size="20" value="" class="mw-tagfilter-input mw-ui-input mw-ui-input-inline mw-ui-input" id="tagfilter" /></td></tr><tr class="targetForm"><td class="mw-label mw-target-label">Seite:</td><td class="mw-input"><input name="target" size="40" value="Mohn-Saat" class="mw-ui-input" /><input name="showlinkedto" type="checkbox" value="1" id="showlinkedto" /> <label for="showlinkedto">Zeige nur Änderungen an Seiten, die auf diese Seite verlinken</label> <input type="submit" value="Anzeigen" class="mw-ui-button mw-ui-progressive"/></td></tr></table><input type="hidden" value="Spezial:Änderungen an verlinkten Seiten" name="title"/></form>
+</fieldset>
+</div><div class="mw-rcfilters-spinner"><div class="mw-rcfilters-spinner-bounce"></div></div><div class="mw-changeslist-empty">Keine Änderungen während des angegebenen Zeitraums entsprechen diesen Kriterien.</div></div><div class="printfooter">
+Abgerufen von „<a dir="ltr" href="https://de.stardewvalleywiki.com/Spezial:Änderungen_an_verlinkten_Seiten/Mohn-Saat">https://de.stardewvalleywiki.com/Spezial:Änderungen_an_verlinkten_Seiten/Mohn-Saat</a>“</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="mw-footer minerva-footer">
+		
+		<div class="post-content footer-content">
+			
+			<h2>Stardew Valley Wiki</h2>
+			<div class="license">Der Inhalt ist verfügbar unter <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>, sofern nicht anders angegeben.</div>
+			<ul class="footer-info hlist hlist-separated">
+				
+			</ul>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-privacy"><a href="/Stardew_Valley_Wiki:Datenschutz" title="Stardew Valley Wiki:Datenschutz">Datenschutz</a></li><li id="footer-places-about"><a href="/Stardew_Valley_Wiki:%C3%9Cber_Stardew_Valley_Wiki" title="Stardew Valley Wiki:Über Stardew Valley Wiki">Über Stardew Valley Wiki</a></li><li id="footer-places-disclaimer"><a href="/Stardew_Valley_Wiki:Impressum" title="Stardew Valley Wiki:Impressum">Haftungsausschluss</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="//de.stardewvalleywiki.com/mediawiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten/Mohn-Saat&amp;mobileaction=toggle_view_desktop">Klassische Ansicht</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-1S37VCXXZ9" async=""></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1S37VCXXZ9', {"anonymize_ip":true});
+</script>
+
+<script>(window.NORLQ=window.NORLQ||[]).push(function(){var ns,i,p,img;ns=document.getElementsByTagName('noscript');for(i=0;i<ns.length;i++){p=ns[i].nextSibling;if(p&&p.className&&p.className.indexOf('lazy-image-placeholder')>-1){img=document.createElement('img');img.setAttribute('src',p.getAttribute('data-src'));img.setAttribute('width',p.getAttribute('data-width'));img.setAttribute('height',p.getAttribute('data-height'));img.setAttribute('alt',p.getAttribute('data-alt'));p.parentNode.replaceChild(img,p);}}});</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":119});});</script>		</body>
+		</html>
+		
