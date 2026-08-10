@@ -1,0 +1,24 @@
+services:
+  dashboard:
+    user: "0:0"
+    ports:
+      - "127.0.0.1:${LOCAL_PORT:-8090}:8080"
+    volumes:
+      - ./.local-data:/data:z
+
+  worker:
+    user: "0:0"
+    volumes:
+      - ./.local-data:/data:z
+
+  cli:
+    user: "0:0"
+    volumes:
+      - ./.local-data:/data:z
+
+  linux-builder:
+    user: "0:0"
+    volumes:
+      - ./:/workspace:z
+      - ./.local-data:/data:z
+      - updater_builder_node_modules:/workspace/node_modules

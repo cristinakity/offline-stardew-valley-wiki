@@ -1,0 +1,110 @@
+name: Deploy updater to production
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type DEPLOY-PRODUCTION after local and draft-release approval
+        required: true
+      snapshot_ref:
+        description: Immutable snapshot OCI reference ending in @sha256:<digest>
+        required: true
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+concurrency:
+  group: offline-wiki-updater-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ inputs.confirmation == 'DEPLOY-PRODUCTION' }}
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      IMAGE: ghcr.io/${{ github.repository_owner }}/offline-stardew-valley-wiki-updater:${{ github.sha }}
+      SNAPSHOT_REF: ${{ inputs.snapshot_ref }}
+      DEPLOY_BROKER_URL: ${{ vars.DEPLOY_BROKER_URL }}
+      DEPLOY_BROKER_AUDIENCE: ${{ vars.DEPLOY_BROKER_AUDIENCE }}
+      DEPLOY_BROKER_APP_ID: ${{ vars.DEPLOY_BROKER_APP_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Verify production configuration
+        env:
+          PERSISTENT_DATA_READY: ${{ vars.BROKER_PERSISTENT_DATA_READY }}
+        run: |
+          set -euo pipefail
+          test "$PERSISTENT_DATA_READY" = "true" || {
+            echo "::error::The broker grant must mount a persistent named volume at /data."
+            exit 1
+          }
+          test -n "$DEPLOY_BROKER_URL"
+          test -n "$DEPLOY_BROKER_AUDIENCE"
+          test -n "$DEPLOY_BROKER_APP_ID"
+          case "$SNAPSHOT_REF" in
+            ghcr.io/*@sha256:*) ;;
+            *) echo "::error::snapshot_ref must be an immutable GHCR digest reference."; exit 1 ;;
+          esac
+
+      - uses: oras-project/setup-oras@v1
+
+      - name: Download the approved snapshot seed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$GH_TOKEN" | oras login ghcr.io -u "${{ github.actor }}" --password-stdin
+          mkdir -p production-seed
+          oras pull "$SNAPSHOT_REF" -o production-seed
+          archive="$(find production-seed -maxdepth 1 -name '*.tar.zst' -type f -print -quit)"
+          test -n "$archive"
+          test "$(find production-seed -maxdepth 1 -name '*.tar.zst' -type f | wc -l)" -eq 1
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Build and publish the seeded production image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Containerfile
+          push: true
+          tags: ${{ env.IMAGE }}
+
+      - name: Request GitHub OIDC token
+        id: oidc
+        run: |
+          set -euo pipefail
+          token_json="$(curl -fsSL \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=${DEPLOY_BROKER_AUDIENCE}")"
+          oidc_token="$(printf '%s' "$token_json" | jq -r '.value')"
+          test -n "$oidc_token"
+          printf 'token=%s\n' "$oidc_token" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy through the broker
+        env:
+          OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
+          GHCR_TOKEN: ${{ secrets.GHCR_READ_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -fsSL -X POST "$DEPLOY_BROKER_URL/api/deployments/$DEPLOY_BROKER_APP_ID" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg oidc_token "$OIDC_TOKEN" \
+              --arg image "$IMAGE" \
+              --arg ghcr_username "${{ github.repository_owner }}" \
+              --arg ghcr_token "$GHCR_TOKEN" \
+              --arg git_sha "${{ github.sha }}" \
+              '{oidc_token:$oidc_token,image:$image,ghcr_username:$ghcr_username,ghcr_token:$ghcr_token,git_sha:$git_sha}')"

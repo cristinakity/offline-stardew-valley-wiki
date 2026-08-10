@@ -60,6 +60,13 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+.env.local
+.env.production
+.local-data/
+production-seed/*.tar.zst
+.venv/
+__pycache__/
+*.egg-info/
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -90,6 +97,7 @@ typings/
 
 # Electron-Forge
 out/
+desktop/out/
 
 # tmp files
 *.tmp

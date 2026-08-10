@@ -4,6 +4,23 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
+    appBundleId: 'com.cristinakity.offlinestardewvalleywiki',
+    executableName: 'offline-stardew-valley-wiki',
+    icon: 'src/favicon',
+    extraResource: [
+      'src/stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/stardewbackground.png',
+      'src/flags',
+      ...(process.env.WIKI_CONTENT_PATH ? [process.env.WIKI_CONTENT_PATH] : []),
+    ],
+    ignore: [
+      /^\/src($|\/)/,
+      /^\/wiki_updater($|\/)/,
+      /^\/tests($|\/)/,
+      /^\/\.local-data($|\/)/,
+      /^\/compose.*\.yml$/,
+      /^\/Containerfile/,
+      /^\/pyproject\.toml$/,
+    ],
   },
   rebuildConfig: {},
   makers: [
@@ -13,15 +30,24 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      platforms: ['linux', 'win32'],
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      config: {
+        options: {
+          maintainer: 'Cristina Carrasco',
+          homepage: 'https://github.com/cristinakity/offline-stardew-valley-wiki'
+        }
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      config: {
+        options: {
+          homepage: 'https://github.com/cristinakity/offline-stardew-valley-wiki'
+        }
+      },
     },
   ],
   plugins: [

@@ -1,0 +1,62 @@
+services:
+  dashboard:
+    pull_policy: always
+    environment:
+      APP_ENV: production
+      BIND_HOST: 0.0.0.0
+      STORAGE_LIMIT_GB: "15"
+      MIN_FREE_GB: "3"
+      GITHUB_OAUTH_CLIENT_ID: ${GITHUB_OAUTH_CLIENT_ID:?GITHUB_OAUTH_CLIENT_ID is required}
+      GITHUB_OAUTH_CLIENT_SECRET: ${GITHUB_OAUTH_CLIENT_SECRET:?GITHUB_OAUTH_CLIENT_SECRET is required}
+      GITHUB_ALLOWED_USERS: ${GITHUB_ALLOWED_USERS:?GITHUB_ALLOWED_USERS is required}
+      SESSION_SECRET: ${SESSION_SECRET:?SESSION_SECRET is required}
+    volumes:
+      - updater_data:/data:U
+    networks:
+      production_shared:
+        aliases:
+          - stardew-wiki-updater
+
+  worker:
+    pull_policy: always
+    environment:
+      APP_ENV: production
+      BIND_HOST: 0.0.0.0
+      STORAGE_LIMIT_GB: "15"
+      MIN_FREE_GB: "3"
+      GITHUB_OAUTH_CLIENT_ID: ${GITHUB_OAUTH_CLIENT_ID:?GITHUB_OAUTH_CLIENT_ID is required}
+      GITHUB_OAUTH_CLIENT_SECRET: ${GITHUB_OAUTH_CLIENT_SECRET:?GITHUB_OAUTH_CLIENT_SECRET is required}
+      SESSION_SECRET: ${SESSION_SECRET:?SESSION_SECRET is required}
+    volumes:
+      - updater_data:/data:U
+    networks:
+      - production_shared
+
+  cli:
+    pull_policy: always
+    environment:
+      APP_ENV: production
+      GITHUB_OAUTH_CLIENT_ID: ${GITHUB_OAUTH_CLIENT_ID:?GITHUB_OAUTH_CLIENT_ID is required}
+      GITHUB_OAUTH_CLIENT_SECRET: ${GITHUB_OAUTH_CLIENT_SECRET:?GITHUB_OAUTH_CLIENT_SECRET is required}
+      SESSION_SECRET: ${SESSION_SECRET:?SESSION_SECRET is required}
+    volumes:
+      - updater_data:/data:U
+    networks:
+      - production_shared
+
+  linux-builder:
+    volumes:
+      - ./:/workspace:Z
+      - updater_data:/data
+      - updater_builder_node_modules:/workspace/node_modules:U
+
+volumes:
+  updater_data:
+    name: offline_stardew_wiki_updater_data
+  updater_builder_node_modules:
+    name: offline_stardew_wiki_builder_node_modules
+
+networks:
+  production_shared:
+    external: true
+    name: ${PRODUCTION_NETWORK:-production_shared}

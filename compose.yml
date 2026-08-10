@@ -1,0 +1,62 @@
+name: offline-stardew-valley-wiki
+
+x-updater-common: &updater-common
+  build:
+    context: .
+    dockerfile: Containerfile
+  image: ${UPDATER_IMAGE:-localhost/offline-stardew-valley-wiki-updater:local}
+  restart: unless-stopped
+  environment: &updater-environment
+    APP_ENV: ${APP_ENV:-local}
+    DATA_DIR: /data
+    DATABASE_PATH: /data/updater.sqlite3
+    LOCAL_AUTH_USER: ${LOCAL_AUTH_USER:-developer}
+    BIND_HOST: ${BIND_HOST:-127.0.0.1}
+    SESSION_SECRET: ${SESSION_SECRET:-local-development-only-change-me}
+    ENABLED: ${ENABLED:-true}
+    ENABLED_LANGUAGES: ${ENABLED_LANGUAGES:-en,es,de,fr,it,ja,ko,hu,pt,ru,tr,zh}
+    STORAGE_LIMIT_GB: ${STORAGE_LIMIT_GB:-40}
+    MIN_FREE_GB: ${MIN_FREE_GB:-30}
+    SNAPSHOT_RETENTION: ${SNAPSHOT_RETENTION:-3}
+    TIMEZONE: ${TIMEZONE:-America/Chicago}
+    HTTP_CONCURRENCY: ${HTTP_CONCURRENCY:-2}
+    PAGE_CONCURRENCY: ${PAGE_CONCURRENCY:-2}
+    USER_AGENT: "${USER_AGENT:-OfflineStardewValleyWiki/0.1 (contact configured by operator)}"
+    GITHUB_OWNER: ${GITHUB_OWNER:-repository-owner}
+    GITHUB_REPOSITORY: ${GITHUB_REPOSITORY:-offline-stardew-valley-wiki}
+
+services:
+  dashboard:
+    <<: *updater-common
+    command: ["uvicorn", "wiki_updater.web:app", "--host", "0.0.0.0", "--port", "8080"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/api/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  worker:
+    <<: *updater-common
+    command: ["wiki-updater", "worker"]
+
+  cli:
+    <<: *updater-common
+    restart: "no"
+    entrypoint: ["wiki-updater"]
+    profiles: ["tools"]
+
+  linux-builder:
+    build:
+      context: .
+      dockerfile: Containerfile.builder
+    image: localhost/offline-stardew-valley-wiki-builder:local
+    restart: "no"
+    profiles: ["tools"]
+    environment:
+      DATA_DIR: /data
+      BUILD_OUTPUT_DIR: /data/builds
+
+volumes:
+  updater_builder_node_modules:
+    name: offline_stardew_wiki_builder_node_modules

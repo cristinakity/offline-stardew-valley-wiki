@@ -1,35 +1,31 @@
 {
   "name": "offline-stardew-valley-wiki",
-  "productName": "offline-stardew-valley-wiki",
-  "version": "1.2.1",
-  "description": "My Electron application description",
-  "main": "src/index.js",
-  "build": {
-    "appId": "com.offline-stardew-valley-wiki",
-    "linux": {
-      "target": ["AppImage", "deb"]
-    }
-  },
+  "productName": "Offline Stardew Valley Wiki",
+  "version": "1.3.0",
+  "description": "A multilingual offline desktop reader for the Stardew Valley Wiki",
+  "main": "desktop/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "make:linux": "electron-forge make --platform=linux --arch=x64",
+    "make:windows": "electron-forge make --platform=win32 --arch=x64",
+    "lint": "node --check desktop/main.js && node --check desktop/preload.js && node --check desktop/renderer.js",
+    "test": "npm run lint"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^7.3.1",
-    "@electron-forge/maker-deb": "^7.3.1",
-    "@electron-forge/maker-rpm": "^7.3.1",
-    "@electron-forge/maker-squirrel": "^7.3.1",
-    "@electron-forge/maker-zip": "^7.3.1",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.3.1",
-    "@electron-forge/plugin-fuses": "^7.3.1",
-    "@electron-forge/publisher-github": "^7.3.1",
+    "@electron-forge/cli": "7.11.2",
+    "@electron-forge/maker-deb": "7.11.2",
+    "@electron-forge/maker-rpm": "7.11.2",
+    "@electron-forge/maker-squirrel": "7.11.2",
+    "@electron-forge/maker-zip": "7.11.2",
+    "@electron-forge/plugin-auto-unpack-natives": "7.11.2",
+    "@electron-forge/plugin-fuses": "7.11.2",
+    "@electron-forge/publisher-github": "7.11.2",
     "@electron/fuses": "^1.8.0",
     "@electron/packager": "^18.3.2",
-    "electron": "29.2.0",
-    "electron-builder": "^24.13.3"
+    "electron": "43.3.0"
   },
   "keywords": [],
   "author": {
@@ -40,6 +36,7 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "1.0.1",
+    "minisearch": "7.2.0"
   }
 }

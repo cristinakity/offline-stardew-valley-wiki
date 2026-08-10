@@ -1,0 +1,123 @@
+name: Build release candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version such as v1.3.0
+        required: true
+        default: v1.3.0
+      snapshot_ref:
+        description: Immutable GHCR OCI reference including @sha256 digest
+        required: true
+
+permissions:
+  contents: write
+  packages: read
+
+concurrency:
+  group: wiki-candidate-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: oras-project/setup-oras@v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Download immutable content snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SNAPSHOT_REF: ${{ inputs.snapshot_ref }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$GH_TOKEN" | oras login ghcr.io -u "${{ github.actor }}" --password-stdin
+          mkdir snapshot
+          oras pull "$SNAPSHOT_REF" -o snapshot
+          archive="$(find snapshot -maxdepth 1 -name '*.tar.zst' -type f -print -quit)"
+          test -n "$archive"
+          tar --zstd -xf "$archive" -C snapshot
+      - name: Build Linux packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fakeroot rpm
+          npm ci
+          WIKI_CONTENT_PATH="$PWD/snapshot/content" npm run make:linux
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-${{ inputs.version }}
+          path: out/make/**/*
+          if-no-files-found: error
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: oras-project/setup-oras@v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Download immutable content snapshot
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SNAPSHOT_REF: ${{ inputs.snapshot_ref }}
+        run: |
+          $env:GH_TOKEN | oras login ghcr.io -u "${{ github.actor }}" --password-stdin
+          New-Item -ItemType Directory -Path snapshot | Out-Null
+          oras pull $env:SNAPSHOT_REF -o snapshot
+          choco install zstandard -y
+          $archive = Get-ChildItem snapshot -Filter *.tar.zst | Select-Object -First 1
+          if (-not $archive) { throw "Snapshot archive was not found." }
+          zstd -d $archive.FullName -o snapshot/wiki-content.tar
+          tar -xf snapshot/wiki-content.tar -C snapshot
+      - name: Build Windows packages
+        shell: pwsh
+        run: |
+          npm ci
+          $env:WIKI_CONTENT_PATH = "$pwd\snapshot\content"
+          npm run make:windows
+          $squirrel = Get-ChildItem out/make -Directory | Where-Object Name -Like 'squirrel.windows*' | Select-Object -First 1
+          if ($squirrel) { Compress-Archive -Path "$($squirrel.FullName)\*" -DestinationPath out/make/squirrel.windows.zip }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-${{ inputs.version }}
+          path: out/make/**/*
+          if-no-files-found: error
+
+  draft-release:
+    runs-on: ubuntu-latest
+    needs: [linux, windows]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Flatten assets and produce checksums
+        run: |
+          set -euo pipefail
+          mkdir release-assets
+          find artifacts -type f -exec cp '{}' release-assets/ \;
+          (cd release-assets && sha256sum * > SHA256SUMS)
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+          SNAPSHOT_REF: ${{ inputs.snapshot_ref }}
+        run: |
+          set -euo pipefail
+          if gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $VERSION already exists; refusing to overwrite it." >&2
+            exit 1
+          fi
+          printf 'Offline wiki candidate built from `%s`.\n\nThis release is a draft and requires manual review.\n' "$SNAPSHOT_REF" > notes.md
+          gh release create "$VERSION" release-assets/* --repo "$GITHUB_REPOSITORY" --draft --target "$GITHUB_SHA" --title "Offline Stardew Valley Wiki $VERSION" --notes-file notes.md
+
