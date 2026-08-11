@@ -209,22 +209,29 @@ search is performed in a language and then remains cached for the current applic
 
 ## Full and lightweight language editions
 
-Application packages can be produced from one approved full snapshot in three release editions:
+Application packages can be produced from one approved full snapshot as a multilingual edition or
+as one lightweight edition for each of the 12 supported languages:
 
 | Edition | Included content | Package identity |
 | --- | --- | --- |
 | `multilingual` (alias `full`) | All 12 languages | `Offline Stardew Valley Wiki` |
 | `en` | English pages, search and referenced assets only | `Offline Stardew Valley Wiki (EN)` |
 | `es` | Spanish pages, search and referenced assets only | `Offline Stardew Valley Wiki (ES)` |
+| `de` | German pages, search and referenced assets only | `Offline Stardew Valley Wiki (DE)` |
+| `fr` | French pages, search and referenced assets only | `Offline Stardew Valley Wiki (FR)` |
+| `it` | Italian pages, search and referenced assets only | `Offline Stardew Valley Wiki (IT)` |
+| `ja` | Japanese pages, search and referenced assets only | `Offline Stardew Valley Wiki (JA)` |
+| `ko` | Korean pages, search and referenced assets only | `Offline Stardew Valley Wiki (KO)` |
+| `hu` | Hungarian pages, search and referenced assets only | `Offline Stardew Valley Wiki (HU)` |
+| `pt` | Portuguese pages, search and referenced assets only | `Offline Stardew Valley Wiki (PT)` |
+| `ru` | Russian pages, search and referenced assets only | `Offline Stardew Valley Wiki (RU)` |
+| `tr` | Turkish pages, search and referenced assets only | `Offline Stardew Valley Wiki (TR)` |
+| `zh` | Chinese pages, search and referenced assets only | `Offline Stardew Valley Wiki (ZH)` |
 
-The English and Spanish packages are independent lightweight applications and can be installed
-alongside each other. Their other language buttons are hidden because those pages are intentionally
-not part of the package. They are generated from the already approved snapshot, so creating them
-does not crawl the wiki again.
-
-The edition generator supports every language listed above. `en` and `es` are the lightweight
-editions built by the official release workflow initially; another code such as `ja` or `pt` can be
-built on demand using the same command.
+Every language package is an independent lightweight application and can be installed alongside
+the others. Language buttons for content not included in that package are hidden. All editions are
+derived from the already approved full snapshot, so creating them does not crawl the wiki again.
+The official release workflow builds all 12 individual editions on Linux and Windows.
 
 ## Local data and storage
 
@@ -285,17 +292,10 @@ podman compose \
   run --rm linux-builder
 ```
 
-Build only English or only Spanish:
+Build one individual language (replace `ja` with any supported language code):
 
 ```bash
-WIKI_EDITION=en podman compose \
-  --profile tools \
-  --env-file .env.local \
-  -f compose.yml \
-  -f compose.local.yml \
-  run --rm linux-builder
-
-WIKI_EDITION=es podman compose \
+WIKI_EDITION=ja podman compose \
   --profile tools \
   --env-file .env.local \
   -f compose.yml \
@@ -303,7 +303,7 @@ WIKI_EDITION=es podman compose \
   run --rm linux-builder
 ```
 
-Build the multilingual, English and Spanish editions in one invocation:
+Build the multilingual edition and all 12 individual editions in one invocation:
 
 ```bash
 WIKI_EDITION=all podman compose \
@@ -335,8 +335,8 @@ not initially duplicate the physical bytes of shared files.
 
 The builder sets `WIKI_CONTENT_PATH` to the approved snapshot before invoking Electron Forge. This
 embeds the immutable content directory in ZIP, DEB and RPM packages. Official Windows packages are
-built from the same snapshot in GitHub Actions. The draft workflow produces multilingual, EN and ES
-artifacts for both operating systems.
+built from the same snapshot in GitHub Actions. The draft workflow produces the multilingual
+artifact plus an individual artifact for every supported language on both operating systems.
 
 Running `npm run make` manually without `WIKI_CONTENT_PATH` is a developer build and may not contain
 offline content. Use the provided builder for release packages.

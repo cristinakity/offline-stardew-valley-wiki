@@ -22,7 +22,7 @@ if [[ ! -d "$source_content" ]]; then
 fi
 
 case "$requested_edition" in
-  all) editions=(multilingual en es) ;;
+  all) editions=(multilingual "${supported_languages[@]}") ;;
   multilingual|full) editions=(multilingual) ;;
   *)
     if [[ ! " ${supported_languages[*]} " =~ " $requested_edition " ]]; then
