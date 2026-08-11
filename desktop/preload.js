@@ -6,4 +6,6 @@ contextBridge.exposeInMainWorld('offlineWiki', {
   loadIndex: language => ipcRenderer.invoke('wiki:load-index', language),
   pageUrl: relativePath => ipcRenderer.invoke('wiki:page-url', relativePath),
   openExternal: url => ipcRenderer.invoke('wiki:open-external', url),
+  loadReaderState: () => ipcRenderer.invoke('wiki:load-reader-state'),
+  saveReaderState: state => ipcRenderer.invoke('wiki:save-reader-state', state),
 });

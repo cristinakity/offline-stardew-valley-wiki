@@ -11,6 +11,7 @@ from wiki_updater.crawler import (
     MediaWikiClient,
     Normalizer,
     atomic_write_text,
+    repair_deferred_internal_links,
     searchable_text,
     title_key,
     validate_content,
@@ -45,6 +46,32 @@ def test_atomic_write_does_not_modify_hard_linked_snapshot(tmp_path: Path) -> No
     assert snapshot_index.read_text(encoding="utf-8") == '[{"id":1}]\n'
     assert work_index.read_text(encoding="utf-8") == '[{"id":1},{"id":2}]\n'
     assert snapshot_index.stat().st_ino != work_index.stat().st_ino
+
+
+def test_repair_deferred_links_uses_complete_title_map(tmp_path: Path) -> None:
+    settings = Settings(data_dir=tmp_path, min_free_gb=0)
+    storage = Storage(settings)
+    page = tmp_path / "content" / "en" / "pages" / "4.html"
+    page.parent.mkdir(parents=True)
+    page.write_text(
+        '<html><body><a href="#" data-missing-local-title="Villagers" '
+        'data-missing-local-language="en" data-offline-link-status="missing">Villagers</a>'
+        '<a href="#" data-missing-local-title="Unknown" data-missing-local-language="en" '
+        'data-offline-link-status="missing">Unknown</a></body></html>',
+        encoding="utf-8",
+    )
+
+    repaired = repair_deferred_internal_links(
+        storage,
+        tmp_path / "content",
+        {"en": {"villagers": 99}},
+        "en",
+    )
+
+    result = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
+    assert repaired[4][0]
+    assert result.find("a", string="Villagers")["href"] == "../../en/pages/99.html"
+    assert result.find("a", string="Unknown")["data-offline-link-status"] == "missing"
 
 
 def test_internal_target_handles_languages(tmp_path: Path) -> None:

@@ -9,8 +9,15 @@ from pathlib import Path
 from typing import Any
 
 from .config import Settings
-from .crawler import OFFLINE_CSS, atomic_write_text, validate_content
+from .crawler import (
+    OFFLINE_CSS,
+    atomic_write_text,
+    repair_deferred_internal_links,
+    title_key,
+    validate_content,
+)
 from .database import Database
+from .jobs import cancellation_requested
 from .storage import Storage, sha256_bytes
 
 
@@ -20,6 +27,10 @@ CONTENT_ASSET_RE = re.compile(
 CSS_ASSET_RE = re.compile(
     rb"\.\./([0-9a-f]{2})/([0-9a-f]{64}(?:\.[A-Za-z0-9]{1,16})?)"
 )
+
+
+class RecoveryCancelled(Exception):
+    pass
 
 
 def failed_validation(error: str | None) -> dict[str, int] | None:
@@ -143,6 +154,8 @@ def recover_failed_run(settings: Settings, db: Database, recovery_run_id: int, s
     pages_by_language: dict[str, list[dict[str, Any]]] = {}
     try:
         for row in language_rows:
+            if cancellation_requested(db, recovery_run_id):
+                raise RecoveryCancelled("Recovery cancelled by request.")
             language = str(row["language"])
             documents = indexes[language]
             db.execute(
@@ -173,7 +186,40 @@ def recover_failed_run(settings: Settings, db: Database, recovery_run_id: int, s
             )
             db.event(recovery_run_id, f"{language}: restored {len(documents)} page blobs.", language=language)
 
+        title_maps = {
+            language: {title_key(str(item["title"])): int(item["id"]) for item in documents}
+            for language, documents in indexes.items()
+        }
+        repaired_total = 0
+        for language, documents in indexes.items():
+            if cancellation_requested(db, recovery_run_id):
+                raise RecoveryCancelled("Recovery cancelled by request.")
+            repaired = repair_deferred_internal_links(storage, content_root, title_maps, language)
+            repaired_total += len(repaired)
+            for document in documents:
+                repaired_document = repaired.get(int(document["id"]))
+                if repaired_document:
+                    document["digest"], document["text"] = repaired_document
+            atomic_write_text(
+                content_root / "search" / f"{language}.json",
+                json.dumps(documents, ensure_ascii=False, separators=(",", ":")) + "\n",
+            )
+            if repaired:
+                db.event(
+                    recovery_run_id,
+                    f"{language}: repaired deferred internal links in {len(repaired)} pages.",
+                    language=language,
+                    pages_repaired=len(repaired),
+                )
+        db.event(
+            recovery_run_id,
+            f"Repaired deferred internal links in {repaired_total} recovered pages.",
+            pages_repaired=repaired_total,
+        )
+
         asset_count = _link_referenced_assets(storage, content_root, page_paths)
+        if cancellation_requested(db, recovery_run_id):
+            raise RecoveryCancelled("Recovery cancelled by request.")
         db.event(recovery_run_id, f"Restored {asset_count} referenced asset blobs.", assets=asset_count)
         expected_pages = sum(len(pages) for pages in pages_by_language.values())
         db.event(
@@ -184,6 +230,8 @@ def recover_failed_run(settings: Settings, db: Database, recovery_run_id: int, s
         )
 
         def validation_progress(processed: int, expected: int) -> None:
+            if cancellation_requested(db, recovery_run_id):
+                raise RecoveryCancelled("Recovery cancelled by request.")
             if processed % 1000 == 0 or processed == expected:
                 db.event(
                     recovery_run_id,

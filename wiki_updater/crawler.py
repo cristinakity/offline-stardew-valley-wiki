@@ -491,6 +491,42 @@ def atomic_write_text(path: Path, content: str) -> None:
     temporary.replace(path)
 
 
+def repair_deferred_internal_links(
+    storage: Storage,
+    content_root: Path,
+    title_maps: dict[str, dict[str, int]],
+    language: str,
+) -> dict[int, tuple[str, str]]:
+    """Resolve links previously marked missing by a smaller base snapshot."""
+    repaired: dict[int, tuple[str, str]] = {}
+    for page_path in (content_root / language / "pages").glob("*.html"):
+        source = page_path.read_bytes()
+        if b'data-offline-link-status="missing"' not in source:
+            continue
+        soup = BeautifulSoup(source, "html.parser")
+        changed = False
+        for anchor in soup.select('a[data-offline-link-status="missing"][data-missing-local-title]'):
+            target_language = str(anchor.get("data-missing-local-language", language))
+            title = str(anchor.get("data-missing-local-title", ""))
+            target_id = title_maps.get(target_language, {}).get(title_key(title))
+            if not target_id:
+                continue
+            anchor["href"] = f"../../{target_language}/pages/{target_id}.html"
+            for attribute in (
+                "data-missing-local-title",
+                "data-missing-local-language",
+                "data-offline-link-status",
+            ):
+                anchor.attrs.pop(attribute, None)
+            changed = True
+        if changed:
+            normalized = str(soup).encode("utf-8")
+            digest, blob, _created = storage.put_blob(normalized, ".html")
+            storage.link_blob(blob, page_path)
+            repaired[int(page_path.stem)] = (digest, searchable_text(normalized))
+    return repaired
+
+
 async def synchronize(settings: Settings, db: Database, run_id: int, profile: str) -> tuple[str, dict[str, Any]]:
     storage = Storage(settings)
     storage.ensure_capacity()
@@ -628,6 +664,25 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
                     task.cancel()
                 await asyncio.gather(*page_tasks, return_exceptions=True)
                 raise
+            repaired_links = repair_deferred_internal_links(
+                storage,
+                content_root,
+                title_maps,
+                language,
+            )
+            for page_id, (digest, search_text) in repaired_links.items():
+                updated_digests[page_id] = digest
+                page = next(item for item in pages if int(item["pageid"]) == page_id)
+                page["search_text"] = search_text
+            repaired_existing = len(set(repaired_links) - {int(page["pageid"]) for page in pages_to_process})
+            if repaired_links:
+                written += repaired_existing
+                db.event(
+                    run_id,
+                    f"{language}: repaired deferred links in {len(repaired_links)} pages.",
+                    language=language,
+                    pages_repaired=len(repaired_links),
+                )
             search_documents = [
                 {
                     "id": int(page["pageid"]),

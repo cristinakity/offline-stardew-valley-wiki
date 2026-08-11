@@ -67,6 +67,40 @@ function shellAssets() {
   };
 }
 
+function readerStatePath() {
+  return path.join(app.getPath('userData'), 'reader-state.json');
+}
+
+function validReaderState(value) {
+  if (!value || typeof value !== 'object') return null;
+  if (!/^[a-z]{2}$/.test(value.language || '')) return null;
+  const pageId = Number(value.pageId);
+  return {
+    language: value.language,
+    pageId: Number.isSafeInteger(pageId) && pageId > 0 ? pageId : null,
+    title: typeof value.title === 'string' ? value.title.slice(0, 500) : '',
+  };
+}
+
+function loadReaderState() {
+  try {
+    return validReaderState(JSON.parse(fs.readFileSync(readerStatePath(), 'utf8')));
+  } catch {
+    return null;
+  }
+}
+
+function saveReaderState(value) {
+  const state = validReaderState(value);
+  if (!state) throw new Error('Invalid reader state.');
+  const target = readerStatePath();
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  const temporary = `${target}.tmp`;
+  fs.writeFileSync(temporary, `${JSON.stringify(state, null, 2)}\n`, 'utf8');
+  fs.renameSync(temporary, target);
+  return state;
+}
+
 function registerContentApi() {
   ipcMain.handle('wiki:shell-assets', () => shellAssets());
   ipcMain.handle('wiki:available', () => {
@@ -104,6 +138,8 @@ function registerContentApi() {
     if (!['https:', 'http:'].includes(parsed.protocol)) throw new Error('Unsupported external URL.');
     return shell.openExternal(parsed.href);
   });
+  ipcMain.handle('wiki:load-reader-state', () => loadReaderState());
+  ipcMain.handle('wiki:save-reader-state', (_event, value) => saveReaderState(value));
 }
 
 function createWindow() {

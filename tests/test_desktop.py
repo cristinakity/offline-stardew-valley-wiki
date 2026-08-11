@@ -67,3 +67,24 @@ def test_desktop_filters_search_entries_without_local_pages() -> None:
     main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
     assert "indexedDocuments.filter" in main
     assert "ignored ${removed} entries without a local page" in main
+
+
+def test_desktop_remembers_language_and_last_page() -> None:
+    main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
+    preload = (ROOT / "desktop" / "preload.js").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    assert "reader-state.json" in main
+    assert "wiki:load-reader-state" in main
+    assert "wiki:save-reader-state" in main
+    assert "loadReaderState" in preload
+    assert "saveReaderState" in preload
+    assert "rememberDocument" in renderer
+    assert "saved?.language || 'en'" in renderer
+
+
+def test_desktop_resolves_deferred_links_and_language_equivalents() -> None:
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    assert "openKnownTitle" in renderer
+    assert "status !== 'excluded'" in renderer
+    assert "translationFor" in renderer
+    assert "anchor.getAttribute('hreflang') === language" in renderer

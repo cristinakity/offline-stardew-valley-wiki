@@ -9,7 +9,7 @@ from .config import get_settings
 from .crawler import synchronize
 from .database import Database, utcnow
 from .jobs import finish
-from .recovery import recover_failed_run
+from .recovery import RecoveryCancelled, recover_failed_run
 from .snapshot_import import import_snapshot
 from .worker import run_worker
 
@@ -74,6 +74,9 @@ def main() -> None:
             snapshot_id, manifest = recover_failed_run(settings, db, run_id, args.run_id)
             finish(db, run_id, "completed_with_warnings", snapshot_id=snapshot_id, summary=manifest)
             print(json.dumps({"run_id": run_id, "snapshot_id": snapshot_id, "manifest": manifest}, indent=2))
+        except RecoveryCancelled:
+            finish(db, run_id, "cancelled")
+            print(json.dumps({"run_id": run_id, "status": "cancelled"}, indent=2))
         except Exception as exc:
             finish(db, run_id, "failed", error=str(exc))
             raise

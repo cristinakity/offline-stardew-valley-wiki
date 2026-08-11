@@ -24,15 +24,54 @@ class Storage:
         return self.settings.data_dir / "blobs"
 
     def usage_bytes(self) -> int:
+        """Return allocated bytes once per inode, so hard links are not double-counted."""
         total = 0
+        seen: set[tuple[int, int]] = set()
         for root, _dirs, files in os.walk(self.settings.data_dir):
             for name in files:
                 path = Path(root) / name
                 try:
-                    total += path.stat().st_size
+                    stat = path.stat()
                 except FileNotFoundError:
-                    pass
+                    continue
+                inode = (stat.st_dev, stat.st_ino)
+                if inode in seen:
+                    continue
+                seen.add(inode)
+                total += stat.st_blocks * 512
         return total
+
+    @staticmethod
+    def directory_usage(path: Path) -> dict[str, int]:
+        allocated = logical = files = 0
+        seen: set[tuple[int, int]] = set()
+        if not path.exists():
+            return {"allocated_bytes": 0, "logical_bytes": 0, "files": 0}
+        for root, _dirs, names in os.walk(path):
+            for name in names:
+                item = Path(root) / name
+                try:
+                    stat = item.stat()
+                except FileNotFoundError:
+                    continue
+                inode = (stat.st_dev, stat.st_ino)
+                if inode in seen:
+                    continue
+                seen.add(inode)
+                allocated += stat.st_blocks * 512
+                logical += stat.st_size
+                files += 1
+        return {"allocated_bytes": allocated, "logical_bytes": logical, "files": files}
+
+    def usage_breakdown(self) -> dict[str, Any]:
+        categories = ("blobs", "snapshots", "candidates", "builds", "work", "logs", "backups")
+        return {
+            "physical_bytes": self.usage_bytes(),
+            "categories": {
+                name: self.directory_usage(self.settings.data_dir / name)
+                for name in categories
+            },
+        }
 
     def ensure_capacity(self, estimated_extra: int = 0) -> None:
         usage = self.usage_bytes()
@@ -127,3 +166,32 @@ class Storage:
                     prefix.rmdir()
                 except OSError:
                     pass
+
+    def purge_work(self) -> None:
+        work = self.settings.data_dir / "work"
+        for item in work.iterdir():
+            if item.is_dir() and not item.is_symlink():
+                shutil.rmtree(item)
+            else:
+                item.unlink(missing_ok=True)
+
+    def purge_builds(self) -> None:
+        builds = self.settings.data_dir / "builds"
+        for item in builds.iterdir():
+            if item.is_dir() and not item.is_symlink():
+                shutil.rmtree(item)
+            else:
+                item.unlink(missing_ok=True)
+
+    def keep_current_snapshot_only(self) -> int:
+        current = self.current()
+        if not current:
+            raise RuntimeError("There is no current snapshot to preserve.")
+        current_id = str(current["snapshot_id"])
+        deleted = 0
+        for snapshot in (self.settings.data_dir / "snapshots").iterdir():
+            if snapshot.is_dir() and not snapshot.is_symlink() and snapshot.name != current_id:
+                shutil.rmtree(snapshot)
+                deleted += 1
+        self.prune_unreferenced_blobs()
+        return deleted

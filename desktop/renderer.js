@@ -14,6 +14,7 @@ let documents = [];
 let documentsById = new Map();
 let searchIndex;
 let currentLanguage = 'en';
+let currentDocument = null;
 let noticeTimer;
 const unavailableMessages = {
   en: title => `“${title}” is not available in the offline version.`,
@@ -65,19 +66,52 @@ for (const [code, name] of languages) {
   image.alt = name;
   button.appendChild(image);
   button.setAttribute('aria-label', name);
-  button.addEventListener('click', () => loadLanguage(code));
+  button.addEventListener('click', () => switchLanguage(code));
   document.querySelector('#languages').appendChild(button);
 }
 
-async function openDocument(document) {
-  frame.src = await window.offlineWiki.pageUrl(document.url);
+function normalizedTitle(value) {
+  return String(value || '').replaceAll('_', ' ').replace(/\s+/gu, ' ').trim().toLocaleLowerCase();
+}
+
+function documentByTitle(title) {
+  const wanted = normalizedTitle(title);
+  return documents.find(item => normalizedTitle(item.title) === wanted);
+}
+
+function pageIdentity(url) {
+  try {
+    const path = decodeURIComponent(new URL(url).pathname);
+    const match = path.match(/\/([a-z]{2})\/pages\/(\d+)\.html$/u);
+    return match ? { language: match[1], pageId: Number(match[2]) } : null;
+  } catch {
+    return null;
+  }
+}
+
+async function rememberDocument(item) {
+  currentDocument = item;
+  try {
+    await window.offlineWiki.saveReaderState({
+      language: currentLanguage,
+      pageId: Number(item.id),
+      title: item.title,
+    });
+  } catch (error) {
+    console.warn('Unable to save reader position:', error);
+  }
+}
+
+async function openDocument(item) {
+  frame.src = await window.offlineWiki.pageUrl(item.url);
+  await rememberDocument(item);
   frame.hidden = false;
   empty.hidden = true;
   searchPage.hidden = true;
   results.style.display = 'none';
 }
 
-async function loadLanguage(code) {
+async function loadLanguage(code, requested = null) {
   try {
     currentLanguage = code;
     documents = (await window.offlineWiki.loadIndex(code)).map(document => ({
@@ -93,13 +127,57 @@ async function loadLanguage(code) {
       button.setAttribute('aria-pressed', String(button.dataset.language === code));
     }
     const home = documents.find(item => item.home) || documents.find(item => item.title === 'Stardew Valley Wiki') || documents[0];
-    empty.querySelector('p').textContent = home ? `Opening ${home.title}…` : 'This language has no downloaded pages.';
-    if (home) await openDocument(home);
+    const requestedPage = requested && (
+      documentsById.get(String(requested.pageId || '')) || documentByTitle(requested.title)
+    );
+    const target = requestedPage || home;
+    empty.querySelector('p').textContent = target ? `Opening ${target.title}…` : 'This language has no downloaded pages.';
+    if (target) await openDocument(target);
+    if (requested && !requestedPage && requested.title) {
+      showNotice(offlineLinkMessage(requested.title, code, 'missing'));
+    }
   } catch (error) {
     frame.hidden = true;
     empty.hidden = false;
     empty.querySelector('p').textContent = error.message;
   }
+}
+
+function translationFor(language) {
+  try {
+    const anchors = [...frame.contentDocument.querySelectorAll('a')];
+    const translated = anchors.find(anchor => {
+      const title = anchor.getAttribute('title') || '';
+      return anchor.dataset.missingLocalLanguage === language
+        || anchor.getAttribute('hreflang') === language
+        || (anchor.classList.contains('extiw') && title.toLocaleLowerCase().startsWith(`${language}:`));
+    });
+    if (!translated) return null;
+    const identity = pageIdentity(translated.href);
+    if (identity?.language === language) return identity;
+    const title = translated.dataset.missingLocalTitle
+      || (translated.getAttribute('title') || '').replace(new RegExp(`^${language}:`, 'iu'), '');
+    return title ? { language, title } : null;
+  } catch {
+    return null;
+  }
+}
+
+async function switchLanguage(code) {
+  if (code === currentLanguage) return;
+  const requested = translationFor(code) || (currentDocument ? { title: currentDocument.title } : null);
+  await loadLanguage(code, requested);
+}
+
+async function openKnownTitle(title, language) {
+  if (language !== currentLanguage) {
+    await loadLanguage(language, { title });
+    return currentDocument && normalizedTitle(currentDocument.title) === normalizedTitle(title);
+  }
+  const target = documentByTitle(title);
+  if (!target) return false;
+  await openDocument(target);
+  return true;
 }
 
 function matchingTerms(query) {
@@ -187,8 +265,17 @@ function showTitleSuggestions() {
   results.style.display = matches.length ? 'block' : 'none';
 }
 
-frame.addEventListener('load', () => {
+frame.addEventListener('load', async () => {
   try {
+    const identity = pageIdentity(frame.contentWindow.location.href);
+    if (identity && identity.language !== currentLanguage) {
+      await loadLanguage(identity.language, identity);
+      return;
+    }
+    if (identity) {
+      const loaded = documentsById.get(String(identity.pageId));
+      if (loaded) await rememberDocument(loaded);
+    }
     for (const anchor of frame.contentDocument.querySelectorAll('a[data-missing-local-title]')) {
       const language = anchor.dataset.missingLocalLanguage || currentLanguage;
       anchor.title = offlineLinkMessage(
@@ -203,11 +290,17 @@ frame.addEventListener('load', () => {
       if (missing) {
         event.preventDefault();
         const language = missing.dataset.missingLocalLanguage || currentLanguage;
-        showNotice(offlineLinkMessage(
-          missing.dataset.missingLocalTitle,
-          language,
-          missing.dataset.offlineLinkStatus,
-        ));
+        const title = missing.dataset.missingLocalTitle;
+        const status = missing.dataset.offlineLinkStatus;
+        if (status !== 'excluded') {
+          openKnownTitle(title, language)
+            .then(opened => {
+              if (!opened) showNotice(offlineLinkMessage(title, language, status));
+            })
+            .catch(() => showNotice(offlineLinkMessage(title, language, status)));
+        } else {
+          showNotice(offlineLinkMessage(title, language, status));
+        }
         return;
       }
       const external = element?.closest('a[data-external-url]');
@@ -243,8 +336,10 @@ document.querySelector('#home').addEventListener('click', () => loadLanguage(cur
     }
     empty.querySelector('p').textContent = 'Checking .local-data/current.json…';
     if (await window.offlineWiki.available()) {
-      empty.querySelector('p').textContent = 'Loading the English search index…';
-      await loadLanguage('en');
+      const saved = await window.offlineWiki.loadReaderState();
+      const language = saved?.language || 'en';
+      empty.querySelector('p').textContent = `Loading the ${language.toUpperCase()} search index…`;
+      await loadLanguage(language, saved);
     } else {
       empty.querySelector('h1').textContent = 'No local snapshot found';
       empty.querySelector('p').textContent = 'Run the Podman fixture, sample or full synchronization first.';

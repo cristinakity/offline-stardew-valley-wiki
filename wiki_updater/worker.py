@@ -11,7 +11,7 @@ from .config import Settings
 from .crawler import synchronize
 from .database import Database
 from .jobs import claim_next, enqueue, finish
-from .recovery import recover_failed_run
+from .recovery import RecoveryCancelled, recover_failed_run
 
 
 def schedule_job(db: Database, kind: str, profile: str) -> None:
@@ -47,6 +47,8 @@ async def process(db: Database, settings: Settings, run: dict[str, object]) -> N
         status = "completed_with_warnings" if manifest.get("warnings") else "completed"
         finish(db, run_id, status, snapshot_id=snapshot_id, summary=manifest)
     except asyncio.CancelledError:
+        finish(db, run_id, "cancelled")
+    except RecoveryCancelled:
         finish(db, run_id, "cancelled")
     except Exception as exc:
         finish(db, run_id, "failed", error=str(exc))
