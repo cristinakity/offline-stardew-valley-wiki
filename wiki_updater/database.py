@@ -66,6 +66,33 @@ CREATE TABLE IF NOT EXISTS candidates (
     error TEXT
 );
 
+CREATE TABLE IF NOT EXISTS build_jobs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    candidate_id INTEGER REFERENCES candidates(id) ON DELETE SET NULL,
+    version TEXT NOT NULL,
+    snapshot_id TEXT NOT NULL,
+    edition TEXT NOT NULL,
+    platform TEXT NOT NULL,
+    status TEXT NOT NULL,
+    requested_by TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    started_at TEXT,
+    finished_at TEXT,
+    source_archive TEXT NOT NULL,
+    output_directory TEXT,
+    progress_current INTEGER NOT NULL DEFAULT 0,
+    progress_total INTEGER NOT NULL DEFAULT 1,
+    error TEXT
+);
+
+CREATE TABLE IF NOT EXISTS build_events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    build_job_id INTEGER NOT NULL REFERENCES build_jobs(id) ON DELETE CASCADE,
+    created_at TEXT NOT NULL,
+    level TEXT NOT NULL,
+    message TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS settings (
     key TEXT PRIMARY KEY,
     value_json TEXT NOT NULL,
@@ -139,6 +166,12 @@ class Database:
         self.execute(
             "INSERT INTO run_events(run_id,created_at,level,message,detail_json) VALUES(?,?,?,?,?)",
             (run_id, utcnow(), level, message, json.dumps(detail, ensure_ascii=False, sort_keys=True)),
+        )
+
+    def build_event(self, build_job_id: int, message: str, level: str = "info") -> None:
+        self.execute(
+            "INSERT INTO build_events(build_job_id,created_at,level,message) VALUES(?,?,?,?)",
+            (build_job_id, utcnow(), level, message),
         )
 
     def audit(self, actor: str, action: str, target: str | None = None, **detail: Any) -> None:

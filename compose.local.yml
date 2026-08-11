@@ -22,3 +22,8 @@ services:
       - ./:/workspace:z
       - ./.local-data:/data:z
       - updater_builder_node_modules:/workspace/node_modules
+
+  builder-worker:
+    user: "0:0"
+    volumes:
+      - ./.local-data:/data:z

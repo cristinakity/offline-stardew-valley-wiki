@@ -50,6 +50,21 @@ services:
       - updater_data:/data
       - updater_builder_node_modules:/workspace/node_modules:U
 
+  builder-worker:
+    pull_policy: always
+    environment:
+      APP_ENV: production
+      BIND_HOST: 0.0.0.0
+      STORAGE_LIMIT_GB: "15"
+      MIN_FREE_GB: "3"
+      GITHUB_OAUTH_CLIENT_ID: ${GITHUB_OAUTH_CLIENT_ID:?GITHUB_OAUTH_CLIENT_ID is required}
+      GITHUB_OAUTH_CLIENT_SECRET: ${GITHUB_OAUTH_CLIENT_SECRET:?GITHUB_OAUTH_CLIENT_SECRET is required}
+      SESSION_SECRET: ${SESSION_SECRET:?SESSION_SECRET is required}
+    volumes:
+      - updater_data:/data:U
+    networks:
+      - production_shared
+
 volumes:
   updater_data:
     name: offline_stardew_wiki_updater_data

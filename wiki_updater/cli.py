@@ -5,6 +5,7 @@ import asyncio
 import json
 
 from .candidates import create_candidate
+from .builds import run_build_worker
 from .config import get_settings
 from .crawler import synchronize
 from .database import Database, utcnow
@@ -26,6 +27,7 @@ def parser() -> argparse.ArgumentParser:
     recover = commands.add_parser("recover", help="Recover a structurally valid failed run from retained blobs")
     recover.add_argument("--run-id", type=int, required=True)
     commands.add_parser("worker", help="Run scheduler and queued jobs")
+    commands.add_parser("build-worker", help="Run queued candidate package builds")
     commands.add_parser("production", help="Run dashboard and worker in one production container")
     commands.add_parser("doctor", help="Print local configuration and storage information")
     return root
@@ -57,6 +59,8 @@ def main() -> None:
     db = Database(settings)
     if args.command == "worker":
         asyncio.run(run_worker(settings, db))
+    elif args.command == "build-worker":
+        asyncio.run(run_build_worker(settings, db))
     elif args.command == "sync":
         asyncio.run(foreground_sync(args.profile))
     elif args.command == "candidate":

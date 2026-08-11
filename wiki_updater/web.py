@@ -14,6 +14,7 @@ from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Redirect
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import __version__
+from .builds import build_job, enqueue_build, enqueue_rebuild, list_build_jobs
 from .candidates import candidate, create_candidate, delete_candidate, set_candidate_status
 from .config import LANGUAGES, get_settings
 from .database import Database
@@ -33,7 +34,7 @@ app.add_middleware(
     max_age=8 * 60 * 60,
 )
 
-BUILD_ID_RE = re.compile(r"^\d{8}T\d{6}Z$")
+BUILD_ID_RE = re.compile(r"^(?:\d{8}T\d{6}Z|job-\d{6})$")
 BUILD_ASSET_SUFFIXES = {".zip", ".deb", ".rpm"}
 
 
@@ -268,26 +269,62 @@ def candidates() -> list[dict[str, Any]]:
 
 @app.get("/api/builds")
 def local_builds(limit: int = 20) -> list[dict[str, Any]]:
-    return list_local_builds(settings.data_dir, limit)
+    jobs = list_build_jobs(db, limit)
+    known_directories = {
+        Path(str(job["output_directory"])).name
+        for job in jobs if job.get("output_directory")
+    }
+    legacy = [
+        {**item, "legacy": True, "status": "legacy", "events": []}
+        for item in list_local_builds(settings.data_dir, limit)
+        if item["id"] not in known_directories
+    ]
+    return [{**job, "legacy": False} for job in jobs] + legacy
 
 
 @app.get("/api/builds/{build_id}/{asset_name}")
 def local_build_asset(build_id: str, asset_name: str) -> FileResponse:
     if not BUILD_ID_RE.fullmatch(build_id) or Path(asset_name).name != asset_name:
         raise HTTPException(404, "Build asset not found.")
-    available = {
-        asset["name"]
-        for build in list_local_builds(settings.data_dir, 100)
-        if build["id"] == build_id
-        for asset in build["assets"]
-    }
-    if asset_name not in available:
-        raise HTTPException(404, "Build asset not found.")
     builds_root = (settings.data_dir / "builds").resolve()
     target = (builds_root / build_id / asset_name).resolve()
-    if target.parent.parent != builds_root or not target.is_file():
+    if (
+        target.parent.parent != builds_root
+        or not target.is_file()
+        or target.is_symlink()
+        or not (target.suffix.casefold() in BUILD_ASSET_SUFFIXES or target.name == "SHA256SUMS")
+    ):
         raise HTTPException(404, "Build asset not found.")
     return FileResponse(target, filename=asset_name)
+
+
+@app.post("/api/candidates/{candidate_id}/builds")
+async def make_candidate_build(candidate_id: int, request: Request) -> dict[str, Any]:
+    payload = await request.json()
+    try:
+        job_id = enqueue_build(
+            db,
+            candidate_id,
+            str(payload.get("edition", "multilingual")),
+            str(payload.get("platform", "linux")),
+            actor(request),
+        )
+    except KeyError as exc:
+        raise HTTPException(404, "Candidate not found.") from exc
+    except (ValueError, RuntimeError) as exc:
+        raise HTTPException(409, str(exc)) from exc
+    return build_job(db, job_id) or {}
+
+
+@app.post("/api/builds/{job_id}/rebuild")
+def rebuild_candidate(job_id: int, request: Request) -> dict[str, Any]:
+    try:
+        rebuild_id = enqueue_rebuild(db, job_id, actor(request))
+    except KeyError as exc:
+        raise HTTPException(404, "Build not found.") from exc
+    except RuntimeError as exc:
+        raise HTTPException(409, str(exc)) from exc
+    return build_job(db, rebuild_id) or {}
 
 
 @app.post("/api/candidates")
@@ -435,6 +472,7 @@ button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px s
 .tabbar{position:sticky;top:0;z-index:20;display:flex;gap:6px;overflow-x:auto;margin:0 -24px 18px;padding:10px 24px;background:rgba(9,21,40,.97);border-block:1px solid var(--line);scrollbar-width:thin}.tabbar button{flex:0 0 auto;background:transparent;border-color:transparent;color:var(--muted)}.tabbar button:hover{background:#172d49;color:var(--text)}.tabbar button[aria-selected="true"]{background:#1767a6;color:white}.tabbar .refresh-button{margin-left:auto;color:#cfe8ff;border-color:var(--line)}.tabbar .refresh-button:disabled{opacity:.55;cursor:wait}.tabbar .help-button{min-width:42px;font-weight:800}.tab-panel{display:none}.tab-panel.active{display:block}.table-scroll,.list-scroll,.audit-scroll{max-height:min(65vh,620px);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;border:1px solid var(--line);border-radius:8px}.table-scroll table{min-width:760px}.table-scroll.compact{max-height:310px}.list-scroll{padding:12px}.list-scroll>.card:last-child{margin-bottom:0}.audit-scroll{margin:0;padding:14px;background:#07111f;min-height:180px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.section-heading h2{margin:0}.tab-hint{color:var(--muted);margin-top:0}@media(max-width:700px){.tabbar{margin-inline:-14px;padding-inline:14px}.tabbar .refresh-button{margin-left:0}.topbar h1{font-size:24px}}
 .selected-run td{background:rgba(23,103,166,.22)}.run-link[aria-current="true"]{color:#fff;font-weight:700;text-decoration-thickness:2px}
 .build-card.latest{border-color:#3d9fd9;box-shadow:inset 3px 0 #3d9fd9}.build-assets{margin:.7rem 0;line-height:1.65}.edition-pill{display:inline-block;margin:2px 3px 2px 0;padding:2px 7px;border-radius:999px;background:#254968;color:#cfe8ff;text-transform:uppercase;font-size:12px}
+.build-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:5px 14px;margin:.65rem 0;color:#c4d5ea}.build-log{max-height:170px;overflow:auto;margin:.7rem 0;padding:9px;background:#07111f;border:1px solid var(--line);border-radius:7px;font:12px ui-monospace,monospace;white-space:pre-wrap}.build-controls{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
 </style></head><body><main>
 <div class="topbar"><div><h1>Offline Stardew Valley Wiki Updater</h1><p>Local-first synchronization, validation and release candidates.</p></div><span class="crawler-version">Crawler v__UPDATER_VERSION__</span></div>
 <nav class="tabbar" aria-label="Secciones"><button type="button" data-tab="overview" aria-selected="true" onclick="showTab('overview')">Resumen</button><button type="button" data-tab="crawler" aria-selected="false" onclick="showTab('crawler')">Crawler</button><button type="button" data-tab="runs" aria-selected="false" onclick="showTab('runs')">Runs</button><button type="button" data-tab="candidates" aria-selected="false" onclick="showTab('candidates')">Candidatos</button><button type="button" data-tab="builds" aria-selected="false" onclick="showTab('builds')">Builds</button><button type="button" data-tab="storage" aria-selected="false" onclick="showTab('storage')">Almacenamiento</button><button type="button" data-tab="audit" aria-selected="false" onclick="showTab('audit')">Auditoría</button><button id="refreshButton" type="button" class="refresh-button" title="Actualizar únicamente esta sección" onclick="manualRefresh()">↻ Refresh</button><button type="button" class="help-button" data-tab="help" aria-selected="false" aria-label="Ayuda" title="Ayuda" onclick="showTab('help')">?</button></nav>
@@ -450,7 +488,7 @@ button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px s
 <div class="help-item"><h3>Recover failed full</h3><p>Si todas las páginas terminaron y sólo fallaron recursos opcionales, <b>Recover</b> reconstruye el snapshot desde los blobs locales y vuelve a validarlo sin descargar toda la wiki. El candidato quedará marcado con advertencias.</p></div>
 <div class="help-item"><h3>Pausar, continuar y cancelar</h3><p>En <b>Crawler</b>, <b>Pausar</b> termina las solicitudes que ya están en vuelo y se detiene antes de iniciar la siguiente. <b>Continuar</b> reanuda el mismo run y conserva su progreso. <b>Cancelar</b> descarta solamente el workspace incompleto; no reemplaza el snapshot aprobado.</p></div>
 <div class="help-item"><h3>Runs, Candidates y Audit</h3><p><b>Runs</b> conserva cada intento. Pulsa su ID para inspeccionarlo. <b>Candidates</b> contiene artefactos de revisión. <b>Audit</b> registra quién ejecutó o cambió algo.</p></div>
-<div class="help-item"><h3>Builds locales</h3><p>Muestra los ZIP, DEB y RPM generados en tu PC antes de enviarlos a GitHub. <code>WIKI_EDITION=all</code> genera la app multilingüe y una app ligera para cada uno de los 12 idiomas; también puedes construir sólo uno, por ejemplo <code>WIKI_EDITION=ja</code>. El build más reciente aparece primero. Descargar un archivo desde aquí no lo publica.</p></div>
+<div class="help-item"><h3>Builds por candidato</h3><p>En <b>Candidates</b>, selecciona una edición y pulsa <b>Generate builds</b>. Un worker separado extrae el <code>.tar.zst</code> inmutable de ese candidato y genera ZIP, DEB y RPM. <b>All editions</b> produce la multilingüe y las 12 individuales. <b>Rebuild</b> repite exactamente la fuente y parámetros de un job terminado sin sobrescribirlo.</p></div>
 <div class="help-item"><h3>Abrir la wiki</h3><p>Este panel sólo administra el crawler. Abre el lector desde el host con <code>env -u ELECTRON_RUN_AS_NODE npm start</code>. El contenido se lee desde <code>.local-data</code>.</p></div>
 </div></section></section>
 <section class="tab-panel active" data-panel="overview"><div class="grid"><section class="card"><h2>Status</h2><div id="status">Loading…</div></section>
@@ -466,6 +504,7 @@ button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px s
 <section id="tab-audit" class="tab-panel" data-panel="audit"><section class="card"><div class="section-heading"><h2>Audit history</h2><span class="muted">Últimos 25 eventos</span></div><pre id="audit" class="audit-scroll"></pre></section></section>
 </main><script>
 const langs=['en','es','de','fr','it','ja','ko','hu','pt','ru','tr','zh'];
+const buildEditions=['all','multilingual',...langs];
 const profileDescriptions={fixture:'Prueba controlada sin Internet: 2 páginas artificiales por idioma.',sample:'Prueba real rápida: portada + aproximadamente 24 páginas por idioma.',incremental:'Compara revisiones y procesa sólo cambios respecto al snapshot actual.',full:'Descarga y reconcilia todas las páginas de los idiomas habilitados.'};
 let selectedRunId=null;let activeTab='overview';let manualRefreshRunning=false;
 const validTabs=new Set(['overview','crawler','runs','candidates','builds','storage','audit','help']);
@@ -473,6 +512,8 @@ function showTab(name,refreshNow=true){if(!validTabs.has(name))name='overview';a
 async function api(url,options={}){const r=await fetch(url,{headers:{'Content-Type':'application/json'},...options});if(!r.ok)throw new Error((await r.json()).detail||r.statusText);return r.json()}
 function bytes(v){return(v/1024/1024/1024).toFixed(2)+' GiB'}
 function compactBytes(v){if(v>=1073741824)return(v/1073741824).toFixed(2)+' GiB';if(v>=1048576)return(v/1048576).toFixed(1)+' MiB';if(v>=1024)return(v/1024).toFixed(1)+' KiB';return v+' B'}
+function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function buildEditionOptions(){return buildEditions.map(edition=>`<option value="${edition}">${edition==='all'?'All — multilingual + 12 idiomas':edition==='multilingual'?'Multilingual':edition.toUpperCase()}</option>`).join('')}
 function showProfileHelp(){document.querySelector('#profileHelp').textContent=profileDescriptions[document.querySelector('#profile').value]}
 function activityControls(x){if(!['queued','running','paused'].includes(x.status))return'';if(x.cancel_requested)return'<div class="row"><button disabled>Cancelando de forma segura…</button></div>';const resume=x.status==='paused'||x.pause_requested;return`<div class="row">${x.kind!=='recovery'?`<button class="secondary" onclick="controlRun(${x.id},'${resume?'resume':'pause'}')">${resume?'Continuar':'Pausar'}</button>`:''}<button class="danger" onclick="cancelRun(${x.id})">Cancelar</button></div>`}
 function renderActivity(x){const ls=x.languages||[];const total=ls.reduce((n,l)=>n+l.pages_total,0);const written=ls.reduce((n,l)=>n+l.pages_written,0);const assets=ls.reduce((n,l)=>n+l.assets_written,0);const size=ls.reduce((n,l)=>n+l.bytes_written,0);const isRecovery=x.kind==='recovery';const validation=[...(x.events||[])].reverse().find(e=>e.detail?.phase==='validation');const restoredAssets=[...(x.events||[])].reverse().find(e=>Number.isFinite(e.detail?.assets));let percent=total?Math.round(written/total*100):0;if(isRecovery){const restoredPercent=total?written/total:0;percent=validation?50+Math.round((validation.detail.pages_checked||0)/(validation.detail.pages_total||total||1)*50):Math.round(restoredPercent*50)}const last=x.events?.at(-1);const displayedState=x.cancel_requested?'cancelling':x.pause_requested&&x.status==='running'?'pausing':x.status;document.querySelector('#activityTitle').textContent=`Run #${x.id} · ${x.profile} · ${last?.message||'sin eventos'}`;document.querySelector('#activityState').textContent=displayedState;document.querySelector('#activityState').className=`pill ${x.status==='completed'?'ok':x.status==='completed_with_warnings'?'warning':x.status==='failed'?'bad':''}`;
@@ -482,8 +523,8 @@ function renderSettings(conf){document.querySelector('#enabled').checked=conf.en
 async function refreshStatus(){renderStatus(await api('/api/status'))}
 async function refreshOverview(){const [s,conf]=await Promise.all([api('/api/status'),api('/api/settings')]);renderStatus(s);renderSettings(conf)}
 async function refreshRuns(){const r=await api('/api/runs');document.querySelector('#runs').innerHTML=r.map(x=>`<tr data-run-id="${x.id}" class="${selectedRunId===x.id?'selected-run':''}"><td><a class="run-link" aria-current="${selectedRunId===x.id?'true':'false'}" href="#" onclick="detail(${x.id});return false">${x.id}</a></td><td>${x.profile}</td><td>${x.cancel_requested?'cancelling':x.pause_requested&&x.status==='running'?'pausing':x.status}</td><td>${x.created_at}</td><td>${x.snapshot_id||''}</td><td>${['queued','running','paused'].includes(x.status)?activityControls(x):x.recoverable?`<button class="secondary" onclick="recoverRun(${x.id})">Recover</button>`:''}</td></tr>`).join('')}
-async function refreshCandidates(){const c=await api('/api/candidates');document.querySelector('#candidates').innerHTML=c.map(x=>`<div class="card"><b>${x.version}</b> <span class="pill ${x.status==='ready_with_warnings'?'warning':''}">${x.status}</span>${x.status==='ready_with_warnings'?'<p class="warning"><b>Advertencia:</b> el contenido pasó la validación offline, pero contiene recursos opcionales no disponibles.</p>':''}<br>${x.assets.map(a=>`<a href="/api/candidates/${x.id}/assets/${encodeURIComponent(a.name)}">${a.name}</a> (${compactBytes(a.size)})`).join('<br>')}<div class="row">${['ready_for_review','ready_with_warnings'].includes(x.status)?`<button onclick="candidateAction(${x.id},'publish','${x.status}')">${x.status==='ready_with_warnings'?'Publish with warnings':'Publish locally'}</button><button class="danger" onclick="candidateAction(${x.id},'reject','${x.status}')">Reject</button>`:''}<button class="danger" onclick="deleteCandidate(${x.id},'${x.version}')">Delete</button></div></div>`).join('')||'<small>No candidates yet.</small>'}
-async function refreshBuilds(){const builds=await api('/api/builds');document.querySelector('#builds').innerHTML=builds.map(build=>`<div class="card build-card ${build.latest?'latest':''}"><div><b>${build.id}</b> ${build.latest?'<span class="pill ok">Último build</span>':''}</div><div>${build.editions.map(edition=>`<span class="edition-pill">${edition}</span>`).join('')}</div><div class="build-assets">${build.assets.map(asset=>`<a href="/api/builds/${encodeURIComponent(build.id)}/${encodeURIComponent(asset.name)}">${asset.name}</a> (${compactBytes(asset.size)})`).join('<br>')}</div></div>`).join('')||'<small>Todavía no hay builds locales. Ejecuta <code>WIKI_EDITION=all ... run --rm linux-builder</code> para generar la edición multilingüe y las 12 ediciones individuales.</small>'}
+async function refreshCandidates(){const c=await api('/api/candidates');document.querySelector('#candidates').innerHTML=c.map(x=>`<div class="card"><b>${escapeHtml(x.version)}</b> <span class="pill ${x.status==='ready_with_warnings'?'warning':''}">${escapeHtml(x.status)}</span>${x.status==='ready_with_warnings'?'<p class="warning"><b>Advertencia:</b> el contenido pasó la validación offline, pero contiene recursos opcionales no disponibles.</p>':''}<br>${x.assets.map(a=>`<a href="/api/candidates/${x.id}/assets/${encodeURIComponent(a.name)}">${escapeHtml(a.name)}</a> (${compactBytes(a.size)})`).join('<br>')}<div class="build-controls"><b>Generar paquetes desde este candidato</b><div class="row"><label>Edición <select id="build-edition-${x.id}">${buildEditionOptions()}</select></label><label>Plataforma <select id="build-platform-${x.id}"><option value="linux">Linux — ZIP + DEB + RPM</option></select></label><button onclick="generateBuild(${x.id})">Generate builds</button></div><small>Se usará el archivo .tar.zst de ${escapeHtml(x.version)}, aunque el snapshot actual cambie después.</small></div><div class="row">${['ready_for_review','ready_with_warnings'].includes(x.status)?`<button onclick="candidateAction(${x.id},'publish','${x.status}')">${x.status==='ready_with_warnings'?'Publish with warnings':'Publish locally'}</button><button class="danger" onclick="candidateAction(${x.id},'reject','${x.status}')">Reject</button>`:''}<button class="danger" onclick="deleteCandidate(${x.id},'${escapeHtml(x.version)}')">Delete</button></div></div>`).join('')||'<small>No candidates yet.</small>'}
+async function refreshBuilds(){const builds=await api('/api/builds');document.querySelector('#builds').innerHTML=builds.map((build,index)=>{if(build.legacy)return`<div class="card build-card"><div><b>Legacy build ${escapeHtml(build.id)}</b> <span class="pill">legacy</span></div><div>${(build.editions||[]).map(edition=>`<span class="edition-pill">${escapeHtml(edition)}</span>`).join('')}</div><div class="build-assets">${build.assets.map(asset=>`<a href="/api/builds/${encodeURIComponent(build.id)}/${encodeURIComponent(asset.name)}">${escapeHtml(asset.name)}</a> (${compactBytes(asset.size)})`).join('<br>')}</div></div>`;const directory=build.output_directory?.split('/').at(-1);const percent=build.progress_total?Math.round(build.progress_current/build.progress_total*100):0;const events=(build.events||[]).map(event=>`${event.created_at} [${event.level}] ${event.message}`).join('\n');return`<div class="card build-card ${index===0?'latest':''}"><div><b>Build #${build.id} · ${escapeHtml(build.version)}</b> <span class="pill ${build.status==='completed'?'ok':build.status==='failed'?'bad':''}">${escapeHtml(build.status)}</span> ${index===0?'<span class="pill ok">Más reciente</span>':''}</div><div class="build-meta"><span>Candidato: <b>#${build.candidate_id??'eliminado'}</b></span><span>Snapshot: <b>${escapeHtml(build.snapshot_id)}</b></span><span>Edición: <b>${escapeHtml(build.edition)}</b></span><span>Plataforma: <b>${escapeHtml(build.platform)}</b></span><span>Creado: <b>${escapeHtml(build.created_at)}</b></span><span>Progreso: <b>${build.progress_current}/${build.progress_total}</b></span></div><progress class="progressbar" max="100" value="${percent}"></progress>${build.error?`<p class="bad"><b>Error:</b> ${escapeHtml(build.error)}</p>`:''}<div class="build-assets">${directory&&build.assets.length?build.assets.map(asset=>`<a href="/api/builds/${encodeURIComponent(directory)}/${encodeURIComponent(asset.name)}">${escapeHtml(asset.name)}</a> (${compactBytes(asset.size)})`).join('<br>'):'<small>Los artefactos aparecerán al terminar.</small>'}</div><details ${['queued','building','failed'].includes(build.status)?'open':''}><summary>Logs y eventos</summary><div class="build-log">${escapeHtml(events||'Todavía no hay eventos.')}</div></details>${['completed','failed'].includes(build.status)?`<button class="secondary" onclick="rebuildBuild(${build.id})">Rebuild</button>`:''}</div>`}).join('')||'<small>Todavía no hay builds. Genéralos desde un candidato.</small>'}
 async function refreshStorage(){const [s,space]=await Promise.all([api('/api/status'),api('/api/storage')]);document.querySelector('#storageSummary').innerHTML=`Uso físico real: <b>${compactBytes(space.physical_bytes)}</b> de ${bytes(s.storage_limit_bytes)}`;document.querySelector('#storageBreakdown').innerHTML=`<table><thead><tr><th>Categoría</th><th>Espacio asignado</th><th>Archivos</th></tr></thead><tbody>${Object.entries(space.categories).map(([name,value])=>`<tr><td>${name}</td><td>${compactBytes(value.allocated_bytes)}</td><td>${value.files}</td></tr>`).join('')}</tbody></table>`}
 async function refreshAudit(){const audit=await api('/api/audit?limit=25');document.querySelector('#audit').textContent=audit.map(x=>`${x.created_at} ${x.actor} ${x.action} ${x.target||''}`).join('\\n')}
 async function refreshCrawler(){const s=await api('/api/status');renderStatus(s);let activityId=selectedRunId||s.active_run?.id;if(!activityId){const r=await api('/api/runs');activityId=r[0]?.id}if(activityId){const activity=await api(`/api/runs/${activityId}`);if(selectedRunId===null||selectedRunId===activityId)renderActivity(activity)}}
@@ -495,6 +536,8 @@ async function controlRun(id,action){try{await api(`/api/runs/${id}/${action}`,{
 async function cancelRun(id){if(!confirm(`¿Cancelar el run #${id}? Se conservará el snapshot aprobado anterior.`))return;try{await api(`/api/runs/${id}/cancel`,{method:'POST'});selectedRunId=id;await refresh()}catch(e){alert(e)}}
 async function recoverRun(id){if(!confirm(`¿Recuperar el run #${id} desde los blobs locales? No volverá a descargar toda la wiki.`))return;try{const job=await api(`/api/runs/${id}/recover`,{method:'POST'});await detail(job.run_id)}catch(e){alert(e)}}
 async function createCandidate(){try{await api('/api/candidates',{method:'POST',body:JSON.stringify({version:document.querySelector('#version').value})});refresh()}catch(e){alert(e)}}
+async function generateBuild(candidateId){const edition=document.querySelector(`#build-edition-${candidateId}`).value;const platform=document.querySelector(`#build-platform-${candidateId}`).value;const description=edition==='all'?'la edición multilingüe y las 12 individuales':edition;if(!confirm(`¿Encolar ${description} para Linux desde este candidato?`))return;try{await api(`/api/candidates/${candidateId}/builds`,{method:'POST',body:JSON.stringify({edition,platform})});showTab('builds')}catch(e){alert(e)}}
+async function rebuildBuild(jobId){if(!confirm(`¿Repetir exactamente el build #${jobId}? Se conservarán sus artefactos actuales.`))return;try{await api(`/api/builds/${jobId}/rebuild`,{method:'POST'});await refreshBuilds()}catch(e){alert(e)}}
 async function candidateAction(id,action,status){const message=action==='publish'&&status==='ready_with_warnings'?'Este candidato pasó la validación offline, pero contiene recursos opcionales no disponibles. ¿Publicar localmente con advertencias?':`${action} candidate?`;if(!confirm(message))return;await api(`/api/candidates/${id}/${action}`,{method:'POST'});refresh()}
 async function deleteCandidate(id,version){if(!confirm(`¿Eliminar ${version}? Esta acción borrará permanentemente sus archivos locales. El snapshot y GitHub no se modificarán.`))return;try{await api(`/api/candidates/${id}`,{method:'DELETE'});refresh()}catch(e){alert(e)}}
 async function purgeStorage(target){const messages={cache:'Esto elimina temporales y blobs no referenciados. Los runs fallidos podrían dejar de ser recuperables. ¿Continuar?',builds:'Esto elimina ZIP, DEB y RPM generados localmente. Podrán reconstruirse. ¿Continuar?',old_snapshots:'Esto elimina todos los snapshots excepto el activo. No se puede deshacer. ¿Continuar?'};if(!confirm(messages[target]))return;try{const result=await api('/api/storage/purge',{method:'POST',body:JSON.stringify({target})});alert(`Purge complete: ${compactBytes(result.freed_bytes)} freed.`);refresh()}catch(e){alert(e)}}

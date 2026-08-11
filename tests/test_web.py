@@ -74,6 +74,16 @@ def test_candidate_assets_use_adaptive_file_sizes() -> None:
     assert "(a.size/1024/1024).toFixed(1)" not in DASHBOARD
 
 
+def test_candidate_build_queue_controls_are_manual_and_reproducible() -> None:
+    assert "Generate builds" in DASHBOARD
+    assert "All — multilingual + 12 idiomas" in DASHBOARD
+    assert "Linux — ZIP + DEB + RPM" in DASHBOARD
+    assert "async function generateBuild" in DASHBOARD
+    assert "async function rebuildBuild" in DASHBOARD
+    assert "Logs y eventos" in DASHBOARD
+    assert "progress_current" in DASHBOARD
+
+
 def test_dashboard_lists_builds_without_polling_them(tmp_path: Path) -> None:
     older = tmp_path / "builds" / "20260810T021704Z"
     latest = tmp_path / "builds" / "20260811T050000Z"

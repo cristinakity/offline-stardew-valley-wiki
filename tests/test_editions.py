@@ -16,6 +16,9 @@ def test_linux_builder_supports_full_and_every_language_edition() -> None:
     assert "prepare-edition.mjs" in builder
     assert "WIKI_EDITION: ${WIKI_EDITION:-multilingual}" in compose
     assert 'entrypoint: ["bash", "/workspace/scripts/build-linux.sh"]' in compose
+    assert 'candidate_archive="${CANDIDATE_ARCHIVE:-}"' in builder
+    assert 'tar --zstd -xf "$candidate_archive"' in builder
+    assert "current.json" not in builder
 
 
 def test_release_builds_multilingual_and_every_language() -> None:
@@ -33,3 +36,14 @@ def test_forge_gives_single_language_apps_distinct_identities() -> None:
     assert "const appSlug = `offline-stardew-valley-wiki${editionSuffix}`" in forge
     assert "const productName" in forge
     assert "WIKI_EDITION" in forge
+
+
+def test_compose_has_separate_persistent_builder_worker() -> None:
+    compose = (ROOT / "compose.yml").read_text(encoding="utf-8")
+    local = (ROOT / "compose.local.yml").read_text(encoding="utf-8")
+    production = (ROOT / "compose.production.yml").read_text(encoding="utf-8")
+    assert "builder-worker:" in compose
+    assert '["wiki-updater", "build-worker"]' in compose
+    assert "builder-worker:" in local
+    assert "builder-worker:" in production
+    assert "podman.sock" not in compose + local + production

@@ -50,7 +50,7 @@ services:
     build:
       context: .
       dockerfile: Containerfile.builder
-    image: localhost/offline-stardew-valley-wiki-builder:local
+    image: ${BUILDER_IMAGE:-localhost/offline-stardew-valley-wiki-builder:local}
     restart: "no"
     profiles: ["tools"]
     entrypoint: ["bash", "/workspace/scripts/build-linux.sh"]
@@ -58,6 +58,21 @@ services:
       DATA_DIR: /data
       BUILD_OUTPUT_DIR: /data/builds
       WIKI_EDITION: ${WIKI_EDITION:-multilingual}
+
+  builder-worker:
+    build:
+      context: .
+      dockerfile: Containerfile.builder
+    image: ${BUILDER_IMAGE:-localhost/offline-stardew-valley-wiki-builder:local}
+    restart: unless-stopped
+    command: ["wiki-updater", "build-worker"]
+    environment:
+      APP_ENV: ${APP_ENV:-local}
+      DATA_DIR: /data
+      DATABASE_PATH: /data/updater.sqlite3
+      BIND_HOST: ${BIND_HOST:-127.0.0.1}
+      STORAGE_LIMIT_GB: ${STORAGE_LIMIT_GB:-40}
+      MIN_FREE_GB: ${MIN_FREE_GB:-30}
 
 volumes:
   updater_builder_node_modules:
