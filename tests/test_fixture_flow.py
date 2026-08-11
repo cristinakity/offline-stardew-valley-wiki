@@ -45,8 +45,10 @@ def test_fixture_sync_and_candidate(tmp_path: Path) -> None:
     )
     assert all(document["text"] for document in search_documents)
 
-    candidate = create_candidate(settings, db, "v1.3.0", "pytest")
+    candidate = create_candidate(settings, db, "v1.3.0", "pytest", run_id=run_id)
     assert candidate["status"] == "ready_for_review"
+    assert candidate["run_id"] == run_id
+    assert candidate["manifest"]["profile"] == "fixture"
     assert {asset["name"] for asset in candidate["assets"]} >= {
         "content-lock.json", "validation-report.json", "SHA256SUMS"
     }

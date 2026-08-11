@@ -24,20 +24,37 @@ def file_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def create_candidate(settings: Settings, db: Database, version: str, actor: str) -> dict[str, Any]:
+def create_candidate(
+    settings: Settings,
+    db: Database,
+    version: str,
+    actor: str,
+    run_id: int | None = None,
+) -> dict[str, Any]:
     if not VERSION_RE.fullmatch(version):
         raise ValueError("Version must look like v1.3.0 or 1.3.0.")
     version = version if version.startswith("v") else f"v{version}"
     storage = Storage(settings)
-    current = storage.current()
-    if not current:
-        raise RuntimeError("A successful snapshot is required before creating a candidate.")
-    snapshot_id = current["snapshot_id"]
-    snapshot_dir = Path(current["path"])
+    if run_id is not None:
+        run = db.one("SELECT * FROM runs WHERE id=?", (run_id,))
+        if not run:
+            raise RuntimeError(f"Run #{run_id} does not exist.")
+        if run["status"] not in {"completed", "completed_with_warnings"} or not run.get("snapshot_id"):
+            raise RuntimeError(f"Run #{run_id} does not have a completed snapshot.")
+        snapshot_id = run["snapshot_id"]
+        snapshot_dir = settings.data_dir / "snapshots" / snapshot_id
+    else:
+        current = storage.current()
+        if not current:
+            raise RuntimeError("A successful snapshot is required before creating a candidate.")
+        snapshot_id = current["snapshot_id"]
+        snapshot_dir = Path(current["path"])
+        run = db.one("SELECT * FROM runs WHERE snapshot_id=? ORDER BY id DESC LIMIT 1", (snapshot_id,))
+        if not run:
+            raise RuntimeError("Snapshot does not have a matching run record.")
+    if not snapshot_dir.is_dir() or not (snapshot_dir / "manifest.json").is_file():
+        raise RuntimeError(f"The retained snapshot for run #{run['id']} is no longer available.")
     manifest = json.loads((snapshot_dir / "manifest.json").read_text(encoding="utf-8"))
-    run = db.one("SELECT id FROM runs WHERE snapshot_id=? ORDER BY id DESC LIMIT 1", (snapshot_id,))
-    if not run:
-        raise RuntimeError("Snapshot does not have a matching run record.")
 
     candidate_dir = settings.data_dir / "candidates" / version
     if candidate_dir.exists():
@@ -50,6 +67,8 @@ def create_candidate(settings: Settings, db: Database, version: str, actor: str)
         "snapshot_digest": manifest["digest"],
         "generated_at": manifest["generated_at"],
         "languages": manifest["languages"],
+        "profile": run["profile"],
+        "run_id": run["id"],
     }
     (candidate_dir / "content-lock.json").write_text(
         json.dumps(lock, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8"

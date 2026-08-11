@@ -36,6 +36,9 @@ def test_dashboard_explains_profiles_and_shows_crawler_activity() -> None:
     assert "Continuar" in DASHBOARD
     assert "Cancelar" in DASHBOARD
     assert "controlRun" in DASHBOARD
+    assert "Create candidate from this run" in DASHBOARD
+    assert "createCandidateFromRun" in DASHBOARD
+    assert "sample es sólo para pruebas" in DASHBOARD
 
 
 def test_dashboard_uses_tabs_and_bounded_scroll_regions() -> None:
