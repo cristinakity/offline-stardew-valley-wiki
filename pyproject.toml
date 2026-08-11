@@ -1,6 +1,6 @@
 [project]
 name = "offline-stardew-valley-wiki-updater"
-version = "0.1.0"
+version = "0.2.0"
 description = "Local-first MediaWiki synchronizer and release dashboard"
 requires-python = ">=3.13"
 dependencies = [
@@ -33,4 +33,3 @@ include = ["wiki_updater*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-

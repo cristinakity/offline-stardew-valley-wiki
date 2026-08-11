@@ -70,11 +70,12 @@ def create_candidate(settings: Settings, db: Database, version: str, actor: str)
     (candidate_dir / "SHA256SUMS").write_text("\n".join(checksums) + "\n", encoding="utf-8")
 
     now = utcnow()
+    candidate_status = "ready_with_warnings" if manifest.get("warnings") else "ready_for_review"
     candidate_id = db.execute(
         "INSERT INTO candidates(run_id,version,status,snapshot_id,created_at,updated_at,directory,manifest_json) "
         "VALUES(?,?,?,?,?,?,?,?)",
         (
-            run["id"], version, "ready_for_review", snapshot_id, now, now, str(candidate_dir),
+            run["id"], version, candidate_status, snapshot_id, now, now, str(candidate_dir),
             json.dumps(lock, ensure_ascii=False),
         ),
     )
@@ -96,7 +97,7 @@ def candidate(db: Database, candidate_id: int) -> dict[str, Any] | None:
 
 
 def set_candidate_status(settings: Settings, db: Database, candidate_id: int, status: str, actor: str) -> dict[str, Any]:
-    if status not in {"published", "rejected", "ready_for_review"}:
+    if status not in {"published", "rejected", "ready_for_review", "ready_with_warnings"}:
         raise ValueError(status)
     item = candidate(db, candidate_id)
     if not item:

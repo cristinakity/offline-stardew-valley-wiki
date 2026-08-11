@@ -21,3 +21,6 @@ def test_dashboard_explains_profiles_and_shows_crawler_activity() -> None:
     assert f"Crawler v{__version__}" in DASHBOARD
     assert "deleteCandidate" in DASHBOARD
     assert "El snapshot y GitHub no se modificarán" in DASHBOARD
+    assert "Recover failed full" in DASHBOARD
+    assert "recoverRun" in DASHBOARD
+    assert "Publish with warnings" in DASHBOARD

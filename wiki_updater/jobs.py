@@ -6,7 +6,10 @@ from typing import Any
 from .database import Database, utcnow
 
 
-TERMINAL_STATES = {"published", "rejected", "failed", "cancelled", "ready_for_review"}
+TERMINAL_STATES = {
+    "published", "rejected", "failed", "cancelled", "ready_for_review",
+    "ready_with_warnings", "completed_with_warnings",
+}
 
 
 def enqueue(db: Database, kind: str, profile: str, actor: str) -> int:
@@ -61,4 +64,3 @@ def request_cancel(db: Database, run_id: int, actor: str) -> None:
 def cancellation_requested(db: Database, run_id: int) -> bool:
     row = db.one("SELECT cancel_requested FROM runs WHERE id=?", (run_id,))
     return bool(row and row["cancel_requested"])
-

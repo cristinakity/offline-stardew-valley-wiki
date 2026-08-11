@@ -179,6 +179,24 @@ class Normalizer:
         self.stylesheet_cache: dict[str, Asset] = {}
         self.asset_locks: dict[str, asyncio.Lock] = {}
         self.stylesheet_locks: dict[str, asyncio.Lock] = {}
+        self.asset_failures: list[dict[str, Any]] = []
+
+    def record_asset_failure(
+        self,
+        language: str,
+        page: dict[str, Any] | None,
+        attribute: str,
+        url: str,
+        error: Exception,
+    ) -> None:
+        self.asset_failures.append({
+            "language": language,
+            "page_id": int(page["pageid"]) if page and page.get("pageid") is not None else None,
+            "page_title": str(page.get("title", "")) if page else None,
+            "attribute": attribute,
+            "url": self.absolute_asset_url(url, language) or url,
+            "error": str(error),
+        })
 
     def internal_reference(self, href: str, current_language: str) -> tuple[str, str, str] | None:
         """Classify a link as belonging to one of the Stardew Valley wikis.
@@ -293,7 +311,12 @@ class Normalizer:
             self.stylesheet_cache[absolute] = asset
             return asset
 
-    async def normalize(self, language: str, source: str) -> tuple[bytes, dict[str, int]]:
+    async def normalize(
+        self,
+        language: str,
+        source: str,
+        page: dict[str, Any] | None = None,
+    ) -> tuple[bytes, dict[str, int]]:
         soup = BeautifulSoup(source, "html.parser")
         for element in soup.select("script, iframe, form, object, embed, noscript"):
             element.decompose()
@@ -310,7 +333,8 @@ class Normalizer:
             try:
                 stylesheet = await self.stylesheet(href, language)
                 link["href"] = f"../../{stylesheet.relative_path}"
-            except (RuntimeError, httpx.HTTPError, ValueError):
+            except (RuntimeError, httpx.HTTPError, ValueError) as exc:
+                self.record_asset_failure(language, page, "stylesheet", href, exc)
                 link.decompose()
 
         # MediaWiki may omit site.styles from the rendered HTML even though it
@@ -325,7 +349,8 @@ class Normalizer:
                 site_styles = await self.stylesheet(site_styles_url, language)
                 site_link = soup.new_tag("link", rel="stylesheet", href=f"../../{site_styles.relative_path}")
                 (soup.head or soup).append(site_link)
-            except (RuntimeError, httpx.HTTPError, ValueError):
+            except (RuntimeError, httpx.HTTPError, ValueError) as exc:
+                self.record_asset_failure(language, page, "stylesheet", site_styles_url, exc)
                 # Validation still catches missing assets from stylesheets that
                 # were successfully downloaded; a wiki without site.styles can
                 # continue using its skin CSS.
@@ -352,8 +377,9 @@ class Normalizer:
                     asset_count += int(asset.created)
                     asset_bytes += asset.size if asset.created else 0
                     usable = True
-                except (RuntimeError, httpx.HTTPError, ValueError):
+                except (RuntimeError, httpx.HTTPError, ValueError) as exc:
                     asset_errors += 1
+                    self.record_asset_failure(language, page, "src", str(source), exc)
                     element.attrs.pop("src", None)
             element.attrs.pop("data-src", None)
 
@@ -369,8 +395,9 @@ class Normalizer:
                         asset_count += int(asset.created)
                         asset_bytes += asset.size if asset.created else 0
                         usable = True
-                    except (RuntimeError, httpx.HTTPError, ValueError):
+                    except (RuntimeError, httpx.HTTPError, ValueError) as exc:
                         asset_errors += 1
+                        self.record_asset_failure(language, page, "srcset", parts[0], exc)
                 if rewritten_sources:
                     element["srcset"] = ", ".join(rewritten_sources)
                 else:
@@ -569,7 +596,7 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
                         if is_fixture
                         else await client.rendered_page(language, str(page["title"]))
                     )
-                    normalized, stats = await normalizer.normalize(language, source)
+                    normalized, stats = await normalizer.normalize(language, source, page)
                     digest, blob, _created = storage.put_blob(normalized, ".html")
                     destination = content_root / language / "pages" / f"{page['pageid']}.html"
                     storage.link_blob(blob, destination)
@@ -643,12 +670,19 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
 
         validation = validate_content(content_root, pages_by_language)
         validation["asset_download_errors"] = sum(item["asset_errors"] for item in language_stats.values())
+        for failure in normalizer.asset_failures:
+            db.event(
+                run_id,
+                f"{failure['language']}: optional asset unavailable on {failure['page_title'] or 'unknown page'}.",
+                level="warning",
+                **failure,
+            )
         db.event(
             run_id,
             "Offline validation complete.",
             **validation,
         )
-        if any(validation[key] for key in ("broken_links", "missing_assets", "remote_resources", "asset_download_errors")):
+        if any(validation[key] for key in ("broken_links", "missing_assets", "remote_resources")):
             raise RuntimeError(f"Offline validation failed: {validation}")
         generated = datetime.now(timezone.utc)
         manifest = {
@@ -659,6 +693,14 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
             "http_concurrency": settings.http_concurrency,
             "languages": language_stats,
             "validation": validation,
+            "warnings": ([{
+                "code": "asset_download_errors",
+                "count": validation["asset_download_errors"],
+                "message": (
+                    f"{validation['asset_download_errors']} optional assets remained unavailable after automatic retries."
+                ),
+            }] if validation["asset_download_errors"] else []),
+            "asset_failures": normalizer.asset_failures,
         }
         digest = sha256_bytes(json.dumps(manifest, sort_keys=True).encode())
         snapshot_id = f"{generated:%Y%m%dT%H%M%SZ}-{digest[:12]}"

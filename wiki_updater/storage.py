@@ -74,7 +74,14 @@ class Storage:
 
     def current(self) -> dict[str, Any] | None:
         path = self.settings.data_dir / "current.json"
-        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+        if not path.exists():
+            return None
+        current = json.loads(path.read_text(encoding="utf-8"))
+        configured = Path(str(current.get("path", "")))
+        fallback = self.settings.data_dir / "snapshots" / str(current.get("snapshot_id", ""))
+        if not configured.is_dir() and fallback.is_dir():
+            current["path"] = str(fallback)
+        return current
 
     def promote(self, snapshot_id: str, work_content: Path, manifest: dict[str, Any]) -> Path:
         destination = self.settings.data_dir / "snapshots" / snapshot_id

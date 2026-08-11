@@ -17,6 +17,7 @@ from .candidates import candidate, create_candidate, delete_candidate, set_candi
 from .config import LANGUAGES, get_settings
 from .database import Database
 from .jobs import enqueue, request_cancel
+from .recovery import recoverable_failure
 from .storage import Storage
 
 
@@ -117,6 +118,7 @@ def health() -> dict[str, Any]:
 def decode_run(item: dict[str, Any]) -> dict[str, Any]:
     item["summary"] = json.loads(item.pop("summary_json", "{}"))
     item["cancel_requested"] = bool(item["cancel_requested"])
+    item["recoverable"] = recoverable_failure(item)
     return item
 
 
@@ -180,6 +182,21 @@ def cancel_run(run_id: int, request: Request) -> dict[str, str]:
     except KeyError as exc:
         raise HTTPException(404, "Run not found.") from exc
     return {"status": "cancellation_requested"}
+
+
+@app.post("/api/runs/{run_id}/recover")
+def recover_run(run_id: int, request: Request) -> dict[str, Any]:
+    source = db.one("SELECT * FROM runs WHERE id=?", (run_id,))
+    if not source:
+        raise HTTPException(404, "Run not found.")
+    if not recoverable_failure(source):
+        raise HTTPException(409, "This failed run is not safely recoverable.")
+    try:
+        recovery_run_id = enqueue(db, "recovery", f"recover-{run_id}", actor(request))
+    except RuntimeError as exc:
+        raise HTTPException(409, str(exc)) from exc
+    db.audit(actor(request), "run.recovery.enqueue", str(run_id), recovery_run_id=recovery_run_id)
+    return {"run_id": recovery_run_id, "source_run_id": run_id, "status": "queued"}
 
 
 @app.get("/api/candidates")
@@ -297,11 +314,11 @@ def audit_events(limit: int = 100) -> list[dict[str, Any]]:
 DASHBOARD = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Offline Wiki Updater</title><style>
-:root{color-scheme:dark;--bg:#091528;--card:#10243f;--line:#284565;--text:#e4efff;--muted:#9ab0c9;--good:#35c78a;--bad:#ff6b6b}
+:root{color-scheme:dark;--bg:#091528;--card:#10243f;--line:#284565;--text:#e4efff;--muted:#9ab0c9;--good:#35c78a;--bad:#ff6b6b;--warning:#f2bf5b}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px system-ui,sans-serif}main{max-width:1200px;margin:auto;padding:24px}
 h1,h2,h3{margin:.2rem 0 1rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
 button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px solid var(--line);background:#0b1a2d;color:var(--text)}button{cursor:pointer;background:#1767a6}button.danger{background:#8f3030}button.secondary{background:#253d58}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:#294563}.ok{color:var(--good)}.bad{color:var(--bad)}.muted,small{color:var(--muted)}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:8px;border-bottom:1px solid var(--line)}a{color:#6bbcff}pre{white-space:pre-wrap;max-height:320px;overflow:auto}.languages label{display:inline-flex;gap:4px;margin:4px}
+.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:#294563}.ok{color:var(--good)}.bad{color:var(--bad)}.warning{color:var(--warning)}.muted,small{color:var(--muted)}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:8px;border-bottom:1px solid var(--line)}a{color:#6bbcff}pre{white-space:pre-wrap;max-height:320px;overflow:auto}.languages label{display:inline-flex;gap:4px;margin:4px}
 details.help{margin-bottom:16px}details.help>summary{cursor:pointer;font-size:20px;font-weight:700;padding:4px}details.help[open]>summary{margin-bottom:16px}.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}.help-item{background:#0b1a2d;border:1px solid var(--line);border-radius:9px;padding:12px}.help-item h3{font-size:16px;margin-bottom:6px}.help-item p{margin:.35rem 0;color:#c4d5ea}.profile-help{min-height:42px;margin-top:12px;color:#c4d5ea}
 .activity-head{display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap}.progress-summary{display:grid;grid-template-columns:repeat(4,minmax(100px,1fr));gap:10px;margin:12px 0}.metric{background:#0b1a2d;border-radius:8px;padding:10px}.metric strong{display:block;font-size:20px}.progressbar{width:100%;height:14px;accent-color:var(--good)}.language-progress{font-variant-numeric:tabular-nums}.event-log{background:#07111f;border:1px solid var(--line);border-radius:8px;padding:10px;max-height:260px;overflow:auto}.event-line{padding:5px 0;border-bottom:1px solid #1d3551}.event-line:last-child{border:0}@media(max-width:700px){.progress-summary{grid-template-columns:repeat(2,1fr)}main{padding:14px}}
 .topbar{display:flex;justify-content:space-between;align-items:start;gap:16px}.crawler-version{white-space:nowrap;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 10px}
@@ -316,6 +333,7 @@ details.help{margin-bottom:16px}details.help>summary{cursor:pointer;font-size:20
 <div class="help-item"><h3>4. full — reconciliación completa</h3><p>Enumera y descarga todas las páginas de los idiomas habilitados. Es el proceso más lento y el que más espacio utiliza. Comprueba que el mirror coincida con MediaWiki.</p></div>
 <div class="help-item"><h3>Scheduler, idiomas y velocidad</h3><p><b>Enabled</b> permite la ejecución automática. <b>Parallel pages</b> controla cuántas páginas se preparan a la vez. El límite hacia la wiki siempre permanece en dos requests simultáneos.</p></div>
 <div class="help-item"><h3>Create candidate</h3><p>Congela el snapshot aprobado en una versión, genera manifiesto, checksums y archivos descargables. Hazlo únicamente después de revisar el resultado local. No publica en GitHub por sí solo.</p></div>
+<div class="help-item"><h3>Recover failed full</h3><p>Si todas las páginas terminaron y sólo fallaron recursos opcionales, <b>Recover</b> reconstruye el snapshot desde los blobs locales y vuelve a validarlo sin descargar toda la wiki. El candidato quedará marcado con advertencias.</p></div>
 <div class="help-item"><h3>Runs, Candidates y Audit</h3><p><b>Runs</b> conserva cada intento. Pulsa su ID para inspeccionarlo. <b>Candidates</b> contiene artefactos de revisión. <b>Audit</b> registra quién ejecutó o cambió algo.</p></div>
 <div class="help-item"><h3>Abrir la wiki</h3><p>Este panel sólo administra el crawler. Abre el lector desde el host con <code>env -u ELECTRON_RUN_AS_NODE npm start</code>. El contenido se lee desde <code>.local-data</code>.</p></div>
 </div></details>
@@ -335,20 +353,21 @@ async function api(url,options={}){const r=await fetch(url,{headers:{'Content-Ty
 function bytes(v){return(v/1024/1024/1024).toFixed(2)+' GiB'}
 function compactBytes(v){if(v>=1073741824)return(v/1073741824).toFixed(2)+' GiB';if(v>=1048576)return(v/1048576).toFixed(1)+' MiB';if(v>=1024)return(v/1024).toFixed(1)+' KiB';return v+' B'}
 function showProfileHelp(){document.querySelector('#profileHelp').textContent=profileDescriptions[document.querySelector('#profile').value]}
-function renderActivity(x){const ls=x.languages||[];const total=ls.reduce((n,l)=>n+l.pages_total,0);const written=ls.reduce((n,l)=>n+l.pages_written,0);const assets=ls.reduce((n,l)=>n+l.assets_written,0);const size=ls.reduce((n,l)=>n+l.bytes_written,0);const percent=total?Math.round(written/total*100):0;const last=x.events?.at(-1);document.querySelector('#activityTitle').textContent=`Run #${x.id} · ${x.profile} · ${last?.message||'sin eventos'}`;document.querySelector('#activityState').textContent=x.status;document.querySelector('#activityState').className=`pill ${x.status==='completed'?'ok':x.status==='failed'?'bad':''}`;
+function renderActivity(x){const ls=x.languages||[];const total=ls.reduce((n,l)=>n+l.pages_total,0);const written=ls.reduce((n,l)=>n+l.pages_written,0);const assets=ls.reduce((n,l)=>n+l.assets_written,0);const size=ls.reduce((n,l)=>n+l.bytes_written,0);const percent=total?Math.round(written/total*100):0;const last=x.events?.at(-1);document.querySelector('#activityTitle').textContent=`Run #${x.id} · ${x.profile} · ${last?.message||'sin eventos'}`;document.querySelector('#activityState').textContent=x.status;document.querySelector('#activityState').className=`pill ${x.status==='completed'?'ok':x.status==='completed_with_warnings'?'warning':x.status==='failed'?'bad':''}`;
 document.querySelector('#activity').innerHTML=`<div class="progress-summary"><div class="metric"><small>Progreso</small><strong>${percent}%</strong></div><div class="metric"><small>Páginas procesadas</small><strong>${written} / ${total||'?'}</strong></div><div class="metric"><small>Assets nuevos</small><strong>${assets}</strong></div><div class="metric"><small>Datos escritos</small><strong>${compactBytes(size)}</strong></div></div><progress class="progressbar" max="100" value="${percent}"></progress>${x.error?`<p class="bad"><b>Error:</b> ${x.error}</p>`:''}<div style="overflow:auto"><table class="language-progress"><thead><tr><th>Idioma</th><th>Estado</th><th>Páginas</th><th>Assets</th><th>Datos</th><th>Revisión final</th></tr></thead><tbody>${ls.map(l=>`<tr><td>${l.language}</td><td>${l.status}</td><td>${l.pages_written}/${l.pages_total}</td><td>${l.assets_written}</td><td>${compactBytes(l.bytes_written)}</td><td>${l.revision_end||'—'}</td></tr>`).join('')||'<tr><td colspan="6">Enumerando páginas mediante la API de MediaWiki…</td></tr>'}</tbody></table></div><h3>Eventos recientes</h3><div class="event-log">${(x.events||[]).slice(-30).reverse().map(e=>`<div class="event-line"><small>${new Date(e.created_at).toLocaleString()}</small> <span class="${e.level==='error'?'bad':''}">[${e.level}] ${e.message}</span></div>`).join('')||'<span class="muted">Todavía no hay eventos.</span>'}</div>`}
 async function refresh(){try{const [s,r,c,conf,audit]=await Promise.all([api('/api/status'),api('/api/runs'),api('/api/candidates'),api('/api/settings'),api('/api/audit?limit=25')]);
 document.querySelector('#status').innerHTML=`Environment: <b>${s.environment}</b><br>Storage: ${bytes(s.storage_used_bytes)} / ${bytes(s.storage_limit_bytes)}<br>Snapshot: ${s.current?.snapshot_id||'none'}<br>Active: ${s.active_run?.id||'none'}`;
 document.querySelector('#enabled').checked=conf.enabled;document.querySelector('#pageConcurrency').value=String(conf.page_concurrency);document.querySelector('#languages').innerHTML=langs.map(l=>`<label><input type="checkbox" data-lang="${l}" ${conf.enabled_languages.includes(l)?'checked':''}>${l}</label>`).join('');
-document.querySelector('#runs').innerHTML=r.map(x=>`<tr><td><a href="#" onclick="detail(${x.id});return false">${x.id}</a></td><td>${x.profile}</td><td>${x.status}</td><td>${x.created_at}</td><td>${x.snapshot_id||''}</td><td>${['queued','running'].includes(x.status)?`<button class="danger" onclick="cancelRun(${x.id})">Cancel</button>`:''}</td></tr>`).join('');
-document.querySelector('#candidates').innerHTML=c.map(x=>`<div class="card"><b>${x.version}</b> <span class="pill">${x.status}</span><br>${x.assets.map(a=>`<a href="/api/candidates/${x.id}/assets/${encodeURIComponent(a.name)}">${a.name}</a> (${(a.size/1024/1024).toFixed(1)} MiB)`).join('<br>')}<div class="row">${x.status==='ready_for_review'?`<button onclick="candidateAction(${x.id},'publish')">Publish locally</button><button class="danger" onclick="candidateAction(${x.id},'reject')">Reject</button>`:''}<button class="danger" onclick="deleteCandidate(${x.id},'${x.version}')">Delete</button></div></div>`).join('')||'<small>No candidates yet.</small>';
+document.querySelector('#runs').innerHTML=r.map(x=>`<tr><td><a href="#" onclick="detail(${x.id});return false">${x.id}</a></td><td>${x.profile}</td><td>${x.status}</td><td>${x.created_at}</td><td>${x.snapshot_id||''}</td><td>${['queued','running'].includes(x.status)?`<button class="danger" onclick="cancelRun(${x.id})">Cancel</button>`:x.recoverable?`<button class="secondary" onclick="recoverRun(${x.id})">Recover</button>`:''}</td></tr>`).join('');
+document.querySelector('#candidates').innerHTML=c.map(x=>`<div class="card"><b>${x.version}</b> <span class="pill ${x.status==='ready_with_warnings'?'warning':''}">${x.status}</span>${x.status==='ready_with_warnings'?'<p class="warning"><b>Advertencia:</b> el contenido pasó la validación offline, pero algunos recursos originales no estuvieron disponibles.</p>':''}<br>${x.assets.map(a=>`<a href="/api/candidates/${x.id}/assets/${encodeURIComponent(a.name)}">${a.name}</a> (${(a.size/1024/1024).toFixed(1)} MiB)`).join('<br>')}<div class="row">${['ready_for_review','ready_with_warnings'].includes(x.status)?`<button onclick="candidateAction(${x.id},'publish','${x.status}')">${x.status==='ready_with_warnings'?'Publish with warnings':'Publish locally'}</button><button class="danger" onclick="candidateAction(${x.id},'reject','${x.status}')">Reject</button>`:''}<button class="danger" onclick="deleteCandidate(${x.id},'${x.version}')">Delete</button></div></div>`).join('')||'<small>No candidates yet.</small>';
 document.querySelector('#audit').textContent=audit.map(x=>`${x.created_at} ${x.actor} ${x.action} ${x.target||''}`).join('\\n');
 const activityId=s.active_run?.id||selectedRunId||r[0]?.id;if(activityId)renderActivity(await api(`/api/runs/${activityId}`));
 }catch(e){document.querySelector('#status').innerHTML=`<span class="bad">${e}</span>`}}
 async function startRun(){try{await api('/api/runs/sync',{method:'POST',body:JSON.stringify({profile:document.querySelector('#profile').value})});refresh()}catch(e){alert(e)}}
 async function cancelRun(id){await api(`/api/runs/${id}/cancel`,{method:'POST'});refresh()}
+async function recoverRun(id){if(!confirm(`¿Recuperar el run #${id} desde los blobs locales? No volverá a descargar toda la wiki.`))return;try{await api(`/api/runs/${id}/recover`,{method:'POST'});refresh()}catch(e){alert(e)}}
 async function createCandidate(){try{await api('/api/candidates',{method:'POST',body:JSON.stringify({version:document.querySelector('#version').value})});refresh()}catch(e){alert(e)}}
-async function candidateAction(id,action){if(!confirm(`${action} candidate?`))return;await api(`/api/candidates/${id}/${action}`,{method:'POST'});refresh()}
+async function candidateAction(id,action,status){const message=action==='publish'&&status==='ready_with_warnings'?'Este candidato pasó la validación offline, pero contiene recursos opcionales no disponibles. ¿Publicar localmente con advertencias?':`${action} candidate?`;if(!confirm(message))return;await api(`/api/candidates/${id}/${action}`,{method:'POST'});refresh()}
 async function deleteCandidate(id,version){if(!confirm(`¿Eliminar ${version}? Esta acción borrará permanentemente sus archivos locales. El snapshot y GitHub no se modificarán.`))return;try{await api(`/api/candidates/${id}`,{method:'DELETE'});refresh()}catch(e){alert(e)}}
 async function detail(id){selectedRunId=id;renderActivity(await api(`/api/runs/${id}`));document.querySelector('#activityTitle').scrollIntoView({behavior:'smooth',block:'center'})}
 async function saveSettings(){const enabled_languages=[...document.querySelectorAll('[data-lang]:checked')].map(x=>x.dataset.lang);const page_concurrency=Number(document.querySelector('#pageConcurrency').value);await api('/api/settings',{method:'PUT',body:JSON.stringify({enabled:document.querySelector('#enabled').checked,enabled_languages,page_concurrency})});refresh()}

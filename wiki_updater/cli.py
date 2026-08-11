@@ -9,6 +9,7 @@ from .config import get_settings
 from .crawler import synchronize
 from .database import Database, utcnow
 from .jobs import finish
+from .recovery import recover_failed_run
 from .snapshot_import import import_snapshot
 from .worker import run_worker
 
@@ -22,6 +23,8 @@ def parser() -> argparse.ArgumentParser:
     candidate.add_argument("--version", default="v1.3.0")
     snapshot_import = commands.add_parser("snapshot-import", help="Import an approved snapshot archive")
     snapshot_import.add_argument("--archive", type=str, required=True)
+    recover = commands.add_parser("recover", help="Recover a structurally valid failed run from retained blobs")
+    recover.add_argument("--run-id", type=int, required=True)
     commands.add_parser("worker", help="Run scheduler and queued jobs")
     commands.add_parser("production", help="Run dashboard and worker in one production container")
     commands.add_parser("doctor", help="Print local configuration and storage information")
@@ -37,7 +40,8 @@ async def foreground_sync(profile: str) -> None:
     )
     try:
         snapshot_id, manifest = await synchronize(settings, db, run_id, profile)
-        finish(db, run_id, "completed", snapshot_id=snapshot_id, summary=manifest)
+        status = "completed_with_warnings" if manifest.get("warnings") else "completed"
+        finish(db, run_id, status, snapshot_id=snapshot_id, summary=manifest)
         print(json.dumps({"run_id": run_id, "snapshot_id": snapshot_id, "manifest": manifest}, indent=2))
     except asyncio.CancelledError:
         finish(db, run_id, "cancelled")
@@ -61,6 +65,18 @@ def main() -> None:
         from pathlib import Path
 
         print(json.dumps(import_snapshot(settings, db, Path(args.archive), "cli"), indent=2))
+    elif args.command == "recover":
+        run_id = db.execute(
+            "INSERT INTO runs(kind,profile,status,requested_by,created_at,started_at) VALUES(?,?,?,?,?,?)",
+            ("recovery", f"recover-{args.run_id}", "running", "cli", utcnow(), utcnow()),
+        )
+        try:
+            snapshot_id, manifest = recover_failed_run(settings, db, run_id, args.run_id)
+            finish(db, run_id, "completed_with_warnings", snapshot_id=snapshot_id, summary=manifest)
+            print(json.dumps({"run_id": run_id, "snapshot_id": snapshot_id, "manifest": manifest}, indent=2))
+        except Exception as exc:
+            finish(db, run_id, "failed", error=str(exc))
+            raise
     elif args.command == "production":
         from .production import run_production
 
