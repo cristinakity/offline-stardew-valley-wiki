@@ -278,10 +278,23 @@ frame.addEventListener('load', async () => {
     }
     for (const anchor of frame.contentDocument.querySelectorAll('a[data-missing-local-title]')) {
       const language = anchor.dataset.missingLocalLanguage || currentLanguage;
+      const status = anchor.dataset.offlineLinkStatus;
+      const localTarget = status !== 'excluded' && language === currentLanguage
+        ? documentByTitle(anchor.dataset.missingLocalTitle)
+        : null;
+      if (localTarget) {
+        anchor.setAttribute('href', `../../${language}/pages/${localTarget.id}.html`);
+        anchor.removeAttribute('data-missing-local-title');
+        anchor.removeAttribute('data-missing-local-language');
+        anchor.removeAttribute('data-offline-link-status');
+        anchor.title = localTarget.title;
+        continue;
+      }
+      anchor.style.cursor = status === 'excluded' ? 'not-allowed' : 'help';
       anchor.title = offlineLinkMessage(
         anchor.dataset.missingLocalTitle,
         language,
-        anchor.dataset.offlineLinkStatus,
+        status,
       );
     }
     frame.contentDocument.addEventListener('click', event => {

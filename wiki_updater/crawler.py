@@ -479,7 +479,8 @@ class Normalizer:
 
 OFFLINE_CSS = """
 .mw-editsection,.printfooter{display:none!important}
-a[data-missing-local-title]{text-decoration-style:dashed!important;cursor:not-allowed!important}
+a[data-offline-link-status="excluded"]{text-decoration-style:dashed!important;cursor:not-allowed!important}
+a[data-offline-link-status="missing"]{text-decoration-style:dashed!important;cursor:help!important}
 """.strip()
 
 

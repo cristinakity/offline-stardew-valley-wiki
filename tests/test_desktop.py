@@ -88,3 +88,5 @@ def test_desktop_resolves_deferred_links_and_language_equivalents() -> None:
     assert "status !== 'excluded'" in renderer
     assert "translationFor" in renderer
     assert "anchor.getAttribute('hreflang') === language" in renderer
+    assert "anchor.removeAttribute('data-missing-local-title')" in renderer
+    assert "../../${language}/pages/${localTarget.id}.html" in renderer
