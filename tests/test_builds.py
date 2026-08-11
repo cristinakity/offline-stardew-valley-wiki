@@ -44,7 +44,8 @@ def test_build_job_is_pinned_to_candidate_archive(tmp_path: Path) -> None:
     job_id = enqueue_build(db, candidate_id, "ja", "linux", "pytest")
     queued = build_job(db, job_id)
     assert queued
-    assert queued["source_archive"] == str(archive)
+    assert Path(queued["source_archive"]).samefile(archive)
+    assert Path(queued["source_archive"]).parent == tmp_path / "build-sources"
     assert queued["snapshot_id"] == "snapshot-abc"
     assert queued["version"] == "v1.4.0"
     assert queued["progress_total"] == 1
@@ -65,7 +66,7 @@ def test_all_editions_and_exact_rebuild_get_separate_jobs(tmp_path: Path) -> Non
     assert item
     assert item["edition"] == "all"
     assert item["progress_total"] == len(EDITIONS)
-    assert item["source_archive"] == str(archive)
+    assert Path(item["source_archive"]).samefile(archive)
     assert item["status"] == "queued"
 
 

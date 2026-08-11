@@ -67,7 +67,7 @@ class Settings(BaseSettings):
         return self
 
     def ensure_directories(self) -> None:
-        for name in ("blobs", "work", "snapshots", "candidates", "builds", "logs", "backups"):
+        for name in ("blobs", "work", "snapshots", "candidates", "builds", "build-sources", "logs", "backups"):
             (self.data_dir / name).mkdir(parents=True, exist_ok=True)
         assert self.database_path is not None
         self.database_path.parent.mkdir(parents=True, exist_ok=True)

@@ -5,6 +5,7 @@ import json
 import os
 import re
 import signal
+import shutil
 from contextlib import suppress
 from pathlib import Path
 from typing import Any
@@ -27,6 +28,21 @@ def _candidate_archive(item: dict[str, Any]) -> Path:
     return archives[0]
 
 
+def _pin_candidate_archive(db: Database, candidate_id: int, archive: Path) -> Path:
+    sources = db.path.parent / "build-sources"
+    sources.mkdir(parents=True, exist_ok=True)
+    pinned = sources / f"candidate-{candidate_id}-{archive.name}"
+    if pinned.exists():
+        if not pinned.is_file() or pinned.is_symlink():
+            raise RuntimeError("Pinned candidate build source is unsafe.")
+        return pinned.resolve()
+    try:
+        os.link(archive, pinned)
+    except OSError:
+        shutil.copy2(archive, pinned)
+    return pinned.resolve()
+
+
 def enqueue_build(
     db: Database,
     candidate_id: int,
@@ -43,7 +59,7 @@ def enqueue_build(
     item = db.one("SELECT * FROM candidates WHERE id=?", (candidate_id,))
     if not item:
         raise KeyError(candidate_id)
-    archive = _candidate_archive(item)
+    archive = _pin_candidate_archive(db, candidate_id, _candidate_archive(item))
     total = len(EDITIONS) if edition == "all" else 1
     job_id = db.execute(
         "INSERT INTO build_jobs("
@@ -165,8 +181,8 @@ def reconcile_interrupted_builds(db: Database) -> None:
 async def execute_build(settings: Settings, db: Database, job: dict[str, Any]) -> None:
     job_id = int(job["id"])
     archive = Path(str(job["source_archive"])).resolve()
-    candidates_root = (settings.data_dir / "candidates").resolve()
-    if candidates_root not in archive.parents or not archive.is_file():
+    sources_root = (settings.data_dir / "build-sources").resolve()
+    if archive.parent != sources_root or archive.is_symlink() or not archive.is_file():
         raise RuntimeError("The candidate source archive is no longer available.")
     output = Path(str(job["output_directory"])).resolve()
     builds_root = (settings.data_dir / "builds").resolve()

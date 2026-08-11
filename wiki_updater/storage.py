@@ -64,7 +64,7 @@ class Storage:
         return {"allocated_bytes": allocated, "logical_bytes": logical, "files": files}
 
     def usage_breakdown(self) -> dict[str, Any]:
-        categories = ("blobs", "snapshots", "candidates", "builds", "work", "logs", "backups")
+        categories = ("blobs", "snapshots", "candidates", "builds", "build-sources", "work", "logs", "backups")
         return {
             "physical_bytes": self.usage_bytes(),
             "categories": {

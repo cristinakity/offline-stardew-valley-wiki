@@ -8,6 +8,7 @@ dashboard/API ── SQLite ── worker/scheduler
                          ├── content-addressable blob store
                          ├── immutable logical snapshots
                          └── local release candidates
+             └── build queue ── builder-worker ── ZIP/DEB/RPM
 
 Electron shell ── approved snapshot
 GitHub Actions ── OCI snapshot digest ── Linux/Windows draft assets
@@ -26,7 +27,9 @@ GitHub OAuth and a configurable external production network.
   work/<run-id>/
   snapshots/<timestamp-digest>/content/
   candidates/<version>/
-  builds/<timestamp>/
+  builds/job-<id>/
+  build-sources/candidate-<id>-<archive>.tar.zst
+  logs/build-<id>.log
   current.json
 ```
 
@@ -34,6 +37,13 @@ Pages and assets are stored once by digest and hard-linked into snapshots. Three
 are retained, and unreferenced CAS blobs are garbage-collected after promotion. A snapshot is
 promoted only after exhaustive local link/resource validation. SQLite is backed up daily at 02:30
 in the configured timezone, retaining seven copies.
+
+Package builds are separate persistent jobs. The dashboard writes only to SQLite and never receives
+access to the Podman socket. The builder worker extracts the immutable `.tar.zst` belonging to the
+selected candidate, so a later crawler run cannot silently change an older version's packages.
+Rebuild creates a new job and output directory while retaining the original artifacts and history.
+The candidate archive is pinned in `build-sources` with a hardlink when possible, preserving exact
+rebuilds without duplicating its physical bytes and even if the candidate entry is later removed.
 
 ## Synchronization profiles
 

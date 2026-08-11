@@ -1,7 +1,11 @@
-FROM docker.io/library/node:22-bookworm
+FROM docker.io/library/node:22-bookworm AS node-runtime
+
+FROM docker.io/library/python:3.13-bookworm
+
+COPY --from=node-runtime /usr/local/ /usr/local/
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends fakeroot python3 python3-pip rpm zip zstd \
+    && apt-get install -y --no-install-recommends fakeroot rpm zip zstd \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace
@@ -9,7 +13,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 COPY pyproject.toml ./
 COPY wiki_updater ./wiki_updater
-RUN python3 -m pip install --break-system-packages --no-cache-dir .
+RUN python3 -m pip install --no-cache-dir .
 COPY desktop ./desktop
 COPY scripts ./scripts
 COPY forge.config.js ./

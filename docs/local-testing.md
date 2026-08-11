@@ -41,6 +41,13 @@ must not perform network requests.
 
 ## 5. Build Linux packages
 
+Open **Candidates**, choose an edition and **Linux — ZIP + DEB + RPM**, then press **Generate
+builds**. Open **Builds** and use the manual **Refresh** button to inspect queued/building/completed
+state, progress and logs. The persistent `builder-worker` performs the work without access to the
+Podman socket.
+
+The equivalent one-shot command uses the newest candidate by default, not `current.json`:
+
 ```bash
 podman compose --profile tools --env-file .env.local -f compose.yml -f compose.local.yml run --rm linux-builder
 find .local-data/builds -type f -maxdepth 8 -print

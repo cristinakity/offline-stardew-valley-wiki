@@ -275,13 +275,25 @@ The candidate directory contains:
 - `content-lock.json`
 - `validation-report.json`
 - `SHA256SUMS`
-- Linux packages after running the builder
 
 Creating or publishing a candidate locally does not push to GitHub and does not deploy anything.
 
 ## Building Linux packages
 
-Build the historical multilingual/full application (the default):
+The recommended flow is available in the dashboard: open **Candidates**, choose `all`,
+`multilingual` or one language, keep **Linux — ZIP + DEB + RPM**, and press **Generate builds**.
+The request is persisted in SQLite and consumed sequentially by the separate `builder-worker`.
+Use manual **Refresh** in **Builds** to see `queued`, `building`, `completed` or `failed`, edition
+progress, logs and downloadable artifacts. **Rebuild** creates a new job using exactly the original
+candidate archive and never overwrites the earlier output.
+
+The dashboard and builder worker do not use or mount the Podman socket. Every build extracts the
+candidate's immutable `wiki-content-*.tar.zst`; it never builds from `current.json`.
+When first queued, that archive is pinned under `.local-data/build-sources/` using a hardlink when
+the filesystem supports it. This preserves exact rebuilds without duplicating the physical bytes.
+
+The one-shot CLI remains available. It uses the newest candidate by default. Build its
+multilingual/full application:
 
 ```bash
 podman compose \
@@ -333,8 +345,8 @@ Replace `<snapshot-id>` with the `snapshot_id` stored in `.local-data/current.js
 edition directory uses hard links when the filesystem permits it, so staging it is quick and does
 not initially duplicate the physical bytes of shared files.
 
-The builder sets `WIKI_CONTENT_PATH` to the approved snapshot before invoking Electron Forge. This
-embeds the immutable content directory in ZIP, DEB and RPM packages. Official Windows packages are
+The builder extracts the selected candidate and sets `WIKI_CONTENT_PATH` before invoking Electron
+Forge. This embeds the immutable content directory in ZIP, DEB and RPM packages. Official Windows packages are
 built from the same snapshot in GitHub Actions. The draft workflow produces the multilingual
 artifact plus an individual artifact for every supported language on both operating systems.
 
