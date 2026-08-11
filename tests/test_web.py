@@ -44,3 +44,11 @@ def test_dashboard_uses_tabs_and_bounded_scroll_regions() -> None:
     assert 'id="audit" class="audit-scroll"' in DASHBOARD
     assert "max-height:min(65vh,620px)" in DASHBOARD
     assert "showTab('crawler')" in DASHBOARD
+
+
+def test_run_detail_switches_immediately_and_is_not_replaced_by_active_run() -> None:
+    assert "const activityId=selectedRunId||s.active_run?.id" in DASHBOARD
+    assert "selectedRunId=id;markSelectedRun();showTab('crawler')" in DASHBOARD
+    assert "Run #${id} · cargando historial…" in DASHBOARD
+    assert "if(selectedRunId===id)renderActivity(activity)" in DASHBOARD
+    assert "selected-run" in DASHBOARD
