@@ -3,6 +3,20 @@ const languages = [
   ['it','Italiano'],['ja','日本語'],['ko','한국어'],['hu','Magyar'],
   ['pt','Português'],['ru','Русский'],['tr','Türkçe'],['zh','中文'],
 ];
+const interfaceText = {
+  en: { home: 'Go to Main Wiki page', back: 'Back', forward: 'Forward', search: 'Search', results: 'Search Results', resultsFor: 'results for', noResults: 'No results', loading: 'Loading search…' },
+  es: { home: 'Ir a la página principal', back: 'Atrás', forward: 'Adelante', search: 'Buscar', results: 'Resultados de búsqueda', resultsFor: 'resultados para', noResults: 'Sin resultados', loading: 'Cargando búsqueda…' },
+  de: { home: 'Zur Wiki-Hauptseite', back: 'Zurück', forward: 'Vorwärts', search: 'Suchen', results: 'Suchergebnisse', resultsFor: 'Ergebnisse für', noResults: 'Keine Ergebnisse', loading: 'Suche wird geladen…' },
+  fr: { home: 'Aller à la page principale', back: 'Retour', forward: 'Suivant', search: 'Rechercher', results: 'Résultats de recherche', resultsFor: 'résultats pour', noResults: 'Aucun résultat', loading: 'Chargement de la recherche…' },
+  it: { home: 'Vai alla pagina principale', back: 'Indietro', forward: 'Avanti', search: 'Cerca', results: 'Risultati della ricerca', resultsFor: 'risultati per', noResults: 'Nessun risultato', loading: 'Caricamento ricerca…' },
+  ja: { home: 'Wikiのメインページへ', back: '戻る', forward: '進む', search: '検索', results: '検索結果', resultsFor: '件の検索結果:', noResults: '結果なし', loading: '検索を読み込み中…' },
+  ko: { home: '위키 메인 페이지로', back: '뒤로', forward: '앞으로', search: '검색', results: '검색 결과', resultsFor: '개 검색 결과:', noResults: '결과 없음', loading: '검색 로드 중…' },
+  hu: { home: 'Ugrás a wiki főoldalára', back: 'Vissza', forward: 'Előre', search: 'Keresés', results: 'Keresési eredmények', resultsFor: 'találat:', noResults: 'Nincs találat', loading: 'Keresés betöltése…' },
+  pt: { home: 'Ir para a página principal', back: 'Voltar', forward: 'Avançar', search: 'Pesquisar', results: 'Resultados da pesquisa', resultsFor: 'resultados para', noResults: 'Nenhum resultado', loading: 'Carregando pesquisa…' },
+  ru: { home: 'На главную страницу вики', back: 'Назад', forward: 'Вперёд', search: 'Поиск', results: 'Результаты поиска', resultsFor: 'результатов для', noResults: 'Нет результатов', loading: 'Загрузка поиска…' },
+  tr: { home: 'Wiki ana sayfasına git', back: 'Geri', forward: 'İleri', search: 'Ara', results: 'Arama sonuçları', resultsFor: 'sonuç:', noResults: 'Sonuç yok', loading: 'Arama yükleniyor…' },
+  zh: { home: '前往Wiki主页', back: '后退', forward: '前进', search: '搜索', results: '搜索结果', resultsFor: '条结果：', noResults: '没有结果', loading: '正在加载搜索…' },
+};
 const frame = document.querySelector('#page');
 const empty = document.querySelector('#empty');
 const results = document.querySelector('#results');
@@ -58,6 +72,25 @@ function showNotice(message) {
   notice.textContent = message;
   notice.hidden = false;
   noticeTimer = setTimeout(() => { notice.hidden = true; }, 7000);
+}
+
+function updateInterfaceLanguage(language) {
+  const text = interfaceText[language] || interfaceText.en;
+  const home = document.querySelector('#home');
+  const back = document.querySelector('#back');
+  const forward = document.querySelector('#forward');
+  const search = document.querySelector('#search');
+  home.textContent = text.home;
+  home.title = text.home;
+  back.title = text.back;
+  back.setAttribute('aria-label', text.back);
+  forward.title = text.forward;
+  forward.setAttribute('aria-label', text.forward);
+  search.placeholder = text.search;
+  document.querySelector('#searchButton').textContent = text.search;
+  document.querySelector('.searchPage h1').textContent = text.results;
+  document.documentElement.lang = language;
+  window.offlineWiki.setLanguage(language).catch(error => console.warn('Unable to translate app menu:', error));
 }
 
 for (const [code, name] of languages) {
@@ -159,12 +192,13 @@ function navigationDocuments(code) {
 async function loadLanguage(code, requested = null) {
   try {
     currentLanguage = code;
+    updateInterfaceLanguage(code);
     const cached = languageCache.get(code);
     documents = cached?.documents || navigationDocuments(code) || (await languageData(code)).documents;
     documentsById = cached?.documentsById
       || new Map(documents.map(document => [String(document.id), document]));
     searchIndex = cached?.searchIndex;
-    document.querySelector('#search').placeholder = 'Search';
+    document.querySelector('#search').placeholder = interfaceText[code]?.search || interfaceText.en.search;
     for (const button of document.querySelectorAll('.flag')) {
       button.setAttribute('aria-pressed', String(button.dataset.language === code));
     }
@@ -275,13 +309,13 @@ async function ensureSearchIndex() {
     searchIndex = cached.searchIndex;
     return true;
   }
-  searchInput.placeholder = `Loading ${language.toUpperCase()} search…`;
+  searchInput.placeholder = interfaceText[language]?.loading || interfaceText.en.loading;
   const data = await languageData(language);
   if (currentLanguage !== language) return false;
   documents = data.documents;
   documentsById = data.documentsById;
   searchIndex = data.searchIndex;
-  searchInput.placeholder = 'Search';
+  searchInput.placeholder = interfaceText[language]?.search || interfaceText.en.search;
   return true;
 }
 
@@ -297,7 +331,7 @@ async function fullSearch() {
   empty.hidden = true;
   searchPage.hidden = false;
   searchList.innerHTML = '';
-  searchSummary.textContent = `${matches.length} result${matches.length === 1 ? '' : 's'} for “${query}”`;
+  searchSummary.textContent = `${matches.length} ${interfaceText[currentLanguage]?.resultsFor || interfaceText.en.resultsFor} “${query}”`;
   for (const match of matches) {
     const item = documentsById.get(String(match.id)) || match;
     const article = document.createElement('article');
@@ -314,7 +348,7 @@ async function fullSearch() {
   if (!matches.length) {
     const message = document.createElement('p');
     message.className = 'searchEmpty';
-    message.textContent = 'No results';
+    message.textContent = interfaceText[currentLanguage]?.noResults || interfaceText.en.noResults;
     searchList.appendChild(message);
   }
 }

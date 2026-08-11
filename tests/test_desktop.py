@@ -18,6 +18,21 @@ def test_desktop_keeps_original_language_toolbar() -> None:
     assert all(code in renderer for code in ("'en'", "'es'", "'ja'", "'zh'"))
 
 
+def test_desktop_translates_reader_and_native_menu() -> None:
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
+    preload = (ROOT / "desktop" / "preload.js").read_text(encoding="utf-8")
+    assert "const interfaceText" in renderer
+    assert "function updateInterfaceLanguage" in renderer
+    assert "Ir a la página principal" in renderer
+    assert "Resultados de búsqueda" in renderer
+    assert "window.offlineWiki.setLanguage(language)" in renderer
+    assert "const menuLabels" in main
+    assert "['Archivo', 'Editar', 'Ver', 'Ventana']" in main
+    assert "wiki:set-language" in main
+    assert "setLanguage" in preload
+
+
 def test_desktop_uses_exact_legacy_background_and_flag_images() -> None:
     background = (
         ROOT
@@ -98,7 +113,7 @@ def test_desktop_resolves_deferred_links_and_language_equivalents() -> None:
     assert "if (languageCache.has(code))" in renderer
     assert "function navigationDocuments" in renderer
     assert "async function ensureSearchIndex" in renderer
-    assert "Loading ${language.toUpperCase()} search" in renderer
+    assert "interfaceText[language]?.loading" in renderer
 
 
 def test_desktop_notice_does_not_cover_toolbar() -> None:

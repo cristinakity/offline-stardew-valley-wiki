@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, session, shell } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu, session, shell } = require('electron');
 const path = require('node:path');
 const fs = require('node:fs');
 const { pathToFileURL } = require('node:url');
@@ -101,6 +101,32 @@ function saveReaderState(value) {
   return state;
 }
 
+const menuLabels = {
+  en: ['File', 'Edit', 'View', 'Window'], es: ['Archivo', 'Editar', 'Ver', 'Ventana'],
+  de: ['Datei', 'Bearbeiten', 'Ansicht', 'Fenster'], fr: ['Fichier', 'Édition', 'Affichage', 'Fenêtre'],
+  it: ['File', 'Modifica', 'Visualizza', 'Finestra'], ja: ['ファイル', '編集', '表示', 'ウィンドウ'],
+  ko: ['파일', '편집', '보기', '창'], hu: ['Fájl', 'Szerkesztés', 'Nézet', 'Ablak'],
+  pt: ['Arquivo', 'Editar', 'Exibir', 'Janela'], ru: ['Файл', 'Правка', 'Вид', 'Окно'],
+  tr: ['Dosya', 'Düzenle', 'Görünüm', 'Pencere'], zh: ['文件', '编辑', '查看', '窗口'],
+};
+
+function setApplicationLanguage(language) {
+  const [file, edit, view, window] = menuLabels[language] || menuLabels.en;
+  Menu.setApplicationMenu(Menu.buildFromTemplate([
+    { label: file, submenu: [{ role: 'quit' }] },
+    { label: edit, submenu: [
+      { role: 'undo' }, { role: 'redo' }, { type: 'separator' },
+      { role: 'cut' }, { role: 'copy' }, { role: 'paste' }, { role: 'selectAll' },
+    ] },
+    { label: view, submenu: [
+      { role: 'reload' }, { role: 'forceReload' }, { role: 'toggleDevTools' }, { type: 'separator' },
+      { role: 'resetZoom' }, { role: 'zoomIn' }, { role: 'zoomOut' }, { type: 'separator' },
+      { role: 'togglefullscreen' },
+    ] },
+    { label: window, submenu: [{ role: 'minimize' }, { role: 'close' }] },
+  ]));
+}
+
 function registerContentApi() {
   ipcMain.handle('wiki:shell-assets', () => shellAssets());
   ipcMain.handle('wiki:available', () => {
@@ -148,9 +174,14 @@ function registerContentApi() {
   });
   ipcMain.handle('wiki:load-reader-state', () => loadReaderState());
   ipcMain.handle('wiki:save-reader-state', (_event, value) => saveReaderState(value));
+  ipcMain.handle('wiki:set-language', (_event, language) => {
+    if (!Object.hasOwn(menuLabels, language)) throw new Error('Unsupported language.');
+    setApplicationLanguage(language);
+  });
 }
 
 function createWindow() {
+  setApplicationLanguage('en');
   const window = new BrowserWindow({
     width: 1280,
     height: 820,

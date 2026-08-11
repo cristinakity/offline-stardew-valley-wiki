@@ -9,4 +9,5 @@ contextBridge.exposeInMainWorld('offlineWiki', {
   openExternal: url => ipcRenderer.invoke('wiki:open-external', url),
   loadReaderState: () => ipcRenderer.invoke('wiki:load-reader-state'),
   saveReaderState: state => ipcRenderer.invoke('wiki:save-reader-state', state),
+  setLanguage: language => ipcRenderer.invoke('wiki:set-language', language),
 });
