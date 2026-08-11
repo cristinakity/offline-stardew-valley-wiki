@@ -60,9 +60,18 @@ def build_translation_index(content_root: Path) -> dict[str, Any]:
                     source_language, int(source_id)
                 )
 
+    navigation: dict[str, dict[str, Any]] = {}
+    for index_path in sorted((content_root / "search").glob("*.json")):
+        documents = json.loads(index_path.read_text(encoding="utf-8"))
+        navigation[index_path.stem] = {
+            "home": next((int(item["id"]) for item in documents if item.get("home")), None),
+            "pages": [[int(item["id"]), str(item["title"])] for item in documents],
+        }
+
     payload: dict[str, Any] = {
         "schema": 1,
         "pages": pages,
+        "navigation": navigation,
         "mapped_pages": sum(len(language_pages) for language_pages in pages.values()),
         "links": sum(
             len(targets)

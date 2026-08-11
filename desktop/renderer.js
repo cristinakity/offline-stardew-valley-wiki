@@ -15,8 +15,9 @@ let documentsById = new Map();
 let searchIndex;
 let currentLanguage = 'en';
 let currentDocument = null;
-let translationPages = {};
+let translationData = { pages: {}, navigation: {} };
 const languageCache = new Map();
+const languagePromises = new Map();
 let noticeTimer;
 const unavailableMessages = {
   en: title => `“${title}” is not available in the offline version.`,
@@ -118,30 +119,52 @@ async function openDocument(item) {
 
 async function languageData(code) {
   if (languageCache.has(code)) return languageCache.get(code);
-  const loadedDocuments = (await window.offlineWiki.loadIndex(code)).map(document => ({
+  if (languagePromises.has(code)) return languagePromises.get(code);
+  const promise = (async () => {
+    const loadedDocuments = (await window.offlineWiki.loadIndex(code)).map(document => ({
       ...document,
       text: document.text || '',
+    }));
+    if (typeof MiniSearch !== 'function') throw new Error('The offline search library could not be loaded.');
+    const loadedSearchIndex = new MiniSearch({ fields: ['title', 'text'], storeFields: ['title', 'url'] });
+    loadedSearchIndex.addAll(loadedDocuments);
+    const data = {
+      documents: loadedDocuments,
+      documentsById: new Map(loadedDocuments.map(document => [String(document.id), document])),
+      searchIndex: loadedSearchIndex,
+    };
+    languageCache.set(code, data);
+    return data;
+  })();
+  languagePromises.set(code, promise);
+  try {
+    return await promise;
+  } finally {
+    languagePromises.delete(code);
+  }
+}
+
+function navigationDocuments(code) {
+  const navigation = translationData.navigation?.[code];
+  if (!navigation?.pages) return null;
+  return navigation.pages.map(([id, title]) => ({
+    id,
+    title,
+    url: `${code}/pages/${id}.html`,
+    text: '',
+    home: Number(id) === Number(navigation.home),
   }));
-  if (typeof MiniSearch !== 'function') throw new Error('The offline search library could not be loaded.');
-  const loadedSearchIndex = new MiniSearch({ fields: ['title', 'text'], storeFields: ['title', 'url'] });
-  loadedSearchIndex.addAll(loadedDocuments);
-  const data = {
-    documents: loadedDocuments,
-    documentsById: new Map(loadedDocuments.map(document => [String(document.id), document])),
-    searchIndex: loadedSearchIndex,
-  };
-  languageCache.set(code, data);
-  return data;
 }
 
 async function loadLanguage(code, requested = null) {
   try {
-    empty.querySelector('p').textContent = `Loading the ${code.toUpperCase()} offline index…`;
-    const data = await languageData(code);
     currentLanguage = code;
-    documents = data.documents;
-    documentsById = data.documentsById;
-    searchIndex = data.searchIndex;
+    const cached = languageCache.get(code);
+    documents = cached?.documents || navigationDocuments(code) || (await languageData(code)).documents;
+    documentsById = cached?.documentsById
+      || new Map(documents.map(document => [String(document.id), document]));
+    searchIndex = cached?.searchIndex;
+    document.querySelector('#search').placeholder = 'Search';
     for (const button of document.querySelectorAll('.flag')) {
       button.setAttribute('aria-pressed', String(button.dataset.language === code));
     }
@@ -164,7 +187,7 @@ async function loadLanguage(code, requested = null) {
 
 function translationFor(language) {
   try {
-    const indexedPageId = translationPages?.[currentLanguage]?.[String(currentDocument?.id)]?.[language];
+    const indexedPageId = translationData.pages?.[currentLanguage]?.[String(currentDocument?.id)]?.[language];
     if (Number.isSafeInteger(indexedPageId) && indexedPageId > 0) {
       return { language, pageId: indexedPageId };
     }
@@ -242,9 +265,31 @@ function snippetFor(text, query) {
   return `${start ? '…' : ''}${normalized.slice(start, end)}${end < normalized.length ? '…' : ''}`;
 }
 
-function fullSearch() {
-  const query = document.querySelector('#search').value.trim();
-  if (!query || !searchIndex) return;
+async function ensureSearchIndex() {
+  const language = currentLanguage;
+  const searchInput = document.querySelector('#search');
+  if (languageCache.has(language)) {
+    const cached = languageCache.get(language);
+    documents = cached.documents;
+    documentsById = cached.documentsById;
+    searchIndex = cached.searchIndex;
+    return true;
+  }
+  searchInput.placeholder = `Loading ${language.toUpperCase()} search…`;
+  const data = await languageData(language);
+  if (currentLanguage !== language) return false;
+  documents = data.documents;
+  documentsById = data.documentsById;
+  searchIndex = data.searchIndex;
+  searchInput.placeholder = 'Search';
+  return true;
+}
+
+async function fullSearch() {
+  let query = document.querySelector('#search').value.trim();
+  if (!query || !(await ensureSearchIndex())) return;
+  query = document.querySelector('#search').value.trim();
+  if (!query) return;
   const matches = searchIndex.search(query, { prefix: true, fuzzy: 0.2, boost: { title: 4 } }).slice(0, 100);
   results.innerHTML = '';
   results.style.display = 'none';
@@ -274,13 +319,16 @@ function fullSearch() {
   }
 }
 
-function showTitleSuggestions() {
-  const query = document.querySelector('#search').value.trim();
+async function showTitleSuggestions() {
+  let query = document.querySelector('#search').value.trim();
   results.innerHTML = '';
-  if (!query || !searchIndex) {
+  if (!query) {
     results.style.display = 'none';
     return;
   }
+  if (!(await ensureSearchIndex())) return;
+  query = document.querySelector('#search').value.trim();
+  if (!query) return;
   const matches = searchIndex.search(query, { fields: ['title'], prefix: true, fuzzy: 0.2 }).slice(0, 8);
   for (const match of matches) {
     const item = documentsById.get(String(match.id)) || match;
@@ -377,10 +425,10 @@ document.querySelector('#home').addEventListener('click', () => loadLanguage(cur
     }
     empty.querySelector('p').textContent = 'Checking .local-data/current.json…';
     if (await window.offlineWiki.available()) {
-      translationPages = await window.offlineWiki.loadTranslations();
+      translationData = await window.offlineWiki.loadTranslations();
       const saved = await window.offlineWiki.loadReaderState();
       const language = saved?.language || 'en';
-      empty.querySelector('p').textContent = `Loading the ${language.toUpperCase()} search index…`;
+      empty.querySelector('p').textContent = `Opening the ${language.toUpperCase()} offline wiki…`;
       await loadLanguage(language, saved);
     } else {
       empty.querySelector('h1').textContent = 'No local snapshot found';

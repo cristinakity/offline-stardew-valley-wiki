@@ -23,10 +23,19 @@ def test_build_translation_index_writes_compact_bidirectional_map(tmp_path: Path
         encoding="utf-8",
     )
     es.write_text("<p>Sin enlace inverso</p>", encoding="utf-8")
+    search = tmp_path / "search"
+    search.mkdir()
+    (search / "en.json").write_text(
+        json.dumps([{"id": 1, "title": "Home", "home": True}]), encoding="utf-8"
+    )
+    (search / "es.json").write_text(
+        json.dumps([{"id": 2, "title": "Inicio", "home": True}]), encoding="utf-8"
+    )
 
     payload = build_translation_index(tmp_path)
 
     assert payload["pages"]["en"]["1"]["es"] == 2
     assert payload["pages"]["es"]["2"]["en"] == 1
+    assert payload["navigation"]["en"] == {"home": 1, "pages": [[1, "Home"]]}
     saved = json.loads((tmp_path / "translations.json").read_text(encoding="utf-8"))
     assert saved == payload
