@@ -47,8 +47,17 @@ def test_dashboard_uses_tabs_and_bounded_scroll_regions() -> None:
 
 
 def test_run_detail_switches_immediately_and_is_not_replaced_by_active_run() -> None:
-    assert "const activityId=selectedRunId||s.active_run?.id" in DASHBOARD
-    assert "selectedRunId=id;markSelectedRun();showTab('crawler')" in DASHBOARD
+    assert "let activityId=selectedRunId||s.active_run?.id" in DASHBOARD
+    assert "selectedRunId=id;markSelectedRun();showTab('crawler',false)" in DASHBOARD
     assert "Run #${id} · cargando historial…" in DASHBOARD
     assert "if(selectedRunId===id)renderActivity(activity)" in DASHBOARD
     assert "selected-run" in DASHBOARD
+
+
+def test_dashboard_only_polls_data_for_the_visible_tab() -> None:
+    assert "async function periodicRefresh()" in DASHBOARD
+    assert "if(activeTab==='crawler')await refreshCrawler()" in DASHBOARD
+    assert "else if(activeTab==='runs')await refreshRuns()" in DASHBOARD
+    assert "else if(activeTab==='overview')await refreshStatus()" in DASHBOARD
+    assert "setInterval(periodicRefresh,3000)" in DASHBOARD
+    assert "Promise.all([api('/api/status'),api('/api/runs'),api('/api/candidates')" not in DASHBOARD
