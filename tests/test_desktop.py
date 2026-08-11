@@ -104,7 +104,7 @@ def test_desktop_remembers_language_and_last_page() -> None:
     assert "loadReaderState" in preload
     assert "saveReaderState" in preload
     assert "rememberDocument" in renderer
-    assert "saved?.language || 'en'" in renderer
+    assert "availableLanguageCodes.includes(saved?.language)" in renderer
 
 
 def test_desktop_resolves_deferred_links_and_language_equivalents() -> None:

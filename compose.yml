@@ -53,9 +53,11 @@ services:
     image: localhost/offline-stardew-valley-wiki-builder:local
     restart: "no"
     profiles: ["tools"]
+    entrypoint: ["bash", "/workspace/scripts/build-linux.sh"]
     environment:
       DATA_DIR: /data
       BUILD_OUTPUT_DIR: /data/builds
+      WIKI_EDITION: ${WIKI_EDITION:-multilingual}
 
 volumes:
   updater_builder_node_modules:

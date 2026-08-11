@@ -22,6 +22,10 @@ concurrency:
 jobs:
   linux:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        edition: [multilingual, en, es]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,19 +48,31 @@ jobs:
           test -n "$archive"
           tar --zstd -xf "$archive" -C snapshot
       - name: Build Linux packages
+        env:
+          WIKI_EDITION: ${{ matrix.edition }}
         run: |
+          set -euo pipefail
           sudo apt-get update
           sudo apt-get install -y fakeroot rpm
           npm ci
-          WIKI_CONTENT_PATH="$PWD/snapshot/content" npm run make:linux
+          content="$PWD/snapshot/content"
+          if [[ "$WIKI_EDITION" != multilingual ]]; then
+            content="$RUNNER_TEMP/edition-$WIKI_EDITION/content"
+            node scripts/prepare-edition.mjs "$PWD/snapshot/content" "$content" "$WIKI_EDITION"
+          fi
+          WIKI_CONTENT_PATH="$content" npm run make:linux
       - uses: actions/upload-artifact@v4
         with:
-          name: linux-${{ inputs.version }}
+          name: linux-${{ matrix.edition }}-${{ inputs.version }}
           path: out/make/**/*
           if-no-files-found: error
 
   windows:
     runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        edition: [multilingual, en, es]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -82,15 +98,25 @@ jobs:
           tar -xf snapshot/wiki-content.tar -C snapshot
       - name: Build Windows packages
         shell: pwsh
+        env:
+          WIKI_EDITION: ${{ matrix.edition }}
         run: |
           npm ci
-          $env:WIKI_CONTENT_PATH = "$pwd\snapshot\content"
+          $sourceContent = "$pwd\snapshot\content"
+          $env:WIKI_CONTENT_PATH = $sourceContent
+          if ($env:WIKI_EDITION -ne "multilingual") {
+            $env:WIKI_CONTENT_PATH = "$env:RUNNER_TEMP\edition-$env:WIKI_EDITION\content"
+            node scripts/prepare-edition.mjs $sourceContent $env:WIKI_CONTENT_PATH $env:WIKI_EDITION
+          }
           npm run make:windows
           $squirrel = Get-ChildItem out/make -Directory | Where-Object Name -Like 'squirrel.windows*' | Select-Object -First 1
-          if ($squirrel) { Compress-Archive -Path "$($squirrel.FullName)\*" -DestinationPath out/make/squirrel.windows.zip }
+          $suffix = if ($env:WIKI_EDITION -eq "multilingual") { "" } else { "-$env:WIKI_EDITION" }
+          if ($squirrel) {
+            Compress-Archive -Path "$($squirrel.FullName)\*" -DestinationPath "out/make/offline-stardew-valley-wiki${suffix}-squirrel.windows.zip"
+          }
       - uses: actions/upload-artifact@v4
         with:
-          name: windows-${{ inputs.version }}
+          name: windows-${{ matrix.edition }}-${{ inputs.version }}
           path: out/make/**/*
           if-no-files-found: error
 
@@ -105,7 +131,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir release-assets
-          find artifacts -type f -exec cp '{}' release-assets/ \;
+          find artifacts -type f \( -name '*.zip' -o -name '*.deb' -o -name '*.rpm' \) -exec cp '{}' release-assets/ \;
           (cd release-assets && sha256sum * > SHA256SUMS)
       - name: Create draft release
         env:
@@ -120,4 +146,3 @@ jobs:
           fi
           printf 'Offline wiki candidate built from `%s`.\n\nThis release is a draft and requires manual review.\n' "$SNAPSHOT_REF" > notes.md
           gh release create "$VERSION" release-assets/* --repo "$GITHUB_REPOSITORY" --draft --target "$GITHUB_SHA" --title "Offline Stardew Valley Wiki $VERSION" --notes-file notes.md
-

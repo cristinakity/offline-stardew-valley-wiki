@@ -207,6 +207,25 @@ The desktop reader remembers the last language and page. Changing language uses 
 translation map to open the equivalent article. Full search data is loaded lazily the first time a
 search is performed in a language and then remains cached for the current application session.
 
+## Full and lightweight language editions
+
+Application packages can be produced from one approved full snapshot in three release editions:
+
+| Edition | Included content | Package identity |
+| --- | --- | --- |
+| `multilingual` (alias `full`) | All 12 languages | `Offline Stardew Valley Wiki` |
+| `en` | English pages, search and referenced assets only | `Offline Stardew Valley Wiki (EN)` |
+| `es` | Spanish pages, search and referenced assets only | `Offline Stardew Valley Wiki (ES)` |
+
+The English and Spanish packages are independent lightweight applications and can be installed
+alongside each other. Their other language buttons are hidden because those pages are intentionally
+not part of the package. They are generated from the already approved snapshot, so creating them
+does not crawl the wiki again.
+
+The edition generator supports every language listed above. `en` and `es` are the lightweight
+editions built by the official release workflow initially; another code such as `ja` or `pt` can be
+built on demand using the same command.
+
 ## Local data and storage
 
 All mutable data is visible under `.local-data/`:
@@ -255,6 +274,8 @@ Creating or publishing a candidate locally does not push to GitHub and does not 
 
 ## Building Linux packages
 
+Build the historical multilingual/full application (the default):
+
 ```bash
 podman compose \
   --profile tools \
@@ -264,9 +285,58 @@ podman compose \
   run --rm linux-builder
 ```
 
+Build only English or only Spanish:
+
+```bash
+WIKI_EDITION=en podman compose \
+  --profile tools \
+  --env-file .env.local \
+  -f compose.yml \
+  -f compose.local.yml \
+  run --rm linux-builder
+
+WIKI_EDITION=es podman compose \
+  --profile tools \
+  --env-file .env.local \
+  -f compose.yml \
+  -f compose.local.yml \
+  run --rm linux-builder
+```
+
+Build the multilingual, English and Spanish editions in one invocation:
+
+```bash
+WIKI_EDITION=all podman compose \
+  --profile tools \
+  --env-file .env.local \
+  -f compose.yml \
+  -f compose.local.yml \
+  run --rm linux-builder
+```
+
+To preview one language directly from the source tree without packaging it, derive a temporary
+content directory and point Electron at it:
+
+```bash
+node scripts/prepare-edition.mjs \
+  .local-data/snapshots/<snapshot-id>/content \
+  .local-data/editions/es/content \
+  es
+
+env -u ELECTRON_RUN_AS_NODE \
+  WIKI_EDITION=es \
+  WIKI_CONTENT_PATH="$PWD/.local-data/editions/es/content" \
+  npm start
+```
+
+Replace `<snapshot-id>` with the `snapshot_id` stored in `.local-data/current.json`. The generated
+edition directory uses hard links when the filesystem permits it, so staging it is quick and does
+not initially duplicate the physical bytes of shared files.
+
 The builder sets `WIKI_CONTENT_PATH` to the approved snapshot before invoking Electron Forge. This
 embeds the immutable content directory in ZIP, DEB and RPM packages. Official Windows packages are
-built from the same snapshot in GitHub Actions.
+built from the same snapshot in GitHub Actions. The draft workflow produces multilingual, EN and ES
+artifacts for both operating systems.
 
 Running `npm run make` manually without `WIKI_CONTENT_PATH` is a developer build and may not contain
 offline content. Use the provided builder for release packages.
