@@ -92,6 +92,10 @@ def test_desktop_resolves_deferred_links_and_language_equivalents() -> None:
     assert "return mediaWikiLanguageLink || legacyLanguageLink" in renderer
     assert "anchor.removeAttribute('data-missing-local-title')" in renderer
     assert "../../${language}/pages/${localTarget.id}.html" in renderer
+    assert "loadTranslations" in renderer
+    assert "translationPages?.[currentLanguage]?.[String(currentDocument?.id)]?.[language]" in renderer
+    assert "const languageCache = new Map()" in renderer
+    assert "if (languageCache.has(code))" in renderer
 
 
 def test_desktop_notice_does_not_cover_toolbar() -> None:

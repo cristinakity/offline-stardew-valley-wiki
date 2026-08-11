@@ -19,6 +19,7 @@ from .crawler import (
 from .database import Database
 from .jobs import cancellation_requested
 from .storage import Storage, sha256_bytes
+from .translations import build_translation_index
 
 
 CONTENT_ASSET_RE = re.compile(
@@ -215,6 +216,13 @@ def recover_failed_run(settings: Settings, db: Database, recovery_run_id: int, s
             recovery_run_id,
             f"Repaired deferred internal links in {repaired_total} recovered pages.",
             pages_repaired=repaired_total,
+        )
+
+        translation_index = build_translation_index(content_root)
+        db.event(
+            recovery_run_id,
+            f"Translation index generated for {translation_index['mapped_pages']} recovered pages.",
+            translations=translation_index["links"],
         )
 
         asset_count = _link_referenced_assets(storage, content_root, page_paths)

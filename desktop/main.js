@@ -125,6 +125,14 @@ function registerContentApi() {
     );
     return documents;
   });
+  ipcMain.handle('wiki:load-translations', () => {
+    const target = pathInsideContent('translations.json');
+    if (!fs.existsSync(target)) return {};
+    const value = JSON.parse(fs.readFileSync(target, 'utf8'));
+    return value && value.schema === 1 && value.pages && typeof value.pages === 'object'
+      ? value.pages
+      : {};
+  });
   ipcMain.handle('wiki:page-url', (_event, relativePath) => {
     console.info(`Resolving offline page ${relativePath}`);
     const target = pathInsideContent(relativePath);

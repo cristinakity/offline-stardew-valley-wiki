@@ -21,6 +21,7 @@ from .database import Database
 from .fixture import PIXEL_PNG, fixture_pages
 from .jobs import cancellation_requested
 from .storage import Storage, sha256_bytes
+from .translations import build_translation_index
 
 
 INTERNAL_HOSTS = {"stardewvalleywiki.com", "www.stardewvalleywiki.com"} | {
@@ -724,6 +725,12 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
                 "revision_end": max(revision_values, default=None),
             }
 
+        translation_index = build_translation_index(content_root)
+        db.event(
+            run_id,
+            f"Translation index generated for {translation_index['mapped_pages']} pages.",
+            translations=translation_index["links"],
+        )
         expected_validation_pages = sum(len(pages) for pages in pages_by_language.values())
         db.event(
             run_id,
