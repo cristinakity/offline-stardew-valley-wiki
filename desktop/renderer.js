@@ -103,6 +103,9 @@ async function rememberDocument(item) {
 }
 
 async function openDocument(item) {
+  clearTimeout(noticeTimer);
+  notice.hidden = true;
+  notice.textContent = '';
   frame.src = await window.offlineWiki.pageUrl(item.url);
   await rememberDocument(item);
   frame.hidden = false;
@@ -148,9 +151,14 @@ function translationFor(language) {
     const anchors = [...frame.contentDocument.querySelectorAll('a')];
     const translated = anchors.find(anchor => {
       const title = anchor.getAttribute('title') || '';
-      return anchor.dataset.missingLocalLanguage === language
-        || anchor.getAttribute('hreflang') === language
-        || (anchor.classList.contains('extiw') && title.toLocaleLowerCase().startsWith(`${language}:`));
+      const mediaWikiLanguageLink = anchor.getAttribute('hreflang') === language
+        && anchor.classList.contains('interlanguage-link-target');
+      const legacyLanguageLink = anchor.classList.contains('extiw')
+        && (
+          anchor.dataset.missingLocalLanguage === language
+          || title.toLocaleLowerCase().startsWith(`${language}:`)
+        );
+      return mediaWikiLanguageLink || legacyLanguageLink;
     });
     if (!translated) return null;
     const identity = pageIdentity(translated.href);

@@ -88,5 +88,15 @@ def test_desktop_resolves_deferred_links_and_language_equivalents() -> None:
     assert "status !== 'excluded'" in renderer
     assert "translationFor" in renderer
     assert "anchor.getAttribute('hreflang') === language" in renderer
+    assert "anchor.classList.contains('interlanguage-link-target')" in renderer
+    assert "return mediaWikiLanguageLink || legacyLanguageLink" in renderer
     assert "anchor.removeAttribute('data-missing-local-title')" in renderer
     assert "../../${language}/pages/${localTarget.id}.html" in renderer
+
+
+def test_desktop_notice_does_not_cover_toolbar() -> None:
+    shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    assert ".notice{position:static" in shell
+    assert "body{margin:0;height:100vh;display:flex;flex-direction:column" in shell
+    assert "notice.hidden = true" in renderer
