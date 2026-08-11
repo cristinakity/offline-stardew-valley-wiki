@@ -24,6 +24,10 @@ const notice = document.querySelector('#notice');
 const searchPage = document.querySelector('#searchPage');
 const searchSummary = document.querySelector('#searchSummary');
 const searchList = document.querySelector('#searchList');
+const imageViewer = document.querySelector('#imageViewer');
+const imageViewerCanvas = document.querySelector('#imageViewerCanvas');
+const imageViewerImage = document.querySelector('#imageViewerImage');
+const imageViewerTitle = document.querySelector('#imageViewerTitle');
 let documents = [];
 let documentsById = new Map();
 let searchIndex;
@@ -34,6 +38,7 @@ let translationData = { pages: {}, navigation: {} };
 const languageCache = new Map();
 const languagePromises = new Map();
 let noticeTimer;
+let imageZoom = 1;
 const unavailableMessages = {
   en: title => `“${title}” is not available in the offline version.`,
   es: title => `“${title}” no está disponible en la versión offline.`,
@@ -74,6 +79,81 @@ function showNotice(message) {
   notice.hidden = false;
   noticeTimer = setTimeout(() => { notice.hidden = true; }, 7000);
 }
+
+function bestLocalImageSource(image) {
+  const baseWidth = Number(image.getAttribute('width')) || image.naturalWidth || 1;
+  const candidates = [{ source: image.currentSrc || image.src, score: baseWidth }];
+  for (const entry of String(image.getAttribute('srcset') || '').split(',')) {
+    const [source, descriptor = '1x'] = entry.trim().split(/\s+/u);
+    if (!source) continue;
+    const amount = Number.parseFloat(descriptor) || 1;
+    const score = descriptor.endsWith('w') ? amount : amount * baseWidth;
+    try {
+      candidates.push({ source: new URL(source, frame.contentWindow.location.href).href, score });
+    } catch (_) {}
+  }
+  return candidates
+    .filter(candidate => candidate.source?.startsWith('file:') || candidate.source?.startsWith('data:'))
+    .sort((left, right) => right.score - left.score)[0]?.source || '';
+}
+
+function applyImageZoom() {
+  if (!imageViewerImage.naturalWidth) return;
+  imageViewerImage.style.width = `${Math.round(imageViewerImage.naturalWidth * imageZoom)}px`;
+  imageViewerImage.style.height = 'auto';
+}
+
+function fitImageViewer() {
+  if (!imageViewerImage.naturalWidth || !imageViewerImage.naturalHeight) return;
+  const availableWidth = Math.max(100, imageViewerCanvas.clientWidth - 40);
+  const availableHeight = Math.max(100, imageViewerCanvas.clientHeight - 40);
+  const fit = Math.min(
+    availableWidth / imageViewerImage.naturalWidth,
+    availableHeight / imageViewerImage.naturalHeight,
+  );
+  imageZoom = Math.min(4, fit);
+  applyImageZoom();
+}
+
+function openImageViewer(image, title) {
+  const source = bestLocalImageSource(image);
+  if (!source) return false;
+  clearTimeout(noticeTimer);
+  notice.hidden = true;
+  imageViewerTitle.textContent = title || image.alt || 'Image';
+  imageViewerImage.alt = title || image.alt || '';
+  imageViewerImage.onload = fitImageViewer;
+  imageViewerImage.src = source;
+  imageViewer.hidden = false;
+  document.querySelector('#imageViewerClose').focus();
+  return true;
+}
+
+function closeImageViewer() {
+  imageViewer.hidden = true;
+  imageViewerImage.removeAttribute('src');
+  imageViewerImage.style.removeProperty('width');
+}
+
+document.querySelector('#imageZoomOut').addEventListener('click', () => {
+  imageZoom = Math.max(0.1, imageZoom / 1.25);
+  applyImageZoom();
+});
+document.querySelector('#imageZoomReset').addEventListener('click', () => {
+  imageZoom = 1;
+  applyImageZoom();
+});
+document.querySelector('#imageZoomIn').addEventListener('click', () => {
+  imageZoom = Math.min(8, imageZoom * 1.25);
+  applyImageZoom();
+});
+document.querySelector('#imageViewerClose').addEventListener('click', closeImageViewer);
+imageViewerCanvas.addEventListener('click', event => {
+  if (event.target === imageViewerCanvas) closeImageViewer();
+});
+window.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !imageViewer.hidden) closeImageViewer();
+});
 
 function updateInterfaceLanguage(language) {
   const text = interfaceText[language] || interfaceText.en;
@@ -387,7 +467,13 @@ frame.addEventListener('load', async () => {
       const loaded = documentsById.get(String(identity.pageId));
       if (loaded) await rememberDocument(loaded);
     }
+    for (const anchor of frame.contentDocument.querySelectorAll('a.image, a.mw-file-description')) {
+      if (!anchor.querySelector('img')) continue;
+      anchor.style.cursor = 'zoom-in';
+      anchor.title = anchor.dataset.missingLocalTitle || anchor.title || 'Open image';
+    }
     for (const anchor of frame.contentDocument.querySelectorAll('a[data-missing-local-title]')) {
+      if (anchor.matches('a.image, a.mw-file-description') && anchor.querySelector('img')) continue;
       const language = anchor.dataset.missingLocalLanguage || currentLanguage;
       const status = anchor.dataset.offlineLinkStatus;
       const localTarget = status !== 'excluded' && language === currentLanguage
@@ -410,6 +496,16 @@ frame.addEventListener('load', async () => {
     }
     frame.contentDocument.addEventListener('click', event => {
       const element = event.target?.nodeType === 1 ? event.target : event.target?.parentElement;
+      const imageLink = element?.closest('a.image, a.mw-file-description');
+      const linkedImage = imageLink?.querySelector('img');
+      if (linkedImage) {
+        event.preventDefault();
+        openImageViewer(
+          linkedImage,
+          imageLink.dataset.missingLocalTitle || linkedImage.alt || imageLink.title,
+        );
+        return;
+      }
       const missing = element?.closest('a[data-missing-local-title]');
       if (missing) {
         event.preventDefault();

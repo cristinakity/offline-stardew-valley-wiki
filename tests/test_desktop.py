@@ -135,3 +135,15 @@ def test_desktop_notice_does_not_cover_toolbar() -> None:
     assert "header{position:relative;z-index:40" in shell
     assert ".results{position:absolute;z-index:30" in shell
     assert ".notice{position:static;z-index:5" in shell
+
+
+def test_desktop_opens_downloaded_images_in_local_viewer() -> None:
+    shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    assert 'id="imageViewer"' in shell
+    assert 'id="imageZoomIn"' in shell
+    assert "function bestLocalImageSource" in renderer
+    assert "function openImageViewer" in renderer
+    assert "a.image, a.mw-file-description" in renderer
+    assert "imageLink?.querySelector('img')" in renderer
+    assert "imageZoom = Math.min(8" in renderer
