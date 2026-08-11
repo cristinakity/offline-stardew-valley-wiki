@@ -104,3 +104,6 @@ def test_desktop_notice_does_not_cover_toolbar() -> None:
     assert ".notice{position:static" in shell
     assert "body{margin:0;height:100vh;display:flex;flex-direction:column" in shell
     assert "notice.hidden = true" in renderer
+    assert "header{position:relative;z-index:40" in shell
+    assert ".results{position:absolute;z-index:30" in shell
+    assert ".notice{position:static;z-index:5" in shell
