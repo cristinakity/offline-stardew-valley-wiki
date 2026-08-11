@@ -3,6 +3,7 @@ const { contextBridge, ipcRenderer } = require('electron');
 contextBridge.exposeInMainWorld('offlineWiki', {
   shellAssets: () => ipcRenderer.invoke('wiki:shell-assets'),
   available: () => ipcRenderer.invoke('wiki:available'),
+  availableLanguages: () => ipcRenderer.invoke('wiki:available-languages'),
   loadIndex: language => ipcRenderer.invoke('wiki:load-index', language),
   loadTranslations: () => ipcRenderer.invoke('wiki:load-translations'),
   pageUrl: relativePath => ipcRenderer.invoke('wiki:page-url', relativePath),

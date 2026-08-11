@@ -29,6 +29,7 @@ let documentsById = new Map();
 let searchIndex;
 let currentLanguage = 'en';
 let currentDocument = null;
+let availableLanguageCodes = languages.map(([code]) => code);
 let translationData = { pages: {}, navigation: {} };
 const languageCache = new Map();
 const languagePromises = new Map();
@@ -249,7 +250,7 @@ function translationFor(language) {
 }
 
 async function switchLanguage(code) {
-  if (code === currentLanguage) return;
+  if (code === currentLanguage || !availableLanguageCodes.includes(code)) return;
   const requested = translationFor(code) || (currentDocument ? { title: currentDocument.title } : null);
   await loadLanguage(code, requested);
 }
@@ -460,8 +461,15 @@ document.querySelector('#home').addEventListener('click', () => loadLanguage(cur
     empty.querySelector('p').textContent = 'Checking .local-data/current.json…';
     if (await window.offlineWiki.available()) {
       translationData = await window.offlineWiki.loadTranslations();
+      availableLanguageCodes = await window.offlineWiki.availableLanguages();
+      for (const button of document.querySelectorAll('.flag')) {
+        button.hidden = !availableLanguageCodes.includes(button.dataset.language);
+      }
       const saved = await window.offlineWiki.loadReaderState();
-      const language = saved?.language || 'en';
+      const language = availableLanguageCodes.includes(saved?.language)
+        ? saved.language
+        : (availableLanguageCodes.includes('en') ? 'en' : availableLanguageCodes[0]);
+      if (!language) throw new Error('This package does not contain any language indexes.');
       empty.querySelector('p').textContent = `Opening the ${language.toUpperCase()} offline wiki…`;
       await loadLanguage(language, saved);
     } else {

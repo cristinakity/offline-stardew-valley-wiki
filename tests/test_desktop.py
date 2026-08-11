@@ -33,6 +33,16 @@ def test_desktop_translates_reader_and_native_menu() -> None:
     assert "setLanguage" in preload
 
 
+def test_desktop_only_shows_languages_in_the_package() -> None:
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
+    preload = (ROOT / "desktop" / "preload.js").read_text(encoding="utf-8")
+    assert "wiki:available-languages" in main
+    assert "availableLanguages" in preload
+    assert "availableLanguageCodes = await window.offlineWiki.availableLanguages()" in renderer
+    assert "button.hidden = !availableLanguageCodes.includes" in renderer
+
+
 def test_desktop_uses_exact_legacy_background_and_flag_images() -> None:
     background = (
         ROOT

@@ -133,6 +133,13 @@ function registerContentApi() {
     const root = contentRoot();
     return Boolean(root && fs.existsSync(root));
   });
+  ipcMain.handle('wiki:available-languages', () => {
+    const searchRoot = pathInsideContent('search');
+    return fs.readdirSync(searchRoot, { withFileTypes: true })
+      .filter(entry => entry.isFile() && /^[a-z]{2}\.json$/.test(entry.name))
+      .map(entry => entry.name.slice(0, 2))
+      .sort();
+  });
   ipcMain.handle('wiki:load-index', (_event, language) => {
     if (!/^[a-z]{2}$/.test(language)) throw new Error('Invalid language.');
     const target = pathInsideContent(path.join('search', `${language}.json`));
