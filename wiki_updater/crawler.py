@@ -10,7 +10,7 @@ import shutil
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Awaitable, Callable
 from urllib.parse import parse_qs, quote, unquote, urljoin, urlparse
 
 import httpx
@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup, Tag
 from .config import LANGUAGES, Settings
 from .database import Database
 from .fixture import PIXEL_PNG, fixture_pages
-from .jobs import cancellation_requested
+from .jobs import control_checkpoint, control_checkpoint_sync
 from .storage import Storage, sha256_bytes
 from .translations import build_translation_index
 
@@ -76,8 +76,9 @@ class Asset:
 
 
 class MediaWikiClient:
-    def __init__(self, settings: Settings):
+    def __init__(self, settings: Settings, checkpoint: Callable[[], Awaitable[None]] | None = None):
         self.settings = settings
+        self.checkpoint = checkpoint
         self.semaphore = asyncio.Semaphore(settings.http_concurrency)
         self.client = httpx.AsyncClient(
             headers={"User-Agent": settings.user_agent, "Accept-Language": "en"},
@@ -91,6 +92,8 @@ class MediaWikiClient:
     async def get(self, url: str, **kwargs: Any) -> httpx.Response:
         last_error: Exception | None = None
         for attempt in range(5):
+            if self.checkpoint:
+                await self.checkpoint()
             try:
                 async with self.semaphore:
                     response = await self.client.get(url, **kwargs)
@@ -498,10 +501,13 @@ def repair_deferred_internal_links(
     content_root: Path,
     title_maps: dict[str, dict[str, int]],
     language: str,
+    checkpoint: Callable[[], None] | None = None,
 ) -> dict[int, tuple[str, str]]:
     """Resolve links previously marked missing by a smaller base snapshot."""
     repaired: dict[int, tuple[str, str]] = {}
     for page_path in (content_root / language / "pages").glob("*.html"):
+        if checkpoint:
+            checkpoint()
         source = page_path.read_bytes()
         if b'data-offline-link-status="missing"' not in source:
             continue
@@ -553,15 +559,20 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
     atomic_write_text(content_root / "offline.css", OFFLINE_CSS + "\n")
 
     is_fixture = profile == "fixture"
-    client = None if is_fixture else MediaWikiClient(settings)
+    async def checkpoint() -> None:
+        await control_checkpoint(db, run_id)
+
+    client = None if is_fixture else MediaWikiClient(settings, checkpoint)
     pages_by_language: dict[str, list[dict[str, Any]]] = {}
     try:
         if is_fixture:
+            await checkpoint()
             fixture = fixture_pages()
             pages_by_language = {language: fixture[language] for language in settings.enabled_languages}
         else:
             assert client is not None
             for language in settings.enabled_languages:
+                await checkpoint()
                 db.event(run_id, f"Enumerating {language} pages.", language=language)
                 home = await client.main_page(language)
                 pages = await client.all_pages(language, 25 if profile == "sample" else None)
@@ -595,6 +606,7 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
         search_root.mkdir(exist_ok=True)
 
         for language, pages in pages_by_language.items():
+            await checkpoint()
             db.execute(
                 "INSERT OR REPLACE INTO run_languages(run_id,language,status,pages_total) VALUES(?,?,?,?)",
                 (run_id, language, "running", len(pages)),
@@ -627,14 +639,14 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
 
             async def process_page(page: dict[str, Any]) -> tuple[dict[str, Any], str, int, dict[str, int], str]:
                 async with page_slots:
-                    if cancellation_requested(db, run_id):
-                        raise asyncio.CancelledError
+                    await checkpoint()
                     source = (
                         str(page.get("html"))
                         if is_fixture
                         else await client.rendered_page(language, str(page["title"]))
                     )
                     normalized, stats = await normalizer.normalize(language, source, page)
+                    await checkpoint()
                     digest, blob, _created = storage.put_blob(normalized, ".html")
                     destination = content_root / language / "pages" / f"{page['pageid']}.html"
                     storage.link_blob(blob, destination)
@@ -671,6 +683,7 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
                 content_root,
                 title_maps,
                 language,
+                checkpoint=lambda: control_checkpoint_sync(db, run_id),
             )
             for page_id, (digest, search_text) in repaired_links.items():
                 updated_digests[page_id] = digest
@@ -740,6 +753,7 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
         )
 
         def validation_progress(processed: int, expected: int) -> None:
+            control_checkpoint_sync(db, run_id)
             if processed % 1000 == 0 or processed == expected:
                 db.event(
                     run_id,

@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS runs (
     finished_at TEXT,
     snapshot_id TEXT,
     cancel_requested INTEGER NOT NULL DEFAULT 0,
+    pause_requested INTEGER NOT NULL DEFAULT 0,
     error TEXT,
     summary_json TEXT NOT NULL DEFAULT '{}'
 );
@@ -111,6 +112,14 @@ class Database:
     def initialize(self) -> None:
         with self.connection() as connection:
             connection.executescript(SCHEMA)
+            run_columns = {
+                str(row["name"])
+                for row in connection.execute("PRAGMA table_info(runs)").fetchall()
+            }
+            if "pause_requested" not in run_columns:
+                connection.execute(
+                    "ALTER TABLE runs ADD COLUMN pause_requested INTEGER NOT NULL DEFAULT 0"
+                )
 
     def execute(self, sql: str, parameters: tuple[Any, ...] = ()) -> int:
         with self.connection() as connection:

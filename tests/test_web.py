@@ -32,6 +32,10 @@ def test_dashboard_explains_profiles_and_shows_crawler_activity() -> None:
     assert "Purge temporary cache" in DASHBOARD
     assert "Keep current snapshot only" in DASHBOARD
     assert "Uso físico real" in DASHBOARD
+    assert "Pausar" in DASHBOARD
+    assert "Continuar" in DASHBOARD
+    assert "Cancelar" in DASHBOARD
+    assert "controlRun" in DASHBOARD
 
 
 def test_dashboard_uses_tabs_and_bounded_scroll_regions() -> None:
@@ -63,6 +67,11 @@ def test_dashboard_refreshes_only_on_navigation_or_manual_request() -> None:
     assert "setInterval(" not in DASHBOARD
     assert "periodicRefresh" not in DASHBOARD
     assert "Promise.all([api('/api/status'),api('/api/runs'),api('/api/candidates')" not in DASHBOARD
+
+
+def test_candidate_assets_use_adaptive_file_sizes() -> None:
+    assert "compactBytes(a.size)" in DASHBOARD
+    assert "(a.size/1024/1024).toFixed(1)" not in DASHBOARD
 
 
 def test_dashboard_lists_builds_without_polling_them(tmp_path: Path) -> None:

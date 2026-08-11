@@ -17,7 +17,7 @@ from . import __version__
 from .candidates import candidate, create_candidate, delete_candidate, set_candidate_status
 from .config import LANGUAGES, get_settings
 from .database import Database
-from .jobs import enqueue, request_cancel
+from .jobs import enqueue, request_cancel, request_pause, request_resume
 from .recovery import recoverable_failure
 from .storage import Storage
 
@@ -152,6 +152,7 @@ def health() -> dict[str, Any]:
 def decode_run(item: dict[str, Any]) -> dict[str, Any]:
     item["summary"] = json.loads(item.pop("summary_json", "{}"))
     item["cancel_requested"] = bool(item["cancel_requested"])
+    item["pause_requested"] = bool(item["pause_requested"])
     item["recoverable"] = recoverable_failure(item)
     return item
 
@@ -188,7 +189,7 @@ async def run_events(run_id: int) -> StreamingResponse:
                 last_id = event["id"]
                 yield f"id: {last_id}\ndata: {json.dumps(event, ensure_ascii=False)}\n\n"
             run = db.one("SELECT status FROM runs WHERE id=?", (run_id,))
-            if not run or run["status"] not in {"queued", "running"}:
+            if not run or run["status"] not in {"queued", "running", "paused"}:
                 yield "event: complete\ndata: {}\n\n"
                 return
             await asyncio.sleep(1)
@@ -216,6 +217,28 @@ def cancel_run(run_id: int, request: Request) -> dict[str, str]:
     except KeyError as exc:
         raise HTTPException(404, "Run not found.") from exc
     return {"status": "cancellation_requested"}
+
+
+@app.post("/api/runs/{run_id}/pause")
+def pause_run(run_id: int, request: Request) -> dict[str, str]:
+    try:
+        request_pause(db, run_id, actor(request))
+    except KeyError as exc:
+        raise HTTPException(404, "Run not found.") from exc
+    except RuntimeError as exc:
+        raise HTTPException(409, str(exc)) from exc
+    return {"status": "pause_requested"}
+
+
+@app.post("/api/runs/{run_id}/resume")
+def resume_run(run_id: int, request: Request) -> dict[str, str]:
+    try:
+        request_resume(db, run_id, actor(request))
+    except KeyError as exc:
+        raise HTTPException(404, "Run not found.") from exc
+    except RuntimeError as exc:
+        raise HTTPException(409, str(exc)) from exc
+    return {"status": "running"}
 
 
 @app.post("/api/runs/{run_id}/recover")
@@ -356,7 +379,7 @@ def status() -> dict[str, Any]:
         "storage_used_bytes": storage.usage_bytes(),
         "storage_limit_bytes": settings.storage_limit_gb * 1024**3,
         "settings": read_settings(),
-        "active_run": db.one("SELECT id,status,profile FROM runs WHERE status IN ('queued','running') ORDER BY id LIMIT 1"),
+        "active_run": db.one("SELECT id,status,profile FROM runs WHERE status IN ('queued','running','paused') ORDER BY id LIMIT 1"),
     }
 
 
@@ -367,7 +390,7 @@ def storage_status() -> dict[str, Any]:
 
 @app.post("/api/storage/purge")
 async def purge_storage(request: Request) -> dict[str, Any]:
-    if db.one("SELECT id FROM runs WHERE status IN ('queued','running') LIMIT 1"):
+    if db.one("SELECT id FROM runs WHERE status IN ('queued','running','paused') LIMIT 1"):
         raise HTTPException(409, "Storage cannot be purged while a job is active.")
     payload = await request.json()
     target = str(payload.get("target", ""))
@@ -425,12 +448,13 @@ button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px s
 <div class="help-item"><h3>Scheduler, idiomas y velocidad</h3><p><b>Enabled</b> permite la ejecución automática. <b>Parallel pages</b> controla cuántas páginas se preparan a la vez. El límite hacia la wiki siempre permanece en dos requests simultáneos.</p></div>
 <div class="help-item"><h3>Create candidate</h3><p>Congela el snapshot aprobado en una versión, genera manifiesto, checksums y archivos descargables. Hazlo únicamente después de revisar el resultado local. No publica en GitHub por sí solo.</p></div>
 <div class="help-item"><h3>Recover failed full</h3><p>Si todas las páginas terminaron y sólo fallaron recursos opcionales, <b>Recover</b> reconstruye el snapshot desde los blobs locales y vuelve a validarlo sin descargar toda la wiki. El candidato quedará marcado con advertencias.</p></div>
+<div class="help-item"><h3>Pausar, continuar y cancelar</h3><p>En <b>Crawler</b>, <b>Pausar</b> termina las solicitudes que ya están en vuelo y se detiene antes de iniciar la siguiente. <b>Continuar</b> reanuda el mismo run y conserva su progreso. <b>Cancelar</b> descarta solamente el workspace incompleto; no reemplaza el snapshot aprobado.</p></div>
 <div class="help-item"><h3>Runs, Candidates y Audit</h3><p><b>Runs</b> conserva cada intento. Pulsa su ID para inspeccionarlo. <b>Candidates</b> contiene artefactos de revisión. <b>Audit</b> registra quién ejecutó o cambió algo.</p></div>
 <div class="help-item"><h3>Builds locales</h3><p>Muestra los ZIP, DEB y RPM generados en tu PC antes de enviarlos a GitHub. <code>WIKI_EDITION=all</code> genera la app multilingüe y una app ligera para cada uno de los 12 idiomas; también puedes construir sólo uno, por ejemplo <code>WIKI_EDITION=ja</code>. El build más reciente aparece primero. Descargar un archivo desde aquí no lo publica.</p></div>
 <div class="help-item"><h3>Abrir la wiki</h3><p>Este panel sólo administra el crawler. Abre el lector desde el host con <code>env -u ELECTRON_RUN_AS_NODE npm start</code>. El contenido se lee desde <code>.local-data</code>.</p></div>
 </div></section></section>
 <section class="tab-panel active" data-panel="overview"><div class="grid"><section class="card"><h2>Status</h2><div id="status">Loading…</div></section>
-<section class="card"><h2>Run synchronization</h2><div class="row"><select id="profile" onchange="showProfileHelp()"><option>fixture</option><option>sample</option><option>incremental</option><option>full</option></select><button onclick="startRun()">Start</button></div><div id="profileHelp" class="profile-help"></div><p><small>Sólo puede existir una ejecución activa. Puedes cancelarla desde Runs.</small></p></section>
+<section class="card"><h2>Run synchronization</h2><div class="row"><select id="profile" onchange="showProfileHelp()"><option>fixture</option><option>sample</option><option>incremental</option><option>full</option></select><button onclick="startRun()">Start</button></div><div id="profileHelp" class="profile-help"></div><p><small>Sólo puede existir una ejecución activa. Puedes pausarla, continuarla o cancelarla desde Crawler.</small></p></section>
 <section class="card"><h2>Create candidate</h2><div class="row"><input id="version" value="v1.3.0" pattern="v?[0-9]+\\.[0-9]+\\.[0-9]+"><button onclick="createCandidate()">Create</button></div></section></div>
 </section>
 <section id="tab-storage" class="tab-panel" data-panel="storage"><section class="card"><h2>Storage</h2><p id="storageSummary" class="muted">Calculando uso real…</p><div id="storageBreakdown" class="table-scroll compact"></div><p><small>Los tamaños por categoría pueden compartir hardlinks y no deben sumarse. “Uso real” cuenta cada inode una sola vez.</small></p><div class="row"><button class="secondary" onclick="purgeStorage('cache')">Purge temporary cache</button><button class="danger" onclick="purgeStorage('builds')">Delete build outputs</button><button class="danger" onclick="purgeStorage('old_snapshots')">Keep current snapshot only</button></div><p><small>La caché elimina temporales y blobs no referenciados; los runs fallidos podrían dejar de ser recuperables. Los candidatos se eliminan individualmente en Candidates.</small></p></section></section>
@@ -450,14 +474,15 @@ async function api(url,options={}){const r=await fetch(url,{headers:{'Content-Ty
 function bytes(v){return(v/1024/1024/1024).toFixed(2)+' GiB'}
 function compactBytes(v){if(v>=1073741824)return(v/1073741824).toFixed(2)+' GiB';if(v>=1048576)return(v/1048576).toFixed(1)+' MiB';if(v>=1024)return(v/1024).toFixed(1)+' KiB';return v+' B'}
 function showProfileHelp(){document.querySelector('#profileHelp').textContent=profileDescriptions[document.querySelector('#profile').value]}
-function renderActivity(x){const ls=x.languages||[];const total=ls.reduce((n,l)=>n+l.pages_total,0);const written=ls.reduce((n,l)=>n+l.pages_written,0);const assets=ls.reduce((n,l)=>n+l.assets_written,0);const size=ls.reduce((n,l)=>n+l.bytes_written,0);const isRecovery=x.kind==='recovery';const validation=[...(x.events||[])].reverse().find(e=>e.detail?.phase==='validation');const restoredAssets=[...(x.events||[])].reverse().find(e=>Number.isFinite(e.detail?.assets));let percent=total?Math.round(written/total*100):0;if(isRecovery){const restoredPercent=total?written/total:0;percent=validation?50+Math.round((validation.detail.pages_checked||0)/(validation.detail.pages_total||total||1)*50):Math.round(restoredPercent*50)}const last=x.events?.at(-1);document.querySelector('#activityTitle').textContent=`Run #${x.id} · ${x.profile} · ${last?.message||'sin eventos'}`;document.querySelector('#activityState').textContent=x.status;document.querySelector('#activityState').className=`pill ${x.status==='completed'?'ok':x.status==='completed_with_warnings'?'warning':x.status==='failed'?'bad':''}`;
-document.querySelector('#activity').innerHTML=`<div class="progress-summary"><div class="metric"><small>Progreso total</small><strong>${percent}%</strong></div><div class="metric"><small>${isRecovery?'Páginas restauradas':'Páginas procesadas'}</small><strong>${written} / ${total||'?'}</strong></div><div class="metric"><small>${isRecovery?'Assets reutilizados':'Assets nuevos'}</small><strong>${isRecovery?(restoredAssets?.detail.assets??'Enlazando…'):assets}</strong></div><div class="metric"><small>${isRecovery?'Transferencia de red':'Datos escritos'}</small><strong>${isRecovery?'0 B (sólo local)':compactBytes(size)}</strong></div></div><progress class="progressbar" max="100" value="${percent}"></progress>${x.error?`<p class="bad"><b>Error:</b> ${x.error}</p>`:''}<div class="table-scroll compact"><table class="language-progress"><thead><tr><th>Idioma</th><th>Estado</th><th>Páginas</th><th>${isRecovery?'Assets nuevos':'Assets'}</th><th>${isRecovery?'Red':'Datos'}</th><th>Revisión final</th></tr></thead><tbody>${ls.map(l=>`<tr><td>${l.language}</td><td>${l.status}</td><td>${l.pages_written}/${l.pages_total}</td><td>${l.assets_written}</td><td>${isRecovery?'0 B':compactBytes(l.bytes_written)}</td><td>${l.revision_end||'—'}</td></tr>`).join('')||'<tr><td colspan="6">Preparando contenido local…</td></tr>'}</tbody></table></div><h3>Eventos recientes</h3><div class="event-log">${(x.events||[]).slice(-30).reverse().map(e=>`<div class="event-line"><small>${new Date(e.created_at).toLocaleString()}</small> <span class="${e.level==='error'?'bad':''}">[${e.level}] ${e.message}</span></div>`).join('')||'<span class="muted">Todavía no hay eventos.</span>'}</div>`}
+function activityControls(x){if(!['queued','running','paused'].includes(x.status))return'';if(x.cancel_requested)return'<div class="row"><button disabled>Cancelando de forma segura…</button></div>';const resume=x.status==='paused'||x.pause_requested;return`<div class="row">${x.kind!=='recovery'?`<button class="secondary" onclick="controlRun(${x.id},'${resume?'resume':'pause'}')">${resume?'Continuar':'Pausar'}</button>`:''}<button class="danger" onclick="cancelRun(${x.id})">Cancelar</button></div>`}
+function renderActivity(x){const ls=x.languages||[];const total=ls.reduce((n,l)=>n+l.pages_total,0);const written=ls.reduce((n,l)=>n+l.pages_written,0);const assets=ls.reduce((n,l)=>n+l.assets_written,0);const size=ls.reduce((n,l)=>n+l.bytes_written,0);const isRecovery=x.kind==='recovery';const validation=[...(x.events||[])].reverse().find(e=>e.detail?.phase==='validation');const restoredAssets=[...(x.events||[])].reverse().find(e=>Number.isFinite(e.detail?.assets));let percent=total?Math.round(written/total*100):0;if(isRecovery){const restoredPercent=total?written/total:0;percent=validation?50+Math.round((validation.detail.pages_checked||0)/(validation.detail.pages_total||total||1)*50):Math.round(restoredPercent*50)}const last=x.events?.at(-1);const displayedState=x.cancel_requested?'cancelling':x.pause_requested&&x.status==='running'?'pausing':x.status;document.querySelector('#activityTitle').textContent=`Run #${x.id} · ${x.profile} · ${last?.message||'sin eventos'}`;document.querySelector('#activityState').textContent=displayedState;document.querySelector('#activityState').className=`pill ${x.status==='completed'?'ok':x.status==='completed_with_warnings'?'warning':x.status==='failed'?'bad':''}`;
+document.querySelector('#activity').innerHTML=`${activityControls(x)}<div class="progress-summary"><div class="metric"><small>Progreso total</small><strong>${percent}%</strong></div><div class="metric"><small>${isRecovery?'Páginas restauradas':'Páginas procesadas'}</small><strong>${written} / ${total||'?'}</strong></div><div class="metric"><small>${isRecovery?'Assets reutilizados':'Assets nuevos'}</small><strong>${isRecovery?(restoredAssets?.detail.assets??'Enlazando…'):assets}</strong></div><div class="metric"><small>${isRecovery?'Transferencia de red':'Datos escritos'}</small><strong>${isRecovery?'0 B (sólo local)':compactBytes(size)}</strong></div></div><progress class="progressbar" max="100" value="${percent}"></progress>${x.error?`<p class="bad"><b>Error:</b> ${x.error}</p>`:''}<div class="table-scroll compact"><table class="language-progress"><thead><tr><th>Idioma</th><th>Estado</th><th>Páginas</th><th>${isRecovery?'Assets nuevos':'Assets'}</th><th>${isRecovery?'Red':'Datos'}</th><th>Revisión final</th></tr></thead><tbody>${ls.map(l=>`<tr><td>${l.language}</td><td>${l.status}</td><td>${l.pages_written}/${l.pages_total}</td><td>${l.assets_written}</td><td>${isRecovery?'0 B':compactBytes(l.bytes_written)}</td><td>${l.revision_end||'—'}</td></tr>`).join('')||'<tr><td colspan="6">Preparando contenido local…</td></tr>'}</tbody></table></div><h3>Eventos recientes</h3><div class="event-log">${(x.events||[]).slice(-30).reverse().map(e=>`<div class="event-line"><small>${new Date(e.created_at).toLocaleString()}</small> <span class="${e.level==='error'?'bad':''}">[${e.level}] ${e.message}</span></div>`).join('')||'<span class="muted">Todavía no hay eventos.</span>'}</div>`}
 function renderStatus(s){document.querySelector('#status').innerHTML=`Environment: <b>${s.environment}</b><br>Storage real: ${bytes(s.storage_used_bytes)} / ${bytes(s.storage_limit_bytes)}<br>Snapshot: ${s.current?.snapshot_id||'none'}<br>Active: ${s.active_run?.id||'none'}`}
 function renderSettings(conf){document.querySelector('#enabled').checked=conf.enabled;document.querySelector('#pageConcurrency').value=String(conf.page_concurrency);document.querySelector('#languages').innerHTML=langs.map(l=>`<label><input type="checkbox" data-lang="${l}" ${conf.enabled_languages.includes(l)?'checked':''}>${l}</label>`).join('')}
 async function refreshStatus(){renderStatus(await api('/api/status'))}
 async function refreshOverview(){const [s,conf]=await Promise.all([api('/api/status'),api('/api/settings')]);renderStatus(s);renderSettings(conf)}
-async function refreshRuns(){const r=await api('/api/runs');document.querySelector('#runs').innerHTML=r.map(x=>`<tr data-run-id="${x.id}" class="${selectedRunId===x.id?'selected-run':''}"><td><a class="run-link" aria-current="${selectedRunId===x.id?'true':'false'}" href="#" onclick="detail(${x.id});return false">${x.id}</a></td><td>${x.profile}</td><td>${x.status}</td><td>${x.created_at}</td><td>${x.snapshot_id||''}</td><td>${['queued','running'].includes(x.status)?`<button class="danger" onclick="cancelRun(${x.id})">Cancel</button>`:x.recoverable?`<button class="secondary" onclick="recoverRun(${x.id})">Recover</button>`:''}</td></tr>`).join('')}
-async function refreshCandidates(){const c=await api('/api/candidates');document.querySelector('#candidates').innerHTML=c.map(x=>`<div class="card"><b>${x.version}</b> <span class="pill ${x.status==='ready_with_warnings'?'warning':''}">${x.status}</span>${x.status==='ready_with_warnings'?'<p class="warning"><b>Advertencia:</b> el contenido pasó la validación offline, pero contiene recursos opcionales no disponibles.</p>':''}<br>${x.assets.map(a=>`<a href="/api/candidates/${x.id}/assets/${encodeURIComponent(a.name)}">${a.name}</a> (${(a.size/1024/1024).toFixed(1)} MiB)`).join('<br>')}<div class="row">${['ready_for_review','ready_with_warnings'].includes(x.status)?`<button onclick="candidateAction(${x.id},'publish','${x.status}')">${x.status==='ready_with_warnings'?'Publish with warnings':'Publish locally'}</button><button class="danger" onclick="candidateAction(${x.id},'reject','${x.status}')">Reject</button>`:''}<button class="danger" onclick="deleteCandidate(${x.id},'${x.version}')">Delete</button></div></div>`).join('')||'<small>No candidates yet.</small>'}
+async function refreshRuns(){const r=await api('/api/runs');document.querySelector('#runs').innerHTML=r.map(x=>`<tr data-run-id="${x.id}" class="${selectedRunId===x.id?'selected-run':''}"><td><a class="run-link" aria-current="${selectedRunId===x.id?'true':'false'}" href="#" onclick="detail(${x.id});return false">${x.id}</a></td><td>${x.profile}</td><td>${x.cancel_requested?'cancelling':x.pause_requested&&x.status==='running'?'pausing':x.status}</td><td>${x.created_at}</td><td>${x.snapshot_id||''}</td><td>${['queued','running','paused'].includes(x.status)?activityControls(x):x.recoverable?`<button class="secondary" onclick="recoverRun(${x.id})">Recover</button>`:''}</td></tr>`).join('')}
+async function refreshCandidates(){const c=await api('/api/candidates');document.querySelector('#candidates').innerHTML=c.map(x=>`<div class="card"><b>${x.version}</b> <span class="pill ${x.status==='ready_with_warnings'?'warning':''}">${x.status}</span>${x.status==='ready_with_warnings'?'<p class="warning"><b>Advertencia:</b> el contenido pasó la validación offline, pero contiene recursos opcionales no disponibles.</p>':''}<br>${x.assets.map(a=>`<a href="/api/candidates/${x.id}/assets/${encodeURIComponent(a.name)}">${a.name}</a> (${compactBytes(a.size)})`).join('<br>')}<div class="row">${['ready_for_review','ready_with_warnings'].includes(x.status)?`<button onclick="candidateAction(${x.id},'publish','${x.status}')">${x.status==='ready_with_warnings'?'Publish with warnings':'Publish locally'}</button><button class="danger" onclick="candidateAction(${x.id},'reject','${x.status}')">Reject</button>`:''}<button class="danger" onclick="deleteCandidate(${x.id},'${x.version}')">Delete</button></div></div>`).join('')||'<small>No candidates yet.</small>'}
 async function refreshBuilds(){const builds=await api('/api/builds');document.querySelector('#builds').innerHTML=builds.map(build=>`<div class="card build-card ${build.latest?'latest':''}"><div><b>${build.id}</b> ${build.latest?'<span class="pill ok">Último build</span>':''}</div><div>${build.editions.map(edition=>`<span class="edition-pill">${edition}</span>`).join('')}</div><div class="build-assets">${build.assets.map(asset=>`<a href="/api/builds/${encodeURIComponent(build.id)}/${encodeURIComponent(asset.name)}">${asset.name}</a> (${compactBytes(asset.size)})`).join('<br>')}</div></div>`).join('')||'<small>Todavía no hay builds locales. Ejecuta <code>WIKI_EDITION=all ... run --rm linux-builder</code> para generar la edición multilingüe y las 12 ediciones individuales.</small>'}
 async function refreshStorage(){const [s,space]=await Promise.all([api('/api/status'),api('/api/storage')]);document.querySelector('#storageSummary').innerHTML=`Uso físico real: <b>${compactBytes(space.physical_bytes)}</b> de ${bytes(s.storage_limit_bytes)}`;document.querySelector('#storageBreakdown').innerHTML=`<table><thead><tr><th>Categoría</th><th>Espacio asignado</th><th>Archivos</th></tr></thead><tbody>${Object.entries(space.categories).map(([name,value])=>`<tr><td>${name}</td><td>${compactBytes(value.allocated_bytes)}</td><td>${value.files}</td></tr>`).join('')}</tbody></table>`}
 async function refreshAudit(){const audit=await api('/api/audit?limit=25');document.querySelector('#audit').textContent=audit.map(x=>`${x.created_at} ${x.actor} ${x.action} ${x.target||''}`).join('\\n')}
@@ -466,7 +491,8 @@ async function refreshTab(name=activeTab){try{if(name==='overview')await refresh
 async function refresh(){return refreshTab(activeTab)}
 async function manualRefresh(){if(manualRefreshRunning)return;manualRefreshRunning=true;const button=document.querySelector('#refreshButton');button.disabled=true;button.textContent='↻ Refreshing…';try{await refresh()}finally{manualRefreshRunning=false;button.disabled=false;button.textContent='↻ Refresh'}}
 async function startRun(){try{const job=await api('/api/runs/sync',{method:'POST',body:JSON.stringify({profile:document.querySelector('#profile').value})});selectedRunId=job.run_id;showTab('crawler')}catch(e){alert(e)}}
-async function cancelRun(id){await api(`/api/runs/${id}/cancel`,{method:'POST'});refresh()}
+async function controlRun(id,action){try{await api(`/api/runs/${id}/${action}`,{method:'POST'});selectedRunId=id;await refresh()}catch(e){alert(e)}}
+async function cancelRun(id){if(!confirm(`¿Cancelar el run #${id}? Se conservará el snapshot aprobado anterior.`))return;try{await api(`/api/runs/${id}/cancel`,{method:'POST'});selectedRunId=id;await refresh()}catch(e){alert(e)}}
 async function recoverRun(id){if(!confirm(`¿Recuperar el run #${id} desde los blobs locales? No volverá a descargar toda la wiki.`))return;try{const job=await api(`/api/runs/${id}/recover`,{method:'POST'});await detail(job.run_id)}catch(e){alert(e)}}
 async function createCandidate(){try{await api('/api/candidates',{method:'POST',body:JSON.stringify({version:document.querySelector('#version').value})});refresh()}catch(e){alert(e)}}
 async function candidateAction(id,action,status){const message=action==='publish'&&status==='ready_with_warnings'?'Este candidato pasó la validación offline, pero contiene recursos opcionales no disponibles. ¿Publicar localmente con advertencias?':`${action} candidate?`;if(!confirm(message))return;await api(`/api/candidates/${id}/${action}`,{method:'POST'});refresh()}

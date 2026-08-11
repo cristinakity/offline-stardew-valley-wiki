@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import asyncio
 import json
+import time
 from typing import Any
 
 from .database import Database, utcnow
@@ -12,8 +14,12 @@ TERMINAL_STATES = {
 }
 
 
+class RunCancelled(Exception):
+    pass
+
+
 def enqueue(db: Database, kind: str, profile: str, actor: str) -> int:
-    active = db.one("SELECT id FROM runs WHERE status IN ('queued','running') LIMIT 1")
+    active = db.one("SELECT id FROM runs WHERE status IN ('queued','running','paused') LIMIT 1")
     if active:
         raise RuntimeError(f"Run {active['id']} is already queued or running.")
     run_id = db.execute(
@@ -40,10 +46,23 @@ def claim_next(db: Database) -> dict[str, Any] | None:
         return dict(row) if changed else None
 
 
+def reconcile_interrupted_runs(db: Database) -> None:
+    """Close jobs whose in-memory worker disappeared before a restart."""
+    for row in db.all("SELECT id,cancel_requested FROM runs WHERE status IN ('running','paused')"):
+        run_id = int(row["id"])
+        if row["cancel_requested"]:
+            finish(db, run_id, "cancelled")
+            db.audit("worker", "run.cancel.recovered", str(run_id))
+        else:
+            finish(db, run_id, "failed", error="Worker restarted before this run finished.")
+            db.audit("worker", "run.interrupted", str(run_id))
+
+
 def finish(db: Database, run_id: int, status: str, *, snapshot_id: str | None = None,
            error: str | None = None, summary: dict[str, Any] | None = None) -> None:
     db.execute(
-        "UPDATE runs SET status=?,finished_at=?,snapshot_id=?,error=?,summary_json=? WHERE id=?",
+        "UPDATE runs SET status=?,finished_at=?,snapshot_id=?,error=?,summary_json=?,"
+        "cancel_requested=0,pause_requested=0 WHERE id=?",
         (status, utcnow(), snapshot_id, error, json.dumps(summary or {}, ensure_ascii=False), run_id),
     )
     db.event(run_id, f"Run finished with status {status}.", "error" if status == "failed" else "info")
@@ -55,8 +74,8 @@ def request_cancel(db: Database, run_id: int, actor: str) -> None:
         raise KeyError(run_id)
     if row["status"] == "queued":
         finish(db, run_id, "cancelled")
-    elif row["status"] == "running":
-        db.execute("UPDATE runs SET cancel_requested=1 WHERE id=?", (run_id,))
+    elif row["status"] in {"running", "paused"}:
+        db.execute("UPDATE runs SET cancel_requested=1,pause_requested=0 WHERE id=?", (run_id,))
         db.event(run_id, "Cancellation requested.", "warning")
     db.audit(actor, "run.cancel", str(run_id))
 
@@ -64,3 +83,79 @@ def request_cancel(db: Database, run_id: int, actor: str) -> None:
 def cancellation_requested(db: Database, run_id: int) -> bool:
     row = db.one("SELECT cancel_requested FROM runs WHERE id=?", (run_id,))
     return bool(row and row["cancel_requested"])
+
+
+def request_pause(db: Database, run_id: int, actor: str) -> None:
+    row = db.one("SELECT status,pause_requested,cancel_requested FROM runs WHERE id=?", (run_id,))
+    if not row:
+        raise KeyError(run_id)
+    if row["cancel_requested"]:
+        raise RuntimeError("Cancellation has already been requested.")
+    if row["status"] != "running":
+        raise RuntimeError("Only a running synchronization can be paused.")
+    if not row["pause_requested"]:
+        db.execute("UPDATE runs SET pause_requested=1 WHERE id=?", (run_id,))
+        db.event(run_id, "Pause requested; finishing in-flight work.", "warning")
+        db.audit(actor, "run.pause", str(run_id))
+
+
+def request_resume(db: Database, run_id: int, actor: str) -> None:
+    row = db.one("SELECT status,pause_requested,cancel_requested FROM runs WHERE id=?", (run_id,))
+    if not row:
+        raise KeyError(run_id)
+    if row["cancel_requested"]:
+        raise RuntimeError("A cancelling synchronization cannot be resumed.")
+    if row["status"] not in {"running", "paused"} or not row["pause_requested"]:
+        raise RuntimeError("This synchronization is not paused.")
+    db.execute(
+        "UPDATE runs SET status='running',pause_requested=0 WHERE id=?",
+        (run_id,),
+    )
+    db.event(run_id, "Synchronization resumed.")
+    db.audit(actor, "run.resume", str(run_id))
+
+
+async def control_checkpoint(db: Database, run_id: int) -> None:
+    """Pause only between safe units of crawler work and honour cancellation."""
+    pause_announced = False
+    while True:
+        row = db.one(
+            "SELECT status,cancel_requested,pause_requested FROM runs WHERE id=?",
+            (run_id,),
+        )
+        if not row or row["cancel_requested"]:
+            raise asyncio.CancelledError
+        if not row["pause_requested"]:
+            return
+        if row["status"] != "paused":
+            db.execute(
+                "UPDATE runs SET status='paused' WHERE id=? AND pause_requested=1",
+                (run_id,),
+            )
+        if not pause_announced:
+            db.event(run_id, "Synchronization paused at a safe checkpoint.", "warning")
+            pause_announced = True
+        await asyncio.sleep(0.5)
+
+
+def control_checkpoint_sync(db: Database, run_id: int) -> None:
+    """Synchronous counterpart for validation and local recovery loops."""
+    pause_announced = False
+    while True:
+        row = db.one(
+            "SELECT status,cancel_requested,pause_requested FROM runs WHERE id=?",
+            (run_id,),
+        )
+        if not row or row["cancel_requested"]:
+            raise RunCancelled
+        if not row["pause_requested"]:
+            return
+        if row["status"] != "paused":
+            db.execute(
+                "UPDATE runs SET status='paused' WHERE id=? AND pause_requested=1",
+                (run_id,),
+            )
+        if not pause_announced:
+            db.event(run_id, "Synchronization paused at a safe checkpoint.", "warning")
+            pause_announced = True
+        time.sleep(0.5)

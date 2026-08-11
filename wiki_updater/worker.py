@@ -10,7 +10,7 @@ from apscheduler.triggers.cron import CronTrigger
 from .config import Settings
 from .crawler import synchronize
 from .database import Database
-from .jobs import claim_next, enqueue, finish
+from .jobs import RunCancelled, claim_next, enqueue, finish, reconcile_interrupted_runs
 from .recovery import RecoveryCancelled, recover_failed_run
 
 
@@ -50,11 +50,14 @@ async def process(db: Database, settings: Settings, run: dict[str, object]) -> N
         finish(db, run_id, "cancelled")
     except RecoveryCancelled:
         finish(db, run_id, "cancelled")
+    except RunCancelled:
+        finish(db, run_id, "cancelled")
     except Exception as exc:
         finish(db, run_id, "failed", error=str(exc))
 
 
 async def run_worker(settings: Settings, db: Database) -> None:
+    reconcile_interrupted_runs(db)
     stop = asyncio.Event()
     loop = asyncio.get_running_loop()
     for signal_name in (signal.SIGINT, signal.SIGTERM):
