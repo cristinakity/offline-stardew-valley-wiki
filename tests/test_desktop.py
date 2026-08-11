@@ -50,6 +50,8 @@ def test_unavailable_page_message_exists_for_every_supported_language() -> None:
     renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
     for language in ("en", "es", "de", "fr", "it", "ja", "ko", "hu", "pt", "ru", "tr", "zh"):
         assert f"  {language}: title =>" in renderer
+    assert "status === 'excluded' ? unavailableMessages : pendingMessages" in renderer
+    assert "todavía no se ha descargado o actualizado" in renderer
 
 
 def test_desktop_searches_titles_and_article_text() -> None:
@@ -59,3 +61,9 @@ def test_desktop_searches_titles_and_article_text() -> None:
     assert "snippetFor" in renderer
     shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
     assert 'id="searchPage"' in shell
+
+
+def test_desktop_filters_search_entries_without_local_pages() -> None:
+    main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
+    assert "indexedDocuments.filter" in main
+    assert "ignored ${removed} entries without a local page" in main

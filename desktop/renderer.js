@@ -29,9 +29,24 @@ const unavailableMessages = {
   tr: title => `“${title}” çevrimdışı sürümde kullanılamıyor.`,
   zh: title => `“${title}”在离线版本中不可用。`,
 };
+const pendingMessages = {
+  en: title => `“${title}” has not been downloaded or updated in this offline version yet.`,
+  es: title => `“${title}” todavía no se ha descargado o actualizado en esta versión offline.`,
+  de: title => `„${title}“ wurde in dieser Offline-Version noch nicht heruntergeladen oder aktualisiert.`,
+  fr: title => `« ${title} » n’a pas encore été téléchargée ou mise à jour dans cette version hors ligne.`,
+  it: title => `“${title}” non è stata ancora scaricata o aggiornata in questa versione offline.`,
+  ja: title => `「${title}」は、このオフライン版ではまだダウンロードまたは更新されていません。`,
+  ko: title => `‘${title}’ 문서는 이 오프라인 버전에 아직 다운로드되거나 업데이트되지 않았습니다.`,
+  hu: title => `„${title}” még nincs letöltve vagy frissítve ebben az offline verzióban.`,
+  pt: title => `“${title}” ainda não foi baixada ou atualizada nesta versão offline.`,
+  ru: title => `Страница «${title}» ещё не загружена или не обновлена в этой офлайн-версии.`,
+  tr: title => `“${title}” bu çevrimdışı sürümde henüz indirilmedi veya güncellenmedi.`,
+  zh: title => `“${title}”尚未在此离线版本中下载或更新。`,
+};
 
-function unavailableMessage(title, language) {
-  return (unavailableMessages[language] || unavailableMessages.en)(title);
+function offlineLinkMessage(title, language, status) {
+  const messages = status === 'excluded' ? unavailableMessages : pendingMessages;
+  return (messages[language] || messages.en)(title);
 }
 
 function showNotice(message) {
@@ -176,7 +191,11 @@ frame.addEventListener('load', () => {
   try {
     for (const anchor of frame.contentDocument.querySelectorAll('a[data-missing-local-title]')) {
       const language = anchor.dataset.missingLocalLanguage || currentLanguage;
-      anchor.title = unavailableMessage(anchor.dataset.missingLocalTitle, language);
+      anchor.title = offlineLinkMessage(
+        anchor.dataset.missingLocalTitle,
+        language,
+        anchor.dataset.offlineLinkStatus,
+      );
     }
     frame.contentDocument.addEventListener('click', event => {
       const element = event.target?.nodeType === 1 ? event.target : event.target?.parentElement;
@@ -184,7 +203,11 @@ frame.addEventListener('load', () => {
       if (missing) {
         event.preventDefault();
         const language = missing.dataset.missingLocalLanguage || currentLanguage;
-        showNotice(unavailableMessage(missing.dataset.missingLocalTitle, language));
+        showNotice(offlineLinkMessage(
+          missing.dataset.missingLocalTitle,
+          language,
+          missing.dataset.offlineLinkStatus,
+        ));
         return;
       }
       const external = element?.closest('a[data-external-url]');

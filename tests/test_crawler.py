@@ -6,7 +6,15 @@ import pytest
 from bs4 import BeautifulSoup
 
 from wiki_updater.config import Settings
-from wiki_updater.crawler import OFFLINE_CSS, MediaWikiClient, Normalizer, searchable_text, title_key, validate_content
+from wiki_updater.crawler import (
+    OFFLINE_CSS,
+    MediaWikiClient,
+    Normalizer,
+    atomic_write_text,
+    searchable_text,
+    title_key,
+    validate_content,
+)
 from wiki_updater.storage import Storage
 
 
@@ -22,6 +30,21 @@ def test_searchable_text_keeps_article_content_and_removes_navigation() -> None:
         "<style>.hidden{display:none}</style></main></body></html>"
     )
     assert searchable_text(source) == "Boat Boat is a piece of furniture."
+
+
+def test_atomic_write_does_not_modify_hard_linked_snapshot(tmp_path: Path) -> None:
+    snapshot_index = tmp_path / "snapshot" / "search" / "en.json"
+    snapshot_index.parent.mkdir(parents=True)
+    snapshot_index.write_text('[{"id":1}]\n', encoding="utf-8")
+    work_index = tmp_path / "work" / "search" / "en.json"
+    work_index.parent.mkdir(parents=True)
+    work_index.hardlink_to(snapshot_index)
+
+    atomic_write_text(work_index, '[{"id":1},{"id":2}]\n')
+
+    assert snapshot_index.read_text(encoding="utf-8") == '[{"id":1}]\n'
+    assert work_index.read_text(encoding="utf-8") == '[{"id":1},{"id":2}]\n'
+    assert snapshot_index.stat().st_ino != work_index.stat().st_ino
 
 
 def test_internal_target_handles_languages(tmp_path: Path) -> None:

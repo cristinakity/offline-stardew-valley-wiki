@@ -76,8 +76,19 @@ function registerContentApi() {
   ipcMain.handle('wiki:load-index', (_event, language) => {
     if (!/^[a-z]{2}$/.test(language)) throw new Error('Invalid language.');
     const target = pathInsideContent(path.join('search', `${language}.json`));
-    const documents = JSON.parse(fs.readFileSync(target, 'utf8'));
-    console.info(`Loaded ${documents.length} ${language} search documents from ${target}`);
+    const indexedDocuments = JSON.parse(fs.readFileSync(target, 'utf8'));
+    const documents = indexedDocuments.filter(document => {
+      try {
+        return typeof document.url === 'string' && fs.statSync(pathInsideContent(document.url)).isFile();
+      } catch {
+        return false;
+      }
+    });
+    const removed = indexedDocuments.length - documents.length;
+    console.info(
+      `Loaded ${documents.length} ${language} search documents from ${target}`
+      + (removed ? `; ignored ${removed} entries without a local page` : ''),
+    );
     return documents;
   });
   ipcMain.handle('wiki:page-url', (_event, relativePath) => {

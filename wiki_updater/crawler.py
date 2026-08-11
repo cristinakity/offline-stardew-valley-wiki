@@ -456,6 +456,14 @@ a[data-missing-local-title]{text-decoration-style:dashed!important;cursor:not-al
 """.strip()
 
 
+def atomic_write_text(path: Path, content: str) -> None:
+    """Replace a file without modifying an inherited hard-linked snapshot file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_text(content, encoding="utf-8")
+    temporary.replace(path)
+
+
 async def synchronize(settings: Settings, db: Database, run_id: int, profile: str) -> tuple[str, dict[str, Any]]:
     storage = Storage(settings)
     storage.ensure_capacity()
@@ -477,7 +485,7 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
                 }
     else:
         content_root.mkdir(parents=True)
-    (content_root / "offline.css").write_text(OFFLINE_CSS + "\n", encoding="utf-8")
+    atomic_write_text(content_root / "offline.css", OFFLINE_CSS + "\n")
 
     is_fixture = profile == "fixture"
     client = None if is_fixture else MediaWikiClient(settings)
@@ -605,8 +613,9 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
                 }
                 for page in pages
             ]
-            (search_root / f"{language}.json").write_text(
-                json.dumps(search_documents, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8"
+            atomic_write_text(
+                search_root / f"{language}.json",
+                json.dumps(search_documents, ensure_ascii=False, separators=(",", ":")) + "\n",
             )
             revision_values = [str(page.get("timestamp", "")) for page in pages if page.get("timestamp")]
             db.execute(
