@@ -24,3 +24,4 @@ def test_dashboard_explains_profiles_and_shows_crawler_activity() -> None:
     assert "Recover failed full" in DASHBOARD
     assert "recoverRun" in DASHBOARD
     assert "Publish with warnings" in DASHBOARD
+    assert "selectedRunId=job.run_id" in DASHBOARD

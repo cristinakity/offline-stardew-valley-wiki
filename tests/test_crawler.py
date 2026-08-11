@@ -130,6 +130,21 @@ def test_validator_reports_missing_asset(tmp_path: Path) -> None:
     assert result["missing_assets"] == 1
 
 
+def test_validator_reports_page_progress(tmp_path: Path) -> None:
+    page = tmp_path / "content" / "en" / "pages" / "1.html"
+    page.parent.mkdir(parents=True)
+    page.write_text("<html><body>Ready</body></html>", encoding="utf-8")
+    progress = []
+
+    validate_content(
+        tmp_path / "content",
+        {"en": [{"pageid": 1}]},
+        progress=lambda processed, expected: progress.append((processed, expected)),
+    )
+
+    assert progress == [(1, 1)]
+
+
 def test_validator_checks_css_urls(tmp_path: Path) -> None:
     page = tmp_path / "content" / "en" / "pages" / "1.html"
     page.parent.mkdir(parents=True)

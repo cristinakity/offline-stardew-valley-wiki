@@ -175,7 +175,25 @@ def recover_failed_run(settings: Settings, db: Database, recovery_run_id: int, s
 
         asset_count = _link_referenced_assets(storage, content_root, page_paths)
         db.event(recovery_run_id, f"Restored {asset_count} referenced asset blobs.", assets=asset_count)
-        validation = validate_content(content_root, pages_by_language)
+        expected_pages = sum(len(pages) for pages in pages_by_language.values())
+        db.event(
+            recovery_run_id,
+            f"Starting final offline validation of {expected_pages} recovered pages.",
+            phase="validation",
+            pages_total=expected_pages,
+        )
+
+        def validation_progress(processed: int, expected: int) -> None:
+            if processed % 1000 == 0 or processed == expected:
+                db.event(
+                    recovery_run_id,
+                    f"Recovery validation: checked {processed}/{expected} pages.",
+                    phase="validation",
+                    pages_checked=processed,
+                    pages_total=expected,
+                )
+
+        validation = validate_content(content_root, pages_by_language, progress=validation_progress)
         source_validation = failed_validation(source_run.get("error")) or {}
         validation["asset_download_errors"] = source_validation.get("asset_download_errors", 0)
         if any(validation[key] for key in ("broken_links", "missing_assets", "remote_resources")):

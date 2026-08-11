@@ -10,7 +10,7 @@ import shutil
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 from urllib.parse import parse_qs, quote, unquote, urljoin, urlparse
 
 import httpx
@@ -668,7 +668,25 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
                 "revision_end": max(revision_values, default=None),
             }
 
-        validation = validate_content(content_root, pages_by_language)
+        expected_validation_pages = sum(len(pages) for pages in pages_by_language.values())
+        db.event(
+            run_id,
+            f"Starting final offline validation of {expected_validation_pages} pages.",
+            phase="validation",
+            pages_total=expected_validation_pages,
+        )
+
+        def validation_progress(processed: int, expected: int) -> None:
+            if processed % 1000 == 0 or processed == expected:
+                db.event(
+                    run_id,
+                    f"Offline validation: checked {processed}/{expected} pages.",
+                    phase="validation",
+                    pages_checked=processed,
+                    pages_total=expected,
+                )
+
+        validation = validate_content(content_root, pages_by_language, progress=validation_progress)
         validation["asset_download_errors"] = sum(item["asset_errors"] for item in language_stats.values())
         for failure in normalizer.asset_failures:
             db.event(
@@ -720,9 +738,15 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
             await client.close()
 
 
-def validate_content(content_root: Path, pages_by_language: dict[str, list[dict[str, Any]]]) -> dict[str, int]:
+def validate_content(
+    content_root: Path,
+    pages_by_language: dict[str, list[dict[str, Any]]],
+    *,
+    progress: Callable[[int, int], None] | None = None,
+) -> dict[str, int]:
     broken_links = missing_assets = remote_resources = 0
     page_count = 0
+    expected = sum(len(pages) for pages in pages_by_language.values())
 
     def validate_resource(value: str, base: Path) -> None:
         nonlocal missing_assets, remote_resources
@@ -761,11 +785,12 @@ def validate_content(content_root: Path, pages_by_language: dict[str, list[dict[
         for element in soup.select("[style]"):
             for match in CSS_URL_RE.finditer(str(element["style"])):
                 validate_resource(match.group(2), page.parent)
+        if progress:
+            progress(page_count, expected)
     for stylesheet in content_root.glob("assets/*/*.css"):
         source = stylesheet.read_text(encoding="utf-8", errors="replace")
         for match in CSS_URL_RE.finditer(source):
             validate_resource(match.group(2), stylesheet.parent)
-    expected = sum(len(pages) for pages in pages_by_language.values())
     if page_count != expected:
         broken_links += abs(expected - page_count)
     return {
