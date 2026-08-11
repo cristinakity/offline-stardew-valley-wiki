@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import re
 import secrets
 from pathlib import Path
 from typing import Any, AsyncIterator
@@ -31,6 +32,39 @@ app.add_middleware(
     same_site="lax",
     max_age=8 * 60 * 60,
 )
+
+BUILD_ID_RE = re.compile(r"^\d{8}T\d{6}Z$")
+BUILD_ASSET_SUFFIXES = {".zip", ".deb", ".rpm"}
+
+
+def list_local_builds(data_dir: Path, limit: int = 20) -> list[dict[str, Any]]:
+    builds_root = data_dir / "builds"
+    if not builds_root.is_dir():
+        return []
+    result: list[dict[str, Any]] = []
+    for directory in sorted(builds_root.iterdir(), key=lambda item: item.name, reverse=True):
+        if not directory.is_dir() or not BUILD_ID_RE.fullmatch(directory.name):
+            continue
+        assets = [
+            {"name": asset.name, "size": asset.stat().st_size}
+            for asset in sorted(directory.iterdir())
+            if not asset.is_symlink()
+            and asset.is_file()
+            and (asset.suffix.casefold() in BUILD_ASSET_SUFFIXES or asset.name == "SHA256SUMS")
+        ]
+        if not assets:
+            continue
+        editions = []
+        searchable_names = " ".join(asset["name"].casefold() for asset in assets)
+        for language in LANGUAGES:
+            if re.search(rf"(?:^|[-_.(]){re.escape(language)}(?:[-_. )]|$)", searchable_names):
+                editions.append(language)
+        if len(assets) and not editions:
+            editions.append("multilingual")
+        result.append({"id": directory.name, "latest": not result, "editions": editions, "assets": assets})
+        if len(result) >= min(max(limit, 1), 100):
+            break
+    return result
 
 
 @app.middleware("http")
@@ -209,6 +243,30 @@ def candidates() -> list[dict[str, Any]]:
     return result
 
 
+@app.get("/api/builds")
+def local_builds(limit: int = 20) -> list[dict[str, Any]]:
+    return list_local_builds(settings.data_dir, limit)
+
+
+@app.get("/api/builds/{build_id}/{asset_name}")
+def local_build_asset(build_id: str, asset_name: str) -> FileResponse:
+    if not BUILD_ID_RE.fullmatch(build_id) or Path(asset_name).name != asset_name:
+        raise HTTPException(404, "Build asset not found.")
+    available = {
+        asset["name"]
+        for build in list_local_builds(settings.data_dir, 100)
+        if build["id"] == build_id
+        for asset in build["assets"]
+    }
+    if asset_name not in available:
+        raise HTTPException(404, "Build asset not found.")
+    builds_root = (settings.data_dir / "builds").resolve()
+    target = (builds_root / build_id / asset_name).resolve()
+    if target.parent.parent != builds_root or not target.is_file():
+        raise HTTPException(404, "Build asset not found.")
+    return FileResponse(target, filename=asset_name)
+
+
 @app.post("/api/candidates")
 async def make_candidate(request: Request) -> dict[str, Any]:
     payload = await request.json()
@@ -351,11 +409,12 @@ button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px s
 .help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}.help-item{background:#0b1a2d;border:1px solid var(--line);border-radius:9px;padding:12px}.help-item h3{font-size:16px;margin-bottom:6px}.help-item p{margin:.35rem 0;color:#c4d5ea}.profile-help{min-height:42px;margin-top:12px;color:#c4d5ea}
 .activity-head{display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap}.progress-summary{display:grid;grid-template-columns:repeat(4,minmax(100px,1fr));gap:10px;margin:12px 0}.metric{background:#0b1a2d;border-radius:8px;padding:10px}.metric strong{display:block;font-size:20px}.progressbar{width:100%;height:14px;accent-color:var(--good)}.language-progress{font-variant-numeric:tabular-nums}.event-log{background:#07111f;border:1px solid var(--line);border-radius:8px;padding:10px;max-height:260px;overflow:auto}.event-line{padding:5px 0;border-bottom:1px solid #1d3551}.event-line:last-child{border:0}@media(max-width:700px){.progress-summary{grid-template-columns:repeat(2,1fr)}main{padding:14px}}
 .topbar{display:flex;justify-content:space-between;align-items:start;gap:16px}.crawler-version{white-space:nowrap;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 10px}
-.tabbar{position:sticky;top:0;z-index:20;display:flex;gap:6px;overflow-x:auto;margin:0 -24px 18px;padding:10px 24px;background:rgba(9,21,40,.97);border-block:1px solid var(--line);scrollbar-width:thin}.tabbar button{flex:0 0 auto;background:transparent;border-color:transparent;color:var(--muted)}.tabbar button:hover{background:#172d49;color:var(--text)}.tabbar button[aria-selected="true"]{background:#1767a6;color:white}.tabbar .help-button{margin-left:auto;min-width:42px;font-weight:800}.tab-panel{display:none}.tab-panel.active{display:block}.table-scroll,.list-scroll,.audit-scroll{max-height:min(65vh,620px);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;border:1px solid var(--line);border-radius:8px}.table-scroll table{min-width:760px}.table-scroll.compact{max-height:310px}.list-scroll{padding:12px}.list-scroll>.card:last-child{margin-bottom:0}.audit-scroll{margin:0;padding:14px;background:#07111f;min-height:180px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.section-heading h2{margin:0}.tab-hint{color:var(--muted);margin-top:0}@media(max-width:700px){.tabbar{margin-inline:-14px;padding-inline:14px}.tabbar .help-button{margin-left:0}.topbar h1{font-size:24px}}
+.tabbar{position:sticky;top:0;z-index:20;display:flex;gap:6px;overflow-x:auto;margin:0 -24px 18px;padding:10px 24px;background:rgba(9,21,40,.97);border-block:1px solid var(--line);scrollbar-width:thin}.tabbar button{flex:0 0 auto;background:transparent;border-color:transparent;color:var(--muted)}.tabbar button:hover{background:#172d49;color:var(--text)}.tabbar button[aria-selected="true"]{background:#1767a6;color:white}.tabbar .refresh-button{margin-left:auto;color:#cfe8ff;border-color:var(--line)}.tabbar .refresh-button:disabled{opacity:.55;cursor:wait}.tabbar .help-button{min-width:42px;font-weight:800}.tab-panel{display:none}.tab-panel.active{display:block}.table-scroll,.list-scroll,.audit-scroll{max-height:min(65vh,620px);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;border:1px solid var(--line);border-radius:8px}.table-scroll table{min-width:760px}.table-scroll.compact{max-height:310px}.list-scroll{padding:12px}.list-scroll>.card:last-child{margin-bottom:0}.audit-scroll{margin:0;padding:14px;background:#07111f;min-height:180px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.section-heading h2{margin:0}.tab-hint{color:var(--muted);margin-top:0}@media(max-width:700px){.tabbar{margin-inline:-14px;padding-inline:14px}.tabbar .refresh-button{margin-left:0}.topbar h1{font-size:24px}}
 .selected-run td{background:rgba(23,103,166,.22)}.run-link[aria-current="true"]{color:#fff;font-weight:700;text-decoration-thickness:2px}
+.build-card.latest{border-color:#3d9fd9;box-shadow:inset 3px 0 #3d9fd9}.build-assets{margin:.7rem 0;line-height:1.65}.edition-pill{display:inline-block;margin:2px 3px 2px 0;padding:2px 7px;border-radius:999px;background:#254968;color:#cfe8ff;text-transform:uppercase;font-size:12px}
 </style></head><body><main>
 <div class="topbar"><div><h1>Offline Stardew Valley Wiki Updater</h1><p>Local-first synchronization, validation and release candidates.</p></div><span class="crawler-version">Crawler v__UPDATER_VERSION__</span></div>
-<nav class="tabbar" aria-label="Secciones"><button type="button" data-tab="overview" aria-selected="true" onclick="showTab('overview')">Resumen</button><button type="button" data-tab="crawler" aria-selected="false" onclick="showTab('crawler')">Crawler</button><button type="button" data-tab="runs" aria-selected="false" onclick="showTab('runs')">Runs</button><button type="button" data-tab="candidates" aria-selected="false" onclick="showTab('candidates')">Candidatos</button><button type="button" data-tab="storage" aria-selected="false" onclick="showTab('storage')">Almacenamiento</button><button type="button" data-tab="audit" aria-selected="false" onclick="showTab('audit')">Auditoría</button><button type="button" class="help-button" data-tab="help" aria-selected="false" aria-label="Ayuda" title="Ayuda" onclick="showTab('help')">?</button></nav>
+<nav class="tabbar" aria-label="Secciones"><button type="button" data-tab="overview" aria-selected="true" onclick="showTab('overview')">Resumen</button><button type="button" data-tab="crawler" aria-selected="false" onclick="showTab('crawler')">Crawler</button><button type="button" data-tab="runs" aria-selected="false" onclick="showTab('runs')">Runs</button><button type="button" data-tab="candidates" aria-selected="false" onclick="showTab('candidates')">Candidatos</button><button type="button" data-tab="builds" aria-selected="false" onclick="showTab('builds')">Builds</button><button type="button" data-tab="storage" aria-selected="false" onclick="showTab('storage')">Almacenamiento</button><button type="button" data-tab="audit" aria-selected="false" onclick="showTab('audit')">Auditoría</button><button id="refreshButton" type="button" class="refresh-button" title="Actualizar únicamente esta sección" onclick="manualRefresh()">↻ Refresh</button><button type="button" class="help-button" data-tab="help" aria-selected="false" aria-label="Ayuda" title="Ayuda" onclick="showTab('help')">?</button></nav>
 <section class="tab-panel active" data-panel="overview"><section class="card"><b>This is the updater, not the wiki reader.</b> It downloads and validates content. To open the desktop wiki, run <code>npm start</code> on the host from the repository directory.</section></section>
 <section id="tab-help" class="tab-panel" data-panel="help"><section class="card"><div class="section-heading"><h2>Ayuda: cómo usar esta aplicación</h2><button class="secondary" onclick="showTab('overview')">Cerrar ayuda</button></div>
 <div class="help-grid">
@@ -367,6 +426,7 @@ button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px s
 <div class="help-item"><h3>Create candidate</h3><p>Congela el snapshot aprobado en una versión, genera manifiesto, checksums y archivos descargables. Hazlo únicamente después de revisar el resultado local. No publica en GitHub por sí solo.</p></div>
 <div class="help-item"><h3>Recover failed full</h3><p>Si todas las páginas terminaron y sólo fallaron recursos opcionales, <b>Recover</b> reconstruye el snapshot desde los blobs locales y vuelve a validarlo sin descargar toda la wiki. El candidato quedará marcado con advertencias.</p></div>
 <div class="help-item"><h3>Runs, Candidates y Audit</h3><p><b>Runs</b> conserva cada intento. Pulsa su ID para inspeccionarlo. <b>Candidates</b> contiene artefactos de revisión. <b>Audit</b> registra quién ejecutó o cambió algo.</p></div>
+<div class="help-item"><h3>Builds locales</h3><p>Muestra los ZIP, DEB y RPM generados en tu PC antes de enviarlos a GitHub. El build más reciente aparece primero. Descargar un archivo desde aquí no lo publica.</p></div>
 <div class="help-item"><h3>Abrir la wiki</h3><p>Este panel sólo administra el crawler. Abre el lector desde el host con <code>env -u ELECTRON_RUN_AS_NODE npm start</code>. El contenido se lee desde <code>.local-data</code>.</p></div>
 </div></section></section>
 <section class="tab-panel active" data-panel="overview"><div class="grid"><section class="card"><h2>Status</h2><div id="status">Loading…</div></section>
@@ -378,12 +438,13 @@ button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px s
 <section id="tab-crawler" class="tab-panel" data-panel="crawler"><section class="card"><div class="activity-head"><div><h2>Actividad del crawler</h2><div id="activityTitle" class="muted">Esperando datos…</div></div><span id="activityState" class="pill">idle</span></div><div id="activity"><p class="muted">Selecciona un Run o inicia una sincronización.</p></div></section></section>
 <section id="tab-runs" class="tab-panel" data-panel="runs"><section class="card"><div class="section-heading"><h2>Runs</h2><span class="muted">Lista con scroll</span></div><p class="tab-hint"><small>Pulsa un ID para mostrar su progreso e historial en Crawler.</small></p><div class="table-scroll"><table><thead><tr><th>ID</th><th>Profile</th><th>Status</th><th>Created</th><th>Snapshot</th><th></th></tr></thead><tbody id="runs"></tbody></table></div></section></section>
 <section id="tab-candidates" class="tab-panel" data-panel="candidates"><section class="card"><div class="section-heading"><h2>Candidates</h2><span class="muted">Lista con scroll</span></div><div id="candidates" class="list-scroll"></div></section></section>
+<section id="tab-builds" class="tab-panel" data-panel="builds"><section class="card"><div class="section-heading"><div><h2>Builds locales</h2><small>Preversiones Linux generadas desde el snapshot aprobado. No se publican en GitHub automáticamente.</small></div><span class="muted">Más reciente primero</span></div><div id="builds" class="list-scroll"><small>Cargando builds…</small></div></section></section>
 <section id="tab-audit" class="tab-panel" data-panel="audit"><section class="card"><div class="section-heading"><h2>Audit history</h2><span class="muted">Últimos 25 eventos</span></div><pre id="audit" class="audit-scroll"></pre></section></section>
 </main><script>
 const langs=['en','es','de','fr','it','ja','ko','hu','pt','ru','tr','zh'];
 const profileDescriptions={fixture:'Prueba controlada sin Internet: 2 páginas artificiales por idioma.',sample:'Prueba real rápida: portada + aproximadamente 24 páginas por idioma.',incremental:'Compara revisiones y procesa sólo cambios respecto al snapshot actual.',full:'Descarga y reconcilia todas las páginas de los idiomas habilitados.'};
-let selectedRunId=null;let activeTab='overview';let periodicRefreshRunning=false;
-const validTabs=new Set(['overview','crawler','runs','candidates','storage','audit','help']);
+let selectedRunId=null;let activeTab='overview';let manualRefreshRunning=false;
+const validTabs=new Set(['overview','crawler','runs','candidates','builds','storage','audit','help']);
 function showTab(name,refreshNow=true){if(!validTabs.has(name))name='overview';activeTab=name;document.querySelectorAll('[data-panel]').forEach(panel=>panel.classList.toggle('active',panel.dataset.panel===name));document.querySelectorAll('[data-tab]').forEach(button=>button.setAttribute('aria-selected',String(button.dataset.tab===name)));localStorage.setItem('updater.activeTab',name);window.scrollTo({top:0,behavior:'smooth'});if(refreshNow)void refreshTab(name)}
 async function api(url,options={}){const r=await fetch(url,{headers:{'Content-Type':'application/json'},...options});if(!r.ok)throw new Error((await r.json()).detail||r.statusText);return r.json()}
 function bytes(v){return(v/1024/1024/1024).toFixed(2)+' GiB'}
@@ -397,11 +458,13 @@ async function refreshStatus(){renderStatus(await api('/api/status'))}
 async function refreshOverview(){const [s,conf]=await Promise.all([api('/api/status'),api('/api/settings')]);renderStatus(s);renderSettings(conf)}
 async function refreshRuns(){const r=await api('/api/runs');document.querySelector('#runs').innerHTML=r.map(x=>`<tr data-run-id="${x.id}" class="${selectedRunId===x.id?'selected-run':''}"><td><a class="run-link" aria-current="${selectedRunId===x.id?'true':'false'}" href="#" onclick="detail(${x.id});return false">${x.id}</a></td><td>${x.profile}</td><td>${x.status}</td><td>${x.created_at}</td><td>${x.snapshot_id||''}</td><td>${['queued','running'].includes(x.status)?`<button class="danger" onclick="cancelRun(${x.id})">Cancel</button>`:x.recoverable?`<button class="secondary" onclick="recoverRun(${x.id})">Recover</button>`:''}</td></tr>`).join('')}
 async function refreshCandidates(){const c=await api('/api/candidates');document.querySelector('#candidates').innerHTML=c.map(x=>`<div class="card"><b>${x.version}</b> <span class="pill ${x.status==='ready_with_warnings'?'warning':''}">${x.status}</span>${x.status==='ready_with_warnings'?'<p class="warning"><b>Advertencia:</b> el contenido pasó la validación offline, pero contiene recursos opcionales no disponibles.</p>':''}<br>${x.assets.map(a=>`<a href="/api/candidates/${x.id}/assets/${encodeURIComponent(a.name)}">${a.name}</a> (${(a.size/1024/1024).toFixed(1)} MiB)`).join('<br>')}<div class="row">${['ready_for_review','ready_with_warnings'].includes(x.status)?`<button onclick="candidateAction(${x.id},'publish','${x.status}')">${x.status==='ready_with_warnings'?'Publish with warnings':'Publish locally'}</button><button class="danger" onclick="candidateAction(${x.id},'reject','${x.status}')">Reject</button>`:''}<button class="danger" onclick="deleteCandidate(${x.id},'${x.version}')">Delete</button></div></div>`).join('')||'<small>No candidates yet.</small>'}
+async function refreshBuilds(){const builds=await api('/api/builds');document.querySelector('#builds').innerHTML=builds.map(build=>`<div class="card build-card ${build.latest?'latest':''}"><div><b>${build.id}</b> ${build.latest?'<span class="pill ok">Último build</span>':''}</div><div>${build.editions.map(edition=>`<span class="edition-pill">${edition}</span>`).join('')}</div><div class="build-assets">${build.assets.map(asset=>`<a href="/api/builds/${encodeURIComponent(build.id)}/${encodeURIComponent(asset.name)}">${asset.name}</a> (${compactBytes(asset.size)})`).join('<br>')}</div></div>`).join('')||'<small>Todavía no hay builds locales. Ejecuta <code>WIKI_EDITION=all ... run --rm linux-builder</code> para generar multilingual, EN y ES.</small>'}
 async function refreshStorage(){const [s,space]=await Promise.all([api('/api/status'),api('/api/storage')]);document.querySelector('#storageSummary').innerHTML=`Uso físico real: <b>${compactBytes(space.physical_bytes)}</b> de ${bytes(s.storage_limit_bytes)}`;document.querySelector('#storageBreakdown').innerHTML=`<table><thead><tr><th>Categoría</th><th>Espacio asignado</th><th>Archivos</th></tr></thead><tbody>${Object.entries(space.categories).map(([name,value])=>`<tr><td>${name}</td><td>${compactBytes(value.allocated_bytes)}</td><td>${value.files}</td></tr>`).join('')}</tbody></table>`}
 async function refreshAudit(){const audit=await api('/api/audit?limit=25');document.querySelector('#audit').textContent=audit.map(x=>`${x.created_at} ${x.actor} ${x.action} ${x.target||''}`).join('\\n')}
 async function refreshCrawler(){const s=await api('/api/status');renderStatus(s);let activityId=selectedRunId||s.active_run?.id;if(!activityId){const r=await api('/api/runs');activityId=r[0]?.id}if(activityId){const activity=await api(`/api/runs/${activityId}`);if(selectedRunId===null||selectedRunId===activityId)renderActivity(activity)}}
-async function refreshTab(name=activeTab){try{if(name==='overview')await refreshOverview();else if(name==='crawler')await refreshCrawler();else if(name==='runs')await refreshRuns();else if(name==='candidates')await refreshCandidates();else if(name==='storage')await refreshStorage();else if(name==='audit')await refreshAudit()}catch(e){console.error(`Unable to refresh ${name}:`,e);if(name==='overview')document.querySelector('#status').innerHTML=`<span class="bad">${e}</span>`}}
+async function refreshTab(name=activeTab){try{if(name==='overview')await refreshOverview();else if(name==='crawler')await refreshCrawler();else if(name==='runs')await refreshRuns();else if(name==='candidates')await refreshCandidates();else if(name==='builds')await refreshBuilds();else if(name==='storage')await refreshStorage();else if(name==='audit')await refreshAudit()}catch(e){console.error(`Unable to refresh ${name}:`,e);if(name==='overview')document.querySelector('#status').innerHTML=`<span class="bad">${e}</span>`}}
 async function refresh(){return refreshTab(activeTab)}
+async function manualRefresh(){if(manualRefreshRunning)return;manualRefreshRunning=true;const button=document.querySelector('#refreshButton');button.disabled=true;button.textContent='↻ Refreshing…';try{await refresh()}finally{manualRefreshRunning=false;button.disabled=false;button.textContent='↻ Refresh'}}
 async function startRun(){try{const job=await api('/api/runs/sync',{method:'POST',body:JSON.stringify({profile:document.querySelector('#profile').value})});selectedRunId=job.run_id;showTab('crawler')}catch(e){alert(e)}}
 async function cancelRun(id){await api(`/api/runs/${id}/cancel`,{method:'POST'});refresh()}
 async function recoverRun(id){if(!confirm(`¿Recuperar el run #${id} desde los blobs locales? No volverá a descargar toda la wiki.`))return;try{const job=await api(`/api/runs/${id}/recover`,{method:'POST'});await detail(job.run_id)}catch(e){alert(e)}}
@@ -412,8 +475,7 @@ async function purgeStorage(target){const messages={cache:'Esto elimina temporal
 function markSelectedRun(){document.querySelectorAll('[data-run-id]').forEach(row=>row.classList.toggle('selected-run',Number(row.dataset.runId)===selectedRunId));document.querySelectorAll('.run-link').forEach(link=>link.setAttribute('aria-current',String(Number(link.closest('[data-run-id]').dataset.runId)===selectedRunId)))}
 async function detail(id){selectedRunId=id;markSelectedRun();showTab('crawler',false);document.querySelector('#activityTitle').textContent=`Run #${id} · cargando historial…`;document.querySelector('#activityState').textContent='loading';document.querySelector('#activityState').className='pill';try{const activity=await api(`/api/runs/${id}`);if(selectedRunId===id)renderActivity(activity)}catch(e){if(selectedRunId===id){document.querySelector('#activityState').textContent='error';document.querySelector('#activityState').className='pill bad';document.querySelector('#activity').innerHTML=`<p class="bad">No se pudo cargar el run #${id}: ${e}</p>`}}}
 async function saveSettings(){const enabled_languages=[...document.querySelectorAll('[data-lang]:checked')].map(x=>x.dataset.lang);const page_concurrency=Number(document.querySelector('#pageConcurrency').value);await api('/api/settings',{method:'PUT',body:JSON.stringify({enabled:document.querySelector('#enabled').checked,enabled_languages,page_concurrency})});refresh()}
-async function periodicRefresh(){if(periodicRefreshRunning)return;periodicRefreshRunning=true;try{if(activeTab==='crawler')await refreshCrawler();else if(activeTab==='runs')await refreshRuns();else if(activeTab==='overview')await refreshStatus()}catch(e){console.error(`Unable to poll ${activeTab}:`,e)}finally{periodicRefreshRunning=false}}
-showTab(localStorage.getItem('updater.activeTab')||'overview');showProfileHelp();setInterval(periodicRefresh,3000);
+showTab(localStorage.getItem('updater.activeTab')||'overview');showProfileHelp();
 </script></body></html>""".replace("__UPDATER_VERSION__", __version__)
 
 

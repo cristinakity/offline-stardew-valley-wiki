@@ -1,5 +1,7 @@
+from pathlib import Path
+
 from wiki_updater import __version__
-from wiki_updater.web import DASHBOARD
+from wiki_updater.web import DASHBOARD, list_local_builds
 
 
 def test_dashboard_javascript_keeps_escaped_newlines() -> None:
@@ -33,7 +35,7 @@ def test_dashboard_explains_profiles_and_shows_crawler_activity() -> None:
 
 
 def test_dashboard_uses_tabs_and_bounded_scroll_regions() -> None:
-    for tab in ("overview", "crawler", "runs", "candidates", "storage", "audit", "help"):
+    for tab in ("overview", "crawler", "runs", "candidates", "builds", "storage", "audit", "help"):
         assert f'data-tab="{tab}"' in DASHBOARD
         assert f"'{tab}'" in DASHBOARD
     assert "function showTab" in DASHBOARD
@@ -54,10 +56,33 @@ def test_run_detail_switches_immediately_and_is_not_replaced_by_active_run() -> 
     assert "selected-run" in DASHBOARD
 
 
-def test_dashboard_only_polls_data_for_the_visible_tab() -> None:
-    assert "async function periodicRefresh()" in DASHBOARD
-    assert "if(activeTab==='crawler')await refreshCrawler()" in DASHBOARD
-    assert "else if(activeTab==='runs')await refreshRuns()" in DASHBOARD
-    assert "else if(activeTab==='overview')await refreshStatus()" in DASHBOARD
-    assert "setInterval(periodicRefresh,3000)" in DASHBOARD
+def test_dashboard_refreshes_only_on_navigation_or_manual_request() -> None:
+    assert 'id="refreshButton"' in DASHBOARD
+    assert "async function manualRefresh()" in DASHBOARD
+    assert "await refresh()" in DASHBOARD
+    assert "setInterval(" not in DASHBOARD
+    assert "periodicRefresh" not in DASHBOARD
     assert "Promise.all([api('/api/status'),api('/api/runs'),api('/api/candidates')" not in DASHBOARD
+
+
+def test_dashboard_lists_builds_without_polling_them(tmp_path: Path) -> None:
+    older = tmp_path / "builds" / "20260810T021704Z"
+    latest = tmp_path / "builds" / "20260811T050000Z"
+    ignored = tmp_path / "builds" / ".editions"
+    for directory in (older, latest, ignored):
+        directory.mkdir(parents=True)
+    (older / "Offline-Stardew-Valley-Wiki-linux-x64-1.3.0.zip").write_bytes(b"full")
+    (latest / "offline-stardew-valley-wiki-en-1.3.0.zip").write_bytes(b"english")
+    (latest / "offline-stardew-valley-wiki-es-1.3.0.zip").write_bytes(b"spanish")
+    (latest / "SHA256SUMS").write_text("checksums\n", encoding="utf-8")
+    (ignored / "temporary.zip").write_bytes(b"ignored")
+
+    builds = list_local_builds(tmp_path)
+
+    assert [build["id"] for build in builds] == ["20260811T050000Z", "20260810T021704Z"]
+    assert builds[0]["latest"] is True
+    assert builds[0]["editions"] == ["en", "es"]
+    assert builds[1]["editions"] == ["multilingual"]
+    assert 'data-tab="builds"' in DASHBOARD
+    assert "async function refreshBuilds()" in DASHBOARD
+    assert "activeTab==='builds'" not in DASHBOARD
