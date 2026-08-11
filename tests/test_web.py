@@ -7,6 +7,7 @@ from wiki_updater.web import DASHBOARD, list_local_builds
 def test_dashboard_javascript_keeps_escaped_newlines() -> None:
     assert ".join('\\n')" in DASHBOARD
     assert ".join('\n')" not in DASHBOARD
+    assert r"sample'?'\n\nEste sample" in DASHBOARD
 
 
 def test_dashboard_explains_profiles_and_shows_crawler_activity() -> None:
@@ -85,6 +86,7 @@ def test_candidate_build_queue_controls_are_manual_and_reproducible() -> None:
     assert "async function rebuildBuild" in DASHBOARD
     assert "Logs y eventos" in DASHBOARD
     assert "progress_current" in DASHBOARD
+    assert "pulsa <b>Refresh</b> para leer el progreso" in DASHBOARD
 
 
 def test_dashboard_lists_builds_without_polling_them(tmp_path: Path) -> None:

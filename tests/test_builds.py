@@ -70,6 +70,26 @@ def test_all_editions_and_exact_rebuild_get_separate_jobs(tmp_path: Path) -> Non
     assert item["status"] == "queued"
 
 
+def test_live_progress_ignores_electron_terminal_codes(tmp_path: Path) -> None:
+    settings, db, candidate_id, _archive = build_database(tmp_path)
+    job_id = enqueue_build(db, candidate_id, "all", "linux", "pytest")
+    claim_next_build(db)
+    log = settings.data_dir / "logs" / f"build-{job_id}.log"
+    log.write_text(
+        "Building Linux edition: multilingual\n"
+        "\x1b[?25hBUILD_PROGRESS multilingual 1 13\n"
+        "Building Linux edition: en\n",
+        encoding="utf-8",
+    )
+
+    item = build_job(db, job_id)
+
+    assert item
+    assert item["progress_current"] == 1
+    assert item["progress_total"] == 13
+    assert item["current_edition"] == "en"
+
+
 def test_build_rejects_unknown_edition_and_platform(tmp_path: Path) -> None:
     _settings, db, candidate_id, _archive = build_database(tmp_path)
     with pytest.raises(ValueError, match="Unsupported edition"):

@@ -17,7 +17,34 @@ from .storage import Storage
 
 EDITIONS = ("multilingual", *LANGUAGES)
 PLATFORMS = ("linux",)
-PROGRESS_RE = re.compile(r"^BUILD_PROGRESS\s+(\S+)\s+(\d+)\s+(\d+)$")
+PROGRESS_RE = re.compile(r"^BUILD_PROGRESS\s+(\S+)\s+(\d+)\s+(\d+)$", re.MULTILINE)
+BUILDING_RE = re.compile(r"^Building Linux edition:\s+(\S+)\s*$", re.MULTILINE)
+ANSI_ESCAPE_RE = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
+
+
+def _plain_build_output(value: str) -> str:
+    """Remove terminal control sequences emitted by Electron Forge."""
+    return ANSI_ESCAPE_RE.sub("", value).replace("\r", "")
+
+
+def _live_build_progress(db: Database, job_id: int) -> tuple[int, int, str | None] | None:
+    """Recover live progress from the worker log without modifying the job."""
+    log_path = db.path.parent / "logs" / f"build-{job_id}.log"
+    if not log_path.is_file():
+        return None
+    with log_path.open("rb") as handle:
+        handle.seek(0, os.SEEK_END)
+        size = handle.tell()
+        handle.seek(max(0, size - 512 * 1024))
+        output = _plain_build_output(handle.read().decode("utf-8", errors="replace"))
+    completed = list(PROGRESS_RE.finditer(output))
+    building = list(BUILDING_RE.finditer(output))
+    if not completed and not building:
+        return None
+    current = int(completed[-1].group(2)) if completed else 0
+    total = int(completed[-1].group(3)) if completed else 0
+    edition = building[-1].group(1) if building else None
+    return current, total, edition
 
 
 def _candidate_archive(item: dict[str, Any]) -> Path:
@@ -123,6 +150,14 @@ def build_job(db: Database, job_id: int, *, event_limit: int = 200) -> dict[str,
     item = db.one("SELECT * FROM build_jobs WHERE id=?", (job_id,))
     if not item:
         return None
+    if item["status"] == "building":
+        live = _live_build_progress(db, job_id)
+        if live:
+            current, total, edition = live
+            item["progress_current"] = max(int(item["progress_current"]), current)
+            if total:
+                item["progress_total"] = total
+            item["current_edition"] = edition
     output = Path(str(item["output_directory"])) if item.get("output_directory") else None
     item["assets"] = [
         {"name": path.name, "size": path.stat().st_size}
@@ -218,7 +253,8 @@ async def execute_build(settings: Settings, db: Database, job: dict[str, Any]) -
                 continue
             log.write(line + "\n")
             log.flush()
-            progress = PROGRESS_RE.fullmatch(line)
+            plain_line = _plain_build_output(line)
+            progress = PROGRESS_RE.fullmatch(plain_line)
             if progress:
                 edition, current, total = progress.groups()
                 db.execute(
@@ -226,8 +262,8 @@ async def execute_build(settings: Settings, db: Database, job: dict[str, Any]) -
                     (int(current), int(total), job_id),
                 )
                 db.build_event(job_id, f"Completed edition {edition} ({current}/{total}).")
-            elif line.startswith(("Building Linux edition:", "Preparing candidate archive:")):
-                db.build_event(job_id, line)
+            elif plain_line.startswith(("Building Linux edition:", "Preparing candidate archive:")):
+                db.build_event(job_id, plain_line)
     return_code = await process.wait()
     if return_code:
         raise RuntimeError(f"Linux builder exited with status {return_code}. See {log_path.name}.")
