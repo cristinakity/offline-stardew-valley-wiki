@@ -101,7 +101,7 @@ async def login(request: Request):
     state = secrets.token_urlsafe(32)
     request.session["oauth_state"] = state
     callback = str(request.url_for("oauth_callback"))
-    query = urlencode({"client_id": settings.github_oauth_client_id, "redirect_uri": callback, "scope": "read:user", "state": state})
+    query = urlencode({"client_id": settings.oauth_client_id, "redirect_uri": callback, "scope": "read:user", "state": state})
     return RedirectResponse(f"https://github.com/login/oauth/authorize?{query}", status_code=303)
 
 
@@ -115,8 +115,8 @@ async def oauth_callback(request: Request, code: str, state: str):
             "https://github.com/login/oauth/access_token",
             headers={"Accept": "application/json"},
             data={
-                "client_id": settings.github_oauth_client_id,
-                "client_secret": settings.github_oauth_client_secret,
+                "client_id": settings.oauth_client_id,
+                "client_secret": settings.oauth_client_secret,
                 "code": code,
             },
         )
@@ -130,7 +130,7 @@ async def oauth_callback(request: Request, code: str, state: str):
         )
         user_response.raise_for_status()
         github_user = str(user_response.json()["login"])
-    if github_user.casefold() not in {item.casefold() for item in settings.github_allowed_users}:
+    if github_user.casefold() not in {item.casefold() for item in settings.oauth_allowed_users}:
         db.audit(github_user, "auth.denied")
         raise HTTPException(403, "This GitHub user is not authorized.")
     request.session["github_user"] = github_user
