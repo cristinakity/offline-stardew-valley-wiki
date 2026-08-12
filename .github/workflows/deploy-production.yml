@@ -9,54 +9,64 @@ on:
 
 permissions:
   contents: read
-  packages: write
-  id-token: write
 
 concurrency:
   group: offline-wiki-updater-production
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  validate_release:
+    name: Validate release
     if: ${{ inputs.confirmation == 'DEPLOY-PRODUCTION' }}
     runs-on: ubuntu-latest
-    environment: production
-    env:
-      IMAGE_REPOSITORY: ghcr.io/${{ github.repository_owner }}/offline-stardew-valley-wiki-updater
-      DEPLOY_BROKER_URL: ${{ vars.DEPLOY_BROKER_URL }}
-      DEPLOY_BROKER_AUDIENCE: ${{ vars.DEPLOY_BROKER_AUDIENCE }}
-      DEPLOY_BROKER_APP_ID: ${{ vars.DEPLOY_BROKER_APP_ID }}
+    permissions:
+      contents: read
+    outputs:
+      snapshot_ref: ${{ steps.lock.outputs.snapshot_ref }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Verify lock and production configuration
-        env:
-          PERSISTENT_DATA_READY: ${{ vars.BROKER_PERSISTENT_DATA_READY }}
+      - name: Verify content lock
+        id: lock
         run: |
           set -euo pipefail
-          test "$PERSISTENT_DATA_READY" = "true"
-          test -n "$DEPLOY_BROKER_URL"
-          test -n "$DEPLOY_BROKER_AUDIENCE"
-          test -n "$DEPLOY_BROKER_APP_ID"
           test "$(jq -r .version content-lock.json)" = "v1.3.0"
           test "$(jq -r .validation.status content-lock.json)" = "completed_with_warnings"
           test "$(jq -r .validation.broken_links content-lock.json)" = "0"
           test "$(jq -r .validation.missing_assets content-lock.json)" = "0"
           test "$(jq -r .validation.remote_resources content-lock.json)" = "0"
-          jq -er '.oci_ref | select(test("^ghcr\\.io/.+@sha256:[0-9a-f]{64}$"))' content-lock.json >/dev/null
+          snapshot_ref="$(jq -er '.oci_ref | select(test("^ghcr\\.io/.+@sha256:[0-9a-f]{64}$"))' content-lock.json)"
+          printf 'snapshot_ref=%s\n' "$snapshot_ref" >> "$GITHUB_OUTPUT"
+
+  build_image:
+    name: Build and publish image
+    needs: validate_release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      IMAGE_REPOSITORY: ghcr.io/${{ github.repository_owner }}/offline-stardew-valley-wiki-updater
+    outputs:
+      image_digest: ${{ steps.image.outputs.digest }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - uses: oras-project/setup-oras@v1
 
       - name: Download and verify approved snapshot
+        env:
+          SNAPSHOT_REF: ${{ needs.validate_release.outputs.snapshot_ref }}
         run: |
           set -euo pipefail
-          snapshot_ref="$(jq -r .oci_ref content-lock.json)"
           archive_name="$(jq -r .archive_name content-lock.json)"
           archive_sha="$(jq -r .archive_sha256 content-lock.json)"
           mkdir -p production-seed
-          oras pull "$snapshot_ref" -o production-seed
+          oras pull "$SNAPSHOT_REF" -o production-seed
           mapfile -t archives < <(find production-seed -type f -name "$archive_name" -print)
           test "${#archives[@]}" -eq 1
           printf '%s  %s\n' "$archive_sha" "${archives[0]}" | sha256sum --check --status
@@ -80,6 +90,30 @@ jobs:
           push: true
           tags: ${{ env.IMAGE_REPOSITORY }}:${{ github.sha }}
 
+  deploy_production:
+    name: Deploy to production
+    needs: [validate_release, build_image]
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      IMAGE_REPOSITORY: ghcr.io/${{ github.repository_owner }}/offline-stardew-valley-wiki-updater
+      DEPLOY_BROKER_URL: ${{ vars.DEPLOY_BROKER_URL }}
+      DEPLOY_BROKER_AUDIENCE: ${{ vars.DEPLOY_BROKER_AUDIENCE }}
+      DEPLOY_BROKER_APP_ID: ${{ vars.DEPLOY_BROKER_APP_ID }}
+    steps:
+      - name: Verify production configuration
+        env:
+          PERSISTENT_DATA_READY: ${{ vars.BROKER_PERSISTENT_DATA_READY }}
+        run: |
+          set -euo pipefail
+          test "$PERSISTENT_DATA_READY" = "true"
+          test -n "$DEPLOY_BROKER_URL"
+          test -n "$DEPLOY_BROKER_AUDIENCE"
+          test -n "$DEPLOY_BROKER_APP_ID"
+
       - name: Request GitHub OIDC token
         id: oidc
         run: |
@@ -93,7 +127,8 @@ jobs:
         env:
           OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
           GHCR_TOKEN: ${{ secrets.GHCR_READ_TOKEN }}
-          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+          IMAGE_DIGEST: ${{ needs.build_image.outputs.image_digest }}
+          SNAPSHOT_REF: ${{ needs.validate_release.outputs.snapshot_ref }}
           APP_ENV: ${{ vars.APP_ENV }}
           BIND_HOST: ${{ vars.BIND_HOST }}
           DATA_DIR: ${{ vars.DATA_DIR }}
@@ -151,7 +186,7 @@ jobs:
             echo "- Broker deployment ID: \`$deployment_id\`"
             echo "- Status endpoint: \`${DEPLOY_BROKER_URL}${status_path}\`"
             echo "- Application image: \`$image\`"
-            echo "- Snapshot: \`$(jq -r .oci_ref content-lock.json)\`"
+            echo "- Snapshot: \`${SNAPSHOT_REF}\`"
             echo "- Application URL: ${{ vars.PRODUCTION_APP_URL }}"
             echo "- Worker enabled: \`$WORKER_ENABLED\`"
             echo '- Final deployment result is tracked by the broker; this workflow does not wait for bootstrap.'
