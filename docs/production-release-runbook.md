@@ -146,7 +146,7 @@ Allowed runtime environment JSON:
 ```json
 [
   "APP_ENV", "BIND_HOST", "DATA_DIR", "DATABASE_PATH", "WORKER_ENABLED",
-  "BUILDER_ENABLED", "ENABLED", "ENABLED_LANGUAGES", "STORAGE_LIMIT_GB",
+  "BUILDER_ENABLED", "BOOTSTRAP_VALIDATION", "ENABLED", "ENABLED_LANGUAGES", "STORAGE_LIMIT_GB",
   "MIN_FREE_GB", "SNAPSHOT_RETENTION", "TIMEZONE", "HTTP_CONCURRENCY",
   "PAGE_CONCURRENCY", "USER_AGENT", "OAUTH_CLIENT_ID",
   "OAUTH_CLIENT_SECRET", "OAUTH_ALLOWED_USERS", "SESSION_SECRET"
@@ -189,6 +189,7 @@ DATA_DIR=/data
 DATABASE_PATH=/data/updater.sqlite3
 WORKER_ENABLED=false
 BUILDER_ENABLED=false
+BOOTSTRAP_VALIDATION=quick
 ENABLED=false
 ENABLED_LANGUAGES=en,es,de,fr,it,ja,ko,hu,pt,ru,tr,zh
 STORAGE_LIMIT_GB=15
@@ -213,6 +214,10 @@ SESSION_SECRET=<RANDOM_SECRET_AT_LEAST_48_CHARACTERS>
 GitHub no permite crear variables ni secretos cuyo nombre empiece con `GITHUB_`. Los nombres
 `OAUTH_*` se conservan sin traducción desde GitHub Settings hasta el payload efímero del broker y el
 contenedor. El grant debe permitir exactamente esos tres nombres en **Allowed runtime environment JSON**.
+
+El broker responde `202 Accepted` con un `deployment_id`; GitHub Actions termina después de registrar
+ese identificador. La extracción, validación rápida, healthcheck y sustitución del contenedor continúan
+en el broker. Consulta **Deployment Broker → Deployments** hasta ver `completed` o `failed`.
 
 Genera `SESSION_SECRET` fuera del repositorio, por ejemplo con un gestor de contraseñas. El token de
 GHCR sólo necesita leer la imagen privada del updater.

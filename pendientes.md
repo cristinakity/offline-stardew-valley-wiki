@@ -133,6 +133,7 @@ Convenciones:
 
   ```text
   WORKER_ENABLED=false
+  BOOTSTRAP_VALIDATION=quick
   ENABLED=false
   STORAGE_LIMIT_GB=15
   MIN_FREE_GB=3
