@@ -1,0 +1,191 @@
+name: Build v1.3.0 release draft
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type BUILD-RELEASE after approving the full candidate
+        required: true
+
+permissions:
+  contents: write
+  packages: read
+
+concurrency:
+  group: offline-wiki-release-v1.3.0
+  cancel-in-progress: false
+
+jobs:
+  prepare-release:
+    if: ${{ inputs.confirmation == 'BUILD-RELEASE' }}
+    runs-on: ubuntu-latest
+    environment: release
+    outputs:
+      version: ${{ steps.lock.outputs.version }}
+      snapshot_ref: ${{ steps.lock.outputs.snapshot_ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - id: lock
+        env:
+          CONFIGURED_VERSION: ${{ vars.RELEASE_VERSION }}
+          CONFIGURED_SNAPSHOT_REF: ${{ vars.RELEASE_SNAPSHOT_REF }}
+        run: |
+          set -euo pipefail
+          version="$(jq -r .version content-lock.json)"
+          snapshot_ref="$(jq -r .oci_ref content-lock.json)"
+          test "$version" = "$CONFIGURED_VERSION"
+          test "$snapshot_ref" = "$CONFIGURED_SNAPSHOT_REF"
+          [[ "$snapshot_ref" =~ @sha256:[0-9a-f]{64}$ ]]
+          test "$(jq -r .validation.broken_links content-lock.json)" = 0
+          test "$(jq -r .validation.missing_assets content-lock.json)" = 0
+          test "$(jq -r .validation.remote_resources content-lock.json)" = 0
+          printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
+          printf 'snapshot_ref=%s\n' "$snapshot_ref" >> "$GITHUB_OUTPUT"
+      - name: Create protected draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.lock.outputs.version }}
+        run: |
+          set -euo pipefail
+          if gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $VERSION already exists; refusing to replace it." >&2
+            exit 1
+          fi
+          gh release create "$VERSION" --repo "$GITHUB_REPOSITORY" --draft \
+            --target "$GITHUB_SHA" --title "Offline Stardew Valley Wiki $VERSION" \
+            --notes-file release/notes-introduction.md --generate-notes
+
+  linux:
+    needs: prepare-release
+    runs-on: ubuntu-latest
+    environment: release
+    strategy:
+      fail-fast: false
+      matrix:
+        edition: [multilingual, en, es, de, fr, it, ja, ko, hu, pt, ru, tr, zh]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: oras-project/setup-oras@v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Download immutable snapshot
+        env:
+          SNAPSHOT_REF: ${{ needs.prepare-release.outputs.snapshot_ref }}
+        run: |
+          set -euo pipefail
+          mkdir snapshot
+          oras pull "$SNAPSHOT_REF" -o snapshot
+          archive_name="$(jq -r .archive_name content-lock.json)"
+          mapfile -t archives < <(find snapshot -type f -name "$archive_name" -print)
+          test "${#archives[@]}" -eq 1
+          archive="${archives[0]}"
+          printf '%s  %s\n' "$(jq -r .archive_sha256 content-lock.json)" "$archive" | sha256sum --check --status
+          tar --zstd -xf "$archive" -C snapshot
+      - name: Build and upload Linux edition
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.prepare-release.outputs.version }}
+          WIKI_EDITION: ${{ matrix.edition }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y fakeroot rpm
+          npm ci
+          content="$PWD/snapshot/content"
+          if [[ "$WIKI_EDITION" != multilingual ]]; then
+            content="$RUNNER_TEMP/edition-$WIKI_EDITION/content"
+            node scripts/prepare-edition.mjs "$PWD/snapshot/content" "$content" "$WIKI_EDITION"
+          fi
+          WIKI_CONTENT_PATH="$content" npm run make:linux
+          mapfile -t assets < <(find out/make -type f \( -name '*.zip' -o -name '*.deb' -o -name '*.rpm' \) -print)
+          test "${#assets[@]}" -eq 3
+          for asset in "${assets[@]}"; do test "$(stat -c %s "$asset")" -lt 2147483648; done
+          checksum="SHA256SUMS-linux-$WIKI_EDITION"
+          for asset in "${assets[@]}"; do sha256sum "$asset"; done | sed 's#  .*/#  #' > "$checksum"
+          gh release upload "$VERSION" "${assets[@]}" "$checksum" --repo "$GITHUB_REPOSITORY"
+
+  windows:
+    needs: prepare-release
+    runs-on: windows-latest
+    environment: release
+    strategy:
+      fail-fast: false
+      matrix:
+        edition: [multilingual, en, es, de, fr, it, ja, ko, hu, pt, ru, tr, zh]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: oras-project/setup-oras@v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Download immutable snapshot
+        shell: pwsh
+        env:
+          SNAPSHOT_REF: ${{ needs.prepare-release.outputs.snapshot_ref }}
+        run: |
+          New-Item -ItemType Directory -Path snapshot | Out-Null
+          oras pull $env:SNAPSHOT_REF -o snapshot
+          choco install zstandard -y
+          $archiveName = (Get-Content content-lock.json | ConvertFrom-Json).archive_name
+          $archives = @(Get-ChildItem snapshot -Recurse -File -Filter $archiveName)
+          if ($archives.Count -ne 1) { throw "Expected exactly one $archiveName; found $($archives.Count)." }
+          $archive = $archives[0]
+          $expected = (Get-Content content-lock.json | ConvertFrom-Json).archive_sha256
+          if ((Get-FileHash $archive.FullName -Algorithm SHA256).Hash.ToLower() -ne $expected) { throw "Snapshot checksum mismatch." }
+          zstd -d $archive.FullName -o snapshot/wiki-content.tar
+          tar -xf snapshot/wiki-content.tar -C snapshot
+      - name: Build and upload Windows edition
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.prepare-release.outputs.version }}
+          WIKI_EDITION: ${{ matrix.edition }}
+        run: |
+          npm ci
+          $source = "$pwd\snapshot\content"
+          $env:WIKI_CONTENT_PATH = $source
+          if ($env:WIKI_EDITION -ne "multilingual") {
+            $env:WIKI_CONTENT_PATH = "$env:RUNNER_TEMP\edition-$env:WIKI_EDITION\content"
+            node scripts/prepare-edition.mjs $source $env:WIKI_CONTENT_PATH $env:WIKI_EDITION
+          }
+          npm run make:windows
+          $squirrel = Get-ChildItem out/make -Directory | Where-Object Name -Like 'squirrel.windows*' | Select-Object -First 1
+          $suffix = if ($env:WIKI_EDITION -eq "multilingual") { "" } else { "-$env:WIKI_EDITION" }
+          if (-not $squirrel) { throw "Squirrel output was not found." }
+          Compress-Archive -Path "$($squirrel.FullName)\*" -DestinationPath "out/make/offline-stardew-valley-wiki${suffix}-squirrel.windows.zip"
+          $assets = @(Get-ChildItem out/make -Recurse -File -Include *.zip | Where-Object { $_.FullName -notlike "$($squirrel.FullName)*" })
+          if ($assets.Count -ne 2) { throw "Expected Windows ZIP and Squirrel ZIP; found $($assets.Count)." }
+          foreach ($asset in $assets) { if ($asset.Length -ge 2GB) { throw "$($asset.Name) exceeds 2 GiB." } }
+          $checksum = "SHA256SUMS-windows-$env:WIKI_EDITION"
+          $assets | ForEach-Object { "$(($_ | Get-FileHash -Algorithm SHA256).Hash.ToLower())  $($_.Name)" } | Set-Content $checksum
+          gh release upload $env:VERSION @($assets.FullName) $checksum --repo $env:GITHUB_REPOSITORY
+
+  finalize-draft:
+    needs: [prepare-release, linux, windows]
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Consolidate checksums and attach metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.prepare-release.outputs.version }}
+        run: |
+          set -euo pipefail
+          mkdir checksums
+          gh release download "$VERSION" --repo "$GITHUB_REPOSITORY" --pattern 'SHA256SUMS-*' --dir checksums
+          cat checksums/SHA256SUMS-* | sort -k2 > SHA256SUMS
+          test "$(wc -l < SHA256SUMS)" -eq 65
+          gh release upload "$VERSION" SHA256SUMS content-lock.json release/validation-report-v1.3.0.json --repo "$GITHUB_REPOSITORY"
+          echo "Draft $VERSION contains 65 installers and remains unpublished." >> "$GITHUB_STEP_SUMMARY"

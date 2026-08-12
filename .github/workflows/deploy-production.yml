@@ -1,0 +1,151 @@
+name: Deploy updater to production
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type DEPLOY-PRODUCTION after bootstrap or configuration approval
+        required: true
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+concurrency:
+  group: offline-wiki-updater-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ inputs.confirmation == 'DEPLOY-PRODUCTION' }}
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      IMAGE_REPOSITORY: ghcr.io/${{ github.repository_owner }}/offline-stardew-valley-wiki-updater
+      DEPLOY_BROKER_URL: ${{ vars.DEPLOY_BROKER_URL }}
+      DEPLOY_BROKER_AUDIENCE: ${{ vars.DEPLOY_BROKER_AUDIENCE }}
+      DEPLOY_BROKER_APP_ID: ${{ vars.DEPLOY_BROKER_APP_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Verify lock and production configuration
+        env:
+          PERSISTENT_DATA_READY: ${{ vars.BROKER_PERSISTENT_DATA_READY }}
+        run: |
+          set -euo pipefail
+          test "$PERSISTENT_DATA_READY" = "true"
+          test -n "$DEPLOY_BROKER_URL"
+          test -n "$DEPLOY_BROKER_AUDIENCE"
+          test -n "$DEPLOY_BROKER_APP_ID"
+          test "$(jq -r .version content-lock.json)" = "v1.3.0"
+          test "$(jq -r .validation.status content-lock.json)" = "completed_with_warnings"
+          test "$(jq -r .validation.broken_links content-lock.json)" = "0"
+          test "$(jq -r .validation.missing_assets content-lock.json)" = "0"
+          test "$(jq -r .validation.remote_resources content-lock.json)" = "0"
+          jq -er '.oci_ref | select(test("^ghcr\\.io/.+@sha256:[0-9a-f]{64}$"))' content-lock.json >/dev/null
+
+      - uses: oras-project/setup-oras@v1
+
+      - name: Download and verify approved snapshot
+        run: |
+          set -euo pipefail
+          snapshot_ref="$(jq -r .oci_ref content-lock.json)"
+          archive_name="$(jq -r .archive_name content-lock.json)"
+          archive_sha="$(jq -r .archive_sha256 content-lock.json)"
+          mkdir -p production-seed
+          oras pull "$snapshot_ref" -o production-seed
+          mapfile -t archives < <(find production-seed -type f -name "$archive_name" -print)
+          test "${#archives[@]}" -eq 1
+          printf '%s  %s\n' "$archive_sha" "${archives[0]}" | sha256sum --check --status
+          mv "${archives[0]}" "production-seed/$archive_name"
+          find production-seed -mindepth 1 -type d -empty -delete
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Build and publish seeded production image
+        id: image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Containerfile
+          push: true
+          tags: ${{ env.IMAGE_REPOSITORY }}:${{ github.sha }}
+
+      - name: Request GitHub OIDC token
+        id: oidc
+        run: |
+          set -euo pipefail
+          token_json="$(curl -fsSL -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=${DEPLOY_BROKER_AUDIENCE}")"
+          token="$(printf '%s' "$token_json" | jq -r .value)"
+          test -n "$token"
+          printf 'token=%s\n' "$token" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy immutable image through broker
+        env:
+          OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
+          GHCR_TOKEN: ${{ secrets.GHCR_READ_TOKEN }}
+          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+          APP_ENV: ${{ vars.APP_ENV }}
+          BIND_HOST: ${{ vars.BIND_HOST }}
+          DATA_DIR: ${{ vars.DATA_DIR }}
+          DATABASE_PATH: ${{ vars.DATABASE_PATH }}
+          WORKER_ENABLED: ${{ vars.WORKER_ENABLED }}
+          BUILDER_ENABLED: ${{ vars.BUILDER_ENABLED }}
+          ENABLED: ${{ vars.ENABLED }}
+          ENABLED_LANGUAGES: ${{ vars.ENABLED_LANGUAGES }}
+          STORAGE_LIMIT_GB: ${{ vars.STORAGE_LIMIT_GB }}
+          MIN_FREE_GB: ${{ vars.MIN_FREE_GB }}
+          SNAPSHOT_RETENTION: ${{ vars.SNAPSHOT_RETENTION }}
+          TIMEZONE: ${{ vars.TIMEZONE }}
+          HTTP_CONCURRENCY: ${{ vars.HTTP_CONCURRENCY }}
+          PAGE_CONCURRENCY: ${{ vars.PAGE_CONCURRENCY }}
+          USER_AGENT: ${{ vars.USER_AGENT }}
+          # GitHub reserves the GITHUB_ prefix for repository/environment names.
+          # Map operator-facing OAUTH_* settings to the container's existing keys.
+          GITHUB_OAUTH_CLIENT_ID: ${{ vars.OAUTH_CLIENT_ID }}
+          GITHUB_OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
+          GITHUB_ALLOWED_USERS: ${{ vars.OAUTH_ALLOWED_USERS }}
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+        run: |
+          set -euo pipefail
+          test -n "$GHCR_TOKEN"
+          test -n "$GITHUB_OAUTH_CLIENT_SECRET"
+          test "${#SESSION_SECRET}" -ge 48
+          image="${IMAGE_REPOSITORY}@${IMAGE_DIGEST}"
+          runtime_env="$(jq -n \
+            --arg APP_ENV "$APP_ENV" --arg BIND_HOST "$BIND_HOST" --arg DATA_DIR "$DATA_DIR" \
+            --arg DATABASE_PATH "$DATABASE_PATH" --arg WORKER_ENABLED "$WORKER_ENABLED" \
+            --arg BUILDER_ENABLED "$BUILDER_ENABLED" --arg ENABLED "$ENABLED" \
+            --arg ENABLED_LANGUAGES "$ENABLED_LANGUAGES" --arg STORAGE_LIMIT_GB "$STORAGE_LIMIT_GB" \
+            --arg MIN_FREE_GB "$MIN_FREE_GB" --arg SNAPSHOT_RETENTION "$SNAPSHOT_RETENTION" \
+            --arg TIMEZONE "$TIMEZONE" --arg HTTP_CONCURRENCY "$HTTP_CONCURRENCY" \
+            --arg PAGE_CONCURRENCY "$PAGE_CONCURRENCY" --arg USER_AGENT "$USER_AGENT" \
+            --arg GITHUB_OAUTH_CLIENT_ID "$GITHUB_OAUTH_CLIENT_ID" \
+            --arg GITHUB_OAUTH_CLIENT_SECRET "$GITHUB_OAUTH_CLIENT_SECRET" \
+            --arg GITHUB_ALLOWED_USERS "$GITHUB_ALLOWED_USERS" --arg SESSION_SECRET "$SESSION_SECRET" \
+            '$ARGS.named')"
+          response="$(mktemp)"
+          status="$(curl -sS -o "$response" -w '%{http_code}' -X POST "$DEPLOY_BROKER_URL/api/deployments/$DEPLOY_BROKER_APP_ID" \
+            -H 'Content-Type: application/json' \
+            -d "$(jq -n --arg oidc_token "$OIDC_TOKEN" --arg image "$image" \
+              --arg ghcr_username "${{ github.repository_owner }}" --arg ghcr_token "$GHCR_TOKEN" \
+              --arg git_sha "${{ github.sha }}" --argjson runtime_env "$runtime_env" \
+              '{oidc_token:$oidc_token,image:$image,ghcr_username:$ghcr_username,ghcr_token:$ghcr_token,git_sha:$git_sha,runtime_env:$runtime_env}')")"
+          cat "$response"
+          test "$status" -lt 400
+          {
+            echo '### Production deployment'
+            echo "- Application image: \`$image\`"
+            echo "- Snapshot: \`$(jq -r .oci_ref content-lock.json)\`"
+            echo "- Application URL: ${{ vars.PRODUCTION_APP_URL }}"
+            echo "- Worker enabled: \`$WORKER_ENABLED\`"
+          } >> "$GITHUB_STEP_SUMMARY"

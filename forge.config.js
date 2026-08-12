@@ -1,27 +1,71 @@
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
+const supportedEditions = new Set(['multilingual', 'en', 'es', 'de', 'fr', 'it', 'ja', 'ko', 'hu', 'pt', 'ru', 'tr', 'zh']);
+const requestedEdition = (process.env.WIKI_EDITION || 'multilingual').toLowerCase();
+const edition = requestedEdition === 'full' ? 'multilingual' : requestedEdition;
+if (!supportedEditions.has(edition)) throw new Error(`Unsupported WIKI_EDITION: ${edition}`);
+const isMultilingual = edition === 'multilingual';
+const editionSuffix = isMultilingual ? '' : `-${edition}`;
+const appSlug = `offline-stardew-valley-wiki${editionSuffix}`;
+const productName = `Offline Stardew Valley Wiki${isMultilingual ? '' : ` (${edition.toUpperCase()})`}`;
+
 module.exports = {
   packagerConfig: {
     asar: true,
+    name: productName,
+    appBundleId: `com.cristinakity.offlinestardewvalleywiki${isMultilingual ? '' : `.${edition}`}`,
+    executableName: appSlug,
+    icon: 'desktop/assets/favicon',
+    extraResource: [
+      'desktop/assets/stardewbackground.png',
+      'desktop/assets/flags',
+      ...(process.env.WIKI_CONTENT_PATH ? [process.env.WIKI_CONTENT_PATH] : []),
+    ],
+    ignore: [
+      /^\/wiki_updater($|\/)/,
+      /^\/tests($|\/)/,
+      /^\/\.local-data($|\/)/,
+      /^\/compose.*\.yml$/,
+      /^\/Containerfile/,
+      /^\/pyproject\.toml$/,
+    ],
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        name: appSlug.replaceAll('-', '_'),
+        setupExe: `${appSlug}-setup.exe`,
+      },
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      platforms: ['linux', 'win32'],
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      config: {
+        options: {
+          name: appSlug,
+          productName,
+          bin: appSlug,
+          maintainer: 'Cristina Carrasco',
+          homepage: 'https://github.com/cristinakity/offline-stardew-valley-wiki'
+        }
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      config: {
+        options: {
+          name: appSlug,
+          productName,
+          bin: appSlug,
+          homepage: 'https://github.com/cristinakity/offline-stardew-valley-wiki'
+        }
+      },
     },
   ],
   plugins: [

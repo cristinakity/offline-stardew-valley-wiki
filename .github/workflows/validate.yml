@@ -1,0 +1,55 @@
+name: Validate updater and desktop app
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -e '.[test]'
+      - run: pytest -q
+      - name: Exercise complete fixture flow
+        env:
+          DATA_DIR: ${{ runner.temp }}/wiki-data
+          DATABASE_PATH: ${{ runner.temp }}/wiki-data/updater.sqlite3
+          MIN_FREE_GB: 0
+          STORAGE_LIMIT_GB: 2
+        run: |
+          wiki-updater sync --profile fixture
+          wiki-updater candidate --version v1.3.0-ci
+
+  desktop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Render local Compose
+        run: docker compose --env-file .env.local.example -f compose.yml -f compose.local.yml config --quiet
+

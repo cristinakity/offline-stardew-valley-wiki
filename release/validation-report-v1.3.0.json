@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "version": "v1.3.0",
+  "snapshot_id": "20260811T015121Z-7206e5e0cacc",
+  "pages": 25852,
+  "expected_pages": 25852,
+  "broken_links": 0,
+  "missing_assets": 0,
+  "remote_resources": 0,
+  "asset_download_errors": 30,
+  "status": "completed_with_warnings",
+  "warning": "Thirty optional asset downloads failed in the source run. Their individual URLs were not retained by that historical run; all retained offline content passed structural validation."
+}
