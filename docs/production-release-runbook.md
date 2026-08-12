@@ -25,22 +25,25 @@ La versión aprobada es `v1.3.0`, el snapshot es
 `20260811T015121Z-7206e5e0cacc` y el archivo local esperado es:
 
 ```text
-.local-data/candidates/v1.3.0/wiki-content-20260811T015121Z-7206e5e0cacc.tar.zst
+.local-data/candidates/v1.3.0-recover-15.16/wiki-content-20260811T015121Z-7206e5e0cacc.tar.zst
 ```
+
+Este candidato de recuperación conserva el contenido aprobado y agrega el índice derivado
+`content/translations.json` que requiere el bootstrap rápido de producción.
 
 ## 1. Comprobar el candidato local
 
 ```bash
-cd .local-data/candidates/v1.3.0
+cd .local-data/candidates/v1.3.0-recover-15.16
 sha256sum --check SHA256SUMS
 cd ../../..
-sha256sum .local-data/candidates/v1.3.0/wiki-content-*.tar.zst
+sha256sum .local-data/candidates/v1.3.0-recover-15.16/wiki-content-*.tar.zst
 ```
 
 El SHA-256 del archivo debe ser:
 
 ```text
-02e230d28581086d3bd8a1fe7925ef39d200fc2a301e999ef9d5d87d484baeb7
+9b7a965819651aa78639c4c8c3b83e0136ea0c976add9dea834b959ae277313f
 ```
 
 Revisa que `content-lock.json` conserve 25,852 páginas, cero enlaces rotos, cero assets requeridos
@@ -61,11 +64,11 @@ printf '%s' "$REGISTRY_TOKEN" | oras login ghcr.io -u '<OWNER>' --password-stdin
 Publica una sola vez:
 
 ```bash
-export SNAPSHOT_TAG='ghcr.io/<OWNER>/<SNAPSHOT_PACKAGE>:v1.3.0'
-export SNAPSHOT_ARCHIVE='.local-data/candidates/v1.3.0/wiki-content-20260811T015121Z-7206e5e0cacc.tar.zst'
+export SNAPSHOT_TAG='ghcr.io/<OWNER>/<SNAPSHOT_PACKAGE>:v1.3.0-bootstrap-metadata-fix'
+export SNAPSHOT_ARCHIVE='.local-data/candidates/v1.3.0-recover-15.16/wiki-content-20260811T015121Z-7206e5e0cacc.tar.zst'
 scripts/publish-snapshot.sh "$SNAPSHOT_ARCHIVE" "$SNAPSHOT_TAG"
 export SNAPSHOT_DIGEST="$(oras resolve "$SNAPSHOT_TAG")"
-export SNAPSHOT_REF="${SNAPSHOT_TAG}@${SNAPSHOT_DIGEST}"
+export SNAPSHOT_REF="${SNAPSHOT_TAG%:*}@${SNAPSHOT_DIGEST}"
 printf '%s\n' "$SNAPSHOT_REF"
 ```
 
@@ -88,7 +91,7 @@ sha256sum "$downloaded_archive"
 Edita `content-lock.json` y sustituye solamente:
 
 ```json
-"oci_ref": "ghcr.io/<OWNER>/<SNAPSHOT_PACKAGE>:v1.3.0@sha256:<DIGEST>"
+"oci_ref": "ghcr.io/<OWNER>/<SNAPSHOT_PACKAGE>@sha256:<DIGEST>"
 ```
 
 Ejecuta `npm run content:pull` en un clon limpio. El comando debe verificar el SHA-256 antes de
