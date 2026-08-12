@@ -53,7 +53,7 @@ jobs:
           runtime_env="$(jq -n --argjson vars "$RUNTIME_VARS" \
             --arg oauth_id "$OAUTH_CLIENT_ID" --arg oauth_users "$OAUTH_ALLOWED_USERS" \
             --arg oauth_secret "$OAUTH_CLIENT_SECRET" --arg session "$SESSION_SECRET" \
-            '$vars | {APP_ENV,BIND_HOST,DATA_DIR,DATABASE_PATH,WORKER_ENABLED,BUILDER_ENABLED,ENABLED,ENABLED_LANGUAGES,STORAGE_LIMIT_GB,MIN_FREE_GB,SNAPSHOT_RETENTION,TIMEZONE,HTTP_CONCURRENCY,PAGE_CONCURRENCY,USER_AGENT} + {GITHUB_OAUTH_CLIENT_ID:$oauth_id,GITHUB_ALLOWED_USERS:$oauth_users,GITHUB_OAUTH_CLIENT_SECRET:$oauth_secret,SESSION_SECRET:$session}')"
+            '$vars | {APP_ENV,BIND_HOST,DATA_DIR,DATABASE_PATH,WORKER_ENABLED,BUILDER_ENABLED,ENABLED,ENABLED_LANGUAGES,STORAGE_LIMIT_GB,MIN_FREE_GB,SNAPSHOT_RETENTION,TIMEZONE,HTTP_CONCURRENCY,PAGE_CONCURRENCY,USER_AGENT} + {OAUTH_CLIENT_ID:$oauth_id,OAUTH_ALLOWED_USERS:$oauth_users,OAUTH_CLIENT_SECRET:$oauth_secret,SESSION_SECRET:$session}')"
           body="$(jq -n --arg oidc_token "$OIDC_TOKEN" --arg image "$IMAGE_REF" \
             --arg ghcr_username "${{ github.repository_owner }}" --arg ghcr_token "$GHCR_TOKEN" \
             --argjson runtime_env "$runtime_env" \

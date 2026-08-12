@@ -36,11 +36,11 @@ class Settings(BaseSettings):
     user_agent: str = "OfflineStardewValleyWiki/0.1 (contact configured by operator)"
     github_owner: str = "repository-owner"
     github_repository: str = "offline-stardew-valley-wiki"
-    github_oauth_client_id: str = ""
-    github_oauth_client_secret: str = ""
-    github_allowed_users: tuple[str, ...] = ("operator",)
+    oauth_client_id: str = ""
+    oauth_client_secret: str = ""
+    oauth_allowed_users: tuple[str, ...] = ("operator",)
 
-    @field_validator("enabled_languages", "github_allowed_users", mode="before")
+    @field_validator("enabled_languages", "oauth_allowed_users", mode="before")
     @classmethod
     def split_csv(cls, value: object) -> object:
         if isinstance(value, str):
@@ -62,7 +62,7 @@ class Settings(BaseSettings):
         if self.app_env == "local" and self.bind_host not in {"127.0.0.1", "localhost", "::1"}:
             raise ValueError("Local mode may only bind to a loopback address.")
         if self.app_env != "local":
-            if not self.github_oauth_client_id or not self.github_oauth_client_secret:
+            if not self.oauth_client_id or not self.oauth_client_secret:
                 raise ValueError("Production requires GitHub OAuth credentials.")
             if len(self.session_secret) < 32:
                 raise ValueError("Production SESSION_SECRET must contain at least 32 characters.")

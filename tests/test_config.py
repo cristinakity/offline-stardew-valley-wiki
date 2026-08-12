@@ -33,8 +33,8 @@ def test_production_workers_can_be_disabled_for_bootstrap(tmp_path: Path) -> Non
         bind_host="0.0.0.0",
         data_dir=tmp_path,
         session_secret="x" * 48,
-        github_oauth_client_id="client",
-        github_oauth_client_secret="secret",
+        oauth_client_id="client",
+        oauth_client_secret="secret",
         worker_enabled=False,
         builder_enabled=False,
     )
