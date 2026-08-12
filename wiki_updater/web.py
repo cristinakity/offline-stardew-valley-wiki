@@ -105,7 +105,10 @@ async def login(request: Request):
         return RedirectResponse("/", status_code=303)
     state = secrets.token_urlsafe(32)
     request.session["oauth_state"] = state
-    callback = str(request.url_for("oauth_callback"))
+    callback_url = request.url_for("oauth_callback")
+    if settings.app_env != "local":
+        callback_url = callback_url.replace(scheme="https")
+    callback = str(callback_url)
     query = urlencode({"client_id": settings.oauth_client_id, "redirect_uri": callback, "scope": "read:user", "state": state})
     return RedirectResponse(f"https://github.com/login/oauth/authorize?{query}", status_code=303)
 
