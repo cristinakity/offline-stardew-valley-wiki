@@ -8,7 +8,6 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_desktop_search_library_exists() -> None:
     shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
     assert "../node_modules/minisearch/dist/umd/index.js" in shell
-    assert (ROOT / "node_modules" / "minisearch" / "dist" / "umd" / "index.js").is_file()
 
 
 def test_desktop_keeps_original_language_toolbar() -> None:

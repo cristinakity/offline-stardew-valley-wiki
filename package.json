@@ -14,7 +14,8 @@
     "prepare:edition": "node scripts/prepare-edition.mjs",
     "lint": "node --check desktop/main.js && node --check desktop/preload.js && node --check desktop/renderer.js && node --check scripts/prepare-edition.mjs",
     "test:edition": "node scripts/test-prepare-edition.mjs",
-    "test": "npm run lint && npm run test:edition",
+    "test:desktop-dependencies": "node scripts/test-desktop-dependencies.mjs",
+    "test": "npm run lint && npm run test:desktop-dependencies && npm run test:edition",
     "content:pull": "bash scripts/pull-content.sh"
   },
   "devDependencies": {
