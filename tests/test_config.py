@@ -27,6 +27,12 @@ def test_page_concurrency_is_bounded(tmp_path: Path) -> None:
         Settings(data_dir=tmp_path, page_concurrency=5)
 
 
+def test_bootstrap_validation_mode_is_bounded(tmp_path: Path) -> None:
+    assert Settings(data_dir=tmp_path, bootstrap_validation="QUICK").bootstrap_validation == "quick"
+    with pytest.raises(ValidationError, match="BOOTSTRAP_VALIDATION"):
+        Settings(data_dir=tmp_path, bootstrap_validation="unsafe")
+
+
 def test_production_workers_can_be_disabled_for_bootstrap(tmp_path: Path) -> None:
     settings = Settings(
         app_env="production",

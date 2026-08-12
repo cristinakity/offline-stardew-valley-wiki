@@ -60,11 +60,13 @@ def test_fixture_sync_and_candidate(tmp_path: Path) -> None:
         min_free_gb=0,
         storage_limit_gb=1,
         enabled_languages=("en", "es", "zh"),
+        bootstrap_validation="quick",
     )
     imported_db = Database(imported_settings)
     imported = import_snapshot(imported_settings, imported_db, archive, "pytest")
     assert imported["snapshot_id"] == snapshot_id
     assert imported["validation"]["pages"] == 6
+    assert imported["validation"]["sampled_pages"] == 6
     assert json.loads((imported_root / "current.json").read_text())["snapshot_id"] == snapshot_id
     candidate_directory = Path(candidate["directory"])
     delete_candidate(settings, db, candidate["id"], "pytest")

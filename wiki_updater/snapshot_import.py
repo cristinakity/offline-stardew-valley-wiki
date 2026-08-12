@@ -53,6 +53,55 @@ def _verify_manifest(manifest: dict[str, Any]) -> None:
         raise RuntimeError("Snapshot ID does not match the manifest digest.")
 
 
+def _quick_validate_content(
+    content_root: Path,
+    pages_by_language: dict[str, list[dict[str, Any]]],
+    manifest: dict[str, Any],
+) -> dict[str, int]:
+    """Validate immutable snapshot structure without reparsing every HTML document."""
+    expected_languages = manifest.get("languages", {})
+    if set(pages_by_language) != set(expected_languages):
+        raise RuntimeError("Snapshot languages do not match the signed manifest.")
+    if not (content_root / "offline.css").is_file() or not (content_root / "translations.json").is_file():
+        raise RuntimeError("Snapshot is missing required offline metadata.")
+
+    page_count = 0
+    sampled = 0
+    for language, documents in sorted(pages_by_language.items()):
+        expected = int(expected_languages[language]["pages"])
+        if len(documents) != expected:
+            raise RuntimeError(
+                f"{language} search index contains {len(documents)} pages; manifest expects {expected}."
+            )
+        page_paths = [content_root / language / "pages" / f"{int(item['pageid'])}.html" for item in documents]
+        missing = next((path for path in page_paths if not path.is_file()), None)
+        if missing:
+            raise RuntimeError(f"Indexed offline page is missing: {missing.relative_to(content_root)}")
+        if page_paths:
+            sample_indexes = sorted({0, len(page_paths) // 2, len(page_paths) - 1})
+            for index in sample_indexes:
+                sample = page_paths[index].read_text(encoding="utf-8")
+                if not sample.strip() or "Content-Security-Policy" not in sample:
+                    raise RuntimeError(
+                        f"Sampled offline page is empty or lacks its CSP: {page_paths[index].relative_to(content_root)}"
+                    )
+                sampled += 1
+        page_count += len(page_paths)
+
+    signed_validation = manifest.get("validation", {})
+    for key in ("broken_links", "missing_assets", "remote_resources"):
+        if int(signed_validation.get(key, -1)) != 0:
+            raise RuntimeError(f"Signed snapshot validation is not clean: {key}={signed_validation.get(key)}")
+    return {
+        "pages": page_count,
+        "expected_pages": page_count,
+        "broken_links": 0,
+        "missing_assets": 0,
+        "remote_resources": 0,
+        "sampled_pages": sampled,
+    }
+
+
 def import_snapshot(settings: Settings, db: Database, archive: Path, actor: str) -> dict[str, Any]:
     started = time.monotonic()
     archive = archive.resolve()
@@ -98,7 +147,10 @@ def import_snapshot(settings: Settings, db: Database, archive: Path, actor: str)
             pages_by_language[index_path.stem] = [{"pageid": item["id"]} for item in documents]
             _log(f"Loaded {index_path.stem}: {len(documents):,} pages.")
         total_pages = sum(len(pages) for pages in pages_by_language.values())
-        _log(f"Phase 5/6: validating {total_pages:,} offline pages, links and assets.")
+        _log(
+            f"Phase 5/6: validating {total_pages:,} offline pages in "
+            f"{settings.bootstrap_validation} mode."
+        )
         validation_started = time.monotonic()
 
         def validation_progress(processed: int, expected: int) -> None:
@@ -109,7 +161,10 @@ def import_snapshot(settings: Settings, db: Database, archive: Path, actor: str)
                     f"{_elapsed(validation_started)} elapsed)."
                 )
 
-        validation = validate_content(work / "content", pages_by_language, progress=validation_progress)
+        if settings.bootstrap_validation == "quick":
+            validation = _quick_validate_content(work / "content", pages_by_language, manifest)
+        else:
+            validation = validate_content(work / "content", pages_by_language, progress=validation_progress)
         _log(f"Offline validation complete: {validation} ({_elapsed(validation_started)}).")
         if any(validation[key] for key in ("broken_links", "missing_assets", "remote_resources")):
             raise RuntimeError(f"Imported snapshot validation failed: {validation}")

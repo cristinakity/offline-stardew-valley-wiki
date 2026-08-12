@@ -53,10 +53,18 @@ jobs:
           runtime_env="$(jq -n --argjson vars "$RUNTIME_VARS" \
             --arg oauth_id "$OAUTH_CLIENT_ID" --arg oauth_users "$OAUTH_ALLOWED_USERS" \
             --arg oauth_secret "$OAUTH_CLIENT_SECRET" --arg session "$SESSION_SECRET" \
-            '$vars | {APP_ENV,BIND_HOST,DATA_DIR,DATABASE_PATH,WORKER_ENABLED,BUILDER_ENABLED,ENABLED,ENABLED_LANGUAGES,STORAGE_LIMIT_GB,MIN_FREE_GB,SNAPSHOT_RETENTION,TIMEZONE,HTTP_CONCURRENCY,PAGE_CONCURRENCY,USER_AGENT} + {OAUTH_CLIENT_ID:$oauth_id,OAUTH_ALLOWED_USERS:$oauth_users,OAUTH_CLIENT_SECRET:$oauth_secret,SESSION_SECRET:$session}')"
+            '$vars | {APP_ENV,BIND_HOST,DATA_DIR,DATABASE_PATH,WORKER_ENABLED,BUILDER_ENABLED,ENABLED,ENABLED_LANGUAGES,STORAGE_LIMIT_GB,MIN_FREE_GB,SNAPSHOT_RETENTION,TIMEZONE,HTTP_CONCURRENCY,PAGE_CONCURRENCY,USER_AGENT} + {BOOTSTRAP_VALIDATION:(.BOOTSTRAP_VALIDATION // "quick"),OAUTH_CLIENT_ID:$oauth_id,OAUTH_ALLOWED_USERS:$oauth_users,OAUTH_CLIENT_SECRET:$oauth_secret,SESSION_SECRET:$session}')"
           body="$(jq -n --arg oidc_token "$OIDC_TOKEN" --arg image "$IMAGE_REF" \
             --arg ghcr_username "${{ github.repository_owner }}" --arg ghcr_token "$GHCR_TOKEN" \
             --argjson runtime_env "$runtime_env" \
             '{oidc_token:$oidc_token,image:$image,ghcr_username:$ghcr_username,ghcr_token:$ghcr_token,runtime_env:$runtime_env}')"
-          curl -fsSL -X POST "$BROKER_URL/api/deployments/$APP_ID" -H 'Content-Type: application/json' -d "$body"
-          echo "Rolled back application image to \`$IMAGE_REF\`; persistent /data was preserved." >> "$GITHUB_STEP_SUMMARY"
+          response="$(mktemp)"
+          status="$(curl -sS -o "$response" -w '%{http_code}' -X POST "$BROKER_URL/api/deployments/$APP_ID" -H 'Content-Type: application/json' -d "$body")"
+          test "$status" = "202"
+          deployment_id="$(jq -er .deployment_id "$response")"
+          status_path="$(jq -er .status_url "$response")"
+          {
+            echo "Rollback accepted for \`$IMAGE_REF\`; persistent /data will be preserved."
+            echo "- Broker deployment ID: \`$deployment_id\`"
+            echo "- Status endpoint: \`${BROKER_URL}${status_path}\`"
+          } >> "$GITHUB_STEP_SUMMARY"

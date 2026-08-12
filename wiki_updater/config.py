@@ -26,6 +26,7 @@ class Settings(BaseSettings):
     enabled: bool = True
     worker_enabled: bool = True
     builder_enabled: bool = True
+    bootstrap_validation: str = "full"
     enabled_languages: tuple[str, ...] = LANGUAGES
     storage_limit_gb: int = Field(default=40, ge=1)
     min_free_gb: int = Field(default=30, ge=0)
@@ -54,6 +55,14 @@ class Settings(BaseSettings):
         if unknown:
             raise ValueError(f"Unsupported language codes: {', '.join(unknown)}")
         return value
+
+    @field_validator("bootstrap_validation")
+    @classmethod
+    def validate_bootstrap_validation(cls, value: str) -> str:
+        normalized = value.casefold()
+        if normalized not in {"quick", "full"}:
+            raise ValueError("BOOTSTRAP_VALIDATION must be quick or full.")
+        return normalized
 
     @model_validator(mode="after")
     def validate_environment(self) -> "Settings":

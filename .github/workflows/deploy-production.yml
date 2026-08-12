@@ -100,6 +100,7 @@ jobs:
           DATABASE_PATH: ${{ vars.DATABASE_PATH }}
           WORKER_ENABLED: ${{ vars.WORKER_ENABLED }}
           BUILDER_ENABLED: ${{ vars.BUILDER_ENABLED }}
+          BOOTSTRAP_VALIDATION: ${{ vars.BOOTSTRAP_VALIDATION || 'quick' }}
           ENABLED: ${{ vars.ENABLED }}
           ENABLED_LANGUAGES: ${{ vars.ENABLED_LANGUAGES }}
           STORAGE_LIMIT_GB: ${{ vars.STORAGE_LIMIT_GB }}
@@ -124,7 +125,8 @@ jobs:
           runtime_env="$(jq -n \
             --arg APP_ENV "$APP_ENV" --arg BIND_HOST "$BIND_HOST" --arg DATA_DIR "$DATA_DIR" \
             --arg DATABASE_PATH "$DATABASE_PATH" --arg WORKER_ENABLED "$WORKER_ENABLED" \
-            --arg BUILDER_ENABLED "$BUILDER_ENABLED" --arg ENABLED "$ENABLED" \
+            --arg BUILDER_ENABLED "$BUILDER_ENABLED" --arg BOOTSTRAP_VALIDATION "$BOOTSTRAP_VALIDATION" \
+            --arg ENABLED "$ENABLED" \
             --arg ENABLED_LANGUAGES "$ENABLED_LANGUAGES" --arg STORAGE_LIMIT_GB "$STORAGE_LIMIT_GB" \
             --arg MIN_FREE_GB "$MIN_FREE_GB" --arg SNAPSHOT_RETENTION "$SNAPSHOT_RETENTION" \
             --arg TIMEZONE "$TIMEZONE" --arg HTTP_CONCURRENCY "$HTTP_CONCURRENCY" \
@@ -141,11 +143,16 @@ jobs:
               --arg git_sha "${{ github.sha }}" --argjson runtime_env "$runtime_env" \
               '{oidc_token:$oidc_token,image:$image,ghcr_username:$ghcr_username,ghcr_token:$ghcr_token,git_sha:$git_sha,runtime_env:$runtime_env}')")"
           cat "$response"
-          test "$status" -lt 400
+          test "$status" = "202"
+          deployment_id="$(jq -er .deployment_id "$response")"
+          status_path="$(jq -er .status_url "$response")"
           {
-            echo '### Production deployment'
+            echo '### Production deployment accepted'
+            echo "- Broker deployment ID: \`$deployment_id\`"
+            echo "- Status endpoint: \`${DEPLOY_BROKER_URL}${status_path}\`"
             echo "- Application image: \`$image\`"
             echo "- Snapshot: \`$(jq -r .oci_ref content-lock.json)\`"
             echo "- Application URL: ${{ vars.PRODUCTION_APP_URL }}"
             echo "- Worker enabled: \`$WORKER_ENABLED\`"
+            echo '- Final deployment result is tracked by the broker; this workflow does not wait for bootstrap.'
           } >> "$GITHUB_STEP_SUMMARY"
