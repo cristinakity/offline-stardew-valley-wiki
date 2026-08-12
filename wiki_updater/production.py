@@ -15,17 +15,24 @@ from .snapshot_import import import_snapshot
 def bootstrap_snapshot() -> None:
     settings = get_settings()
     if (settings.data_dir / "current.json").exists():
+        print("[production] Existing /data/current.json found; snapshot bootstrap skipped.", flush=True)
         return
     seed_dir = Path(os.getenv("SNAPSHOT_SEED_DIR", "/opt/wiki-seed"))
     archives = sorted(seed_dir.glob("*.tar.zst"))
     if len(archives) != 1:
         raise RuntimeError("Production requires exactly one approved snapshot seed when /data is empty.")
+    print("[production] Empty persistent data detected; importing approved snapshot seed.", flush=True)
     import_snapshot(settings, Database(settings), archives[0], "production-bootstrap")
 
 
 def run_production() -> None:
     bootstrap_snapshot()
     settings = get_settings()
+    print(
+        f"[production] Starting dashboard on 0.0.0.0:8080 "
+        f"(worker_enabled={settings.worker_enabled}, builder_enabled={settings.builder_enabled}).",
+        flush=True,
+    )
     commands = [["uvicorn", "wiki_updater.web:app", "--host", "0.0.0.0", "--port", "8080"]]
     if settings.worker_enabled:
         commands.append(["wiki-updater", "worker"])

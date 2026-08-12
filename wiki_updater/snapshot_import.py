@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import shutil
 import subprocess
+import time
 import uuid
 from pathlib import Path, PurePosixPath
 from typing import Any
@@ -12,6 +13,14 @@ from .crawler import validate_content
 from .database import Database, utcnow
 from .jobs import finish
 from .storage import Storage, sha256_bytes
+
+
+def _log(message: str) -> None:
+    print(f"[snapshot-import] {message}", flush=True)
+
+
+def _elapsed(started: float) -> str:
+    return f"{time.monotonic() - started:.1f}s"
 
 
 def _archive_members(archive: Path) -> list[str]:
@@ -45,12 +54,18 @@ def _verify_manifest(manifest: dict[str, Any]) -> None:
 
 
 def import_snapshot(settings: Settings, db: Database, archive: Path, actor: str) -> dict[str, Any]:
+    started = time.monotonic()
     archive = archive.resolve()
     if not archive.is_file():
         raise FileNotFoundError(archive)
-    _archive_members(archive)
+    archive_size = archive.stat().st_size
+    _log(f"Starting approved snapshot import: {archive.name} ({archive_size / 1024**2:.1f} MiB).")
+    _log("Phase 1/6: inspecting archive members and validating paths.")
+    members = _archive_members(archive)
+    _log(f"Archive inspection complete: {len(members):,} members ({_elapsed(started)} elapsed).")
     storage = Storage(settings)
-    storage.ensure_capacity(archive.stat().st_size * 3)
+    _log("Phase 2/6: checking storage budget and free-space reserve.")
+    storage.ensure_capacity(archive_size * 3)
     work = settings.data_dir / "work" / f"import-{uuid.uuid4().hex}"
     work.mkdir(parents=True)
     run_id = db.execute(
@@ -59,6 +74,8 @@ def import_snapshot(settings: Settings, db: Database, archive: Path, actor: str)
     )
     db.event(run_id, "Extracting and validating an approved snapshot archive.", archive=archive.name)
     try:
+        phase_started = time.monotonic()
+        _log("Phase 3/6: extracting compressed snapshot. This can take several minutes.")
         subprocess.run(
             [
                 "tar", "--zstd", "--extract", "--file", str(archive), "--directory", str(work),
@@ -66,27 +83,48 @@ def import_snapshot(settings: Settings, db: Database, archive: Path, actor: str)
             ],
             check=True,
         )
+        _log(f"Extraction complete ({_elapsed(phase_started)}). Checking extracted files and manifest.")
         if any(path.is_symlink() for path in work.rglob("*")):
             raise RuntimeError("Snapshot archive may not contain symbolic links.")
         manifest = json.loads((work / "manifest.json").read_text(encoding="utf-8"))
         _verify_manifest(manifest)
         snapshot_id = str(manifest["snapshot_id"])
+        _log(f"Manifest verified for snapshot {snapshot_id}.")
+        _log("Phase 4/6: loading per-language search indexes.")
         search_root = work / "content" / "search"
         pages_by_language: dict[str, list[dict[str, Any]]] = {}
         for index_path in search_root.glob("*.json"):
             documents = json.loads(index_path.read_text(encoding="utf-8"))
             pages_by_language[index_path.stem] = [{"pageid": item["id"]} for item in documents]
-        validation = validate_content(work / "content", pages_by_language)
+            _log(f"Loaded {index_path.stem}: {len(documents):,} pages.")
+        total_pages = sum(len(pages) for pages in pages_by_language.values())
+        _log(f"Phase 5/6: validating {total_pages:,} offline pages, links and assets.")
+        validation_started = time.monotonic()
+
+        def validation_progress(processed: int, expected: int) -> None:
+            if processed == 1 or processed % 500 == 0 or processed == expected:
+                percent = (processed * 100 // expected) if expected else 100
+                _log(
+                    f"Validation progress: {processed:,}/{expected:,} pages ({percent}%, "
+                    f"{_elapsed(validation_started)} elapsed)."
+                )
+
+        validation = validate_content(work / "content", pages_by_language, progress=validation_progress)
+        _log(f"Offline validation complete: {validation} ({_elapsed(validation_started)}).")
         if any(validation[key] for key in ("broken_links", "missing_assets", "remote_resources")):
             raise RuntimeError(f"Imported snapshot validation failed: {validation}")
         if (settings.data_dir / "snapshots" / snapshot_id).exists():
             raise RuntimeError(f"Snapshot {snapshot_id} already exists.")
+        _log("Phase 6/6: promoting validated content and updating current.json.")
         storage.promote(snapshot_id, work / "content", manifest)
         finish(db, run_id, "completed", snapshot_id=snapshot_id, summary={"validation": validation})
         db.audit(actor, "snapshot.import", snapshot_id, archive=archive.name)
+        _log(f"Snapshot import completed successfully in {_elapsed(started)}. Starting dashboard.")
         return {"run_id": run_id, "snapshot_id": snapshot_id, "validation": validation}
     except Exception as exc:
         finish(db, run_id, "failed", error=str(exc))
+        _log(f"Snapshot import failed after {_elapsed(started)}: {type(exc).__name__}: {exc}")
         raise
     finally:
+        _log("Cleaning temporary import workspace.")
         shutil.rmtree(work, ignore_errors=True)
