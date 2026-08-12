@@ -57,6 +57,8 @@ async def process(db: Database, settings: Settings, run: dict[str, object]) -> N
 
 
 async def run_worker(settings: Settings, db: Database) -> None:
+    if not settings.worker_enabled:
+        raise RuntimeError("Crawler worker is disabled by WORKER_ENABLED=false.")
     reconcile_interrupted_runs(db)
     stop = asyncio.Event()
     loop = asyncio.get_running_loop()

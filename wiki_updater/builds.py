@@ -88,24 +88,26 @@ def enqueue_build(
         raise KeyError(candidate_id)
     archive = _pin_candidate_archive(db, candidate_id, _candidate_archive(item))
     total = len(EDITIONS) if edition == "all" else 1
-    job_id = db.execute(
-        "INSERT INTO build_jobs("
-        "candidate_id,version,snapshot_id,edition,platform,status,requested_by,created_at,"
-        "source_archive,progress_total"
-        ") VALUES(?,?,?,?,?,?,?,?,?,?)",
-        (
-            candidate_id,
-            item["version"],
-            item["snapshot_id"],
-            edition,
-            platform,
-            "queued",
-            actor,
-            utcnow(),
-            str(archive),
-            total,
-        ),
-    )
+    with db.connection() as connection:
+        connection.execute("BEGIN IMMEDIATE")
+        active_run = connection.execute(
+            "SELECT id FROM runs WHERE status IN ('queued','running','paused') LIMIT 1"
+        ).fetchone()
+        if active_run:
+            connection.execute("ROLLBACK")
+            raise RuntimeError(f"Run {active_run['id']} is already queued or running.")
+        cursor = connection.execute(
+            "INSERT INTO build_jobs("
+            "candidate_id,version,snapshot_id,edition,platform,status,requested_by,created_at,"
+            "source_archive,progress_total"
+            ") VALUES(?,?,?,?,?,?,?,?,?,?)",
+            (
+                candidate_id, item["version"], item["snapshot_id"], edition, platform,
+                "queued", actor, utcnow(), str(archive), total,
+            ),
+        )
+        job_id = int(cursor.lastrowid)
+        connection.execute("COMMIT")
     db.build_event(job_id, f"Queued {platform} build for edition {edition}.")
     db.audit(
         actor,
@@ -130,17 +132,27 @@ def enqueue_rebuild(db: Database, source_job_id: int, actor: str) -> int:
     if not archive.is_file():
         raise RuntimeError("The original candidate archive is no longer available.")
     total = len(EDITIONS) if source["edition"] == "all" else 1
-    job_id = db.execute(
-        "INSERT INTO build_jobs("
-        "candidate_id,version,snapshot_id,edition,platform,status,requested_by,created_at,"
-        "source_archive,progress_total"
-        ") VALUES(?,?,?,?,?,?,?,?,?,?)",
-        (
-            source["candidate_id"], source["version"], source["snapshot_id"],
-            source["edition"], source["platform"], "queued", actor, utcnow(),
-            str(archive), total,
-        ),
-    )
+    with db.connection() as connection:
+        connection.execute("BEGIN IMMEDIATE")
+        active_run = connection.execute(
+            "SELECT id FROM runs WHERE status IN ('queued','running','paused') LIMIT 1"
+        ).fetchone()
+        if active_run:
+            connection.execute("ROLLBACK")
+            raise RuntimeError(f"Run {active_run['id']} is already queued or running.")
+        cursor = connection.execute(
+            "INSERT INTO build_jobs("
+            "candidate_id,version,snapshot_id,edition,platform,status,requested_by,created_at,"
+            "source_archive,progress_total"
+            ") VALUES(?,?,?,?,?,?,?,?,?,?)",
+            (
+                source["candidate_id"], source["version"], source["snapshot_id"],
+                source["edition"], source["platform"], "queued", actor, utcnow(),
+                str(archive), total,
+            ),
+        )
+        job_id = int(cursor.lastrowid)
+        connection.execute("COMMIT")
     db.build_event(job_id, f"Queued as an exact rebuild of build #{source_job_id}.")
     db.audit(actor, "build.rebuild", str(job_id), source_build_job_id=source_job_id)
     return job_id
@@ -182,6 +194,11 @@ def list_build_jobs(db: Database, limit: int = 50) -> list[dict[str, Any]]:
 def claim_next_build(db: Database) -> dict[str, Any] | None:
     with db.connection() as connection:
         connection.execute("BEGIN IMMEDIATE")
+        if connection.execute(
+            "SELECT id FROM runs WHERE status IN ('running','paused') LIMIT 1"
+        ).fetchone():
+            connection.execute("COMMIT")
+            return None
         row = connection.execute(
             "SELECT * FROM build_jobs WHERE status='queued' ORDER BY id LIMIT 1"
         ).fetchone()

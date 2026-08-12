@@ -44,20 +44,11 @@ def test_desktop_only_shows_languages_in_the_package() -> None:
 
 
 def test_desktop_uses_exact_legacy_background_and_flag_images() -> None:
-    background = (
-        ROOT
-        / "src"
-        / "stardewvalleywiki.com"
-        / "mediawiki"
-        / "extensions"
-        / "StardewValley"
-        / "images"
-        / "stardewbackground.png"
-    )
+    background = ROOT / "desktop" / "assets" / "stardewbackground.png"
     assert hashlib.sha256(background.read_bytes()).hexdigest() == (
         "f714621f8ee63e3808a6288145e16cbc754c7a5a6b5ceecfc06852ab2c222589"
     )
-    assert (ROOT / "src" / "flags" / "usa-flag.png").is_file()
+    assert (ROOT / "desktop" / "assets" / "flags" / "usa-flag.png").is_file()
     main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
     assert "stardewbackground.png" in main
     assert "usa-flag.png" in main

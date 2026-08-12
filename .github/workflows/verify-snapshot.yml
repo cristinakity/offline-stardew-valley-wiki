@@ -1,0 +1,46 @@
+name: Verify approved snapshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type VERIFY-SNAPSHOT after publishing and locking the public OCI snapshot
+        required: true
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  verify:
+    if: ${{ inputs.confirmation == 'VERIFY-SNAPSHOT' }}
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: oras-project/setup-oras@v1
+      - name: Pull public snapshot by digest and validate it
+        run: |
+          set -euo pipefail
+          reference="$(jq -er '.oci_ref | select(test("^ghcr\\.io/.+@sha256:[0-9a-f]{64}$"))' content-lock.json)"
+          archive_name="$(jq -r .archive_name content-lock.json)"
+          archive_sha="$(jq -r .archive_sha256 content-lock.json)"
+          test "$(jq -r .version content-lock.json)" = "v1.3.0"
+          test "$(jq -r .snapshot_id content-lock.json)" = "20260811T015121Z-7206e5e0cacc"
+          test "$(jq -r .validation.pages content-lock.json)" = "25852"
+          test "$(jq -r .validation.expected_pages content-lock.json)" = "25852"
+          test "$(jq -r .validation.broken_links content-lock.json)" = "0"
+          test "$(jq -r .validation.missing_assets content-lock.json)" = "0"
+          test "$(jq -r .validation.remote_resources content-lock.json)" = "0"
+          mkdir snapshot
+          oras pull "$reference" -o snapshot
+          test -f "snapshot/$archive_name"
+          printf '%s  %s\n' "$archive_sha" "snapshot/$archive_name" | sha256sum --check --status
+          {
+            echo '### Approved snapshot verified'
+            echo "- Reference: \`$reference\`"
+            echo "- Archive SHA-256: \`$archive_sha\`"
+            echo '- Pages: `25852/25852`'
+          } >> "$GITHUB_STEP_SUMMARY"

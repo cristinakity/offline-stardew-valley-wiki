@@ -60,8 +60,12 @@ def main() -> None:
     if args.command == "worker":
         asyncio.run(run_worker(settings, db))
     elif args.command == "build-worker":
+        if not settings.builder_enabled:
+            raise SystemExit("Package builder is disabled by BUILDER_ENABLED=false.")
         asyncio.run(run_build_worker(settings, db))
     elif args.command == "sync":
+        if not settings.worker_enabled:
+            raise SystemExit("Crawler worker is disabled by WORKER_ENABLED=false.")
         asyncio.run(foreground_sync(args.profile))
     elif args.command == "candidate":
         print(json.dumps(create_candidate(settings, db, args.version, "cli"), indent=2))
@@ -70,6 +74,8 @@ def main() -> None:
 
         print(json.dumps(import_snapshot(settings, db, Path(args.archive), "cli"), indent=2))
     elif args.command == "recover":
+        if not settings.worker_enabled:
+            raise SystemExit("Crawler worker is disabled by WORKER_ENABLED=false.")
         run_id = db.execute(
             "INSERT INTO runs(kind,profile,status,requested_by,created_at,started_at) VALUES(?,?,?,?,?,?)",
             ("recovery", f"recover-{args.run_id}", "running", "cli", utcnow(), utcnow()),

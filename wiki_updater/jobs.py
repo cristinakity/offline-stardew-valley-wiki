@@ -19,13 +19,26 @@ class RunCancelled(Exception):
 
 
 def enqueue(db: Database, kind: str, profile: str, actor: str) -> int:
-    active = db.one("SELECT id FROM runs WHERE status IN ('queued','running','paused') LIMIT 1")
-    if active:
-        raise RuntimeError(f"Run {active['id']} is already queued or running.")
-    run_id = db.execute(
-        "INSERT INTO runs(kind,profile,status,requested_by,created_at) VALUES(?,?,?,?,?)",
-        (kind, profile, "queued", actor, utcnow()),
-    )
+    with db.connection() as connection:
+        connection.execute("BEGIN IMMEDIATE")
+        build = connection.execute(
+            "SELECT id FROM build_jobs WHERE status IN ('queued','building') LIMIT 1"
+        ).fetchone()
+        if build:
+            connection.execute("ROLLBACK")
+            raise RuntimeError(f"Build {build['id']} is already queued or running.")
+        active = connection.execute(
+            "SELECT id FROM runs WHERE status IN ('queued','running','paused') LIMIT 1"
+        ).fetchone()
+        if active:
+            connection.execute("ROLLBACK")
+            raise RuntimeError(f"Run {active['id']} is already queued or running.")
+        cursor = connection.execute(
+            "INSERT INTO runs(kind,profile,status,requested_by,created_at) VALUES(?,?,?,?,?)",
+            (kind, profile, "queued", actor, utcnow()),
+        )
+        run_id = int(cursor.lastrowid)
+        connection.execute("COMMIT")
     db.event(run_id, f"Queued {kind} job with profile {profile}.")
     db.audit(actor, "run.enqueue", str(run_id), kind=kind, profile=profile)
     return run_id
@@ -34,6 +47,11 @@ def enqueue(db: Database, kind: str, profile: str, actor: str) -> int:
 def claim_next(db: Database) -> dict[str, Any] | None:
     with db.connection() as connection:
         connection.execute("BEGIN IMMEDIATE")
+        if connection.execute(
+            "SELECT id FROM build_jobs WHERE status='building' LIMIT 1"
+        ).fetchone():
+            connection.execute("COMMIT")
+            return None
         row = connection.execute("SELECT * FROM runs WHERE status='queued' ORDER BY id LIMIT 1").fetchone()
         if not row:
             connection.execute("COMMIT")

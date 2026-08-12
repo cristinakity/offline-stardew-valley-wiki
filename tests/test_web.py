@@ -40,6 +40,10 @@ def test_dashboard_explains_profiles_and_shows_crawler_activity() -> None:
     assert "Create candidate from this run" in DASHBOARD
     assert "createCandidateFromRun" in DASHBOARD
     assert "sample es sólo para pruebas" in DASHBOARD
+    assert "Bootstrap mode / Worker disabled" in DASHBOARD
+    source = (Path(__file__).parents[1] / "wiki_updater" / "web.py").read_text()
+    assert "Crawler worker is disabled" in source
+    assert "Package builder is disabled" in source
 
 
 def test_dashboard_uses_tabs_and_bounded_scroll_regions() -> None:

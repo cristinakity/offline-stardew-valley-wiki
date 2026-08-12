@@ -55,6 +55,16 @@ def test_build_job_is_pinned_to_candidate_archive(tmp_path: Path) -> None:
     assert Path(claimed["output_directory"]).name == f"job-{job_id:06d}"
 
 
+def test_build_is_rejected_while_crawler_is_active(tmp_path: Path) -> None:
+    _settings, db, candidate_id, _archive = build_database(tmp_path)
+    db.execute(
+        "INSERT INTO runs(kind,profile,status,requested_by,created_at) VALUES(?,?,?,?,?)",
+        ("manual_sync", "full", "running", "pytest", utcnow()),
+    )
+    with pytest.raises(RuntimeError, match="already queued or running"):
+        enqueue_build(db, candidate_id, "en", "linux", "pytest")
+
+
 def test_all_editions_and_exact_rebuild_get_separate_jobs(tmp_path: Path) -> None:
     _settings, db, candidate_id, archive = build_database(tmp_path)
     first = enqueue_build(db, candidate_id, "all", "linux", "pytest")

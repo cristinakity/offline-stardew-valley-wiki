@@ -273,7 +273,7 @@ def test_stylesheet_keeps_theme_when_optional_asset_is_missing(tmp_path: Path) -
             )
         return httpx.Response(404, request=request)
 
-    async def exercise() -> str:
+    async def exercise() -> tuple[str, list[dict]]:
         settings = Settings(data_dir=tmp_path, min_free_gb=0)
         storage = Storage(settings)
         client = MediaWikiClient(settings)
@@ -282,10 +282,22 @@ def test_stylesheet_keeps_theme_when_optional_asset_is_missing(tmp_path: Path) -
         normalizer = Normalizer(client, storage, tmp_path / "content", {"en": {}})
         stylesheet = await normalizer.stylesheet("https://stardewvalleywiki.com/theme.css", "en")
         result = (tmp_path / "content" / stylesheet.relative_path).read_text(encoding="utf-8")
+        failures = normalizer.asset_failures
         await client.close()
-        return result
+        return result, failures
 
-    css = asyncio.run(exercise())
+    css, failures = asyncio.run(exercise())
     assert "background:#0A0523" in css
     assert "url('data:,')" in css
     assert ".mw-body{color:#202122}" in css
+    assert failures == [{
+        "language": "en",
+        "page_id": None,
+        "page_title": None,
+        "attribute": "css-url",
+        "url": "https://stardewvalleywiki.com/missing.png",
+        "http_status": 404,
+        "attempts": 1,
+        "last_error": "Resource is unavailable (404): https://stardewvalleywiki.com/missing.png",
+        "error": "Resource is unavailable (404): https://stardewvalleywiki.com/missing.png",
+    }]

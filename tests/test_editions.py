@@ -27,8 +27,11 @@ def test_release_builds_multilingual_and_every_language() -> None:
     )
     editions = f"edition: [multilingual, {LANGUAGE_EDITIONS.replace(' ', ', ')}]"
     assert workflow.count(editions) == 2
-    assert "linux-${{ matrix.edition }}" in workflow
-    assert "windows-${{ matrix.edition }}" in workflow
+    assert "gh release upload" in workflow
+    assert "actions/upload-artifact" not in workflow
+    assert "SHA256SUMS-linux-$WIKI_EDITION" in workflow
+    assert "SHA256SUMS-windows-$env:WIKI_EDITION" in workflow
+    assert "test \"$(wc -l < SHA256SUMS)\" -eq 65" in workflow
 
 
 def test_forge_gives_single_language_apps_distinct_identities() -> None:

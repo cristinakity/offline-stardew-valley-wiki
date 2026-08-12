@@ -98,6 +98,7 @@ class MediaWikiClient:
                 async with self.semaphore:
                     response = await self.client.get(url, **kwargs)
                 if response.status_code == 429:
+                    last_error = RuntimeError(f"Rate limited (429): {url}")
                     await asyncio.sleep(float(response.headers.get("Retry-After", 2 ** (attempt + 1))))
                     continue
                 if 400 <= response.status_code < 500:
@@ -106,13 +107,19 @@ class MediaWikiClient:
                 return response
             except httpx.HTTPStatusError as exc:
                 if exc.response.status_code < 500:
-                    raise RuntimeError(f"Asset is unavailable ({exc.response.status_code}): {url}") from exc
+                    failure = RuntimeError(f"Resource is unavailable ({exc.response.status_code}): {url}")
+                    failure.http_status = exc.response.status_code  # type: ignore[attr-defined]
+                    failure.attempts = attempt + 1  # type: ignore[attr-defined]
+                    raise failure from exc
                 last_error = exc
                 await asyncio.sleep(min(2 ** attempt, 16))
             except (httpx.HTTPError, ValueError) as exc:
                 last_error = exc
                 await asyncio.sleep(min(2 ** attempt, 16))
-        raise RuntimeError(f"Failed to download {url}: {last_error}")
+        failure = RuntimeError(f"Failed to download {url}: {last_error}")
+        failure.http_status = getattr(getattr(last_error, "response", None), "status_code", None)  # type: ignore[attr-defined]
+        failure.attempts = 5  # type: ignore[attr-defined]
+        raise failure
 
     async def api(self, language: str, parameters: dict[str, Any]) -> dict[str, Any]:
         defaults = {"format": "json", "formatversion": 2}
@@ -199,6 +206,9 @@ class Normalizer:
             "page_title": str(page.get("title", "")) if page else None,
             "attribute": attribute,
             "url": self.absolute_asset_url(url, language) or url,
+            "http_status": getattr(error, "http_status", None),
+            "attempts": int(getattr(error, "attempts", 1)),
+            "last_error": str(error),
             "error": str(error),
         })
 
@@ -284,10 +294,11 @@ class Normalizer:
                     f"../{asset.relative_path.removeprefix('assets/')}"
                     if from_stylesheet else f"../../{asset.relative_path}"
                 )
-            except (RuntimeError, httpx.HTTPError, ValueError):
+            except (RuntimeError, httpx.HTTPError, ValueError) as exc:
                 # Site CSS often retains references for long-removed optional
                 # decorations. Keep the rest of the theme instead of dropping
                 # the complete stylesheet because one legacy image is gone.
+                self.record_asset_failure(language, None, "css-url", urljoin(base_url, value), exc)
                 replacements[value] = "data:,"
         return CSS_URL_RE.sub(
             lambda match: f"url('{replacements.get(html.unescape(match.group(2).strip()), match.group(2))}')",
@@ -764,7 +775,7 @@ async def synchronize(settings: Settings, db: Database, run_id: int, profile: st
                 )
 
         validation = validate_content(content_root, pages_by_language, progress=validation_progress)
-        validation["asset_download_errors"] = sum(item["asset_errors"] for item in language_stats.values())
+        validation["asset_download_errors"] = len(normalizer.asset_failures)
         for failure in normalizer.asset_failures:
             db.event(
                 run_id,

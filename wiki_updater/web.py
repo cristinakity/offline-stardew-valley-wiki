@@ -200,6 +200,8 @@ async def run_events(run_id: int) -> StreamingResponse:
 
 @app.post("/api/runs/sync")
 async def start_sync(request: Request) -> dict[str, Any]:
+    if not settings.worker_enabled:
+        raise HTTPException(503, "Crawler worker is disabled in bootstrap mode.")
     payload = await request.json()
     profile = payload.get("profile", "fixture")
     if profile not in {"fixture", "sample", "incremental", "full"}:
@@ -244,6 +246,8 @@ def resume_run(run_id: int, request: Request) -> dict[str, str]:
 
 @app.post("/api/runs/{run_id}/recover")
 def recover_run(run_id: int, request: Request) -> dict[str, Any]:
+    if not settings.worker_enabled:
+        raise HTTPException(503, "Crawler worker is disabled in bootstrap mode.")
     source = db.one("SELECT * FROM runs WHERE id=?", (run_id,))
     if not source:
         raise HTTPException(404, "Run not found.")
@@ -300,6 +304,8 @@ def local_build_asset(build_id: str, asset_name: str) -> FileResponse:
 
 @app.post("/api/candidates/{candidate_id}/builds")
 async def make_candidate_build(candidate_id: int, request: Request) -> dict[str, Any]:
+    if not settings.builder_enabled:
+        raise HTTPException(503, "Package builder is disabled in this environment.")
     payload = await request.json()
     try:
         job_id = enqueue_build(
@@ -318,6 +324,8 @@ async def make_candidate_build(candidate_id: int, request: Request) -> dict[str,
 
 @app.post("/api/builds/{job_id}/rebuild")
 def rebuild_candidate(job_id: int, request: Request) -> dict[str, Any]:
+    if not settings.builder_enabled:
+        raise HTTPException(503, "Package builder is disabled in this environment.")
     try:
         rebuild_id = enqueue_rebuild(db, job_id, actor(request))
     except KeyError as exc:
@@ -382,6 +390,8 @@ def candidate_asset(candidate_id: int, asset_name: str):
 @app.get("/api/settings")
 def read_settings() -> dict[str, Any]:
     return {
+        "worker_enabled": settings.worker_enabled,
+        "builder_enabled": settings.builder_enabled,
         "enabled": db.setting("enabled", settings.enabled),
         "enabled_languages": db.setting("enabled_languages", list(settings.enabled_languages)),
         "page_concurrency": db.setting("page_concurrency", settings.page_concurrency),
@@ -420,6 +430,9 @@ def status() -> dict[str, Any]:
     storage = Storage(settings)
     return {
         "environment": settings.app_env,
+        "bootstrap_mode": not settings.worker_enabled,
+        "worker_enabled": settings.worker_enabled,
+        "builder_enabled": settings.builder_enabled,
         "current": storage.current(),
         "storage_used_bytes": storage.usage_bytes(),
         "storage_limit_bytes": settings.storage_limit_gb * 1024**3,
@@ -502,7 +515,7 @@ button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px s
 <div class="help-item"><h3>Abrir la wiki</h3><p>Este panel sólo administra el crawler. Abre el lector desde el host con <code>env -u ELECTRON_RUN_AS_NODE npm start</code>. El contenido se lee desde <code>.local-data</code>.</p></div>
 </div></section></section>
 <section class="tab-panel active" data-panel="overview"><div class="grid"><section class="card"><h2>Status</h2><div id="status">Loading…</div></section>
-<section class="card"><h2>Run synchronization</h2><div class="row"><select id="profile" onchange="showProfileHelp()"><option>fixture</option><option>sample</option><option>incremental</option><option>full</option></select><button onclick="startRun()">Start</button></div><div id="profileHelp" class="profile-help"></div><p><small>Sólo puede existir una ejecución activa. Puedes pausarla, continuarla o cancelarla desde Crawler.</small></p></section>
+<section class="card"><h2>Run synchronization</h2><div class="row"><select id="profile" onchange="showProfileHelp()"><option>fixture</option><option>sample</option><option>incremental</option><option>full</option></select><button id="startRunButton" onclick="startRun()">Start</button></div><div id="profileHelp" class="profile-help"></div><p id="workerModeHelp"><small>Sólo puede existir una ejecución activa. Puedes pausarla, continuarla o cancelarla desde Crawler.</small></p></section>
 <section class="card"><h2>Create candidate</h2><div class="row"><input id="version" value="v1.3.0" pattern="v?[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?"><button onclick="createCandidate()">Create from current snapshot</button></div><p><small>La versión debe ser única. Para un sample usa, por ejemplo, <code>v1.3.0-sample.21</code>, o créalo directamente desde Crawler/Runs.</small></p></section></div>
 </section>
 <section id="tab-storage" class="tab-panel" data-panel="storage"><section class="card"><h2>Storage</h2><p id="storageSummary" class="muted">Calculando uso real…</p><div id="storageBreakdown" class="table-scroll compact"></div><p><small>Los tamaños por categoría pueden compartir hardlinks y no deben sumarse. “Uso real” cuenta cada inode una sola vez.</small></p><div class="row"><button class="secondary" onclick="purgeStorage('cache')">Purge temporary cache</button><button class="danger" onclick="purgeStorage('builds')">Delete build outputs</button><button class="danger" onclick="purgeStorage('old_snapshots')">Keep current snapshot only</button></div><p><small>La caché elimina temporales y blobs no referenciados; los runs fallidos podrían dejar de ser recuperables. Los candidatos se eliminan individualmente en Candidates.</small></p></section></section>
@@ -528,8 +541,8 @@ function showProfileHelp(){document.querySelector('#profileHelp').textContent=pr
 function activityControls(x){if(!['queued','running','paused'].includes(x.status))return'';if(x.cancel_requested)return'<div class="row"><button disabled>Cancelando de forma segura…</button></div>';const resume=x.status==='paused'||x.pause_requested;return`<div class="row">${x.kind!=='recovery'?`<button class="secondary" onclick="controlRun(${x.id},'${resume?'resume':'pause'}')">${resume?'Continuar':'Pausar'}</button>`:''}<button class="danger" onclick="cancelRun(${x.id})">Cancelar</button></div>`}
 function renderActivity(x){const ls=x.languages||[];const total=ls.reduce((n,l)=>n+l.pages_total,0);const written=ls.reduce((n,l)=>n+l.pages_written,0);const assets=ls.reduce((n,l)=>n+l.assets_written,0);const size=ls.reduce((n,l)=>n+l.bytes_written,0);const isRecovery=x.kind==='recovery';const validation=[...(x.events||[])].reverse().find(e=>e.detail?.phase==='validation');const restoredAssets=[...(x.events||[])].reverse().find(e=>Number.isFinite(e.detail?.assets));let percent=total?Math.round(written/total*100):0;if(isRecovery){const restoredPercent=total?written/total:0;percent=validation?50+Math.round((validation.detail.pages_checked||0)/(validation.detail.pages_total||total||1)*50):Math.round(restoredPercent*50)}const last=x.events?.at(-1);const active=['queued','running','paused'].includes(x.status);const displayedState=active&&x.cancel_requested?'cancelling':active&&x.pause_requested&&x.status==='running'?'pausing':x.status;const candidateButton=['completed','completed_with_warnings'].includes(x.status)&&x.snapshot_id?`<button onclick="createCandidateFromRun(${x.id},'${escapeHtml(x.profile)}')">Create candidate from this run</button>`:'';document.querySelector('#activityTitle').textContent=`Run #${x.id} · ${x.profile} · ${last?.message||'sin eventos'}`;document.querySelector('#activityState').textContent=displayedState;document.querySelector('#activityState').className=`pill ${x.status==='completed'?'ok':x.status==='completed_with_warnings'?'warning':x.status==='failed'?'bad':''}`;
 document.querySelector('#activity').innerHTML=`<div class="row">${activityControls(x)}${candidateButton}</div>${x.profile==='sample'&&candidateButton?'<p class="warning"><b>Sample:</b> este candidato sirve para probar el empaquetado, pero sólo contiene unas 25 páginas por idioma.</p>':''}<div class="progress-summary"><div class="metric"><small>Progreso total</small><strong>${percent}%</strong></div><div class="metric"><small>${isRecovery?'Páginas restauradas':'Páginas procesadas'}</small><strong>${written} / ${total||'?'}</strong></div><div class="metric"><small>${isRecovery?'Assets reutilizados':'Assets nuevos'}</small><strong>${isRecovery?(restoredAssets?.detail.assets??'Enlazando…'):assets}</strong></div><div class="metric"><small>${isRecovery?'Transferencia de red':'Datos escritos'}</small><strong>${isRecovery?'0 B (sólo local)':compactBytes(size)}</strong></div></div><progress class="progressbar" max="100" value="${percent}"></progress>${x.error?`<p class="bad"><b>Error:</b> ${x.error}</p>`:''}<div class="table-scroll compact"><table class="language-progress"><thead><tr><th>Idioma</th><th>Estado</th><th>Páginas</th><th>${isRecovery?'Assets nuevos':'Assets'}</th><th>${isRecovery?'Red':'Datos'}</th><th>Revisión final</th></tr></thead><tbody>${ls.map(l=>`<tr><td>${l.language}</td><td>${l.status}</td><td>${l.pages_written}/${l.pages_total}</td><td>${l.assets_written}</td><td>${isRecovery?'0 B':compactBytes(l.bytes_written)}</td><td>${l.revision_end||'—'}</td></tr>`).join('')||'<tr><td colspan="6">Preparando contenido local…</td></tr>'}</tbody></table></div><h3>Eventos recientes</h3><div class="event-log">${(x.events||[]).slice(-30).reverse().map(e=>`<div class="event-line"><small>${new Date(e.created_at).toLocaleString()}</small> <span class="${e.level==='error'?'bad':''}">[${e.level}] ${e.message}</span></div>`).join('')||'<span class="muted">Todavía no hay eventos.</span>'}</div>`}
-function renderStatus(s){document.querySelector('#status').innerHTML=`Environment: <b>${s.environment}</b><br>Storage real: ${bytes(s.storage_used_bytes)} / ${bytes(s.storage_limit_bytes)}<br>Snapshot: ${s.current?.snapshot_id||'none'}<br>Active: ${s.active_run?.id||'none'}`}
-function renderSettings(conf){document.querySelector('#enabled').checked=conf.enabled;document.querySelector('#pageConcurrency').value=String(conf.page_concurrency);document.querySelector('#languages').innerHTML=langs.map(l=>`<label><input type="checkbox" data-lang="${l}" ${conf.enabled_languages.includes(l)?'checked':''}>${l}</label>`).join('')}
+function renderStatus(s){const mode=s.bootstrap_mode?'<br><span class="pill warning">Bootstrap mode / Worker disabled</span>':'';document.querySelector('#status').innerHTML=`Environment: <b>${s.environment}</b>${mode}<br>Storage real: ${bytes(s.storage_used_bytes)} / ${bytes(s.storage_limit_bytes)}<br>Snapshot: ${s.current?.snapshot_id||'none'}<br>Active: ${s.active_run?.id||'none'}`;const start=document.querySelector('#startRunButton');if(start)start.disabled=!s.worker_enabled}
+function renderSettings(conf){document.querySelector('#enabled').checked=conf.enabled;document.querySelector('#enabled').disabled=!conf.worker_enabled;document.querySelector('#pageConcurrency').value=String(conf.page_concurrency);document.querySelector('#languages').innerHTML=langs.map(l=>`<label><input type="checkbox" data-lang="${l}" ${conf.enabled_languages.includes(l)?'checked':''} ${conf.worker_enabled?'':'disabled'}>${l}</label>`).join('');const help=document.querySelector('#workerModeHelp');if(help&&!conf.worker_enabled)help.innerHTML='<small class="warning">Bootstrap mode: el crawler está deshabilitado por configuración de production.</small>'}
 async function refreshStatus(){renderStatus(await api('/api/status'))}
 async function refreshOverview(){const [s,conf]=await Promise.all([api('/api/status'),api('/api/settings')]);renderStatus(s);renderSettings(conf)}
 async function refreshRuns(){const r=await api('/api/runs');document.querySelector('#runs').innerHTML=r.map(x=>{const active=['queued','running','paused'].includes(x.status);const state=active&&x.cancel_requested?'cancelling':active&&x.pause_requested&&x.status==='running'?'pausing':x.status;const candidateButton=['completed','completed_with_warnings'].includes(x.status)&&x.snapshot_id?`<button onclick="createCandidateFromRun(${x.id},'${escapeHtml(x.profile)}')">Candidate</button>`:'';return`<tr data-run-id="${x.id}" class="${selectedRunId===x.id?'selected-run':''}"><td><a class="run-link" aria-current="${selectedRunId===x.id?'true':'false'}" href="#" onclick="detail(${x.id});return false">${x.id}</a></td><td>${x.profile}</td><td>${state}</td><td>${x.created_at}</td><td>${x.snapshot_id||''}</td><td><div class="row">${active?activityControls(x):x.recoverable?`<button class="secondary" onclick="recoverRun(${x.id})">Recover</button>`:''}${candidateButton}</div></td></tr>`}).join('')}

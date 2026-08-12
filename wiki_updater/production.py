@@ -25,10 +25,10 @@ def bootstrap_snapshot() -> None:
 
 def run_production() -> None:
     bootstrap_snapshot()
-    commands = [
-        ["uvicorn", "wiki_updater.web:app", "--host", "0.0.0.0", "--port", "8080"],
-        ["wiki-updater", "worker"],
-    ]
+    settings = get_settings()
+    commands = [["uvicorn", "wiki_updater.web:app", "--host", "0.0.0.0", "--port", "8080"]]
+    if settings.worker_enabled:
+        commands.append(["wiki-updater", "worker"])
     children = [subprocess.Popen(command) for command in commands]
     stopping = False
 

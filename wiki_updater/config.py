@@ -24,6 +24,8 @@ class Settings(BaseSettings):
     bind_host: str = "127.0.0.1"
     session_secret: str = "local-development-only-change-me"
     enabled: bool = True
+    worker_enabled: bool = True
+    builder_enabled: bool = True
     enabled_languages: tuple[str, ...] = LANGUAGES
     storage_limit_gb: int = Field(default=40, ge=1)
     min_free_gb: int = Field(default=30, ge=0)
