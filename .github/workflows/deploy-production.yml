@@ -109,9 +109,11 @@ jobs:
           HTTP_CONCURRENCY: ${{ vars.HTTP_CONCURRENCY }}
           PAGE_CONCURRENCY: ${{ vars.PAGE_CONCURRENCY }}
           USER_AGENT: ${{ vars.USER_AGENT }}
-          GITHUB_OAUTH_CLIENT_ID: ${{ vars.GITHUB_OAUTH_CLIENT_ID }}
-          GITHUB_OAUTH_CLIENT_SECRET: ${{ secrets.GITHUB_OAUTH_CLIENT_SECRET }}
-          GITHUB_ALLOWED_USERS: ${{ vars.GITHUB_ALLOWED_USERS }}
+          # GitHub reserves the GITHUB_ prefix for repository/environment names.
+          # Map operator-facing OAUTH_* settings to the container's existing keys.
+          GITHUB_OAUTH_CLIENT_ID: ${{ vars.OAUTH_CLIENT_ID }}
+          GITHUB_OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
+          GITHUB_ALLOWED_USERS: ${{ vars.OAUTH_ALLOWED_USERS }}
           SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
         run: |
           set -euo pipefail

@@ -106,7 +106,7 @@ En la UI administrativa privada crea un grant **Single container**:
 App ID: <APP_ID>
 Display name: Offline Stardew Valley Wiki Updater
 GitHub repository: <OWNER>/<REPOSITORY>
-GitHub ref: refs/heads/main
+GitHub ref: refs/heads/master
 Allowed GHCR image prefix: ghcr.io/<OWNER>/<UPDATER_IMAGE>
 Domain: <PRODUCTION_APP_HOST>
 Container name: <PRODUCTION_CONTAINER_NAME>
@@ -172,7 +172,7 @@ Guarda el Client ID y genera un Client Secret. No copies el secret a archivos lo
 
 En el repositorio abre **Settings → Environments → New environment** y crea `production`.
 
-Configura required reviewers, restringe deployment branches a `main` y evita self-review cuando la
+Configura required reviewers, restringe deployment branches a `master` y evita self-review cuando la
 organización lo permita.
 
 Variables:
@@ -198,24 +198,29 @@ TIMEZONE=America/Chicago
 HTTP_CONCURRENCY=1
 PAGE_CONCURRENCY=1
 USER_AGENT=OfflineStardewValleyWiki/1.3 (<OPERATOR_CONTACT>)
-GITHUB_OAUTH_CLIENT_ID=<OAUTH_CLIENT_ID>
-GITHUB_ALLOWED_USERS=<ALLOWED_GITHUB_USERS>
+OAUTH_CLIENT_ID=<OAUTH_CLIENT_ID>
+OAUTH_ALLOWED_USERS=<ALLOWED_GITHUB_USERS>
 ```
 
 Secrets:
 
 ```text
 GHCR_READ_TOKEN=<TOKEN_WITH_READ_PACKAGES>
-GITHUB_OAUTH_CLIENT_SECRET=<OAUTH_CLIENT_SECRET>
+OAUTH_CLIENT_SECRET=<OAUTH_CLIENT_SECRET>
 SESSION_SECRET=<RANDOM_SECRET_AT_LEAST_48_CHARACTERS>
 ```
+
+GitHub no permite crear variables ni secretos cuyo nombre empiece con `GITHUB_`. El workflow traduce
+estos nombres `OAUTH_*` a `GITHUB_OAUTH_CLIENT_ID`, `GITHUB_OAUTH_CLIENT_SECRET` y
+`GITHUB_ALLOWED_USERS` únicamente dentro del payload efímero enviado al broker. Por eso el grant
+conserva esos tres nombres `GITHUB_*` en **Allowed runtime environment JSON**.
 
 Genera `SESSION_SECRET` fuera del repositorio, por ejemplo con un gestor de contraseñas. El token de
 GHCR sólo necesita leer la imagen privada del updater.
 
 ## 6. Bootstrap con worker apagado
 
-Fusiona los cambios aprobados a `main`. Abre **Actions → Deploy updater to production → Run
+Fusiona los cambios aprobados a `master`. Abre **Actions → Deploy updater to production → Run
 workflow** y escribe:
 
 ```text
@@ -256,7 +261,7 @@ El scheduler queda configurado para incremental el domingo a las 03:00 y reconci
 
 ## 8. Crear el environment `release`
 
-Crea `release` en **Settings → Environments**, con required reviewers y rama `main`.
+Crea `release` en **Settings → Environments**, con required reviewers y rama `master`.
 
 Variables:
 
