@@ -1,4 +1,5 @@
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
 import httpx
 
@@ -27,6 +28,19 @@ async def test_production_private_api_requires_authentication(monkeypatch) -> No
 
     assert response.status_code == 401
     assert response.json() == {"detail": "Authentication required."}
+
+
+async def test_production_oauth_callback_is_always_https(monkeypatch) -> None:
+    monkeypatch.setattr(settings, "app_env", "production")
+    transport = httpx.ASGITransport(app=app, raise_app_exceptions=False)
+
+    async with httpx.AsyncClient(transport=transport, base_url="http://wikiupdater.kity.dev") as client:
+        response = await client.get("/auth/login", follow_redirects=False)
+
+    assert response.status_code == 303
+    authorization = urlparse(response.headers["location"])
+    callback = parse_qs(authorization.query)["redirect_uri"]
+    assert callback == ["https://wikiupdater.kity.dev/auth/callback"]
 
 
 def test_dashboard_javascript_keeps_escaped_newlines() -> None:
