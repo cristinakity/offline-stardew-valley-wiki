@@ -1,7 +1,32 @@
 from pathlib import Path
 
+import httpx
+
 from wiki_updater import __version__
-from wiki_updater.web import DASHBOARD, list_local_builds
+from wiki_updater.web import DASHBOARD, app, db, list_local_builds, settings
+
+
+async def test_production_health_has_session_available(monkeypatch) -> None:
+    monkeypatch.setattr(settings, "app_env", "production")
+    monkeypatch.setattr(db, "one", lambda *_args, **_kwargs: {"ok": 1})
+    transport = httpx.ASGITransport(app=app, raise_app_exceptions=False)
+
+    async with httpx.AsyncClient(transport=transport, base_url="https://updater.test") as client:
+        response = await client.get("/api/health")
+
+    assert response.status_code == 200
+    assert response.json()["status"] == "ok"
+
+
+async def test_production_private_api_requires_authentication(monkeypatch) -> None:
+    monkeypatch.setattr(settings, "app_env", "production")
+    transport = httpx.ASGITransport(app=app, raise_app_exceptions=False)
+
+    async with httpx.AsyncClient(transport=transport, base_url="https://updater.test") as client:
+        response = await client.get("/api/runs")
+
+    assert response.status_code == 401
+    assert response.json() == {"detail": "Authentication required."}
 
 
 def test_dashboard_javascript_keeps_escaped_newlines() -> None:

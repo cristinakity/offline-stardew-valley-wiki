@@ -26,13 +26,6 @@ from .storage import Storage
 settings = get_settings()
 db = Database(settings)
 app = FastAPI(title="Offline Stardew Valley Wiki Updater", docs_url=None, redoc_url=None)
-app.add_middleware(
-    SessionMiddleware,
-    secret_key=settings.session_secret,
-    https_only=settings.app_env != "local",
-    same_site="lax",
-    max_age=8 * 60 * 60,
-)
 
 BUILD_ID_RE = re.compile(r"^(?:\d{8}T\d{6}Z|job-\d{6})$")
 BUILD_ASSET_SUFFIXES = {".zip", ".deb", ".rpm"}
@@ -90,6 +83,18 @@ async def authenticate(request: Request, call_next):
     return response
 
 
+# Starlette wraps the last registered middleware around earlier ones. Sessions
+# must therefore be registered after authenticate so request.session exists
+# before authentication runs.
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=settings.session_secret,
+    https_only=settings.app_env != "local",
+    same_site="lax",
+    max_age=8 * 60 * 60,
+)
+
+
 def actor(request: Request) -> str:
     return str(request.state.user or "unknown")
 
@@ -145,7 +150,7 @@ async def logout(request: Request):
 
 
 @app.get("/api/health")
-def health() -> dict[str, Any]:
+async def health() -> dict[str, Any]:
     database_ok = db.one("SELECT 1 AS ok") is not None
     return {"status": "ok" if database_ok else "error", "environment": settings.app_env, "version": __version__}
 
