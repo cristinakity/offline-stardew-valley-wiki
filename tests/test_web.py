@@ -2,9 +2,10 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import httpx
+from starlette.requests import Request
 
 from wiki_updater import __version__
-from wiki_updater.web import DASHBOARD, app, db, list_local_builds, settings
+from wiki_updater.web import DASHBOARD, app, db, list_local_builds, oauth_callback, settings
 
 
 async def test_production_health_has_session_available(monkeypatch) -> None:
@@ -41,6 +42,51 @@ async def test_production_oauth_callback_is_always_https(monkeypatch) -> None:
     authorization = urlparse(response.headers["location"])
     callback = parse_qs(authorization.query)["redirect_uri"]
     assert callback == ["https://wikiupdater.kity.dev/auth/callback"]
+
+
+async def test_oauth_token_exchange_reuses_https_callback(monkeypatch) -> None:
+    posted: dict[str, str] = {}
+
+    class Response:
+        def __init__(self, payload: dict[str, str]) -> None:
+            self.payload = payload
+
+        def raise_for_status(self) -> None:
+            return None
+
+        def json(self) -> dict[str, str]:
+            return self.payload
+
+    class Client:
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *_args) -> None:
+            return None
+
+        async def post(self, _url, *, headers, data):
+            posted.update(data)
+            return Response({"access_token": "token"})
+
+        async def get(self, _url, *, headers):
+            return Response({"login": "cristinakity"})
+
+    monkeypatch.setattr(settings, "app_env", "production")
+    monkeypatch.setattr(settings, "oauth_allowed_users", ("cristinakity",))
+    monkeypatch.setattr(httpx, "AsyncClient", lambda **_kwargs: Client())
+    monkeypatch.setattr(db, "audit", lambda *_args, **_kwargs: None)
+    scope = {
+        "type": "http", "http_version": "1.1", "method": "GET", "scheme": "http",
+        "path": "/auth/callback", "raw_path": b"/auth/callback", "query_string": b"",
+        "root_path": "", "headers": [], "client": ("127.0.0.1", 1),
+        "server": ("wikiupdater.kity.dev", 80), "router": app.router,
+        "session": {"oauth_state": "state"},
+    }
+    starlette_request = Request(scope)
+    response = await oauth_callback(starlette_request, code="code", state="state")
+
+    assert response.status_code == 303
+    assert posted["redirect_uri"] == "https://wikiupdater.kity.dev/auth/callback"
 
 
 def test_dashboard_javascript_keeps_escaped_newlines() -> None:

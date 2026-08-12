@@ -99,16 +99,20 @@ def actor(request: Request) -> str:
     return str(request.state.user or "unknown")
 
 
+def oauth_callback_url(request: Request) -> str:
+    callback = request.url_for("oauth_callback")
+    if settings.app_env != "local":
+        callback = callback.replace(scheme="https")
+    return str(callback)
+
+
 @app.get("/auth/login")
 async def login(request: Request):
     if settings.app_env == "local":
         return RedirectResponse("/", status_code=303)
     state = secrets.token_urlsafe(32)
     request.session["oauth_state"] = state
-    callback_url = request.url_for("oauth_callback")
-    if settings.app_env != "local":
-        callback_url = callback_url.replace(scheme="https")
-    callback = str(callback_url)
+    callback = oauth_callback_url(request)
     query = urlencode({"client_id": settings.oauth_client_id, "redirect_uri": callback, "scope": "read:user", "state": state})
     return RedirectResponse(f"https://github.com/login/oauth/authorize?{query}", status_code=303)
 
@@ -126,12 +130,16 @@ async def oauth_callback(request: Request, code: str, state: str):
                 "client_id": settings.oauth_client_id,
                 "client_secret": settings.oauth_client_secret,
                 "code": code,
+                "redirect_uri": oauth_callback_url(request),
             },
         )
         token_response.raise_for_status()
-        token = token_response.json().get("access_token")
+        token_payload = token_response.json()
+        token = token_payload.get("access_token")
         if not token:
-            raise HTTPException(401, "GitHub did not return an access token.")
+            error = str(token_payload.get("error", "token_exchange_failed"))
+            db.audit("oauth", "auth.token_exchange_failed", error=error)
+            raise HTTPException(401, f"GitHub OAuth token exchange failed: {error}.")
         user_response = await client.get(
             "https://api.github.com/user",
             headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"},
