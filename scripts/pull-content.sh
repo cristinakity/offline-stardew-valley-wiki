@@ -20,10 +20,18 @@ archive_name="$(jq -er '.archive_name' "$lock_file")"
 expected_sha="$(jq -er '.archive_sha256' "$lock_file")"
 temporary="$(mktemp -d)"
 trap 'rm -rf -- "$temporary"' EXIT
+oras_registry_args=()
+if [[ -n "${ORAS_REGISTRY_CONFIG:-}" ]]; then
+  oras_registry_args+=(--registry-config "$ORAS_REGISTRY_CONFIG")
+fi
 
-oras pull "$reference" -o "$temporary"
-archive="$temporary/$archive_name"
-test -f "$archive"
+oras pull "${oras_registry_args[@]}" "$reference" -o "$temporary"
+mapfile -t archives < <(find "$temporary" -type f -name "$archive_name" -print)
+if [[ "${#archives[@]}" -ne 1 ]]; then
+  echo "Expected exactly one $archive_name in the OCI artifact; found ${#archives[@]}." >&2
+  exit 1
+fi
+archive="${archives[0]}"
 printf '%s  %s\n' "$expected_sha" "$archive" | sha256sum --check --status
 
 APP_ENV=local DATA_DIR="$data_dir" BIND_HOST=127.0.0.1 \

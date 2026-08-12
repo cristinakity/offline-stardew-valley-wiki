@@ -81,8 +81,10 @@ jobs:
           set -euo pipefail
           mkdir snapshot
           oras pull "$SNAPSHOT_REF" -o snapshot
-          archive="$(find snapshot -maxdepth 1 -name '*.tar.zst' -type f -print -quit)"
-          test -n "$archive"
+          archive_name="$(jq -r .archive_name content-lock.json)"
+          mapfile -t archives < <(find snapshot -type f -name "$archive_name" -print)
+          test "${#archives[@]}" -eq 1
+          archive="${archives[0]}"
           printf '%s  %s\n' "$(jq -r .archive_sha256 content-lock.json)" "$archive" | sha256sum --check --status
           tar --zstd -xf "$archive" -C snapshot
       - name: Build and upload Linux edition
@@ -133,8 +135,10 @@ jobs:
           New-Item -ItemType Directory -Path snapshot | Out-Null
           oras pull $env:SNAPSHOT_REF -o snapshot
           choco install zstandard -y
-          $archive = Get-ChildItem snapshot -Filter *.tar.zst | Select-Object -First 1
-          if (-not $archive) { throw "Snapshot archive was not found." }
+          $archiveName = (Get-Content content-lock.json | ConvertFrom-Json).archive_name
+          $archives = @(Get-ChildItem snapshot -Recurse -File -Filter $archiveName)
+          if ($archives.Count -ne 1) { throw "Expected exactly one $archiveName; found $($archives.Count)." }
+          $archive = $archives[0]
           $expected = (Get-Content content-lock.json | ConvertFrom-Json).archive_sha256
           if ((Get-FileHash $archive.FullName -Algorithm SHA256).Hash.ToLower() -ne $expected) { throw "Snapshot checksum mismatch." }
           zstd -d $archive.FullName -o snapshot/wiki-content.tar

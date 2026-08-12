@@ -36,8 +36,9 @@ jobs:
           test "$(jq -r .validation.remote_resources content-lock.json)" = "0"
           mkdir snapshot
           oras pull "$reference" -o snapshot
-          test -f "snapshot/$archive_name"
-          printf '%s  %s\n' "$archive_sha" "snapshot/$archive_name" | sha256sum --check --status
+          mapfile -t archives < <(find snapshot -type f -name "$archive_name" -print)
+          test "${#archives[@]}" -eq 1
+          printf '%s  %s\n' "$archive_sha" "${archives[0]}" | sha256sum --check --status
           {
             echo '### Approved snapshot verified'
             echo "- Reference: \`$reference\`"

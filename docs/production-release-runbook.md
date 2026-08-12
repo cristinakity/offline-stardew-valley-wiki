@@ -81,7 +81,8 @@ Prueba una descarga anónima:
 temporary="$(mktemp -d)"
 oras logout ghcr.io || true
 oras pull "$SNAPSHOT_REF" -o "$temporary"
-sha256sum "$temporary/wiki-content-20260811T015121Z-7206e5e0cacc.tar.zst"
+downloaded_archive="$(find "$temporary" -type f -name 'wiki-content-20260811T015121Z-7206e5e0cacc.tar.zst' -print -quit)"
+sha256sum "$downloaded_archive"
 ```
 
 Edita `content-lock.json` y sustituye solamente:

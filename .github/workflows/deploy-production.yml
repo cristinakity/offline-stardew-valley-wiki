@@ -57,9 +57,11 @@ jobs:
           archive_sha="$(jq -r .archive_sha256 content-lock.json)"
           mkdir -p production-seed
           oras pull "$snapshot_ref" -o production-seed
-          test -f "production-seed/$archive_name"
-          printf '%s  %s\n' "$archive_sha" "production-seed/$archive_name" | sha256sum --check --status
-          test "$(find production-seed -maxdepth 1 -name '*.tar.zst' -type f | wc -l)" -eq 1
+          mapfile -t archives < <(find production-seed -type f -name "$archive_name" -print)
+          test "${#archives[@]}" -eq 1
+          printf '%s  %s\n' "$archive_sha" "${archives[0]}" | sha256sum --check --status
+          mv "${archives[0]}" "production-seed/$archive_name"
+          find production-seed -mindepth 1 -type d -empty -delete
 
       - uses: docker/setup-buildx-action@v3
 
