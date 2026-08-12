@@ -29,12 +29,20 @@ completed. The new reader does not use that mirror. Future generated content liv
 An end user should download an application release. A developer who clones the source can import
 the approved `.tar.zst` snapshot and does **not** need to run a four-hour full crawl.
 
+Once `content-lock.json` contains the published OCI digest, a developer can download, verify, and
+import that exact approved snapshot with:
+
+```bash
+npm run content:pull
+```
+
 ## Requirements
 
 For the updater and snapshot import:
 
 - Podman 5 or newer.
 - `podman compose` or `podman-compose`.
+- Python 3.13, `jq` and ORAS when importing the approved OCI snapshot from the host.
 - At least 30 GiB free when performing a complete crawl.
 
 For running Electron from the source tree:
@@ -70,44 +78,22 @@ Open the dashboard at <http://127.0.0.1:8090>.
 The dashboard is the updater, not the wiki reader. It provides tabs for crawler activity, runs,
 candidates, storage, audit history and help.
 
-### 3. Download the approved content archive
-
-Download `wiki-content-<snapshot-id>.tar.zst` and `SHA256SUMS` from the corresponding GitHub
-release. Until a new release is published, obtain the approved candidate archive from the project
-maintainer.
-
-Verify the archive from the directory containing both files:
+### 3. Download, verify and import the approved snapshot
 
 ```bash
-sha256sum --check SHA256SUMS --ignore-missing
-```
-
-Copy the archive into the local data mount:
-
-```bash
-mkdir -p .local-data/import
-cp /path/to/wiki-content-<snapshot-id>.tar.zst .local-data/import/
-```
-
-### 4. Import the snapshot
-
-```bash
-podman compose \
-  --profile tools \
-  --env-file .env.local \
-  -f compose.yml \
-  -f compose.local.yml \
-  run --rm cli snapshot-import \
-  --archive /data/import/wiki-content-<snapshot-id>.tar.zst
-```
-
-The importer checks the manifest, validates the offline pages and assets, promotes the snapshot and
-writes `.local-data/current.json`. Importing does not contact the Stardew Valley Wiki.
-
-### 5. Open the desktop reader
-
-```bash
+python3 -m venv .venv
+.venv/bin/pip install -e .
 npm ci
+npm run content:pull
+```
+
+The command reads the immutable public GHCR reference from `content-lock.json`, downloads it with
+ORAS, verifies the archive SHA-256, validates the offline pages and writes `.local-data/current.json`.
+Importing does not crawl the Stardew Valley Wiki.
+
+### 4. Open the desktop reader
+
+```bash
 env -u ELECTRON_RUN_AS_NODE npm start
 ```
 
@@ -389,6 +375,9 @@ npm test
 ```
 
 ## Release and production safety
+
+Follow the complete [production and release runbook](docs/production-release-runbook.md) before
+configuring GitHub, publishing a snapshot, deploying through the broker, or creating `v1.3.0`.
 
 The rollout has separate approval gates:
 

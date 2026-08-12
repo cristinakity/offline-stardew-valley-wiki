@@ -22,7 +22,8 @@ function allowedLocalNavigation(target) {
   if (!target.startsWith('file:')) return false;
   try {
     const decoded = decodeURIComponent(new URL(target).pathname);
-    return decoded.startsWith(contentRoot()) || decoded.startsWith(__dirname);
+    const root = contentRoot();
+    return (Boolean(root) && decoded.startsWith(root)) || decoded.startsWith(__dirname);
   } catch {
     return false;
   }
@@ -41,18 +42,10 @@ function pathInsideContent(relativePath) {
 function shellAssets() {
   const sourceRoot = app.isPackaged
     ? process.resourcesPath
-    : path.join(__dirname, '..', 'src');
+    : path.join(__dirname, 'assets');
   const themePath = app.isPackaged
     ? path.join(sourceRoot, 'stardewbackground.png')
-    : path.join(
-      sourceRoot,
-      'stardewvalleywiki.com',
-      'mediawiki',
-      'extensions',
-      'StardewValley',
-      'images',
-      'stardewbackground.png',
-    );
+    : path.join(sourceRoot, 'stardewbackground.png');
   const flagRoot = path.join(sourceRoot, 'flags');
   const flags = {
     en: 'usa-flag.png', es: 'mexico-flag.png', de: 'germany-flag.png', fr: 'france-flag.png',

@@ -62,8 +62,14 @@ typings/
 .env.test
 .env.local
 .env.production
+.env.*
+!.env.local.example
 .local-data/
 production-seed/*.tar.zst
+*.tar.zst
+*.deb
+*.rpm
+*.nupkg
 .venv/
 __pycache__/
 *.egg-info/

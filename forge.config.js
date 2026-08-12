@@ -16,14 +16,13 @@ module.exports = {
     name: productName,
     appBundleId: `com.cristinakity.offlinestardewvalleywiki${isMultilingual ? '' : `.${edition}`}`,
     executableName: appSlug,
-    icon: 'src/favicon',
+    icon: 'desktop/assets/favicon',
     extraResource: [
-      'src/stardewvalleywiki.com/mediawiki/extensions/StardewValley/images/stardewbackground.png',
-      'src/flags',
+      'desktop/assets/stardewbackground.png',
+      'desktop/assets/flags',
       ...(process.env.WIKI_CONTENT_PATH ? [process.env.WIKI_CONTENT_PATH] : []),
     ],
     ignore: [
-      /^\/src($|\/)/,
       /^\/wiki_updater($|\/)/,
       /^\/tests($|\/)/,
       /^\/\.local-data($|\/)/,

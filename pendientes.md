@@ -19,29 +19,28 @@ Convenciones:
 - [x] El candidato full local `v1.3.0` contiene un `.tar.zst` de aproximadamente 643 MiB.
 - [x] El build Linux `#1` terminó las 13 ediciones y produjo 40 archivos (ZIP, DEB, RPM y
   `SHA256SUMS`).
-- [ ] **Bloqueante:** revisar y documentar los 30 assets opcionales que no se descargaron en el full.
-- [ ] **Bloqueante:** decidir explícitamente si se reintentan o si el full se aprueba con advertencias.
-- [ ] El candidato `v1.3.1` de aproximadamente 11.8 MiB es un `sample` de 25 páginas por idioma;
+- [x] Los 30 assets opcionales se aceptaron y documentaron como advertencia conocida de `v1.3.0`.
+- [x] El snapshot conserva cero enlaces rotos, assets requeridos ausentes y recursos remotos.
+- [x] El candidato `v1.3.1` de aproximadamente 11.8 MiB es un `sample` de 25 páginas por idioma;
   no debe utilizarse como release ni como seed inicial de production.
 - [ ] Eliminar o renombrar los candidatos de prueba y duplicados cuando ya no sean necesarios.
 - [ ] Purgar builds y workspaces locales obsoletos después de conservar los artefactos aprobados.
 
 ## 1. Bloqueadores de código y arquitectura
 
-- [ ] **Bloqueante:** agregar `WORKER_ENABLED=false` para iniciar production sólo con dashboard e
+- [x] Agregar `WORKER_ENABLED=false` para iniciar production sólo con dashboard e
   importador, sin proceso crawler.
-- [ ] **Bloqueante:** rechazar desde la API los botones de `sample`, `incremental`, `full` y recovery
+- [x] Rechazar desde la API los botones de `sample`, `incremental`, `full` y recovery
   mientras `WORKER_ENABLED=false`.
-- [ ] Mostrar claramente `Bootstrap mode / Worker disabled` en Status.
-- [ ] Permitir activar el worker únicamente mediante configuración de production y un redeploy/restart
+- [x] Mostrar claramente `Bootstrap mode / Worker disabled` en Status.
+- [x] Permitir activar el worker únicamente mediante configuración de production y un redeploy/restart
   controlado por el broker.
-- [ ] **Bloqueante:** impedir que crawler y builder ejecuten trabajos pesados simultáneamente.
-- [ ] Dejar `builder-worker` deshabilitado por defecto en production o detrás de un perfil explícito.
-- [ ] Configurar límites reales de CPU, memoria y PIDs compatibles con Podman; no depender solamente
+- [x] Impedir que crawler y builder reclamen trabajos pesados simultáneamente.
+- [x] Dejar `builder-worker` deshabilitado por defecto en production.
+- [x] El broker admite límites reales de CPU, memoria, swap y PIDs compatibles con Podman; no depende
   de campos de Compose que el proveedor pudiera ignorar.
-- [ ] Configuración inicial recomendada para el servidor de 3 CPU y 4 GiB:
-  - dashboard: máximo aproximado de 256 MiB y 0.25 CPU;
-  - crawler worker: máximo aproximado de 768 MiB y 1 CPU;
+- [x] Configuración inicial conservadora para el contenedor único de production:
+  - máximo de 1024 MiB, 1536 MiB con swap, 1 CPU y 256 PIDs;
   - `HTTP_CONCURRENCY=1`;
   - `PAGE_CONCURRENCY=1`;
   - builder deshabilitado;
@@ -54,34 +53,34 @@ Convenciones:
 
 - [ ] **Bloqueante:** revisar `git status` y separar cambios de aplicación, crawler, workflows y
   documentación en commits entendibles.
-- [ ] Eliminar el mirror antiguo y los JSON de búsqueda de la rama actual mediante un commit normal,
-  sin reescribir historial.
-- [ ] Confirmar que `.local-data`, snapshots, builds, candidatos, secretos y `.env.production` siguen
+- [ ] El mirror antiguo y sus JSON ya se eliminaron del working tree; incluir esas eliminaciones en
+  un commit normal, sin reescribir historial.
+- [x] Confirmar que `.local-data`, snapshots, builds, candidatos, secretos y `.env.production` siguen
   ignorados por Git.
-- [ ] No agregar `.tar.zst`, ZIP, DEB, RPM, EXE ni contenido completo de la wiki al historial Git.
+- [x] Ignorar `.tar.zst`, ZIP, DEB, RPM, EXE y contenido completo futuro de la wiki.
 - [ ] Confirmar que no existan nombres de proveedores, direcciones de servidores, usuarios del host,
   llaves SSH, tokens ni información personal de infraestructura en código o documentación.
 - [ ] Ejecutar un escaneo de secretos antes de publicar la rama.
-- [ ] Mantener intactos commits, issues, tags y releases históricos:
+- [x] Mantener intactos commits, issues, tags y releases históricos:
   - `v1.0.0-beta.1`;
   - `v1.0.0`;
   - `v1.1.0`;
   - `v1.2.0`.
-- [ ] Confirmar que un checkout de CI utiliza `fetch-depth: 1` cuando no necesita tags o historial.
-- [ ] Mantener código, pruebas, configuración y el lock del contenido en Git; distribuir binarios en
+- [x] Confirmar que un checkout de CI utiliza `fetch-depth: 1` cuando no necesita tags o historial.
+- [x] Mantener código, pruebas, configuración y el lock del contenido en Git; distribuir binarios en
   Releases y snapshots en GHCR.
 
 ## 3. Validación del snapshot full final
 
-- [ ] **Bloqueante:** seleccionar un único candidato full como fuente canónica de `<VERSION>`.
-- [ ] No utilizar candidatos `fixture` o `sample` como seed o release.
-- [ ] Ejecutar `sha256sum --check SHA256SUMS` dentro del candidato.
-- [ ] Confirmar que `content-lock.json`, `validation-report.json` y el manifiesto apuntan al mismo
+- [x] Se seleccionó el candidato full `#7`, snapshot `20260811T015121Z-7206e5e0cacc`, para `v1.3.0`.
+- [x] No utilizar candidatos `fixture` o `sample` como seed o release.
+- [x] Ejecutar `sha256sum --check SHA256SUMS` dentro del candidato.
+- [x] Confirmar que `content-lock.json`, `validation-report.json` y el manifiesto apuntan al mismo
   snapshot, versión y digest.
-- [ ] Confirmar 25,852/25,852 páginas o justificar cualquier diferencia respecto a MediaWiki.
-- [ ] Cero enlaces internos rotos.
-- [ ] Cero assets requeridos ausentes.
-- [ ] Cero recursos remotos necesarios durante el uso offline.
+- [x] Confirmar 25,852/25,852 páginas o justificar cualquier diferencia respecto a MediaWiki.
+- [x] Cero enlaces internos rotos.
+- [x] Cero assets requeridos ausentes.
+- [x] Cero recursos remotos necesarios durante el uso offline.
 - [ ] Clasificar cada error de descarga como requerido u opcional y conservar su URL, idioma, error e
   intento final en el reporte.
 - [ ] Probar automáticamente una muestra de páginas en los 12 idiomas.
@@ -121,12 +120,12 @@ Convenciones:
   configurar la visibilidad apropiada.
 - [ ] Agregar al repositorio un `content-lock.json` pequeño con versión, snapshot ID, digest y
   `<SNAPSHOT_REF>`.
-- [ ] Agregar un comando como `npm run content:pull` que lea el lock, descargue, verifique e importe el
+- [x] Agregar `npm run content:pull` para leer el lock, descargar, verificar e importar el
   snapshot para quien clone el código.
 
 ## 5. Bootstrap inicial de production mediante el broker
 
-- [ ] **Bloqueante:** confirmar que el broker monta un volumen nombrado persistente en `/data`.
+- [x] El contrato del broker permite exclusivamente volúmenes Podman nombrados y el runbook fija `/data`.
 - [ ] Confirmar que el volumen inicial está vacío o respaldar y documentar cualquier contenido previo.
 - [ ] Configurar el grant sin direcciones, usuarios ni credenciales del host dentro del repositorio.
 - [ ] Configurar OAuth, allowlist, secreto de sesión y dominio mediante variables/secretos externos.
@@ -137,12 +136,12 @@ Convenciones:
   ENABLED=false
   STORAGE_LIMIT_GB=15
   MIN_FREE_GB=3
-  SNAPSHOT_RETENTION=2
+  SNAPSHOT_RETENTION=3
   HTTP_CONCURRENCY=1
   PAGE_CONCURRENCY=1
   ```
 
-- [ ] Ajustar el tiempo de arranque/healthcheck para permitir descargar, extraer y validar el seed sin
+- [x] El broker admite timeouts configurables de pull y arranque de hasta 3600 segundos para validar el seed sin
   que el broker reinicie el contenedor prematuramente.
 - [ ] Ejecutar manualmente `Deploy updater to production` con environment protegido, confirmación y
   `<SNAPSHOT_REF>` inmutable.
@@ -173,20 +172,20 @@ Convenciones:
 
 ## 7. GitHub Actions para builds de release
 
-- [ ] **Bloqueante:** refactorizar `build-candidate.yml` para no descargar todos los artefactos en un
+- [x] Refactorizar `build-candidate.yml` para no descargar todos los artefactos en un
   job agregador; los Linux actuales ocupan aproximadamente 17 GiB.
-- [ ] Crear primero un GitHub Release draft vacío.
-- [ ] Ejecutar matrices separadas para:
+- [x] Crear primero un GitHub Release draft vacío.
+- [x] Configurar matrices separadas para:
   - Linux: multilingüe y cada uno de los 12 idiomas;
   - Windows: multilingüe y cada uno de los 12 idiomas.
-- [ ] Cada job debe descargar exactamente `<SNAPSHOT_REF>@sha256`, nunca un tag mutable ni
+- [x] Cada job descarga exactamente `<SNAPSHOT_REF>@sha256`, nunca un tag mutable ni
   `current.json`.
-- [ ] Cada job debe construir una sola edición para limitar disco y memoria del runner.
-- [ ] Cada job debe subir sus paquetes directamente al draft, sin conservarlos como artifacts grandes
+- [x] Cada job construye una sola edición para limitar disco y memoria del runner.
+- [x] Cada job sube sus paquetes directamente al draft, sin conservarlos como artifacts grandes
   de Actions.
-- [ ] Usar nombres únicos que incluyan versión, plataforma y edición.
-- [ ] Generar checksums por job y consolidar `SHA256SUMS` sin descargar todos los binarios nuevamente.
-- [ ] Verificar que cada archivo sea menor de 2 GiB antes de intentar subirlo a Releases.
+- [x] Usar nombres únicos que incluyan versión, plataforma y edición.
+- [x] Generar checksums por job y consolidar `SHA256SUMS` sin descargar todos los binarios nuevamente.
+- [x] Verificar que cada archivo sea menor de 2 GiB antes de intentar subirlo a Releases.
 - [ ] Confirmar que ningún job sobrescribe assets existentes y que un rerun es seguro.
 - [ ] Confirmar que Linux produce ZIP, DEB y RPM.
 - [ ] Confirmar que Windows produce ZIP y `squirrel.windows.zip` por edición acordada.
@@ -195,11 +194,10 @@ Convenciones:
 
 ## 8. Versión, tag y notas automáticas
 
-- [ ] **Bloqueante:** escoger `<VERSION>` y actualizar coherentemente `package.json`, lock, candidato,
-  nombres de paquetes y documentación.
-- [ ] Crear `.github/release.yml` con categorías para features, fixes, documentación, dependencias y
+- [x] La versión seleccionada es `v1.3.0`; `package.json`, lock, candidato y reporte son coherentes.
+- [x] Crear `.github/release.yml` con categorías para features, fixes, documentación, dependencias y
   otros cambios.
-- [ ] Crear una plantilla de introducción para el release con descripción, características y pasos de
+- [x] Crear una plantilla de introducción para el release con descripción, características y pasos de
   instalación.
 - [ ] Crear el draft con `--generate-notes` para incluir automáticamente:
   - `What's Changed`;
@@ -210,7 +208,7 @@ Convenciones:
 - [ ] No mover, reemplazar ni reutilizar un tag publicado.
 - [ ] Mostrar el digest del snapshot y commit de aplicación en las notas del release.
 - [ ] Adjuntar `content-lock.json`, `SHA256SUMS` y reporte de validación junto con los instaladores.
-- [ ] Dejar el release como draft después de compilar; nunca publicarlo automáticamente por push.
+- [x] Dejar el release como draft después de compilar; nunca publicarlo automáticamente por push.
 - [ ] Descargar desde GitHub y probar los paquetes finales, no sólo las copias locales.
 - [ ] Obtener una segunda aprobación humana explícita para el release draft.
 - [ ] Publicar manualmente el draft y marcarlo como `Latest` sólo después de aprobarlo.
@@ -228,7 +226,7 @@ Convenciones:
 - [ ] Probar retención de snapshots y candidatos sin eliminar la fuente de un release publicado.
 - [ ] Conservar referencia a la imagen anterior, snapshot anterior y backup SQLite antes de cada
   despliegue.
-- [ ] Documentar rollback mediante broker sin SSH.
+- [x] Documentar rollback mediante broker sin acceso directo al host.
 - [ ] Verificar que rollback de aplicación no revierta ni corrompa automáticamente el volumen de datos.
 
 ## Compuertas finales
