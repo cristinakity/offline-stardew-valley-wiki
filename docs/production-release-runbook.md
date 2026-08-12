@@ -231,9 +231,10 @@ workflow** y escribe:
 DEPLOY-PRODUCTION
 ```
 
-Antes de aprobar el environment revisa el commit y confirma que `content-lock.json` contiene el
-digest publicado. El workflow descargará el snapshot, verificará su checksum, construirá una imagen,
-la publicará por commit y pedirá al broker desplegar su digest inmutable.
+El workflow valida primero `content-lock.json`; después descarga el snapshot, verifica su checksum,
+construye la imagen y la publica por commit. El stage **Deploy to production** queda entonces a la
+espera del environment protegido. Antes de aprobarlo revisa el commit y los stages anteriores; al
+aprobarlo, el workflow pide al broker desplegar el digest inmutable de la imagen.
 
 Comprueba:
 

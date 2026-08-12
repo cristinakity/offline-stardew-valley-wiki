@@ -17,6 +17,17 @@ def test_production_deployment_uses_broker_without_direct_host_access() -> None:
         assert forbidden not in lowered
 
 
+def test_production_deployment_is_split_into_dependent_stages() -> None:
+    workflow = (ROOT / ".github" / "workflows" / "deploy-production.yml").read_text(encoding="utf-8")
+    assert "  validate_release:" in workflow
+    assert "  build_image:" in workflow
+    assert "    needs: validate_release" in workflow
+    assert "  deploy_production:" in workflow
+    assert "    needs: [validate_release, build_image]" in workflow
+    assert "IMAGE_DIGEST: ${{ needs.build_image.outputs.image_digest }}" in workflow
+    assert "SNAPSHOT_REF: ${{ needs.validate_release.outputs.snapshot_ref }}" in workflow
+
+
 def test_production_files_use_generic_names() -> None:
     paths = [
         ROOT / "compose.production.yml",
