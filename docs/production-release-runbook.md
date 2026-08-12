@@ -148,8 +148,8 @@ Allowed runtime environment JSON:
   "APP_ENV", "BIND_HOST", "DATA_DIR", "DATABASE_PATH", "WORKER_ENABLED",
   "BUILDER_ENABLED", "ENABLED", "ENABLED_LANGUAGES", "STORAGE_LIMIT_GB",
   "MIN_FREE_GB", "SNAPSHOT_RETENTION", "TIMEZONE", "HTTP_CONCURRENCY",
-  "PAGE_CONCURRENCY", "USER_AGENT", "GITHUB_OAUTH_CLIENT_ID",
-  "GITHUB_OAUTH_CLIENT_SECRET", "GITHUB_ALLOWED_USERS", "SESSION_SECRET"
+  "PAGE_CONCURRENCY", "USER_AGENT", "OAUTH_CLIENT_ID",
+  "OAUTH_CLIENT_SECRET", "OAUTH_ALLOWED_USERS", "SESSION_SECRET"
 ]
 ```
 
@@ -210,10 +210,9 @@ OAUTH_CLIENT_SECRET=<OAUTH_CLIENT_SECRET>
 SESSION_SECRET=<RANDOM_SECRET_AT_LEAST_48_CHARACTERS>
 ```
 
-GitHub no permite crear variables ni secretos cuyo nombre empiece con `GITHUB_`. El workflow traduce
-estos nombres `OAUTH_*` a `GITHUB_OAUTH_CLIENT_ID`, `GITHUB_OAUTH_CLIENT_SECRET` y
-`GITHUB_ALLOWED_USERS` únicamente dentro del payload efímero enviado al broker. Por eso el grant
-conserva esos tres nombres `GITHUB_*` en **Allowed runtime environment JSON**.
+GitHub no permite crear variables ni secretos cuyo nombre empiece con `GITHUB_`. Los nombres
+`OAUTH_*` se conservan sin traducción desde GitHub Settings hasta el payload efímero del broker y el
+contenedor. El grant debe permitir exactamente esos tres nombres en **Allowed runtime environment JSON**.
 
 Genera `SESSION_SECRET` fuera del repositorio, por ejemplo con un gestor de contraseñas. El token de
 GHCR sólo necesita leer la imagen privada del updater.
