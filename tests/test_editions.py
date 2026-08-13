@@ -25,16 +25,19 @@ def test_release_builds_multilingual_and_every_language() -> None:
     workflow = (ROOT / ".github" / "workflows" / "build-candidate.yml").read_text(
         encoding="utf-8"
     )
-    editions = f"edition: [multilingual, {LANGUAGE_EDITIONS.replace(' ', ', ')}]"
-    assert workflow.count(editions) == 2
+    editions = f'"multilingual","{LANGUAGE_EDITIONS.replace(" ", "\",\"")}"'
+    assert editions in workflow
+    assert workflow.count("fromJSON(needs.prepare-release.outputs.editions)") == 2
     assert "gh release upload" in workflow
     assert "actions/upload-artifact" not in workflow
     assert "SHA256SUMS-linux-$WIKI_EDITION" in workflow
     assert "SHA256SUMS-windows-$env:WIKI_EDITION" in workflow
     assert "test \"$(wc -l < SHA256SUMS)\" -eq 65" in workflow
     assert "build_scope:" in workflow
+    assert "edition_scope:" in workflow
+    assert workflow.count("uses: actions/cache@v4") == 2
     assert "Reusing existing draft release" in workflow
-    assert "7z a -tzip" in workflow
+    assert "7z a -tzip -mx=0" in workflow
     assert "Compress-Archive" not in workflow
 
 

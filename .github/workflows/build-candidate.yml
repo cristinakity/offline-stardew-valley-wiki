@@ -15,6 +15,16 @@ on:
           - all
           - linux
           - windows
+      edition_scope:
+        description: Select which editions to build in this run
+        required: true
+        default: all
+        type: choice
+        options:
+          - multilingual
+          - es
+          - en
+          - all
 
 permissions:
   contents: write
@@ -32,6 +42,7 @@ jobs:
     outputs:
       version: ${{ steps.lock.outputs.version }}
       snapshot_ref: ${{ steps.lock.outputs.snapshot_ref }}
+      editions: ${{ steps.scope.outputs.editions }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -52,6 +63,18 @@ jobs:
           test "$(jq -r .validation.remote_resources content-lock.json)" = 0
           printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
           printf 'snapshot_ref=%s\n' "$snapshot_ref" >> "$GITHUB_OUTPUT"
+      - id: scope
+        name: Resolve requested editions
+        env:
+          EDITION_SCOPE: ${{ inputs.edition_scope }}
+        run: |
+          set -euo pipefail
+          case "$EDITION_SCOPE" in
+            multilingual|es|en) editions="[\"$EDITION_SCOPE\"]" ;;
+            all) editions='["multilingual","en","es","de","fr","it","ja","ko","hu","pt","ru","tr","zh"]' ;;
+            *) echo "Unsupported edition scope: $EDITION_SCOPE" >&2; exit 1 ;;
+          esac
+          printf 'editions=%s\n' "$editions" >> "$GITHUB_OUTPUT"
       - name: Create protected draft
         env:
           GH_TOKEN: ${{ github.token }}
@@ -76,7 +99,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        edition: [multilingual, en, es, de, fr, it, ja, ko, hu, pt, ru, tr, zh]
+        edition: ${{ fromJSON(needs.prepare-release.outputs.editions) }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -86,6 +109,10 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/electron
+          key: electron-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: Download immutable snapshot
         env:
           SNAPSHOT_REF: ${{ needs.prepare-release.outputs.snapshot_ref }}
@@ -130,7 +157,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        edition: [multilingual, en, es, de, fr, it, ja, ko, hu, pt, ru, tr, zh]
+        edition: ${{ fromJSON(needs.prepare-release.outputs.editions) }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -140,6 +167,10 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - uses: actions/cache@v4
+        with:
+          path: ~/AppData/Local/electron/Cache
+          key: electron-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: Download immutable snapshot
         shell: pwsh
         env:
@@ -175,7 +206,7 @@ jobs:
           $suffix = if ($env:WIKI_EDITION -eq "multilingual") { "" } else { "-$env:WIKI_EDITION" }
           if (-not $squirrel) { throw "Squirrel output was not found." }
           $squirrelArchive = "out/make/offline-stardew-valley-wiki${suffix}-squirrel.windows.zip"
-          & 7z a -tzip -mx=5 $squirrelArchive "$($squirrel.FullName)\*"
+          & 7z a -tzip -mx=0 $squirrelArchive "$($squirrel.FullName)\*"
           if ($LASTEXITCODE -ne 0) { throw "7-Zip failed with exit code $LASTEXITCODE." }
           $assets = @(Get-ChildItem out/make -Recurse -File -Include *.zip | Where-Object { $_.FullName -notlike "$($squirrel.FullName)*" })
           if ($assets.Count -ne 2) { throw "Expected Windows ZIP and Squirrel ZIP; found $($assets.Count)." }

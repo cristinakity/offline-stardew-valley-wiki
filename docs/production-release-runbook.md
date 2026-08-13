@@ -288,6 +288,9 @@ el archivo antes de permitir que continúes con los builds.
 ## 9. Crear y probar el release draft
 
 Abre **Actions → Build v1.3.0 release draft**, escribe `BUILD-RELEASE` y aprueba el environment.
+Usa `build_scope=all` y `edition_scope=all` para el release completo. Para reanudar únicamente una
+parte de un draft existente, selecciona la plataforma y `multilingual`, `es` o `en`; el workflow
+reutiliza los assets existentes y sólo reemplaza los de esa selección.
 Se crearán 39 paquetes Linux y 26 Windows, directamente en un draft. Los jobs no concentran todos
 los binarios en un solo runner.
 
