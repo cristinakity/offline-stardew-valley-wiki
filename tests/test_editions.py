@@ -32,6 +32,10 @@ def test_release_builds_multilingual_and_every_language() -> None:
     assert "SHA256SUMS-linux-$WIKI_EDITION" in workflow
     assert "SHA256SUMS-windows-$env:WIKI_EDITION" in workflow
     assert "test \"$(wc -l < SHA256SUMS)\" -eq 65" in workflow
+    assert "build_scope:" in workflow
+    assert "Reusing existing draft release" in workflow
+    assert "7z a -tzip" in workflow
+    assert "Compress-Archive" not in workflow
 
 
 def test_forge_gives_single_language_apps_distinct_identities() -> None:

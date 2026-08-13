@@ -6,6 +6,15 @@ on:
       confirmation:
         description: Type BUILD-RELEASE after approving the full candidate
         required: true
+      build_scope:
+        description: Select which platform builds to run
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - linux
+          - windows
 
 permissions:
   contents: write
@@ -50,15 +59,18 @@ jobs:
         run: |
           set -euo pipefail
           if gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "Release $VERSION already exists; refusing to replace it." >&2
-            exit 1
+            test "$(gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+            gh release edit "$VERSION" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA"
+            echo "Reusing existing draft release $VERSION."
+          else
+            gh release create "$VERSION" --repo "$GITHUB_REPOSITORY" --draft \
+              --target "$GITHUB_SHA" --title "Offline Stardew Valley Wiki $VERSION" \
+              --notes-file release/notes-introduction.md --generate-notes
           fi
-          gh release create "$VERSION" --repo "$GITHUB_REPOSITORY" --draft \
-            --target "$GITHUB_SHA" --title "Offline Stardew Valley Wiki $VERSION" \
-            --notes-file release/notes-introduction.md --generate-notes
 
   linux:
     needs: prepare-release
+    if: ${{ inputs.build_scope == 'all' || inputs.build_scope == 'linux' }}
     runs-on: ubuntu-latest
     environment: release
     strategy:
@@ -108,10 +120,11 @@ jobs:
           for asset in "${assets[@]}"; do test "$(stat -c %s "$asset")" -lt 2147483648; done
           checksum="SHA256SUMS-linux-$WIKI_EDITION"
           for asset in "${assets[@]}"; do sha256sum "$asset"; done | sed 's#  .*/#  #' > "$checksum"
-          gh release upload "$VERSION" "${assets[@]}" "$checksum" --repo "$GITHUB_REPOSITORY"
+          gh release upload "$VERSION" "${assets[@]}" "$checksum" --repo "$GITHUB_REPOSITORY" --clobber
 
   windows:
     needs: prepare-release
+    if: ${{ inputs.build_scope == 'all' || inputs.build_scope == 'windows' }}
     runs-on: windows-latest
     environment: release
     strategy:
@@ -161,16 +174,25 @@ jobs:
           $squirrel = Get-ChildItem out/make -Directory | Where-Object Name -Like 'squirrel.windows*' | Select-Object -First 1
           $suffix = if ($env:WIKI_EDITION -eq "multilingual") { "" } else { "-$env:WIKI_EDITION" }
           if (-not $squirrel) { throw "Squirrel output was not found." }
-          Compress-Archive -Path "$($squirrel.FullName)\*" -DestinationPath "out/make/offline-stardew-valley-wiki${suffix}-squirrel.windows.zip"
+          $squirrelArchive = "out/make/offline-stardew-valley-wiki${suffix}-squirrel.windows.zip"
+          & 7z a -tzip -mx=5 $squirrelArchive "$($squirrel.FullName)\*"
+          if ($LASTEXITCODE -ne 0) { throw "7-Zip failed with exit code $LASTEXITCODE." }
           $assets = @(Get-ChildItem out/make -Recurse -File -Include *.zip | Where-Object { $_.FullName -notlike "$($squirrel.FullName)*" })
           if ($assets.Count -ne 2) { throw "Expected Windows ZIP and Squirrel ZIP; found $($assets.Count)." }
           foreach ($asset in $assets) { if ($asset.Length -ge 2GB) { throw "$($asset.Name) exceeds 2 GiB." } }
           $checksum = "SHA256SUMS-windows-$env:WIKI_EDITION"
           $assets | ForEach-Object { "$(($_ | Get-FileHash -Algorithm SHA256).Hash.ToLower())  $($_.Name)" } | Set-Content $checksum
-          gh release upload $env:VERSION @($assets.FullName) $checksum --repo $env:GITHUB_REPOSITORY
+          gh release upload $env:VERSION @($assets.FullName) $checksum --repo $env:GITHUB_REPOSITORY --clobber
 
   finalize-draft:
     needs: [prepare-release, linux, windows]
+    if: >-
+      ${{
+        always() &&
+        needs.prepare-release.result == 'success' &&
+        (needs.linux.result == 'success' || needs.linux.result == 'skipped') &&
+        (needs.windows.result == 'success' || needs.windows.result == 'skipped')
+      }}
     runs-on: ubuntu-latest
     environment: release
     steps:
@@ -187,5 +209,5 @@ jobs:
           gh release download "$VERSION" --repo "$GITHUB_REPOSITORY" --pattern 'SHA256SUMS-*' --dir checksums
           cat checksums/SHA256SUMS-* | sort -k2 > SHA256SUMS
           test "$(wc -l < SHA256SUMS)" -eq 65
-          gh release upload "$VERSION" SHA256SUMS content-lock.json release/validation-report-v1.3.0.json --repo "$GITHUB_REPOSITORY"
+          gh release upload "$VERSION" SHA256SUMS content-lock.json release/validation-report-v1.3.0.json --repo "$GITHUB_REPOSITORY" --clobber
           echo "Draft $VERSION contains 65 installers and remains unpublished." >> "$GITHUB_STEP_SUMMARY"
