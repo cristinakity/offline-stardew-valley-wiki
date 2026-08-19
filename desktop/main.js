@@ -1,13 +1,17 @@
-const { app, BrowserWindow, ipcMain, Menu, session, shell } = require('electron');
+const { app, BrowserWindow, dialog, ipcMain, Menu, session, shell } = require('electron');
 const path = require('node:path');
 const fs = require('node:fs');
 const { pathToFileURL } = require('node:url');
+const { ContentManager } = require('./content-manager');
+
+let contentManager;
 
 if (require('electron-squirrel-startup')) app.quit();
 
 function contentRoot() {
   if (process.env.WIKI_CONTENT_PATH) return path.resolve(process.env.WIKI_CONTENT_PATH);
-  if (app.isPackaged) return path.join(process.resourcesPath, 'content');
+  if (contentManager?.contentRoot()) return contentManager.contentRoot();
+  if (app.isPackaged) return '';
   const currentPath = path.join(__dirname, '..', '.local-data', 'current.json');
   if (fs.existsSync(currentPath)) {
     const current = JSON.parse(fs.readFileSync(currentPath, 'utf8'));
@@ -178,6 +182,20 @@ function registerContentApi() {
     if (!Object.hasOwn(menuLabels, language)) throw new Error('Unsupported language.');
     setApplicationLanguage(language);
   });
+  ipcMain.handle('wiki:content-status', () => contentManager.status());
+  ipcMain.handle('wiki:content-check-update', () => contentManager.checkForUpdates());
+  ipcMain.handle('wiki:content-start', (_event, options) => contentManager.start(options || {}));
+  ipcMain.handle('wiki:content-pause', () => contentManager.pause());
+  ipcMain.handle('wiki:content-resume', () => contentManager.resume());
+  ipcMain.handle('wiki:content-cancel', () => contentManager.cancel());
+  ipcMain.handle('wiki:content-choose-archive', async () => {
+    const result = await dialog.showOpenDialog({
+      title: 'Import approved offline wiki snapshot',
+      properties: ['openFile'],
+      filters: [{ name: 'Offline wiki snapshot', extensions: ['zst'] }],
+    });
+    return result.canceled ? null : result.filePaths[0];
+  });
 }
 
 function createWindow() {
@@ -210,6 +228,15 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  contentManager = new ContentManager({
+    userData: app.getPath('userData'),
+    resourcesPath: process.resourcesPath,
+    appPath: app.getAppPath(),
+    packaged: app.isPackaged,
+    onProgress: progress => {
+      for (const window of BrowserWindow.getAllWindows()) window.webContents.send('wiki:content-progress', progress);
+    },
+  });
   session.defaultSession.webRequest.onBeforeRequest(
     { urls: ['http://*/*', 'https://*/*'] },
     (_details, callback) => callback({ cancel: true }),

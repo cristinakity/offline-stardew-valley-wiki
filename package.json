@@ -12,10 +12,11 @@
     "make:linux": "electron-forge make --platform=linux --arch=x64",
     "make:windows": "electron-forge make --platform=win32 --arch=x64",
     "prepare:edition": "node scripts/prepare-edition.mjs",
-    "lint": "node --check desktop/main.js && node --check desktop/preload.js && node --check desktop/renderer.js && node --check scripts/prepare-edition.mjs",
+    "lint": "node --check desktop/main.js && node --check desktop/preload.js && node --check desktop/renderer.js && node --check desktop/content-manager.js && node --check desktop/content-worker.js && node --check scripts/prepare-edition.mjs",
     "test:edition": "node scripts/test-prepare-edition.mjs",
+    "test:content-installer": "node scripts/test-content-installer.mjs",
     "test:desktop-dependencies": "node scripts/test-desktop-dependencies.mjs",
-    "test": "npm run lint && npm run test:desktop-dependencies && npm run test:edition",
+    "test": "npm run lint && npm run test:desktop-dependencies && npm run test:edition && npm run test:content-installer",
     "content:pull": "bash scripts/pull-content.sh"
   },
   "devDependencies": {
@@ -41,6 +42,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "electron-squirrel-startup": "1.0.1",
-    "minisearch": "7.2.0"
+    "minisearch": "7.2.0",
+    "tar": "7.5.22"
   }
 }

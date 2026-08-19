@@ -28,6 +28,18 @@ const imageViewer = document.querySelector('#imageViewer');
 const imageViewerCanvas = document.querySelector('#imageViewerCanvas');
 const imageViewerImage = document.querySelector('#imageViewerImage');
 const imageViewerTitle = document.querySelector('#imageViewerTitle');
+const contentSetup = document.querySelector('#contentSetup');
+const setupClose = document.querySelector('#setupClose');
+const languageChoices = document.querySelector('#languageChoices');
+const setupProgress = document.querySelector('#setupProgress');
+const contentProgress = document.querySelector('#contentProgress');
+const contentStatus = document.querySelector('#contentStatus');
+const setupError = document.querySelector('#setupError');
+const downloadContent = document.querySelector('#downloadContent');
+const importContent = document.querySelector('#importContent');
+const pauseContent = document.querySelector('#pauseContent');
+const resumeContent = document.querySelector('#resumeContent');
+const cancelContent = document.querySelector('#cancelContent');
 let documents = [];
 let documentsById = new Map();
 let searchIndex;
@@ -39,6 +51,8 @@ const languageCache = new Map();
 const languagePromises = new Map();
 let noticeTimer;
 let imageZoom = 1;
+let installedContent = false;
+let setupBusy = false;
 const unavailableMessages = {
   en: title => `“${title}” is not available in the offline version.`,
   es: title => `“${title}” no está disponible en la versión offline.`,
@@ -67,6 +81,174 @@ const pendingMessages = {
   tr: title => `“${title}” bu çevrimdışı sürümde henüz indirilmedi veya güncellenmedi.`,
   zh: title => `“${title}”尚未在此离线版本中下载或更新。`,
 };
+
+function formatBytes(value) {
+  if (!Number.isFinite(value)) return 'Unknown';
+  const units = ['B', 'KiB', 'MiB', 'GiB'];
+  let amount = value;
+  let unit = 0;
+  while (amount >= 1024 && unit < units.length - 1) { amount /= 1024; unit += 1; }
+  return `${amount.toFixed(unit ? 1 : 0)} ${units[unit]}`;
+}
+
+function selectedContentLanguages() {
+  return [...languageChoices.querySelectorAll('input:checked')].map(input => input.value);
+}
+
+function setSetupBusy(busy) {
+  setupBusy = busy;
+  for (const input of languageChoices.querySelectorAll('input')) input.disabled = busy;
+  downloadContent.disabled = busy;
+  importContent.disabled = busy;
+  document.querySelector('#retainArchive').disabled = busy;
+  document.querySelector('#checkContentUpdate').disabled = busy || !installedContent;
+  document.querySelector('#selectAllLanguages').disabled = busy;
+  document.querySelector('#clearLanguages').disabled = busy;
+  setupClose.disabled = busy || !installedContent;
+  setupProgress.hidden = !busy;
+  pauseContent.disabled = !busy;
+  resumeContent.disabled = !busy;
+  cancelContent.disabled = !busy;
+}
+
+function showSetupError(message) {
+  setupError.textContent = message;
+  setupError.hidden = !message;
+}
+
+function progressLabel(progress) {
+  const labels = {
+    downloading: 'Downloading the approved multilingual snapshot…',
+    verifying: 'Verifying the snapshot checksum…',
+    extracting: 'Extracting the snapshot…',
+    selecting: `Keeping selected languages… ${progress.pages || 0} pages, ${progress.assets || 0} assets`,
+    validating: 'Validating the installed offline content…',
+    paused: 'Paused. You can resume without losing download progress.',
+    cancelled: 'Installation cancelled. A partial download can be resumed later.',
+    completed: 'Offline content is ready. Opening the wiki…',
+    failed: 'Content installation failed.',
+  };
+  return labels[progress.phase] || 'Preparing offline content…';
+}
+
+function handleContentProgress(progress) {
+  setupProgress.hidden = false;
+  contentStatus.textContent = progressLabel(progress);
+  if (Number.isFinite(progress.current) && Number.isFinite(progress.total) && progress.total > 0) {
+    contentProgress.value = Math.min(100, progress.current / progress.total * 100);
+  } else {
+    contentProgress.removeAttribute('value');
+  }
+  const paused = progress.phase === 'paused';
+  pauseContent.hidden = paused;
+  resumeContent.hidden = !paused;
+  if (progress.phase === 'failed') {
+    setSetupBusy(false);
+    showSetupError(progress.error || 'Try again or import the approved snapshot from a local file.');
+  }
+  if (progress.phase === 'cancelled') {
+    setSetupBusy(false);
+    showSetupError('The operation was cancelled safely.');
+  }
+  if (progress.phase === 'completed') {
+    installedContent = true;
+    showSetupError('');
+    setTimeout(() => window.location.reload(), 700);
+  }
+}
+
+async function openContentSetup() {
+  const status = await window.offlineWiki.contentStatus();
+  installedContent = status.installed;
+  languageChoices.innerHTML = '';
+  const browserLanguage = String(navigator.language || 'en').slice(0, 2).toLowerCase();
+  const preferred = status.installedLanguages.length
+    ? status.installedLanguages
+    : [status.manifest.languages.includes(browserLanguage) ? browserLanguage : 'en'];
+  for (const [code, name] of languages.filter(([code]) => status.manifest.languages.includes(code))) {
+    const label = document.createElement('label');
+    label.className = 'languageChoice';
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.value = code;
+    input.checked = preferred.includes(code);
+    label.append(input, document.createTextNode(`${name} (${code.toUpperCase()})`));
+    languageChoices.appendChild(label);
+  }
+  document.querySelector('#downloadSize').textContent = formatBytes(status.manifest.archive_bytes);
+  document.querySelector('#requiredSpace').textContent = formatBytes(status.manifest.required_free_bytes);
+  document.querySelector('#availableSpace').textContent = formatBytes(status.freeBytes);
+  document.querySelector('#retainArchive').checked = status.archiveRetained;
+  setupClose.hidden = !status.installed;
+  setSetupBusy(status.busy);
+  showSetupError(status.freeBytes !== null && status.freeBytes < status.manifest.required_free_bytes
+    ? 'There may not be enough temporary disk space for installation.' : '');
+  contentSetup.hidden = false;
+}
+
+async function startContentSetup(archivePath = null) {
+  const selected = selectedContentLanguages();
+  if (!selected.length) { showSetupError('Select at least one language.'); return; }
+  showSetupError('');
+  setSetupBusy(true);
+  contentProgress.removeAttribute('value');
+  contentStatus.textContent = archivePath ? 'Reading the local snapshot…' : 'Starting download…';
+  try {
+    await window.offlineWiki.startContentInstall({
+      languages: selected,
+      archivePath,
+      retainArchive: document.querySelector('#retainArchive').checked,
+    });
+  } catch (error) {
+    setSetupBusy(false);
+    showSetupError(error.message);
+  }
+}
+
+window.offlineWiki.onContentProgress(handleContentProgress);
+document.querySelector('#contentSettings').addEventListener('click', () => openContentSetup().catch(error => showNotice(error.message)));
+setupClose.addEventListener('click', () => { if (!setupBusy && installedContent) contentSetup.hidden = true; });
+document.querySelector('#selectAllLanguages').addEventListener('click', () => {
+  for (const input of languageChoices.querySelectorAll('input')) input.checked = true;
+});
+document.querySelector('#clearLanguages').addEventListener('click', () => {
+  for (const input of languageChoices.querySelectorAll('input')) input.checked = false;
+});
+downloadContent.addEventListener('click', () => startContentSetup());
+importContent.addEventListener('click', async () => {
+  const archivePath = await window.offlineWiki.chooseContentArchive();
+  if (archivePath) await startContentSetup(archivePath);
+});
+document.querySelector('#checkContentUpdate').addEventListener('click', async () => {
+  showSetupError('');
+  contentStatus.textContent = 'Checking for approved content updates…';
+  setupProgress.hidden = false;
+  contentProgress.removeAttribute('value');
+  try {
+    const result = await window.offlineWiki.checkContentUpdate();
+    if (result.updateAvailable) {
+      await openContentSetup();
+      showSetupError(`A newer approved snapshot is available: ${result.availableSnapshotId}. Choose languages and install it.`);
+    } else {
+      setupProgress.hidden = true;
+      showSetupError('Your installed content is up to date.');
+    }
+  } catch (error) {
+    setupProgress.hidden = true;
+    showSetupError(error.message);
+  }
+});
+pauseContent.addEventListener('click', async () => { await window.offlineWiki.pauseContentInstall(); });
+resumeContent.addEventListener('click', async () => {
+  await window.offlineWiki.resumeContentInstall();
+  pauseContent.hidden = false;
+  resumeContent.hidden = true;
+});
+cancelContent.addEventListener('click', async () => {
+  cancelContent.disabled = true;
+  contentStatus.textContent = 'Cancelling safely…';
+  await window.offlineWiki.cancelContentInstall();
+});
 
 function offlineLinkMessage(title, language, status) {
   const messages = status === 'excluded' ? unavailableMessages : pendingMessages;
@@ -556,6 +738,7 @@ document.querySelector('#home').addEventListener('click', () => loadLanguage(cur
     }
     empty.querySelector('p').textContent = 'Checking .local-data/current.json…';
     if (await window.offlineWiki.available()) {
+      installedContent = true;
       translationData = await window.offlineWiki.loadTranslations();
       availableLanguageCodes = await window.offlineWiki.availableLanguages();
       for (const button of document.querySelectorAll('.flag')) {
@@ -569,8 +752,9 @@ document.querySelector('#home').addEventListener('click', () => loadLanguage(cur
       empty.querySelector('p').textContent = `Opening the ${language.toUpperCase()} offline wiki…`;
       await loadLanguage(language, saved);
     } else {
-      empty.querySelector('h1').textContent = 'No local snapshot found';
-      empty.querySelector('p').textContent = 'Run the Podman fixture, sample or full synchronization first.';
+      empty.querySelector('h1').textContent = 'Offline content is not installed yet';
+      empty.querySelector('p').textContent = 'Choose your languages to download the approved wiki snapshot.';
+      await openContentSetup();
     }
   } catch (error) {
     empty.querySelector('h1').textContent = 'Unable to open the local wiki';
