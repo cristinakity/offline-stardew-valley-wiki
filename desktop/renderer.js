@@ -17,6 +17,24 @@ const interfaceText = {
   tr: { home: 'Wiki ana sayfasına git', back: 'Geri', forward: 'İleri', search: 'Ara', results: 'Arama sonuçları', resultsFor: 'sonuç:', noResults: 'Sonuç yok', loading: 'Arama yükleniyor…' },
   zh: { home: '前往Wiki主页', back: '后退', forward: '前进', search: '搜索', results: '搜索结果', resultsFor: '条结果：', noResults: '没有结果', loading: '正在加载搜索…' },
 };
+const setupText = {
+  en: { title:'Prepare the offline wiki',intro:'Choose the languages to install. The app downloads one approved multilingual snapshot, verifies it, and keeps only your selection. After this finishes, the wiki works without Internet.',interface:'Interface language',all:'Select all',clear:'Clear',download:'Download',space:'Temporary free space',available:'Available',retain:'Keep the downloaded snapshot to add languages later without downloading it again',install:'Download and install',import:'Import from file / USB',updates:'Check for content updates',pause:'Pause',resume:'Resume',cancel:'Cancel' },
+  es: { title:'Preparar la wiki sin conexión',intro:'Elige los idiomas que quieres instalar. La aplicación descarga un snapshot multilingüe aprobado, lo verifica y conserva sólo tu selección. Al terminar, la wiki funcionará sin Internet.',interface:'Idioma de la interfaz',all:'Seleccionar todos',clear:'Limpiar',download:'Descarga',space:'Espacio temporal necesario',available:'Disponible',retain:'Conservar el snapshot descargado para añadir idiomas después sin volver a descargarlo',install:'Descargar e instalar',import:'Importar desde archivo / USB',updates:'Buscar actualizaciones de contenido',pause:'Pausar',resume:'Continuar',cancel:'Cancelar' },
+  de: { title:'Offline-Wiki vorbereiten',intro:'Wähle die zu installierenden Sprachen. Die App lädt einen geprüften mehrsprachigen Snapshot herunter und behält nur deine Auswahl. Danach funktioniert die Wiki ohne Internet.',interface:'Sprache der Oberfläche',all:'Alle auswählen',clear:'Leeren',download:'Download',space:'Benötigter temporärer Speicher',available:'Verfügbar',retain:'Snapshot behalten, um später Sprachen ohne erneuten Download hinzuzufügen',install:'Herunterladen und installieren',import:'Aus Datei / USB importieren',updates:'Nach Inhaltsupdates suchen',pause:'Pausieren',resume:'Fortsetzen',cancel:'Abbrechen' },
+  fr: { title:'Préparer le wiki hors ligne',intro:'Choisissez les langues à installer. L’application télécharge un snapshot multilingue approuvé, le vérifie et ne conserve que votre sélection. Le wiki fonctionnera ensuite sans Internet.',interface:'Langue de l’interface',all:'Tout sélectionner',clear:'Effacer',download:'Téléchargement',space:'Espace temporaire requis',available:'Disponible',retain:'Conserver le snapshot pour ajouter des langues sans le retélécharger',install:'Télécharger et installer',import:'Importer depuis un fichier / USB',updates:'Rechercher les mises à jour',pause:'Pause',resume:'Reprendre',cancel:'Annuler' },
+  it: { title:'Prepara la wiki offline',intro:'Scegli le lingue da installare. L’app scarica uno snapshot multilingue approvato, lo verifica e conserva solo la selezione. Al termine la wiki funzionerà senza Internet.',interface:'Lingua dell’interfaccia',all:'Seleziona tutto',clear:'Cancella',download:'Download',space:'Spazio temporaneo richiesto',available:'Disponibile',retain:'Conserva lo snapshot per aggiungere lingue senza scaricarlo di nuovo',install:'Scarica e installa',import:'Importa da file / USB',updates:'Controlla aggiornamenti',pause:'Pausa',resume:'Riprendi',cancel:'Annulla' },
+  ja: { title:'オフラインWikiの準備',intro:'インストールする言語を選択してください。承認済みの多言語スナップショットをダウンロードして検証し、選択した言語だけを保存します。完了後はインターネットなしで利用できます。',interface:'画面の言語',all:'すべて選択',clear:'選択解除',download:'ダウンロード',space:'必要な一時空き容量',available:'利用可能',retain:'後で再ダウンロードせずに言語を追加できるようスナップショットを保存する',install:'ダウンロードしてインストール',import:'ファイル / USBから読み込む',updates:'コンテンツ更新を確認',pause:'一時停止',resume:'再開',cancel:'キャンセル' },
+  ko: { title:'오프라인 위키 준비',intro:'설치할 언어를 선택하세요. 승인된 다국어 스냅샷을 다운로드하고 검증한 뒤 선택한 언어만 보관합니다. 완료 후에는 인터넷 없이 사용할 수 있습니다.',interface:'인터페이스 언어',all:'모두 선택',clear:'선택 해제',download:'다운로드',space:'필요한 임시 공간',available:'사용 가능',retain:'나중에 다시 다운로드하지 않고 언어를 추가하도록 스냅샷 보관',install:'다운로드 및 설치',import:'파일 / USB에서 가져오기',updates:'콘텐츠 업데이트 확인',pause:'일시 중지',resume:'계속',cancel:'취소' },
+  hu: { title:'Offline wiki előkészítése',intro:'Válaszd ki a telepítendő nyelveket. Az alkalmazás letölt és ellenőriz egy jóváhagyott többnyelvű pillanatképet, majd csak a kijelölt tartalmat tartja meg.',interface:'Felület nyelve',all:'Összes kijelölése',clear:'Törlés',download:'Letöltés',space:'Szükséges ideiglenes hely',available:'Elérhető',retain:'Pillanatkép megtartása nyelvek későbbi hozzáadásához',install:'Letöltés és telepítés',import:'Importálás fájlból / USB-ről',updates:'Tartalomfrissítések keresése',pause:'Szünet',resume:'Folytatás',cancel:'Mégse' },
+  pt: { title:'Preparar a wiki offline',intro:'Escolha os idiomas para instalar. O aplicativo baixa um snapshot multilíngue aprovado, verifica-o e mantém apenas sua seleção. Depois disso, a wiki funciona sem Internet.',interface:'Idioma da interface',all:'Selecionar tudo',clear:'Limpar',download:'Download',space:'Espaço temporário necessário',available:'Disponível',retain:'Manter o snapshot para adicionar idiomas sem baixá-lo novamente',install:'Baixar e instalar',import:'Importar de arquivo / USB',updates:'Verificar atualizações',pause:'Pausar',resume:'Continuar',cancel:'Cancelar' },
+  ru: { title:'Подготовка офлайн-вики',intro:'Выберите языки для установки. Приложение скачает и проверит одобренный многоязычный снимок и сохранит только выбранное. После этого вики работает без Интернета.',interface:'Язык интерфейса',all:'Выбрать все',clear:'Очистить',download:'Загрузка',space:'Требуемое временное место',available:'Доступно',retain:'Сохранить снимок для добавления языков без повторной загрузки',install:'Скачать и установить',import:'Импорт из файла / USB',updates:'Проверить обновления',pause:'Пауза',resume:'Продолжить',cancel:'Отмена' },
+  tr: { title:'Çevrimdışı wikiyi hazırla',intro:'Yüklenecek dilleri seçin. Uygulama onaylı çok dilli bir anlık görüntüyü indirip doğrular ve yalnızca seçiminizi saklar. Sonrasında wiki İnternet olmadan çalışır.',interface:'Arayüz dili',all:'Tümünü seç',clear:'Temizle',download:'İndirme',space:'Gerekli geçici alan',available:'Kullanılabilir',retain:'Daha sonra yeniden indirmeden dil eklemek için anlık görüntüyü sakla',install:'İndir ve yükle',import:'Dosya / USB’den içe aktar',updates:'İçerik güncellemelerini denetle',pause:'Duraklat',resume:'Sürdür',cancel:'İptal' },
+  zh: { title:'准备离线维基',intro:'选择要安装的语言。应用会下载并验证一个已批准的多语言快照，只保留所选内容。完成后即可在没有互联网的情况下使用。',interface:'界面语言',all:'全选',clear:'清除',download:'下载',space:'所需临时空间',available:'可用空间',retain:'保留快照，以便以后无需重新下载即可添加语言',install:'下载并安装',import:'从文件 / USB 导入',updates:'检查内容更新',pause:'暂停',resume:'继续',cancel:'取消' },
+};
+const setupStatusText = {
+  en: { preparing:'Preparing offline content…',downloading:'Downloading the approved multilingual snapshot…',verifying:'Verifying the snapshot checksum…',extracting:'Extracting the snapshot…',selecting:'Keeping selected languages…',validating:'Validating the installed offline content…',paused:'Paused. You can resume without losing download progress.',cancelled:'Installation cancelled. A partial download can be resumed later.',completed:'Offline content is ready. Opening the wiki…',failed:'Content installation failed.',selectOne:'Select at least one language.',local:'Reading the local snapshot…',starting:'Starting download…',checking:'Checking for approved content updates…',upToDate:'Your installed content is up to date.',updateAvailable:id=>`A newer approved snapshot is available: ${id}. Choose languages and install it.`,noSpace:'There may not be enough temporary disk space for installation.',cancelSafe:'The operation was cancelled safely.',cancelling:'Cancelling safely…',draft404:'No published content release is available yet. While v1.3.0 is a draft, download the .tar.zst asset and use “Import from file / USB”.' },
+  es: { preparing:'Preparando el contenido sin conexión…',downloading:'Descargando el snapshot multilingüe aprobado…',verifying:'Verificando la suma SHA-256 del snapshot…',extracting:'Extrayendo el snapshot…',selecting:'Conservando los idiomas seleccionados…',validating:'Validando el contenido instalado…',paused:'En pausa. Puedes continuar sin perder el progreso de descarga.',cancelled:'Instalación cancelada. La descarga parcial se puede continuar después.',completed:'El contenido está listo. Abriendo la wiki…',failed:'Falló la instalación del contenido.',selectOne:'Selecciona al menos un idioma.',local:'Leyendo el snapshot local…',starting:'Iniciando la descarga…',checking:'Buscando actualizaciones de contenido aprobadas…',upToDate:'El contenido instalado está actualizado.',updateAvailable:id=>`Hay un snapshot aprobado más reciente: ${id}. Elige los idiomas e instálalo.`,noSpace:'Es posible que no haya suficiente espacio temporal para la instalación.',cancelSafe:'La operación se canceló de forma segura.',cancelling:'Cancelando de forma segura…',draft404:'Todavía no existe un release de contenido publicado. Mientras v1.3.0 sea draft, descarga el archivo .tar.zst y usa «Importar desde archivo / USB».' },
+};
 const frame = document.querySelector('#page');
 const empty = document.querySelector('#empty');
 const results = document.querySelector('#results');
@@ -44,6 +62,9 @@ let documents = [];
 let documentsById = new Map();
 let searchIndex;
 let currentLanguage = 'en';
+let interfaceLanguage = localStorage.getItem('offlineWiki.interfaceLanguage')
+  || String(navigator.language || 'en').slice(0, 2).toLowerCase();
+if (!Object.hasOwn(setupText, interfaceLanguage)) interfaceLanguage = 'en';
 let currentDocument = null;
 let availableLanguageCodes = languages.map(([code]) => code);
 let translationData = { pages: {}, navigation: {} };
@@ -117,18 +138,19 @@ function showSetupError(message) {
 }
 
 function progressLabel(progress) {
+  const status = setupStatusText[interfaceLanguage] || setupStatusText.en;
   const labels = {
-    downloading: 'Downloading the approved multilingual snapshot…',
-    verifying: 'Verifying the snapshot checksum…',
-    extracting: 'Extracting the snapshot…',
-    selecting: `Keeping selected languages… ${progress.pages || 0} pages, ${progress.assets || 0} assets`,
-    validating: 'Validating the installed offline content…',
-    paused: 'Paused. You can resume without losing download progress.',
-    cancelled: 'Installation cancelled. A partial download can be resumed later.',
-    completed: 'Offline content is ready. Opening the wiki…',
-    failed: 'Content installation failed.',
+    downloading: status.downloading,
+    verifying: status.verifying,
+    extracting: status.extracting,
+    selecting: `${status.selecting} ${progress.pages || 0} pages, ${progress.assets || 0} assets`,
+    validating: status.validating,
+    paused: status.paused,
+    cancelled: status.cancelled,
+    completed: status.completed,
+    failed: status.failed,
   };
-  return labels[progress.phase] || 'Preparing offline content…';
+  return labels[progress.phase] || status.preparing;
 }
 
 function handleContentProgress(progress) {
@@ -144,11 +166,12 @@ function handleContentProgress(progress) {
   resumeContent.hidden = !paused;
   if (progress.phase === 'failed') {
     setSetupBusy(false);
-    showSetupError(progress.error || 'Try again or import the approved snapshot from a local file.');
+    const status = setupStatusText[interfaceLanguage] || setupStatusText.en;
+    showSetupError(String(progress.error || '').includes('HTTP 404') ? status.draft404 : (progress.error || status.failed));
   }
   if (progress.phase === 'cancelled') {
     setSetupBusy(false);
-    showSetupError('The operation was cancelled safely.');
+    showSetupError((setupStatusText[interfaceLanguage] || setupStatusText.en).cancelSafe);
   }
   if (progress.phase === 'completed') {
     installedContent = true;
@@ -182,17 +205,18 @@ async function openContentSetup() {
   setupClose.hidden = !status.installed;
   setSetupBusy(status.busy);
   showSetupError(status.freeBytes !== null && status.freeBytes < status.manifest.required_free_bytes
-    ? 'There may not be enough temporary disk space for installation.' : '');
+    ? (setupStatusText[interfaceLanguage] || setupStatusText.en).noSpace : '');
   contentSetup.hidden = false;
 }
 
 async function startContentSetup(archivePath = null) {
   const selected = selectedContentLanguages();
-  if (!selected.length) { showSetupError('Select at least one language.'); return; }
+  if (!selected.length) { showSetupError((setupStatusText[interfaceLanguage] || setupStatusText.en).selectOne); return; }
   showSetupError('');
   setSetupBusy(true);
   contentProgress.removeAttribute('value');
-  contentStatus.textContent = archivePath ? 'Reading the local snapshot…' : 'Starting download…';
+  const status = setupStatusText[interfaceLanguage] || setupStatusText.en;
+  contentStatus.textContent = archivePath ? status.local : status.starting;
   try {
     await window.offlineWiki.startContentInstall({
       languages: selected,
@@ -205,6 +229,44 @@ async function startContentSetup(archivePath = null) {
   }
 }
 
+function applySetupLanguage(language) {
+  const text = setupText[language] || setupText.en;
+  const values = {
+    setupTitle: text.title,
+    setupIntro: text.intro,
+    interfaceLanguageLabel: text.interface,
+    selectAllLanguages: text.all,
+    clearLanguages: text.clear,
+    downloadLabel: text.download,
+    requiredSpaceLabel: text.space,
+    availableSpaceLabel: text.available,
+    retainArchiveLabel: text.retain,
+    downloadContent: text.install,
+    importContent: text.import,
+    checkContentUpdate: text.updates,
+    pauseContent: text.pause,
+    resumeContent: text.resume,
+    cancelContent: text.cancel,
+  };
+  for (const [id, value] of Object.entries(values)) document.querySelector(`#${id}`).textContent = value;
+  setupClose.setAttribute('aria-label', interfaceText[language]?.back || interfaceText.en.back);
+}
+
+function changeInterfaceLanguage(language) {
+  interfaceLanguage = Object.hasOwn(setupText, language) ? language : 'en';
+  localStorage.setItem('offlineWiki.interfaceLanguage', interfaceLanguage);
+  document.querySelector('#setupInterfaceLanguage').value = interfaceLanguage;
+  updateInterfaceLanguage(interfaceLanguage);
+  applySetupLanguage(interfaceLanguage);
+}
+
+for (const [code, name] of languages) {
+  const option = document.createElement('option');
+  option.value = code;
+  option.textContent = `${name} (${code.toUpperCase()})`;
+  document.querySelector('#setupInterfaceLanguage').appendChild(option);
+}
+document.querySelector('#setupInterfaceLanguage').addEventListener('change', event => changeInterfaceLanguage(event.target.value));
 window.offlineWiki.onContentProgress(handleContentProgress);
 document.querySelector('#contentSettings').addEventListener('click', () => openContentSetup().catch(error => showNotice(error.message)));
 setupClose.addEventListener('click', () => { if (!setupBusy && installedContent) contentSetup.hidden = true; });
@@ -221,21 +283,22 @@ importContent.addEventListener('click', async () => {
 });
 document.querySelector('#checkContentUpdate').addEventListener('click', async () => {
   showSetupError('');
-  contentStatus.textContent = 'Checking for approved content updates…';
+  const status = setupStatusText[interfaceLanguage] || setupStatusText.en;
+  contentStatus.textContent = status.checking;
   setupProgress.hidden = false;
   contentProgress.removeAttribute('value');
   try {
     const result = await window.offlineWiki.checkContentUpdate();
     if (result.updateAvailable) {
       await openContentSetup();
-      showSetupError(`A newer approved snapshot is available: ${result.availableSnapshotId}. Choose languages and install it.`);
+      showSetupError(status.updateAvailable(result.availableSnapshotId));
     } else {
       setupProgress.hidden = true;
-      showSetupError('Your installed content is up to date.');
+      showSetupError(status.upToDate);
     }
   } catch (error) {
     setupProgress.hidden = true;
-    showSetupError(error.message);
+    showSetupError(String(error.message).includes('HTTP 404') ? status.draft404 : error.message);
   }
 });
 pauseContent.addEventListener('click', async () => { await window.offlineWiki.pauseContentInstall(); });
@@ -246,7 +309,7 @@ resumeContent.addEventListener('click', async () => {
 });
 cancelContent.addEventListener('click', async () => {
   cancelContent.disabled = true;
-  contentStatus.textContent = 'Cancelling safely…';
+  contentStatus.textContent = (setupStatusText[interfaceLanguage] || setupStatusText.en).cancelling;
   await window.offlineWiki.cancelContentInstall();
 });
 
@@ -455,7 +518,6 @@ function navigationDocuments(code) {
 async function loadLanguage(code, requested = null) {
   try {
     currentLanguage = code;
-    updateInterfaceLanguage(code);
     const cached = languageCache.get(code);
     documents = cached?.documents || navigationDocuments(code) || (await languageData(code)).documents;
     documentsById = cached?.documentsById
@@ -731,6 +793,7 @@ document.querySelector('#forward').addEventListener('click', () => frame.content
 document.querySelector('#home').addEventListener('click', () => loadLanguage(currentLanguage));
 (async () => {
   try {
+    changeInterfaceLanguage(interfaceLanguage);
     const assets = await window.offlineWiki.shellAssets();
     document.body.style.backgroundImage = `url("${assets.background}")`;
     for (const button of document.querySelectorAll('.flag')) {

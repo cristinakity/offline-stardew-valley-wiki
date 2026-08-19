@@ -80,6 +80,19 @@ def test_first_run_installer_selects_and_manages_languages() -> None:
     assert "prepareEdition" in worker
 
 
+def test_content_setup_can_change_its_interface_language() -> None:
+    shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    assert 'id="setupInterfaceLanguage"' in shell
+    assert "const setupText" in renderer
+    assert "Preparar la wiki sin conexión" in renderer
+    assert "オフラインWikiの準備" in renderer
+    assert "function changeInterfaceLanguage" in renderer
+    assert "offlineWiki.interfaceLanguage" in renderer
+    assert "updateInterfaceLanguage(interfaceLanguage)" in renderer
+    assert "Todavía no existe un release de contenido publicado" in renderer
+
+
 def test_unavailable_page_message_exists_for_every_supported_language() -> None:
     renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
     for language in ("en", "es", "de", "fr", "it", "ja", "ko", "hu", "pt", "ru", "tr", "zh"):
