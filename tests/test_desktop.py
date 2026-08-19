@@ -61,6 +61,25 @@ def test_hidden_loading_screen_cannot_cover_loaded_wiki() -> None:
     assert "[hidden]{display:none!important}" in shell
 
 
+def test_first_run_installer_selects_and_manages_languages() -> None:
+    shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
+    worker = (ROOT / "desktop" / "content-worker.js").read_text(encoding="utf-8")
+    assert 'id="contentSetup"' in shell
+    assert 'id="languageChoices"' in shell
+    assert "download and install" in shell.lower()
+    assert "Import from file / USB" in shell
+    assert "navigator.language" in renderer
+    assert "onContentProgress" in renderer
+    assert "checkContentUpdate" in renderer
+    assert "pauseContentInstall" in renderer
+    assert "wiki:content-start" in main
+    assert "createZstdDecompress" in worker
+    assert "manifest.archive_sha256" in worker
+    assert "prepareEdition" in worker
+
+
 def test_unavailable_page_message_exists_for_every_supported_language() -> None:
     renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
     for language in ("en", "es", "de", "fr", "it", "ja", "ko", "hu", "pt", "ru", "tr", "zh"):

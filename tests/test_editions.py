@@ -21,31 +21,34 @@ def test_linux_builder_supports_full_and_every_language_edition() -> None:
     assert "current.json" not in builder
 
 
-def test_release_builds_multilingual_and_every_language() -> None:
+def test_release_builds_one_lightweight_app_per_platform() -> None:
     workflow = (ROOT / ".github" / "workflows" / "build-candidate.yml").read_text(
         encoding="utf-8"
     )
-    editions = f'"multilingual","{LANGUAGE_EDITIONS.replace(" ", "\",\"")}"'
-    assert editions in workflow
-    assert workflow.count("fromJSON(needs.prepare-release.outputs.editions)") == 2
     assert "gh release upload" in workflow
     assert "actions/upload-artifact" not in workflow
-    assert "SHA256SUMS-linux-$WIKI_EDITION" in workflow
-    assert "SHA256SUMS-windows-$env:WIKI_EDITION" in workflow
-    assert "test \"$(wc -l < SHA256SUMS)\" -eq 65" in workflow
+    assert "SHA256SUMS-app-linux" in workflow
+    assert "SHA256SUMS-app-windows" in workflow
+    assert "SHA256SUMS-content" in workflow
+    assert "test \"$(wc -l < SHA256SUMS)\" -eq 6" in workflow
     assert "build_scope:" in workflow
-    assert "edition_scope:" in workflow
+    assert "edition_scope:" not in workflow
     assert workflow.count("uses: actions/cache@v4") == 2
-    assert "Reusing existing draft release" in workflow
-    assert "7z a -tzip -mx=0" in workflow
+    assert "Removed legacy language-specific assets" in workflow
+    assert "content-release.json" in workflow
+    assert "npm run make:linux" in workflow
+    assert "npm run make:windows" in workflow
+    assert "WIKI_CONTENT_PATH" not in workflow
     assert "Compress-Archive" not in workflow
 
 
-def test_forge_gives_single_language_apps_distinct_identities() -> None:
+def test_forge_builds_a_single_lightweight_app() -> None:
     forge = (ROOT / "forge.config.js").read_text(encoding="utf-8")
-    assert "const appSlug = `offline-stardew-valley-wiki${editionSuffix}`" in forge
+    assert "const appSlug = 'offline-stardew-valley-wiki'" in forge
     assert "const productName" in forge
-    assert "WIKI_EDITION" in forge
+    assert "WIKI_EDITION" not in forge
+    assert "desktop/content-release.json" in forge
+    assert "/^\\/snapshot($|\\/)/" in forge
 
 
 def test_compose_has_separate_persistent_builder_worker() -> None:

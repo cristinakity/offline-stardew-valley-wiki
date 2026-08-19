@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "version": "v1.3.0",
+  "snapshot_id": "20260811T015121Z-7206e5e0cacc",
+  "archive_name": "wiki-content-20260811T015121Z-7206e5e0cacc.tar.zst",
+  "archive_sha256": "9b7a965819651aa78639c4c8c3b83e0136ea0c976add9dea834b959ae277313f",
+  "archive_bytes": 675027178,
+  "download_url": "https://github.com/cristinakity/offline-stardew-valley-wiki/releases/download/v1.3.0/wiki-content-20260811T015121Z-7206e5e0cacc.tar.zst",
+  "latest_manifest_url": "https://github.com/cristinakity/offline-stardew-valley-wiki/releases/latest/download/content-release.json",
+  "required_free_bytes": 7516192768,
+  "languages": ["en", "es", "de", "fr", "it", "ja", "ko", "hu", "pt", "ru", "tr", "zh"]
+}

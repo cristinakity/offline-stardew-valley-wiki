@@ -15,16 +15,6 @@ on:
           - all
           - linux
           - windows
-      edition_scope:
-        description: Select which editions to build in this run
-        required: true
-        default: all
-        type: choice
-        options:
-          - multilingual
-          - es
-          - en
-          - all
 
 permissions:
   contents: write
@@ -41,8 +31,6 @@ jobs:
     environment: release
     outputs:
       version: ${{ steps.lock.outputs.version }}
-      snapshot_ref: ${{ steps.lock.outputs.snapshot_ref }}
-      editions: ${{ steps.scope.outputs.editions }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -61,21 +49,11 @@ jobs:
           test "$(jq -r .validation.broken_links content-lock.json)" = 0
           test "$(jq -r .validation.missing_assets content-lock.json)" = 0
           test "$(jq -r .validation.remote_resources content-lock.json)" = 0
+          test "$(jq -r .version desktop/content-release.json)" = "$version"
+          test "$(jq -r .archive_sha256 desktop/content-release.json)" = "$(jq -r .archive_sha256 content-lock.json)"
+          test "$(jq -r .snapshot_id desktop/content-release.json)" = "$(jq -r .snapshot_id content-lock.json)"
           printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
-          printf 'snapshot_ref=%s\n' "$snapshot_ref" >> "$GITHUB_OUTPUT"
-      - id: scope
-        name: Resolve requested editions
-        env:
-          EDITION_SCOPE: ${{ inputs.edition_scope }}
-        run: |
-          set -euo pipefail
-          case "$EDITION_SCOPE" in
-            multilingual|es|en) editions="[\"$EDITION_SCOPE\"]" ;;
-            all) editions='["multilingual","en","es","de","fr","it","ja","ko","hu","pt","ru","tr","zh"]' ;;
-            *) echo "Unsupported edition scope: $EDITION_SCOPE" >&2; exit 1 ;;
-          esac
-          printf 'editions=%s\n' "$editions" >> "$GITHUB_OUTPUT"
-      - name: Create protected draft
+      - name: Create or reset protected draft
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ steps.lock.outputs.version }}
@@ -84,136 +62,134 @@ jobs:
           if gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             test "$(gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
             gh release edit "$VERSION" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA"
-            echo "Reusing existing draft release $VERSION."
+            if ! gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | grep -Fxq content-release.json; then
+              gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' |
+                while IFS= read -r asset; do
+                  test -z "$asset" || gh release delete-asset "$VERSION" "$asset" --repo "$GITHUB_REPOSITORY" --yes
+                done
+              echo "Removed legacy language-specific assets from $VERSION."
+            fi
           else
             gh release create "$VERSION" --repo "$GITHUB_REPOSITORY" --draft \
               --target "$GITHUB_SHA" --title "Offline Stardew Valley Wiki $VERSION" \
               --notes-file release/notes-introduction.md --generate-notes
           fi
+      - name: Download, verify and attach approved content
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.lock.outputs.version }}
+        run: |
+          set -euo pipefail
+          snapshot_ref="$(jq -r .oci_ref content-lock.json)"
+          archive_name="$(jq -r .archive_name content-lock.json)"
+          mkdir snapshot
+          for attempt in 1 2 3; do
+            docker pull ghcr.io/oras-project/oras:v1.3.0 && break
+            test "$attempt" -lt 3 || exit 1
+            sleep "$((attempt * 10))"
+          done
+          docker run --pull=never --rm -v "$PWD:/workspace" -w /workspace ghcr.io/oras-project/oras:v1.3.0 \
+            pull "$snapshot_ref" -o snapshot
+          mapfile -t archives < <(find snapshot -type f -name "$archive_name" -print)
+          test "${#archives[@]}" -eq 1
+          archive="${archives[0]}"
+          test "$(stat -c %s "$archive")" -eq "$(jq -r .archive_bytes desktop/content-release.json)"
+          printf '%s  %s\n' "$(jq -r .archive_sha256 content-lock.json)" "$archive" | sha256sum --check --status
+          sha256sum "$archive" | sed 's#  .*/#  #' > SHA256SUMS-content
+          gh release upload "$VERSION" "$archive" desktop/content-release.json SHA256SUMS-content \
+            --repo "$GITHUB_REPOSITORY" --clobber
 
   linux:
     needs: prepare-release
     if: ${{ inputs.build_scope == 'all' || inputs.build_scope == 'linux' }}
     runs-on: ubuntu-latest
     environment: release
-    strategy:
-      fail-fast: false
-      matrix:
-        edition: ${{ fromJSON(needs.prepare-release.outputs.editions) }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - uses: oras-project/setup-oras@v1
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
       - uses: actions/cache@v4
         with:
           path: ~/.cache/electron
           key: electron-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-      - name: Download immutable snapshot
-        env:
-          SNAPSHOT_REF: ${{ needs.prepare-release.outputs.snapshot_ref }}
+      - name: Install dependencies and cache Electron runtime
         run: |
           set -euo pipefail
-          mkdir snapshot
-          oras pull "$SNAPSHOT_REF" -o snapshot
-          archive_name="$(jq -r .archive_name content-lock.json)"
-          mapfile -t archives < <(find snapshot -type f -name "$archive_name" -print)
-          test "${#archives[@]}" -eq 1
-          archive="${archives[0]}"
-          printf '%s  %s\n' "$(jq -r .archive_sha256 content-lock.json)" "$archive" | sha256sum --check --status
-          tar --zstd -xf "$archive" -C snapshot
-      - name: Build and upload Linux edition
+          npm ci
+          for attempt in 1 2 3; do
+            node -e "require('@electron/get').downloadArtifact({version:require('electron/package.json').version,artifactName:'electron',platform:process.platform,arch:'x64'}).then(console.log)" && break
+            test "$attempt" -lt 3 || exit 1
+            sleep "$((attempt * 10))"
+          done
+      - name: Build and upload lightweight Linux app
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ needs.prepare-release.outputs.version }}
-          WIKI_EDITION: ${{ matrix.edition }}
         run: |
           set -euo pipefail
           sudo apt-get update
           sudo apt-get install -y fakeroot rpm
-          npm ci
-          content="$PWD/snapshot/content"
-          if [[ "$WIKI_EDITION" != multilingual ]]; then
-            content="$RUNNER_TEMP/edition-$WIKI_EDITION/content"
-            node scripts/prepare-edition.mjs "$PWD/snapshot/content" "$content" "$WIKI_EDITION"
-          fi
-          WIKI_CONTENT_PATH="$content" npm run make:linux
+          npm run make:linux
           mapfile -t assets < <(find out/make -type f \( -name '*.zip' -o -name '*.deb' -o -name '*.rpm' \) -print)
           test "${#assets[@]}" -eq 3
           for asset in "${assets[@]}"; do test "$(stat -c %s "$asset")" -lt 2147483648; done
-          checksum="SHA256SUMS-linux-$WIKI_EDITION"
-          for asset in "${assets[@]}"; do sha256sum "$asset"; done | sed 's#  .*/#  #' > "$checksum"
-          gh release upload "$VERSION" "${assets[@]}" "$checksum" --repo "$GITHUB_REPOSITORY" --clobber
+          for asset in "${assets[@]}"; do sha256sum "$asset"; done | sed 's#  .*/#  #' > SHA256SUMS-app-linux
+          gh release upload "$VERSION" "${assets[@]}" SHA256SUMS-app-linux --repo "$GITHUB_REPOSITORY" --clobber
 
   windows:
     needs: prepare-release
     if: ${{ inputs.build_scope == 'all' || inputs.build_scope == 'windows' }}
     runs-on: windows-latest
     environment: release
-    strategy:
-      fail-fast: false
-      matrix:
-        edition: ${{ fromJSON(needs.prepare-release.outputs.editions) }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - uses: oras-project/setup-oras@v1
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
       - uses: actions/cache@v4
         with:
           path: ~/AppData/Local/electron/Cache
           key: electron-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-      - name: Download immutable snapshot
+      - name: Install dependencies and cache Electron runtime
         shell: pwsh
-        env:
-          SNAPSHOT_REF: ${{ needs.prepare-release.outputs.snapshot_ref }}
         run: |
-          New-Item -ItemType Directory -Path snapshot | Out-Null
-          oras pull $env:SNAPSHOT_REF -o snapshot
-          choco install zstandard -y
-          $archiveName = (Get-Content content-lock.json | ConvertFrom-Json).archive_name
-          $archives = @(Get-ChildItem snapshot -Recurse -File -Filter $archiveName)
-          if ($archives.Count -ne 1) { throw "Expected exactly one $archiveName; found $($archives.Count)." }
-          $archive = $archives[0]
-          $expected = (Get-Content content-lock.json | ConvertFrom-Json).archive_sha256
-          if ((Get-FileHash $archive.FullName -Algorithm SHA256).Hash.ToLower() -ne $expected) { throw "Snapshot checksum mismatch." }
-          zstd -d $archive.FullName -o snapshot/wiki-content.tar
-          tar -xf snapshot/wiki-content.tar -C snapshot
-      - name: Build and upload Windows edition
+          npm ci
+          foreach ($attempt in 1..3) {
+            try {
+              node -e "require('@electron/get').downloadArtifact({version:require('electron/package.json').version,artifactName:'electron',platform:process.platform,arch:'x64'}).then(console.log)"
+              if ($LASTEXITCODE -ne 0) { throw "Electron download exited with $LASTEXITCODE." }
+              break
+            } catch {
+              if ($attempt -eq 3) { throw }
+              Start-Sleep -Seconds ($attempt * 10)
+            }
+          }
+      - name: Build and upload lightweight Windows app
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ needs.prepare-release.outputs.version }}
-          WIKI_EDITION: ${{ matrix.edition }}
         run: |
-          npm ci
-          $source = "$pwd\snapshot\content"
-          $env:WIKI_CONTENT_PATH = $source
-          if ($env:WIKI_EDITION -ne "multilingual") {
-            $env:WIKI_CONTENT_PATH = "$env:RUNNER_TEMP\edition-$env:WIKI_EDITION\content"
-            node scripts/prepare-edition.mjs $source $env:WIKI_CONTENT_PATH $env:WIKI_EDITION
-          }
           npm run make:windows
-          $squirrel = Get-ChildItem out/make -Directory | Where-Object Name -Like 'squirrel.windows*' | Select-Object -First 1
-          $suffix = if ($env:WIKI_EDITION -eq "multilingual") { "" } else { "-$env:WIKI_EDITION" }
-          if (-not $squirrel) { throw "Squirrel output was not found." }
-          $squirrelArchive = "out/make/offline-stardew-valley-wiki${suffix}-squirrel.windows.zip"
-          & 7z a -tzip -mx=0 $squirrelArchive "$($squirrel.FullName)\*"
-          if ($LASTEXITCODE -ne 0) { throw "7-Zip failed with exit code $LASTEXITCODE." }
-          $assets = @(Get-ChildItem out/make -Recurse -File -Include *.zip | Where-Object { $_.FullName -notlike "$($squirrel.FullName)*" })
-          if ($assets.Count -ne 2) { throw "Expected Windows ZIP and Squirrel ZIP; found $($assets.Count)." }
+          $portable = @(Get-ChildItem out/make -Recurse -File -Filter '*.zip' |
+            Where-Object { $_.FullName -notmatch 'squirrel\.windows' })
+          $setup = @(Get-ChildItem out/make -Recurse -File -Filter '*setup.exe')
+          $assets = @($portable + $setup)
+          if ($portable.Count -ne 1 -or $setup.Count -ne 1 -or $assets.Count -ne 2) {
+            throw "Expected one portable ZIP and one Setup.exe; found $($assets.Count) files."
+          }
           foreach ($asset in $assets) { if ($asset.Length -ge 2GB) { throw "$($asset.Name) exceeds 2 GiB." } }
-          $checksum = "SHA256SUMS-windows-$env:WIKI_EDITION"
-          $assets | ForEach-Object { "$(($_ | Get-FileHash -Algorithm SHA256).Hash.ToLower())  $($_.Name)" } | Set-Content $checksum
-          gh release upload $env:VERSION @($assets.FullName) $checksum --repo $env:GITHUB_REPOSITORY --clobber
+          $assets | ForEach-Object {
+            "$(($_ | Get-FileHash -Algorithm SHA256).Hash.ToLower())  $($_.Name)"
+          } | Set-Content SHA256SUMS-app-windows
+          gh release upload $env:VERSION @($assets.FullName) SHA256SUMS-app-windows --repo $env:GITHUB_REPOSITORY --clobber
 
   finalize-draft:
     needs: [prepare-release, linux, windows]
@@ -239,6 +215,10 @@ jobs:
           mkdir checksums
           gh release download "$VERSION" --repo "$GITHUB_REPOSITORY" --pattern 'SHA256SUMS-*' --dir checksums
           cat checksums/SHA256SUMS-* | sort -k2 > SHA256SUMS
-          test "$(wc -l < SHA256SUMS)" -eq 65
-          gh release upload "$VERSION" SHA256SUMS content-lock.json release/validation-report-v1.3.0.json --repo "$GITHUB_REPOSITORY" --clobber
-          echo "Draft $VERSION contains 65 installers and remains unpublished." >> "$GITHUB_STEP_SUMMARY"
+          test "$(wc -l < SHA256SUMS)" -eq 6
+          gh release upload "$VERSION" SHA256SUMS content-lock.json desktop/content-release.json \
+            release/validation-report-v1.3.0.json --repo "$GITHUB_REPOSITORY" --clobber
+          {
+            echo "Draft $VERSION is ready for manual testing."
+            echo "It contains five lightweight application packages and one verified content snapshot."
+          } >> "$GITHUB_STEP_SUMMARY"

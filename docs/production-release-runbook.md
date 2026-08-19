@@ -288,22 +288,22 @@ el archivo antes de permitir que continúes con los builds.
 ## 9. Crear y probar el release draft
 
 Abre **Actions → Build v1.3.0 release draft**, escribe `BUILD-RELEASE` y aprueba el environment.
-Usa `build_scope=all` y `edition_scope=all` para el release completo. Para reanudar únicamente una
-parte de un draft existente, selecciona la plataforma y `multilingual`, `es` o `en`; el workflow
-reutiliza los assets existentes y sólo reemplaza los de esa selección.
-Se crearán 39 paquetes Linux y 26 Windows, directamente en un draft. Los jobs no concentran todos
-los binarios en un solo runner.
+Usa `build_scope=all` para el release completo. Para reanudar únicamente una plataforma de un draft
+existente, selecciona `linux` o `windows`. La primera ejecución del nuevo formato elimina del draft
+los paquetes antiguos por idioma y publica una única aplicación ligera por plataforma junto con el
+snapshot multilenguaje aprobado.
 
 Descarga desde el draft y prueba:
 
-- ZIP, DEB y RPM multilingües.
-- Un paquete Linux de idioma individual.
-- ZIP y Squirrel multilingües.
-- Un paquete Windows de idioma individual.
+- ZIP, DEB y RPM de Linux.
+- ZIP portátil y Setup.exe de Windows.
+- El asistente de primera ejecución, selección de varios idiomas y progreso.
+- Importación del snapshot desde un archivo local y gestión posterior de idiomas.
 - `SHA256SUMS`, `content-lock.json` y el reporte de validación.
 - Uso real sin red.
 
-Comprueba que cada asset es menor de 2 GiB y que existen exactamente 65 checksums. Publica el draft
+Comprueba que cada asset es menor de 2 GiB y que existen exactamente 6 checksums: cinco paquetes de
+aplicación y el snapshot de contenido. Publica el draft
 manualmente, márcalo Latest y cierra el issue relacionado sólo después de verificar los assets
 públicos.
 

@@ -1,31 +1,28 @@
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
-const supportedEditions = new Set(['multilingual', 'en', 'es', 'de', 'fr', 'it', 'ja', 'ko', 'hu', 'pt', 'ru', 'tr', 'zh']);
-const requestedEdition = (process.env.WIKI_EDITION || 'multilingual').toLowerCase();
-const edition = requestedEdition === 'full' ? 'multilingual' : requestedEdition;
-if (!supportedEditions.has(edition)) throw new Error(`Unsupported WIKI_EDITION: ${edition}`);
-const isMultilingual = edition === 'multilingual';
-const editionSuffix = isMultilingual ? '' : `-${edition}`;
-const appSlug = `offline-stardew-valley-wiki${editionSuffix}`;
-const productName = `Offline Stardew Valley Wiki${isMultilingual ? '' : ` (${edition.toUpperCase()})`}`;
+const appSlug = 'offline-stardew-valley-wiki';
+const productName = 'Offline Stardew Valley Wiki';
 
 module.exports = {
   packagerConfig: {
     asar: true,
     name: productName,
-    appBundleId: `com.cristinakity.offlinestardewvalleywiki${isMultilingual ? '' : `.${edition}`}`,
+    appBundleId: 'com.cristinakity.offlinestardewvalleywiki',
     executableName: appSlug,
     icon: 'desktop/assets/favicon',
     extraResource: [
       'desktop/assets/stardewbackground.png',
       'desktop/assets/flags',
-      ...(process.env.WIKI_CONTENT_PATH ? [process.env.WIKI_CONTENT_PATH] : []),
+      'desktop/content-release.json',
+      'desktop/content-worker.js',
+      'scripts/prepare-edition.mjs',
     ],
     ignore: [
       /^\/wiki_updater($|\/)/,
       /^\/tests($|\/)/,
       /^\/\.local-data($|\/)/,
+      /^\/snapshot($|\/)/,
       /^\/compose.*\.yml$/,
       /^\/Containerfile/,
       /^\/pyproject\.toml$/,
