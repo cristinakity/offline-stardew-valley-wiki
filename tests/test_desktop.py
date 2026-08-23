@@ -113,6 +113,22 @@ def test_about_dialog_identifies_creator_and_release_links() -> None:
     assert "appVersion" in preload
 
 
+def test_help_dialog_explains_first_setup_and_content_management() -> None:
+    shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
+    preload = (ROOT / "desktop" / "preload.js").read_text(encoding="utf-8")
+    assert 'id="contentHelp"' in shell
+    assert 'id="helpDialog"' in shell
+    assert "const helpText" in renderer
+    assert "Ayuda y primeros pasos" in renderer
+    assert "Download and install" in renderer
+    assert "Import from file / USB" in renderer
+    assert "offline-stardew-valley-wiki/issues" in renderer
+    assert "wiki:open-help" in main
+    assert "onOpenHelp" in preload
+
+
 def test_unavailable_page_message_exists_for_every_supported_language() -> None:
     renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
     for language in ("en", "es", "de", "fr", "it", "ja", "ko", "hu", "pt", "ru", "tr", "zh"):
