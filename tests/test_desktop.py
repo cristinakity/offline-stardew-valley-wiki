@@ -103,9 +103,15 @@ def test_about_dialog_identifies_creator_and_release_links() -> None:
     assert "Cristina Carrasco" in shell
     assert "const aboutText" in renderer
     assert "proyecto comunitario de código abierto" in renderer
-    assert "offline-stardew-valley-wiki/releases/latest" in renderer
-    assert "offline-stardew-valley-wiki/blob/master/LICENSE" in renderer
-    assert "window.offlineWiki.openExternal(url)" in renderer
+    assert '<a id="aboutSourceLink"' in shell
+    assert '<a id="aboutDownloadsLink"' in shell
+    assert '<a id="aboutLicenseLink"' in shell
+    assert "offline-stardew-valley-wiki/releases/latest" in shell
+    assert "offline-stardew-valley-wiki/blob/master/LICENSE" in shell
+    assert 'target="_blank"' in shell
+    assert "setWindowOpenHandler" in main
+    assert "openExternalWithFeedback" in main
+    assert "Unable to open link" in main
     assert "const helpLabels" in main
     assert "wiki:open-about" in main
     assert "wiki:app-version" in main
@@ -146,7 +152,9 @@ def test_help_dialog_explains_first_setup_and_content_management() -> None:
     assert "Ayuda y primeros pasos" in renderer
     assert "Download and install" in renderer
     assert "Import from file / USB" in renderer
-    assert "offline-stardew-valley-wiki/issues" in renderer
+    assert '<a id="helpDownloadsLink"' in shell
+    assert '<a id="helpSupportLink"' in shell
+    assert "offline-stardew-valley-wiki/issues" in shell
     assert "wiki:open-help" in main
     assert "onOpenHelp" in preload
 
