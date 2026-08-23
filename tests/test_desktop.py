@@ -113,6 +113,28 @@ def test_about_dialog_identifies_creator_and_release_links() -> None:
     assert "appVersion" in preload
 
 
+def test_about_dialog_shows_application_and_installed_content_versions() -> None:
+    shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    manager = (ROOT / "desktop" / "content-manager.js").read_text(encoding="utf-8")
+    assert 'id="headerAppVersion"' in shell
+    assert 'id="aboutContentVersionValue"' in shell
+    assert 'id="aboutSnapshotDateValue"' in shell
+    assert 'id="aboutSnapshotIdValue"' in shell
+    assert 'id="aboutLanguagesValue"' in shell
+    assert "const versionInfoText" in renderer
+    assert "function snapshotTimestamp" in renderer
+    assert "installedVersion" in manager
+    assert "installedSnapshotId" in manager
+    assert "installedAt" in manager
+
+
+def test_flag_selection_changes_wiki_and_interface_language() -> None:
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    assert "changeInterfaceLanguage(code);" in renderer
+    assert "switchLanguage(code).catch" in renderer
+
+
 def test_help_dialog_explains_first_setup_and_content_management() -> None:
     shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
     renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")

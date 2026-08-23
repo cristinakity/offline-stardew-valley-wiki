@@ -49,6 +49,21 @@ const aboutText = {
   tr:{menu:'Hakkında',title:'Offline Stardew Valley Wiki Hakkında',version:'Sürüm',created:'Oluşturan ve bakımını yapan',description:'Stardew Valley Wiki’yi çevrimdışı okumak için açık kaynaklı bir topluluk projesidir. ConcernedApe veya Stardew Valley Wiki ile bağlantılı ya da onlar tarafından onaylanmış değildir.',source:'GitHub kaynak kodu',downloads:'Sürümleri indir',license:'MIT Lisansı',close:'Kapat'},
   zh:{menu:'关于',title:'关于 Offline Stardew Valley Wiki',version:'版本',created:'创建和维护者',description:'一个用于离线阅读 Stardew Valley Wiki 的开源社区项目。它与 ConcernedApe 或 Stardew Valley Wiki 无隶属或认可关系。',source:'GitHub 源代码',downloads:'下载版本',license:'MIT 许可证',close:'关闭'},
 };
+const versionInfoText = {
+  en:{app:'Application version',content:'Wiki content version',date:'Content date',snapshot:'Snapshot ID',languages:'Installed languages',installed:'Installed on',notInstalled:'Not installed',unknown:'Unknown'},
+  es:{app:'Versión de la aplicación',content:'Versión del contenido de la wiki',date:'Fecha del contenido',snapshot:'ID del snapshot',languages:'Idiomas instalados',installed:'Instalado el',notInstalled:'No instalado',unknown:'Desconocido'},
+  de:{app:'Anwendungsversion',content:'Version des Wiki-Inhalts',date:'Inhaltsdatum',snapshot:'Snapshot-ID',languages:'Installierte Sprachen',installed:'Installiert am',notInstalled:'Nicht installiert',unknown:'Unbekannt'},
+  fr:{app:'Version de l’application',content:'Version du contenu du wiki',date:'Date du contenu',snapshot:'ID du snapshot',languages:'Langues installées',installed:'Installé le',notInstalled:'Non installé',unknown:'Inconnu'},
+  it:{app:'Versione dell’applicazione',content:'Versione dei contenuti wiki',date:'Data dei contenuti',snapshot:'ID snapshot',languages:'Lingue installate',installed:'Installato il',notInstalled:'Non installato',unknown:'Sconosciuto'},
+  ja:{app:'アプリのバージョン',content:'Wikiコンテンツのバージョン',date:'コンテンツの日付',snapshot:'スナップショットID',languages:'インストール済み言語',installed:'インストール日時',notInstalled:'未インストール',unknown:'不明'},
+  ko:{app:'앱 버전',content:'위키 콘텐츠 버전',date:'콘텐츠 날짜',snapshot:'스냅샷 ID',languages:'설치된 언어',installed:'설치 날짜',notInstalled:'설치되지 않음',unknown:'알 수 없음'},
+  hu:{app:'Alkalmazásverzió',content:'Wiki-tartalom verziója',date:'Tartalom dátuma',snapshot:'Pillanatkép-azonosító',languages:'Telepített nyelvek',installed:'Telepítés ideje',notInstalled:'Nincs telepítve',unknown:'Ismeretlen'},
+  pt:{app:'Versão do aplicativo',content:'Versão do conteúdo da wiki',date:'Data do conteúdo',snapshot:'ID do snapshot',languages:'Idiomas instalados',installed:'Instalado em',notInstalled:'Não instalado',unknown:'Desconhecido'},
+  ru:{app:'Версия приложения',content:'Версия содержимого вики',date:'Дата содержимого',snapshot:'ID снимка',languages:'Установленные языки',installed:'Дата установки',notInstalled:'Не установлено',unknown:'Неизвестно'},
+  tr:{app:'Uygulama sürümü',content:'Wiki içerik sürümü',date:'İçerik tarihi',snapshot:'Anlık görüntü kimliği',languages:'Yüklü diller',installed:'Yüklenme tarihi',notInstalled:'Yüklü değil',unknown:'Bilinmiyor'},
+  zh:{app:'应用版本',content:'维基内容版本',date:'内容日期',snapshot:'快照 ID',languages:'已安装语言',installed:'安装日期',notInstalled:'未安装',unknown:'未知'},
+};
+const interfaceLocales = { en:'en-US',es:'es-MX',de:'de-DE',fr:'fr-FR',it:'it-IT',ja:'ja-JP',ko:'ko-KR',hu:'hu-HU',pt:'pt-BR',ru:'ru-RU',tr:'tr-TR',zh:'zh-CN' };
 const helpText = {
   en:{menu:'Help and getting started',title:'Help and getting started',intro:'Follow these simple steps to prepare and use your offline wiki.',setupTitle:'First-time setup',setupSteps:['Click the gear button (⚙) to open offline content settings.','Choose the language for the application menus.','Select one or more wiki languages.','Click “Download and install” and keep the app open while it prepares the wiki.'],manageTitle:'Manage or update content',manageSteps:['Use the gear button (⚙) whenever you want to add or remove languages.','Choose “Check for content updates” to look for a newer approved wiki snapshot.','Choose “Import from file / USB” if you already have the .tar.zst snapshot on this computer or a USB drive.'],tip:'After setup finishes, your selected wiki languages work without Internet.',downloads:'Download or reinstall the app',support:'Get help on GitHub',close:'Close'},
   es:{menu:'Ayuda y primeros pasos',title:'Ayuda y primeros pasos',intro:'Sigue estos pasos sencillos para preparar y usar tu wiki sin conexión.',setupTitle:'Primera configuración',setupSteps:['Pulsa el botón de engranaje (⚙) para abrir la configuración del contenido offline.','Elige el idioma de los menús de la aplicación.','Selecciona uno o más idiomas de la wiki.','Pulsa «Descargar e instalar» y mantén la aplicación abierta mientras prepara la wiki.'],manageTitle:'Administrar o actualizar el contenido',manageSteps:['Usa el engranaje (⚙) cuando quieras añadir o quitar idiomas.','Elige «Buscar actualizaciones de contenido» para comprobar si existe un snapshot aprobado más reciente.','Elige «Importar desde archivo / USB» si ya tienes el snapshot .tar.zst en el equipo o en una memoria USB.'],tip:'Cuando termine la configuración, los idiomas seleccionados funcionarán sin Internet.',downloads:'Descargar o reinstalar la aplicación',support:'Obtener ayuda en GitHub',close:'Cerrar'},
@@ -286,8 +301,14 @@ function applySetupLanguage(language) {
 
 function applyAboutLanguage(language) {
   const text = aboutText[language] || aboutText.en;
+  const versions = versionInfoText[language] || versionInfoText.en;
   document.querySelector('#aboutTitle').textContent = text.title;
-  document.querySelector('#aboutVersionLabel').textContent = text.version;
+  document.querySelector('#aboutAppVersionLabel').textContent = versions.app;
+  document.querySelector('#aboutContentVersionLabel').textContent = versions.content;
+  document.querySelector('#aboutSnapshotDateLabel').textContent = versions.date;
+  document.querySelector('#aboutSnapshotIdLabel').textContent = versions.snapshot;
+  document.querySelector('#aboutLanguagesLabel').textContent = versions.languages;
+  document.querySelector('#aboutInstalledAtLabel').textContent = versions.installed;
   document.querySelector('#aboutCreatedLabel').textContent = text.created;
   document.querySelector('#aboutDescription').textContent = text.description;
   document.querySelector('#aboutSourceLink').textContent = text.source;
@@ -296,6 +317,51 @@ function applyAboutLanguage(language) {
   document.querySelector('#contentAbout').title = text.menu;
   document.querySelector('#contentAbout').setAttribute('aria-label', text.menu);
   aboutClose.setAttribute('aria-label', text.close);
+}
+
+function formatVersion(value) {
+  if (!value) return '—';
+  return String(value).startsWith('v') ? String(value) : `v${value}`;
+}
+
+function snapshotTimestamp(snapshotId) {
+  const match = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z/.exec(snapshotId || '');
+  if (!match) return null;
+  const [, year, month, day, hour, minute, second] = match;
+  const value = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}Z`);
+  return Number.isNaN(value.getTime()) ? null : value;
+}
+
+function localizedDate(value, language) {
+  const date = value instanceof Date ? value : new Date(value || '');
+  if (Number.isNaN(date.getTime())) return (versionInfoText[language] || versionInfoText.en).unknown;
+  return new Intl.DateTimeFormat(interfaceLocales[language] || interfaceLocales.en, {
+    dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC',
+  }).format(date) + ' UTC';
+}
+
+async function refreshVersionDetails() {
+  const [appVersion, status] = await Promise.all([
+    window.offlineWiki.appVersion(),
+    window.offlineWiki.contentStatus(),
+  ]);
+  const text = versionInfoText[interfaceLanguage] || versionInfoText.en;
+  const formattedAppVersion = formatVersion(appVersion);
+  document.querySelector('#headerAppVersion').textContent = formattedAppVersion;
+  document.querySelector('#aboutVersionValue').textContent = formattedAppVersion;
+  if (!status.installed) {
+    for (const id of ['aboutContentVersionValue','aboutSnapshotDateValue','aboutSnapshotIdValue','aboutLanguagesValue','aboutInstalledAtValue']) {
+      document.querySelector(`#${id}`).textContent = text.notInstalled;
+    }
+    return;
+  }
+  document.querySelector('#aboutContentVersionValue').textContent = formatVersion(status.installedVersion);
+  document.querySelector('#aboutSnapshotDateValue').textContent = localizedDate(snapshotTimestamp(status.installedSnapshotId), interfaceLanguage);
+  document.querySelector('#aboutSnapshotIdValue').textContent = status.installedSnapshotId || text.unknown;
+  const names = new Map(languages);
+  document.querySelector('#aboutLanguagesValue').textContent = status.installedLanguages
+    .map(code => `${names.get(code) || code.toUpperCase()} (${code.toUpperCase()})`).join(', ') || text.unknown;
+  document.querySelector('#aboutInstalledAtValue').textContent = localizedDate(status.installedAt, interfaceLanguage);
 }
 
 function replaceHelpSteps(id, steps) {
@@ -339,6 +405,7 @@ function openAbout() {
   applyAboutLanguage(interfaceLanguage);
   aboutDialog.hidden = false;
   aboutClose.focus();
+  refreshVersionDetails().catch(error => console.error('Unable to load version details.', error));
 }
 
 function closeAbout() {
@@ -353,6 +420,7 @@ function changeInterfaceLanguage(language) {
   applySetupLanguage(interfaceLanguage);
   applyAboutLanguage(interfaceLanguage);
   applyHelpLanguage(interfaceLanguage);
+  refreshVersionDetails().catch(error => console.error('Unable to refresh version details.', error));
 }
 
 for (const [code, name] of languages) {
@@ -549,7 +617,10 @@ for (const [code, name] of languages) {
   image.alt = name;
   button.appendChild(image);
   button.setAttribute('aria-label', name);
-  button.addEventListener('click', () => switchLanguage(code));
+  button.addEventListener('click', () => {
+    changeInterfaceLanguage(code);
+    switchLanguage(code).catch(error => showNotice(error.message));
+  });
   document.querySelector('#languages').appendChild(button);
 }
 
@@ -644,7 +715,7 @@ async function loadLanguage(code, requested = null) {
     documentsById = cached?.documentsById
       || new Map(documents.map(document => [String(document.id), document]));
     searchIndex = cached?.searchIndex;
-    document.querySelector('#search').placeholder = interfaceText[code]?.search || interfaceText.en.search;
+    document.querySelector('#search').placeholder = interfaceText[interfaceLanguage]?.search || interfaceText.en.search;
     for (const button of document.querySelectorAll('.flag')) {
       button.setAttribute('aria-pressed', String(button.dataset.language === code));
     }
@@ -916,7 +987,7 @@ document.querySelector('#home').addEventListener('click', () => loadLanguage(cur
   try {
     changeInterfaceLanguage(interfaceLanguage);
     const assets = await window.offlineWiki.shellAssets();
-    document.querySelector('#aboutVersionValue').textContent = await window.offlineWiki.appVersion();
+    await refreshVersionDetails();
     document.body.style.backgroundImage = `url("${assets.background}")`;
     for (const button of document.querySelectorAll('.flag')) {
       button.querySelector('img').src = assets.flags[button.dataset.language];
