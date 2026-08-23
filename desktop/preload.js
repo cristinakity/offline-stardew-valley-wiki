@@ -1,6 +1,7 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('offlineWiki', {
+  appVersion: () => ipcRenderer.invoke('wiki:app-version'),
   shellAssets: () => ipcRenderer.invoke('wiki:shell-assets'),
   available: () => ipcRenderer.invoke('wiki:available'),
   availableLanguages: () => ipcRenderer.invoke('wiki:available-languages'),
@@ -22,5 +23,10 @@ contextBridge.exposeInMainWorld('offlineWiki', {
     const listener = (_event, progress) => callback(progress);
     ipcRenderer.on('wiki:content-progress', listener);
     return () => ipcRenderer.removeListener('wiki:content-progress', listener);
+  },
+  onOpenAbout: callback => {
+    const listener = () => callback();
+    ipcRenderer.on('wiki:open-about', listener);
+    return () => ipcRenderer.removeListener('wiki:open-about', listener);
   },
 });

@@ -106,9 +106,16 @@ const menuLabels = {
   pt: ['Arquivo', 'Editar', 'Exibir', 'Janela'], ru: ['Файл', 'Правка', 'Вид', 'Окно'],
   tr: ['Dosya', 'Düzenle', 'Görünüm', 'Pencere'], zh: ['文件', '编辑', '查看', '窗口'],
 };
+const helpLabels = {
+  en: ['Help', 'About'], es: ['Ayuda', 'Acerca de'], de: ['Hilfe', 'Über'],
+  fr: ['Aide', 'À propos'], it: ['Aiuto', 'Informazioni'], ja: ['ヘルプ', 'このアプリについて'],
+  ko: ['도움말', '정보'], hu: ['Súgó', 'Névjegy'], pt: ['Ajuda', 'Sobre'],
+  ru: ['Справка', 'О программе'], tr: ['Yardım', 'Hakkında'], zh: ['帮助', '关于'],
+};
 
 function setApplicationLanguage(language) {
   const [file, edit, view, window] = menuLabels[language] || menuLabels.en;
+  const [help, about] = helpLabels[language] || helpLabels.en;
   Menu.setApplicationMenu(Menu.buildFromTemplate([
     { label: file, submenu: [{ role: 'quit' }] },
     { label: edit, submenu: [
@@ -121,10 +128,15 @@ function setApplicationLanguage(language) {
       { role: 'togglefullscreen' },
     ] },
     { label: window, submenu: [{ role: 'minimize' }, { role: 'close' }] },
+    { label: help, submenu: [{
+      label: about,
+      click: () => BrowserWindow.getFocusedWindow()?.webContents.send('wiki:open-about'),
+    }] },
   ]));
 }
 
 function registerContentApi() {
+  ipcMain.handle('wiki:app-version', () => app.getVersion());
   ipcMain.handle('wiki:shell-assets', () => shellAssets());
   ipcMain.handle('wiki:available', () => {
     const root = contentRoot();
