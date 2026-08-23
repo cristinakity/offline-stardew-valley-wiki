@@ -1,7 +1,7 @@
 {
   "name": "offline-stardew-valley-wiki",
   "productName": "Offline Stardew Valley Wiki",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "A multilingual offline desktop reader for the Stardew Valley Wiki",
   "main": "desktop/main.js",
   "scripts": {

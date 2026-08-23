@@ -21,7 +21,7 @@ def parser() -> argparse.ArgumentParser:
     sync = commands.add_parser("sync", help="Run a synchronization in the foreground")
     sync.add_argument("--profile", choices=("fixture", "sample", "incremental", "full"), default="fixture")
     candidate = commands.add_parser("candidate", help="Create a local candidate from the current snapshot")
-    candidate.add_argument("--version", default="v1.3.0")
+    candidate.add_argument("--version", default="v2.0.0")
     snapshot_import = commands.add_parser("snapshot-import", help="Import an approved snapshot archive")
     snapshot_import.add_argument("--archive", type=str, required=True)
     recover = commands.add_parser("recover", help="Recover a structurally valid failed run from retained blobs")

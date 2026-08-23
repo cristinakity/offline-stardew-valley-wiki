@@ -32,7 +32,7 @@ jobs:
         id: lock
         run: |
           set -euo pipefail
-          test "$(jq -r .version content-lock.json)" = "v1.3.0"
+          test "$(jq -r .version content-lock.json)" = "v2.0.0"
           test "$(jq -r .validation.status content-lock.json)" = "completed_with_warnings"
           test "$(jq -r .validation.broken_links content-lock.json)" = "0"
           test "$(jq -r .validation.missing_assets content-lock.json)" = "0"

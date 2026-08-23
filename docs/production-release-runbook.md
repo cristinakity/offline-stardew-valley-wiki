@@ -1,4 +1,4 @@
-# Runbook de production y release v1.3.0
+# Runbook de production y release v2.0.0
 
 Este procedimiento usa únicamente nombres genéricos. Sustituye los valores `<...>` en interfaces
 privadas; no los escribas en Git. El despliegue de la aplicación se realiza con GitHub OIDC y el
@@ -21,7 +21,7 @@ broker, sin llaves de acceso remoto en este repositorio.
 <OPERATOR_CONTACT>            contacto incluido en el User-Agent del crawler
 ```
 
-La versión aprobada es `v1.3.0`, el snapshot es
+La versión aprobada es `v2.0.0`, el snapshot es
 `20260811T015121Z-7206e5e0cacc` y el archivo local esperado es:
 
 ```text
@@ -274,7 +274,7 @@ Crea `release` en **Settings → Environments**, con required reviewers y rama `
 Variables:
 
 ```text
-RELEASE_VERSION=v1.3.0
+RELEASE_VERSION=v2.0.0
 RELEASE_SNAPSHOT_REF=<THE_EXACT_OCI_REF_FROM_CONTENT_LOCK>
 ```
 
@@ -287,7 +287,7 @@ el archivo antes de permitir que continúes con los builds.
 
 ## 9. Crear y probar el release draft
 
-Abre **Actions → Build v1.3.0 release draft**, escribe `BUILD-RELEASE` y aprueba el environment.
+Abre **Actions → Build v2.0.0 release draft**, escribe `BUILD-RELEASE` y aprueba el environment.
 Usa `build_scope=all` para el release completo. Para reanudar únicamente una plataforma de un draft
 existente, selecciona `linux` o `windows`. La primera ejecución del nuevo formato elimina del draft
 los paquetes antiguos por idioma y publica una única aplicación ligera por plataforma junto con el

@@ -29,7 +29,7 @@ jobs:
           STORAGE_LIMIT_GB: 2
         run: |
           wiki-updater sync --profile fixture
-          wiki-updater candidate --version v1.3.0-ci
+          wiki-updater candidate --version v2.0.0-ci
 
   desktop:
     runs-on: ubuntu-latest
@@ -52,4 +52,3 @@ jobs:
           fetch-depth: 1
       - name: Render local Compose
         run: docker compose --env-file .env.local.example -f compose.yml -f compose.local.yml config --quiet
-

@@ -252,7 +252,7 @@ podman compose \
   --env-file .env.local \
   -f compose.yml \
   -f compose.local.yml \
-  run --rm cli candidate --version v1.3.0
+  run --rm cli candidate --version v2.0.0
 ```
 
 The candidate directory contains:
@@ -377,7 +377,7 @@ npm test
 ## Release and production safety
 
 Follow the complete [production and release runbook](docs/production-release-runbook.md) before
-configuring GitHub, publishing a snapshot, deploying through the broker, or creating `v1.3.0`.
+configuring GitHub, publishing a snapshot, deploying through the broker, or creating `v2.0.0`.
 
 The rollout has separate approval gates:
 

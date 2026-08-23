@@ -1,4 +1,4 @@
-name: Build v1.3.0 release draft
+name: Build v2.0.0 release draft
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ permissions:
   packages: read
 
 concurrency:
-  group: offline-wiki-release-v1.3.0
+  group: offline-wiki-release-v2.0.0
   cancel-in-progress: false
 
 jobs:
@@ -217,7 +217,7 @@ jobs:
           cat checksums/SHA256SUMS-* | sort -k2 > SHA256SUMS
           test "$(wc -l < SHA256SUMS)" -eq 6
           gh release upload "$VERSION" SHA256SUMS content-lock.json desktop/content-release.json \
-            release/validation-report-v1.3.0.json --repo "$GITHUB_REPOSITORY" --clobber
+            release/validation-report-v2.0.0.json --repo "$GITHUB_REPOSITORY" --clobber
           {
             echo "Draft $VERSION is ready for manual testing."
             echo "It contains five lightweight application packages and one verified content snapshot."

@@ -32,7 +32,7 @@ def create_candidate(
     run_id: int | None = None,
 ) -> dict[str, Any]:
     if not VERSION_RE.fullmatch(version):
-        raise ValueError("Version must look like v1.3.0 or 1.3.0.")
+        raise ValueError("Version must look like v2.0.0 or 2.0.0.")
     version = version if version.startswith("v") else f"v{version}"
     storage = Storage(settings)
     if run_id is not None:

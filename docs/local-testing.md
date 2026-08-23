@@ -25,7 +25,7 @@ podman compose --env-file .env.local -f compose.yml -f compose.local.yml ps
 curl -fsS http://127.0.0.1:8090/api/health
 ```
 
-Use fixture first. Inspect its run and create `v1.3.0` from the dashboard. Then run sample. Full sync
+Use fixture first. Inspect its run and create `v2.0.0` from the dashboard. Then run sample. Full sync
 should be attempted only after sample has zero asset-download and offline-validation errors.
 
 ## 4. Test Electron offline
