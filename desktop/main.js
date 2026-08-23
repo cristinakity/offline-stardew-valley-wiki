@@ -33,6 +33,27 @@ function allowedLocalNavigation(target) {
   }
 }
 
+function validatedExternalUrl(value) {
+  const parsed = new URL(value);
+  if (!['https:', 'http:'].includes(parsed.protocol)) throw new Error('Unsupported external URL.');
+  return parsed.href;
+}
+
+async function openExternalUrl(value) {
+  await shell.openExternal(validatedExternalUrl(value));
+  return true;
+}
+
+function openExternalWithFeedback(value) {
+  openExternalUrl(value).catch(error => {
+    console.error(`Unable to open external link ${value}:`, error);
+    dialog.showErrorBox(
+      'Unable to open link',
+      `The link could not be opened in your default browser.\n\n${value}\n\n${error.message}`,
+    );
+  });
+}
+
 function pathInsideContent(relativePath) {
   const root = contentRoot();
   const target = path.resolve(root, relativePath);
@@ -189,11 +210,7 @@ function registerContentApi() {
     console.info(`Resolved offline page to ${url}`);
     return url;
   });
-  ipcMain.handle('wiki:open-external', (_event, url) => {
-    const parsed = new URL(url);
-    if (!['https:', 'http:'].includes(parsed.protocol)) throw new Error('Unsupported external URL.');
-    return shell.openExternal(parsed.href);
-  });
+  ipcMain.handle('wiki:open-external', (_event, url) => openExternalUrl(url));
   ipcMain.handle('wiki:load-reader-state', () => loadReaderState());
   ipcMain.handle('wiki:save-reader-state', (_event, value) => saveReaderState(value));
   ipcMain.handle('wiki:set-language', (_event, language) => {
@@ -234,13 +251,13 @@ function createWindow() {
   });
   window.loadFile(path.join(__dirname, 'shell.html'));
   window.webContents.setWindowOpenHandler(({ url }) => {
-    if (url.startsWith('https://') || url.startsWith('http://')) shell.openExternal(url);
+    openExternalWithFeedback(url);
     return { action: 'deny' };
   });
   window.webContents.on('will-navigate', (event, url) => {
     if (!allowedLocalNavigation(url)) {
       event.preventDefault();
-      if (url.startsWith('https://') || url.startsWith('http://')) shell.openExternal(url);
+      openExternalWithFeedback(url);
     }
   });
 }

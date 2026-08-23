@@ -439,22 +439,6 @@ helpClose.addEventListener('click', closeHelp);
 helpDialog.addEventListener('click', event => { if (event.target === helpDialog) closeHelp(); });
 aboutClose.addEventListener('click', closeAbout);
 aboutDialog.addEventListener('click', event => { if (event.target === aboutDialog) closeAbout(); });
-const aboutLinks = {
-  aboutCreatorLink: 'https://github.com/cristinakity',
-  aboutSourceLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki',
-  aboutDownloadsLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/releases/latest',
-  aboutLicenseLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/blob/master/LICENSE',
-};
-for (const [id, url] of Object.entries(aboutLinks)) {
-  document.querySelector(`#${id}`).addEventListener('click', () => window.offlineWiki.openExternal(url));
-}
-const helpLinks = {
-  helpDownloadsLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/releases/latest',
-  helpSupportLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/issues',
-};
-for (const [id, url] of Object.entries(helpLinks)) {
-  document.querySelector(`#${id}`).addEventListener('click', () => window.offlineWiki.openExternal(url));
-}
 document.querySelector('#contentSettings').addEventListener('click', () => openContentSetup().catch(error => showNotice(error.message)));
 setupClose.addEventListener('click', () => { if (!setupBusy && installedContent) contentSetup.hidden = true; });
 document.querySelector('#selectAllLanguages').addEventListener('click', () => {
