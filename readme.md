@@ -10,6 +10,30 @@ The project has two separate parts:
 - **Wiki updater:** Podman services that synchronize MediaWiki, validate the result and create
   release candidates.
 
+## Download and first-time setup
+
+Most people do not need to clone this repository. Download the latest application from the
+**[GitHub Releases page](https://github.com/cristinakity/offline-stardew-valley-wiki/releases/latest)**:
+
+- **Windows:** use `offline-stardew-valley-wiki-setup.exe`, or download the Windows ZIP for a
+  portable copy.
+- **Linux:** use the DEB, RPM or Linux ZIP package that matches your system. Extract the ZIP before
+  running the application.
+
+The application is intentionally small and downloads the approved wiki content during its first
+setup. Internet access is required for this initial download.
+
+1. Open **Offline Stardew Valley Wiki**.
+2. Choose the language used by the application menus.
+3. Select one or more wiki languages to install.
+4. Click **Download and install**.
+5. Keep the application open while it downloads, verifies and prepares the wiki.
+
+The initial multilingual snapshot download is approximately 644 MiB and temporarily needs about
+7 GiB of free space. Only the selected languages are kept after preparation. When setup finishes,
+those languages can be browsed and searched without an Internet connection. Use the gear button
+(⚙) later to add or remove languages or check for approved content updates.
+
 ## Does a Git clone contain the wiki?
 
 The new generated wiki snapshots are deliberately **not stored in Git**. A full snapshot contains
@@ -18,7 +42,7 @@ clone unnecessarily large.
 
 | Download | Wiki content included? | Intended audience |
 | --- | --- | --- |
-| ZIP, DEB, RPM or Windows release | Yes | People who only want the offline application |
+| ZIP, DEB, RPM or Windows release | Downloaded on first use | People who only want the offline application |
 | Git clone | No new snapshot | Developers and maintainers |
 | Approved `wiki-content-*.tar.zst` | Yes | Initializing a development or production environment |
 
@@ -26,8 +50,9 @@ Some legacy HTTrack files may still exist in the repository history while the mi
 completed. The new reader does not use that mirror. Future generated content lives under
 `.local-data/`, which is ignored by Git.
 
-An end user should download an application release. A developer who clones the source can import
-the approved `.tar.zst` snapshot and does **not** need to run a four-hour full crawl.
+An end user should download an application release and follow the first-time setup above. A
+developer who clones the source can import the approved `.tar.zst` snapshot and does **not** need
+to run a four-hour full crawl.
 
 Once `content-lock.json` contains the published OCI digest, a developer can download, verify, and
 import that exact approved snapshot with:
@@ -193,31 +218,16 @@ The desktop reader remembers the last language and page. Changing language uses 
 translation map to open the equivalent article. Full search data is loaded lazily the first time a
 search is performed in a language and then remains cached for the current application session.
 
-## Full and lightweight language editions
+## Lightweight application and content languages
 
-Application packages can be produced from one approved full snapshot as a multilingual edition or
-as one lightweight edition for each of the 12 supported languages:
+The Linux and Windows application packages do not embed a multi-gigabyte wiki copy. Every package
+uses the same approved multilingual snapshot and lets the user choose any combination of the 12
+supported languages during first-time setup. The installer downloads that snapshot once, verifies
+its checksum and keeps only pages, search indexes and assets needed by the selected languages.
 
-| Edition | Included content | Package identity |
-| --- | --- | --- |
-| `multilingual` (alias `full`) | All 12 languages | `Offline Stardew Valley Wiki` |
-| `en` | English pages, search and referenced assets only | `Offline Stardew Valley Wiki (EN)` |
-| `es` | Spanish pages, search and referenced assets only | `Offline Stardew Valley Wiki (ES)` |
-| `de` | German pages, search and referenced assets only | `Offline Stardew Valley Wiki (DE)` |
-| `fr` | French pages, search and referenced assets only | `Offline Stardew Valley Wiki (FR)` |
-| `it` | Italian pages, search and referenced assets only | `Offline Stardew Valley Wiki (IT)` |
-| `ja` | Japanese pages, search and referenced assets only | `Offline Stardew Valley Wiki (JA)` |
-| `ko` | Korean pages, search and referenced assets only | `Offline Stardew Valley Wiki (KO)` |
-| `hu` | Hungarian pages, search and referenced assets only | `Offline Stardew Valley Wiki (HU)` |
-| `pt` | Portuguese pages, search and referenced assets only | `Offline Stardew Valley Wiki (PT)` |
-| `ru` | Russian pages, search and referenced assets only | `Offline Stardew Valley Wiki (RU)` |
-| `tr` | Turkish pages, search and referenced assets only | `Offline Stardew Valley Wiki (TR)` |
-| `zh` | Chinese pages, search and referenced assets only | `Offline Stardew Valley Wiki (ZH)` |
-
-Every language package is an independent lightweight application and can be installed alongside
-the others. Language buttons for content not included in that package are hidden. All editions are
-derived from the already approved full snapshot, so creating them does not crawl the wiki again.
-The official release workflow builds all 12 individual editions on Linux and Windows.
+Changing the selection later does not run the crawler. If **Keep the downloaded snapshot** was
+enabled during setup, languages can be added from that local archive; otherwise the application
+downloads the same approved snapshot again.
 
 ## Local data and storage
 

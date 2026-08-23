@@ -230,6 +230,7 @@ function handleContentProgress(progress) {
 async function openContentSetup() {
   const status = await window.offlineWiki.contentStatus();
   installedContent = status.installed;
+  document.querySelector('#firstRunGuide').hidden = status.installed;
   languageChoices.innerHTML = '';
   const browserLanguage = String(navigator.language || 'en').slice(0, 2).toLowerCase();
   const preferred = status.installedLanguages.length
@@ -278,6 +279,7 @@ async function startContentSetup(archivePath = null) {
 
 function applySetupLanguage(language) {
   const text = setupText[language] || setupText.en;
+  const guide = helpText[language] || helpText.en;
   const values = {
     setupTitle: text.title,
     setupIntro: text.intro,
@@ -296,6 +298,9 @@ function applySetupLanguage(language) {
     cancelContent: text.cancel,
   };
   for (const [id, value] of Object.entries(values)) document.querySelector(`#${id}`).textContent = value;
+  document.querySelector('#firstRunGuideTitle').textContent = guide.setupTitle;
+  document.querySelector('#firstRunGuideTip').textContent = guide.tip;
+  replaceHelpSteps('firstRunGuideSteps', guide.setupSteps.slice(1));
   setupClose.setAttribute('aria-label', interfaceText[language]?.back || interfaceText.en.back);
 }
 
