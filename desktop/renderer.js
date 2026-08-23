@@ -35,6 +35,20 @@ const setupStatusText = {
   en: { preparing:'Preparing offline content…',downloading:'Downloading the approved multilingual snapshot…',verifying:'Verifying the snapshot checksum…',extracting:'Extracting the snapshot…',selecting:'Keeping selected languages…',validating:'Validating the installed offline content…',paused:'Paused. You can resume without losing download progress.',cancelled:'Installation cancelled. A partial download can be resumed later.',completed:'Offline content is ready. Opening the wiki…',failed:'Content installation failed.',selectOne:'Select at least one language.',local:'Reading the local snapshot…',starting:'Starting download…',checking:'Checking for approved content updates…',upToDate:'Your installed content is up to date.',updateAvailable:id=>`A newer approved snapshot is available: ${id}. Choose languages and install it.`,noSpace:'There may not be enough temporary disk space for installation.',cancelSafe:'The operation was cancelled safely.',cancelling:'Cancelling safely…',draft404:'No published content release is available yet. While v1.3.0 is a draft, download the .tar.zst asset and use “Import from file / USB”.' },
   es: { preparing:'Preparando el contenido sin conexión…',downloading:'Descargando el snapshot multilingüe aprobado…',verifying:'Verificando la suma SHA-256 del snapshot…',extracting:'Extrayendo el snapshot…',selecting:'Conservando los idiomas seleccionados…',validating:'Validando el contenido instalado…',paused:'En pausa. Puedes continuar sin perder el progreso de descarga.',cancelled:'Instalación cancelada. La descarga parcial se puede continuar después.',completed:'El contenido está listo. Abriendo la wiki…',failed:'Falló la instalación del contenido.',selectOne:'Selecciona al menos un idioma.',local:'Leyendo el snapshot local…',starting:'Iniciando la descarga…',checking:'Buscando actualizaciones de contenido aprobadas…',upToDate:'El contenido instalado está actualizado.',updateAvailable:id=>`Hay un snapshot aprobado más reciente: ${id}. Elige los idiomas e instálalo.`,noSpace:'Es posible que no haya suficiente espacio temporal para la instalación.',cancelSafe:'La operación se canceló de forma segura.',cancelling:'Cancelando de forma segura…',draft404:'Todavía no existe un release de contenido publicado. Mientras v1.3.0 sea draft, descarga el archivo .tar.zst y usa «Importar desde archivo / USB».' },
 };
+const aboutText = {
+  en:{menu:'About',title:'About Offline Stardew Valley Wiki',version:'Version',created:'Created and maintained by',description:'An open-source community project for reading the Stardew Valley Wiki offline. It is not affiliated with or endorsed by ConcernedApe or the Stardew Valley Wiki.',source:'Source code on GitHub',downloads:'Download releases',license:'MIT License',close:'Close'},
+  es:{menu:'Acerca de',title:'Acerca de Offline Stardew Valley Wiki',version:'Versión',created:'Creado y mantenido por',description:'Un proyecto comunitario de código abierto para leer Stardew Valley Wiki sin conexión. No está afiliado ni respaldado por ConcernedApe o Stardew Valley Wiki.',source:'Código fuente en GitHub',downloads:'Descargar versiones',license:'Licencia MIT',close:'Cerrar'},
+  de:{menu:'Über',title:'Über Offline Stardew Valley Wiki',version:'Version',created:'Erstellt und gepflegt von',description:'Ein quelloffenes Community-Projekt zum Offline-Lesen der Stardew Valley Wiki. Es ist nicht mit ConcernedApe oder der Stardew Valley Wiki verbunden.',source:'Quellcode auf GitHub',downloads:'Versionen herunterladen',license:'MIT-Lizenz',close:'Schließen'},
+  fr:{menu:'À propos',title:'À propos de Offline Stardew Valley Wiki',version:'Version',created:'Créé et maintenu par',description:'Un projet communautaire open source permettant de lire Stardew Valley Wiki hors ligne. Il n’est ni affilié ni approuvé par ConcernedApe ou Stardew Valley Wiki.',source:'Code source sur GitHub',downloads:'Télécharger les versions',license:'Licence MIT',close:'Fermer'},
+  it:{menu:'Informazioni',title:'Informazioni su Offline Stardew Valley Wiki',version:'Versione',created:'Creato e mantenuto da',description:'Un progetto open source della comunità per leggere Stardew Valley Wiki offline. Non è affiliato né approvato da ConcernedApe o Stardew Valley Wiki.',source:'Codice sorgente su GitHub',downloads:'Scarica versioni',license:'Licenza MIT',close:'Chiudi'},
+  ja:{menu:'このアプリについて',title:'Offline Stardew Valley Wiki について',version:'バージョン',created:'作成・管理',description:'Stardew Valley Wikiをオフラインで読むためのオープンソースのコミュニティプロジェクトです。ConcernedApeおよびStardew Valley Wikiの公式プロジェクトではありません。',source:'GitHubのソースコード',downloads:'リリースをダウンロード',license:'MITライセンス',close:'閉じる'},
+  ko:{menu:'정보',title:'Offline Stardew Valley Wiki 정보',version:'버전',created:'제작 및 관리',description:'Stardew Valley Wiki를 오프라인으로 읽기 위한 오픈 소스 커뮤니티 프로젝트입니다. ConcernedApe 또는 Stardew Valley Wiki의 공식 프로젝트가 아닙니다.',source:'GitHub 소스 코드',downloads:'릴리스 다운로드',license:'MIT 라이선스',close:'닫기'},
+  hu:{menu:'Névjegy',title:'Az Offline Stardew Valley Wiki névjegye',version:'Verzió',created:'Készítette és karbantartja',description:'Nyílt forráskódú közösségi projekt a Stardew Valley Wiki offline olvasásához. Nem áll kapcsolatban a ConcernedApe-pel vagy a Stardew Valley Wikivel.',source:'Forráskód a GitHubon',downloads:'Kiadások letöltése',license:'MIT-licenc',close:'Bezárás'},
+  pt:{menu:'Sobre',title:'Sobre Offline Stardew Valley Wiki',version:'Versão',created:'Criado e mantido por',description:'Um projeto comunitário de código aberto para ler Stardew Valley Wiki offline. Não é afiliado nem endossado por ConcernedApe ou Stardew Valley Wiki.',source:'Código-fonte no GitHub',downloads:'Baixar versões',license:'Licença MIT',close:'Fechar'},
+  ru:{menu:'О программе',title:'О программе Offline Stardew Valley Wiki',version:'Версия',created:'Создание и поддержка',description:'Открытый общественный проект для чтения Stardew Valley Wiki без Интернета. Он не связан и не одобрен ConcernedApe или Stardew Valley Wiki.',source:'Исходный код на GitHub',downloads:'Скачать версии',license:'Лицензия MIT',close:'Закрыть'},
+  tr:{menu:'Hakkında',title:'Offline Stardew Valley Wiki Hakkında',version:'Sürüm',created:'Oluşturan ve bakımını yapan',description:'Stardew Valley Wiki’yi çevrimdışı okumak için açık kaynaklı bir topluluk projesidir. ConcernedApe veya Stardew Valley Wiki ile bağlantılı ya da onlar tarafından onaylanmış değildir.',source:'GitHub kaynak kodu',downloads:'Sürümleri indir',license:'MIT Lisansı',close:'Kapat'},
+  zh:{menu:'关于',title:'关于 Offline Stardew Valley Wiki',version:'版本',created:'创建和维护者',description:'一个用于离线阅读 Stardew Valley Wiki 的开源社区项目。它与 ConcernedApe 或 Stardew Valley Wiki 无隶属或认可关系。',source:'GitHub 源代码',downloads:'下载版本',license:'MIT 许可证',close:'关闭'},
+};
 const frame = document.querySelector('#page');
 const empty = document.querySelector('#empty');
 const results = document.querySelector('#results');
@@ -58,6 +72,8 @@ const importContent = document.querySelector('#importContent');
 const pauseContent = document.querySelector('#pauseContent');
 const resumeContent = document.querySelector('#resumeContent');
 const cancelContent = document.querySelector('#cancelContent');
+const aboutDialog = document.querySelector('#aboutDialog');
+const aboutClose = document.querySelector('#aboutClose');
 let documents = [];
 let documentsById = new Map();
 let searchIndex;
@@ -252,12 +268,37 @@ function applySetupLanguage(language) {
   setupClose.setAttribute('aria-label', interfaceText[language]?.back || interfaceText.en.back);
 }
 
+function applyAboutLanguage(language) {
+  const text = aboutText[language] || aboutText.en;
+  document.querySelector('#aboutTitle').textContent = text.title;
+  document.querySelector('#aboutVersionLabel').textContent = text.version;
+  document.querySelector('#aboutCreatedLabel').textContent = text.created;
+  document.querySelector('#aboutDescription').textContent = text.description;
+  document.querySelector('#aboutSourceLink').textContent = text.source;
+  document.querySelector('#aboutDownloadsLink').textContent = text.downloads;
+  document.querySelector('#aboutLicenseLink').textContent = text.license;
+  document.querySelector('#contentAbout').title = text.menu;
+  document.querySelector('#contentAbout').setAttribute('aria-label', text.menu);
+  aboutClose.setAttribute('aria-label', text.close);
+}
+
+function openAbout() {
+  applyAboutLanguage(interfaceLanguage);
+  aboutDialog.hidden = false;
+  aboutClose.focus();
+}
+
+function closeAbout() {
+  aboutDialog.hidden = true;
+}
+
 function changeInterfaceLanguage(language) {
   interfaceLanguage = Object.hasOwn(setupText, language) ? language : 'en';
   localStorage.setItem('offlineWiki.interfaceLanguage', interfaceLanguage);
   document.querySelector('#setupInterfaceLanguage').value = interfaceLanguage;
   updateInterfaceLanguage(interfaceLanguage);
   applySetupLanguage(interfaceLanguage);
+  applyAboutLanguage(interfaceLanguage);
 }
 
 for (const [code, name] of languages) {
@@ -268,6 +309,19 @@ for (const [code, name] of languages) {
 }
 document.querySelector('#setupInterfaceLanguage').addEventListener('change', event => changeInterfaceLanguage(event.target.value));
 window.offlineWiki.onContentProgress(handleContentProgress);
+window.offlineWiki.onOpenAbout(openAbout);
+document.querySelector('#contentAbout').addEventListener('click', openAbout);
+aboutClose.addEventListener('click', closeAbout);
+aboutDialog.addEventListener('click', event => { if (event.target === aboutDialog) closeAbout(); });
+const aboutLinks = {
+  aboutCreatorLink: 'https://github.com/cristinakity',
+  aboutSourceLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki',
+  aboutDownloadsLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/releases/latest',
+  aboutLicenseLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/blob/master/LICENSE',
+};
+for (const [id, url] of Object.entries(aboutLinks)) {
+  document.querySelector(`#${id}`).addEventListener('click', () => window.offlineWiki.openExternal(url));
+}
 document.querySelector('#contentSettings').addEventListener('click', () => openContentSetup().catch(error => showNotice(error.message)));
 setupClose.addEventListener('click', () => { if (!setupBusy && installedContent) contentSetup.hidden = true; });
 document.querySelector('#selectAllLanguages').addEventListener('click', () => {
@@ -398,6 +452,7 @@ imageViewerCanvas.addEventListener('click', event => {
 });
 window.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !imageViewer.hidden) closeImageViewer();
+  if (event.key === 'Escape' && !aboutDialog.hidden) closeAbout();
 });
 
 function updateInterfaceLanguage(language) {
@@ -795,6 +850,7 @@ document.querySelector('#home').addEventListener('click', () => loadLanguage(cur
   try {
     changeInterfaceLanguage(interfaceLanguage);
     const assets = await window.offlineWiki.shellAssets();
+    document.querySelector('#aboutVersionValue').textContent = await window.offlineWiki.appVersion();
     document.body.style.backgroundImage = `url("${assets.background}")`;
     for (const button of document.querySelectorAll('.flag')) {
       button.querySelector('img').src = assets.flags[button.dataset.language];

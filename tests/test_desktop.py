@@ -93,6 +93,26 @@ def test_content_setup_can_change_its_interface_language() -> None:
     assert "Todavía no existe un release de contenido publicado" in renderer
 
 
+def test_about_dialog_identifies_creator_and_release_links() -> None:
+    shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    main = (ROOT / "desktop" / "main.js").read_text(encoding="utf-8")
+    preload = (ROOT / "desktop" / "preload.js").read_text(encoding="utf-8")
+    assert 'id="aboutDialog"' in shell
+    assert 'id="contentAbout"' in shell
+    assert "Cristina Carrasco" in shell
+    assert "const aboutText" in renderer
+    assert "proyecto comunitario de código abierto" in renderer
+    assert "offline-stardew-valley-wiki/releases/latest" in renderer
+    assert "offline-stardew-valley-wiki/blob/master/LICENSE" in renderer
+    assert "window.offlineWiki.openExternal(url)" in renderer
+    assert "const helpLabels" in main
+    assert "wiki:open-about" in main
+    assert "wiki:app-version" in main
+    assert "onOpenAbout" in preload
+    assert "appVersion" in preload
+
+
 def test_unavailable_page_message_exists_for_every_supported_language() -> None:
     renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
     for language in ("en", "es", "de", "fr", "it", "ja", "ko", "hu", "pt", "ru", "tr", "zh"):
