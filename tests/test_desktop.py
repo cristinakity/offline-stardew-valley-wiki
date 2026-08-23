@@ -93,6 +93,18 @@ def test_content_setup_can_change_its_interface_language() -> None:
     assert "Todavía no existe un release de contenido publicado" in renderer
 
 
+def test_first_run_setup_shows_localized_installation_instructions() -> None:
+    shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
+    renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
+    assert 'id="firstRunGuide"' in shell
+    assert 'id="firstRunGuideTitle"' in shell
+    assert 'id="firstRunGuideSteps"' in shell
+    assert 'id="firstRunGuideTip"' in shell
+    assert "guide.setupSteps.slice(1)" in renderer
+    assert "document.querySelector('#firstRunGuide').hidden = status.installed" in renderer
+    assert "Download and install" in shell
+
+
 def test_about_dialog_identifies_creator_and_release_links() -> None:
     shell = (ROOT / "desktop" / "shell.html").read_text(encoding="utf-8")
     renderer = (ROOT / "desktop" / "renderer.js").read_text(encoding="utf-8")
