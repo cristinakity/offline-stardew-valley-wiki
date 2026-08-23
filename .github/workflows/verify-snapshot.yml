@@ -27,7 +27,7 @@ jobs:
           reference="$(jq -er '.oci_ref | select(test("^ghcr\\.io/.+@sha256:[0-9a-f]{64}$"))' content-lock.json)"
           archive_name="$(jq -r .archive_name content-lock.json)"
           archive_sha="$(jq -r .archive_sha256 content-lock.json)"
-          test "$(jq -r .version content-lock.json)" = "v1.3.0"
+          test "$(jq -r .version content-lock.json)" = "v2.0.0"
           test "$(jq -r .snapshot_id content-lock.json)" = "20260811T015121Z-7206e5e0cacc"
           test "$(jq -r .validation.pages content-lock.json)" = "25852"
           test "$(jq -r .validation.expected_pages content-lock.json)" = "25852"

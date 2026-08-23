@@ -9,17 +9,17 @@ Convenciones:
 
 - `[x]`: terminado y comprobado.
 - `[ ]`: pendiente.
-- `<VERSION>`: próxima versión real, por ejemplo `v1.3.0`.
+- `<VERSION>`: próxima versión real, por ejemplo `v2.0.0`.
 - `<SNAPSHOT_REF>`: referencia GHCR inmutable terminada en `@sha256:...`.
 
 ## Estado local conocido
 
 - [x] El run `#16` recuperó el full y terminó como `completed_with_warnings`.
 - [x] El snapshot full recuperado es `20260811T015121Z-7206e5e0cacc`.
-- [x] El candidato full local `v1.3.0` contiene un `.tar.zst` de aproximadamente 643 MiB.
+- [x] El candidato full local original `v1.3.0`, reutilizado para `v2.0.0`, contiene un `.tar.zst` de aproximadamente 643 MiB.
 - [x] El build Linux `#1` terminó las 13 ediciones y produjo 40 archivos (ZIP, DEB, RPM y
   `SHA256SUMS`).
-- [x] Los 30 assets opcionales se aceptaron y documentaron como advertencia conocida de `v1.3.0`.
+- [x] Los 30 assets opcionales se aceptaron y documentaron como advertencia conocida del snapshot usado por `v2.0.0`.
 - [x] El snapshot conserva cero enlaces rotos, assets requeridos ausentes y recursos remotos.
 - [x] El candidato `v1.3.1` de aproximadamente 11.8 MiB es un `sample` de 25 páginas por idioma;
   no debe utilizarse como release ni como seed inicial de production.
@@ -72,7 +72,7 @@ Convenciones:
 
 ## 3. Validación del snapshot full final
 
-- [x] Se seleccionó el candidato full `#7`, snapshot `20260811T015121Z-7206e5e0cacc`, para `v1.3.0`.
+- [x] Se seleccionó el candidato full `#7`, snapshot `20260811T015121Z-7206e5e0cacc`, para `v2.0.0`.
 - [x] No utilizar candidatos `fixture` o `sample` como seed o release.
 - [x] Ejecutar `sha256sum --check SHA256SUMS` dentro del candidato.
 - [x] Confirmar que `content-lock.json`, `validation-report.json` y el manifiesto apuntan al mismo
@@ -195,7 +195,7 @@ Convenciones:
 
 ## 8. Versión, tag y notas automáticas
 
-- [x] La versión seleccionada es `v1.3.0`; `package.json`, lock, candidato y reporte son coherentes.
+- [x] La versión seleccionada es `v2.0.0`; `package.json`, lock y reporte son coherentes, reutilizando el snapshot inmutable aprobado.
 - [x] Crear `.github/release.yml` con categorías para features, fixes, documentación, dependencias y
   otros cambios.
 - [x] Crear una plantilla de introducción para el release con descripción, características y pasos de

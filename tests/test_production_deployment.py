@@ -43,7 +43,7 @@ def test_production_files_use_generic_names() -> None:
 
 def test_content_lock_blocks_deploy_until_publication() -> None:
     lock = (ROOT / "content-lock.json").read_text(encoding="utf-8")
-    assert '"version": "v1.3.0"' in lock
+    assert '"version": "v2.0.0"' in lock
     assert '"snapshot_id": "20260811T015121Z-7206e5e0cacc"' in lock
     assert '"oci_ref": null' in lock or "@sha256:" in lock
 
