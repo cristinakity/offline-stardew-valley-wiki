@@ -29,6 +29,33 @@ Offline Stardew Valley Wiki is a cross-platform desktop application that lets St
 
 On first launch, the application downloads one approved multilingual snapshot (about 644 MiB), verifies it, and installs only your selected languages. The preparation step can require up to 7 GiB of temporary free space. Once it finishes, the selected wiki works without Internet. You may also download the attached `.tar.zst` snapshot separately and select **Import from file / USB**.
 
+## Easy installation
+
+### Windows (recommended)
+
+1. Under **Assets**, download **`offline-stardew-valley-wiki-setup.exe`**.
+2. Double-click the downloaded file and follow the installation prompts.
+3. Open **Offline Stardew Valley Wiki** from the Start menu or desktop shortcut.
+
+### Ubuntu, Debian, or Linux Mint
+
+1. Under **Assets**, download **`offline-stardew-valley-wiki_1.3.0_amd64.deb`**.
+2. Double-click the downloaded file and choose **Install** in your software manager.
+3. Open **Offline Stardew Valley Wiki** from your applications menu.
+
+### Fedora, RHEL, or openSUSE
+
+Download **`offline-stardew-valley-wiki-1.3.0-1.x86_64.rpm`** under **Assets**, open it with your software manager, and choose **Install**.
+
+### First launch
+
+1. Choose the language for the application menus.
+2. Select the wiki languages you want available offline.
+3. Click **Download and install** and keep the application open while it prepares the wiki.
+4. When installation finishes, open the wiki and use it without Internet.
+
+That is all most users need to do. You **do not** need to download the `.tar.zst`, JSON, or `SHA256SUMS` files manually. The portable ZIP packages and **Import from file / USB** option are alternatives for users who do not want an installer or need to move the content to an offline computer.
+
 ## Content integrity
 
 This release uses immutable snapshot `20260811T015121Z-7206e5e0cacc`, containing 25,852 pages. It passed offline validation with zero broken internal links, zero required missing assets, and zero remote resources. Checksums, the exact OCI reference, and the full validation report are included with the release assets. Thirty optional source assets that were unavailable are documented in that report.
