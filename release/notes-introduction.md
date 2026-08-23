@@ -1,7 +1,42 @@
-Offline Stardew Valley Wiki v1.3.0 provides the Stardew Valley Wiki for offline use through one lightweight desktop application for each platform.
+![Offline Stardew Valley Wiki](https://github.com/cristinakity/offline-stardew-valley-wiki/assets/2953184/980d8860-510c-43e9-9b78-d8b2031ad866)
 
-The release is built from immutable snapshot `20260811T015121Z-7206e5e0cacc` (content digest `7206e5e0caccc8ed078c15bca05d2568c0a6e6edd4bdb9537787835da4fb0fa7`; the exact OCI digest is recorded in the attached `content-lock.json`). It contains 25,852 pages and passed offline validation with zero broken internal links, zero required missing assets, and zero remote resources. Thirty optional source assets were unavailable and are documented in the attached validation report.
+We are excited to announce the release of Offline Stardew Valley Wiki v1.3.0!
 
-Download the package for your platform. On first launch, the app explains the content download, lets you choose one or more languages, verifies the approved multilingual snapshot, and keeps only the selected pages and assets. The downloaded archive can optionally be retained to add languages later, and it can also be imported from a local file or USB drive. Once installed, the selected wiki content works without Internet.
+Offline Stardew Valley Wiki is a cross-platform desktop application that lets Stardew Valley players browse the wiki without an Internet connection. Version 1.3.0 introduces a lighter application and a new first-run content installer: install the reader once, then choose exactly which languages you want to keep.
 
-ZIP packages can be extracted and run directly; DEB and RPM packages integrate with their corresponding Linux package managers. The Windows Setup executable provides the installer.
+## Highlights
+
+- Choose any combination of 12 supported wiki languages during setup.
+- Change the application interface language independently from the installed wiki languages.
+- Download and verify the approved wiki snapshot directly in the application, with progress, pause, resume, and cancellation controls.
+- Import the same snapshot from a local file or USB drive for computers without Internet access.
+- Keep the downloaded archive if you want to add more languages later without downloading it again.
+- Browse, search, and use the selected wiki content completely offline after installation.
+- View project, creator, source-code, download, license, and community information from the new About window.
+
+## Downloads
+
+### Windows
+
+- **Setup executable** — recommended for most users.
+- **Portable ZIP** — extract it and run the application without an installer.
+
+### Linux
+
+- **DEB** — for Debian, Ubuntu, and compatible distributions.
+- **RPM** — for Fedora, RHEL, openSUSE, and compatible distributions.
+- **Portable ZIP** — extract it and run the application directly.
+
+On first launch, the application downloads one approved multilingual snapshot (about 644 MiB), verifies it, and installs only your selected languages. The preparation step can require up to 7 GiB of temporary free space. Once it finishes, the selected wiki works without Internet. You may also download the attached `.tar.zst` snapshot separately and select **Import from file / USB**.
+
+## Content integrity
+
+This release uses immutable snapshot `20260811T015121Z-7206e5e0cacc`, containing 25,852 pages. It passed offline validation with zero broken internal links, zero required missing assets, and zero remote resources. Checksums, the exact OCI reference, and the full validation report are included with the release assets. Thirty optional source assets that were unavailable are documented in that report.
+
+## Community project
+
+Created and maintained by [Cristina Carrasco (@cristinakity)](https://github.com/cristinakity). This is an unofficial community project and is not affiliated with ConcernedApe or the Stardew Valley Wiki team.
+
+If you find a problem or have a suggestion, please [open an issue](https://github.com/cristinakity/offline-stardew-valley-wiki/issues).
+
+Thank you for your support!
