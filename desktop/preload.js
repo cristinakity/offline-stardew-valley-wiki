@@ -24,6 +24,11 @@ contextBridge.exposeInMainWorld('offlineWiki', {
     ipcRenderer.on('wiki:content-progress', listener);
     return () => ipcRenderer.removeListener('wiki:content-progress', listener);
   },
+  onOpenHelp: callback => {
+    const listener = () => callback();
+    ipcRenderer.on('wiki:open-help', listener);
+    return () => ipcRenderer.removeListener('wiki:open-help', listener);
+  },
   onOpenAbout: callback => {
     const listener = () => callback();
     ipcRenderer.on('wiki:open-about', listener);

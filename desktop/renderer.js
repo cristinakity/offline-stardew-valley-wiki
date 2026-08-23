@@ -49,6 +49,20 @@ const aboutText = {
   tr:{menu:'Hakkında',title:'Offline Stardew Valley Wiki Hakkında',version:'Sürüm',created:'Oluşturan ve bakımını yapan',description:'Stardew Valley Wiki’yi çevrimdışı okumak için açık kaynaklı bir topluluk projesidir. ConcernedApe veya Stardew Valley Wiki ile bağlantılı ya da onlar tarafından onaylanmış değildir.',source:'GitHub kaynak kodu',downloads:'Sürümleri indir',license:'MIT Lisansı',close:'Kapat'},
   zh:{menu:'关于',title:'关于 Offline Stardew Valley Wiki',version:'版本',created:'创建和维护者',description:'一个用于离线阅读 Stardew Valley Wiki 的开源社区项目。它与 ConcernedApe 或 Stardew Valley Wiki 无隶属或认可关系。',source:'GitHub 源代码',downloads:'下载版本',license:'MIT 许可证',close:'关闭'},
 };
+const helpText = {
+  en:{menu:'Help and getting started',title:'Help and getting started',intro:'Follow these simple steps to prepare and use your offline wiki.',setupTitle:'First-time setup',setupSteps:['Click the gear button (⚙) to open offline content settings.','Choose the language for the application menus.','Select one or more wiki languages.','Click “Download and install” and keep the app open while it prepares the wiki.'],manageTitle:'Manage or update content',manageSteps:['Use the gear button (⚙) whenever you want to add or remove languages.','Choose “Check for content updates” to look for a newer approved wiki snapshot.','Choose “Import from file / USB” if you already have the .tar.zst snapshot on this computer or a USB drive.'],tip:'After setup finishes, your selected wiki languages work without Internet.',downloads:'Download or reinstall the app',support:'Get help on GitHub',close:'Close'},
+  es:{menu:'Ayuda y primeros pasos',title:'Ayuda y primeros pasos',intro:'Sigue estos pasos sencillos para preparar y usar tu wiki sin conexión.',setupTitle:'Primera configuración',setupSteps:['Pulsa el botón de engranaje (⚙) para abrir la configuración del contenido offline.','Elige el idioma de los menús de la aplicación.','Selecciona uno o más idiomas de la wiki.','Pulsa «Descargar e instalar» y mantén la aplicación abierta mientras prepara la wiki.'],manageTitle:'Administrar o actualizar el contenido',manageSteps:['Usa el engranaje (⚙) cuando quieras añadir o quitar idiomas.','Elige «Buscar actualizaciones de contenido» para comprobar si existe un snapshot aprobado más reciente.','Elige «Importar desde archivo / USB» si ya tienes el snapshot .tar.zst en el equipo o en una memoria USB.'],tip:'Cuando termine la configuración, los idiomas seleccionados funcionarán sin Internet.',downloads:'Descargar o reinstalar la aplicación',support:'Obtener ayuda en GitHub',close:'Cerrar'},
+  de:{menu:'Hilfe und erste Schritte',title:'Hilfe und erste Schritte',intro:'Folge diesen einfachen Schritten, um deine Offline-Wiki einzurichten und zu verwenden.',setupTitle:'Ersteinrichtung',setupSteps:['Klicke auf das Zahnrad (⚙), um die Offline-Inhaltseinstellungen zu öffnen.','Wähle die Sprache der Anwendungsmenüs.','Wähle eine oder mehrere Wiki-Sprachen.','Klicke auf „Herunterladen und installieren“ und lasse die App während der Vorbereitung geöffnet.'],manageTitle:'Inhalte verwalten oder aktualisieren',manageSteps:['Mit dem Zahnrad (⚙) kannst du jederzeit Sprachen hinzufügen oder entfernen.','Wähle „Nach Inhaltsupdates suchen“, um nach einem neueren freigegebenen Snapshot zu suchen.','Wähle „Aus Datei / USB importieren“, wenn die .tar.zst-Datei bereits lokal oder auf einem USB-Laufwerk vorhanden ist.'],tip:'Nach der Einrichtung funktionieren die ausgewählten Wiki-Sprachen ohne Internet.',downloads:'App herunterladen oder neu installieren',support:'Hilfe auf GitHub',close:'Schließen'},
+  fr:{menu:'Aide et premiers pas',title:'Aide et premiers pas',intro:'Suivez ces étapes simples pour préparer et utiliser votre wiki hors ligne.',setupTitle:'Première configuration',setupSteps:['Cliquez sur l’engrenage (⚙) pour ouvrir les paramètres du contenu hors ligne.','Choisissez la langue des menus de l’application.','Sélectionnez une ou plusieurs langues du wiki.','Cliquez sur « Télécharger et installer » et laissez l’application ouverte pendant la préparation.'],manageTitle:'Gérer ou mettre à jour le contenu',manageSteps:['Utilisez l’engrenage (⚙) pour ajouter ou supprimer des langues.','Choisissez « Rechercher les mises à jour » pour rechercher un snapshot approuvé plus récent.','Choisissez « Importer depuis un fichier / USB » si le snapshot .tar.zst se trouve déjà sur l’ordinateur ou une clé USB.'],tip:'Après la configuration, les langues sélectionnées fonctionnent sans Internet.',downloads:'Télécharger ou réinstaller l’application',support:'Obtenir de l’aide sur GitHub',close:'Fermer'},
+  it:{menu:'Aiuto e primi passi',title:'Aiuto e primi passi',intro:'Segui questi semplici passaggi per preparare e usare la wiki offline.',setupTitle:'Prima configurazione',setupSteps:['Fai clic sull’ingranaggio (⚙) per aprire le impostazioni dei contenuti offline.','Scegli la lingua dei menu dell’applicazione.','Seleziona una o più lingue della wiki.','Fai clic su “Scarica e installa” e lascia aperta l’app durante la preparazione.'],manageTitle:'Gestire o aggiornare i contenuti',manageSteps:['Usa l’ingranaggio (⚙) per aggiungere o rimuovere lingue.','Scegli “Controlla aggiornamenti” per cercare uno snapshot approvato più recente.','Scegli “Importa da file / USB” se hai già lo snapshot .tar.zst sul computer o su un’unità USB.'],tip:'Dopo la configurazione, le lingue selezionate funzionano senza Internet.',downloads:'Scarica o reinstalla l’app',support:'Assistenza su GitHub',close:'Chiudi'},
+  ja:{menu:'ヘルプと使い方',title:'ヘルプと使い方',intro:'次の簡単な手順でオフラインWikiを準備して使用できます。',setupTitle:'初回セットアップ',setupSteps:['歯車ボタン（⚙）を押してオフラインコンテンツ設定を開きます。','アプリのメニュー言語を選びます。','Wikiの言語を1つ以上選びます。','「ダウンロードしてインストール」を押し、準備が完了するまでアプリを開いたままにします。'],manageTitle:'コンテンツの管理と更新',manageSteps:['言語を追加または削除するときは歯車ボタン（⚙）を使います。','「コンテンツ更新を確認」で新しい承認済みスナップショットを確認します。','パソコンまたはUSBに.tar.zstファイルがある場合は「ファイル / USBから読み込む」を選びます。'],tip:'セットアップ完了後、選択したWiki言語はインターネットなしで利用できます。',downloads:'アプリのダウンロード・再インストール',support:'GitHubでヘルプを見る',close:'閉じる'},
+  ko:{menu:'도움말 및 시작하기',title:'도움말 및 시작하기',intro:'다음의 간단한 단계로 오프라인 위키를 준비하고 사용할 수 있습니다.',setupTitle:'처음 설정',setupSteps:['톱니바퀴 버튼(⚙)을 눌러 오프라인 콘텐츠 설정을 엽니다.','앱 메뉴 언어를 선택합니다.','하나 이상의 위키 언어를 선택합니다.','“다운로드 및 설치”를 누르고 준비가 끝날 때까지 앱을 열어 둡니다.'],manageTitle:'콘텐츠 관리 또는 업데이트',manageSteps:['언어를 추가하거나 제거하려면 톱니바퀴 버튼(⚙)을 사용합니다.','“콘텐츠 업데이트 확인”으로 더 새로운 승인된 스냅샷을 확인합니다.','컴퓨터나 USB에 .tar.zst 스냅샷이 있으면 “파일 / USB에서 가져오기”를 선택합니다.'],tip:'설정이 끝나면 선택한 위키 언어를 인터넷 없이 사용할 수 있습니다.',downloads:'앱 다운로드 또는 재설치',support:'GitHub에서 도움받기',close:'닫기'},
+  hu:{menu:'Súgó és első lépések',title:'Súgó és első lépések',intro:'Ezekkel az egyszerű lépésekkel készítheted elő és használhatod az offline wikit.',setupTitle:'Első beállítás',setupSteps:['Kattints a fogaskerékre (⚙) az offline tartalom beállításainak megnyitásához.','Válaszd ki az alkalmazás menüinek nyelvét.','Válassz ki egy vagy több wiki-nyelvet.','Kattints a „Letöltés és telepítés” gombra, és hagyd nyitva az alkalmazást az előkészítés alatt.'],manageTitle:'Tartalom kezelése vagy frissítése',manageSteps:['A fogaskerékkel (⚙) bármikor hozzáadhatsz vagy eltávolíthatsz nyelveket.','A „Tartalomfrissítések keresése” lehetőséggel újabb jóváhagyott pillanatképet kereshetsz.','Válaszd az „Importálás fájlból / USB-ről” lehetőséget, ha a .tar.zst fájl már a gépen vagy USB-meghajtón van.'],tip:'A beállítás után a kiválasztott wiki-nyelvek internet nélkül is működnek.',downloads:'Alkalmazás letöltése vagy újratelepítése',support:'Segítség a GitHubon',close:'Bezárás'},
+  pt:{menu:'Ajuda e primeiros passos',title:'Ajuda e primeiros passos',intro:'Siga estes passos simples para preparar e usar a wiki offline.',setupTitle:'Primeira configuração',setupSteps:['Clique na engrenagem (⚙) para abrir as configurações do conteúdo offline.','Escolha o idioma dos menus do aplicativo.','Selecione um ou mais idiomas da wiki.','Clique em “Baixar e instalar” e mantenha o aplicativo aberto durante a preparação.'],manageTitle:'Gerenciar ou atualizar conteúdo',manageSteps:['Use a engrenagem (⚙) para adicionar ou remover idiomas.','Escolha “Verificar atualizações” para procurar um snapshot aprovado mais recente.','Escolha “Importar de arquivo / USB” se o snapshot .tar.zst já estiver no computador ou em uma unidade USB.'],tip:'Após a configuração, os idiomas selecionados funcionam sem Internet.',downloads:'Baixar ou reinstalar o aplicativo',support:'Obter ajuda no GitHub',close:'Fechar'},
+  ru:{menu:'Справка и начало работы',title:'Справка и начало работы',intro:'Выполните эти простые шаги, чтобы подготовить и использовать офлайн-вики.',setupTitle:'Первая настройка',setupSteps:['Нажмите кнопку с шестерёнкой (⚙), чтобы открыть настройки офлайн-контента.','Выберите язык меню приложения.','Выберите один или несколько языков вики.','Нажмите «Скачать и установить» и не закрывайте приложение во время подготовки.'],manageTitle:'Управление и обновление контента',manageSteps:['Используйте шестерёнку (⚙), чтобы добавлять или удалять языки.','Выберите «Проверить обновления», чтобы найти более новый одобренный снимок.','Выберите «Импорт из файла / USB», если файл .tar.zst уже находится на компьютере или USB-накопителе.'],tip:'После настройки выбранные языки вики работают без Интернета.',downloads:'Скачать или переустановить приложение',support:'Получить помощь на GitHub',close:'Закрыть'},
+  tr:{menu:'Yardım ve başlangıç',title:'Yardım ve başlangıç',intro:'Çevrimdışı wikiyi hazırlamak ve kullanmak için bu basit adımları izleyin.',setupTitle:'İlk kurulum',setupSteps:['Çevrimdışı içerik ayarlarını açmak için dişli düğmesine (⚙) tıklayın.','Uygulama menülerinin dilini seçin.','Bir veya daha fazla wiki dili seçin.','“İndir ve yükle”ye tıklayın ve hazırlık tamamlanana kadar uygulamayı açık tutun.'],manageTitle:'İçeriği yönetme veya güncelleme',manageSteps:['Dil eklemek veya kaldırmak için dişli düğmesini (⚙) kullanın.','Daha yeni onaylı bir anlık görüntü aramak için “İçerik güncellemelerini denetle”yi seçin.','.tar.zst dosyası bilgisayarda veya USB sürücüsündeyse “Dosya / USB’den içe aktar”ı seçin.'],tip:'Kurulum tamamlandıktan sonra seçilen wiki dilleri İnternet olmadan çalışır.',downloads:'Uygulamayı indir veya yeniden yükle',support:'GitHub’dan yardım al',close:'Kapat'},
+  zh:{menu:'帮助和入门',title:'帮助和入门',intro:'按照以下简单步骤准备和使用离线维基。',setupTitle:'首次设置',setupSteps:['点击齿轮按钮（⚙）打开离线内容设置。','选择应用菜单的语言。','选择一种或多种维基语言。','点击“下载并安装”，并在准备完成前保持应用打开。'],manageTitle:'管理或更新内容',manageSteps:['需要添加或删除语言时，请使用齿轮按钮（⚙）。','选择“检查内容更新”以查找更新的已批准快照。','如果电脑或U盘中已有.tar.zst快照，请选择“从文件 / USB 导入”。'],tip:'设置完成后，所选维基语言无需互联网即可使用。',downloads:'下载或重新安装应用',support:'在GitHub上获取帮助',close:'关闭'},
+};
 const frame = document.querySelector('#page');
 const empty = document.querySelector('#empty');
 const results = document.querySelector('#results');
@@ -74,6 +88,8 @@ const resumeContent = document.querySelector('#resumeContent');
 const cancelContent = document.querySelector('#cancelContent');
 const aboutDialog = document.querySelector('#aboutDialog');
 const aboutClose = document.querySelector('#aboutClose');
+const helpDialog = document.querySelector('#helpDialog');
+const helpClose = document.querySelector('#helpClose');
 let documents = [];
 let documentsById = new Map();
 let searchIndex;
@@ -282,7 +298,44 @@ function applyAboutLanguage(language) {
   aboutClose.setAttribute('aria-label', text.close);
 }
 
+function replaceHelpSteps(id, steps) {
+  const list = document.querySelector(`#${id}`);
+  list.replaceChildren(...steps.map(step => {
+    const item = document.createElement('li');
+    item.textContent = step;
+    return item;
+  }));
+}
+
+function applyHelpLanguage(language) {
+  const text = helpText[language] || helpText.en;
+  document.querySelector('#helpTitle').textContent = text.title;
+  document.querySelector('#helpIntro').textContent = text.intro;
+  document.querySelector('#helpSetupTitle').textContent = text.setupTitle;
+  document.querySelector('#helpManageTitle').textContent = text.manageTitle;
+  document.querySelector('#helpOfflineTip').textContent = text.tip;
+  document.querySelector('#helpDownloadsLink').textContent = text.downloads;
+  document.querySelector('#helpSupportLink').textContent = text.support;
+  document.querySelector('#contentHelp').title = text.menu;
+  document.querySelector('#contentHelp').setAttribute('aria-label', text.menu);
+  helpClose.setAttribute('aria-label', text.close);
+  replaceHelpSteps('helpSetupSteps', text.setupSteps);
+  replaceHelpSteps('helpManageSteps', text.manageSteps);
+}
+
+function openHelp() {
+  closeAbout();
+  applyHelpLanguage(interfaceLanguage);
+  helpDialog.hidden = false;
+  helpClose.focus();
+}
+
+function closeHelp() {
+  helpDialog.hidden = true;
+}
+
 function openAbout() {
+  closeHelp();
   applyAboutLanguage(interfaceLanguage);
   aboutDialog.hidden = false;
   aboutClose.focus();
@@ -299,6 +352,7 @@ function changeInterfaceLanguage(language) {
   updateInterfaceLanguage(interfaceLanguage);
   applySetupLanguage(interfaceLanguage);
   applyAboutLanguage(interfaceLanguage);
+  applyHelpLanguage(interfaceLanguage);
 }
 
 for (const [code, name] of languages) {
@@ -309,8 +363,12 @@ for (const [code, name] of languages) {
 }
 document.querySelector('#setupInterfaceLanguage').addEventListener('change', event => changeInterfaceLanguage(event.target.value));
 window.offlineWiki.onContentProgress(handleContentProgress);
+window.offlineWiki.onOpenHelp(openHelp);
 window.offlineWiki.onOpenAbout(openAbout);
+document.querySelector('#contentHelp').addEventListener('click', openHelp);
 document.querySelector('#contentAbout').addEventListener('click', openAbout);
+helpClose.addEventListener('click', closeHelp);
+helpDialog.addEventListener('click', event => { if (event.target === helpDialog) closeHelp(); });
 aboutClose.addEventListener('click', closeAbout);
 aboutDialog.addEventListener('click', event => { if (event.target === aboutDialog) closeAbout(); });
 const aboutLinks = {
@@ -320,6 +378,13 @@ const aboutLinks = {
   aboutLicenseLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/blob/master/LICENSE',
 };
 for (const [id, url] of Object.entries(aboutLinks)) {
+  document.querySelector(`#${id}`).addEventListener('click', () => window.offlineWiki.openExternal(url));
+}
+const helpLinks = {
+  helpDownloadsLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/releases/latest',
+  helpSupportLink: 'https://github.com/cristinakity/offline-stardew-valley-wiki/issues',
+};
+for (const [id, url] of Object.entries(helpLinks)) {
   document.querySelector(`#${id}`).addEventListener('click', () => window.offlineWiki.openExternal(url));
 }
 document.querySelector('#contentSettings').addEventListener('click', () => openContentSetup().catch(error => showNotice(error.message)));
@@ -452,6 +517,7 @@ imageViewerCanvas.addEventListener('click', event => {
 });
 window.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !imageViewer.hidden) closeImageViewer();
+  if (event.key === 'Escape' && !helpDialog.hidden) closeHelp();
   if (event.key === 'Escape' && !aboutDialog.hidden) closeAbout();
 });
 

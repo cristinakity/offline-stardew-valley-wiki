@@ -107,15 +107,15 @@ const menuLabels = {
   tr: ['Dosya', 'Düzenle', 'Görünüm', 'Pencere'], zh: ['文件', '编辑', '查看', '窗口'],
 };
 const helpLabels = {
-  en: ['Help', 'About'], es: ['Ayuda', 'Acerca de'], de: ['Hilfe', 'Über'],
-  fr: ['Aide', 'À propos'], it: ['Aiuto', 'Informazioni'], ja: ['ヘルプ', 'このアプリについて'],
-  ko: ['도움말', '정보'], hu: ['Súgó', 'Névjegy'], pt: ['Ajuda', 'Sobre'],
-  ru: ['Справка', 'О программе'], tr: ['Yardım', 'Hakkında'], zh: ['帮助', '关于'],
+  en: ['Help', 'Help and getting started', 'About'], es: ['Ayuda', 'Ayuda y primeros pasos', 'Acerca de'], de: ['Hilfe', 'Hilfe und erste Schritte', 'Über'],
+  fr: ['Aide', 'Aide et premiers pas', 'À propos'], it: ['Aiuto', 'Aiuto e primi passi', 'Informazioni'], ja: ['ヘルプ', 'ヘルプと使い方', 'このアプリについて'],
+  ko: ['도움말', '도움말 및 시작하기', '정보'], hu: ['Súgó', 'Súgó és első lépések', 'Névjegy'], pt: ['Ajuda', 'Ajuda e primeiros passos', 'Sobre'],
+  ru: ['Справка', 'Справка и начало работы', 'О программе'], tr: ['Yardım', 'Yardım ve başlangıç', 'Hakkında'], zh: ['帮助', '帮助和入门', '关于'],
 };
 
 function setApplicationLanguage(language) {
   const [file, edit, view, window] = menuLabels[language] || menuLabels.en;
-  const [help, about] = helpLabels[language] || helpLabels.en;
+  const [help, gettingStarted, about] = helpLabels[language] || helpLabels.en;
   Menu.setApplicationMenu(Menu.buildFromTemplate([
     { label: file, submenu: [{ role: 'quit' }] },
     { label: edit, submenu: [
@@ -128,10 +128,16 @@ function setApplicationLanguage(language) {
       { role: 'togglefullscreen' },
     ] },
     { label: window, submenu: [{ role: 'minimize' }, { role: 'close' }] },
-    { label: help, submenu: [{
-      label: about,
-      click: () => BrowserWindow.getFocusedWindow()?.webContents.send('wiki:open-about'),
-    }] },
+    { label: help, submenu: [
+      {
+        label: gettingStarted,
+        click: () => BrowserWindow.getFocusedWindow()?.webContents.send('wiki:open-help'),
+      },
+      {
+        label: about,
+        click: () => BrowserWindow.getFocusedWindow()?.webContents.send('wiki:open-about'),
+      },
+    ] },
   ]));
 }
 
